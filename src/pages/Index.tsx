@@ -4,7 +4,7 @@ const cards = [
   { title: "Tanium", subtitle: "Work", to: "/work/tanium", colorClass: "card-terracotta" },
   { title: "SAS", subtitle: "Work", to: "/work/sas", colorClass: "card-forest" },
   { title: "Red Hat", subtitle: "Work", to: "/work/redhat", colorClass: "card-navy" },
-  { title: "About", subtitle: "Experience", to: "/about", colorClass: "card-mustard" },
+  { title: "Experience", subtitle: "About", to: "/about", colorClass: "card-mustard" },
   { title: "Books", subtitle: "About", to: "/books", colorClass: "card-coral" },
   { title: "Records", subtitle: "About", to: "/records", colorClass: "card-slate" },
   { title: "On Design", subtitle: "Words", to: "/words/on-design", colorClass: "card-plum" },
