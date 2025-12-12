@@ -1,11 +1,11 @@
 import { PortfolioCard } from "@/components/PortfolioCard";
 
 const cards = [
-  { title: "Tanium", subtitle: "Case Study", to: "/work/tanium", colorClass: "card-terracotta" },
-  { title: "SAS", subtitle: "Case Study", to: "/work/sas", colorClass: "card-forest" },
-  { title: "Red Hat", subtitle: "Case Study", to: "/work/redhat", colorClass: "card-navy" },
-  { title: "Books", subtitle: "Reading List", to: "/books", colorClass: "card-mustard" },
-  { title: "Records", subtitle: "Collection", to: "/records", colorClass: "card-coral" },
+  { title: "Tanium", subtitle: "Work", to: "/work/tanium", colorClass: "card-terracotta" },
+  { title: "SAS", subtitle: "Work", to: "/work/sas", colorClass: "card-forest" },
+  { title: "Red Hat", subtitle: "Work", to: "/work/redhat", colorClass: "card-navy" },
+  { title: "Books", subtitle: "About", to: "/books", colorClass: "card-mustard" },
+  { title: "Records", subtitle: "About", to: "/records", colorClass: "card-coral" },
   { title: "On Design", subtitle: "Words", to: "/words/on-design", colorClass: "card-slate" },
   { title: "On Process", subtitle: "Words", to: "/words/on-process", colorClass: "card-plum" },
   { title: "On Tools", subtitle: "Words", to: "/words/on-tools", colorClass: "card-teal" },
