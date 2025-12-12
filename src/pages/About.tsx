@@ -13,7 +13,7 @@ const experience = [
 
 export default function About() {
   return (
-    <PageLayout title="Experience" subtitle="About">
+    <PageLayout title="About" subtitle="Experience">
       <div className="space-y-0">
         {experience.map((job, index) => (
           <div 
