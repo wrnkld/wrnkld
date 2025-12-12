@@ -29,8 +29,8 @@ export default function Index() {
       
       {/* Horizontal Scrolling Cards */}
       <section className="pb-16 md:pb-24">
-        <div className="overflow-x-auto scrollbar-hide">
-          <div className="flex gap-6 px-6 pb-4" style={{ width: "max-content" }}>
+        <div className="overflow-x-auto overflow-y-visible scrollbar-hide">
+          <div className="flex gap-6 px-6 pt-4 pb-4" style={{ width: "max-content" }}>
             {cards.map((card, index) => (
               <PortfolioCard
                 key={card.to}
