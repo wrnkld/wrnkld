@@ -6,6 +6,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
+import About from "./pages/About";
 import Tanium from "./pages/work/Tanium";
 import SAS from "./pages/work/SAS";
 import RedHat from "./pages/work/RedHat";
@@ -25,6 +26,7 @@ const App = () => (
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Index />} />
+          <Route path="/about" element={<About />} />
           <Route path="/work/tanium" element={<Tanium />} />
           <Route path="/work/sas" element={<SAS />} />
           <Route path="/work/redhat" element={<RedHat />} />
