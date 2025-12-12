@@ -17,11 +17,11 @@ export default function Index() {
     <div className="min-h-screen bg-background">
       {/* Header Section */}
       <header className="px-6 pt-16 md:pt-24 pb-16 md:pb-20">
-        <div className="max-w-2xl mx-auto text-center animate-fade-in">
-          <h1 className="font-display text-5xl md:text-7xl font-semibold text-foreground mb-8">
+        <div className="max-w-2xl mx-auto animate-fade-in">
+          <h1 className="font-display text-5xl md:text-7xl font-semibold text-foreground mb-8 text-center">
             Matthew Stevens
           </h1>
-          <p className="font-body text-lg md:text-xl text-muted-foreground leading-relaxed text-balance">
+          <p className="font-body text-lg md:text-xl text-muted-foreground leading-relaxed text-balance text-left">
             A product design leader with 20 years of experience, I design elegant solutions for complex enterprise software, working hard to understand pain points by talking directly to customers. I manage design teams, big or small, still thriving as an individual contributor. I work quickly and efficiently, iterating through multiple ideas and gathering feedback from engineering, product management, and design.
           </p>
         </div>
