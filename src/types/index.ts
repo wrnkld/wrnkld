@@ -6,3 +6,10 @@ export interface Book {
   yearRead: number;
   recommended: boolean;
 }
+
+export interface Record {
+  id: number;
+  year: number;
+  artist: string;
+  album: string;
+}
