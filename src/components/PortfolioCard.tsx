@@ -13,7 +13,7 @@ export function PortfolioCard({ title, subtitle, to, colorClass, index }: Portfo
   return (
     <Link
       to={to}
-      className={`group flex-shrink-0 w-[320px] md:w-[380px] h-[420px] md:h-[480px] rounded-2xl p-8 flex flex-col justify-between transition-all duration-500 hover:scale-[1.02] hover:-translate-y-2 hover:shadow-xl ${colorClass}`}
+      className={`group flex-shrink-0 w-[320px] md:w-[380px] h-[420px] md:h-[480px] rounded-2xl p-8 flex flex-col justify-between transition-all duration-200 hover:scale-[1.02] hover:-translate-y-2 ${colorClass}`}
       style={{ 
         animationDelay: `${index * 100}ms`,
       }}
