@@ -4,11 +4,12 @@ const cards = [
   { title: "Tanium", subtitle: "Work", to: "/work/tanium", colorClass: "card-terracotta" },
   { title: "SAS", subtitle: "Work", to: "/work/sas", colorClass: "card-forest" },
   { title: "Red Hat", subtitle: "Work", to: "/work/redhat", colorClass: "card-navy" },
-  { title: "Books", subtitle: "About", to: "/books", colorClass: "card-mustard" },
-  { title: "Records", subtitle: "About", to: "/records", colorClass: "card-coral" },
-  { title: "On Design", subtitle: "Words", to: "/words/on-design", colorClass: "card-slate" },
-  { title: "On Process", subtitle: "Words", to: "/words/on-process", colorClass: "card-plum" },
-  { title: "On Tools", subtitle: "Words", to: "/words/on-tools", colorClass: "card-teal" },
+  { title: "About", subtitle: "Experience", to: "/about", colorClass: "card-mustard" },
+  { title: "Books", subtitle: "About", to: "/books", colorClass: "card-coral" },
+  { title: "Records", subtitle: "About", to: "/records", colorClass: "card-slate" },
+  { title: "On Design", subtitle: "Words", to: "/words/on-design", colorClass: "card-plum" },
+  { title: "On Process", subtitle: "Words", to: "/words/on-process", colorClass: "card-teal" },
+  { title: "On Tools", subtitle: "Words", to: "/words/on-tools", colorClass: "card-terracotta" },
 ];
 
 export default function Index() {
