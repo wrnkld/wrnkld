@@ -28,7 +28,7 @@ export function PortfolioCard({ title, subtitle, to, colorClass, index, seriesLa
       
       <div>
         {seriesLabel && (
-          <span className="text-sm font-body uppercase tracking-widest opacity-70 block mb-2">
+          <span className="text-sm font-body opacity-70 block mb-2">
             {seriesLabel}
           </span>
         )}
