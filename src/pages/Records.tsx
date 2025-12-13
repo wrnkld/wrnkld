@@ -3,13 +3,6 @@ import { PageLayout } from "@/components/PageLayout";
 import { records } from "@/data/records";
 import { Input } from "@/components/ui/input";
 import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
-import {
   Table,
   TableBody,
   TableCell,
@@ -25,16 +18,8 @@ type SortDirection = "asc" | "desc";
 
 export default function Records() {
   const [search, setSearch] = useState("");
-  const [decadeFilter, setDecadeFilter] = useState<string>("all");
   const [sortField, setSortField] = useState<SortField>("year");
   const [sortDirection, setSortDirection] = useState<SortDirection>("desc");
-
-  const decades = useMemo(() => {
-    const uniqueDecades = [
-      ...new Set(records.map((r) => Math.floor(r.year / 10) * 10)),
-    ].sort((a, b) => b - a);
-    return uniqueDecades;
-  }, []);
 
   const filteredAndSortedRecords = useMemo(() => {
     let result = [...records];
@@ -49,13 +34,6 @@ export default function Records() {
       );
     }
 
-    // Decade filter
-    if (decadeFilter !== "all") {
-      const decade = parseInt(decadeFilter);
-      result = result.filter(
-        (record) => record.year >= decade && record.year < decade + 10
-      );
-    }
 
     // Sort
     result.sort((a, b) => {
@@ -69,7 +47,7 @@ export default function Records() {
     });
 
     return result;
-  }, [search, decadeFilter, sortField, sortDirection]);
+  }, [search, sortField, sortDirection]);
 
   const handleSort = (field: SortField) => {
     if (sortField === field) {
@@ -104,37 +82,16 @@ export default function Records() {
         My record collection spanning seven decades.
       </p>
 
-      {/* Filters */}
-      <div className="flex flex-col sm:flex-row gap-4 mb-6">
-        <div className="relative flex-1">
-          <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
-          <Input
-            placeholder="Search by album or artist..."
-            value={search}
-            onChange={(e) => setSearch(e.target.value)}
-            className="pl-9"
-          />
-        </div>
-        <Select value={decadeFilter} onValueChange={setDecadeFilter}>
-          <SelectTrigger className="w-full sm:w-[140px]">
-            <SelectValue placeholder="Decade" />
-          </SelectTrigger>
-          <SelectContent>
-            <SelectItem value="all">All decades</SelectItem>
-            {decades.map((decade) => (
-              <SelectItem key={decade} value={decade.toString()}>
-                {decade}s
-              </SelectItem>
-            ))}
-          </SelectContent>
-        </Select>
+      {/* Search */}
+      <div className="relative mb-6">
+        <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
+        <Input
+          placeholder={`Search [${records.length} records]`}
+          value={search}
+          onChange={(e) => setSearch(e.target.value)}
+          className="pl-9"
+        />
       </div>
-
-      {/* Count */}
-      <p className="text-sm text-muted-foreground mb-4">
-        {filteredAndSortedRecords.length} record
-        {filteredAndSortedRecords.length !== 1 ? "s" : ""}
-      </p>
 
       {/* Table */}
       <div className="border border-border rounded-md overflow-hidden">
