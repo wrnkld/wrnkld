@@ -3,7 +3,7 @@ import { PageLayout } from "@/components/PageLayout";
 export default function OnTools() {
   return (
     <PageLayout title="On Tools" subtitle="Words">
-      <article className="font-body text-lg leading-relaxed space-y-6 text-muted-foreground">
+      <article className="prose space-y-6">
         <p>
           Tools shape how we think. The medium is not neutral. Design in Figma 
           and you'll think in frames and components. Design in code and you'll 

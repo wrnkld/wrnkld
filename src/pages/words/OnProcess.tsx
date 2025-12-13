@@ -3,7 +3,7 @@ import { PageLayout } from "@/components/PageLayout";
 export default function OnProcess() {
   return (
     <PageLayout title="On Process" subtitle="Words">
-      <article className="font-body text-lg leading-relaxed space-y-6 text-muted-foreground">
+      <article className="prose space-y-6">
         <p>
           Process is a tool, not a religion. The goal isn't to follow a process 
           perfectly—it's to make good things. If your process is getting in the 
