@@ -25,7 +25,7 @@ export default function About() {
               <p className="font-body text-muted-foreground">{job.role}</p>
             </div>
             <p className="font-body text-muted-foreground">{job.location}</p>
-            <p className="font-body text-muted-foreground tabular-nums text-left">{job.years}</p>
+            <p className="font-body text-muted-foreground tabular-nums">{job.years}</p>
           </div>
         ))}
       </div>
