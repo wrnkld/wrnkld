@@ -7,9 +7,10 @@ interface PortfolioCardProps {
   to: string;
   colorClass: string;
   index: number;
+  seriesLabel?: string;
 }
 
-export function PortfolioCard({ title, subtitle, to, colorClass, index }: PortfolioCardProps) {
+export function PortfolioCard({ title, subtitle, to, colorClass, index, seriesLabel }: PortfolioCardProps) {
   return (
     <Link
       to={to}
@@ -26,6 +27,11 @@ export function PortfolioCard({ title, subtitle, to, colorClass, index }: Portfo
       </div>
       
       <div>
+        {seriesLabel && (
+          <span className="text-sm font-body opacity-70 block mb-2">
+            {seriesLabel}
+          </span>
+        )}
         <h3 className="font-display text-2xl md:text-3xl font-semibold leading-tight">
           {title}
         </h3>
