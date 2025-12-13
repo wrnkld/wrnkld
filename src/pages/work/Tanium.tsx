@@ -60,8 +60,8 @@ export default function Tanium() {
         </p>
       </div>
 
-      {/* Full-width image */}
-      <div className="mt-12">
+      {/* Large image */}
+      <div className="mt-12 max-w-4xl mx-auto px-6">
         <img src={taniumAssuranceFindings} alt="Tanium Assurance Findings" className="w-full h-auto" />
       </div>
 
@@ -75,13 +75,13 @@ export default function Tanium() {
         </p>
       </div>
 
-      {/* Full-width image */}
-      <div className="mt-12">
+      {/* Large image */}
+      <div className="mt-12 max-w-4xl mx-auto px-6">
         <img src={taniumDiscoverInterfaces} alt="Tanium Discover Interfaces" className="w-full h-auto" />
       </div>
 
-      {/* Full-width image */}
-      <div className="mt-8">
+      {/* Large image */}
+      <div className="mt-8 max-w-4xl mx-auto px-6">
         <img src={taniumAssetVendor} alt="Tanium Asset Vendor" className="w-full h-auto" />
       </div>
     </PageLayout>
