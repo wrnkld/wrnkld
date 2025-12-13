@@ -2,13 +2,13 @@ import { useRef, useState } from "react";
 import { PortfolioCard } from "@/components/PortfolioCard";
 
 const cards = [
-  { title: "Pt 1 → TMI", subtitle: "Design & AI", to: "/tmi", colorClass: "card-terracotta" },
-  { title: "Pt 2 → Vibes", subtitle: "Design & AI", to: "/vibes", colorClass: "card-forest" },
-  { title: "Pt 3 → Real, Real", subtitle: "Design & AI", to: "/real-real", colorClass: "card-navy" },
-  { title: "Experience", subtitle: "About", to: "/about", colorClass: "card-mustard" },
+  { title: "Pt 1 → TMI", subtitle: "Design & AI", to: "/designai/tmi", colorClass: "card-terracotta" },
+  { title: "Pt 2 → Vibes", subtitle: "Design & AI", to: "/designai/vibes", colorClass: "card-forest" },
+  { title: "Pt 3 → Real, Real", subtitle: "Design & AI", to: "/designai/realreal", colorClass: "card-navy" },
+  { title: "Experience", subtitle: "About", to: "/about/experience", colorClass: "card-mustard" },
   { title: "Tanium", subtitle: "Work", to: "/work/tanium", colorClass: "card-coral" },
-  { title: "Books", subtitle: "About", to: "/books", colorClass: "card-slate" },
-  { title: "Records", subtitle: "About", to: "/records", colorClass: "card-plum" },
+  { title: "Books", subtitle: "About", to: "/about/books", colorClass: "card-slate" },
+  { title: "Records", subtitle: "About", to: "/about/records", colorClass: "card-plum" },
   { title: "Red Hat", subtitle: "Work", to: "/work/redhat", colorClass: "card-teal" },
   { title: "SAS", subtitle: "Work", to: "/work/sas", colorClass: "card-terracotta" },
 ];
