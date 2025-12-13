@@ -7,15 +7,16 @@ interface PageLayoutProps {
   subtitle?: string;
   children: ReactNode;
   accentColor?: string;
+  fullWidthContent?: boolean;
 }
 
-export function PageLayout({ title, subtitle, children, accentColor }: PageLayoutProps) {
+export function PageLayout({ title, subtitle, children, accentColor, fullWidthContent = false }: PageLayoutProps) {
   const [isHovered, setIsHovered] = useState(false);
 
   return (
     <div className="min-h-screen bg-background">
-      <div className="max-w-4xl mx-auto px-6 py-12 md:py-20">
-        <header className="mb-12 animate-fade-in">
+      <div className={`${fullWidthContent ? '' : 'max-w-4xl mx-auto px-6'} py-12 md:py-20`}>
+        <header className={`mb-12 animate-fade-in ${fullWidthContent ? 'max-w-4xl mx-auto px-6' : ''}`}>
           {subtitle && (
             <Link 
               to="/"
