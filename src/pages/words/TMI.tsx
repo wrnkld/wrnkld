@@ -18,10 +18,10 @@ export default function TMI() {
         <article className="prose space-y-6">
 
           <p>
-            Every time I log into LinkedIn, a product designer is bragging about how they 
-            took their MCP server, jammed it into Perplexity, and generated design tokens 
-            for Claude 27. I'm not here to brag — just to tell my story with AI tools. 
-            I'll start with a bit of history (TMI) and then talk through building a real app.
+            Every time I log into LinkedIn, a product designer is sharing how they took 
+            their MCP server, plugged it into Perplexity, and generated design tokens 
+            for Claude 27. Here's my own experience with AI tools. I'll start with a bit 
+            of history (TMI) and then talk through building a real app.
           </p>
 
           <p className="relative">
