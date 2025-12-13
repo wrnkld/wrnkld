@@ -1,4 +1,5 @@
 import { PageLayout } from "@/components/PageLayout";
+import { ImageGallery } from "@/components/ImageGallery";
 
 import taniumAssetVendor from "@/assets/tanium/tanium-asset-vendor.png";
 import taniumAssuranceFindings from "@/assets/tanium/tanium-assurance-findings.png";
@@ -25,7 +26,7 @@ export default function Tanium() {
           time navigating between features and not enough time responding to threats.
         </p>
 
-        {/* Navigation section */}
+        {/* Navigation section - video + stacked images */}
         <div className="space-y-4">
           <h2 className="font-display text-xl font-semibold">Unified Navigation</h2>
           <p className="prose">
@@ -43,7 +44,7 @@ export default function Tanium() {
           <img src={taniumNavigationViews} alt="Tanium Navigation Views" className="w-full" />
         </div>
 
-        {/* Threat Response section */}
+        {/* Threat Response section - horizontal gallery */}
         <div className="space-y-4">
           <h2 className="font-display text-xl font-semibold">Threat Response</h2>
           <p className="prose">
@@ -51,11 +52,14 @@ export default function Tanium() {
             interface that surfaced critical alerts and provided immediate context 
             for investigation.
           </p>
-          <img src={taniumThreatAlerts} alt="Tanium Threat Alerts" className="w-full" />
-          <img src={taniumThreatDocuments} alt="Tanium Threat Documents" className="w-full" />
+          <ImageGallery images={[
+            { src: taniumThreatAlerts, alt: "Tanium Threat Alerts" },
+            { src: taniumThreatDocuments, alt: "Tanium Threat Documents" },
+            { src: taniumEnforceOverview, alt: "Tanium Enforce Overview" },
+          ]} />
         </div>
 
-        {/* Assurance section */}
+        {/* Assurance section - video + stacked */}
         <div className="space-y-4">
           <h2 className="font-display text-xl font-semibold">Compliance & Assurance</h2>
           <p className="prose">
@@ -71,10 +75,9 @@ export default function Tanium() {
             className="w-full"
           />
           <img src={taniumAssuranceFindings} alt="Tanium Assurance Findings" className="w-full" />
-          <img src={taniumEnforceOverview} alt="Tanium Enforce Overview" className="w-full" />
         </div>
 
-        {/* Discover section */}
+        {/* Discover section - video + horizontal gallery */}
         <div className="space-y-4">
           <h2 className="font-display text-xl font-semibold">Asset Discovery</h2>
           <p className="prose">
@@ -90,8 +93,10 @@ export default function Tanium() {
             playsInline
             className="w-full"
           />
-          <img src={taniumDiscoverInterfaces} alt="Tanium Discover Interfaces" className="w-full" />
-          <img src={taniumAssetVendor} alt="Tanium Asset Vendor" className="w-full" />
+          <ImageGallery images={[
+            { src: taniumDiscoverInterfaces, alt: "Tanium Discover Interfaces" },
+            { src: taniumAssetVendor, alt: "Tanium Asset Vendor" },
+          ]} />
         </div>
 
         <h2 className="font-display text-xl font-semibold mt-12 mb-4">The Outcome</h2>
