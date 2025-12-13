@@ -13,30 +13,22 @@ export default function Tanium() {
     <PageLayout title="Tanium" subtitle="Work" fullWidthContent>
       <div className="max-w-4xl mx-auto px-6 space-y-6">
         <p className="prose mb-8">
-          Enterprise security platform redesign. Led the product design for their 
-          next-generation endpoint management console, serving millions of endpoints 
-          across Fortune 500 companies.
+          Tanium is a large-scale endpoint security platform used by some of the world's biggest organizations to manage, secure, and respond across millions of devices in real time. I worked on the product during a period of rapid growth and sustained pressure.
         </p>
         
-        <h2 className="font-display text-xl font-semibold mt-12 mb-4">The Challenge</h2>
+        <h2 className="font-display text-xl font-semibold mt-12 mb-4">Challenge</h2>
         <p className="prose">
-          Tanium's existing interface was built for power users but had become 
-          unwieldy as the product expanded. Security teams were spending too much 
-          time navigating between features and not enough time responding to threats.
+          Support as many products as humanly possible, move fast, and keep shipping through peak COVID years—when timelines were tight, stakes were high, and work was a reliable distraction.
         </p>
         
-        <h2 className="font-display text-xl font-semibold mt-12 mb-4">The Approach</h2>
+        <h2 className="font-display text-xl font-semibold mt-12 mb-4">Reinvent</h2>
         <p className="prose">
-          We conducted extensive research with security operations teams, mapping 
-          their workflows and identifying the key moments that mattered most. The 
-          redesign focused on surfacing critical information and reducing clicks 
-          for common actions.
+          Redesigned three flagship products—Discover, Asset, and Threat Response—simplifying dense interfaces, tightening information architecture, and speeding up core security workflows.
         </p>
         
-        <h2 className="font-display text-xl font-semibold mt-12 mb-4">The Outcome</h2>
+        <h2 className="font-display text-xl font-semibold mt-12 mb-4">Ship</h2>
         <p className="prose">
-          The new design reduced average task completion time by 40% and received 
-          overwhelmingly positive feedback from enterprise customers during beta testing.
+          Built and shipped two entirely new products from scratch: Assure, focused on MITRE ATT&CK visibility, and Enforce, designed for policy enforcement at enterprise scale.
         </p>
       </div>
 
@@ -55,16 +47,6 @@ export default function Tanium() {
         </div>
       </div>
 
-      {/* Text section */}
-      <div className="max-w-4xl mx-auto px-6 mt-12">
-        <h2 className="font-display text-xl font-semibold mb-4">Security at Scale</h2>
-        <p className="prose">
-          The redesigned console provides security teams with immediate visibility 
-          into their entire endpoint landscape, enabling faster threat detection 
-          and response across enterprise environments.
-        </p>
-      </div>
-
       {/* Video - Assurance */}
       <div className="mt-12 max-w-6xl mx-auto px-6">
         <video src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/TaniumAssurance-9svGoSVb8LcrLJspg2EBTzCy2PrLfv.mov" autoPlay loop muted playsInline className="w-full h-auto" />
@@ -75,15 +57,6 @@ export default function Tanium() {
         <img src={taniumAssuranceFindings} alt="Tanium Assurance Findings" className="w-full h-auto" />
       </div>
 
-      {/* Text section */}
-      <div className="max-w-4xl mx-auto px-6 mt-12">
-        <h2 className="font-display text-xl font-semibold mb-4">Discovery & Asset Management</h2>
-        <p className="prose">
-          Understanding what's on the network is the first step to securing it. 
-          The asset discovery features help teams maintain visibility across 
-          complex enterprise environments.
-        </p>
-      </div>
 
       {/* Video - Discover */}
       <div className="mt-12 max-w-6xl mx-auto px-6">
