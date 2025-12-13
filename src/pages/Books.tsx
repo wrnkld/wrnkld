@@ -107,10 +107,10 @@ export default function Books() {
               <TableHead>
                 <SortButton field="title">Title</SortButton>
               </TableHead>
-              <TableHead className="w-[100px]">
+              <TableHead className="w-[100px] hidden md:table-cell">
                 <SortButton field="year">Published</SortButton>
               </TableHead>
-              <TableHead className="w-[100px]">
+              <TableHead className="w-[100px] hidden md:table-cell">
                 <SortButton field="yearRead">Read</SortButton>
               </TableHead>
             </TableRow>
@@ -133,10 +133,10 @@ export default function Books() {
                   {book.author}
                 </TableCell>
                 <TableCell className="text-foreground">{book.title}</TableCell>
-                <TableCell className="text-muted-foreground">
+                <TableCell className="text-muted-foreground hidden md:table-cell">
                   {book.year}
                 </TableCell>
-                <TableCell className="text-muted-foreground">
+                <TableCell className="text-muted-foreground hidden md:table-cell">
                   {book.yearRead}
                 </TableCell>
               </TableRow>
