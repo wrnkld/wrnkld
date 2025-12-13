@@ -94,7 +94,7 @@ export default function Books() {
       </div>
 
       {/* Table */}
-      <div className="border border-border rounded-md overflow-hidden">
+      <div className="border border-border rounded-md overflow-hidden prose">
         <Table>
           <TableHeader>
             <TableRow className="bg-muted/50">
@@ -126,13 +126,13 @@ export default function Books() {
                   )}
                 </TableCell>
                 <TableCell className="font-medium">{book.title}</TableCell>
-                <TableCell className="text-muted-foreground">
+                <TableCell>
                   {book.author}
                 </TableCell>
-                <TableCell className="text-right text-muted-foreground">
+                <TableCell className="text-right">
                   {book.year}
                 </TableCell>
-                <TableCell className="text-right text-muted-foreground">
+                <TableCell className="text-right">
                   {book.yearRead}
                 </TableCell>
               </TableRow>

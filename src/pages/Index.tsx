@@ -18,7 +18,7 @@ export default function Index() {
       {/* Header Section */}
       <header className="px-6 pt-16 md:pt-24 pb-16 md:pb-20">
         <div className="max-w-2xl mx-auto animate-fade-in">
-          <h1 className="font-display text-3xl md:text-4xl font-semibold text-foreground mb-8 text-left">
+          <h1 className="font-display text-2xl md:text-3xl font-semibold text-foreground mb-8 text-left">
             Matthew Stevens
           </h1>
           <p className="prose text-balance">

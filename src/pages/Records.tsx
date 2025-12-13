@@ -94,7 +94,7 @@ export default function Records() {
       </div>
 
       {/* Table */}
-      <div className="border border-border rounded-md overflow-hidden">
+      <div className="border border-border rounded-md overflow-hidden prose">
         <Table>
           <TableHeader>
             <TableRow className="bg-muted/50">
@@ -117,10 +117,10 @@ export default function Records() {
                 style={{ animationDelay: `${Math.min(index * 20, 500)}ms` }}
               >
                 <TableCell className="font-medium">{record.artist}</TableCell>
-                <TableCell className="text-muted-foreground">
+                <TableCell>
                   {record.album}
                 </TableCell>
-                <TableCell className="text-right text-muted-foreground">
+                <TableCell className="text-right">
                   {record.year}
                 </TableCell>
               </TableRow>
