@@ -1,4 +1,5 @@
 import { PageLayout } from "@/components/PageLayout";
+import { ImageGallery } from "@/components/ImageGallery";
 
 import rhbaAssetsList from "@/assets/redhat/rhba-assets-list.png";
 import rhbaComments from "@/assets/redhat/rhba-comments.png";
@@ -16,10 +17,28 @@ import rhboEmployees from "@/assets/redhat/rhbo-employees.png";
 import rhboRoster from "@/assets/redhat/rhbo-roster.png";
 import rhboRoute from "@/assets/redhat/rhbo-route.png";
 
+const images = [
+  { src: rhbaWorkflowModeler, alt: "Red Hat Business Automation Workflow Modeler" },
+  { src: rhbaPropertiesPanel, alt: "Red Hat Business Automation Properties Panel" },
+  { src: rhbaNavigator, alt: "Red Hat Business Automation Navigator" },
+  { src: rhbaAssetsList, alt: "Red Hat Business Automation Assets List" },
+  { src: rhbaSpace, alt: "Red Hat Business Automation Space" },
+  { src: rhbaProjectMetrics, alt: "Red Hat Business Automation Project Metrics" },
+  { src: rhbaContributors, alt: "Red Hat Business Automation Contributors" },
+  { src: rhbaComments, alt: "Red Hat Business Automation Comments" },
+  { src: rhbaVersionControl, alt: "Red Hat Business Automation Version Control" },
+  { src: rhbaTrack, alt: "Red Hat Business Automation Track" },
+  { src: rhbaEmptyState, alt: "Red Hat Business Automation Empty State" },
+  { src: rhboAvailability, alt: "Red Hat Business Optaplanner Availability" },
+  { src: rhboEmployees, alt: "Red Hat Business Optaplanner Employees" },
+  { src: rhboRoster, alt: "Red Hat Business Optaplanner Roster" },
+  { src: rhboRoute, alt: "Red Hat Business Optaplanner Route" },
+];
+
 export default function RedHat() {
   return (
-    <PageLayout title="Red Hat" subtitle="Work">
-      <div className="space-y-6">
+    <PageLayout title="Red Hat" subtitle="Work" fullWidthContent>
+      <div className="max-w-4xl mx-auto px-6 space-y-6">
         <p className="prose mb-8">
           Design system and developer experience. Built the foundations for 
           consistent design across Red Hat's suite of developer tools and 
@@ -45,24 +64,10 @@ export default function RedHat() {
           PatternFly became the standard across Red Hat's product lines and was 
           open-sourced, gaining adoption in the broader enterprise design community.
         </p>
+      </div>
 
-        <div className="grid gap-4 mt-12">
-          <img src={rhbaWorkflowModeler} alt="Red Hat Business Automation Workflow Modeler" className="w-full rounded-md border border-border" />
-          <img src={rhbaPropertiesPanel} alt="Red Hat Business Automation Properties Panel" className="w-full rounded-md border border-border" />
-          <img src={rhbaNavigator} alt="Red Hat Business Automation Navigator" className="w-full rounded-md border border-border" />
-          <img src={rhbaAssetsList} alt="Red Hat Business Automation Assets List" className="w-full rounded-md border border-border" />
-          <img src={rhbaSpace} alt="Red Hat Business Automation Space" className="w-full rounded-md border border-border" />
-          <img src={rhbaProjectMetrics} alt="Red Hat Business Automation Project Metrics" className="w-full rounded-md border border-border" />
-          <img src={rhbaContributors} alt="Red Hat Business Automation Contributors" className="w-full rounded-md border border-border" />
-          <img src={rhbaComments} alt="Red Hat Business Automation Comments" className="w-full rounded-md border border-border" />
-          <img src={rhbaVersionControl} alt="Red Hat Business Automation Version Control" className="w-full rounded-md border border-border" />
-          <img src={rhbaTrack} alt="Red Hat Business Automation Track" className="w-full rounded-md border border-border" />
-          <img src={rhbaEmptyState} alt="Red Hat Business Automation Empty State" className="w-full rounded-md border border-border" />
-          <img src={rhboAvailability} alt="Red Hat Business Optaplanner Availability" className="w-full rounded-md border border-border" />
-          <img src={rhboEmployees} alt="Red Hat Business Optaplanner Employees" className="w-full rounded-md border border-border" />
-          <img src={rhboRoster} alt="Red Hat Business Optaplanner Roster" className="w-full rounded-md border border-border" />
-          <img src={rhboRoute} alt="Red Hat Business Optaplanner Route" className="w-full rounded-md border border-border" />
-        </div>
+      <div className="mt-12">
+        <ImageGallery images={images} />
       </div>
     </PageLayout>
   );

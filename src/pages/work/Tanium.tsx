@@ -1,4 +1,5 @@
 import { PageLayout } from "@/components/PageLayout";
+import { ImageGallery } from "@/components/ImageGallery";
 
 import taniumAssetVendor from "@/assets/tanium/tanium-asset-vendor.png";
 import taniumAssuranceFindings from "@/assets/tanium/tanium-assurance-findings.png";
@@ -8,10 +9,20 @@ import taniumNavigationViews from "@/assets/tanium/tanium-navigation-views.png";
 import taniumThreatAlerts from "@/assets/tanium/tanium-threat-alerts.png";
 import taniumThreatDocuments from "@/assets/tanium/tanium-threat-documents.png";
 
+const images = [
+  { src: taniumNavigationViews, alt: "Tanium Navigation Views" },
+  { src: taniumThreatAlerts, alt: "Tanium Threat Alerts" },
+  { src: taniumThreatDocuments, alt: "Tanium Threat Documents" },
+  { src: taniumEnforceOverview, alt: "Tanium Enforce Overview" },
+  { src: taniumAssuranceFindings, alt: "Tanium Assurance Findings" },
+  { src: taniumAssetVendor, alt: "Tanium Asset Vendor" },
+  { src: taniumDiscoverInterfaces, alt: "Tanium Discover Interfaces" },
+];
+
 export default function Tanium() {
   return (
-    <PageLayout title="Tanium" subtitle="Work">
-      <div className="space-y-6">
+    <PageLayout title="Tanium" subtitle="Work" fullWidthContent>
+      <div className="max-w-4xl mx-auto px-6 space-y-6">
         <p className="prose mb-8">
           Enterprise security platform redesign. Led the product design for their 
           next-generation endpoint management console, serving millions of endpoints 
@@ -38,16 +49,10 @@ export default function Tanium() {
           The new design reduced average task completion time by 40% and received 
           overwhelmingly positive feedback from enterprise customers during beta testing.
         </p>
+      </div>
 
-        <div className="grid gap-4 mt-12">
-          <img src={taniumNavigationViews} alt="Tanium Navigation Views" className="w-full rounded-md border border-border" />
-          <img src={taniumThreatAlerts} alt="Tanium Threat Alerts" className="w-full rounded-md border border-border" />
-          <img src={taniumThreatDocuments} alt="Tanium Threat Documents" className="w-full rounded-md border border-border" />
-          <img src={taniumEnforceOverview} alt="Tanium Enforce Overview" className="w-full rounded-md border border-border" />
-          <img src={taniumAssuranceFindings} alt="Tanium Assurance Findings" className="w-full rounded-md border border-border" />
-          <img src={taniumAssetVendor} alt="Tanium Asset Vendor" className="w-full rounded-md border border-border" />
-          <img src={taniumDiscoverInterfaces} alt="Tanium Discover Interfaces" className="w-full rounded-md border border-border" />
-        </div>
+      <div className="mt-12">
+        <ImageGallery images={images} />
       </div>
     </PageLayout>
   );
