@@ -102,7 +102,7 @@ export default function Books() {
   );
 
   return (
-    <PageLayout title="Books" subtitle="Reading List">
+    <PageLayout title="Books" subtitle="About">
       <p className="font-body text-lg text-muted-foreground leading-relaxed mb-8">
         Books I've read since 2022. Stars indicate personal recommendations.
       </p>
