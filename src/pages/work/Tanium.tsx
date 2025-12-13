@@ -2,7 +2,7 @@ import { PageLayout } from "@/components/PageLayout";
 
 export default function Tanium() {
   return (
-    <PageLayout title="Tanium" subtitle="Case Study">
+    <PageLayout title="Tanium" subtitle="Work">
       <div className="prose prose-lg max-w-none">
         <p className="font-body text-lg text-muted-foreground leading-relaxed mb-8">
           Enterprise security platform redesign. Led the product design for their 
