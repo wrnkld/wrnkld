@@ -68,7 +68,7 @@ export default function Records() {
     <Button
       variant="ghost"
       size="sm"
-      className="-ml-3 h-8 hover:bg-transparent text-lg font-semibold"
+      className="-ml-3 h-8 hover:bg-transparent text-lg !font-semibold"
       onClick={() => handleSort(field)}
     >
       {children}
