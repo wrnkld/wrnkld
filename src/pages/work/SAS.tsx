@@ -2,7 +2,7 @@ import { PageLayout } from "@/components/PageLayout";
 
 export default function SAS() {
   return (
-    <PageLayout title="SAS" subtitle="Case Study">
+    <PageLayout title="SAS" subtitle="Work">
       <div className="prose prose-lg max-w-none">
         <p className="font-body text-lg text-muted-foreground leading-relaxed mb-8">
           Analytics platform modernization. Helped transition a legacy analytics 

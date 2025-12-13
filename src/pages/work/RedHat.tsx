@@ -2,7 +2,7 @@ import { PageLayout } from "@/components/PageLayout";
 
 export default function RedHat() {
   return (
-    <PageLayout title="Red Hat" subtitle="Case Study">
+    <PageLayout title="Red Hat" subtitle="Work">
       <div className="prose prose-lg max-w-none">
         <p className="font-body text-lg text-muted-foreground leading-relaxed mb-8">
           Design system and developer experience. Built the foundations for 
