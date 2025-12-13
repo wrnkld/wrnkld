@@ -40,16 +40,49 @@ export default function Tanium() {
         </p>
       </div>
 
-      <div className="mt-12 max-w-6xl mx-auto px-6">
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-          <img src={taniumNavigationViews} alt="Tanium Navigation Views" className="col-span-2 w-full h-auto transition-all duration-300 hover:scale-[1.02] hover:-translate-y-2" />
+      {/* 4-column grid */}
+      <div className="mt-12 max-w-4xl mx-auto px-6">
+        <div className="grid grid-cols-4 gap-4">
+          <img src={taniumNavigationViews} alt="Tanium Navigation Views" className="w-full h-auto transition-all duration-300 hover:scale-[1.02] hover:-translate-y-2" />
           <img src={taniumThreatAlerts} alt="Tanium Threat Alerts" className="w-full h-auto transition-all duration-300 hover:scale-[1.02] hover:-translate-y-2" />
           <img src={taniumThreatDocuments} alt="Tanium Threat Documents" className="w-full h-auto transition-all duration-300 hover:scale-[1.02] hover:-translate-y-2" />
-          <img src={taniumEnforceOverview} alt="Tanium Enforce Overview" className="col-span-2 md:col-span-1 w-full h-auto transition-all duration-300 hover:scale-[1.02] hover:-translate-y-2" />
-          <img src={taniumAssuranceFindings} alt="Tanium Assurance Findings" className="w-full h-auto transition-all duration-300 hover:scale-[1.02] hover:-translate-y-2" />
-          <img src={taniumAssetVendor} alt="Tanium Asset Vendor" className="w-full h-auto transition-all duration-300 hover:scale-[1.02] hover:-translate-y-2" />
-          <img src={taniumDiscoverInterfaces} alt="Tanium Discover Interfaces" className="col-span-2 md:col-span-1 w-full h-auto transition-all duration-300 hover:scale-[1.02] hover:-translate-y-2" />
+          <img src={taniumEnforceOverview} alt="Tanium Enforce Overview" className="w-full h-auto transition-all duration-300 hover:scale-[1.02] hover:-translate-y-2" />
         </div>
+      </div>
+
+      {/* Text section */}
+      <div className="max-w-4xl mx-auto px-6 mt-12">
+        <h2 className="font-display text-xl font-semibold mb-4">Security at Scale</h2>
+        <p className="prose">
+          The redesigned console provides security teams with immediate visibility 
+          into their entire endpoint landscape, enabling faster threat detection 
+          and response across enterprise environments.
+        </p>
+      </div>
+
+      {/* Full-width image */}
+      <div className="mt-12">
+        <img src={taniumAssuranceFindings} alt="Tanium Assurance Findings" className="w-full h-auto" />
+      </div>
+
+      {/* Text section */}
+      <div className="max-w-4xl mx-auto px-6 mt-12">
+        <h2 className="font-display text-xl font-semibold mb-4">Discovery & Asset Management</h2>
+        <p className="prose">
+          Understanding what's on the network is the first step to securing it. 
+          The asset discovery features help teams maintain visibility across 
+          complex enterprise environments.
+        </p>
+      </div>
+
+      {/* Full-width image */}
+      <div className="mt-12">
+        <img src={taniumDiscoverInterfaces} alt="Tanium Discover Interfaces" className="w-full h-auto" />
+      </div>
+
+      {/* Full-width image */}
+      <div className="mt-8">
+        <img src={taniumAssetVendor} alt="Tanium Asset Vendor" className="w-full h-auto" />
       </div>
     </PageLayout>
   );
