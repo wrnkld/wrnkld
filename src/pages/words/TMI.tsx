@@ -75,10 +75,11 @@ export default function TMI() {
 
           <p>
             So what? My point: design is abstraction. Everything is a prototype. Figma 
-            is boxes. Sketch was boxes. Photoshop was boxes. Every tool has been pictures 
-            of something — wired together, animated, exported, recreated. Tools come, 
-            tools go, designers argue passionately about all of them… and the work remains 
-            fundamentally the same: translating ideas into reality.
+            is boxes. Sketch was boxes. Photoshop was boxes. Some of those boxes clicked; 
+            none were the thing itself. Every tool has been pictures of something — wired 
+            together, animated, exported, recreated. Tools come, tools go, designers argue 
+            passionately about all of them… and the work remains fundamentally the same: 
+            translating ideas into reality.
           </p>
 
           <p className="font-display text-xl text-foreground">
