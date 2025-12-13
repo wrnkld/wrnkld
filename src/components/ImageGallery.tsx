@@ -4,8 +4,8 @@ interface ImageGalleryProps {
 
 export function ImageGallery({ images }: ImageGalleryProps) {
   return (
-    <div className="w-full overflow-x-auto pb-4 scrollbar-hide">
-      <div className="flex gap-4 w-max">
+    <div className="overflow-x-auto overflow-y-visible scrollbar-hide">
+      <div className="flex gap-4 px-6 md:px-[calc((100vw-896px)/2+24px)]" style={{ width: "max-content" }}>
         {images.map((image, index) => (
           <img
             key={index}
