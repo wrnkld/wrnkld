@@ -30,7 +30,9 @@ export default function Books() {
       result = result.filter(
         (book) =>
           book.title.toLowerCase().includes(searchLower) ||
-          book.author.toLowerCase().includes(searchLower)
+          book.author.toLowerCase().includes(searchLower) ||
+          book.year.toString().includes(searchLower) ||
+          book.yearRead.toString().includes(searchLower)
       );
     }
 
@@ -99,16 +101,16 @@ export default function Books() {
           <TableHeader>
             <TableRow className="bg-muted/50">
               <TableHead className="w-[40px]"></TableHead>
-              <TableHead className="text-right">
+              <TableHead>
                 <SortButton field="author">Author</SortButton>
               </TableHead>
-              <TableHead className="text-right">
+              <TableHead>
                 <SortButton field="title">Title</SortButton>
               </TableHead>
-              <TableHead className="w-[100px] text-right">
+              <TableHead className="w-[100px]">
                 <SortButton field="year">Published</SortButton>
               </TableHead>
-              <TableHead className="w-[100px] text-right">
+              <TableHead className="w-[100px]">
                 <SortButton field="yearRead">Read</SortButton>
               </TableHead>
             </TableRow>
@@ -125,14 +127,14 @@ export default function Books() {
                     <Star className="h-4 w-4 text-yellow-500 fill-yellow-500" />
                   )}
                 </TableCell>
-                <TableCell className="text-right text-muted-foreground">
+                <TableCell className="text-muted-foreground">
                   {book.author}
                 </TableCell>
-                <TableCell className="text-right text-foreground">{book.title}</TableCell>
-                <TableCell className="text-right text-muted-foreground">
+                <TableCell className="text-foreground">{book.title}</TableCell>
+                <TableCell className="text-muted-foreground">
                   {book.year}
                 </TableCell>
-                <TableCell className="text-right text-muted-foreground">
+                <TableCell className="text-muted-foreground">
                   {book.yearRead}
                 </TableCell>
               </TableRow>
