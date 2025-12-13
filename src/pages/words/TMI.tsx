@@ -13,7 +13,7 @@ function SideNote({ number, children }: { number: number; children: React.ReactN
 
 export default function TMI() {
   return (
-    <PageLayout title="Pt 1 → TMI" subtitle="Words">
+    <PageLayout title="Pt 1 → TMI" subtitle="Design & AI">
       <div className="relative">
         <article className="prose space-y-6">
 

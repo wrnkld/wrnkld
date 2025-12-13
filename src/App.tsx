@@ -32,9 +32,9 @@ const App = () => (
           <Route path="/work/redhat" element={<RedHat />} />
           <Route path="/books" element={<Books />} />
           <Route path="/records" element={<Records />} />
-          <Route path="/words/tmi" element={<TMI />} />
-          <Route path="/words/vibes" element={<Vibes />} />
-          <Route path="/words/real-real" element={<RealReal />} />
+          <Route path="/tmi" element={<TMI />} />
+          <Route path="/vibes" element={<Vibes />} />
+          <Route path="/real-real" element={<RealReal />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
