@@ -122,10 +122,12 @@ export default function Books() {
                 className="animate-fade-in"
                 style={{ animationDelay: `${Math.min(index * 20, 500)}ms` }}
               >
-                <TableCell className="text-center">
-                  {book.recommended && (
-                    <Star className="h-4 w-4 text-yellow-500 fill-yellow-500" />
-                  )}
+                <TableCell>
+                  <div className="flex justify-center">
+                    {book.recommended && (
+                      <Star className="h-4 w-4 text-yellow-500 fill-yellow-500" />
+                    )}
+                  </div>
                 </TableCell>
                 <TableCell className="text-muted-foreground">
                   {book.author}
