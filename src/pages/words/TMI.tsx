@@ -2,11 +2,8 @@ import { PageLayout } from "@/components/PageLayout";
 
 export default function OnDesign() {
   return (
-    <PageLayout title="Pt 1 → TMI" subtitle="Words">
+    <PageLayout title="Pt 1 → TMI" subtitle="Design & AI">
       <article className="prose space-y-6">
-        <p className="text-sm font-body uppercase tracking-widest text-muted-foreground/70 mb-8">
-          Design & AI
-        </p>
 
         <p>
           Every time I log into LinkedIn, a product designer is bragging about how they 
