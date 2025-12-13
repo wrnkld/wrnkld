@@ -41,7 +41,7 @@ export default function TMI() {
             Fast-forward: I landed at frog design in Austin, Texas. I leaned fully into 
             the design side and set aside the "design technologist" identity. This was 
             peak Photoshop — gradients on gradients, shadows on shadows, buttons that 
-            looked like Mike and Ikes<SideNote number={2}>Delicious and fruity, just like our design work</SideNote>.
+            looked like Mike and Ikes<SideNote number={2}>Josh Hart would eat an entire box of these during film sessions</SideNote>.
           </p>
 
           <p>
@@ -90,7 +90,7 @@ export default function TMI() {
             <hr className="border-border my-12" />
             <div className="space-y-3 text-sm text-muted-foreground">
               <p><sup>1</sup> Psychology major = no ragrets</p>
-              <p><sup>2</sup> Delicious and fruity, just like our design work</p>
+              <p><sup>2</sup> Josh Hart would eat an entire box of these during film sessions</p>
               <p><sup>3</sup> Wild times. We don't talk about WPF.</p>
             </div>
           </div>
