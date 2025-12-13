@@ -14,11 +14,11 @@ const experience = [
 export default function About() {
   return (
     <PageLayout title="Experience" subtitle="About">
-      <div className="space-y-0">
+      <div className="border border-border rounded overflow-hidden">
         {experience.map((job, index) => (
           <div 
             key={index} 
-            className="grid grid-cols-1 md:grid-cols-[1fr_1fr_auto] gap-2 md:gap-8 py-6 border-b border-border last:border-b-0"
+            className="grid grid-cols-1 md:grid-cols-[1fr_1fr_auto] gap-2 md:gap-8 py-6 px-6 border-b border-border last:border-b-0"
           >
             <div>
               <h3 className="font-display text-lg font-medium text-foreground">{job.company}</h3>
