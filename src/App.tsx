@@ -26,15 +26,15 @@ const App = () => (
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Index />} />
-          <Route path="/about" element={<About />} />
+          <Route path="/about/experience" element={<About />} />
           <Route path="/work/tanium" element={<Tanium />} />
           <Route path="/work/sas" element={<SAS />} />
           <Route path="/work/redhat" element={<RedHat />} />
-          <Route path="/books" element={<Books />} />
-          <Route path="/records" element={<Records />} />
-          <Route path="/tmi" element={<TMI />} />
-          <Route path="/vibes" element={<Vibes />} />
-          <Route path="/real-real" element={<RealReal />} />
+          <Route path="/about/books" element={<Books />} />
+          <Route path="/about/records" element={<Records />} />
+          <Route path="/designai/tmi" element={<TMI />} />
+          <Route path="/designai/vibes" element={<Vibes />} />
+          <Route path="/designai/realreal" element={<RealReal />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
