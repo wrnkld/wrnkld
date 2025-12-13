@@ -149,7 +149,7 @@ export default function Books() {
       </p>
 
       {/* Table */}
-      <div className="border border-border rounded overflow-hidden">
+      <div className="border border-border rounded-md overflow-hidden">
         <Table>
           <TableHeader>
             <TableRow className="bg-muted/50">

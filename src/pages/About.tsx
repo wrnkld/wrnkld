@@ -14,7 +14,7 @@ const experience = [
 export default function About() {
   return (
     <PageLayout title="Experience" subtitle="About">
-      <div className="border border-border rounded overflow-hidden">
+      <div className="border border-border rounded-md overflow-hidden">
         {experience.map((job, index) => (
           <div 
             key={index} 
