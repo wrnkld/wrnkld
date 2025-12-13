@@ -67,8 +67,8 @@ export default function RedHat() {
         </p>
       </div>
 
-      {/* Full-width image */}
-      <div className="mt-12">
+      {/* Large image */}
+      <div className="mt-12 max-w-4xl mx-auto px-6">
         <img src={rhbaWorkflowModeler} alt="Red Hat Business Automation Workflow Modeler" className="w-full h-auto" />
       </div>
 
@@ -92,13 +92,13 @@ export default function RedHat() {
         </p>
       </div>
 
-      {/* Full-width image */}
-      <div className="mt-12">
+      {/* Large image */}
+      <div className="mt-12 max-w-4xl mx-auto px-6">
         <img src={rhbaProjectMetrics} alt="Red Hat Business Automation Project Metrics" className="w-full h-auto" />
       </div>
 
-      {/* Full-width image */}
-      <div className="mt-8">
+      {/* Large image */}
+      <div className="mt-8 max-w-4xl mx-auto px-6">
         <img src={rhbaEmptyState} alt="Red Hat Business Automation Empty State" className="w-full h-auto" />
       </div>
 

@@ -64,8 +64,8 @@ export default function SAS() {
         </p>
       </div>
 
-      {/* Full-width image */}
-      <div className="mt-12">
+      {/* Large image */}
+      <div className="mt-12 max-w-4xl mx-auto px-6">
         <img src={factoryResults} alt="SAS Factory Results" className="w-full h-auto" />
       </div>
 
@@ -89,18 +89,18 @@ export default function SAS() {
         </p>
       </div>
 
-      {/* Full-width image */}
-      <div className="mt-12">
+      {/* Large image */}
+      <div className="mt-12 max-w-4xl mx-auto px-6">
         <img src={visualStatsRoles} alt="SAS Visual Stats Roles" className="w-full h-auto" />
       </div>
 
-      {/* Full-width image */}
-      <div className="mt-8">
+      {/* Large image */}
+      <div className="mt-8 max-w-4xl mx-auto px-6">
         <img src={visualStatsProperties} alt="SAS Visual Stats Properties" className="w-full h-auto" />
       </div>
 
-      {/* Full-width image */}
-      <div className="mt-8">
+      {/* Large image */}
+      <div className="mt-8 max-w-4xl mx-auto px-6">
         <img src={visualStatsShare} alt="SAS Visual Stats Share" className="w-full h-auto" />
       </div>
     </PageLayout>
