@@ -30,7 +30,8 @@ export default function Records() {
       result = result.filter(
         (record) =>
           record.album.toLowerCase().includes(searchLower) ||
-          record.artist.toLowerCase().includes(searchLower)
+          record.artist.toLowerCase().includes(searchLower) ||
+          record.year.toString().includes(searchLower)
       );
     }
 
@@ -98,13 +99,13 @@ export default function Records() {
         <Table>
           <TableHeader>
             <TableRow className="bg-muted/50">
-              <TableHead className="text-right">
+              <TableHead>
                 <SortButton field="artist">Artist</SortButton>
               </TableHead>
-              <TableHead className="text-right">
+              <TableHead>
                 <SortButton field="album">Album</SortButton>
               </TableHead>
-              <TableHead className="w-[100px] text-right">
+              <TableHead className="w-[100px]">
                 <SortButton field="year">Year</SortButton>
               </TableHead>
             </TableRow>
@@ -116,11 +117,11 @@ export default function Records() {
                 className="animate-fade-in"
                 style={{ animationDelay: `${Math.min(index * 20, 500)}ms` }}
               >
-                <TableCell className="text-right text-muted-foreground">{record.artist}</TableCell>
-                <TableCell className="text-right text-foreground">
+                <TableCell className="text-muted-foreground">{record.artist}</TableCell>
+                <TableCell className="text-foreground">
                   {record.album}
                 </TableCell>
-                <TableCell className="text-right text-muted-foreground">
+                <TableCell className="text-muted-foreground">
                   {record.year}
                 </TableCell>
               </TableRow>
