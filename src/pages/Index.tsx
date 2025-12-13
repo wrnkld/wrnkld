@@ -1,3 +1,4 @@
+import { useRef, useState } from "react";
 import { PortfolioCard } from "@/components/PortfolioCard";
 
 const cards = [
@@ -13,6 +14,30 @@ const cards = [
 ];
 
 export default function Index() {
+  const scrollRef = useRef<HTMLDivElement>(null);
+  const [isDragging, setIsDragging] = useState(false);
+  const [startX, setStartX] = useState(0);
+  const [scrollLeft, setScrollLeft] = useState(0);
+
+  const handleMouseDown = (e: React.MouseEvent) => {
+    if (!scrollRef.current) return;
+    setIsDragging(true);
+    setStartX(e.pageX - scrollRef.current.offsetLeft);
+    setScrollLeft(scrollRef.current.scrollLeft);
+  };
+
+  const handleMouseMove = (e: React.MouseEvent) => {
+    if (!isDragging || !scrollRef.current) return;
+    e.preventDefault();
+    const x = e.pageX - scrollRef.current.offsetLeft;
+    const walk = (x - startX) * 1.5;
+    scrollRef.current.scrollLeft = scrollLeft - walk;
+  };
+
+  const handleMouseUp = () => {
+    setIsDragging(false);
+  };
+
   return (
     <div className="min-h-screen bg-background">
       {/* Header Section */}
@@ -29,7 +54,14 @@ export default function Index() {
       
       {/* Horizontal Scrolling Cards */}
       <section className="pb-16 md:pb-24">
-        <div className="overflow-x-auto overflow-y-visible scrollbar-hide">
+        <div 
+          ref={scrollRef}
+          className="overflow-x-auto overflow-y-visible scrollbar-hide cursor-grab active:cursor-grabbing"
+          onMouseDown={handleMouseDown}
+          onMouseMove={handleMouseMove}
+          onMouseUp={handleMouseUp}
+          onMouseLeave={handleMouseUp}
+        >
           <div className="flex gap-6 px-6 pt-4 pb-4" style={{ width: "max-content" }}>
             {cards.map((card, index) => (
               <PortfolioCard
@@ -39,8 +71,6 @@ export default function Index() {
                 to={card.to}
                 colorClass={card.colorClass}
                 index={index}
-                
-                
               />
             ))}
           </div>
