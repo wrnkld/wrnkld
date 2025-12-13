@@ -1,15 +1,15 @@
 import { PortfolioCard } from "@/components/PortfolioCard";
 
 const cards = [
-  { title: "Tanium", subtitle: "Work", to: "/work/tanium", colorClass: "card-terracotta" },
-  { title: "SAS", subtitle: "Work", to: "/work/sas", colorClass: "card-forest" },
-  { title: "Red Hat", subtitle: "Work", to: "/work/redhat", colorClass: "card-navy" },
-  { title: "Experience", subtitle: "About", to: "/about", colorClass: "card-mustard" },
-  { title: "Books", subtitle: "About", to: "/books", colorClass: "card-coral" },
-  { title: "Records", subtitle: "About", to: "/records", colorClass: "card-slate" },
   { title: "Pt 1 → TMI", subtitle: "Design & AI", to: "/words/on-design", colorClass: "card-plum" },
   { title: "Pt 2 → Vibes", subtitle: "Design & AI", to: "/words/on-process", colorClass: "card-teal" },
   { title: "Pt 3 → Real, Real", subtitle: "Design & AI", to: "/words/on-tools", colorClass: "card-terracotta" },
+  { title: "Experience", subtitle: "About", to: "/about", colorClass: "card-mustard" },
+  { title: "Tanium", subtitle: "Work", to: "/work/tanium", colorClass: "card-terracotta" },
+  { title: "Books", subtitle: "About", to: "/books", colorClass: "card-coral" },
+  { title: "Records", subtitle: "About", to: "/records", colorClass: "card-slate" },
+  { title: "Red Hat", subtitle: "Work", to: "/work/redhat", colorClass: "card-navy" },
+  { title: "SAS", subtitle: "Work", to: "/work/sas", colorClass: "card-forest" },
 ];
 
 export default function Index() {
