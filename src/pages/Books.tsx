@@ -100,7 +100,7 @@ export default function Books() {
         <Table>
           <TableHeader>
             <TableRow className="bg-muted/50">
-              <TableHead className="w-10 text-center"></TableHead>
+              <TableHead className="w-12 px-3 text-center"></TableHead>
               <TableHead>
                 <SortButton field="author">Author</SortButton>
               </TableHead>
@@ -122,7 +122,7 @@ export default function Books() {
                 className="animate-fade-in"
                 style={{ animationDelay: `${Math.min(index * 20, 500)}ms` }}
               >
-                <TableCell className="w-10 text-center">
+                <TableCell className="w-12 px-3 text-center !py-4">
                   {book.recommended && (
                     <Star className="h-4 w-4 text-yellow-500 fill-yellow-500 inline-block" />
                   )}
