@@ -105,7 +105,7 @@ export default function Records() {
               <TableHead>
                 <SortButton field="album">Album</SortButton>
               </TableHead>
-              <TableHead className="w-[100px]">
+              <TableHead className="w-[100px] hidden md:table-cell">
                 <SortButton field="year">Year</SortButton>
               </TableHead>
             </TableRow>
@@ -121,7 +121,7 @@ export default function Records() {
                 <TableCell className="text-foreground">
                   {record.album}
                 </TableCell>
-                <TableCell className="text-muted-foreground">
+                <TableCell className="text-muted-foreground hidden md:table-cell">
                   {record.year}
                 </TableCell>
               </TableRow>
