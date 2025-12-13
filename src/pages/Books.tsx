@@ -68,11 +68,11 @@ export default function Books() {
     <Button
       variant="ghost"
       size="sm"
-      className="-ml-3 h-8 hover:bg-transparent"
+      className="-ml-3 h-8 hover:bg-transparent text-lg"
       onClick={() => handleSort(field)}
     >
       {children}
-      <ArrowUpDown className="ml-2 h-3 w-3 text-muted-foreground" />
+      <ArrowUpDown className="ml-2 h-4 w-4 text-muted-foreground" />
     </Button>
   );
 
@@ -126,13 +126,13 @@ export default function Books() {
                   )}
                 </TableCell>
                 <TableCell className="font-medium">{book.title}</TableCell>
-                <TableCell>
+                <TableCell className="text-muted-foreground">
                   {book.author}
                 </TableCell>
-                <TableCell className="text-right">
+                <TableCell className="text-right text-muted-foreground">
                   {book.year}
                 </TableCell>
-                <TableCell className="text-right">
+                <TableCell className="text-right text-muted-foreground">
                   {book.yearRead}
                 </TableCell>
               </TableRow>
