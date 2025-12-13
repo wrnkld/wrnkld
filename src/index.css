@@ -185,6 +185,10 @@
 }
 
 @layer utilities {
+  .prose {
+    @apply font-body text-lg md:text-xl text-muted-foreground leading-relaxed;
+  }
+  
   .scrollbar-hide {
     -ms-overflow-style: none;
     scrollbar-width: none;
