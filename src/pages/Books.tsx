@@ -68,7 +68,7 @@ export default function Books() {
     <Button
       variant="ghost"
       size="sm"
-      className="-ml-3 h-8 hover:bg-transparent text-lg"
+      className="-ml-3 h-8 hover:bg-transparent text-lg font-semibold"
       onClick={() => handleSort(field)}
     >
       {children}
