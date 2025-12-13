@@ -40,6 +40,11 @@ export default function Tanium() {
         </p>
       </div>
 
+      {/* Video - Navigation */}
+      <div className="mt-12 max-w-6xl mx-auto px-6">
+        <video src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/TaniumNavigation-ceK7d3kliX5iYIs21ePVMiAYSHzEsF.mov" autoPlay loop muted playsInline className="w-full h-auto" />
+      </div>
+
       {/* 4-column grid */}
       <div className="mt-12 max-w-4xl mx-auto px-6">
         <div className="grid grid-cols-4 gap-4">
@@ -60,8 +65,13 @@ export default function Tanium() {
         </p>
       </div>
 
-      {/* Large image */}
+      {/* Video - Assurance */}
       <div className="mt-12 max-w-6xl mx-auto px-6">
+        <video src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/TaniumAssurance-9svGoSVb8LcrLJspg2EBTzCy2PrLfv.mov" autoPlay loop muted playsInline className="w-full h-auto" />
+      </div>
+
+      {/* Large image */}
+      <div className="mt-8 max-w-6xl mx-auto px-6">
         <img src={taniumAssuranceFindings} alt="Tanium Assurance Findings" className="w-full h-auto" />
       </div>
 
@@ -75,8 +85,13 @@ export default function Tanium() {
         </p>
       </div>
 
-      {/* Large image */}
+      {/* Video - Discover */}
       <div className="mt-12 max-w-6xl mx-auto px-6">
+        <video src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/TaniumDiscover-RSFf4NVTidfRFMSbmgsXhIo2x4Wo6K.mov" autoPlay loop muted playsInline className="w-full h-auto" />
+      </div>
+
+      {/* Large image */}
+      <div className="mt-8 max-w-6xl mx-auto px-6">
         <img src={taniumDiscoverInterfaces} alt="Tanium Discover Interfaces" className="w-full h-auto" />
       </div>
 
