@@ -1,8 +1,8 @@
 import { PageLayout } from "@/components/PageLayout";
 
-export default function OnTools() {
+export default function RealReal() {
   return (
-    <PageLayout title="On Tools" subtitle="Words">
+    <PageLayout title="Pt 3 → Real, Real" subtitle="Words">
       <article className="prose space-y-6">
         <p>
           Tools shape how we think. The medium is not neutral. Design in Figma 

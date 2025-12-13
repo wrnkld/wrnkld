@@ -1,9 +1,9 @@
 import { PortfolioCard } from "@/components/PortfolioCard";
 
 const cards = [
-  { title: "Pt 1 → TMI", subtitle: "Design & AI", to: "/words/on-design", colorClass: "card-terracotta" },
-  { title: "Pt 2 → Vibes", subtitle: "Design & AI", to: "/words/on-process", colorClass: "card-forest" },
-  { title: "Pt 3 → Real, Real", subtitle: "Design & AI", to: "/words/on-tools", colorClass: "card-navy" },
+  { title: "Pt 1 → TMI", subtitle: "Design & AI", to: "/words/tmi", colorClass: "card-terracotta" },
+  { title: "Pt 2 → Vibes", subtitle: "Design & AI", to: "/words/vibes", colorClass: "card-forest" },
+  { title: "Pt 3 → Real, Real", subtitle: "Design & AI", to: "/words/real-real", colorClass: "card-navy" },
   { title: "Experience", subtitle: "About", to: "/about", colorClass: "card-mustard" },
   { title: "Tanium", subtitle: "Work", to: "/work/tanium", colorClass: "card-coral" },
   { title: "Books", subtitle: "About", to: "/books", colorClass: "card-slate" },

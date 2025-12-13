@@ -1,8 +1,8 @@
 import { PageLayout } from "@/components/PageLayout";
 
-export default function OnProcess() {
+export default function Vibes() {
   return (
-    <PageLayout title="On Process" subtitle="Words">
+    <PageLayout title="Pt 2 → Vibes" subtitle="Words">
       <article className="prose space-y-6">
         <p>
           Process is a tool, not a religion. The goal isn't to follow a process 
