@@ -1,6 +1,7 @@
 import { PageLayout } from "@/components/PageLayout";
 
 import taniumAssetVendor from "@/assets/tanium/tanium-asset-vendor.png";
+import taniumDiscoverInterfaces from "@/assets/tanium/tanium-discover-interfaces.png";
 import taniumThreatAlerts from "@/assets/tanium/tanium-threat-alerts.png";
 import taniumThreatDocuments from "@/assets/tanium/tanium-threat-documents.png";
 
@@ -51,9 +52,12 @@ export default function Tanium() {
         <video src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/TaniumDiscover-RSFf4NVTidfRFMSbmgsXhIo2x4Wo6K.mov" autoPlay loop muted playsInline className="w-full h-auto" />
       </div>
 
-      {/* Asset image */}
+      {/* Two-up Asset and Discover images */}
       <div className="mt-12 max-w-6xl mx-auto px-6">
-        <img src={taniumAssetVendor} alt="Tanium Asset Vendor" className="w-full h-auto" />
+        <div className="grid grid-cols-2 gap-4">
+          <img src={taniumDiscoverInterfaces} alt="Tanium Discover Interfaces" className="w-full h-auto" />
+          <img src={taniumAssetVendor} alt="Tanium Asset Vendor" className="w-full h-auto" />
+        </div>
       </div>
 
       {/* Video - Enforce */}
