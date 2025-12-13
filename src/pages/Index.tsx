@@ -17,7 +17,7 @@ export default function Index() {
     <div className="min-h-screen bg-background">
       {/* Header Section */}
       <header className="px-6 pt-16 md:pt-24 pb-16 md:pb-20">
-        <div className="max-w-2xl mx-auto animate-fade-in">
+        <div className="max-w-4xl mx-auto animate-fade-in">
           <h1 className="font-display text-2xl md:text-3xl font-semibold text-foreground mb-8 text-left">
             Matthew Stevens
           </h1>
