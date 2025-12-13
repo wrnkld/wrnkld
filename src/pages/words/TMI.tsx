@@ -63,7 +63,7 @@ export default function TMI() {
           <p className="relative">
             Then came Sketch — the first UI tool that finally felt purpose-built. I'm 
             skipping a whole graveyard of tools here: InVision, Principle (which I loved), 
-            Adobe InDesign, Windows Presentation Foundation<SideNote number={3}>Wild times. We don't talk about WPF.</SideNote>, and whatever 
+            Adobe InDesign, Windows Presentation Foundation<SideNote number={3}>Expression Blend somehow more complicated than Photoshop</SideNote>, and whatever 
             Framer has reinvented itself into this year.
           </p>
 
@@ -92,7 +92,7 @@ export default function TMI() {
             <div className="space-y-3 text-sm text-muted-foreground">
               <p><sup>1</sup> Psychology major = no ragrets</p>
               <p><sup>2</sup> Josh Hart would approve</p>
-              <p><sup>3</sup> Wild times. We don't talk about WPF.</p>
+              <p><sup>3</sup> Expression Blend somehow more complicated than Photoshop</p>
             </div>
           </div>
         </article>
