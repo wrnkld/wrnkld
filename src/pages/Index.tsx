@@ -47,7 +47,7 @@ export default function Index() {
       
       {/* Footer */}
       <footer className="px-6 pb-12 text-center">
-        <p className="font-body text-sm text-muted-foreground">
+        <p className="font-body text-lg text-muted-foreground">
           Say hello → <a href="mailto:hello@example.com" className="underline hover:text-foreground transition-colors">hello@example.com</a>
         </p>
       </footer>
