@@ -1,5 +1,4 @@
 import { PageLayout } from "@/components/PageLayout";
-import { ImageGallery } from "@/components/ImageGallery";
 
 import analyticsAnalyze from "@/assets/sas/analytics-analyze.png";
 import analyticsExplore from "@/assets/sas/analytics-explore.png";
@@ -13,21 +12,6 @@ import factorySegment from "@/assets/sas/factory-segment.png";
 import visualStatsProperties from "@/assets/sas/visual-stats-properties.png";
 import visualStatsRoles from "@/assets/sas/visual-stats-roles.png";
 import visualStatsShare from "@/assets/sas/visual-stats-share.png";
-
-const images = [
-  { src: analyticsExplore, alt: "SAS Analytics Explore" },
-  { src: analyticsPrepare, alt: "SAS Analytics Prepare" },
-  { src: analyticsAnalyze, alt: "SAS Analytics Analyze" },
-  { src: analyticsReport, alt: "SAS Analytics Report" },
-  { src: factoryData, alt: "SAS Factory Data" },
-  { src: factoryModelTemplates, alt: "SAS Factory Model Templates" },
-  { src: factoryProfile, alt: "SAS Factory Profile" },
-  { src: factoryResults, alt: "SAS Factory Results" },
-  { src: factorySegment, alt: "SAS Factory Segment" },
-  { src: visualStatsProperties, alt: "SAS Visual Stats Properties" },
-  { src: visualStatsRoles, alt: "SAS Visual Stats Roles" },
-  { src: visualStatsShare, alt: "SAS Visual Stats Share" },
-];
 
 export default function SAS() {
   return (
@@ -60,8 +44,35 @@ export default function SAS() {
         </p>
       </div>
 
-      <div className="mt-12">
-        <ImageGallery images={images} />
+      {/* Alternating Full-Bleed Layout */}
+      <div className="mt-12 space-y-8">
+        <img src={analyticsExplore} alt="SAS Analytics Explore" className="w-full h-auto" />
+        
+        <div className="max-w-4xl mx-auto px-6 grid grid-cols-2 gap-4">
+          <img src={analyticsPrepare} alt="SAS Analytics Prepare" className="w-full h-auto transition-all duration-300 hover:scale-[1.02] hover:-translate-y-2" />
+          <img src={analyticsAnalyze} alt="SAS Analytics Analyze" className="w-full h-auto transition-all duration-300 hover:scale-[1.02] hover:-translate-y-2" />
+        </div>
+        
+        <img src={analyticsReport} alt="SAS Analytics Report" className="w-full h-auto" />
+        
+        <div className="max-w-4xl mx-auto px-6 grid grid-cols-3 gap-4">
+          <img src={factoryData} alt="SAS Factory Data" className="w-full h-auto transition-all duration-300 hover:scale-[1.02] hover:-translate-y-2" />
+          <img src={factoryModelTemplates} alt="SAS Factory Model Templates" className="w-full h-auto transition-all duration-300 hover:scale-[1.02] hover:-translate-y-2" />
+          <img src={factoryProfile} alt="SAS Factory Profile" className="w-full h-auto transition-all duration-300 hover:scale-[1.02] hover:-translate-y-2" />
+        </div>
+        
+        <img src={factoryResults} alt="SAS Factory Results" className="w-full h-auto" />
+        
+        <div className="max-w-4xl mx-auto px-6 grid grid-cols-2 gap-4">
+          <img src={factorySegment} alt="SAS Factory Segment" className="w-full h-auto transition-all duration-300 hover:scale-[1.02] hover:-translate-y-2" />
+          <img src={visualStatsProperties} alt="SAS Visual Stats Properties" className="w-full h-auto transition-all duration-300 hover:scale-[1.02] hover:-translate-y-2" />
+        </div>
+        
+        <img src={visualStatsRoles} alt="SAS Visual Stats Roles" className="w-full h-auto" />
+        
+        <div className="max-w-4xl mx-auto px-6">
+          <img src={visualStatsShare} alt="SAS Visual Stats Share" className="w-full h-auto transition-all duration-300 hover:scale-[1.02] hover:-translate-y-2" />
+        </div>
       </div>
     </PageLayout>
   );

@@ -1,5 +1,4 @@
 import { PageLayout } from "@/components/PageLayout";
-import { ImageGallery } from "@/components/ImageGallery";
 
 import taniumAssetVendor from "@/assets/tanium/tanium-asset-vendor.png";
 import taniumAssuranceFindings from "@/assets/tanium/tanium-assurance-findings.png";
@@ -8,16 +7,6 @@ import taniumEnforceOverview from "@/assets/tanium/tanium-enforce-overview.png";
 import taniumNavigationViews from "@/assets/tanium/tanium-navigation-views.png";
 import taniumThreatAlerts from "@/assets/tanium/tanium-threat-alerts.png";
 import taniumThreatDocuments from "@/assets/tanium/tanium-threat-documents.png";
-
-const images = [
-  { src: taniumNavigationViews, alt: "Tanium Navigation Views" },
-  { src: taniumThreatAlerts, alt: "Tanium Threat Alerts" },
-  { src: taniumThreatDocuments, alt: "Tanium Threat Documents" },
-  { src: taniumEnforceOverview, alt: "Tanium Enforce Overview" },
-  { src: taniumAssuranceFindings, alt: "Tanium Assurance Findings" },
-  { src: taniumAssetVendor, alt: "Tanium Asset Vendor" },
-  { src: taniumDiscoverInterfaces, alt: "Tanium Discover Interfaces" },
-];
 
 export default function Tanium() {
   return (
@@ -51,8 +40,16 @@ export default function Tanium() {
         </p>
       </div>
 
-      <div className="mt-12">
-        <ImageGallery images={images} />
+      <div className="mt-12 max-w-6xl mx-auto px-6">
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+          <img src={taniumNavigationViews} alt="Tanium Navigation Views" className="col-span-2 w-full h-auto transition-all duration-300 hover:scale-[1.02] hover:-translate-y-2" />
+          <img src={taniumThreatAlerts} alt="Tanium Threat Alerts" className="w-full h-auto transition-all duration-300 hover:scale-[1.02] hover:-translate-y-2" />
+          <img src={taniumThreatDocuments} alt="Tanium Threat Documents" className="w-full h-auto transition-all duration-300 hover:scale-[1.02] hover:-translate-y-2" />
+          <img src={taniumEnforceOverview} alt="Tanium Enforce Overview" className="col-span-2 md:col-span-1 w-full h-auto transition-all duration-300 hover:scale-[1.02] hover:-translate-y-2" />
+          <img src={taniumAssuranceFindings} alt="Tanium Assurance Findings" className="w-full h-auto transition-all duration-300 hover:scale-[1.02] hover:-translate-y-2" />
+          <img src={taniumAssetVendor} alt="Tanium Asset Vendor" className="w-full h-auto transition-all duration-300 hover:scale-[1.02] hover:-translate-y-2" />
+          <img src={taniumDiscoverInterfaces} alt="Tanium Discover Interfaces" className="col-span-2 md:col-span-1 w-full h-auto transition-all duration-300 hover:scale-[1.02] hover:-translate-y-2" />
+        </div>
       </div>
     </PageLayout>
   );

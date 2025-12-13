@@ -1,5 +1,4 @@
 import { PageLayout } from "@/components/PageLayout";
-import { ImageGallery } from "@/components/ImageGallery";
 
 import rhbaAssetsList from "@/assets/redhat/rhba-assets-list.png";
 import rhbaComments from "@/assets/redhat/rhba-comments.png";
@@ -16,24 +15,6 @@ import rhboAvailability from "@/assets/redhat/rhbo-availability.png";
 import rhboEmployees from "@/assets/redhat/rhbo-employees.png";
 import rhboRoster from "@/assets/redhat/rhbo-roster.png";
 import rhboRoute from "@/assets/redhat/rhbo-route.png";
-
-const images = [
-  { src: rhbaWorkflowModeler, alt: "Red Hat Business Automation Workflow Modeler" },
-  { src: rhbaPropertiesPanel, alt: "Red Hat Business Automation Properties Panel" },
-  { src: rhbaNavigator, alt: "Red Hat Business Automation Navigator" },
-  { src: rhbaAssetsList, alt: "Red Hat Business Automation Assets List" },
-  { src: rhbaSpace, alt: "Red Hat Business Automation Space" },
-  { src: rhbaProjectMetrics, alt: "Red Hat Business Automation Project Metrics" },
-  { src: rhbaContributors, alt: "Red Hat Business Automation Contributors" },
-  { src: rhbaComments, alt: "Red Hat Business Automation Comments" },
-  { src: rhbaVersionControl, alt: "Red Hat Business Automation Version Control" },
-  { src: rhbaTrack, alt: "Red Hat Business Automation Track" },
-  { src: rhbaEmptyState, alt: "Red Hat Business Automation Empty State" },
-  { src: rhboAvailability, alt: "Red Hat Business Optaplanner Availability" },
-  { src: rhboEmployees, alt: "Red Hat Business Optaplanner Employees" },
-  { src: rhboRoster, alt: "Red Hat Business Optaplanner Roster" },
-  { src: rhboRoute, alt: "Red Hat Business Optaplanner Route" },
-];
 
 export default function RedHat() {
   return (
@@ -66,8 +47,30 @@ export default function RedHat() {
         </p>
       </div>
 
-      <div className="mt-12">
-        <ImageGallery images={images} />
+      <div className="mt-12 max-w-6xl mx-auto px-6">
+        {/* Bento Grid Layout */}
+        <div className="grid grid-cols-4 gap-4">
+          {/* Hero image - large */}
+          <img src={rhbaWorkflowModeler} alt="Red Hat Business Automation Workflow Modeler" className="col-span-4 md:col-span-2 row-span-2 w-full h-full object-cover transition-all duration-300 hover:scale-[1.02] hover:-translate-y-2" />
+          <img src={rhbaPropertiesPanel} alt="Red Hat Business Automation Properties Panel" className="col-span-2 md:col-span-1 w-full h-auto transition-all duration-300 hover:scale-[1.02] hover:-translate-y-2" />
+          <img src={rhbaNavigator} alt="Red Hat Business Automation Navigator" className="col-span-2 md:col-span-1 w-full h-auto transition-all duration-300 hover:scale-[1.02] hover:-translate-y-2" />
+          <img src={rhbaAssetsList} alt="Red Hat Business Automation Assets List" className="col-span-2 md:col-span-1 w-full h-auto transition-all duration-300 hover:scale-[1.02] hover:-translate-y-2" />
+          <img src={rhbaSpace} alt="Red Hat Business Automation Space" className="col-span-2 md:col-span-1 w-full h-auto transition-all duration-300 hover:scale-[1.02] hover:-translate-y-2" />
+          
+          <img src={rhbaProjectMetrics} alt="Red Hat Business Automation Project Metrics" className="col-span-4 md:col-span-2 w-full h-auto transition-all duration-300 hover:scale-[1.02] hover:-translate-y-2" />
+          <img src={rhbaContributors} alt="Red Hat Business Automation Contributors" className="col-span-2 md:col-span-1 w-full h-auto transition-all duration-300 hover:scale-[1.02] hover:-translate-y-2" />
+          <img src={rhbaComments} alt="Red Hat Business Automation Comments" className="col-span-2 md:col-span-1 w-full h-auto transition-all duration-300 hover:scale-[1.02] hover:-translate-y-2" />
+          
+          <img src={rhbaVersionControl} alt="Red Hat Business Automation Version Control" className="col-span-2 md:col-span-1 w-full h-auto transition-all duration-300 hover:scale-[1.02] hover:-translate-y-2" />
+          <img src={rhbaTrack} alt="Red Hat Business Automation Track" className="col-span-2 md:col-span-1 w-full h-auto transition-all duration-300 hover:scale-[1.02] hover:-translate-y-2" />
+          <img src={rhbaEmptyState} alt="Red Hat Business Automation Empty State" className="col-span-4 md:col-span-2 w-full h-auto transition-all duration-300 hover:scale-[1.02] hover:-translate-y-2" />
+          
+          {/* Optaplanner section */}
+          <img src={rhboAvailability} alt="Red Hat Business Optaplanner Availability" className="col-span-4 md:col-span-2 row-span-2 w-full h-full object-cover transition-all duration-300 hover:scale-[1.02] hover:-translate-y-2" />
+          <img src={rhboEmployees} alt="Red Hat Business Optaplanner Employees" className="col-span-2 md:col-span-1 w-full h-auto transition-all duration-300 hover:scale-[1.02] hover:-translate-y-2" />
+          <img src={rhboRoster} alt="Red Hat Business Optaplanner Roster" className="col-span-2 md:col-span-1 w-full h-auto transition-all duration-300 hover:scale-[1.02] hover:-translate-y-2" />
+          <img src={rhboRoute} alt="Red Hat Business Optaplanner Route" className="col-span-4 md:col-span-2 w-full h-auto transition-all duration-300 hover:scale-[1.02] hover:-translate-y-2" />
+        </div>
       </div>
     </PageLayout>
   );
