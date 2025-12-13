@@ -19,7 +19,7 @@ import rhboRoute from "@/assets/redhat/rhbo-route.png";
 
 export default function RedHat() {
   return (
-    <PageLayout title="Red Hat" subtitle="Work">
+    <PageLayout title="Red Hat" subtitle="Work" fullWidthContent>
       <div className="space-y-12">
         <p className="prose">
           Design system and developer experience. Built the foundations for 
