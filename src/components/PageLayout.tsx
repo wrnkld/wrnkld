@@ -46,6 +46,16 @@ export function PageLayout({ title, subtitle, children, accentColor, fullWidthCo
         <main className="animate-fade-in" style={{ animationDelay: "100ms" }}>
           {children}
         </main>
+
+        <footer className={`mt-20 pb-12 ${fullWidthContent ? 'max-w-4xl mx-auto px-6' : ''}`}>
+          <Link 
+            to="/"
+            className="inline-flex items-center gap-2 text-sm font-body uppercase tracking-widest opacity-70 hover:opacity-100 transition-opacity duration-300"
+          >
+            <ArrowLeft className="w-4 h-4" />
+            <span>Back</span>
+          </Link>
+        </footer>
       </div>
     </div>
   );
