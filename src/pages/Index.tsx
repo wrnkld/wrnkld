@@ -81,7 +81,7 @@ export default function Index() {
       <footer className="px-6 pb-12">
         <div className="max-w-4xl mx-auto">
           <p className="font-body text-lg text-muted-foreground">
-            Say hello → <a href="mailto:hello@example.com" className="underline hover:text-foreground transition-colors">hello@example.com</a>
+            Say hello → <a href="mailto:hello@wrnkld.tv" className="underline hover:text-foreground transition-colors">hello@wrnkld.tv</a>
           </p>
         </div>
       </footer>
