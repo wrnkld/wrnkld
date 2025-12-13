@@ -18,7 +18,7 @@ export function PageLayout({ title, subtitle, children, accentColor }: PageLayou
         
         <header className="mb-12 animate-fade-in" style={{ animationDelay: "100ms" }}>
           {subtitle && (
-            <span className="text-sm font-body uppercase tracking-widest text-muted-foreground mb-4 block">
+            <span className="text-sm font-body uppercase tracking-widest opacity-70 mb-4 block">
               {subtitle}
             </span>
           )}
