@@ -79,7 +79,7 @@ export default function Records() {
   return (
     <PageLayout title="Records" subtitle="About">
       <p className="font-body text-lg text-muted-foreground leading-relaxed mb-8">
-        My record collection spanning seven decades.
+        A relatively exhaustive list of records I like. Updated often.
       </p>
 
       {/* Search */}
