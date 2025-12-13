@@ -7,9 +7,9 @@ const cards = [
   { title: "Experience", subtitle: "About", to: "/about", colorClass: "card-mustard" },
   { title: "Books", subtitle: "About", to: "/books", colorClass: "card-coral" },
   { title: "Records", subtitle: "About", to: "/records", colorClass: "card-slate" },
-  { title: "Part 1 → TMI", subtitle: "Words", to: "/words/on-design", colorClass: "card-plum", seriesLabel: "Design & AI" },
-  { title: "Part 2 → Vibes", subtitle: "Words", to: "/words/on-process", colorClass: "card-teal", seriesLabel: "Design & AI" },
-  { title: "Part 3 → Real, Real", subtitle: "Words", to: "/words/on-tools", colorClass: "card-terracotta", seriesLabel: "Design & AI" },
+  { title: "Pt 1 → TMI", subtitle: "Words", to: "/words/on-design", colorClass: "card-plum", seriesLabel: "Design & AI" },
+  { title: "Pt 2 → Vibes", subtitle: "Words", to: "/words/on-process", colorClass: "card-teal", seriesLabel: "Design & AI" },
+  { title: "Pt 3 → Real, Real", subtitle: "Words", to: "/words/on-tools", colorClass: "card-terracotta", seriesLabel: "Design & AI" },
 ];
 
 export default function Index() {
