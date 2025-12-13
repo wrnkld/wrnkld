@@ -13,7 +13,7 @@ export function PortfolioCard({ title, subtitle, to, colorClass, index }: Portfo
   return (
     <Link
       to={to}
-      className={`group flex-shrink-0 w-[320px] md:w-[380px] h-[420px] md:h-[480px] rounded-2xl p-8 flex flex-col justify-between transition-all duration-300 hover:scale-[1.02] hover:-translate-y-2 ${colorClass}`}
+      className={`group flex-shrink-0 w-[280px] md:w-[320px] h-[360px] md:h-[400px] rounded-2xl p-8 flex flex-col justify-between transition-all duration-300 hover:scale-[1.02] hover:-translate-y-2 ${colorClass}`}
       style={{ 
         animationDelay: `${index * 100}ms`,
       }}
@@ -26,7 +26,7 @@ export function PortfolioCard({ title, subtitle, to, colorClass, index }: Portfo
       </div>
       
       <div>
-        <h3 className="font-display text-4xl md:text-5xl font-semibold leading-tight">
+        <h3 className="font-display text-2xl md:text-3xl font-semibold leading-tight">
           {title}
         </h3>
       </div>
