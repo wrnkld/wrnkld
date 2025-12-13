@@ -44,35 +44,64 @@ export default function SAS() {
         </p>
       </div>
 
-      {/* Alternating Full-Bleed Layout */}
-      <div className="mt-12 space-y-8">
-        <img src={analyticsExplore} alt="SAS Analytics Explore" className="w-full h-auto" />
-        
-        <div className="max-w-4xl mx-auto px-6 grid grid-cols-2 gap-4">
+      {/* 4-column grid */}
+      <div className="mt-12 max-w-4xl mx-auto px-6">
+        <div className="grid grid-cols-4 gap-4">
+          <img src={analyticsExplore} alt="SAS Analytics Explore" className="w-full h-auto transition-all duration-300 hover:scale-[1.02] hover:-translate-y-2" />
           <img src={analyticsPrepare} alt="SAS Analytics Prepare" className="w-full h-auto transition-all duration-300 hover:scale-[1.02] hover:-translate-y-2" />
           <img src={analyticsAnalyze} alt="SAS Analytics Analyze" className="w-full h-auto transition-all duration-300 hover:scale-[1.02] hover:-translate-y-2" />
+          <img src={analyticsReport} alt="SAS Analytics Report" className="w-full h-auto transition-all duration-300 hover:scale-[1.02] hover:-translate-y-2" />
         </div>
-        
-        <img src={analyticsReport} alt="SAS Analytics Report" className="w-full h-auto" />
-        
-        <div className="max-w-4xl mx-auto px-6 grid grid-cols-3 gap-4">
+      </div>
+
+      {/* Text section */}
+      <div className="max-w-4xl mx-auto px-6 mt-12">
+        <h2 className="font-display text-xl font-semibold mb-4">Visual Analytics</h2>
+        <p className="prose">
+          The analytics suite enables data scientists to explore, prepare, and 
+          analyze datasets through an intuitive visual interface, reducing the 
+          barrier to advanced statistical analysis.
+        </p>
+      </div>
+
+      {/* Full-width image */}
+      <div className="mt-12">
+        <img src={factoryResults} alt="SAS Factory Results" className="w-full h-auto" />
+      </div>
+
+      {/* 4-column grid */}
+      <div className="mt-12 max-w-4xl mx-auto px-6">
+        <div className="grid grid-cols-4 gap-4">
           <img src={factoryData} alt="SAS Factory Data" className="w-full h-auto transition-all duration-300 hover:scale-[1.02] hover:-translate-y-2" />
           <img src={factoryModelTemplates} alt="SAS Factory Model Templates" className="w-full h-auto transition-all duration-300 hover:scale-[1.02] hover:-translate-y-2" />
           <img src={factoryProfile} alt="SAS Factory Profile" className="w-full h-auto transition-all duration-300 hover:scale-[1.02] hover:-translate-y-2" />
-        </div>
-        
-        <img src={factoryResults} alt="SAS Factory Results" className="w-full h-auto" />
-        
-        <div className="max-w-4xl mx-auto px-6 grid grid-cols-2 gap-4">
           <img src={factorySegment} alt="SAS Factory Segment" className="w-full h-auto transition-all duration-300 hover:scale-[1.02] hover:-translate-y-2" />
-          <img src={visualStatsProperties} alt="SAS Visual Stats Properties" className="w-full h-auto transition-all duration-300 hover:scale-[1.02] hover:-translate-y-2" />
         </div>
-        
+      </div>
+
+      {/* Text section */}
+      <div className="max-w-4xl mx-auto px-6 mt-12">
+        <h2 className="font-display text-xl font-semibold mb-4">Visual Statistics</h2>
+        <p className="prose">
+          Statistical modeling tools that make advanced techniques accessible 
+          to analysts of all skill levels, with clear visualizations and 
+          collaborative sharing capabilities.
+        </p>
+      </div>
+
+      {/* Full-width image */}
+      <div className="mt-12">
         <img src={visualStatsRoles} alt="SAS Visual Stats Roles" className="w-full h-auto" />
-        
-        <div className="max-w-4xl mx-auto px-6">
-          <img src={visualStatsShare} alt="SAS Visual Stats Share" className="w-full h-auto transition-all duration-300 hover:scale-[1.02] hover:-translate-y-2" />
-        </div>
+      </div>
+
+      {/* Full-width image */}
+      <div className="mt-8">
+        <img src={visualStatsProperties} alt="SAS Visual Stats Properties" className="w-full h-auto" />
+      </div>
+
+      {/* Full-width image */}
+      <div className="mt-8">
+        <img src={visualStatsShare} alt="SAS Visual Stats Share" className="w-full h-auto" />
       </div>
     </PageLayout>
   );
