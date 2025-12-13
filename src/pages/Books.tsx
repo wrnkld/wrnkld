@@ -100,10 +100,10 @@ export default function Books() {
             <TableRow className="bg-muted/50">
               <TableHead className="w-[40px]"></TableHead>
               <TableHead>
-                <SortButton field="title">Title</SortButton>
+                <SortButton field="author">Author</SortButton>
               </TableHead>
               <TableHead>
-                <SortButton field="author">Author</SortButton>
+                <SortButton field="title">Title</SortButton>
               </TableHead>
               <TableHead className="w-[100px] text-right">
                 <SortButton field="year">Published</SortButton>
@@ -125,10 +125,10 @@ export default function Books() {
                     <Star className="h-4 w-4 text-yellow-500 fill-yellow-500" />
                   )}
                 </TableCell>
-                <TableCell className="text-foreground">{book.title}</TableCell>
                 <TableCell className="text-muted-foreground">
                   {book.author}
                 </TableCell>
+                <TableCell className="text-foreground">{book.title}</TableCell>
                 <TableCell className="text-right text-muted-foreground">
                   {book.year}
                 </TableCell>
