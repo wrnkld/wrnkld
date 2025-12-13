@@ -11,7 +11,7 @@ export function ImageGallery({ images }: ImageGalleryProps) {
             key={index}
             src={image.src}
             alt={image.alt}
-            className="h-[400px] md:h-[500px] w-auto flex-shrink-0 object-contain"
+            className="h-[400px] md:h-[500px] w-auto flex-shrink-0 object-contain rounded-2xl transition-all duration-300 hover:scale-[1.02] hover:-translate-y-2"
           />
         ))}
       </div>
