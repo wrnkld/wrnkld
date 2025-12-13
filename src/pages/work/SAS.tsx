@@ -1,4 +1,5 @@
 import { PageLayout } from "@/components/PageLayout";
+import { ImageGallery } from "@/components/ImageGallery";
 
 import analyticsAnalyze from "@/assets/sas/analytics-analyze.png";
 import analyticsExplore from "@/assets/sas/analytics-explore.png";
@@ -30,7 +31,7 @@ export default function SAS() {
           the depth that made SAS the industry standard.
         </p>
 
-        {/* Visual Analytics */}
+        {/* Visual Analytics - video + horizontal gallery */}
         <div className="space-y-4">
           <h2 className="font-display text-xl font-semibold">Visual Analytics</h2>
           <p className="prose">
@@ -46,13 +47,15 @@ export default function SAS() {
             playsInline
             className="w-full"
           />
-          <img src={analyticsExplore} alt="SAS Analytics Explore" className="w-full" />
-          <img src={analyticsPrepare} alt="SAS Analytics Prepare" className="w-full" />
-          <img src={analyticsAnalyze} alt="SAS Analytics Analyze" className="w-full" />
-          <img src={analyticsReport} alt="SAS Analytics Report" className="w-full" />
+          <ImageGallery images={[
+            { src: analyticsExplore, alt: "SAS Analytics Explore" },
+            { src: analyticsPrepare, alt: "SAS Analytics Prepare" },
+            { src: analyticsAnalyze, alt: "SAS Analytics Analyze" },
+            { src: analyticsReport, alt: "SAS Analytics Report" },
+          ]} />
         </div>
 
-        {/* Model Factory */}
+        {/* Model Factory - horizontal gallery */}
         <div className="space-y-4">
           <h2 className="font-display text-xl font-semibold">Model Factory</h2>
           <p className="prose">
@@ -60,14 +63,16 @@ export default function SAS() {
             approach. We designed templates, profiling tools, and result 
             visualization that accelerated the modeling process.
           </p>
-          <img src={factoryModelTemplates} alt="SAS Factory Model Templates" className="w-full" />
-          <img src={factoryData} alt="SAS Factory Data" className="w-full" />
-          <img src={factoryProfile} alt="SAS Factory Profile" className="w-full" />
-          <img src={factorySegment} alt="SAS Factory Segment" className="w-full" />
-          <img src={factoryResults} alt="SAS Factory Results" className="w-full" />
+          <ImageGallery images={[
+            { src: factoryModelTemplates, alt: "SAS Factory Model Templates" },
+            { src: factoryData, alt: "SAS Factory Data" },
+            { src: factoryProfile, alt: "SAS Factory Profile" },
+            { src: factorySegment, alt: "SAS Factory Segment" },
+            { src: factoryResults, alt: "SAS Factory Results" },
+          ]} />
         </div>
 
-        {/* Visual Statistics */}
+        {/* Visual Statistics - stacked */}
         <div className="space-y-4">
           <h2 className="font-display text-xl font-semibold">Visual Statistics</h2>
           <p className="prose">

@@ -1,4 +1,5 @@
 import { PageLayout } from "@/components/PageLayout";
+import { ImageGallery } from "@/components/ImageGallery";
 
 import rhbaAssetsList from "@/assets/redhat/rhba-assets-list.png";
 import rhbaComments from "@/assets/redhat/rhba-comments.png";
@@ -33,7 +34,7 @@ export default function RedHat() {
           to move between products fluidly.
         </p>
 
-        {/* Business Automation Platform */}
+        {/* Business Automation Platform - video + horizontal gallery */}
         <div className="space-y-4">
           <h2 className="font-display text-xl font-semibold">Business Automation</h2>
           <p className="prose">
@@ -48,12 +49,14 @@ export default function RedHat() {
             playsInline
             className="w-full"
           />
-          <img src={rhbaWorkflowModeler} alt="Red Hat Business Automation Workflow Modeler" className="w-full" />
-          <img src={rhbaPropertiesPanel} alt="Red Hat Business Automation Properties Panel" className="w-full" />
-          <img src={rhbaNavigator} alt="Red Hat Business Automation Navigator" className="w-full" />
+          <ImageGallery images={[
+            { src: rhbaWorkflowModeler, alt: "Red Hat Business Automation Workflow Modeler" },
+            { src: rhbaPropertiesPanel, alt: "Red Hat Business Automation Properties Panel" },
+            { src: rhbaNavigator, alt: "Red Hat Business Automation Navigator" },
+          ]} />
         </div>
 
-        {/* Project Management */}
+        {/* Project Management - horizontal gallery */}
         <div className="space-y-4">
           <h2 className="font-display text-xl font-semibold">Project Management</h2>
           <p className="prose">
@@ -61,13 +64,15 @@ export default function RedHat() {
             designed spaces, metrics dashboards, and contributor views that 
             made team coordination seamless.
           </p>
-          <img src={rhbaSpace} alt="Red Hat Business Automation Space" className="w-full" />
-          <img src={rhbaAssetsList} alt="Red Hat Business Automation Assets List" className="w-full" />
-          <img src={rhbaProjectMetrics} alt="Red Hat Business Automation Project Metrics" className="w-full" />
-          <img src={rhbaContributors} alt="Red Hat Business Automation Contributors" className="w-full" />
+          <ImageGallery images={[
+            { src: rhbaSpace, alt: "Red Hat Business Automation Space" },
+            { src: rhbaAssetsList, alt: "Red Hat Business Automation Assets List" },
+            { src: rhbaProjectMetrics, alt: "Red Hat Business Automation Project Metrics" },
+            { src: rhbaContributors, alt: "Red Hat Business Automation Contributors" },
+          ]} />
         </div>
 
-        {/* Collaboration */}
+        {/* Collaboration - video + stacked */}
         <div className="space-y-4">
           <h2 className="font-display text-xl font-semibold">Collaboration & Version Control</h2>
           <p className="prose">
@@ -82,13 +87,15 @@ export default function RedHat() {
             playsInline
             className="w-full"
           />
-          <img src={rhbaComments} alt="Red Hat Business Automation Comments" className="w-full" />
-          <img src={rhbaVersionControl} alt="Red Hat Business Automation Version Control" className="w-full" />
-          <img src={rhbaTrack} alt="Red Hat Business Automation Track" className="w-full" />
-          <img src={rhbaEmptyState} alt="Red Hat Business Automation Empty State" className="w-full" />
+          <ImageGallery images={[
+            { src: rhbaComments, alt: "Red Hat Business Automation Comments" },
+            { src: rhbaVersionControl, alt: "Red Hat Business Automation Version Control" },
+            { src: rhbaTrack, alt: "Red Hat Business Automation Track" },
+            { src: rhbaEmptyState, alt: "Red Hat Business Automation Empty State" },
+          ]} />
         </div>
 
-        {/* OptaPlanner */}
+        {/* OptaPlanner - video + horizontal gallery */}
         <div className="space-y-4">
           <h2 className="font-display text-xl font-semibold">OptaPlanner</h2>
           <p className="prose">
@@ -103,10 +110,12 @@ export default function RedHat() {
             playsInline
             className="w-full"
           />
-          <img src={rhboRoster} alt="Red Hat Business Optaplanner Roster" className="w-full" />
-          <img src={rhboEmployees} alt="Red Hat Business Optaplanner Employees" className="w-full" />
-          <img src={rhboAvailability} alt="Red Hat Business Optaplanner Availability" className="w-full" />
-          <img src={rhboRoute} alt="Red Hat Business Optaplanner Route" className="w-full" />
+          <ImageGallery images={[
+            { src: rhboRoster, alt: "Red Hat Business Optaplanner Roster" },
+            { src: rhboEmployees, alt: "Red Hat Business Optaplanner Employees" },
+            { src: rhboAvailability, alt: "Red Hat Business Optaplanner Availability" },
+            { src: rhboRoute, alt: "Red Hat Business Optaplanner Route" },
+          ]} />
         </div>
 
         <h2 className="font-display text-xl font-semibold mt-12 mb-4">The Outcome</h2>
