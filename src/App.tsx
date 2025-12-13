@@ -12,9 +12,9 @@ import SAS from "./pages/work/SAS";
 import RedHat from "./pages/work/RedHat";
 import Books from "./pages/Books";
 import Records from "./pages/Records";
-import OnDesign from "./pages/words/OnDesign";
-import OnProcess from "./pages/words/OnProcess";
-import OnTools from "./pages/words/OnTools";
+import TMI from "./pages/words/TMI";
+import Vibes from "./pages/words/Vibes";
+import RealReal from "./pages/words/RealReal";
 
 const queryClient = new QueryClient();
 
@@ -32,9 +32,9 @@ const App = () => (
           <Route path="/work/redhat" element={<RedHat />} />
           <Route path="/books" element={<Books />} />
           <Route path="/records" element={<Records />} />
-          <Route path="/words/on-design" element={<OnDesign />} />
-          <Route path="/words/on-process" element={<OnProcess />} />
-          <Route path="/words/on-tools" element={<OnTools />} />
+          <Route path="/words/tmi" element={<TMI />} />
+          <Route path="/words/vibes" element={<Vibes />} />
+          <Route path="/words/real-real" element={<RealReal />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
