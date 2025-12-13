@@ -79,10 +79,10 @@ export default function TMI() {
             none were the thing itself. Every tool has been pictures of something — wired 
             together, animated, exported, recreated. Tools come, tools go, designers argue 
             passionately about all of them… and the work remains fundamentally the same: 
-            translating ideas into reality.
+            translating ideas into <span className="text-foreground">reality</span>.
           </p>
 
-          <p className="font-display text-xl text-foreground">
+          <p>
             So, can AI help do that?
           </p>
 
