@@ -8,9 +8,10 @@ interface PortfolioCardProps {
   colorClass: string;
   index: number;
   seriesLabel?: string;
+  partLabel?: string;
 }
 
-export function PortfolioCard({ title, subtitle, to, colorClass, index, seriesLabel }: PortfolioCardProps) {
+export function PortfolioCard({ title, subtitle, to, colorClass, index, seriesLabel, partLabel }: PortfolioCardProps) {
   return (
     <Link
       to={to}
@@ -35,6 +36,11 @@ export function PortfolioCard({ title, subtitle, to, colorClass, index, seriesLa
         <h3 className="font-display text-2xl md:text-3xl font-semibold leading-tight">
           {title}
         </h3>
+        {partLabel && (
+          <span className="text-sm font-body opacity-70 block mt-2">
+            {partLabel}
+          </span>
+        )}
       </div>
     </Link>
   );
