@@ -99,7 +99,7 @@ export default function Records() {
   );
 
   return (
-    <PageLayout title="Records" subtitle="Collection">
+    <PageLayout title="Records" subtitle="About">
       <p className="font-body text-lg text-muted-foreground leading-relaxed mb-8">
         My record collection spanning seven decades.
       </p>
@@ -137,7 +137,7 @@ export default function Records() {
       </p>
 
       {/* Table */}
-      <div className="border border-border rounded-lg overflow-hidden">
+      <div className="border border-border rounded-md overflow-hidden">
         <Table>
           <TableHeader>
             <TableRow className="bg-muted/50">
