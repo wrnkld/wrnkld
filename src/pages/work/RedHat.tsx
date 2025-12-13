@@ -47,6 +47,11 @@ export default function RedHat() {
         </p>
       </div>
 
+      {/* Video - Platform Demo */}
+      <div className="mt-12 max-w-6xl mx-auto px-6">
+        <video src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/rhba-platform-demo-HIDa2E47nQrPA59NvZFBmeQmWXGeB6.mp4" autoPlay loop muted playsInline className="w-full h-auto" />
+      </div>
+
       {/* 4-column grid */}
       <div className="mt-12 max-w-4xl mx-auto px-6">
         <div className="grid grid-cols-4 gap-4">
@@ -92,8 +97,13 @@ export default function RedHat() {
         </p>
       </div>
 
-      {/* Large image */}
+      {/* Video - Track Demo */}
       <div className="mt-12 max-w-6xl mx-auto px-6">
+        <video src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/rhba-track-demo-1iGpopbUyWNEkHm0ywCNKKtJBi3GZg.mp4" autoPlay loop muted playsInline className="w-full h-auto" />
+      </div>
+
+      {/* Large image */}
+      <div className="mt-8 max-w-6xl mx-auto px-6">
         <img src={rhbaProjectMetrics} alt="Red Hat Business Automation Project Metrics" className="w-full h-auto" />
       </div>
 
@@ -110,6 +120,11 @@ export default function RedHat() {
           OptaPlanner helps organizations solve vehicle routing, employee 
           rostering, and resource allocation challenges.
         </p>
+      </div>
+
+      {/* Video - Roster Demo */}
+      <div className="mt-12 max-w-6xl mx-auto px-6">
+        <video src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/rhbo-roster-demo-gXuZmMh9Cr8GLDmQv1gRBPaR68ZO9G.mp4" autoPlay loop muted playsInline className="w-full h-auto" />
       </div>
 
       {/* 4-column grid */}

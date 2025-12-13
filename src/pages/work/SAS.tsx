@@ -44,6 +44,11 @@ export default function SAS() {
         </p>
       </div>
 
+      {/* Video - Analytics Diagram */}
+      <div className="mt-12 max-w-6xl mx-auto px-6">
+        <video src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/analytics-diagram-N1SfmA3GOq8odycmR4nqJ1leUzL0yQ.mp4" autoPlay loop muted playsInline className="w-full h-auto" />
+      </div>
+
       {/* 4-column grid */}
       <div className="mt-12 max-w-4xl mx-auto px-6">
         <div className="grid grid-cols-4 gap-4">
