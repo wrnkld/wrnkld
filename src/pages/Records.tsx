@@ -116,8 +116,8 @@ export default function Records() {
                 className="animate-fade-in"
                 style={{ animationDelay: `${Math.min(index * 20, 500)}ms` }}
               >
-                <TableCell className="text-foreground">{record.artist}</TableCell>
-                <TableCell className="text-muted-foreground">
+                <TableCell className="text-muted-foreground">{record.artist}</TableCell>
+                <TableCell className="text-foreground">
                   {record.album}
                 </TableCell>
                 <TableCell className="text-right text-muted-foreground">
