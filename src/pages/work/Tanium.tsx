@@ -1,10 +1,6 @@
 import { PageLayout } from "@/components/PageLayout";
 
 import taniumAssetVendor from "@/assets/tanium/tanium-asset-vendor.png";
-import taniumAssuranceFindings from "@/assets/tanium/tanium-assurance-findings.png";
-import taniumDiscoverInterfaces from "@/assets/tanium/tanium-discover-interfaces.png";
-import taniumEnforceOverview from "@/assets/tanium/tanium-enforce-overview.png";
-import taniumNavigationViews from "@/assets/tanium/tanium-navigation-views.png";
 import taniumThreatAlerts from "@/assets/tanium/tanium-threat-alerts.png";
 import taniumThreatDocuments from "@/assets/tanium/tanium-threat-documents.png";
 
@@ -37,13 +33,11 @@ export default function Tanium() {
         <video src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/TaniumNavigation-ceK7d3kliX5iYIs21ePVMiAYSHzEsF.mov" autoPlay loop muted playsInline className="w-full h-auto" />
       </div>
 
-      {/* 4-column grid */}
-      <div className="mt-12 max-w-4xl mx-auto px-6">
-        <div className="grid grid-cols-4 gap-4">
-          <img src={taniumNavigationViews} alt="Tanium Navigation Views" className="w-full h-auto transition-all duration-300 hover:scale-[1.02] hover:-translate-y-2" />
-          <img src={taniumThreatAlerts} alt="Tanium Threat Alerts" className="w-full h-auto transition-all duration-300 hover:scale-[1.02] hover:-translate-y-2" />
-          <img src={taniumThreatDocuments} alt="Tanium Threat Documents" className="w-full h-auto transition-all duration-300 hover:scale-[1.02] hover:-translate-y-2" />
-          <img src={taniumEnforceOverview} alt="Tanium Enforce Overview" className="w-full h-auto transition-all duration-300 hover:scale-[1.02] hover:-translate-y-2" />
+      {/* Two-up Threat Response images */}
+      <div className="mt-12 max-w-6xl mx-auto px-6">
+        <div className="grid grid-cols-2 gap-4">
+          <img src={taniumThreatAlerts} alt="Tanium Threat Alerts" className="w-full h-auto" />
+          <img src={taniumThreatDocuments} alt="Tanium Threat Documents" className="w-full h-auto" />
         </div>
       </div>
 
@@ -52,30 +46,19 @@ export default function Tanium() {
         <video src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/TaniumAssurance-9svGoSVb8LcrLJspg2EBTzCy2PrLfv.mov" autoPlay loop muted playsInline className="w-full h-auto" />
       </div>
 
-      {/* Large image */}
-      <div className="mt-8 max-w-6xl mx-auto px-6">
-        <img src={taniumAssuranceFindings} alt="Tanium Assurance Findings" className="w-full h-auto" />
-      </div>
-
-
       {/* Video - Discover */}
       <div className="mt-12 max-w-6xl mx-auto px-6">
         <video src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/TaniumDiscover-RSFf4NVTidfRFMSbmgsXhIo2x4Wo6K.mov" autoPlay loop muted playsInline className="w-full h-auto" />
       </div>
 
-      {/* Large image */}
-      <div className="mt-8 max-w-6xl mx-auto px-6">
-        <img src={taniumDiscoverInterfaces} alt="Tanium Discover Interfaces" className="w-full h-auto" />
+      {/* Asset image */}
+      <div className="mt-12 max-w-6xl mx-auto px-6">
+        <img src={taniumAssetVendor} alt="Tanium Asset Vendor" className="w-full h-auto" />
       </div>
 
       {/* Video - Enforce */}
       <div className="mt-12 max-w-6xl mx-auto px-6">
         <video src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/TaniumEnforce-F6AmdbRKkIirIqOqbULHtQ9dsb4ZWe.mov" autoPlay loop muted playsInline className="w-full h-auto" />
-      </div>
-
-      {/* Large image */}
-      <div className="mt-8 max-w-6xl mx-auto px-6">
-        <img src={taniumAssetVendor} alt="Tanium Asset Vendor" className="w-full h-auto" />
       </div>
     </PageLayout>
   );
