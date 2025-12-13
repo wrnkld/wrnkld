@@ -35,7 +35,7 @@ export function PageLayout({ title, subtitle, children, accentColor }: PageLayou
             </Link>
           )}
           <h1 
-            className="font-display text-4xl md:text-6xl font-semibold text-foreground"
+            className="font-display text-2xl md:text-3xl font-semibold text-foreground"
             style={accentColor ? { color: accentColor } : {}}
           >
             {title}
