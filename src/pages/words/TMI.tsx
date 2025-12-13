@@ -1,9 +1,20 @@
 import { PageLayout } from "@/components/PageLayout";
 
-export default function OnDesign() {
+function MarginNote({ number, children }: { number: number; children: React.ReactNode }) {
+  return (
+    <span className="relative">
+      <sup className="text-muted-foreground">{number}</sup>
+      <span className="absolute left-full ml-8 top-0 w-48 text-sm text-muted-foreground hidden lg:block">
+        <sup>{number}</sup> {children}
+      </span>
+    </span>
+  );
+}
+
+export default function TMI() {
   return (
     <PageLayout title="Pt 1 → TMI" subtitle="Design & AI">
-      <article className="prose space-y-6">
+      <article className="prose space-y-6 lg:pr-56">
 
         <p>
           Every time I log into LinkedIn, a product designer is bragging about how they 
@@ -14,7 +25,7 @@ export default function OnDesign() {
 
         <p>
           Twenty-ish years ago, I taught myself how to build websites so I could land 
-          a job<sup className="text-muted-foreground">1</sup>. That eventually got me hired at an agency in Washington, DC, 
+          a job<MarginNote number={1}>Psychology major = no ragrets</MarginNote>. That eventually got me hired at an agency in Washington, DC, 
           creating sites for embassies — Italy, Ecuador, Rwanda, Iceland, and so on. 
           This was the era of chopping up assets, slicing everything into a thousand GIFs, 
           and praying IE6 wouldn't explode.
@@ -29,7 +40,7 @@ export default function OnDesign() {
           Fast-forward: I landed at frog design in Austin, Texas. I leaned fully into 
           the design side and set aside the "design technologist" identity. This was 
           peak Photoshop — gradients on gradients, shadows on shadows, buttons that 
-          looked like Mike and Ikes<sup className="text-muted-foreground">2</sup>.
+          looked like Mike and Ikes<MarginNote number={2}>Delicious and fruity, just like our design work</MarginNote>.
         </p>
 
         <p>
@@ -51,7 +62,7 @@ export default function OnDesign() {
         <p>
           Then came Sketch — the first UI tool that finally felt purpose-built. I'm 
           skipping a whole graveyard of tools here: InVision, Principle (which I loved), 
-          Adobe InDesign, Windows Presentation Foundation<sup className="text-muted-foreground">3</sup>, and whatever 
+          Adobe InDesign, Windows Presentation Foundation<MarginNote number={3}>Wild times. We don't talk about WPF.</MarginNote>, and whatever 
           Framer has reinvented itself into this year.
         </p>
 
@@ -73,19 +84,14 @@ export default function OnDesign() {
           So, can AI help do that?
         </p>
 
-        {/* Footnotes */}
-        <hr className="border-border my-12" />
-        
-        <div className="space-y-3 text-sm text-muted-foreground">
-          <p>
-            <sup>1</sup> Psychology major = no ragrets
-          </p>
-          <p>
-            <sup>2</sup> Delicious and fruity, just like our design work
-          </p>
-          <p>
-            <sup>3</sup> Wild times. We don't talk about WPF.
-          </p>
+        {/* Mobile fallback footnotes */}
+        <div className="lg:hidden">
+          <hr className="border-border my-12" />
+          <div className="space-y-3 text-sm text-muted-foreground">
+            <p><sup>1</sup> Psychology major = no ragrets</p>
+            <p><sup>2</sup> Delicious and fruity, just like our design work</p>
+            <p><sup>3</sup> Wild times. We don't talk about WPF.</p>
+          </div>
         </div>
       </article>
     </PageLayout>
