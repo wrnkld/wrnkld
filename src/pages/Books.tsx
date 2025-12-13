@@ -78,7 +78,7 @@ export default function Books() {
 
   return (
     <PageLayout title="Books" subtitle="About">
-      <p className="font-body text-lg text-muted-foreground leading-relaxed mb-8">
+      <p className="font-body text-lg md:text-xl text-muted-foreground leading-relaxed mb-8">
         I recently started tracking the books I read.
       </p>
 
