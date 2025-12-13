@@ -3,13 +3,6 @@ import { PageLayout } from "@/components/PageLayout";
 import { books } from "@/data/books";
 import { Input } from "@/components/ui/input";
 import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
-import {
   Table,
   TableBody,
   TableCell,
@@ -25,17 +18,8 @@ type SortDirection = "asc" | "desc";
 
 export default function Books() {
   const [search, setSearch] = useState("");
-  const [yearFilter, setYearFilter] = useState<string>("all");
-  const [recommendedFilter, setRecommendedFilter] = useState<string>("all");
   const [sortField, setSortField] = useState<SortField>("yearRead");
   const [sortDirection, setSortDirection] = useState<SortDirection>("desc");
-
-  const years = useMemo(() => {
-    const uniqueYears = [...new Set(books.map((b) => b.yearRead))].sort(
-      (a, b) => b - a
-    );
-    return uniqueYears;
-  }, []);
 
   const filteredAndSortedBooks = useMemo(() => {
     let result = [...books];
@@ -50,15 +34,6 @@ export default function Books() {
       );
     }
 
-    // Year filter
-    if (yearFilter !== "all") {
-      result = result.filter((book) => book.yearRead === parseInt(yearFilter));
-    }
-
-    // Recommended filter
-    if (recommendedFilter === "recommended") {
-      result = result.filter((book) => book.recommended);
-    }
 
     // Sort
     result.sort((a, b) => {
@@ -72,7 +47,7 @@ export default function Books() {
     });
 
     return result;
-  }, [search, yearFilter, recommendedFilter, sortField, sortDirection]);
+  }, [search, sortField, sortDirection]);
 
   const handleSort = (field: SortField) => {
     if (sortField === field) {
@@ -107,46 +82,16 @@ export default function Books() {
         Books I've read since 2022. Stars indicate personal recommendations.
       </p>
 
-      {/* Filters */}
-      <div className="flex flex-col sm:flex-row gap-4 mb-6">
-        <div className="relative flex-1">
-          <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
-          <Input
-            placeholder="Search by title or author..."
-            value={search}
-            onChange={(e) => setSearch(e.target.value)}
-            className="pl-9"
-          />
-        </div>
-        <Select value={yearFilter} onValueChange={setYearFilter}>
-          <SelectTrigger className="w-full sm:w-[140px]">
-            <SelectValue placeholder="Year read" />
-          </SelectTrigger>
-          <SelectContent>
-            <SelectItem value="all">All years</SelectItem>
-            {years.map((year) => (
-              <SelectItem key={year} value={year.toString()}>
-                {year}
-              </SelectItem>
-            ))}
-          </SelectContent>
-        </Select>
-        <Select value={recommendedFilter} onValueChange={setRecommendedFilter}>
-          <SelectTrigger className="w-full sm:w-[160px]">
-            <SelectValue placeholder="Filter" />
-          </SelectTrigger>
-          <SelectContent>
-            <SelectItem value="all">All books</SelectItem>
-            <SelectItem value="recommended">Recommended</SelectItem>
-          </SelectContent>
-        </Select>
+      {/* Search */}
+      <div className="relative mb-6">
+        <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
+        <Input
+          placeholder={`Search [${books.length} books]`}
+          value={search}
+          onChange={(e) => setSearch(e.target.value)}
+          className="pl-9"
+        />
       </div>
-
-      {/* Count */}
-      <p className="text-sm text-muted-foreground mb-4">
-        {filteredAndSortedBooks.length} book
-        {filteredAndSortedBooks.length !== 1 ? "s" : ""}
-      </p>
 
       {/* Table */}
       <div className="border border-border rounded-md overflow-hidden">
