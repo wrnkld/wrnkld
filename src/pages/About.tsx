@@ -21,7 +21,7 @@ export default function About() {
             className="grid grid-cols-1 md:grid-cols-[1fr_1fr_auto] gap-2 md:gap-8 py-6 px-6 border-b border-border last:border-b-0 text-lg"
           >
             <div>
-              <h3 className="font-display text-lg text-foreground">{job.company}</h3>
+              <h3 className="font-display text-lg font-semibold text-foreground">{job.company}</h3>
               <p className="font-body text-muted-foreground">{job.role}</p>
             </div>
             <p className="font-body text-muted-foreground">{job.location}</p>
