@@ -48,10 +48,12 @@ export default function Index() {
       </section>
       
       {/* Footer */}
-      <footer className="px-6 pb-12 text-center">
-        <p className="font-body text-lg text-muted-foreground">
-          Say hello → <a href="mailto:hello@example.com" className="underline hover:text-foreground transition-colors">hello@example.com</a>
-        </p>
+      <footer className="px-6 pb-12">
+        <div className="max-w-4xl mx-auto">
+          <p className="font-body text-lg text-muted-foreground">
+            Say hello → <a href="mailto:hello@example.com" className="underline hover:text-foreground transition-colors">hello@example.com</a>
+          </p>
+        </div>
       </footer>
     </div>
   );
