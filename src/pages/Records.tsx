@@ -98,10 +98,10 @@ export default function Records() {
         <Table>
           <TableHeader>
             <TableRow className="bg-muted/50">
-              <TableHead>
+              <TableHead className="text-right">
                 <SortButton field="artist">Artist</SortButton>
               </TableHead>
-              <TableHead>
+              <TableHead className="text-right">
                 <SortButton field="album">Album</SortButton>
               </TableHead>
               <TableHead className="w-[100px] text-right">
@@ -116,8 +116,8 @@ export default function Records() {
                 className="animate-fade-in"
                 style={{ animationDelay: `${Math.min(index * 20, 500)}ms` }}
               >
-                <TableCell className="text-muted-foreground">{record.artist}</TableCell>
-                <TableCell className="text-foreground">
+                <TableCell className="text-right text-muted-foreground">{record.artist}</TableCell>
+                <TableCell className="text-right text-foreground">
                   {record.album}
                 </TableCell>
                 <TableCell className="text-right text-muted-foreground">
