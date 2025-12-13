@@ -3,7 +3,7 @@ import { PageLayout } from "@/components/PageLayout";
 export default function OnDesign() {
   return (
     <PageLayout title="On Design" subtitle="Words">
-      <article className="font-body text-lg leading-relaxed space-y-6 text-muted-foreground">
+      <article className="prose space-y-6">
         <p>
           Design is not about making things pretty. It's about making things work. 
           The visual layer is just one dimension of a much larger problem space that 
