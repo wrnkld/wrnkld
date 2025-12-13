@@ -23,8 +23,15 @@ export function PageLayout({ title, subtitle, children, accentColor }: PageLayou
               onMouseEnter={() => setIsHovered(true)}
               onMouseLeave={() => setIsHovered(false)}
             >
-              <ArrowLeft className="w-4 h-4" />
-              <span>{isHovered ? "Back" : subtitle}</span>
+              <ArrowLeft className="w-4 h-4 transition-transform duration-300 group-hover:-translate-x-1" />
+              <span className="relative overflow-hidden">
+                <span className={`inline-block transition-all duration-300 ${isHovered ? '-translate-y-full opacity-0' : 'translate-y-0 opacity-100'}`}>
+                  {subtitle}
+                </span>
+                <span className={`absolute left-0 top-0 inline-block transition-all duration-300 ${isHovered ? 'translate-y-0 opacity-100' : 'translate-y-full opacity-0'}`}>
+                  Back
+                </span>
+              </span>
             </Link>
           )}
           <h1 
