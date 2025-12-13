@@ -1,5 +1,18 @@
 import { PageLayout } from "@/components/PageLayout";
 
+import analyticsAnalyze from "@/assets/sas/analytics-analyze.png";
+import analyticsExplore from "@/assets/sas/analytics-explore.png";
+import analyticsPrepare from "@/assets/sas/analytics-prepare.png";
+import analyticsReport from "@/assets/sas/analytics-report.png";
+import factoryData from "@/assets/sas/factory-data.png";
+import factoryModelTemplates from "@/assets/sas/factory-model-templates.png";
+import factoryProfile from "@/assets/sas/factory-profile.png";
+import factoryResults from "@/assets/sas/factory-results.png";
+import factorySegment from "@/assets/sas/factory-segment.png";
+import visualStatsProperties from "@/assets/sas/visual-stats-properties.png";
+import visualStatsRoles from "@/assets/sas/visual-stats-roles.png";
+import visualStatsShare from "@/assets/sas/visual-stats-share.png";
+
 export default function SAS() {
   return (
     <PageLayout title="SAS" subtitle="Work">
@@ -29,6 +42,21 @@ export default function SAS() {
           The new web platform launched to strong adoption, with users praising 
           the improved collaboration features and accessibility.
         </p>
+
+        <div className="grid gap-4 mt-12">
+          <img src={analyticsExplore} alt="SAS Analytics Explore" className="w-full rounded-md border border-border" />
+          <img src={analyticsPrepare} alt="SAS Analytics Prepare" className="w-full rounded-md border border-border" />
+          <img src={analyticsAnalyze} alt="SAS Analytics Analyze" className="w-full rounded-md border border-border" />
+          <img src={analyticsReport} alt="SAS Analytics Report" className="w-full rounded-md border border-border" />
+          <img src={factoryData} alt="SAS Factory Data" className="w-full rounded-md border border-border" />
+          <img src={factoryModelTemplates} alt="SAS Factory Model Templates" className="w-full rounded-md border border-border" />
+          <img src={factoryProfile} alt="SAS Factory Profile" className="w-full rounded-md border border-border" />
+          <img src={factoryResults} alt="SAS Factory Results" className="w-full rounded-md border border-border" />
+          <img src={factorySegment} alt="SAS Factory Segment" className="w-full rounded-md border border-border" />
+          <img src={visualStatsProperties} alt="SAS Visual Stats Properties" className="w-full rounded-md border border-border" />
+          <img src={visualStatsRoles} alt="SAS Visual Stats Roles" className="w-full rounded-md border border-border" />
+          <img src={visualStatsShare} alt="SAS Visual Stats Share" className="w-full rounded-md border border-border" />
+        </div>
       </div>
     </PageLayout>
   );
