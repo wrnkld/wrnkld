@@ -21,7 +21,7 @@ export default function Index() {
           <h1 className="font-display text-2xl md:text-3xl font-semibold text-foreground mb-8 text-left">
             Matthew Stevens
           </h1>
-          <p className="prose text-balance">
+          <p className="prose">
             A product design leader with 20 years of experience, I design elegant solutions for complex enterprise software, working hard to understand pain points by talking directly to customers. I manage design teams, big or small, still thriving as an individual contributor. I work quickly and efficiently, iterating through multiple ideas and gathering feedback from engineering, product management, and design.
           </p>
         </div>
