@@ -18,7 +18,7 @@ export default function About() {
         {experience.map((job, index) => (
           <div 
             key={index} 
-            className="grid grid-cols-1 md:grid-cols-[1fr_1fr_auto] gap-2 md:gap-8 py-6 px-6 border-b border-border last:border-b-0 text-lg"
+            className="grid grid-cols-1 md:grid-cols-[1fr_1fr_150px] gap-2 md:gap-8 py-6 px-6 border-b border-border last:border-b-0 text-lg"
           >
             <div>
               <h3 className="font-display text-lg font-semibold text-foreground">{job.company}</h3>
