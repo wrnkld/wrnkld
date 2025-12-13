@@ -68,11 +68,11 @@ export default function Records() {
     <Button
       variant="ghost"
       size="sm"
-      className="-ml-3 h-8 hover:bg-transparent"
+      className="-ml-3 h-8 hover:bg-transparent text-lg"
       onClick={() => handleSort(field)}
     >
       {children}
-      <ArrowUpDown className="ml-2 h-3 w-3 text-muted-foreground" />
+      <ArrowUpDown className="ml-2 h-4 w-4 text-muted-foreground" />
     </Button>
   );
 
@@ -117,10 +117,10 @@ export default function Records() {
                 style={{ animationDelay: `${Math.min(index * 20, 500)}ms` }}
               >
                 <TableCell className="font-medium">{record.artist}</TableCell>
-                <TableCell>
+                <TableCell className="text-muted-foreground">
                   {record.album}
                 </TableCell>
-                <TableCell className="text-right">
+                <TableCell className="text-right text-muted-foreground">
                   {record.year}
                 </TableCell>
               </TableRow>
