@@ -95,6 +95,11 @@ export default function Tanium() {
         <img src={taniumDiscoverInterfaces} alt="Tanium Discover Interfaces" className="w-full h-auto" />
       </div>
 
+      {/* Video - Enforce */}
+      <div className="mt-12 max-w-6xl mx-auto px-6">
+        <video src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/TaniumEnforce-F6AmdbRKkIirIqOqbULHtQ9dsb4ZWe.mov" autoPlay loop muted playsInline className="w-full h-auto" />
+      </div>
+
       {/* Large image */}
       <div className="mt-8 max-w-6xl mx-auto px-6">
         <img src={taniumAssetVendor} alt="Tanium Asset Vendor" className="w-full h-auto" />
