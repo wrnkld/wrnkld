@@ -16,7 +16,7 @@ import visualStatsShare from "@/assets/sas/visual-stats-share.png";
 
 export default function SAS() {
   return (
-    <PageLayout title="SAS" subtitle="Work">
+    <PageLayout title="SAS" subtitle="Work" fullWidthContent>
       <div className="space-y-12">
         <p className="prose">
           Analytics platform modernization. Helped transition a legacy analytics 
