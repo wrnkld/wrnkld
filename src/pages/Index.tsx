@@ -7,9 +7,9 @@ const cards = [
   { title: "Experience", subtitle: "About", to: "/about", colorClass: "card-mustard" },
   { title: "Books", subtitle: "About", to: "/books", colorClass: "card-coral" },
   { title: "Records", subtitle: "About", to: "/records", colorClass: "card-slate" },
-  { title: "Pt 1 → TMI", subtitle: "Words", to: "/words/on-design", colorClass: "card-plum", seriesLabel: "Design & AI" },
-  { title: "Pt 2 → Vibes", subtitle: "Words", to: "/words/on-process", colorClass: "card-teal", seriesLabel: "Design & AI" },
-  { title: "Pt 3 → Real, Real", subtitle: "Words", to: "/words/on-tools", colorClass: "card-terracotta", seriesLabel: "Design & AI" },
+  { title: "Pt 1 → TMI", subtitle: "Design & AI", to: "/words/on-design", colorClass: "card-plum" },
+  { title: "Pt 2 → Vibes", subtitle: "Design & AI", to: "/words/on-process", colorClass: "card-teal" },
+  { title: "Pt 3 → Real, Real", subtitle: "Design & AI", to: "/words/on-tools", colorClass: "card-terracotta" },
 ];
 
 export default function Index() {
@@ -39,7 +39,7 @@ export default function Index() {
                 to={card.to}
                 colorClass={card.colorClass}
                 index={index}
-                seriesLabel={card.seriesLabel}
+                
                 
               />
             ))}
