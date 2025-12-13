@@ -78,7 +78,7 @@ export default function Records() {
 
   return (
     <PageLayout title="Records" subtitle="About">
-      <p className="font-body text-lg md:text-xl text-muted-foreground leading-relaxed mb-8">
+      <p className="prose mb-8">
         A relatively exhaustive list of records I like. Updated often.
       </p>
 
