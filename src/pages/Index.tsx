@@ -7,9 +7,9 @@ const cards = [
   { title: "Experience", subtitle: "About", to: "/about", colorClass: "card-mustard" },
   { title: "Books", subtitle: "About", to: "/books", colorClass: "card-coral" },
   { title: "Records", subtitle: "About", to: "/records", colorClass: "card-slate" },
-  { title: "TMI", subtitle: "Words", to: "/words/on-design", colorClass: "card-plum", seriesLabel: "Design & AI", partLabel: "Part 1 → TMI" },
-  { title: "Vibes", subtitle: "Words", to: "/words/on-process", colorClass: "card-teal", seriesLabel: "Design & AI", partLabel: "Part 2 → Vibes" },
-  { title: "Real, Real", subtitle: "Words", to: "/words/on-tools", colorClass: "card-terracotta", seriesLabel: "Design & AI", partLabel: "Part 3 → Real, Real" },
+  { title: "Part 1 → TMI", subtitle: "Words", to: "/words/on-design", colorClass: "card-plum", seriesLabel: "Design & AI" },
+  { title: "Part 2 → Vibes", subtitle: "Words", to: "/words/on-process", colorClass: "card-teal", seriesLabel: "Design & AI" },
+  { title: "Part 3 → Real, Real", subtitle: "Words", to: "/words/on-tools", colorClass: "card-terracotta", seriesLabel: "Design & AI" },
 ];
 
 export default function Index() {
@@ -40,7 +40,7 @@ export default function Index() {
                 colorClass={card.colorClass}
                 index={index}
                 seriesLabel={card.seriesLabel}
-                partLabel={card.partLabel}
+                
               />
             ))}
           </div>
