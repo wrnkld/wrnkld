@@ -78,13 +78,11 @@ export default function RedHat() {
         <video src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/rhba-track-demo-1iGpopbUyWNEkHm0ywCNKKtJBi3GZg.mp4" autoPlay loop muted playsInline className="w-full h-auto" />
       </div>
 
-      {/* 4-column grid */}
+      {/* 2-column grid */}
       <div className="mt-12 max-w-6xl mx-auto px-6">
-        <div className="grid grid-cols-4 gap-4">
+        <div className="grid grid-cols-2 gap-4">
           <img src={rhbaEmptyState} alt="Red Hat Business Automation Empty State" className="w-full h-auto" />
           <img src={rhbaSpace} alt="Red Hat Business Automation Space" className="w-full h-auto" />
-          <img src={rhbaTrack} alt="Red Hat Business Automation Track" className="w-full h-auto" />
-          <img src={rhbaWorkflowModeler} alt="Red Hat Business Automation Workflow Modeler" className="w-full h-auto" />
         </div>
       </div>
 
