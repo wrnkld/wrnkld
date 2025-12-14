@@ -97,8 +97,8 @@ export default function RedHat() {
       <div className="mt-12 max-w-6xl mx-auto px-6">
         <div className="grid grid-cols-4 gap-4">
           <img src={rhboEmployees} alt="Red Hat Business Optaplanner Employees" className="w-full h-auto" />
-          <img src={rhboRoster} alt="Red Hat Business Optaplanner Roster" className="w-full h-auto" />
           <img src={rhboAvailability} alt="Red Hat Business Optaplanner Availability" className="w-full h-auto" />
+          <img src={rhboRoster} alt="Red Hat Business Optaplanner Roster" className="w-full h-auto" />
           <img src={rhboRoute} alt="Red Hat Business Optaplanner Route" className="w-full h-auto" />
         </div>
       </div>
