@@ -4,6 +4,7 @@ import analyticsAnalyze from "@/assets/sas/analytics-analyze.png";
 import analyticsExplore from "@/assets/sas/analytics-explore.png";
 import analyticsPrepare from "@/assets/sas/analytics-prepare.png";
 import analyticsReport from "@/assets/sas/analytics-report.png";
+import sasDiagram from "@/assets/sas/sas-diagram.mov";
 import factoryData from "@/assets/sas/factory-data.png";
 import factoryModelTemplates from "@/assets/sas/factory-model-templates.png";
 import factoryProfile from "@/assets/sas/factory-profile.png";
@@ -42,7 +43,7 @@ export default function SAS() {
 
       {/* Analytics Video - BIG */}
       <div className="mt-12 max-w-6xl mx-auto px-6">
-        <video src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/analytics-diagram-N1SfmA3GOq8odycmR4nqJ1leUzL0yQ.mp4" autoPlay loop muted playsInline className="w-full h-auto" />
+        <video src={sasDiagram} autoPlay loop muted playsInline className="w-full h-auto" />
       </div>
 
       {/* Analytics 4-up */}
