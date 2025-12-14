@@ -53,46 +53,24 @@ export default function RedHat() {
       {/* 4-column grid */}
       <div className="mt-12 max-w-4xl mx-auto px-6">
         <div className="grid grid-cols-4 gap-4">
-          <img src={rhbaPropertiesPanel} alt="Red Hat Business Automation Properties Panel" className="w-full h-auto transition-all duration-300 hover:scale-[1.02] hover:-translate-y-2" />
-          <img src={rhbaNavigator} alt="Red Hat Business Automation Navigator" className="w-full h-auto transition-all duration-300 hover:scale-[1.02] hover:-translate-y-2" />
           <img src={rhbaAssetsList} alt="Red Hat Business Automation Assets List" className="w-full h-auto transition-all duration-300 hover:scale-[1.02] hover:-translate-y-2" />
-          <img src={rhbaSpace} alt="Red Hat Business Automation Space" className="w-full h-auto transition-all duration-300 hover:scale-[1.02] hover:-translate-y-2" />
-        </div>
-      </div>
-
-      {/* Text section */}
-      <div className="max-w-4xl mx-auto px-6 mt-12">
-        <h2 className="font-display text-xl font-semibold mb-4">Business Automation</h2>
-        <p className="prose">
-          The workflow modeler enables business analysts to create and manage 
-          complex automation workflows visually, bridging the gap between 
-          technical implementation and business requirements.
-        </p>
-      </div>
-
-      {/* Large image */}
-      <div className="mt-12 max-w-6xl mx-auto px-6">
-        <img src={rhbaWorkflowModeler} alt="Red Hat Business Automation Workflow Modeler" className="w-full h-auto" />
-      </div>
-
-      {/* 4-column grid */}
-      <div className="mt-12 max-w-4xl mx-auto px-6">
-        <div className="grid grid-cols-4 gap-4">
-          <img src={rhbaContributors} alt="Red Hat Business Automation Contributors" className="w-full h-auto transition-all duration-300 hover:scale-[1.02] hover:-translate-y-2" />
           <img src={rhbaComments} alt="Red Hat Business Automation Comments" className="w-full h-auto transition-all duration-300 hover:scale-[1.02] hover:-translate-y-2" />
-          <img src={rhbaVersionControl} alt="Red Hat Business Automation Version Control" className="w-full h-auto transition-all duration-300 hover:scale-[1.02] hover:-translate-y-2" />
-          <img src={rhbaTrack} alt="Red Hat Business Automation Track" className="w-full h-auto transition-all duration-300 hover:scale-[1.02] hover:-translate-y-2" />
+          <img src={rhbaContributors} alt="Red Hat Business Automation Contributors" className="w-full h-auto transition-all duration-300 hover:scale-[1.02] hover:-translate-y-2" />
+          <img src={rhbaEmptyState} alt="Red Hat Business Automation Empty State" className="w-full h-auto transition-all duration-300 hover:scale-[1.02] hover:-translate-y-2" />
         </div>
       </div>
 
-      {/* Text section */}
-      <div className="max-w-4xl mx-auto px-6 mt-12">
-        <h2 className="font-display text-xl font-semibold mb-4">Collaboration & Metrics</h2>
-        <p className="prose">
-          Project insights and collaboration tools help teams track progress, 
-          manage contributions, and maintain visibility across complex 
-          automation initiatives.
-        </p>
+      {/* 1-up large image */}
+      <div className="mt-8 max-w-6xl mx-auto px-6">
+        <img src={rhbaNavigator} alt="Red Hat Business Automation Navigator" className="w-full h-auto" />
+      </div>
+
+      {/* 2-column grid */}
+      <div className="mt-8 max-w-4xl mx-auto px-6">
+        <div className="grid grid-cols-2 gap-4">
+          <img src={rhbaProjectMetrics} alt="Red Hat Business Automation Project Metrics" className="w-full h-auto transition-all duration-300 hover:scale-[1.02] hover:-translate-y-2" />
+          <img src={rhbaPropertiesPanel} alt="Red Hat Business Automation Properties Panel" className="w-full h-auto transition-all duration-300 hover:scale-[1.02] hover:-translate-y-2" />
+        </div>
       </div>
 
       {/* Video - Track Demo */}
@@ -100,24 +78,14 @@ export default function RedHat() {
         <video src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/rhba-track-demo-1iGpopbUyWNEkHm0ywCNKKtJBi3GZg.mp4" autoPlay loop muted playsInline className="w-full h-auto" />
       </div>
 
-      {/* Large image */}
-      <div className="mt-8 max-w-6xl mx-auto px-6">
-        <img src={rhbaProjectMetrics} alt="Red Hat Business Automation Project Metrics" className="w-full h-auto" />
-      </div>
-
-      {/* Large image */}
-      <div className="mt-8 max-w-6xl mx-auto px-6">
-        <img src={rhbaEmptyState} alt="Red Hat Business Automation Empty State" className="w-full h-auto" />
-      </div>
-
-      {/* Text section */}
-      <div className="max-w-4xl mx-auto px-6 mt-12">
-        <h2 className="font-display text-xl font-semibold mb-4">OptaPlanner</h2>
-        <p className="prose">
-          Constraint-based optimization for complex scheduling problems. 
-          OptaPlanner helps organizations solve vehicle routing, employee 
-          rostering, and resource allocation challenges.
-        </p>
+      {/* 4-column grid */}
+      <div className="mt-12 max-w-4xl mx-auto px-6">
+        <div className="grid grid-cols-4 gap-4">
+          <img src={rhbaSpace} alt="Red Hat Business Automation Space" className="w-full h-auto transition-all duration-300 hover:scale-[1.02] hover:-translate-y-2" />
+          <img src={rhbaTrack} alt="Red Hat Business Automation Track" className="w-full h-auto transition-all duration-300 hover:scale-[1.02] hover:-translate-y-2" />
+          <img src={rhbaVersionControl} alt="Red Hat Business Automation Version Control" className="w-full h-auto transition-all duration-300 hover:scale-[1.02] hover:-translate-y-2" />
+          <img src={rhbaWorkflowModeler} alt="Red Hat Business Automation Workflow Modeler" className="w-full h-auto transition-all duration-300 hover:scale-[1.02] hover:-translate-y-2" />
+        </div>
       </div>
 
       {/* Video - Roster Demo */}
