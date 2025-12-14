@@ -1,8 +1,8 @@
 import { PageLayout } from "@/components/PageLayout";
 
-export default function RealReal() {
+export default function Sleeves() {
   return (
-    <PageLayout title="Pt 3 → Real, Real" subtitle="Design & AI">
+    <PageLayout title="Tools 3 → Sleeves" subtitle="Design & AI">
       <article className="prose space-y-6">
         <p>
           Tools shape how we think. The medium is not neutral. Design in Figma 
