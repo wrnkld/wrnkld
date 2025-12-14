@@ -33,9 +33,10 @@ export default function SAS() {
       <div className="max-w-4xl mx-auto px-6 mt-12">
         <h2 className="font-display text-xl font-semibold mb-4">Analytics Platform (SAS Studio)</h2>
         <p className="prose">
-          The analytics suite enables data scientists to explore, prepare, and 
-          analyze datasets through an intuitive visual interface, reducing the 
-          barrier to advanced statistical analysis.
+          Led design across SAS Studio, coordinating multiple product managers 
+          and design teams spanning forecasting, text analytics, and core 
+          analytics workflows. Shipped the flagship analytics platform that 
+          remains central to SAS's product ecosystem today.
         </p>
       </div>
 
