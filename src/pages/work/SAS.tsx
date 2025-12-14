@@ -50,7 +50,7 @@ export default function SAS() {
             loop 
             muted 
             playsInline 
-            className="w-full h-full object-cover object-center scale-[1.3]"
+            className="w-full h-full object-cover object-center scale-[1.2]"
           />
         </div>
       </div>
