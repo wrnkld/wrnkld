@@ -44,22 +44,12 @@ export default function SAS() {
         </p>
       </div>
 
-      {/* Video - Analytics Diagram */}
-      <div className="mt-12 max-w-6xl mx-auto px-6">
+      {/* Video - Analytics Diagram (Full Width) */}
+      <div className="mt-12 w-full">
         <video src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/analytics-diagram-N1SfmA3GOq8odycmR4nqJ1leUzL0yQ.mp4" autoPlay loop muted playsInline className="w-full h-auto" />
       </div>
 
-      {/* 4-column grid */}
-      <div className="mt-12 max-w-4xl mx-auto px-6">
-        <div className="grid grid-cols-4 gap-4">
-          <img src={analyticsExplore} alt="SAS Analytics Explore" className="w-full h-auto transition-all duration-300 hover:scale-[1.02] hover:-translate-y-2" />
-          <img src={analyticsPrepare} alt="SAS Analytics Prepare" className="w-full h-auto transition-all duration-300 hover:scale-[1.02] hover:-translate-y-2" />
-          <img src={analyticsAnalyze} alt="SAS Analytics Analyze" className="w-full h-auto transition-all duration-300 hover:scale-[1.02] hover:-translate-y-2" />
-          <img src={analyticsReport} alt="SAS Analytics Report" className="w-full h-auto transition-all duration-300 hover:scale-[1.02] hover:-translate-y-2" />
-        </div>
-      </div>
-
-      {/* Text section */}
+      {/* Analytics Section */}
       <div className="max-w-4xl mx-auto px-6 mt-12">
         <h2 className="font-display text-xl font-semibold mb-4">Visual Analytics</h2>
         <p className="prose">
@@ -69,22 +59,41 @@ export default function SAS() {
         </p>
       </div>
 
-      {/* Large image */}
+      {/* Analytics 4-up */}
+      <div className="mt-12 max-w-6xl mx-auto px-6">
+        <div className="grid grid-cols-4 gap-4">
+          <img src={analyticsExplore} alt="SAS Analytics Explore" className="w-full h-auto" />
+          <img src={analyticsPrepare} alt="SAS Analytics Prepare" className="w-full h-auto" />
+          <img src={analyticsAnalyze} alt="SAS Analytics Analyze" className="w-full h-auto" />
+          <img src={analyticsReport} alt="SAS Analytics Report" className="w-full h-auto" />
+        </div>
+      </div>
+
+      {/* Factory Section */}
+      <div className="max-w-4xl mx-auto px-6 mt-12">
+        <h2 className="font-display text-xl font-semibold mb-4">Model Factory</h2>
+        <p className="prose">
+          Automated model building and deployment pipeline that enables teams to 
+          create, test, and iterate on predictive models at scale.
+        </p>
+      </div>
+
+      {/* Factory 1-up */}
       <div className="mt-12 max-w-6xl mx-auto px-6">
         <img src={factoryResults} alt="SAS Factory Results" className="w-full h-auto" />
       </div>
 
-      {/* 4-column grid */}
-      <div className="mt-12 max-w-4xl mx-auto px-6">
+      {/* Factory 4-up */}
+      <div className="mt-8 max-w-6xl mx-auto px-6">
         <div className="grid grid-cols-4 gap-4">
-          <img src={factoryData} alt="SAS Factory Data" className="w-full h-auto transition-all duration-300 hover:scale-[1.02] hover:-translate-y-2" />
-          <img src={factoryModelTemplates} alt="SAS Factory Model Templates" className="w-full h-auto transition-all duration-300 hover:scale-[1.02] hover:-translate-y-2" />
-          <img src={factoryProfile} alt="SAS Factory Profile" className="w-full h-auto transition-all duration-300 hover:scale-[1.02] hover:-translate-y-2" />
-          <img src={factorySegment} alt="SAS Factory Segment" className="w-full h-auto transition-all duration-300 hover:scale-[1.02] hover:-translate-y-2" />
+          <img src={factoryData} alt="SAS Factory Data" className="w-full h-auto" />
+          <img src={factoryModelTemplates} alt="SAS Factory Model Templates" className="w-full h-auto" />
+          <img src={factoryProfile} alt="SAS Factory Profile" className="w-full h-auto" />
+          <img src={factorySegment} alt="SAS Factory Segment" className="w-full h-auto" />
         </div>
       </div>
 
-      {/* Text section */}
+      {/* Visual Statistics Section */}
       <div className="max-w-4xl mx-auto px-6 mt-12">
         <h2 className="font-display text-xl font-semibold mb-4">Visual Statistics</h2>
         <p className="prose">
@@ -94,19 +103,13 @@ export default function SAS() {
         </p>
       </div>
 
-      {/* Large image */}
+      {/* Visual Stats 3-up */}
       <div className="mt-12 max-w-6xl mx-auto px-6">
-        <img src={visualStatsRoles} alt="SAS Visual Stats Roles" className="w-full h-auto" />
-      </div>
-
-      {/* Large image */}
-      <div className="mt-8 max-w-6xl mx-auto px-6">
-        <img src={visualStatsProperties} alt="SAS Visual Stats Properties" className="w-full h-auto" />
-      </div>
-
-      {/* Large image */}
-      <div className="mt-8 max-w-6xl mx-auto px-6">
-        <img src={visualStatsShare} alt="SAS Visual Stats Share" className="w-full h-auto" />
+        <div className="grid grid-cols-3 gap-4">
+          <img src={visualStatsRoles} alt="SAS Visual Stats Roles" className="w-full h-auto" />
+          <img src={visualStatsProperties} alt="SAS Visual Stats Properties" className="w-full h-auto" />
+          <img src={visualStatsShare} alt="SAS Visual Stats Share" className="w-full h-auto" />
+        </div>
       </div>
     </PageLayout>
   );
