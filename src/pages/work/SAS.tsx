@@ -43,17 +43,7 @@ export default function SAS() {
 
       {/* Analytics Video - BIG */}
       <div className="mt-12 max-w-6xl mx-auto px-6">
-        <div className="w-full overflow-hidden" style={{ aspectRatio: '1440 / 900' }}>
-          <video 
-            src={sasDiagram} 
-            autoPlay 
-            loop 
-            muted 
-            playsInline 
-            className="w-full h-full object-cover object-center"
-            style={{ clipPath: 'inset(3% 2% 3% 2%)' }}
-          />
-        </div>
+        <video src={sasDiagram} autoPlay loop muted playsInline className="w-full h-auto block" />
       </div>
 
       {/* Analytics 4-up */}
