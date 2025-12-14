@@ -29,6 +29,32 @@ export default function SAS() {
         </p>
       </div>
 
+      {/* Analytics Platform Section */}
+      <div className="max-w-4xl mx-auto px-6 mt-12">
+        <h2 className="font-display text-xl font-semibold mb-4">Analytics Platform (SAS Studio)</h2>
+        <p className="prose">
+          Led design across SAS Studio, coordinating multiple product managers 
+          and design teams spanning forecasting, text analytics, and core 
+          analytics workflows. Established the flagship analytics platform that 
+          remains central to SAS's ecosystem today.
+        </p>
+      </div>
+
+      {/* Analytics Video - BIG */}
+      <div className="mt-12 max-w-6xl mx-auto px-6">
+        <video src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/analytics-diagram-N1SfmA3GOq8odycmR4nqJ1leUzL0yQ.mp4" autoPlay loop muted playsInline className="w-full h-auto" />
+      </div>
+
+      {/* Analytics 4-up */}
+      <div className="mt-8 max-w-6xl mx-auto px-6">
+        <div className="grid grid-cols-4 gap-4">
+          <img src={analyticsPrepare} alt="SAS Analytics Prepare" className="w-full h-auto" />
+          <img src={analyticsExplore} alt="SAS Analytics Explore" className="w-full h-auto" />
+          <img src={analyticsAnalyze} alt="SAS Analytics Analyze" className="w-full h-auto" />
+          <img src={analyticsReport} alt="SAS Analytics Report" className="w-full h-auto" />
+        </div>
+      </div>
+
       {/* Factory Miner Section */}
       <div className="max-w-4xl mx-auto px-6 mt-12">
         <h2 className="font-display text-xl font-semibold mb-4">Factory Miner</h2>
@@ -73,32 +99,6 @@ export default function SAS() {
         <div className="grid grid-cols-2 gap-4">
           <img src={visualStatsProperties} alt="SAS Visual Stats Properties" className="w-full h-auto" />
           <img src={visualStatsShare} alt="SAS Visual Stats Share" className="w-full h-auto" />
-        </div>
-      </div>
-
-      {/* Analytics Platform Section */}
-      <div className="max-w-4xl mx-auto px-6 mt-12">
-        <h2 className="font-display text-xl font-semibold mb-4">Analytics Platform (SAS Studio)</h2>
-        <p className="prose">
-          Led design across SAS Studio, coordinating multiple product managers 
-          and design teams spanning forecasting, text analytics, and core 
-          analytics workflows. Established the flagship analytics platform that 
-          remains central to SAS's ecosystem today.
-        </p>
-      </div>
-
-      {/* Analytics Video - BIG */}
-      <div className="mt-12 max-w-6xl mx-auto px-6">
-        <video src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/analytics-diagram-N1SfmA3GOq8odycmR4nqJ1leUzL0yQ.mp4" autoPlay loop muted playsInline className="w-full h-auto" />
-      </div>
-
-      {/* Analytics 4-up */}
-      <div className="mt-8 max-w-6xl mx-auto px-6">
-        <div className="grid grid-cols-4 gap-4">
-          <img src={analyticsPrepare} alt="SAS Analytics Prepare" className="w-full h-auto" />
-          <img src={analyticsExplore} alt="SAS Analytics Explore" className="w-full h-auto" />
-          <img src={analyticsAnalyze} alt="SAS Analytics Analyze" className="w-full h-auto" />
-          <img src={analyticsReport} alt="SAS Analytics Report" className="w-full h-auto" />
         </div>
       </div>
     </PageLayout>
