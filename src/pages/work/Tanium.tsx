@@ -6,9 +6,9 @@ import taniumThreatAlerts from "@/assets/tanium/tanium-threat-alerts.png";
 import taniumThreatDocuments from "@/assets/tanium/tanium-threat-documents.png";
 
 import taniumNavigation from "@/assets/tanium/tanium-navigation.mp4";
-import taniumAssurance from "@/assets/tanium/TaniumAssurance.mov";
-import taniumDiscover from "@/assets/tanium/TaniumDiscover.mov";
-import taniumEnforce from "@/assets/tanium/TaniumEnforce.mov";
+import taniumAssurance from "@/assets/tanium/tanium-assurance.mp4";
+import taniumDiscover from "@/assets/tanium/tanium-discover.mp4";
+import taniumEnforce from "@/assets/tanium/tanium-enforce.mp4";
 
 export default function Tanium() {
   return (
