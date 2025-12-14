@@ -16,6 +16,10 @@ import rhboEmployees from "@/assets/redhat/rhbo-employees.png";
 import rhboRoster from "@/assets/redhat/rhbo-roster.png";
 import rhboRoute from "@/assets/redhat/rhbo-route.png";
 
+import rhbaPreviewVideo from "@/assets/redhat/rhba-preview.mov";
+import rhbaTrackVideo from "@/assets/redhat/rhba-track.mov";
+import rhboRosterVideo from "@/assets/redhat/rhbo-roster.mov";
+
 export default function RedHat() {
   return (
     <PageLayout title="Red Hat" subtitle="Work" fullWidthContent>
@@ -41,7 +45,7 @@ export default function RedHat() {
 
       {/* Video - Platform Demo */}
       <div className="mt-12 max-w-6xl mx-auto px-6">
-        <video src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/rhba-platform-demo-HIDa2E47nQrPA59NvZFBmeQmWXGeB6.mp4" autoPlay loop muted playsInline className="w-full h-auto" />
+        <video src={rhbaPreviewVideo} autoPlay loop muted playsInline className="w-full h-auto" />
       </div>
 
       {/* 4-column grid */}
@@ -69,7 +73,7 @@ export default function RedHat() {
 
       {/* Video - Track Demo */}
       <div className="mt-12 max-w-6xl mx-auto px-6">
-        <video src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/rhba-track-demo-1iGpopbUyWNEkHm0ywCNKKtJBi3GZg.mp4" autoPlay loop muted playsInline className="w-full h-auto" />
+        <video src={rhbaTrackVideo} autoPlay loop muted playsInline className="w-full h-auto" />
       </div>
 
       {/* 2-column grid */}
@@ -91,7 +95,7 @@ export default function RedHat() {
 
       {/* Video - Roster Demo */}
       <div className="mt-12 max-w-6xl mx-auto px-6">
-        <video src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/rhbo-roster-demo-gXuZmMh9Cr8GLDmQv1gRBPaR68ZO9G.mp4" autoPlay loop muted playsInline className="w-full h-auto" />
+        <video src={rhboRosterVideo} autoPlay loop muted playsInline className="w-full h-auto" />
       </div>
 
       {/* 4-column grid */}
