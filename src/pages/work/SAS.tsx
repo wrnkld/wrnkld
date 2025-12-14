@@ -4,7 +4,7 @@ import analyticsAnalyze from "@/assets/sas/analytics-analyze.png";
 import analyticsExplore from "@/assets/sas/analytics-explore.png";
 import analyticsPrepare from "@/assets/sas/analytics-prepare.png";
 import analyticsReport from "@/assets/sas/analytics-report.png";
-import sasDiagram from "@/assets/sas/sas-diagram.mov";
+import sasDiagram from "@/assets/sas/sas-diagram.mp4";
 import factoryData from "@/assets/sas/factory-data.png";
 import factoryModelTemplates from "@/assets/sas/factory-model-templates.png";
 import factoryProfile from "@/assets/sas/factory-profile.png";
