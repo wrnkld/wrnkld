@@ -5,6 +5,11 @@ import taniumDiscoverInterfaces from "@/assets/tanium/tanium-discover-interfaces
 import taniumThreatAlerts from "@/assets/tanium/tanium-threat-alerts.png";
 import taniumThreatDocuments from "@/assets/tanium/tanium-threat-documents.png";
 
+import taniumNavigation from "@/assets/tanium/TaniumNavigation.mov";
+import taniumAssurance from "@/assets/tanium/TaniumAssurance.mov";
+import taniumDiscover from "@/assets/tanium/TaniumDiscover.mov";
+import taniumEnforce from "@/assets/tanium/TaniumEnforce.mov";
+
 export default function Tanium() {
   return (
     <PageLayout title="Tanium" subtitle="Work" fullWidthContent>
@@ -31,7 +36,7 @@ export default function Tanium() {
 
       {/* Video - Navigation */}
       <div className="mt-12 max-w-6xl mx-auto px-6">
-        <video src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/TaniumNavigation-ceK7d3kliX5iYIs21ePVMiAYSHzEsF.mov" autoPlay loop muted playsInline className="w-full h-auto" />
+        <video src={taniumNavigation} autoPlay loop muted playsInline className="w-full h-auto" />
       </div>
 
       {/* Two-up Threat Response images */}
@@ -44,12 +49,12 @@ export default function Tanium() {
 
       {/* Video - Assurance */}
       <div className="mt-12 max-w-6xl mx-auto px-6">
-        <video src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/TaniumAssurance-9svGoSVb8LcrLJspg2EBTzCy2PrLfv.mov" autoPlay loop muted playsInline className="w-full h-auto" />
+        <video src={taniumAssurance} autoPlay loop muted playsInline className="w-full h-auto" />
       </div>
 
       {/* Video - Discover */}
       <div className="mt-12 max-w-6xl mx-auto px-6">
-        <video src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/TaniumDiscover-RSFf4NVTidfRFMSbmgsXhIo2x4Wo6K.mov" autoPlay loop muted playsInline className="w-full h-auto" />
+        <video src={taniumDiscover} autoPlay loop muted playsInline className="w-full h-auto" />
       </div>
 
       {/* Two-up Asset and Discover images */}
@@ -62,7 +67,7 @@ export default function Tanium() {
 
       {/* Video - Enforce */}
       <div className="mt-12 max-w-6xl mx-auto px-6">
-        <video src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/TaniumEnforce-F6AmdbRKkIirIqOqbULHtQ9dsb4ZWe.mov" autoPlay loop muted playsInline className="w-full h-auto" />
+        <video src={taniumEnforce} autoPlay loop muted playsInline className="w-full h-auto" />
       </div>
     </PageLayout>
   );
