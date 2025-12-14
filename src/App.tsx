@@ -14,7 +14,7 @@ import Books from "./pages/Books";
 import Records from "./pages/Records";
 import TMI from "./pages/words/TMI";
 import Vibes from "./pages/words/Vibes";
-import RealReal from "./pages/words/RealReal";
+import Sleeves from "./pages/words/Sleeves";
 
 const queryClient = new QueryClient();
 
@@ -34,7 +34,7 @@ const App = () => (
           <Route path="/about/records" element={<Records />} />
           <Route path="/designai/tmi" element={<TMI />} />
           <Route path="/designai/vibes" element={<Vibes />} />
-          <Route path="/designai/realreal" element={<RealReal />} />
+          <Route path="/designai/sleeves" element={<Sleeves />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>

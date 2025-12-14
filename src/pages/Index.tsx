@@ -2,9 +2,9 @@ import { useRef, useState } from "react";
 import { PortfolioCard } from "@/components/PortfolioCard";
 
 const cards = [
-  { title: "Pt 1 → TMI", subtitle: "Design & AI", to: "/designai/tmi", colorClass: "card-terracotta" },
-  { title: "Pt 2 → Vibes", subtitle: "Design & AI", to: "/designai/vibes", colorClass: "card-forest" },
-  { title: "Pt 3 → Real, Real", subtitle: "Design & AI", to: "/designai/realreal", colorClass: "card-navy" },
+  { title: "Tools 1 → TMI", subtitle: "Design & AI", to: "/designai/tmi", colorClass: "card-terracotta" },
+  { title: "Tools 2 → Vibes", subtitle: "Design & AI", to: "/designai/vibes", colorClass: "card-forest" },
+  { title: "Tools 3 → Sleeves", subtitle: "Design & AI", to: "/designai/sleeves", colorClass: "card-navy" },
   { title: "Experience", subtitle: "About", to: "/about/experience", colorClass: "card-mustard" },
   { title: "Tanium", subtitle: "Work", to: "/work/tanium", colorClass: "card-coral" },
   { title: "Books", subtitle: "About", to: "/about/books", colorClass: "card-slate" },
