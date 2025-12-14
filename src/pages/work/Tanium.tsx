@@ -5,7 +5,7 @@ import taniumDiscoverInterfaces from "@/assets/tanium/tanium-discover-interfaces
 import taniumThreatAlerts from "@/assets/tanium/tanium-threat-alerts.png";
 import taniumThreatDocuments from "@/assets/tanium/tanium-threat-documents.png";
 
-import taniumNavigation from "@/assets/tanium/TaniumNavigation.mov";
+import taniumNavigation from "@/assets/tanium/tanium-navigation.mp4";
 import taniumAssurance from "@/assets/tanium/TaniumAssurance.mov";
 import taniumDiscover from "@/assets/tanium/TaniumDiscover.mov";
 import taniumEnforce from "@/assets/tanium/TaniumEnforce.mov";
