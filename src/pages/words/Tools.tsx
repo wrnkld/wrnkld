@@ -11,9 +11,9 @@ function SideNote({ number, children }: { number: number; children: React.ReactN
   );
 }
 
-export default function TMI() {
+export default function Tools() {
   return (
-    <PageLayout title="Pt 1 → TMI" subtitle="Design & AI">
+    <PageLayout title="Pt 1 → Tools" subtitle="Design & AI">
       <div className="relative">
         <article className="prose space-y-6">
 
