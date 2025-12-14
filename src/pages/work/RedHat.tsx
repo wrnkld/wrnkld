@@ -51,12 +51,12 @@ export default function RedHat() {
       </div>
 
       {/* 4-column grid */}
-      <div className="mt-12 max-w-4xl mx-auto px-6">
+      <div className="mt-12 max-w-6xl mx-auto px-6">
         <div className="grid grid-cols-4 gap-4">
-          <img src={rhbaAssetsList} alt="Red Hat Business Automation Assets List" className="w-full h-auto transition-all duration-300 hover:scale-[1.02] hover:-translate-y-2" />
-          <img src={rhbaComments} alt="Red Hat Business Automation Comments" className="w-full h-auto transition-all duration-300 hover:scale-[1.02] hover:-translate-y-2" />
-          <img src={rhbaContributors} alt="Red Hat Business Automation Contributors" className="w-full h-auto transition-all duration-300 hover:scale-[1.02] hover:-translate-y-2" />
-          <img src={rhbaEmptyState} alt="Red Hat Business Automation Empty State" className="w-full h-auto transition-all duration-300 hover:scale-[1.02] hover:-translate-y-2" />
+          <img src={rhbaAssetsList} alt="Red Hat Business Automation Assets List" className="w-full h-auto" />
+          <img src={rhbaComments} alt="Red Hat Business Automation Comments" className="w-full h-auto" />
+          <img src={rhbaContributors} alt="Red Hat Business Automation Contributors" className="w-full h-auto" />
+          <img src={rhbaEmptyState} alt="Red Hat Business Automation Empty State" className="w-full h-auto" />
         </div>
       </div>
 
@@ -66,10 +66,10 @@ export default function RedHat() {
       </div>
 
       {/* 2-column grid */}
-      <div className="mt-8 max-w-4xl mx-auto px-6">
+      <div className="mt-8 max-w-6xl mx-auto px-6">
         <div className="grid grid-cols-2 gap-4">
-          <img src={rhbaProjectMetrics} alt="Red Hat Business Automation Project Metrics" className="w-full h-auto transition-all duration-300 hover:scale-[1.02] hover:-translate-y-2" />
-          <img src={rhbaPropertiesPanel} alt="Red Hat Business Automation Properties Panel" className="w-full h-auto transition-all duration-300 hover:scale-[1.02] hover:-translate-y-2" />
+          <img src={rhbaProjectMetrics} alt="Red Hat Business Automation Project Metrics" className="w-full h-auto" />
+          <img src={rhbaPropertiesPanel} alt="Red Hat Business Automation Properties Panel" className="w-full h-auto" />
         </div>
       </div>
 
@@ -79,12 +79,12 @@ export default function RedHat() {
       </div>
 
       {/* 4-column grid */}
-      <div className="mt-12 max-w-4xl mx-auto px-6">
+      <div className="mt-12 max-w-6xl mx-auto px-6">
         <div className="grid grid-cols-4 gap-4">
-          <img src={rhbaSpace} alt="Red Hat Business Automation Space" className="w-full h-auto transition-all duration-300 hover:scale-[1.02] hover:-translate-y-2" />
-          <img src={rhbaTrack} alt="Red Hat Business Automation Track" className="w-full h-auto transition-all duration-300 hover:scale-[1.02] hover:-translate-y-2" />
-          <img src={rhbaVersionControl} alt="Red Hat Business Automation Version Control" className="w-full h-auto transition-all duration-300 hover:scale-[1.02] hover:-translate-y-2" />
-          <img src={rhbaWorkflowModeler} alt="Red Hat Business Automation Workflow Modeler" className="w-full h-auto transition-all duration-300 hover:scale-[1.02] hover:-translate-y-2" />
+          <img src={rhbaSpace} alt="Red Hat Business Automation Space" className="w-full h-auto" />
+          <img src={rhbaTrack} alt="Red Hat Business Automation Track" className="w-full h-auto" />
+          <img src={rhbaVersionControl} alt="Red Hat Business Automation Version Control" className="w-full h-auto" />
+          <img src={rhbaWorkflowModeler} alt="Red Hat Business Automation Workflow Modeler" className="w-full h-auto" />
         </div>
       </div>
 
@@ -94,12 +94,12 @@ export default function RedHat() {
       </div>
 
       {/* 4-column grid */}
-      <div className="mt-12 max-w-4xl mx-auto px-6">
+      <div className="mt-12 max-w-6xl mx-auto px-6">
         <div className="grid grid-cols-4 gap-4">
-          <img src={rhboEmployees} alt="Red Hat Business Optaplanner Employees" className="w-full h-auto transition-all duration-300 hover:scale-[1.02] hover:-translate-y-2" />
-          <img src={rhboRoster} alt="Red Hat Business Optaplanner Roster" className="w-full h-auto transition-all duration-300 hover:scale-[1.02] hover:-translate-y-2" />
-          <img src={rhboAvailability} alt="Red Hat Business Optaplanner Availability" className="w-full h-auto transition-all duration-300 hover:scale-[1.02] hover:-translate-y-2" />
-          <img src={rhboRoute} alt="Red Hat Business Optaplanner Route" className="w-full h-auto transition-all duration-300 hover:scale-[1.02] hover:-translate-y-2" />
+          <img src={rhboEmployees} alt="Red Hat Business Optaplanner Employees" className="w-full h-auto" />
+          <img src={rhboRoster} alt="Red Hat Business Optaplanner Roster" className="w-full h-auto" />
+          <img src={rhboAvailability} alt="Red Hat Business Optaplanner Availability" className="w-full h-auto" />
+          <img src={rhboRoute} alt="Red Hat Business Optaplanner Route" className="w-full h-auto" />
         </div>
       </div>
     </PageLayout>
