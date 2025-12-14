@@ -53,23 +53,23 @@ export default function RedHat() {
       {/* 4-column grid */}
       <div className="mt-12 max-w-6xl mx-auto px-6">
         <div className="grid grid-cols-4 gap-4">
-          <img src={rhbaAssetsList} alt="Red Hat Business Automation Assets List" className="w-full h-auto" />
+          <img src={rhbaPropertiesPanel} alt="Red Hat Business Automation Properties Panel" className="w-full h-auto" />
+          <img src={rhbaNavigator} alt="Red Hat Business Automation Navigator" className="w-full h-auto" />
+          <img src={rhbaVersionControl} alt="Red Hat Business Automation Version Control" className="w-full h-auto" />
           <img src={rhbaComments} alt="Red Hat Business Automation Comments" className="w-full h-auto" />
-          <img src={rhbaContributors} alt="Red Hat Business Automation Contributors" className="w-full h-auto" />
-          <img src={rhbaEmptyState} alt="Red Hat Business Automation Empty State" className="w-full h-auto" />
         </div>
       </div>
 
       {/* 1-up large image */}
       <div className="mt-8 max-w-6xl mx-auto px-6">
-        <img src={rhbaNavigator} alt="Red Hat Business Automation Navigator" className="w-full h-auto" />
+        <img src={rhbaProjectMetrics} alt="Red Hat Business Automation Project Metrics" className="w-full h-auto" />
       </div>
 
       {/* 2-column grid */}
       <div className="mt-8 max-w-6xl mx-auto px-6">
         <div className="grid grid-cols-2 gap-4">
-          <img src={rhbaProjectMetrics} alt="Red Hat Business Automation Project Metrics" className="w-full h-auto" />
-          <img src={rhbaPropertiesPanel} alt="Red Hat Business Automation Properties Panel" className="w-full h-auto" />
+          <img src={rhbaAssetsList} alt="Red Hat Business Automation Assets List" className="w-full h-auto" />
+          <img src={rhbaContributors} alt="Red Hat Business Automation Contributors" className="w-full h-auto" />
         </div>
       </div>
 
@@ -81,9 +81,9 @@ export default function RedHat() {
       {/* 4-column grid */}
       <div className="mt-12 max-w-6xl mx-auto px-6">
         <div className="grid grid-cols-4 gap-4">
+          <img src={rhbaEmptyState} alt="Red Hat Business Automation Empty State" className="w-full h-auto" />
           <img src={rhbaSpace} alt="Red Hat Business Automation Space" className="w-full h-auto" />
           <img src={rhbaTrack} alt="Red Hat Business Automation Track" className="w-full h-auto" />
-          <img src={rhbaVersionControl} alt="Red Hat Business Automation Version Control" className="w-full h-auto" />
           <img src={rhbaWorkflowModeler} alt="Red Hat Business Automation Workflow Modeler" className="w-full h-auto" />
         </div>
       </div>
