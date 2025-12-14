@@ -21,29 +21,27 @@ export default function RedHat() {
     <PageLayout title="Red Hat" subtitle="Work" fullWidthContent>
       <div className="max-w-4xl mx-auto px-6 space-y-6">
         <p className="prose mb-8">
-          Design system and developer experience. Built the foundations for 
-          consistent design across Red Hat's suite of developer tools and 
-          enterprise platforms.
+          Red Hat is an open-source enterprise software company known for bringing 
+          Linux and middleware to enterprise scale. I worked there up until the 
+          IBM acquisition.
         </p>
         
-        <h2 className="font-display text-xl font-semibold mt-12 mb-4">The Challenge</h2>
+        <h2 className="font-display text-xl font-semibold mt-12 mb-4">Role</h2>
         <p className="prose">
-          Red Hat's product portfolio had grown organically, resulting in 
-          inconsistent user experiences across tools. Developers were struggling 
-          to move between products fluidly.
+          Led a cross-disciplinary team of interaction designers, front-end 
+          engineers, and brand designers to modernize the middleware portfolio.
         </p>
         
-        <h2 className="font-display text-xl font-semibold mt-12 mb-4">The Approach</h2>
+        <h2 className="font-display text-xl font-semibold mt-12 mb-4">Approach</h2>
         <p className="prose">
-          We established PatternFly, a comprehensive design system that could 
-          scale across dozens of products while respecting the unique needs of 
-          each. The focus was on developer-friendly documentation and components.
+          Designed in the open using PatternFly, working closely with the 
+          open-source and developer communities for feedback and iteration.
         </p>
         
-        <h2 className="font-display text-xl font-semibold mt-12 mb-4">The Outcome</h2>
+        <h2 className="font-display text-xl font-semibold mt-12 mb-4">Extend</h2>
         <p className="prose">
-          PatternFly became the standard across Red Hat's product lines and was 
-          open-sourced, gaining adoption in the broader enterprise design community.
+          Created shared design patterns across Business Automation and Business 
+          Optimization to improve consistency across the portfolio.
         </p>
       </div>
 
