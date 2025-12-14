@@ -29,14 +29,9 @@ export default function SAS() {
         </p>
       </div>
 
-      {/* Video - Analytics Diagram */}
-      <div className="mt-12 max-w-6xl mx-auto px-6">
-        <video src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/analytics-diagram-N1SfmA3GOq8odycmR4nqJ1leUzL0yQ.mp4" autoPlay loop muted playsInline className="w-full h-auto" />
-      </div>
-
-      {/* Analytics Section */}
+      {/* Analytics Platform Section */}
       <div className="max-w-4xl mx-auto px-6 mt-12">
-        <h2 className="font-display text-xl font-semibold mb-4">Visual Analytics</h2>
+        <h2 className="font-display text-xl font-semibold mb-4">Analytics Platform (SAS Studio)</h2>
         <p className="prose">
           The analytics suite enables data scientists to explore, prepare, and 
           analyze datasets through an intuitive visual interface, reducing the 
@@ -44,8 +39,13 @@ export default function SAS() {
         </p>
       </div>
 
-      {/* Analytics 4-up */}
+      {/* Analytics Video - BIG */}
       <div className="mt-12 max-w-6xl mx-auto px-6">
+        <video src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/analytics-diagram-N1SfmA3GOq8odycmR4nqJ1leUzL0yQ.mp4" autoPlay loop muted playsInline className="w-full h-auto" />
+      </div>
+
+      {/* Analytics 4-up */}
+      <div className="mt-8 max-w-6xl mx-auto px-6">
         <div className="grid grid-cols-4 gap-4">
           <img src={analyticsExplore} alt="SAS Analytics Explore" className="w-full h-auto" />
           <img src={analyticsPrepare} alt="SAS Analytics Prepare" className="w-full h-auto" />
@@ -89,10 +89,14 @@ export default function SAS() {
         </p>
       </div>
 
-      {/* Visual Stats 3-up */}
+      {/* Visual Stats 1-up BIG */}
       <div className="mt-12 max-w-6xl mx-auto px-6">
-        <div className="grid grid-cols-3 gap-4">
-          <img src={visualStatsRoles} alt="SAS Visual Stats Roles" className="w-full h-auto" />
+        <img src={visualStatsRoles} alt="SAS Visual Stats Roles" className="w-full h-auto" />
+      </div>
+
+      {/* Visual Stats 2-up */}
+      <div className="mt-8 max-w-6xl mx-auto px-6">
+        <div className="grid grid-cols-2 gap-4">
           <img src={visualStatsProperties} alt="SAS Visual Stats Properties" className="w-full h-auto" />
           <img src={visualStatsShare} alt="SAS Visual Stats Share" className="w-full h-auto" />
         </div>
