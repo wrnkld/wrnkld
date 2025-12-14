@@ -18,7 +18,7 @@ import rhboRoute from "@/assets/redhat/rhbo-route.png";
 
 import rhbaPreviewVideo from "@/assets/redhat/rhba-preview.mp4";
 import rhbaTrackVideo from "@/assets/redhat/rhba-track.mp4";
-import rhboRosterVideo from "@/assets/redhat/rhbo-roster.mov";
+import rhboRosterVideo from "@/assets/redhat/rhbo-roster.mp4";
 
 export default function RedHat() {
   return (
