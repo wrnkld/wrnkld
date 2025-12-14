@@ -83,9 +83,9 @@ export default function SAS() {
       <div className="max-w-4xl mx-auto px-6 mt-12">
         <h2 className="font-display text-xl font-semibold mb-4">Visual Statistics</h2>
         <p className="prose">
-          Statistical modeling tools that make advanced techniques accessible 
-          to analysts of all skill levels, with clear visualizations and 
-          collaborative sharing capabilities.
+          Shipped a drag-and-drop, visual interface for building and exploring 
+          statistical models, making advanced analytics more accessible to data 
+          scientists without flattening the underlying complexity.
         </p>
       </div>
 
