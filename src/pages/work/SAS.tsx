@@ -43,8 +43,8 @@ export default function SAS() {
 
       {/* Analytics Video - BIG */}
       <div className="mt-12 max-w-6xl mx-auto px-6">
-        <div className="overflow-hidden">
-          <video src={sasDiagram} autoPlay loop muted playsInline className="w-[calc(100%+16px)] h-auto block -ml-2" />
+        <div className="bg-[#2d3748] overflow-hidden">
+          <video src={sasDiagram} autoPlay loop muted playsInline className="w-full h-auto block" />
         </div>
       </div>
 
