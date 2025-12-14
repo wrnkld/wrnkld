@@ -37,12 +37,6 @@ export default function RedHat() {
           Designed in the open using PatternFly, working closely with the 
           open-source and developer communities for feedback and iteration.
         </p>
-        
-        <h2 className="font-display text-xl font-semibold mt-12 mb-4">Extend</h2>
-        <p className="prose">
-          Created shared design patterns across Business Automation and Business 
-          Optimization to improve consistency across the portfolio.
-        </p>
       </div>
 
       {/* Video - Platform Demo */}
@@ -84,6 +78,15 @@ export default function RedHat() {
           <img src={rhbaEmptyState} alt="Red Hat Business Automation Empty State" className="w-full h-auto" />
           <img src={rhbaSpace} alt="Red Hat Business Automation Space" className="w-full h-auto" />
         </div>
+      </div>
+
+      {/* Extend Section */}
+      <div className="max-w-4xl mx-auto px-6 mt-12">
+        <h2 className="font-display text-xl font-semibold mb-4">Extend</h2>
+        <p className="prose">
+          Created shared design patterns across Business Automation and Business 
+          Optimization to improve consistency across the portfolio.
+        </p>
       </div>
 
       {/* Video - Roster Demo */}
