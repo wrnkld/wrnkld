@@ -54,12 +54,13 @@ export default function SAS() {
         </div>
       </div>
 
-      {/* Factory Section */}
+      {/* Factory Miner Section */}
       <div className="max-w-4xl mx-auto px-6 mt-12">
-        <h2 className="font-display text-xl font-semibold mb-4">Model Factory</h2>
+        <h2 className="font-display text-xl font-semibold mb-4">Factory Miner</h2>
         <p className="prose">
-          Automated model building and deployment pipeline that enables teams to 
-          create, test, and iterate on predictive models at scale.
+          Shipped model comparison and selection workflows that pushed multiple 
+          statistical models in parallel, helping teams identify the strongest 
+          performer using metrics like lift and cumulative lift.
         </p>
       </div>
 
