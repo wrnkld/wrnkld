@@ -82,7 +82,7 @@ export default function Tools() {
           </p>
 
           <p>
-            So, can AI help do that? I'll get into that in part two.
+            So, can AI help do that? I'll get into that in part 2. This is a <s>17-part</s> 3-part series.
           </p>
 
           {/* Mobile/tablet fallback footnotes */}
