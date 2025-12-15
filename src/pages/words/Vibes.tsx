@@ -1,4 +1,5 @@
 import { PageLayout } from "@/components/PageLayout";
+import { Link } from "react-router-dom";
 
 function SideNote({ number, children }: { number: number; children: React.ReactNode }) {
   return (
@@ -17,7 +18,7 @@ export default function Vibes() {
       <div className="relative">
         <article className="prose space-y-6">
           <p>
-            Part 1 was probably too much information about my history with design 
+            <Link to="/designai/tools" className="text-foreground underline underline-offset-4 hover:opacity-70 transition-opacity">Part 1</Link> was probably too much information about my history with design 
             tools. Part 2 is simpler: it's about all the new stuff.
           </p>
 
@@ -62,7 +63,7 @@ export default function Vibes() {
           </p>
 
           <p>
-            So I did—<span className="text-foreground">Sleeves</span>! I'll share how in part 3.
+            So I did—<a href="https://sleeves.app" target="_blank" rel="noopener noreferrer" className="text-foreground underline underline-offset-4 hover:opacity-70 transition-opacity">Sleeves</a>! I'll share how in part 3.
           </p>
 
           {/* Mobile/tablet fallback footnotes */}
