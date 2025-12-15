@@ -34,14 +34,14 @@ export default function Tools() {
 
           <p>
             Somewhere in here, I tried architecture school in New Mexico. That… didn't stick. 
-            I love New Mexico and green chile, but I still have nightmares about studio crits.
+            I love New Mexico and green chile, but I still have stress dreams about studio crits.
           </p>
 
           <p className="relative">
             Fast-forward: I landed at frog design in Austin, Texas. I leaned fully into 
             the design side and set aside the "design technologist" identity. This was 
             peak Photoshop — gradients on gradients, shadows on shadows, buttons that 
-            looked like Mike and Ikes<SideNote number={2}>Josh Hart would approve</SideNote>.
+            looked like Mike and Ikes<SideNote number={2}>Shout out Josh Hart</SideNote>.
           </p>
 
           <p>
@@ -56,8 +56,7 @@ export default function Tools() {
             I shifted to designing directly in the browser. I took the web skills I already 
             had and applied them to Bootstrap, open-source component libraries, HTML, CSS… 
             anything that let me design apps that actually worked, even if they didn't 
-            always look the way they should. Some people loved these deliverables; some 
-            people hated them.
+            always look the way they should.
           </p>
 
           <p className="relative">
@@ -67,8 +66,8 @@ export default function Tools() {
             Framer has reinvented itself into this year.
           </p>
 
-          <p>
-            The final third of my career has been in startups. And Figma. I like Figma 
+          <p className="relative">
+            The final third of my career has been in startups. And Figma<SideNote number={4}>There is a chance I like Figma slightly less than the next person</SideNote>. I like Figma 
             as much as the next person — it's powerful, it's everywhere — but it's also 
             just another tool, growing more complicated every year, as tools always do.
           </p>
@@ -91,8 +90,9 @@ export default function Tools() {
             <hr className="border-border my-12" />
             <div className="space-y-3 text-sm text-muted-foreground">
               <p><sup>1</sup> Psychology major = no ragrets</p>
-              <p><sup>2</sup> Josh Hart would approve</p>
+              <p><sup>2</sup> Shout out Josh Hart</p>
               <p><sup>3</sup> Expression Blend somehow more complicated than Photoshop</p>
+              <p><sup>4</sup> There is a chance I like Figma slightly less than the next person</p>
             </div>
           </div>
         </article>
