@@ -20,8 +20,8 @@ export default function Tools() {
           <p>
             Every time I log into LinkedIn, a product designer is sharing how they took 
             their MCP server, plugged it into Perplexity, and generated design tokens 
-            for Claude 27. Here's my own experience with AI tools. I'll start with a bit 
-            of history (TMI) and then talk through building a real app.
+            for Claude 27. Designers have never been short on tools. I'll start with my 
+            personal history and then talk through building a real app with AI.
           </p>
 
           <p className="relative">
@@ -46,8 +46,8 @@ export default function Tools() {
 
           <p>
             Then I moved to North Carolina and joined another consultancy, building all 
-            sorts of products — picture frames, mobile phones, even a touchscreen insulin 
-            device. We were still deep in Photoshop, but also Illustrator, Flash, and an 
+            sorts of products — picture frames, mobile phones, touchscreen insulin devices. 
+            We were still deep in Photoshop, but also Illustrator, Flash, and an 
             ever-growing mix of tools.
           </p>
 
@@ -67,22 +67,22 @@ export default function Tools() {
           </p>
 
           <p className="relative">
-            The final third of my career has been in startups. And Figma<SideNote number={4}>There is a chance I like Figma slightly less than the next person</SideNote>. I like Figma 
+            The final third of my career has been in startups. And Figma<SideNote number={4}>Maybe slightly less</SideNote>. I like Figma 
             as much as the next person — it's powerful, it's everywhere — but it's also 
             just another tool, growing more complicated every year, as tools always do.
           </p>
 
           <p>
-            So what? My point: design is abstraction. Everything is a prototype. Figma 
-            is boxes. Sketch was boxes. Photoshop was boxes. Some of those boxes clicked; 
-            none were the thing itself. Every tool has been pictures of something — wired 
-            together, animated, exported, recreated. Tools come, tools go, designers argue 
+            So what? My point: design is abstraction. Everything is a prototype. Figma, 
+            Sketch, and Photoshop were all boxes. Some of those boxes clicked; none were 
+            the thing itself. Every tool has been pictures of something — wired together, 
+            animated, exported, recreated. Tools come, tools go, designers argue 
             passionately about all of them… and the work remains fundamentally the same: 
             translating ideas into <span className="text-foreground">reality</span>.
           </p>
 
           <p>
-            So, can AI help do that?
+            So, can AI help do that? I'll get into that in part two.
           </p>
 
           {/* Mobile/tablet fallback footnotes */}
@@ -92,7 +92,7 @@ export default function Tools() {
               <p><sup>1</sup> Psychology major = no ragrets</p>
               <p><sup>2</sup> Shout out Josh Hart</p>
               <p><sup>3</sup> Expression Blend somehow more complicated than Photoshop</p>
-              <p><sup>4</sup> There is a chance I like Figma slightly less than the next person</p>
+              <p><sup>4</sup> Maybe slightly less</p>
             </div>
           </div>
         </article>
