@@ -1,4 +1,5 @@
 import { useRef, useState } from "react";
+import { useDrag } from "@use-gesture/react";
 import { PortfolioCard } from "@/components/PortfolioCard";
 
 const cards = [
@@ -15,38 +16,24 @@ const cards = [
 
 export default function Index() {
   const scrollRef = useRef<HTMLDivElement>(null);
-  const [isDragging, setIsDragging] = useState(false);
   const [hasDragged, setHasDragged] = useState(false);
-  const [startX, setStartX] = useState(0);
-  const [scrollLeft, setScrollLeft] = useState(0);
 
-  const handleMouseDown = (e: React.MouseEvent) => {
-    if (!scrollRef.current) return;
-    setIsDragging(true);
-    setHasDragged(false);
-    setStartX(e.pageX - scrollRef.current.offsetLeft);
-    setScrollLeft(scrollRef.current.scrollLeft);
-  };
-
-  const handleMouseMove = (e: React.MouseEvent) => {
-    if (!isDragging || !scrollRef.current) return;
-    e.preventDefault();
-    const x = e.pageX - scrollRef.current.offsetLeft;
-    const walk = (x - startX) * 1.5;
-    
-    // Mark as dragged if moved more than 5px
-    if (Math.abs(walk) > 5) {
-      setHasDragged(true);
-    }
-    
-    scrollRef.current.scrollLeft = scrollLeft - walk;
-  };
-
-  const handleMouseUp = () => {
-    setIsDragging(false);
-    // Reset hasDragged after a short delay to allow click prevention
-    setTimeout(() => setHasDragged(false), 100);
-  };
+  const bind = useDrag(
+    ({ active, movement: [mx], velocity: [vx], direction: [dx], cancel }) => {
+      if (!scrollRef.current) return;
+      
+      if (active) {
+        scrollRef.current.scrollLeft -= mx;
+        if (Math.abs(mx) > 5) setHasDragged(true);
+      } else {
+        // Apply momentum on release
+        const momentum = vx * dx * 500;
+        scrollRef.current.scrollBy({ left: -momentum, behavior: "smooth" });
+        setTimeout(() => setHasDragged(false), 100);
+      }
+    },
+    { axis: "x", pointer: { capture: false }, filterTaps: true }
+  );
 
   const handleCardClick = (e: React.MouseEvent) => {
     if (hasDragged) {
@@ -71,12 +58,9 @@ export default function Index() {
       {/* Horizontal Scrolling Cards */}
       <section className="pb-16 md:pb-24">
         <div 
+          {...bind()}
           ref={scrollRef}
-          className="overflow-x-auto overflow-y-visible scrollbar-hide cursor-grab active:cursor-grabbing"
-          onMouseDown={handleMouseDown}
-          onMouseMove={handleMouseMove}
-          onMouseUp={handleMouseUp}
-          onMouseLeave={handleMouseUp}
+          className="overflow-x-auto overflow-y-visible scrollbar-hide cursor-grab active:cursor-grabbing touch-pan-x"
         >
           <div className="flex gap-6 px-6 pt-4 pb-4" style={{ width: "max-content" }}>
             {cards.map((card, index) => (
