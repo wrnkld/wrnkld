@@ -32,9 +32,9 @@ export default function SAS() {
 
       {/* Analytics Platform Section */}
       <div className="max-w-4xl mx-auto px-6 mt-12">
-        <h2 className="font-display text-xl font-semibold mb-4">Analytics Platform (SAS Model Studio)</h2>
+        <h2 className="font-display text-xl font-semibold mb-4">Model Studio</h2>
         <p className="prose">
-          Led design across SAS Model Studio, coordinating multiple product managers
+          Led design across the advanced analytics platform, coordinating multiple product managers
           and design teams spanning forecasting, text analytics, and core 
           analytics workflows. Established the flagship analytics platform that 
           remains central to SAS's ecosystem today.
