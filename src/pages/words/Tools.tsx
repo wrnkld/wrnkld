@@ -67,8 +67,8 @@ export default function Tools() {
           </p>
 
           <p className="relative">
-            The final third of my career has been in startups. And Figma<SideNote number={4}>Maybe slightly less</SideNote>. I like Figma 
-            as much as the next person — it's powerful, it's everywhere — but it's also 
+            The final third of my career has been in startups. And Figma. I like Figma 
+            as much<SideNote number={4}>Maybe slightly less</SideNote> as the next person — it's powerful, it's everywhere — but it's also 
             just another tool, growing more complicated every year, as tools always do.
           </p>
 
