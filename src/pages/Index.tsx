@@ -1,5 +1,4 @@
-import { useRef, useState } from "react";
-import { useDrag } from "@use-gesture/react";
+import { useRef, useState, useCallback } from "react";
 import { PortfolioCard } from "@/components/PortfolioCard";
 
 const cards = [
@@ -17,23 +16,50 @@ const cards = [
 export default function Index() {
   const scrollRef = useRef<HTMLDivElement>(null);
   const [hasDragged, setHasDragged] = useState(false);
+  const [isDragging, setIsDragging] = useState(false);
+  const dragState = useRef({ startX: 0, scrollLeft: 0, lastX: 0, lastTime: 0, velocity: 0 });
 
-  const bind = useDrag(
-    ({ active, movement: [mx], velocity: [vx], direction: [dx], cancel }) => {
-      if (!scrollRef.current) return;
-      
-      if (active) {
-        scrollRef.current.scrollLeft -= mx;
-        if (Math.abs(mx) > 5) setHasDragged(true);
-      } else {
-        // Apply momentum on release
-        const momentum = vx * dx * 500;
-        scrollRef.current.scrollBy({ left: -momentum, behavior: "smooth" });
-        setTimeout(() => setHasDragged(false), 100);
-      }
-    },
-    { axis: "x", pointer: { capture: false }, filterTaps: true }
-  );
+  const handleMouseDown = useCallback((e: React.MouseEvent) => {
+    if (!scrollRef.current) return;
+    setIsDragging(true);
+    setHasDragged(false);
+    const state = dragState.current;
+    state.startX = e.pageX;
+    state.scrollLeft = scrollRef.current.scrollLeft;
+    state.lastX = e.pageX;
+    state.lastTime = Date.now();
+    state.velocity = 0;
+  }, []);
+
+  const handleMouseMove = useCallback((e: React.MouseEvent) => {
+    if (!isDragging || !scrollRef.current) return;
+    e.preventDefault();
+    const state = dragState.current;
+    const dx = e.pageX - state.startX;
+    
+    // Track velocity
+    const now = Date.now();
+    const dt = now - state.lastTime;
+    if (dt > 0) {
+      state.velocity = (e.pageX - state.lastX) / dt;
+    }
+    state.lastX = e.pageX;
+    state.lastTime = now;
+    
+    if (Math.abs(dx) > 5) setHasDragged(true);
+    scrollRef.current.scrollLeft = state.scrollLeft - dx;
+  }, [isDragging]);
+
+  const handleMouseUp = useCallback(() => {
+    if (!scrollRef.current || !isDragging) return;
+    setIsDragging(false);
+    
+    // Apply momentum
+    const momentum = -dragState.current.velocity * 300;
+    scrollRef.current.scrollBy({ left: momentum, behavior: "smooth" });
+    
+    setTimeout(() => setHasDragged(false), 100);
+  }, [isDragging]);
 
   const handleCardClick = (e: React.MouseEvent) => {
     if (hasDragged) {
@@ -58,9 +84,12 @@ export default function Index() {
       {/* Horizontal Scrolling Cards */}
       <section className="pb-16 md:pb-24">
         <div 
-          {...bind()}
           ref={scrollRef}
           className="overflow-x-auto overflow-y-visible scrollbar-hide cursor-grab active:cursor-grabbing touch-pan-x"
+          onMouseDown={handleMouseDown}
+          onMouseMove={handleMouseMove}
+          onMouseUp={handleMouseUp}
+          onMouseLeave={handleMouseUp}
         >
           <div className="flex gap-6 px-6 pt-4 pb-4" style={{ width: "max-content" }}>
             {cards.map((card, index) => (
