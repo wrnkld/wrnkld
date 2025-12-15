@@ -9,13 +9,16 @@ interface PortfolioCardProps {
   index: number;
   seriesLabel?: string;
   partLabel?: string;
+  onClick?: (e: React.MouseEvent) => void;
 }
 
-export function PortfolioCard({ title, subtitle, to, colorClass, index, seriesLabel, partLabel }: PortfolioCardProps) {
+export function PortfolioCard({ title, subtitle, to, colorClass, index, seriesLabel, partLabel, onClick }: PortfolioCardProps) {
   return (
     <Link
       to={to}
-      className={`group flex-shrink-0 w-[280px] md:w-[320px] h-[360px] md:h-[400px] rounded-2xl p-8 flex flex-col justify-between transition-all duration-300 hover:scale-[1.02] hover:-translate-y-2 ${colorClass}`}
+      onClick={onClick}
+      draggable={false}
+      className={`group flex-shrink-0 w-[280px] md:w-[320px] h-[360px] md:h-[400px] rounded-2xl p-8 flex flex-col justify-between transition-all duration-300 hover:scale-[1.02] hover:-translate-y-2 select-none ${colorClass}`}
       style={{ 
         animationDelay: `${index * 100}ms`,
       }}

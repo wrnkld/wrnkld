@@ -16,12 +16,14 @@ const cards = [
 export default function Index() {
   const scrollRef = useRef<HTMLDivElement>(null);
   const [isDragging, setIsDragging] = useState(false);
+  const [hasDragged, setHasDragged] = useState(false);
   const [startX, setStartX] = useState(0);
   const [scrollLeft, setScrollLeft] = useState(0);
 
   const handleMouseDown = (e: React.MouseEvent) => {
     if (!scrollRef.current) return;
     setIsDragging(true);
+    setHasDragged(false);
     setStartX(e.pageX - scrollRef.current.offsetLeft);
     setScrollLeft(scrollRef.current.scrollLeft);
   };
@@ -31,11 +33,25 @@ export default function Index() {
     e.preventDefault();
     const x = e.pageX - scrollRef.current.offsetLeft;
     const walk = (x - startX) * 1.5;
+    
+    // Mark as dragged if moved more than 5px
+    if (Math.abs(walk) > 5) {
+      setHasDragged(true);
+    }
+    
     scrollRef.current.scrollLeft = scrollLeft - walk;
   };
 
   const handleMouseUp = () => {
     setIsDragging(false);
+    // Reset hasDragged after a short delay to allow click prevention
+    setTimeout(() => setHasDragged(false), 100);
+  };
+
+  const handleCardClick = (e: React.MouseEvent) => {
+    if (hasDragged) {
+      e.preventDefault();
+    }
   };
 
   return (
@@ -71,6 +87,7 @@ export default function Index() {
                 to={card.to}
                 colorClass={card.colorClass}
                 index={index}
+                onClick={handleCardClick}
               />
             ))}
           </div>
