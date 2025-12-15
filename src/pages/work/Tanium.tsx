@@ -30,7 +30,7 @@ export default function Tanium() {
         
         <h2 className="font-display text-xl font-semibold mt-12 mb-4">Ship</h2>
         <p className="prose">
-          Built and shipped two entirely new products from scratch: Assure, focused on MITRE ATT&CK visibility, and Enforce, designed for policy enforcement at enterprise scale.
+          Built and shipped two entirely new products from scratch: Assurance, focused on MITRE ATT&CK visibility, and Enforce, designed for policy enforcement at enterprise scale.
         </p>
       </div>
 
