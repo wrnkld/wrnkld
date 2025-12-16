@@ -85,7 +85,7 @@ export default function Index() {
       <section className="pb-16 md:pb-24">
         <div 
           ref={scrollRef}
-          className="overflow-x-auto overflow-y-visible scrollbar-hide cursor-grab active:cursor-grabbing touch-pan-x"
+          className="overflow-x-auto overflow-y-visible scrollbar-hide cursor-grab active:cursor-grabbing touch-auto"
           onMouseDown={handleMouseDown}
           onMouseMove={handleMouseMove}
           onMouseUp={handleMouseUp}
