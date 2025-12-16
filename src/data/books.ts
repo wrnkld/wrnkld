@@ -1141,4 +1141,12 @@ export const books: Book[] = [
     yearRead: 2025,
     recommended: false,
   },
+  {
+    id: 153,
+    title: "Not a River",
+    author: "Selva Almada",
+    year: 2020,
+    yearRead: 2025,
+    recommended: true,
+  },
 ];
