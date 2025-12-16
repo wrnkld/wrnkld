@@ -27,12 +27,11 @@ export default function Vibes() {
             most designers right now, I've been working with Bolt, v0, Lovable, and 
             the growing class of "describe it, and we'll code it" platforms. You type 
             prompts and a working interface appears. Taken together, they're pretty 
-            amazing. The real magic is how fast you go from nothing to a working UI. 
-            That alone shifts a designer's starting point. You're no longer drawing 
-            boxes to suggest behavior—you're shaping behavior directly. Not to be 
-            outdone, Figma rolled out Make and MCP integrations, along with a growing 
-            ecosystem of plugins pointing toward generative workflows. Some of this 
-            might be useful, but I haven't dug in deeply yet.<SideNote number={1}>Famous last words</SideNote>
+            amazing. You're no longer drawing boxes to suggest behavior—you're shaping 
+            behavior directly. Not to be outdone, Figma rolled out Make and MCP 
+            integrations, along with a growing ecosystem of plugins pointing toward 
+            generative workflows. Some of this might be useful, but I haven't dug in 
+            deeply yet.<SideNote number={1}>Famous last words</SideNote>
           </p>
 
           <p>
