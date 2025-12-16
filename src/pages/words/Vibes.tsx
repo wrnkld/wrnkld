@@ -61,6 +61,7 @@ export default function Vibes() {
             <li>Lovable keeps smoothing out Git, deploys, and real component libraries (Mantine, Material UI, Radix, Chakra).</li>
             <li>Cursor keeps me away from the terminal. Bash, npm, nvm—things I do not understand and would like to continue not understanding.</li>
             <li className="relative">The code keeps getting better.<SideNote number={3}>Who am I to judge?</SideNote></li>
+            <li>We all lose our jobs.</li>
           </ul>
 
           <p>
