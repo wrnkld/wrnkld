@@ -59,7 +59,7 @@ export default function Vibes() {
 
           <ul className="list-disc pl-6 space-y-3">
             <li>Cursor keeps me away from the terminal. Bash, npm, nvm—things I do not understand and would like to continue not understanding.</li>
-            <li>Lovable keeps smoothing out Git, deploys, and real component libraries (Mantine, Material UI, Radix, Chakra). Fewer sharp edges, better fit for how teams actually build.</li>
+            <li>Lovable keeps smoothing out Git, deploys, and real component libraries (Mantine, Material UI, Radix, Chakra).</li>
             <li className="relative">The code keeps getting better.<SideNote number={3}>Who am I to judge?</SideNote></li>
           </ul>
 
