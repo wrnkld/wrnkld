@@ -26,7 +26,7 @@ export default function Tools() {
 
           <p className="relative">
             Twenty-ish years ago, I taught myself how to build websites so I could land 
-            a job<SideNote number={1}>Psychology major = no ragrets</SideNote>. That eventually got me hired at an agency in Washington, DC, 
+            a job.<SideNote number={1}>Psychology major = no ragrets</SideNote> That eventually got me hired at an agency in Washington, DC, 
             creating sites for embassies — Italy, Ecuador, Rwanda, Iceland, and so on. 
             This was the era of chopping up assets, slicing everything into a thousand GIFs, 
             and praying IE6 wouldn't explode.
@@ -41,7 +41,7 @@ export default function Tools() {
             Fast-forward: I landed at frog design in Austin, Texas. I leaned fully into 
             the design side and set aside the "design technologist" identity. This was 
             peak Photoshop — gradients on gradients, shadows on shadows, buttons that 
-            looked like Mike and Ikes<SideNote number={2}>Shout out Josh Hart</SideNote>.
+            looked like Mike and Ikes.<SideNote number={2}>Shout out Josh Hart</SideNote>
           </p>
 
           <p>
@@ -62,7 +62,7 @@ export default function Tools() {
           <p className="relative">
             Then came Sketch — the first UI tool that finally felt purpose-built. I'm 
             skipping a whole graveyard of tools here: InVision, Principle (which I loved), 
-            Adobe InDesign, Windows Presentation Foundation<SideNote number={3}>Expression Blend somehow more complicated than Photoshop</SideNote>, and whatever 
+            Adobe InDesign, Windows Presentation Foundation,<SideNote number={3}>Expression Blend somehow more complicated than Photoshop</SideNote> and whatever 
             Framer has reinvented itself into this year.
           </p>
 
