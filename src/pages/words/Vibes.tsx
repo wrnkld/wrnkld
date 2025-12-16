@@ -54,12 +54,27 @@ export default function Vibes() {
           <p>
             These tools already feel more impactful than traditional design handoff 
             workflows, and the landscape will obviously keep changing and consolidating. 
-            But I still wanted to try building something real from scratch—on my own, 
-            mistakes and all.
+            This will almost certainly age badly, but a few things seem likely:
           </p>
 
           <p>
-            So I did—<a href="https://sleeves.app" target="_blank" rel="noopener noreferrer" className="text-foreground underline underline-offset-4 hover:opacity-70 transition-opacity">Sleeves</a>! I'll share how in part 3.
+            Cursor keeps me away from the terminal. Bash, npm, nvm—things I do not 
+            understand and would like to continue not understanding.
+          </p>
+
+          <p>
+            Lovable keeps smoothing out Git, deploys, and real component libraries 
+            (Mantine, Material UI, Radix, Chakra). Fewer sharp edges, more stuff that 
+            actually plugs into how teams build products.
+          </p>
+
+          <p>
+            The code keeps getting better. Who am I to judge?
+          </p>
+
+          <p>
+            Anyway, whatever happens, I still wanted to try building something real 
+            from scratch—on my own, mistakes and all.
           </p>
 
           {/* Mobile/tablet fallback footnotes */}
