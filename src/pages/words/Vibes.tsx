@@ -23,39 +23,39 @@ export default function Vibes() {
           </p>
 
           <p className="relative">
-            I don't know if "vibe coding" is even the right phrase anymore, but like 
-            most designers right now, I've been working with Bolt, v0, Lovable, and 
-            the growing class of "describe it, and we'll code it" platforms.<SideNote number={1}>Disclaimer: I have not yet dug deep on Figma Make or MCP</SideNote> You type 
-            prompts and a working interface appears. Taken together, they're pretty 
-            amazing. You're no longer drawing boxes to suggest behavior—you're shaping 
-            behavior directly.
+            Like most designers right now, I've been working with Bolt, v0, Lovable, 
+            Cursor, and the growing class of "describe it and it builds" tools.<SideNote number={1}>Disclaimer: I have not yet dug deep on Figma Make or MCP</SideNote> You 
+            write prompts and a working interface appears. Taken together, they're 
+            genuinely impressive. You're no longer drawing boxes to imply behavior—you're 
+            shaping behavior directly.
           </p>
 
           <p>
-            These tools are incredible, but I've run into two significant limitations.
+            I've run into two limitations pretty quickly.
           </p>
 
           <p>
-            The first is that they all rely on Tailwind and shadcn. Those libraries 
-            share some DNA with (y)our internal component library, but the actual code, 
-            classes, and visuals aren't directly usable. This will probably change soon. 
-            Until then, you keep running into the same abstraction problem: Cool 
-            prototype… how does this map to our components?
+            The first is structural. Most of these tools generate Tailwind + shadcn-based 
+            UIs. That ecosystem overlaps conceptually with our internal component library, 
+            but the code itself isn't portable. You still hit the same abstraction gap: 
+            cool prototype… how does this map to our components? A few tools let you 
+            reference existing components, but most still treat design systems as 
+            inspiration, not constraints.
           </p>
 
           <p className="relative">
-            The second limitation is more subtle, but it compounds quickly. If you lean 
-            into Lovable or any similar platform, you're implicitly committing to 
-            rebuilding your entire app inside that environment. The moment you want to 
-            prototype a new flow or alternate concept, you need something to build on 
-            top of. The easiest "something" is whatever you last built. The more you 
-            prototype, the deeper you get.<SideNote number={2}>💸 credits</SideNote>
+            The second limitation is more subtle, and it compounds fast. When you lean 
+            into Lovable—or any similar environment—you're implicitly committing to 
+            rebuilding your app inside that tool. When you want to explore a new flow 
+            or alternate idea, you need a foundation. The easiest foundation is whatever 
+            you built last. The more you prototype, the deeper you get.<SideNote number={2}>💸 credits</SideNote>
           </p>
 
           <p>
-            While these tools are more impactful than Figma (or Sketch, or Zeplin, or 
-            the whole graveyard), they still don't reliably produce production-ready code. 
-            I still wanted to know if I could build something real.
+            These tools already feel more impactful than traditional design handoff 
+            workflows, and the landscape will obviously keep changing and consolidating. 
+            But I still wanted to try building something real from scratch—on my own, 
+            mistakes and all.
           </p>
 
           <p>
