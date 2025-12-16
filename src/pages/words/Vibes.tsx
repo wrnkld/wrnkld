@@ -35,7 +35,7 @@ export default function Vibes() {
           </p>
 
           <p>
-            The first is structural. Most of these tools generate Tailwind + shadcn-based 
+            The first is structural. Most of these tools generate <a href="https://tailwindcss.com" target="_blank" rel="noopener noreferrer" className="text-foreground underline underline-offset-4 hover:opacity-70 transition-opacity">Tailwind</a> + <a href="https://ui.shadcn.com" target="_blank" rel="noopener noreferrer" className="text-foreground underline underline-offset-4 hover:opacity-70 transition-opacity">shadcn</a>-based 
             UIs. That ecosystem overlaps conceptually with our internal component library, 
             but the code itself isn't portable. You still hit the same abstraction gap: 
             cool prototype… how does this map to our components? A few tools let you 
