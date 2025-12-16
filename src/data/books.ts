@@ -1149,4 +1149,12 @@ export const books: Book[] = [
     yearRead: 2025,
     recommended: true,
   },
+  {
+    id: 154,
+    title: "Elena Knows",
+    author: "Claudia Piñeiro",
+    year: 2007,
+    yearRead: 2025,
+    recommended: true,
+  },
 ];
