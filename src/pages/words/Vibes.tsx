@@ -54,7 +54,7 @@ export default function Vibes() {
           <p>
             These tools already feel more impactful than traditional design handoff 
             workflows, and the landscape will obviously keep changing and consolidating. 
-            This will almost certainly age badly, but a few things seem likely:
+            These predictions will almost certainly age badly, but a few things seem likely:
           </p>
 
           <ul className="list-disc pl-6 space-y-3">
