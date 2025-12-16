@@ -57,20 +57,11 @@ export default function Vibes() {
             This will almost certainly age badly, but a few things seem likely:
           </p>
 
-          <p>
-            Cursor keeps me away from the terminal. Bash, npm, nvm—things I do not 
-            understand and would like to continue not understanding.
-          </p>
-
-          <p>
-            Lovable keeps smoothing out Git, deploys, and real component libraries 
-            (Mantine, Material UI, Radix, Chakra). Fewer sharp edges, more stuff that 
-            actually plugs into how teams build products.
-          </p>
-
-          <p>
-            The code keeps getting better. Who am I to judge?
-          </p>
+          <ul className="list-disc pl-6 space-y-3">
+            <li>Cursor keeps me away from the terminal. Bash, npm, nvm—things I do not understand and would like to continue not understanding.</li>
+            <li>Lovable keeps smoothing out Git, deploys, and real component libraries (Mantine, Material UI, Radix, Chakra). Fewer sharp edges, more stuff that actually plugs into how teams build products.</li>
+            <li>The code keeps getting better. Who am I to judge?</li>
+          </ul>
 
           <p>
             Anyway, whatever happens, I still wanted to try building something real 
