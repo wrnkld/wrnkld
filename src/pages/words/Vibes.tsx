@@ -25,13 +25,10 @@ export default function Vibes() {
           <p className="relative">
             I don't know if "vibe coding" is even the right phrase anymore, but like 
             most designers right now, I've been working with Bolt, v0, Lovable, and 
-            the growing class of "describe it, and we'll code it" platforms. You type 
+            the growing class of "describe it, and we'll code it" platforms.<SideNote number={1}>Disclaimer: I have not yet dug deep on Figma Make or MCP</SideNote> You type 
             prompts and a working interface appears. Taken together, they're pretty 
             amazing. You're no longer drawing boxes to suggest behavior—you're shaping 
-            behavior directly. Not to be outdone, Figma rolled out Make and MCP 
-            integrations, along with a growing ecosystem of plugins pointing toward 
-            generative workflows. Some of this might be useful, but I haven't dug in 
-            deeply yet.<SideNote number={1}>Famous last words</SideNote>
+            behavior directly.
           </p>
 
           <p>
@@ -69,7 +66,7 @@ export default function Vibes() {
           <div className="xl:hidden">
             <hr className="border-border my-12" />
             <div className="space-y-3 text-sm text-muted-foreground">
-              <p><sup>1</sup> Famous last words</p>
+              <p><sup>1</sup> Disclaimer: I have not yet dug deep on Figma Make or MCP</p>
               <p><sup>2</sup> This isn't necessarily bad</p>
             </div>
           </div>
