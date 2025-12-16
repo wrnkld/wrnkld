@@ -66,7 +66,7 @@ export default function Vibes() {
 
           <p>
             Anyway, whatever happens, I still wanted to try building something real 
-            from scratch—on my own, mistakes and all.
+            from scratch—on my own, mistakes and all (Part 3 soon).
           </p>
 
           {/* Mobile/tablet fallback footnotes */}
