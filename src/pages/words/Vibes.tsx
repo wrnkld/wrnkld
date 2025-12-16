@@ -60,7 +60,7 @@ export default function Vibes() {
           <ul className="list-disc pl-6 space-y-3">
             <li>Cursor keeps me away from the terminal. Bash, npm, nvm—things I do not understand and would like to continue not understanding.</li>
             <li>Lovable keeps smoothing out Git, deploys, and real component libraries (Mantine, Material UI, Radix, Chakra). Fewer sharp edges, more stuff that actually plugs into how teams build products.</li>
-            <li>The code keeps getting better. Who am I to judge?</li>
+            <li className="relative">The code keeps getting better.<SideNote number={3}>Who am I to judge?</SideNote></li>
           </ul>
 
           <p>
@@ -74,6 +74,7 @@ export default function Vibes() {
             <div className="space-y-3 text-sm text-muted-foreground">
               <p><sup>1</sup> Disclaimer: I have not yet dug deep on Figma Make or MCP</p>
               <p><sup>2</sup> 💸 credits</p>
+              <p><sup>3</sup> Who am I to judge?</p>
             </div>
           </div>
         </article>
