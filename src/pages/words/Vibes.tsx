@@ -49,7 +49,7 @@ export default function Vibes() {
             rebuilding your entire app inside that environment. The moment you want to 
             prototype a new flow or alternate concept, you need something to build on 
             top of. The easiest "something" is whatever you last built. The more you 
-            prototype, the deeper you get.<SideNote number={2}>This isn't necessarily bad</SideNote>
+            prototype, the deeper you get.<SideNote number={2}>💸 credits</SideNote>
           </p>
 
           <p>
@@ -67,7 +67,7 @@ export default function Vibes() {
             <hr className="border-border my-12" />
             <div className="space-y-3 text-sm text-muted-foreground">
               <p><sup>1</sup> Disclaimer: I have not yet dug deep on Figma Make or MCP</p>
-              <p><sup>2</sup> This isn't necessarily bad</p>
+              <p><sup>2</sup> 💸 credits</p>
             </div>
           </div>
         </article>
