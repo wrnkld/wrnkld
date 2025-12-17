@@ -45,7 +45,7 @@ export default function RedHat() {
 
       {/* Video - Platform Demo */}
       <div className="mt-12 max-w-6xl mx-auto px-6">
-        <video src={rhbaPreviewVideo} autoPlay loop muted playsInline className="w-full h-auto" />
+        <video src={rhbaPreviewVideo} poster={rhbaWorkflowModeler} autoPlay loop muted playsInline className="w-full h-auto" />
       </div>
 
       {/* 4-column grid */}
@@ -73,7 +73,7 @@ export default function RedHat() {
 
       {/* Video - Track Demo */}
       <div className="mt-12 max-w-6xl mx-auto px-6">
-        <video src={rhbaTrackVideo} autoPlay loop muted playsInline className="w-full h-auto" />
+        <video src={rhbaTrackVideo} poster={rhbaTrack} autoPlay loop muted playsInline className="w-full h-auto" />
       </div>
 
       {/* 2-column grid */}
@@ -95,7 +95,7 @@ export default function RedHat() {
 
       {/* Video - Roster Demo */}
       <div className="mt-12 max-w-6xl mx-auto px-6">
-        <video src={rhboRosterVideo} autoPlay loop muted playsInline className="w-full h-auto" />
+        <video src={rhboRosterVideo} poster={rhboRoster} autoPlay loop muted playsInline className="w-full h-auto" />
       </div>
 
       {/* 4-column grid */}

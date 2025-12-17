@@ -4,6 +4,9 @@ import taniumAssetVendor from "@/assets/tanium/tanium-asset-vendor.png";
 import taniumDiscoverInterfaces from "@/assets/tanium/tanium-discover-interfaces.png";
 import taniumThreatAlerts from "@/assets/tanium/tanium-threat-alerts.png";
 import taniumThreatDocuments from "@/assets/tanium/tanium-threat-documents.png";
+import taniumAssuranceFindings from "@/assets/tanium/tanium-assurance-findings.png";
+import taniumEnforceOverview from "@/assets/tanium/tanium-enforce-overview.png";
+import taniumNavigationViews from "@/assets/tanium/tanium-navigation-views.png";
 
 import taniumNavigation from "@/assets/tanium/tanium-navigation.mp4";
 import taniumAssurance from "@/assets/tanium/tanium-assurance.mp4";
@@ -36,7 +39,7 @@ export default function Tanium() {
 
       {/* Video - Navigation */}
       <div className="mt-12 max-w-6xl mx-auto px-6">
-        <video src={taniumNavigation} autoPlay loop muted playsInline className="w-full h-auto" />
+        <video src={taniumNavigation} poster={taniumNavigationViews} autoPlay loop muted playsInline className="w-full h-auto" />
       </div>
 
       {/* Two-up Threat Response images */}
@@ -49,12 +52,12 @@ export default function Tanium() {
 
       {/* Video - Assurance */}
       <div className="mt-12 max-w-6xl mx-auto px-6">
-        <video src={taniumAssurance} autoPlay loop muted playsInline className="w-full h-auto" />
+        <video src={taniumAssurance} poster={taniumAssuranceFindings} autoPlay loop muted playsInline className="w-full h-auto" />
       </div>
 
       {/* Video - Discover */}
       <div className="mt-12 max-w-6xl mx-auto px-6">
-        <video src={taniumDiscover} autoPlay loop muted playsInline className="w-full h-auto" />
+        <video src={taniumDiscover} poster={taniumDiscoverInterfaces} autoPlay loop muted playsInline className="w-full h-auto" />
       </div>
 
       {/* Two-up Asset and Discover images */}
@@ -67,7 +70,7 @@ export default function Tanium() {
 
       {/* Video - Enforce */}
       <div className="mt-12 max-w-6xl mx-auto px-6">
-        <video src={taniumEnforce} autoPlay loop muted playsInline className="w-full h-auto" />
+        <video src={taniumEnforce} poster={taniumEnforceOverview} autoPlay loop muted playsInline className="w-full h-auto" />
       </div>
     </PageLayout>
   );
