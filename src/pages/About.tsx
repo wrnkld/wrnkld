@@ -3,7 +3,7 @@ import { PageLayout } from "@/components/PageLayout";
 const experience = [
   { company: "Monte Carlo", role: "Head of Design", location: "San Francisco, CA", years: "2022 – present" },
   { company: "Workato", role: "Staff Product Designer", location: "Mountain View, CA", years: "2021 – 2022" },
-  { company: "Tanium", role: "Staff Product Designer", location: "Emeryville, CA", years: "2019 – 2021" },
+  { company: "Tanium", role: "Senior Product Designer", location: "Emeryville, CA", years: "2019 – 2021" },
   { company: "Pendo", role: "Lead Product Designer", location: "Raleigh, NC", years: "2019 – 2019" },
   { company: "Red Hat", role: "Senior Interaction Designer", location: "Raleigh, NC", years: "2016 – 2019" },
   { company: "SAS", role: "Principal Interaction Designer", location: "Cary, NC", years: "2011 – 2016" },
