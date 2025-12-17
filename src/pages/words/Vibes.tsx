@@ -35,7 +35,7 @@ export default function Vibes() {
           </p>
 
           <p>
-            The first is structural. Most of these tools generate <a href="https://tailwindcss.com" target="_blank" rel="noopener noreferrer" className="text-foreground underline underline-offset-4 hover:opacity-70 transition-opacity">Tailwind</a> + <a href="https://ui.shadcn.com" target="_blank" rel="noopener noreferrer" className="text-foreground underline underline-offset-4 hover:opacity-70 transition-opacity">shadcn</a>-based 
+            The first is structural. Cursor aside, most of these tools generate <a href="https://tailwindcss.com" target="_blank" rel="noopener noreferrer" className="text-foreground underline underline-offset-4 hover:opacity-70 transition-opacity">Tailwind</a> + <a href="https://ui.shadcn.com" target="_blank" rel="noopener noreferrer" className="text-foreground underline underline-offset-4 hover:opacity-70 transition-opacity">shadcn</a>-based
             UIs. That ecosystem overlaps conceptually with our internal component library, 
             but the code itself isn't portable. You still hit the same abstraction gap: 
             cool prototype… how does this map to our components? A few tools let you 
@@ -59,7 +59,7 @@ export default function Vibes() {
 
           <ul className="list-disc pl-6 space-y-3">
             <li>AI app builders (like Lovable) keep smoothing out Git, deploys, and real component libraries (Mantine, Material UI, Radix, Chakra).</li>
-            <li>Cursor aside, most of these tools keep me away from the terminal. Bash, npm, nvm—things I do not understand and would like to continue not understanding.</li>
+            <li>AI code editors (like Cursor) keep me away from the terminal. Bash, npm, nvm—things I do not understand and would like to continue not understanding.</li>
             <li className="relative">The code keeps getting better.<SideNote number={3}>Who am I to judge?</SideNote></li>
             <li>We all lose our jobs.</li>
           </ul>
