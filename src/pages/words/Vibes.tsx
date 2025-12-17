@@ -59,7 +59,7 @@ export default function Vibes() {
 
           <ul className="list-disc pl-6 space-y-3">
             <li>AI app builders (like Lovable) keep smoothing out Git, deploys, and real component libraries (Mantine, Material UI, Radix, Chakra).</li>
-            <li>AI code editors (like Cursor) keep me away from the terminal. Bash, npm, nvm—things I do not understand and would like to continue not understanding.</li>
+            <li>Cursor aside, most of these tools keep me away from the terminal. Bash, npm, nvm—things I do not understand and would like to continue not understanding.</li>
             <li className="relative">The code keeps getting better.<SideNote number={3}>Who am I to judge?</SideNote></li>
             <li>We all lose our jobs.</li>
           </ul>
