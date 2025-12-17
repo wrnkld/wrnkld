@@ -65,7 +65,7 @@ export default function Vibes() {
           </ul>
 
           <p>
-            Anyway, whatever happens, I still wanted to try building something real 
+            Whatever happens, I still wanted to try building something real 
             from scratch—on my own, mistakes and all (Part 3 soon).
           </p>
 
