@@ -26,7 +26,16 @@ export default function Sleeves() {
           <p className="relative">
             My app, <a href="https://sleeves.app" target="_blank" rel="noopener noreferrer" className="text-foreground underline underline-offset-4 hover:opacity-70 transition-opacity">Sleeves</a>, is super simple: you search for music albums and mark your favorites, 
             or current listens. You can make lists, follow friends, and write reviews. That's it. 
-            Pretty basic. But I wanted it to work for real, real.<SideNote number={1}><a href="https://www.youtube.com/watch?v=gPNdFHSLAeI" target="_blank" rel="noopener noreferrer" className="underline underline-offset-2 hover:opacity-70 transition-opacity">real, real</a></SideNote>
+            Pretty basic. But I wanted it to work for real, real.<SideNote number={1}>
+              <a href="https://www.youtube.com/watch?v=gPNdFHSLAeI" target="_blank" rel="noopener noreferrer" className="block hover:opacity-70 transition-opacity">
+                <img 
+                  src="https://img.youtube.com/vi/gPNdFHSLAeI/mqdefault.jpg" 
+                  alt="real, real - YouTube" 
+                  className="w-full rounded mt-1 mb-1"
+                />
+                <span className="underline underline-offset-2">real, real</span>
+              </a>
+            </SideNote>
           </p>
           
           <p>
