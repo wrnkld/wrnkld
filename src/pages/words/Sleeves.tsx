@@ -64,7 +64,7 @@ export default function Sleeves() {
           
           <h2 className="font-display text-xl font-semibold mt-12 mb-4 text-foreground">Vercel</h2>
           <p>
-            Once I had a working product with auth and emails, I needed it live somewhere that wasn't a 
+            Once I had a working product with auth and emails, I needed it deployed somewhere that wasn't a 
             Lovable subdomain. Lovable recommended Vercel, which worked out since I already use it for 
             this portfolio.
           </p>
