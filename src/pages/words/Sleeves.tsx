@@ -31,9 +31,8 @@ export default function Sleeves() {
                 <img 
                   src="https://img.youtube.com/vi/gPNdFHSLAeI/mqdefault.jpg" 
                   alt="real, real - YouTube" 
-                  className="w-full rounded mt-1 mb-1"
+                  className="w-full rounded mt-1"
                 />
-                <span className="underline underline-offset-2">real, real</span>
               </a>
             </SideNote>
           </p>
@@ -58,7 +57,7 @@ export default function Sleeves() {
           
           <h2 className="font-display text-xl font-semibold mt-12 mb-4 text-foreground">Supabase</h2>
           <p>
-            Lovable (and most of these builders) integrates with Supabase for Postgres, auth, and storage. 
+            Lovable integrates with Supabase for Postgres, auth, and storage. 
             I needed a database and login flow, and this handled both. The integration is mostly invisible 
             to me, which is fine — I know it's there and that it works.
           </p>
@@ -101,7 +100,7 @@ export default function Sleeves() {
           <div className="xl:hidden">
             <hr className="border-border my-12" />
             <div className="space-y-3 text-sm text-muted-foreground">
-              <p><sup>1</sup> <a href="https://www.youtube.com/watch?v=gPNdFHSLAeI" target="_blank" rel="noopener noreferrer" className="underline underline-offset-2 hover:opacity-70 transition-opacity">real, real</a></p>
+              <p><sup>1</sup> <a href="https://www.youtube.com/watch?v=gPNdFHSLAeI" target="_blank" rel="noopener noreferrer" className="underline underline-offset-2 hover:opacity-70 transition-opacity">youtube.com/watch?v=gPNdFHSLAeI</a></p>
               <p><sup>2</sup> Less cursing, less ALL CAPS</p>
               <p><sup>3</sup> It still blows my mind that Resend is just an email sender. I spent way too long trying to figure out where I was supposed to design the emails.</p>
             </div>
