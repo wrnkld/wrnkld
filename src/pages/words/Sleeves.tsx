@@ -56,7 +56,7 @@ export default function Sleeves() {
         <p>
           Once I had a working product with auth and emails, I needed it live somewhere that wasn't a 
           Lovable subdomain. Lovable recommended Vercel, which worked out since I already use it for 
-          my portfolio.
+          this portfolio.
         </p>
         
         <h2 className="font-display text-xl font-semibold mt-12 mb-4 text-foreground">Namecheap</h2>
