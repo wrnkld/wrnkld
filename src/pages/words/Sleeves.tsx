@@ -18,9 +18,9 @@ export default function Sleeves() {
       <div className="relative">
         <article className="prose space-y-6">
           <p>
-            You can't really quibble with <Link to="/designai/tools" className="text-foreground underline underline-offset-4 hover:opacity-70 transition-opacity">Part 1</Link> — it's basically my life story. And sure, 
-            you could nitpick <Link to="/designai/vibes" className="text-foreground underline underline-offset-4 hover:opacity-70 transition-opacity">Part 2</Link>, especially when I admit I haven't explored Figma Make.
-            Part 3 is where it becomes obvious I have a lot to learn.
+            You can't really quibble with <Link to="/designai/tools" className="text-foreground underline underline-offset-4 hover:opacity-70 transition-opacity">Part 1</Link> — it's basically my life story. You could 
+            nitpick <Link to="/designai/vibes" className="text-foreground underline underline-offset-4 hover:opacity-70 transition-opacity">Part 2</Link>, especially when I admit I haven't explored Figma Make. But Part 3 
+            is different. It's where I'm figuring things out in public.
           </p>
           
           <p className="relative">
