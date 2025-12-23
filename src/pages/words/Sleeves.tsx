@@ -20,7 +20,7 @@ export default function Sleeves() {
           Here's the stack I used to make that happen:
         </p>
         
-        <h2>Lovable</h2>
+        <h2 className="font-display text-xl font-semibold mt-12 mb-4">Lovable</h2>
         <p>
           As I mentioned in Part 2, I tried almost every AI app builder and ended up with Lovable. 
           It's hard to overstate how much better it is than it was a few months ago. I burned through 
@@ -28,20 +28,20 @@ export default function Sleeves() {
           help from ChatGPT, I had something working in a couple of weeks.
         </p>
         
-        <h2>ChatGPT</h2>
+        <h2 className="font-display text-xl font-semibold mt-12 mb-4">ChatGPT</h2>
         <p>
           I should think more about my prompts in general. For this project, at least at the start, 
           I did. ChatGPT helped at almost every step, especially early architecture decisions.
         </p>
         
-        <h2>Supabase</h2>
+        <h2 className="font-display text-xl font-semibold mt-12 mb-4">Supabase</h2>
         <p>
           Lovable (and most of these builders) integrates with Supabase for Postgres, auth, and storage. 
           I needed a database and login flow, and this handled both. The integration is mostly invisible 
           to me, which is fine — I know it's there and that it works.
         </p>
         
-        <h2>Resend</h2>
+        <h2 className="font-display text-xl font-semibold mt-12 mb-4">Resend</h2>
         <p>
           I decided users should get a welcome email. Lovable suggested Resend. I signed up, wired a 
           couple of keys, and got it working without leaving the free tier.
@@ -52,26 +52,26 @@ export default function Sleeves() {
           trying to figure out where I was supposed to design the emails.
         </p>
         
-        <h2>Vercel</h2>
+        <h2 className="font-display text-xl font-semibold mt-12 mb-4">Vercel</h2>
         <p>
           Once I had a working product with auth and emails, I needed it live somewhere that wasn't a 
           Lovable subdomain. Lovable recommended Vercel, which worked out since I already use it for 
           my portfolio.
         </p>
         
-        <h2>Namecheap</h2>
+        <h2 className="font-display text-xl font-semibold mt-12 mb-4">Namecheap</h2>
         <p>
           I bought a domain on Namecheap, then pointed the DNS at Vercel so it would serve the app 
           under the real domain. With some help from ChatGPT, this mostly worked on the first try.
         </p>
         
-        <h2>GitHub</h2>
+        <h2 className="font-display text-xl font-semibold mt-12 mb-4">GitHub</h2>
         <p>
           Eventually, I had to put this in GitHub because… It's code. More importantly, I wanted a 
           path out of the Lovable universe so I wouldn't have to pay maintenance forever.
         </p>
         
-        <h2>Cursor</h2>
+        <h2 className="font-display text-xl font-semibold mt-12 mb-4">Cursor</h2>
         <p>
           Here's where I briefly lost the plot. Cursor is incredibly cool, but I couldn't get it to 
           run my local code (user error), so I ran a few Git commands in Terminal and got the repo 
