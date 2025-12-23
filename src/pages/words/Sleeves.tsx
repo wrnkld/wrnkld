@@ -18,15 +18,15 @@ export default function Sleeves() {
       <div className="relative">
         <article className="prose space-y-6">
           <p>
-            You can't really quibble with <Link to="/designai/vibes" className="text-foreground underline underline-offset-4 hover:opacity-70 transition-opacity">Part 1</Link> — it's basically my life story. And sure, 
-            you could nitpick <Link to="/designai/tools" className="text-foreground underline underline-offset-4 hover:opacity-70 transition-opacity">Part 2</Link>, especially when I admit I haven't explored Figma Make. 
+            You can't really quibble with <Link to="/designai/tools" className="text-foreground underline underline-offset-4 hover:opacity-70 transition-opacity">Part 1</Link> — it's basically my life story. And sure, 
+            you could nitpick <Link to="/designai/vibes" className="text-foreground underline underline-offset-4 hover:opacity-70 transition-opacity">Part 2</Link>, especially when I admit I haven't explored Figma Make.
             Part 3 is where it becomes obvious I have a lot to learn.
           </p>
           
           <p className="relative">
             My app, Sleeves, is super simple: you search for music albums and mark your favorites, 
             or current listens. You can make lists, follow friends, and write reviews. That's it. 
-            Pretty basic. But I wanted it to work for real, real.<SideNote number={1}>real, real</SideNote>
+            Pretty basic. But I wanted it to work for real, real.<SideNote number={1}><a href="https://www.youtube.com/watch?v=gPNdFHSLAeI" target="_blank" rel="noopener noreferrer" className="underline underline-offset-2 hover:opacity-70 transition-opacity">real, real</a></SideNote>
           </p>
           
           <p>
@@ -43,7 +43,7 @@ export default function Sleeves() {
           
           <h2 className="font-display text-xl font-semibold mt-12 mb-4 text-foreground">ChatGPT</h2>
           <p className="relative">
-            I should think more about my prompts in general.<SideNote number={2}>prompts in general</SideNote> For this project, at least at the start, 
+            I should think more about my prompts in general.<SideNote number={2}>Less cursing, less ALL CAPS</SideNote> For this project, at least at the start, 
             I did. ChatGPT helped at almost every step, especially early architecture decisions.
           </p>
           
@@ -92,8 +92,8 @@ export default function Sleeves() {
           <div className="xl:hidden">
             <hr className="border-border my-12" />
             <div className="space-y-3 text-sm text-muted-foreground">
-              <p><sup>1</sup> real, real</p>
-              <p><sup>2</sup> prompts in general</p>
+              <p><sup>1</sup> <a href="https://www.youtube.com/watch?v=gPNdFHSLAeI" target="_blank" rel="noopener noreferrer" className="underline underline-offset-2 hover:opacity-70 transition-opacity">real, real</a></p>
+              <p><sup>2</sup> Less cursing, less ALL CAPS</p>
               <p><sup>3</sup> It still blows my mind that Resend is just an email sender. I spent way too long trying to figure out where I was supposed to design the emails.</p>
             </div>
           </div>
