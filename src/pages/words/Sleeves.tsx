@@ -1,12 +1,13 @@
 import { PageLayout } from "@/components/PageLayout";
+import { Link } from "react-router-dom";
 
 export default function Sleeves() {
   return (
     <PageLayout title="Pt 3 → Sleeves" subtitle="Design & AI">
       <article className="prose space-y-6">
         <p>
-          You can't really quibble with Part 1 — it's basically my life story. And sure, 
-          you could nitpick Part 2, especially when I admit I haven't explored Figma Make. 
+          You can't really quibble with <Link to="/designai/vibes" className="underline hover:text-foreground">Part 1</Link> — it's basically my life story. And sure, 
+          you could nitpick <Link to="/designai/tools" className="underline hover:text-foreground">Part 2</Link>, especially when I admit I haven't explored Figma Make. 
           But Part 3 is where it becomes obvious I was learning in real time.
         </p>
         
