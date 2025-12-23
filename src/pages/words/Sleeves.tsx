@@ -89,9 +89,7 @@ export default function Sleeves() {
             survived. Cursor turned out to be genuinely helpful for cleanup, and after double-checking 
             its advice with ChatGPT, I landed on code that works and feels reasonably stable.
           </p>
-          
-          <hr className="border-border my-12" />
-          
+
           <p>
             None of this is especially impressive on its own. Sleeves is small, the stack is conventional, 
             and the tools did most of the heavy lifting. But that's the point. It's real, it works, and 
