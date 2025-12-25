@@ -91,7 +91,7 @@ export default function Sleeves() {
           </p>
 
           <p>
-            None of this is especially impressive on its own. Sleeves is small, the stack is conventional, 
+            End of interview! None of this is especially impressive on its own. Sleeves is small, the stack is conventional,
             and the tools did most of the heavy lifting. But that's the point. It's real, it works, and 
             I learned a lot building it.
           </p>
