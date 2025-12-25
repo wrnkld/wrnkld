@@ -90,8 +90,10 @@ export default function Sleeves() {
             its advice with ChatGPT, I landed on code that works and feels reasonably stable.
           </p>
 
-          <p>
-            End of interview! None of this is especially impressive on its own. Sleeves is small, the stack is conventional,
+          <p className="relative">
+            End of interview!<SideNote number={4}>
+              <a href="https://www.youtube.com/watch?v=RFZZEpNKjg0" target="_blank" rel="noopener noreferrer" className="underline underline-offset-2 hover:opacity-70 transition-opacity">youtube.com/watch?v=RFZZEpNKjg0</a>
+            </SideNote> None of this is especially impressive on its own. Sleeves is small, the stack is conventional,
             and the tools did most of the heavy lifting. But that's the point. It's real, it works, and 
             I learned a lot building it.
           </p>
@@ -103,6 +105,7 @@ export default function Sleeves() {
               <p><sup>1</sup> <a href="https://www.youtube.com/watch?v=gPNdFHSLAeI" target="_blank" rel="noopener noreferrer" className="underline underline-offset-2 hover:opacity-70 transition-opacity">youtube.com/watch?v=gPNdFHSLAeI</a></p>
               <p><sup>2</sup> Less cursing, less ALL CAPS</p>
               <p><sup>3</sup> It still blows my mind that Resend is just an email sender. I spent way too long trying to figure out where I was supposed to design the emails.</p>
+              <p><sup>4</sup> <a href="https://www.youtube.com/watch?v=RFZZEpNKjg0" target="_blank" rel="noopener noreferrer" className="underline underline-offset-2 hover:opacity-70 transition-opacity">youtube.com/watch?v=RFZZEpNKjg0</a></p>
             </div>
           </div>
         </article>
