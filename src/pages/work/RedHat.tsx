@@ -44,12 +44,12 @@ export default function RedHat() {
       </div>
 
       {/* Video - Platform Demo */}
-      <div className="mt-12 px-8 lg:px-12 xl:px-16">
+      <div className="px-8 lg:px-12 xl:px-16">
         <video src={rhbaPreviewVideo} poster={rhbaWorkflowModeler} autoPlay loop muted playsInline className="w-full h-auto" />
       </div>
 
       {/* 4-column grid */}
-      <div className="mt-12 px-8 lg:px-12 xl:px-16">
+      <div className="mt-8 px-8 lg:px-12 xl:px-16">
         <div className="grid grid-cols-4 gap-4">
           <img src={rhbaPropertiesPanel} alt="Red Hat Business Automation Properties Panel" className="w-full h-auto" />
           <img src={rhbaNavigator} alt="Red Hat Business Automation Navigator" className="w-full h-auto" />
@@ -72,12 +72,12 @@ export default function RedHat() {
       </div>
 
       {/* Video - Track Demo */}
-      <div className="mt-12 px-8 lg:px-12 xl:px-16">
+      <div className="mt-8 px-8 lg:px-12 xl:px-16">
         <video src={rhbaTrackVideo} poster={rhbaTrack} autoPlay loop muted playsInline className="w-full h-auto" />
       </div>
 
       {/* 2-column grid */}
-      <div className="mt-12 px-8 lg:px-12 xl:px-16">
+      <div className="mt-8 px-8 lg:px-12 xl:px-16">
         <div className="grid grid-cols-2 gap-4">
           <img src={rhbaEmptyState} alt="Red Hat Business Automation Empty State" className="w-full h-auto" />
           <img src={rhbaSpace} alt="Red Hat Business Automation Space" className="w-full h-auto" />
@@ -85,7 +85,7 @@ export default function RedHat() {
       </div>
 
       {/* Extend Section */}
-      <div className="px-8 lg:px-12 xl:px-16 mt-12">
+      <div className="mt-8 px-8 lg:px-12 xl:px-16">
         <h2 className="font-display text-xl font-semibold mb-4">Extend</h2>
         <p className="prose">
           Created shared design patterns across Business Automation and Business 
@@ -94,12 +94,12 @@ export default function RedHat() {
       </div>
 
       {/* Video - Roster Demo */}
-      <div className="mt-12 px-8 lg:px-12 xl:px-16">
+      <div className="mt-8 px-8 lg:px-12 xl:px-16">
         <video src={rhboRosterVideo} poster={rhboRoster} autoPlay loop muted playsInline className="w-full h-auto" />
       </div>
 
       {/* 4-column grid */}
-      <div className="mt-12 px-8 lg:px-12 xl:px-16 pb-16">
+      <div className="mt-8 px-8 lg:px-12 xl:px-16 pb-16">
         <div className="grid grid-cols-4 gap-4">
           <img src={rhboEmployees} alt="Red Hat Business Optaplanner Employees" className="w-full h-auto" />
           <img src={rhboAvailability} alt="Red Hat Business Optaplanner Availability" className="w-full h-auto" />

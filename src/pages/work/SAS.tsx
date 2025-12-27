@@ -31,7 +31,7 @@ export default function SAS() {
       </div>
 
       {/* Analytics Platform Section */}
-      <div className="px-8 lg:px-12 xl:px-16 mt-12">
+      <div className="px-8 lg:px-12 xl:px-16">
         <h2 className="font-display text-xl font-semibold mb-4">Model Studio</h2>
         <p className="prose">
           Led design across the advanced analytics platform, coordinating multiple product managers
@@ -42,7 +42,7 @@ export default function SAS() {
       </div>
 
       {/* Analytics Video - BIG */}
-      <div className="mt-12 px-8 lg:px-12 xl:px-16">
+      <div className="mt-8 px-8 lg:px-12 xl:px-16">
         <video src={sasDiagram} poster={analyticsAnalyze} autoPlay loop muted playsInline className="w-full h-auto block" />
       </div>
 
@@ -57,7 +57,7 @@ export default function SAS() {
       </div>
 
       {/* Factory Miner Section */}
-      <div className="px-8 lg:px-12 xl:px-16 mt-12">
+      <div className="mt-8 px-8 lg:px-12 xl:px-16">
         <h2 className="font-display text-xl font-semibold mb-4">Factory Miner</h2>
         <p className="prose">
           Delivered model comparison and selection workflows that ran multiple 
@@ -67,7 +67,7 @@ export default function SAS() {
       </div>
 
       {/* Factory 1-up */}
-      <div className="mt-12 px-8 lg:px-12 xl:px-16">
+      <div className="mt-8 px-8 lg:px-12 xl:px-16">
         <img src={factoryResults} alt="SAS Factory Results" className="w-full h-auto" />
       </div>
 
@@ -82,7 +82,7 @@ export default function SAS() {
       </div>
 
       {/* Visual Statistics Section */}
-      <div className="px-8 lg:px-12 xl:px-16 mt-12">
+      <div className="mt-8 px-8 lg:px-12 xl:px-16">
         <h2 className="font-display text-xl font-semibold mb-4">Visual Statistics</h2>
         <p className="prose">
           Built a drag-and-drop, visual interface for exploring statistical models, 
@@ -91,7 +91,7 @@ export default function SAS() {
       </div>
 
       {/* Visual Stats 1-up BIG */}
-      <div className="mt-12 px-8 lg:px-12 xl:px-16">
+      <div className="mt-8 px-8 lg:px-12 xl:px-16">
         <img src={visualStatsRoles} alt="SAS Visual Stats Roles" className="w-full h-auto" />
       </div>
 
