@@ -1,4 +1,4 @@
-import { PageLayout } from "@/components/PageLayout";
+import { SplitHeroLayout } from "@/components/SplitHeroLayout";
 
 import rhbaAssetsList from "@/assets/redhat/rhba-assets-list.png";
 import rhbaComments from "@/assets/redhat/rhba-comments.png";
@@ -22,8 +22,8 @@ import rhboRosterVideo from "@/assets/redhat/rhbo-roster.mp4";
 
 export default function RedHat() {
   return (
-    <PageLayout title="Red Hat" subtitle="Work" fullWidthContent>
-      <div className="max-w-4xl mx-auto px-6 space-y-6">
+    <SplitHeroLayout title="Red Hat" subtitle="Work" colorClass="card-teal">
+      <div className="max-w-4xl mx-auto px-6 py-12 space-y-6">
         <p className="prose mb-8">
           Red Hat is an open-source enterprise software company known for bringing 
           Linux and middleware to enterprise scale. I worked there up until the 
@@ -107,6 +107,6 @@ export default function RedHat() {
           <img src={rhboRoute} alt="Red Hat Business Optaplanner Route" className="w-full h-auto" />
         </div>
       </div>
-    </PageLayout>
+    </SplitHeroLayout>
   );
 }

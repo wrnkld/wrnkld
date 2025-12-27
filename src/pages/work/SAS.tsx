@@ -1,4 +1,4 @@
-import { PageLayout } from "@/components/PageLayout";
+import { SplitHeroLayout } from "@/components/SplitHeroLayout";
 
 import analyticsAnalyze from "@/assets/sas/analytics-analyze.png";
 import analyticsExplore from "@/assets/sas/analytics-explore.png";
@@ -16,8 +16,8 @@ import visualStatsShare from "@/assets/sas/visual-stats-share.png";
 
 export default function SAS() {
   return (
-    <PageLayout title="SAS" subtitle="Work" fullWidthContent>
-      <div className="max-w-4xl mx-auto px-6 space-y-6">
+    <SplitHeroLayout title="SAS" subtitle="Work" colorClass="card-terracotta">
+      <div className="max-w-4xl mx-auto px-6 py-12 space-y-6">
         <p className="prose">
           SAS is an enterprise analytics company focused on large-scale statistical 
           modeling, data science, and decisioning across regulated industries.
@@ -102,6 +102,6 @@ export default function SAS() {
           <img src={visualStatsShare} alt="SAS Visual Stats Share" className="w-full h-auto" />
         </div>
       </div>
-    </PageLayout>
+    </SplitHeroLayout>
   );
 }
