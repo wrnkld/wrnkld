@@ -1,5 +1,5 @@
 import { useState, useMemo } from "react";
-import { PageLayout } from "@/components/PageLayout";
+import { SplitHeroLayout } from "@/components/SplitHeroLayout";
 import { books } from "@/data/books";
 import { Input } from "@/components/ui/input";
 import {
@@ -79,79 +79,81 @@ export default function Books() {
   );
 
   return (
-    <PageLayout title="Books" subtitle="About">
-      <p className="prose mb-8">
-        I recently started tracking the books I read.
-      </p>
+    <SplitHeroLayout title="Books" subtitle="About" colorClass="card-forest">
+      <div className="p-8 lg:p-12 xl:p-16">
+        <p className="prose mb-8">
+          I recently started tracking the books I read.
+        </p>
 
-      {/* Search */}
-      <div className="relative mb-6">
-        <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
-        <Input
-          placeholder={`Search ${books.length} books`}
-          value={search}
-          onChange={(e) => setSearch(e.target.value)}
-          className="pl-9 pr-9"
-        />
-        {search && (
-          <button
-            onClick={() => setSearch("")}
-            className="absolute right-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground hover:text-foreground transition-colors"
-          >
-            <X className="h-4 w-4" />
-          </button>
-        )}
-      </div>
+        {/* Search */}
+        <div className="relative mb-6">
+          <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
+          <Input
+            placeholder={`Search ${books.length} books`}
+            value={search}
+            onChange={(e) => setSearch(e.target.value)}
+            className="pl-9 pr-9"
+          />
+          {search && (
+            <button
+              onClick={() => setSearch("")}
+              className="absolute right-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground hover:text-foreground transition-colors"
+            >
+              <X className="h-4 w-4" />
+            </button>
+          )}
+        </div>
 
-      {/* Table */}
-      <div className="border border-border rounded-md overflow-hidden prose">
-        <Table>
-          <TableHeader>
-            <TableRow className="bg-muted/50">
-              <TableHead className="w-14 !p-0 !pr-0"></TableHead>
-              <TableHead>
-                <SortButton field="author">Author</SortButton>
-              </TableHead>
-              <TableHead>
-                <SortButton field="title">Title</SortButton>
-              </TableHead>
-              <TableHead className="w-[100px] hidden md:table-cell">
-                <SortButton field="year">Published</SortButton>
-              </TableHead>
-              <TableHead className="w-[100px] hidden md:table-cell">
-                <SortButton field="yearRead">Read</SortButton>
-              </TableHead>
-            </TableRow>
-          </TableHeader>
-          <TableBody>
-            {filteredAndSortedBooks.map((book, index) => (
-              <TableRow
-                key={book.id}
-                className="animate-fade-in"
-                style={{ animationDelay: `${Math.min(index * 20, 500)}ms` }}
-              >
-                <TableCell className="w-14 !p-0">
-                  <div className="h-full w-full flex items-center justify-center pl-4">
-                    {book.recommended && (
-                      <Star className="h-4 w-4 text-yellow-500 fill-yellow-500" />
-                    )}
-                  </div>
-                </TableCell>
-                <TableCell className="text-muted-foreground">
-                  {book.author}
-                </TableCell>
-                <TableCell className="text-foreground">{book.title}</TableCell>
-                <TableCell className="text-muted-foreground hidden md:table-cell">
-                  {book.year}
-                </TableCell>
-                <TableCell className="text-muted-foreground hidden md:table-cell">
-                  {book.yearRead}
-                </TableCell>
+        {/* Table */}
+        <div className="border border-border rounded-md overflow-hidden prose">
+          <Table>
+            <TableHeader>
+              <TableRow className="bg-muted/50">
+                <TableHead className="w-14 !p-0 !pr-0"></TableHead>
+                <TableHead>
+                  <SortButton field="author">Author</SortButton>
+                </TableHead>
+                <TableHead>
+                  <SortButton field="title">Title</SortButton>
+                </TableHead>
+                <TableHead className="w-[100px] hidden md:table-cell">
+                  <SortButton field="year">Published</SortButton>
+                </TableHead>
+                <TableHead className="w-[100px] hidden md:table-cell">
+                  <SortButton field="yearRead">Read</SortButton>
+                </TableHead>
               </TableRow>
-            ))}
-          </TableBody>
-        </Table>
+            </TableHeader>
+            <TableBody>
+              {filteredAndSortedBooks.map((book, index) => (
+                <TableRow
+                  key={book.id}
+                  className="animate-fade-in"
+                  style={{ animationDelay: `${Math.min(index * 20, 500)}ms` }}
+                >
+                  <TableCell className="w-14 !p-0">
+                    <div className="h-full w-full flex items-center justify-center pl-4">
+                      {book.recommended && (
+                        <Star className="h-4 w-4 text-yellow-500 fill-yellow-500" />
+                      )}
+                    </div>
+                  </TableCell>
+                  <TableCell className="text-muted-foreground">
+                    {book.author}
+                  </TableCell>
+                  <TableCell className="text-foreground">{book.title}</TableCell>
+                  <TableCell className="text-muted-foreground hidden md:table-cell">
+                    {book.year}
+                  </TableCell>
+                  <TableCell className="text-muted-foreground hidden md:table-cell">
+                    {book.yearRead}
+                  </TableCell>
+                </TableRow>
+              ))}
+            </TableBody>
+          </Table>
+        </div>
       </div>
-    </PageLayout>
+    </SplitHeroLayout>
   );
 }
