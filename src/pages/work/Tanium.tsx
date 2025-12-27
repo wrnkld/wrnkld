@@ -1,4 +1,4 @@
-import { PageLayout } from "@/components/PageLayout";
+import { SplitHeroLayout } from "@/components/SplitHeroLayout";
 
 import taniumAssetVendor from "@/assets/tanium/tanium-asset-vendor.png";
 import taniumDiscoverInterfaces from "@/assets/tanium/tanium-discover-interfaces.png";
@@ -15,8 +15,8 @@ import taniumEnforce from "@/assets/tanium/tanium-enforce.mp4";
 
 export default function Tanium() {
   return (
-    <PageLayout title="Tanium" subtitle="Work" fullWidthContent>
-      <div className="max-w-4xl mx-auto px-6 space-y-6">
+    <SplitHeroLayout title="Tanium" subtitle="Work" colorClass="card-coral">
+      <div className="max-w-4xl mx-auto px-6 py-12 space-y-6">
         <p className="prose mb-8">
           Tanium is a large-scale endpoint security platform used by some of the world's biggest organizations to manage, secure, and respond across millions of devices in real time. I worked on the product during a period of rapid growth and sustained pressure.
         </p>
@@ -72,6 +72,6 @@ export default function Tanium() {
       <div className="mt-12 max-w-6xl mx-auto px-6">
         <video src={taniumEnforce} poster={taniumEnforceOverview} autoPlay loop muted playsInline className="w-full h-auto" />
       </div>
-    </PageLayout>
+    </SplitHeroLayout>
   );
 }
