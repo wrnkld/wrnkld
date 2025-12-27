@@ -16,7 +16,7 @@ import taniumEnforce from "@/assets/tanium/tanium-enforce.mp4";
 export default function Tanium() {
   return (
     <SplitHeroLayout title="Tanium" subtitle="Work" colorClass="card-coral">
-      <div className="max-w-4xl mx-auto px-6 py-12 space-y-6">
+      <div className="p-8 lg:p-12 xl:p-16 space-y-6">
         <p className="prose mb-8">
           Tanium is a large-scale endpoint security platform used by some of the world's biggest organizations to manage, secure, and respond across millions of devices in real time. I worked on the product during a period of rapid growth and sustained pressure.
         </p>
@@ -38,12 +38,12 @@ export default function Tanium() {
       </div>
 
       {/* Video - Navigation */}
-      <div className="mt-12 max-w-6xl mx-auto px-6">
+      <div className="mt-12 px-8 lg:px-12 xl:px-16">
         <video src={taniumNavigation} poster={taniumNavigationViews} autoPlay loop muted playsInline className="w-full h-auto" />
       </div>
 
       {/* Two-up Threat Response images */}
-      <div className="mt-12 max-w-6xl mx-auto px-6">
+      <div className="mt-12 px-8 lg:px-12 xl:px-16">
         <div className="grid grid-cols-2 gap-4">
           <img src={taniumThreatAlerts} alt="Tanium Threat Alerts" className="w-full h-auto" />
           <img src={taniumThreatDocuments} alt="Tanium Threat Documents" className="w-full h-auto" />
@@ -51,17 +51,17 @@ export default function Tanium() {
       </div>
 
       {/* Video - Assurance */}
-      <div className="mt-12 max-w-6xl mx-auto px-6">
+      <div className="mt-12 px-8 lg:px-12 xl:px-16">
         <video src={taniumAssurance} poster={taniumAssuranceFindings} autoPlay loop muted playsInline className="w-full h-auto" />
       </div>
 
       {/* Video - Discover */}
-      <div className="mt-12 max-w-6xl mx-auto px-6">
+      <div className="mt-12 px-8 lg:px-12 xl:px-16">
         <video src={taniumDiscover} poster={taniumDiscoverInterfaces} autoPlay loop muted playsInline className="w-full h-auto" />
       </div>
 
       {/* Two-up Asset and Discover images */}
-      <div className="mt-12 max-w-6xl mx-auto px-6">
+      <div className="mt-12 px-8 lg:px-12 xl:px-16">
         <div className="grid grid-cols-2 gap-4">
           <img src={taniumDiscoverInterfaces} alt="Tanium Discover Interfaces" className="w-full h-auto" />
           <img src={taniumAssetVendor} alt="Tanium Asset Vendor" className="w-full h-auto" />
@@ -69,7 +69,7 @@ export default function Tanium() {
       </div>
 
       {/* Video - Enforce */}
-      <div className="mt-12 max-w-6xl mx-auto px-6">
+      <div className="mt-12 px-8 lg:px-12 xl:px-16 pb-16">
         <video src={taniumEnforce} poster={taniumEnforceOverview} autoPlay loop muted playsInline className="w-full h-auto" />
       </div>
     </SplitHeroLayout>

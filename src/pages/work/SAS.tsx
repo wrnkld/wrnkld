@@ -17,7 +17,7 @@ import visualStatsShare from "@/assets/sas/visual-stats-share.png";
 export default function SAS() {
   return (
     <SplitHeroLayout title="SAS" subtitle="Work" colorClass="card-terracotta">
-      <div className="max-w-4xl mx-auto px-6 py-12 space-y-6">
+      <div className="p-8 lg:p-12 xl:p-16 space-y-6">
         <p className="prose">
           SAS is an enterprise analytics company focused on large-scale statistical 
           modeling, data science, and decisioning across regulated industries.
@@ -31,7 +31,7 @@ export default function SAS() {
       </div>
 
       {/* Analytics Platform Section */}
-      <div className="max-w-4xl mx-auto px-6 mt-12">
+      <div className="px-8 lg:px-12 xl:px-16 mt-12">
         <h2 className="font-display text-xl font-semibold mb-4">Model Studio</h2>
         <p className="prose">
           Led design across the advanced analytics platform, coordinating multiple product managers
@@ -42,12 +42,12 @@ export default function SAS() {
       </div>
 
       {/* Analytics Video - BIG */}
-      <div className="mt-12 max-w-6xl mx-auto px-6">
+      <div className="mt-12 px-8 lg:px-12 xl:px-16">
         <video src={sasDiagram} poster={analyticsAnalyze} autoPlay loop muted playsInline className="w-full h-auto block" />
       </div>
 
       {/* Analytics 4-up */}
-      <div className="mt-8 max-w-6xl mx-auto px-6">
+      <div className="mt-8 px-8 lg:px-12 xl:px-16">
         <div className="grid grid-cols-4 gap-4">
           <img src={analyticsPrepare} alt="SAS Analytics Prepare" className="w-full h-auto" />
           <img src={analyticsExplore} alt="SAS Analytics Explore" className="w-full h-auto" />
@@ -57,7 +57,7 @@ export default function SAS() {
       </div>
 
       {/* Factory Miner Section */}
-      <div className="max-w-4xl mx-auto px-6 mt-12">
+      <div className="px-8 lg:px-12 xl:px-16 mt-12">
         <h2 className="font-display text-xl font-semibold mb-4">Factory Miner</h2>
         <p className="prose">
           Delivered model comparison and selection workflows that ran multiple 
@@ -67,12 +67,12 @@ export default function SAS() {
       </div>
 
       {/* Factory 1-up */}
-      <div className="mt-12 max-w-6xl mx-auto px-6">
+      <div className="mt-12 px-8 lg:px-12 xl:px-16">
         <img src={factoryResults} alt="SAS Factory Results" className="w-full h-auto" />
       </div>
 
       {/* Factory 4-up */}
-      <div className="mt-8 max-w-6xl mx-auto px-6">
+      <div className="mt-8 px-8 lg:px-12 xl:px-16">
         <div className="grid grid-cols-4 gap-4">
           <img src={factoryData} alt="SAS Factory Data" className="w-full h-auto" />
           <img src={factoryProfile} alt="SAS Factory Profile" className="w-full h-auto" />
@@ -82,7 +82,7 @@ export default function SAS() {
       </div>
 
       {/* Visual Statistics Section */}
-      <div className="max-w-4xl mx-auto px-6 mt-12">
+      <div className="px-8 lg:px-12 xl:px-16 mt-12">
         <h2 className="font-display text-xl font-semibold mb-4">Visual Statistics</h2>
         <p className="prose">
           Built a drag-and-drop, visual interface for exploring statistical models, 
@@ -91,12 +91,12 @@ export default function SAS() {
       </div>
 
       {/* Visual Stats 1-up BIG */}
-      <div className="mt-12 max-w-6xl mx-auto px-6">
+      <div className="mt-12 px-8 lg:px-12 xl:px-16">
         <img src={visualStatsRoles} alt="SAS Visual Stats Roles" className="w-full h-auto" />
       </div>
 
       {/* Visual Stats 2-up */}
-      <div className="mt-8 max-w-6xl mx-auto px-6">
+      <div className="mt-8 px-8 lg:px-12 xl:px-16 pb-16">
         <div className="grid grid-cols-2 gap-4">
           <img src={visualStatsProperties} alt="SAS Visual Stats Properties" className="w-full h-auto" />
           <img src={visualStatsShare} alt="SAS Visual Stats Share" className="w-full h-auto" />
