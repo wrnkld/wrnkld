@@ -14,7 +14,7 @@ function SideNote({ number, children }: { number: number; children: React.ReactN
 
 export default function Sleeves() {
   return (
-    <SplitHeroLayout title="Pt 3 → Sleeves" subtitle="Design & AI" colorClass="card-mustard">
+    <SplitHeroLayout title="Pt 3 → Sleeves" subtitle="Design & AI" colorClass="card-navy">
       <div className="p-8 lg:p-12 xl:p-16">
         <div className="relative">
           <article className="prose space-y-6">

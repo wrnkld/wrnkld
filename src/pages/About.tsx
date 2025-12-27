@@ -13,7 +13,7 @@ const experience = [
 
 export default function About() {
   return (
-    <SplitHeroLayout title="Experience" subtitle="About" colorClass="card-terracotta">
+    <SplitHeroLayout title="Experience" subtitle="About" colorClass="card-mustard">
       <div className="p-8 lg:p-12 xl:p-16">
         <div className="border border-border rounded-md overflow-hidden">
           {experience.map((job, index) => (
