@@ -18,9 +18,9 @@ export function SplitHeroLayout({ title, subtitle, children, colorClass }: Split
 
   return (
     <div className="min-h-screen bg-background">
-      {/* Fixed left panel - hidden on mobile */}
+      {/* Fixed left panel - hidden below lg breakpoint */}
       <div 
-        className={`hidden md:flex fixed left-0 top-0 w-1/2 h-screen flex-col justify-end p-12 lg:p-16 z-10 ${colorClass}`}
+        className={`hidden lg:flex fixed left-0 top-0 w-1/2 h-screen flex-col justify-end p-12 xl:p-16 z-10 ${colorClass}`}
       >
         <div className="animate-fade-in">
           {subtitle && (
@@ -41,14 +41,14 @@ export function SplitHeroLayout({ title, subtitle, children, colorClass }: Split
               </span>
             </Link>
           )}
-          <h1 className={`font-display text-4xl md:text-5xl lg:text-6xl font-semibold ${useDarkText ? 'text-foreground' : ''}`}>
+          <h1 className={`font-display text-4xl lg:text-5xl xl:text-6xl font-semibold ${useDarkText ? 'text-foreground' : ''}`}>
             {title}
           </h1>
         </div>
       </div>
 
-      {/* Mobile header - shown only on mobile */}
-      <div className={`md:hidden flex flex-col justify-end p-8 min-h-[40vh] ${colorClass}`}>
+      {/* Mobile/tablet header - shown below lg breakpoint */}
+      <div className={`lg:hidden flex flex-col justify-end p-8 min-h-[40vh] ${colorClass}`}>
         <div className="animate-fade-in">
           {subtitle && (
             <Link 
@@ -61,14 +61,14 @@ export function SplitHeroLayout({ title, subtitle, children, colorClass }: Split
               <span>{subtitle}</span>
             </Link>
           )}
-          <h1 className={`font-display text-4xl font-semibold ${useDarkText ? 'text-foreground' : ''}`}>
+          <h1 className={`font-display text-3xl md:text-4xl font-semibold ${useDarkText ? 'text-foreground' : ''}`}>
             {title}
           </h1>
         </div>
       </div>
       
       {/* Scrolling right content area */}
-      <main className="md:ml-[50%] animate-fade-in" style={{ animationDelay: "100ms" }}>
+      <main className="lg:ml-[50%] animate-fade-in" style={{ animationDelay: "100ms" }}>
         {children}
       </main>
     </div>
