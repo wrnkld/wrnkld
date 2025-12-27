@@ -14,7 +14,7 @@ function SideNote({ number, children }: { number: number; children: React.ReactN
 
 export default function Vibes() {
   return (
-    <SplitHeroLayout title="Pt 2 → Vibes" subtitle="Design & AI" colorClass="card-slate">
+    <SplitHeroLayout title="Pt 2 → Vibes" subtitle="Design & AI" colorClass="card-forest">
       <div className="p-8 lg:p-12 xl:p-16">
         <div className="relative">
           <article className="prose space-y-6">
