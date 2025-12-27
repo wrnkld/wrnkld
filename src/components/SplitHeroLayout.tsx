@@ -20,13 +20,14 @@ export function SplitHeroLayout({ title, subtitle, children, colorClass }: Split
     <div className="min-h-screen bg-background">
       {/* Fixed left panel - hidden below lg breakpoint */}
       <div 
-        className={`hidden lg:flex fixed left-0 top-0 w-1/2 h-screen flex-col justify-end p-12 xl:p-16 z-10 ${colorClass}`}
+        className={`hidden lg:flex fixed left-0 top-0 w-1/2 h-screen flex-col justify-between p-12 xl:p-16 z-10 ${colorClass}`}
       >
+        {/* Top: Subtitle/back link */}
         <div className="animate-fade-in">
           {subtitle && (
             <Link 
               to="/"
-              className={`inline-flex items-center gap-2 text-sm font-body uppercase tracking-widest opacity-70 hover:opacity-100 transition-opacity duration-300 mb-4 ${useDarkText ? 'text-foreground' : ''}`}
+              className={`inline-flex items-center gap-2 text-sm font-body uppercase tracking-widest opacity-70 hover:opacity-100 transition-opacity duration-300 ${useDarkText ? 'text-foreground' : ''}`}
               onMouseEnter={() => setIsHovered(true)}
               onMouseLeave={() => setIsHovered(false)}
             >
@@ -41,6 +42,10 @@ export function SplitHeroLayout({ title, subtitle, children, colorClass }: Split
               </span>
             </Link>
           )}
+        </div>
+        
+        {/* Bottom: Title */}
+        <div className="animate-fade-in">
           <h1 className={`font-display text-4xl lg:text-5xl xl:text-6xl font-semibold ${useDarkText ? 'text-foreground' : ''}`}>
             {title}
           </h1>
