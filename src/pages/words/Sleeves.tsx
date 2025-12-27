@@ -5,7 +5,7 @@ function SideNote({ number, children }: { number: number; children: React.ReactN
   return (
     <>
       <sup className="text-muted-foreground">{number}</sup>
-      <span className="absolute right-0 translate-x-full pl-8 w-48 text-sm text-muted-foreground hidden xl:inline-block">
+      <span className="sidenote absolute right-0 w-40 text-sm text-muted-foreground hidden 2xl:inline-block" style={{ marginRight: '-11rem' }}>
         <sup>{number}</sup> {children}
       </span>
     </>
@@ -15,7 +15,7 @@ function SideNote({ number, children }: { number: number; children: React.ReactN
 export default function Sleeves() {
   return (
     <SplitHeroLayout title="Pt 3 → Sleeves" subtitle="Design & AI" colorClass="card-navy">
-      <div className="p-8 lg:p-12 xl:p-16">
+      <div className="p-8 lg:p-12 xl:p-16 2xl:pr-48">
         <div className="relative">
           <article className="prose space-y-6">
             <p>
@@ -100,7 +100,7 @@ export default function Sleeves() {
             </p>
 
             {/* Mobile/tablet fallback footnotes */}
-            <div className="xl:hidden">
+            <div className="2xl:hidden">
               <hr className="border-border my-12" />
               <div className="space-y-3 text-sm text-muted-foreground">
                 <p><sup>1</sup> <a href="https://www.youtube.com/watch?v=gPNdFHSLAeI" target="_blank" rel="noopener noreferrer" className="underline underline-offset-2 hover:opacity-70 transition-opacity">youtube.com/watch?v=gPNdFHSLAeI</a></p>
