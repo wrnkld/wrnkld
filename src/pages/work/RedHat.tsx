@@ -23,7 +23,7 @@ import rhboRosterVideo from "@/assets/redhat/rhbo-roster.mp4";
 export default function RedHat() {
   return (
     <SplitHeroLayout title="Red Hat" subtitle="Work" colorClass="card-teal">
-      <div className="max-w-4xl mx-auto px-6 py-12 space-y-6">
+      <div className="p-8 lg:p-12 xl:p-16 space-y-6">
         <p className="prose mb-8">
           Red Hat is an open-source enterprise software company known for bringing 
           Linux and middleware to enterprise scale. I worked there up until the 
@@ -44,12 +44,12 @@ export default function RedHat() {
       </div>
 
       {/* Video - Platform Demo */}
-      <div className="mt-12 max-w-6xl mx-auto px-6">
+      <div className="mt-12 px-8 lg:px-12 xl:px-16">
         <video src={rhbaPreviewVideo} poster={rhbaWorkflowModeler} autoPlay loop muted playsInline className="w-full h-auto" />
       </div>
 
       {/* 4-column grid */}
-      <div className="mt-12 max-w-6xl mx-auto px-6">
+      <div className="mt-12 px-8 lg:px-12 xl:px-16">
         <div className="grid grid-cols-4 gap-4">
           <img src={rhbaPropertiesPanel} alt="Red Hat Business Automation Properties Panel" className="w-full h-auto" />
           <img src={rhbaNavigator} alt="Red Hat Business Automation Navigator" className="w-full h-auto" />
@@ -59,12 +59,12 @@ export default function RedHat() {
       </div>
 
       {/* 1-up large image */}
-      <div className="mt-8 max-w-6xl mx-auto px-6">
+      <div className="mt-8 px-8 lg:px-12 xl:px-16">
         <img src={rhbaProjectMetrics} alt="Red Hat Business Automation Project Metrics" className="w-full h-auto" />
       </div>
 
       {/* 2-column grid */}
-      <div className="mt-8 max-w-6xl mx-auto px-6">
+      <div className="mt-8 px-8 lg:px-12 xl:px-16">
         <div className="grid grid-cols-2 gap-4">
           <img src={rhbaAssetsList} alt="Red Hat Business Automation Assets List" className="w-full h-auto" />
           <img src={rhbaContributors} alt="Red Hat Business Automation Contributors" className="w-full h-auto" />
@@ -72,12 +72,12 @@ export default function RedHat() {
       </div>
 
       {/* Video - Track Demo */}
-      <div className="mt-12 max-w-6xl mx-auto px-6">
+      <div className="mt-12 px-8 lg:px-12 xl:px-16">
         <video src={rhbaTrackVideo} poster={rhbaTrack} autoPlay loop muted playsInline className="w-full h-auto" />
       </div>
 
       {/* 2-column grid */}
-      <div className="mt-12 max-w-6xl mx-auto px-6">
+      <div className="mt-12 px-8 lg:px-12 xl:px-16">
         <div className="grid grid-cols-2 gap-4">
           <img src={rhbaEmptyState} alt="Red Hat Business Automation Empty State" className="w-full h-auto" />
           <img src={rhbaSpace} alt="Red Hat Business Automation Space" className="w-full h-auto" />
@@ -85,7 +85,7 @@ export default function RedHat() {
       </div>
 
       {/* Extend Section */}
-      <div className="max-w-4xl mx-auto px-6 mt-12">
+      <div className="px-8 lg:px-12 xl:px-16 mt-12">
         <h2 className="font-display text-xl font-semibold mb-4">Extend</h2>
         <p className="prose">
           Created shared design patterns across Business Automation and Business 
@@ -94,12 +94,12 @@ export default function RedHat() {
       </div>
 
       {/* Video - Roster Demo */}
-      <div className="mt-12 max-w-6xl mx-auto px-6">
+      <div className="mt-12 px-8 lg:px-12 xl:px-16">
         <video src={rhboRosterVideo} poster={rhboRoster} autoPlay loop muted playsInline className="w-full h-auto" />
       </div>
 
       {/* 4-column grid */}
-      <div className="mt-12 max-w-6xl mx-auto px-6">
+      <div className="mt-12 px-8 lg:px-12 xl:px-16 pb-16">
         <div className="grid grid-cols-4 gap-4">
           <img src={rhboEmployees} alt="Red Hat Business Optaplanner Employees" className="w-full h-auto" />
           <img src={rhboAvailability} alt="Red Hat Business Optaplanner Availability" className="w-full h-auto" />
