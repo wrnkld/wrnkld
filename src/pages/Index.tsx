@@ -70,19 +70,19 @@ export default function Index() {
   return (
     <div className="min-h-screen bg-background">
       {/* Header Section */}
-      <header className="px-6 pt-16 md:pt-24 pb-16 md:pb-20">
+      <header className="px-6 pt-12 md:pt-20 pb-12 md:pb-16">
         <div className="max-w-4xl mx-auto animate-fade-in">
-          <h1 className="font-display text-2xl md:text-3xl font-semibold text-foreground mb-8 text-left">
+          <h1 className="font-display text-2xl md:text-3xl font-semibold text-foreground mb-6 text-left">
             Matthew Stevens
           </h1>
           <p className="prose">
-            A product design leader with 20 years of experience, I design elegant solutions for complex enterprise software, working hard to understand pain points by talking directly to customers. I manage design teams, big or small, still thriving as an individual contributor. I work quickly and efficiently, iterating through multiple ideas and gathering feedback from engineering, product management, and design.
+            Head of Design at <a href="https://montecarlodata.com" target="_blank" rel="noopener noreferrer" className="underline hover:text-foreground transition-colors">Monte Carlo</a>. Recently built <a href="https://sleeves.app" target="_blank" rel="noopener noreferrer" className="underline hover:text-foreground transition-colors">Sleeves</a>, an app for tracking albums you love with friends. Product design leader with 20 years of experience designing elegant solutions for complex software, leading teams while staying hands-on. I work closely with customers and partners in product and engineering to ship clear, usable systems.
           </p>
         </div>
       </header>
       
       {/* Horizontal Scrolling Cards */}
-      <section className="pb-16 md:pb-24">
+      <section className="pb-12 md:pb-20">
         <div 
           ref={scrollRef}
           className="overflow-x-auto overflow-y-visible scrollbar-hide cursor-grab active:cursor-grabbing touch-auto"
