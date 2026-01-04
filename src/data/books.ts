@@ -1157,4 +1157,12 @@ export const books: Book[] = [
     yearRead: 2025,
     recommended: true,
   },
+  {
+    id: 155,
+    title: "I See You've Called in Dead",
+    author: "John Kenney",
+    year: 2025,
+    yearRead: 2025,
+    recommended: false,
+  },
 ];
