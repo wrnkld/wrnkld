@@ -18,7 +18,7 @@ export function PortfolioCard({ title, subtitle, to, colorClass, index, seriesLa
       to={to}
       onClick={onClick}
       draggable={false}
-      className={`group flex-shrink-0 w-full md:w-[320px] h-[180px] md:h-[340px] rounded-2xl p-6 md:p-8 flex flex-col justify-between transition-all duration-300 select-none ${colorClass}`}
+      className={`group flex-shrink-0 w-[280px] md:w-[320px] h-[360px] md:h-[400px] rounded-2xl p-8 flex flex-col justify-between transition-all duration-300 hover:scale-[1.02] hover:-translate-y-2 select-none ${colorClass}`}
       style={{ 
         animationDelay: `${index * 100}ms`,
       }}

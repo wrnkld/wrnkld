@@ -1162,7 +1162,7 @@ export const books: Book[] = [
     title: "I See You've Called in Dead",
     author: "John Kenney",
     year: 2025,
-    yearRead: 2026,
+    yearRead: 2025,
     recommended: false,
   },
 ];
