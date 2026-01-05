@@ -35,16 +35,15 @@ export default function Index() {
               const totalCards = cards.length;
               const middleIndex = (totalCards - 1) / 2;
               const offset = index - middleIndex;
-              const rotation = offset * 4;
-              const translateX = offset * 80;
-              const translateY = Math.abs(offset) * 8;
+              const rotation = offset * 3;
+              const translateX = offset * 70;
               
               return (
                 <div
                   key={card.to}
                   className="absolute transition-all duration-500 ease-[cubic-bezier(0.23,1,0.32,1)] hover:!z-50 hover:-translate-y-6 hover:scale-105 group"
                   style={{
-                    transform: `translateX(${translateX}px) translateY(${translateY}px) rotate(${rotation}deg)`,
+                    transform: `translateX(${translateX}px) rotate(${rotation}deg)`,
                     zIndex: index,
                   }}
                 >
