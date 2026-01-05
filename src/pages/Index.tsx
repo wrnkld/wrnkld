@@ -12,19 +12,6 @@ const cards = [
   { title: "SAS", subtitle: "Work", to: "/work/sas", colorClass: "card-terracotta" },
 ];
 
-// Pre-defined scattered positions for desktop (percentage-based) - two rows, more horizontal
-const scatterPositions = [
-  { x: 0, y: 0, rotate: -6 },
-  { x: 18, y: 8, rotate: 4 },
-  { x: 36, y: -2, rotate: -3 },
-  { x: 54, y: 6, rotate: 5 },
-  { x: 72, y: 0, rotate: -4 },
-  { x: 4, y: 48, rotate: 5 },
-  { x: 22, y: 42, rotate: -5 },
-  { x: 40, y: 50, rotate: 3 },
-  { x: 58, y: 44, rotate: -6 },
-];
-
 export default function Index() {
   return (
     <div className="min-h-screen bg-background">
@@ -40,34 +27,40 @@ export default function Index() {
         </div>
       </header>
       
-      {/* Scattered Cards - Desktop */}
-      <section className="hidden md:block relative pb-20" style={{ height: '750px' }}>
-        <div className="max-w-5xl mx-auto relative h-full px-6">
-          {cards.map((card, index) => {
-            const pos = scatterPositions[index];
-            const isTopRow = index < 5;
-            return (
-              <div
-                key={card.to}
-                className={`absolute ${isTopRow ? 'z-20' : 'z-10'} hover:!z-50 group`}
-                style={{
-                  left: `${pos.x}%`,
-                  top: `${pos.y}%`,
-                  transform: `rotate(${pos.rotate}deg)`,
-                }}
-              >
-                <div className="transition-all duration-500 ease-[cubic-bezier(0.23,1,0.32,1)] group-hover:scale-[1.03] group-hover:-translate-y-2 group-hover:rotate-0 group-hover:shadow-xl">
-                  <PortfolioCard
-                    title={card.title}
-                    subtitle={card.subtitle}
-                    to={card.to}
-                    colorClass={card.colorClass}
-                    index={index}
-                  />
+      {/* Fanned Cards - Desktop */}
+      <section className="hidden md:block px-6 pb-20">
+        <div className="max-w-5xl mx-auto">
+          <div className="relative flex justify-center items-center" style={{ height: '340px' }}>
+            {cards.map((card, index) => {
+              const totalCards = cards.length;
+              const middleIndex = (totalCards - 1) / 2;
+              const offset = index - middleIndex;
+              const rotation = offset * 4;
+              const translateX = offset * 80;
+              const translateY = Math.abs(offset) * 8;
+              
+              return (
+                <div
+                  key={card.to}
+                  className="absolute transition-all duration-500 ease-[cubic-bezier(0.23,1,0.32,1)] hover:!z-50 hover:-translate-y-6 hover:scale-105 group"
+                  style={{
+                    transform: `translateX(${translateX}px) translateY(${translateY}px) rotate(${rotation}deg)`,
+                    zIndex: index,
+                  }}
+                >
+                  <div className="transition-shadow duration-300 group-hover:shadow-2xl">
+                    <PortfolioCard
+                      title={card.title}
+                      subtitle={card.subtitle}
+                      to={card.to}
+                      colorClass={card.colorClass}
+                      index={index}
+                    />
+                  </div>
                 </div>
-              </div>
-            );
-          })}
+              );
+            })}
+          </div>
         </div>
       </section>
 
