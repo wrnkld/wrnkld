@@ -49,16 +49,14 @@ export default function Index() {
             return (
               <div
                 key={card.to}
-                className={`absolute ${isTopRow ? 'z-10' : 'z-[1]'} hover:!z-50 group`}
+                className={`absolute ${isTopRow ? 'z-20' : 'z-10'} hover:!z-50 group`}
                 style={{
                   left: `${pos.x}%`,
                   top: `${pos.y}%`,
+                  transform: `rotate(${pos.rotate}deg)`,
                 }}
               >
-                <div 
-                  className="transition-transform duration-700 ease-[cubic-bezier(0.25,0.1,0.25,1)] group-hover:scale-[1.02] group-hover:-translate-y-1"
-                  style={{ transform: `rotate(${pos.rotate}deg)` }}
-                >
+                <div className="transition-all duration-500 ease-[cubic-bezier(0.23,1,0.32,1)] group-hover:scale-[1.03] group-hover:-translate-y-2 group-hover:rotate-0 group-hover:shadow-xl">
                   <PortfolioCard
                     title={card.title}
                     subtitle={card.subtitle}
