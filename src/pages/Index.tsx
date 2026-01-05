@@ -45,6 +45,7 @@ export default function Index() {
         <div className="max-w-5xl mx-auto relative h-full px-6">
           {cards.map((card, index) => {
             const pos = scatterPositions[index];
+            const isTopRow = index < 5;
             return (
               <div
                 key={card.to}
@@ -54,6 +55,7 @@ export default function Index() {
                   top: `${pos.y}%`,
                   transform: `rotate(${pos.rotate}deg)`,
                   animationDelay: `${index * 50}ms`,
+                  zIndex: isTopRow ? 10 : 1,
                 }}
               >
                 <div className="transition-all duration-300 ease-out hover:scale-105 hover:-translate-y-3 hover:rotate-0 hover:shadow-2xl">
