@@ -1,4 +1,3 @@
-import { useRef, useState, useCallback } from "react";
 import { PortfolioCard } from "@/components/PortfolioCard";
 
 const cards = [
@@ -13,64 +12,24 @@ const cards = [
   { title: "SAS", subtitle: "Work", to: "/work/sas", colorClass: "card-terracotta" },
 ];
 
+// Pre-defined scattered positions for desktop (percentage-based)
+const scatterPositions = [
+  { x: 5, y: 0, rotate: -8 },
+  { x: 28, y: 5, rotate: 4 },
+  { x: 52, y: -2, rotate: -3 },
+  { x: 8, y: 32, rotate: 6 },
+  { x: 35, y: 28, rotate: -5 },
+  { x: 58, y: 35, rotate: 8 },
+  { x: 2, y: 62, rotate: -4 },
+  { x: 30, y: 58, rotate: 3 },
+  { x: 55, y: 65, rotate: -6 },
+];
+
 export default function Index() {
-  const scrollRef = useRef<HTMLDivElement>(null);
-  const [hasDragged, setHasDragged] = useState(false);
-  const [isDragging, setIsDragging] = useState(false);
-  const dragState = useRef({ startX: 0, scrollLeft: 0, lastX: 0, lastTime: 0, velocity: 0 });
-
-  const handleMouseDown = useCallback((e: React.MouseEvent) => {
-    if (!scrollRef.current) return;
-    setIsDragging(true);
-    setHasDragged(false);
-    const state = dragState.current;
-    state.startX = e.pageX;
-    state.scrollLeft = scrollRef.current.scrollLeft;
-    state.lastX = e.pageX;
-    state.lastTime = Date.now();
-    state.velocity = 0;
-  }, []);
-
-  const handleMouseMove = useCallback((e: React.MouseEvent) => {
-    if (!isDragging || !scrollRef.current) return;
-    e.preventDefault();
-    const state = dragState.current;
-    const dx = e.pageX - state.startX;
-    
-    // Track velocity
-    const now = Date.now();
-    const dt = now - state.lastTime;
-    if (dt > 0) {
-      state.velocity = (e.pageX - state.lastX) / dt;
-    }
-    state.lastX = e.pageX;
-    state.lastTime = now;
-    
-    if (Math.abs(dx) > 5) setHasDragged(true);
-    scrollRef.current.scrollLeft = state.scrollLeft - dx;
-  }, [isDragging]);
-
-  const handleMouseUp = useCallback(() => {
-    if (!scrollRef.current || !isDragging) return;
-    setIsDragging(false);
-    
-    // Apply momentum
-    const momentum = -dragState.current.velocity * 300;
-    scrollRef.current.scrollBy({ left: momentum, behavior: "smooth" });
-    
-    setTimeout(() => setHasDragged(false), 100);
-  }, [isDragging]);
-
-  const handleCardClick = (e: React.MouseEvent) => {
-    if (hasDragged) {
-      e.preventDefault();
-    }
-  };
-
   return (
     <div className="min-h-screen bg-background">
       {/* Header Section */}
-      <header className="px-6 pt-12 md:pt-20 pb-12 md:pb-16">
+      <header className="px-6 pt-12 md:pt-20 pb-8 md:pb-12">
         <div className="max-w-4xl mx-auto animate-fade-in">
           <h1 className="font-display text-2xl md:text-3xl font-semibold text-foreground mb-6 text-left">
             Matthew Stevens
@@ -81,29 +40,50 @@ export default function Index() {
         </div>
       </header>
       
-      {/* Horizontal Scrolling Cards */}
-      <section className="pb-12 md:pb-20">
-        <div 
-          ref={scrollRef}
-          className="overflow-x-auto overflow-y-visible scrollbar-hide cursor-grab active:cursor-grabbing touch-auto"
-          onMouseDown={handleMouseDown}
-          onMouseMove={handleMouseMove}
-          onMouseUp={handleMouseUp}
-          onMouseLeave={handleMouseUp}
-        >
-          <div className="flex gap-6 px-6 pt-4 pb-4" style={{ width: "max-content" }}>
-            {cards.map((card, index) => (
-              <PortfolioCard
+      {/* Scattered Cards - Desktop */}
+      <section className="hidden md:block relative pb-20" style={{ height: '1100px' }}>
+        <div className="max-w-5xl mx-auto relative h-full px-6">
+          {cards.map((card, index) => {
+            const pos = scatterPositions[index];
+            return (
+              <div
                 key={card.to}
-                title={card.title}
-                subtitle={card.subtitle}
-                to={card.to}
-                colorClass={card.colorClass}
-                index={index}
-                onClick={handleCardClick}
-              />
-            ))}
-          </div>
+                className="absolute transition-all duration-300 ease-out hover:z-50"
+                style={{
+                  left: `${pos.x}%`,
+                  top: `${pos.y}%`,
+                  transform: `rotate(${pos.rotate}deg)`,
+                  animationDelay: `${index * 50}ms`,
+                }}
+              >
+                <div className="transition-all duration-300 ease-out hover:scale-105 hover:-translate-y-3 hover:rotate-0 hover:shadow-2xl">
+                  <PortfolioCard
+                    title={card.title}
+                    subtitle={card.subtitle}
+                    to={card.to}
+                    colorClass={card.colorClass}
+                    index={index}
+                  />
+                </div>
+              </div>
+            );
+          })}
+        </div>
+      </section>
+
+      {/* Stacked Cards - Mobile */}
+      <section className="md:hidden px-6 pb-12">
+        <div className="flex flex-col gap-4">
+          {cards.map((card, index) => (
+            <PortfolioCard
+              key={card.to}
+              title={card.title}
+              subtitle={card.subtitle}
+              to={card.to}
+              colorClass={card.colorClass}
+              index={index}
+            />
+          ))}
         </div>
       </section>
       
