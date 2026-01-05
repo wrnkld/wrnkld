@@ -12,17 +12,17 @@ const cards = [
   { title: "SAS", subtitle: "Work", to: "/work/sas", colorClass: "card-terracotta" },
 ];
 
-// Pre-defined scattered positions for desktop (percentage-based)
+// Pre-defined scattered positions for desktop (percentage-based) - two rows, more horizontal
 const scatterPositions = [
-  { x: 5, y: 0, rotate: -8 },
-  { x: 28, y: 5, rotate: 4 },
-  { x: 52, y: -2, rotate: -3 },
-  { x: 8, y: 32, rotate: 6 },
-  { x: 35, y: 28, rotate: -5 },
-  { x: 58, y: 35, rotate: 8 },
-  { x: 2, y: 62, rotate: -4 },
-  { x: 30, y: 58, rotate: 3 },
-  { x: 55, y: 65, rotate: -6 },
+  { x: 0, y: 0, rotate: -6 },
+  { x: 18, y: 8, rotate: 4 },
+  { x: 36, y: -2, rotate: -3 },
+  { x: 54, y: 6, rotate: 5 },
+  { x: 72, y: 0, rotate: -4 },
+  { x: 4, y: 48, rotate: 5 },
+  { x: 22, y: 42, rotate: -5 },
+  { x: 40, y: 50, rotate: 3 },
+  { x: 58, y: 44, rotate: -6 },
 ];
 
 export default function Index() {
@@ -41,7 +41,7 @@ export default function Index() {
       </header>
       
       {/* Scattered Cards - Desktop */}
-      <section className="hidden md:block relative pb-20" style={{ height: '1100px' }}>
+      <section className="hidden md:block relative pb-20" style={{ height: '750px' }}>
         <div className="max-w-5xl mx-auto relative h-full px-6">
           {cards.map((card, index) => {
             const pos = scatterPositions[index];
