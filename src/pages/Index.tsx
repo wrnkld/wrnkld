@@ -49,13 +49,12 @@ export default function Index() {
             return (
               <div
                 key={card.to}
-                className="absolute transition-all duration-500 ease-[cubic-bezier(0.23,1,0.32,1)] hover:z-50"
+                className={`absolute transition-all duration-500 ease-[cubic-bezier(0.23,1,0.32,1)] ${isTopRow ? 'z-10' : 'z-[1]'} hover:!z-50`}
                 style={{
                   left: `${pos.x}%`,
                   top: `${pos.y}%`,
                   transform: `rotate(${pos.rotate}deg)`,
                   animationDelay: `${index * 50}ms`,
-                  zIndex: isTopRow ? 10 : 1,
                 }}
               >
                 <div className="transition-all duration-500 ease-[cubic-bezier(0.23,1,0.32,1)] hover:scale-[1.03] hover:-translate-y-2 hover:rotate-0 hover:shadow-xl">
