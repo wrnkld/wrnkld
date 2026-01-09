@@ -1173,4 +1173,12 @@ export const books: Book[] = [
     yearRead: 2026,
     recommended: false,
   },
+  {
+    id: 157,
+    title: "Discontent",
+    author: "Beatriz Serrano",
+    year: 2025,
+    yearRead: 2026,
+    recommended: false,
+  },
 ];
