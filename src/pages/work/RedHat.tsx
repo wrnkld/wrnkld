@@ -23,20 +23,24 @@ import rhboRosterVideo from "@/assets/redhat/rhbo-roster.mp4";
 export default function RedHat() {
   return (
     <SplitHeroLayout title="Red Hat" subtitle="Work" colorClass="card-teal">
-      <div className="pt-8 px-8 pb-4 lg:pt-12 lg:px-12 lg:pb-6 xl:pt-16 xl:px-16 xl:pb-8">
+      <div className="pt-8 px-8 lg:pt-12 lg:px-12 xl:pt-16 xl:px-16">
         <p className="prose">
           Red Hat is an open-source enterprise software company known for bringing 
           Linux and middleware to enterprise scale. I worked there up until the 
           IBM acquisition.
         </p>
-        
-        <h2 className="font-display text-xl font-semibold mt-8 mb-4">Role</h2>
+      </div>
+
+      <div className="mt-6 px-8 lg:px-12 xl:px-16">
+        <h2 className="font-display text-xl font-semibold mb-4">Role</h2>
         <p className="prose">
           Led a cross-disciplinary team of interaction designers, front-end 
           engineers, and brand designers to modernize the middleware portfolio.
         </p>
-        
-        <h2 className="font-display text-xl font-semibold mt-8 mb-4">Approach</h2>
+      </div>
+
+      <div className="mt-6 px-8 lg:px-12 xl:px-16">
+        <h2 className="font-display text-xl font-semibold mb-4">Approach</h2>
         <p className="prose">
           Designed in the open using PatternFly, working closely with the 
           open-source and developer communities for feedback and iteration.
@@ -44,7 +48,7 @@ export default function RedHat() {
       </div>
 
       {/* Video - Platform Demo */}
-      <div className="px-8 lg:px-12 xl:px-16">
+      <div className="mt-8 px-8 lg:px-12 xl:px-16">
         <video src={rhbaPreviewVideo} poster={rhbaWorkflowModeler} autoPlay loop muted playsInline className="w-full h-auto" />
       </div>
 
