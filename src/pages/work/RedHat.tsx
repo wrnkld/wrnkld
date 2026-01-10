@@ -23,20 +23,20 @@ import rhboRosterVideo from "@/assets/redhat/rhbo-roster.mp4";
 export default function RedHat() {
   return (
     <SplitHeroLayout title="Red Hat" subtitle="Work" colorClass="card-teal">
-      <div className="p-8 lg:p-12 xl:p-16 space-y-6">
-        <p className="prose mb-8">
+      <div className="p-8 lg:p-12 xl:p-16">
+        <p className="prose">
           Red Hat is an open-source enterprise software company known for bringing 
           Linux and middleware to enterprise scale. I worked there up until the 
           IBM acquisition.
         </p>
         
-        <h2 className="font-display text-xl font-semibold mt-12 mb-4">Role</h2>
+        <h2 className="font-display text-xl font-semibold mt-8 mb-4">Role</h2>
         <p className="prose">
           Led a cross-disciplinary team of interaction designers, front-end 
           engineers, and brand designers to modernize the middleware portfolio.
         </p>
         
-        <h2 className="font-display text-xl font-semibold mt-12 mb-4">Approach</h2>
+        <h2 className="font-display text-xl font-semibold mt-8 mb-4">Approach</h2>
         <p className="prose">
           Designed in the open using PatternFly, working closely with the 
           open-source and developer communities for feedback and iteration.
