@@ -16,29 +16,35 @@ import taniumEnforce from "@/assets/tanium/tanium-enforce.mp4";
 export default function Tanium() {
   return (
     <SplitHeroLayout title="Tanium" subtitle="Work" colorClass="card-coral">
-      <div className="p-8 lg:p-12 xl:p-16">
+      <div className="pt-8 px-8 lg:pt-12 lg:px-12 xl:pt-16 xl:px-16">
         <p className="prose">
           Tanium is a large-scale endpoint security platform used by some of the world's biggest organizations to manage, secure, and respond across millions of devices in real time. I worked on the product during a period of rapid growth and sustained pressure.
         </p>
-        
-        <h2 className="font-display text-xl font-semibold mt-8 mb-4">Challenge</h2>
+      </div>
+
+      <div className="mt-6 px-8 lg:px-12 xl:px-16">
+        <h2 className="font-display text-xl font-semibold mb-4">Challenge</h2>
         <p className="prose">
           Support as many products as humanly possible, move fast, and keep shipping through peak COVID years—when timelines were tight, stakes were high, and work was a reliable distraction.
         </p>
-        
-        <h2 className="font-display text-xl font-semibold mt-8 mb-4">Reinvent</h2>
+      </div>
+
+      <div className="mt-6 px-8 lg:px-12 xl:px-16">
+        <h2 className="font-display text-xl font-semibold mb-4">Reinvent</h2>
         <p className="prose">
           Redesigned three flagship products—Discover, Asset, and Threat Response—simplifying dense interfaces, tightening information architecture, and speeding up core security workflows.
         </p>
-        
-        <h2 className="font-display text-xl font-semibold mt-8 mb-4">Ship</h2>
+      </div>
+
+      <div className="mt-6 px-8 lg:px-12 xl:px-16">
+        <h2 className="font-display text-xl font-semibold mb-4">Ship</h2>
         <p className="prose">
           Built and shipped two entirely new products from scratch: Assurance, focused on MITRE ATT&CK visibility, and Enforce, designed for policy enforcement at enterprise scale.
         </p>
       </div>
 
       {/* Video - Navigation */}
-      <div className="px-8 lg:px-12 xl:px-16">
+      <div className="mt-8 px-8 lg:px-12 xl:px-16">
         <video src={taniumNavigation} poster={taniumNavigationViews} autoPlay loop muted playsInline className="w-full h-auto" />
       </div>
 
