@@ -17,13 +17,13 @@ import visualStatsShare from "@/assets/sas/visual-stats-share.png";
 export default function SAS() {
   return (
     <SplitHeroLayout title="SAS" subtitle="Work" colorClass="card-terracotta">
-      <div className="p-8 lg:p-12 xl:p-16 space-y-6">
+      <div className="p-8 lg:p-12 xl:p-16">
         <p className="prose">
           SAS is an enterprise analytics company focused on large-scale statistical 
           modeling, data science, and decisioning across regulated industries.
         </p>
         
-        <h2 className="font-display text-xl font-semibold mt-12 mb-4">Arc</h2>
+        <h2 className="font-display text-xl font-semibold mt-8 mb-4">Arc</h2>
         <p className="prose">
           Progressed from individual contributor to senior, principal, and team 
           lead—launching three major products along the way.
