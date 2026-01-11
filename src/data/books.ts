@@ -1181,4 +1181,12 @@ export const books: Book[] = [
     yearRead: 2026,
     recommended: false,
   },
+  {
+    id: 158,
+    title: "Fever Dream",
+    author: "Samanta Schweblin",
+    year: 2014,
+    yearRead: 2026,
+    recommended: true,
+  },
 ];
