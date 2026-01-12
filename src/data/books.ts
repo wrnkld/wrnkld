@@ -1189,4 +1189,12 @@ export const books: Book[] = [
     yearRead: 2026,
     recommended: true,
   },
+  {
+    id: 159,
+    title: "Pariah",
+    author: "Dan Fesperman",
+    year: 2025,
+    yearRead: 2026,
+    recommended: false,
+  },
 ];
