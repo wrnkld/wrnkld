@@ -1197,4 +1197,12 @@ export const books: Book[] = [
     yearRead: 2026,
     recommended: false,
   },
+  {
+    id: 160,
+    title: "Lion",
+    author: "Sonya Walger",
+    year: 2025,
+    yearRead: 2026,
+    recommended: true,
+  },
 ];
