@@ -1221,4 +1221,12 @@ export const books: Book[] = [
     yearRead: 2026,
     recommended: false,
   },
+  {
+    id: 163,
+    title: "Palaver",
+    author: "Bryan Washington",
+    year: 2025,
+    yearRead: 2026,
+    recommended: true,
+  },
 ];
