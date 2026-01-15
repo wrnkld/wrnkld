@@ -1179,7 +1179,7 @@ export const books: Book[] = [
     author: "Beatriz Serrano",
     year: 2025,
     yearRead: 2026,
-    recommended: true,
+    recommended: false,
   },
   {
     id: 158,
@@ -1204,5 +1204,21 @@ export const books: Book[] = [
     year: 2025,
     yearRead: 2026,
     recommended: true,
+  },
+  {
+    id: 161,
+    title: "Good and Evil",
+    author: "Samanta Schweblin",
+    year: 2025,
+    yearRead: 2026,
+    recommended: true,
+  },
+  {
+    id: 162,
+    title: "Trip",
+    author: "Amie Barrodale",
+    year: 2025,
+    yearRead: 2026,
+    recommended: false,
   },
 ];
