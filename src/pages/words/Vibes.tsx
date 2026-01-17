@@ -49,12 +49,12 @@ export default function Vibes() {
           These predictions will almost certainly age badly, but a few things seem likely:
         </p>
 
-        <ul>
+        <ol className="list-decimal pl-6 space-y-2">
           <li>AI app builders (like Lovable) keep smoothing out Git, deploys, and real component libraries (Mantine, Material UI, Radix, Chakra).</li>
           <li>AI code editors (like Cursor) keep me away from the terminal. Bash, npm, nvm—things I do not understand and would like to continue not understanding.</li>
           <li>The code keeps getting better.<FootnoteRef number={3} /></li>
-          <li><s>We all lose our jobs.</s> Design, product, and engineering roles continue to evolve.</li>
-        </ul>
+          <li>Design, product, and engineering roles continue to evolve.</li>
+        </ol>
 
         <p>
           Whatever happens, I still wanted to try building something real 
