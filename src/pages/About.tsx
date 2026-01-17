@@ -21,7 +21,7 @@ export default function About() {
             className="flex flex-col md:flex-row md:items-center justify-between py-4 px-4 border-b border-border last:border-b-0 hover:bg-muted/50 transition-colors"
           >
             <div>
-              <h3 className="font-display text-lg font-semibold text-foreground">{job.company}</h3>
+              <h3 className="font-display text-xl font-semibold text-foreground">{job.company}</h3>
               <p className="font-body text-muted-foreground">{job.role}</p>
             </div>
             <div className="md:text-right">
