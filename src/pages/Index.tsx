@@ -25,8 +25,8 @@ export default function Index() {
     <div className="min-h-screen bg-white">
       <div className="h-1.5 w-full card-slate" />
       
-      <div className="bg-background py-12 md:py-16">
-        <div className="w-full max-w-3xl px-6 md:px-12">
+      <div className="bg-background py-12 md:py-16 px-6 md:px-16 lg:px-24">
+        <div className="max-w-2xl">
           <h1 className="font-display text-2xl md:text-3xl font-semibold text-foreground mb-6">
             Matthew Stevens
           </h1>
@@ -36,8 +36,8 @@ export default function Index() {
         </div>
       </div>
       
-      <div className="py-12 md:py-16">
-        <div className="w-full max-w-3xl px-6 md:px-12">
+      <div className="py-12 md:py-16 px-6 md:px-16 lg:px-24">
+        <div className="max-w-2xl">
           <div className="grid gap-10 md:gap-14">
             {sectionOrder.map((section) => (
               <div key={section}>
@@ -62,12 +62,10 @@ export default function Index() {
         </div>
       </div>
       
-      <div className="pb-12">
-        <div className="w-full max-w-3xl px-6 md:px-12">
-          <p className="font-body text-lg text-muted-foreground">
-            Say hello → <a href="mailto:hello@wrnkld.tv" className="underline hover:text-foreground transition-colors">hello@wrnkld.tv</a>
-          </p>
-        </div>
+      <div className="pb-12 px-6 md:px-16 lg:px-24">
+        <p className="font-body text-lg text-muted-foreground">
+          Say hello → <a href="mailto:hello@wrnkld.tv" className="underline hover:text-foreground transition-colors">hello@wrnkld.tv</a>
+        </p>
       </div>
     </div>
   );
