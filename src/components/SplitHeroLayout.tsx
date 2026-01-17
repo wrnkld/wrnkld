@@ -11,13 +11,13 @@ interface SplitHeroLayoutProps {
 
 export function SplitHeroLayout({ title, subtitle, children, colorClass }: SplitHeroLayoutProps) {
   return (
-    <div className="min-h-screen bg-background">
-      {/* Thin accent bar */}
+    <div className="min-h-screen bg-white">
+      {/* Accent bar */}
       <div className={`h-1.5 w-full ${colorClass}`} />
       
       {/* Header */}
-      <header className="px-6 pt-8 md:pt-12 pb-8 md:pb-12">
-        <div className="max-w-3xl animate-fade-in">
+      <header className="bg-background">
+        <div className="max-w-3xl mx-auto px-6 pt-12 pb-16 animate-fade-in">
           {subtitle && (
             <Link 
               to="/"
@@ -34,8 +34,10 @@ export function SplitHeroLayout({ title, subtitle, children, colorClass }: Split
       </header>
       
       {/* Content */}
-      <main className="animate-fade-in" style={{ animationDelay: "100ms" }}>
-        {children}
+      <main className="bg-white">
+        <div className="max-w-3xl mx-auto px-6 py-12 md:py-16 animate-fade-in" style={{ animationDelay: "100ms" }}>
+          {children}
+        </div>
       </main>
     </div>
   );

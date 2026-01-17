@@ -23,14 +23,14 @@ const sectionOrder = ["Design & AI", "Work", "About"];
 
 export default function Index() {
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-white">
       {/* Accent bar */}
       <div className="h-1.5 w-full card-slate" />
       
       {/* Header Section */}
-      <header className="px-6 pt-8 md:pt-12 pb-8 md:pb-12">
-        <div className="max-w-3xl animate-fade-in">
-          <h1 className="font-display text-2xl md:text-3xl font-semibold text-foreground mb-6 text-left">
+      <header className="bg-background">
+        <div className="max-w-3xl mx-auto px-6 pt-12 pb-16 animate-fade-in">
+          <h1 className="font-display text-2xl md:text-3xl font-semibold text-foreground mb-6">
             Matthew Stevens
           </h1>
           <p className="prose">
@@ -40,8 +40,8 @@ export default function Index() {
       </header>
       
       {/* Links Section */}
-      <section className="px-6 pb-12 md:pb-20">
-        <div className="max-w-3xl animate-fade-in" style={{ animationDelay: "100ms" }}>
+      <section className="bg-white">
+        <div className="max-w-3xl mx-auto px-6 py-12 md:py-16 animate-fade-in" style={{ animationDelay: "100ms" }}>
           <div className="grid gap-8 md:gap-12">
             {sectionOrder.map((section) => (
               <div key={section}>
@@ -67,8 +67,8 @@ export default function Index() {
       </section>
       
       {/* Footer */}
-      <footer className="px-6 pb-12">
-        <div className="max-w-3xl">
+      <footer className="bg-white">
+        <div className="max-w-3xl mx-auto px-6 pb-12">
           <p className="font-body text-lg text-muted-foreground">
             Say hello → <a href="mailto:hello@wrnkld.tv" className="underline hover:text-foreground transition-colors">hello@wrnkld.tv</a>
           </p>
