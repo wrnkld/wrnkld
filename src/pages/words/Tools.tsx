@@ -7,7 +7,7 @@ function FootnoteRef({ number }: { number: number }) {
 export default function Tools() {
   return (
     <SplitHeroLayout title="Pt 1 → Tools" subtitle="Design & AI">
-      <article className="font-body text-lg text-muted-foreground leading-relaxed">
+      <article className="font-body text-lg text-muted-foreground leading-relaxed space-y-6">
         <p>
           Every time I log into LinkedIn, a product designer is sharing how they took 
           their MCP server, plugged it into Perplexity, and generated design tokens 

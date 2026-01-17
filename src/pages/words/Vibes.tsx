@@ -8,7 +8,7 @@ function FootnoteRef({ number }: { number: number }) {
 export default function Vibes() {
   return (
     <SplitHeroLayout title="Pt 2 → Vibes" subtitle="Design & AI">
-      <article className="font-body text-lg text-muted-foreground leading-relaxed">
+      <article className="font-body text-lg text-muted-foreground leading-relaxed space-y-6">
         <p>
           <Link to="/designai/tools" className="text-foreground underline underline-offset-4 hover:opacity-70 transition-opacity">Part 1</Link> was probably too much information about my history with design 
           tools. Part 2 is simpler: it's about all the new stuff.
