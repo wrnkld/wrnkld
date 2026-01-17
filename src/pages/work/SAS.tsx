@@ -16,92 +16,62 @@ import visualStatsShare from "@/assets/sas/visual-stats-share.png";
 
 export default function SAS() {
   return (
-    <SplitHeroLayout title="SAS" subtitle="Work" colorClass="card-terracotta">
-      <div className="pt-8 px-8 lg:pt-12 lg:px-12 xl:pt-16 xl:px-16">
-        <p className="prose">
-          SAS is an enterprise analytics company focused on large-scale statistical 
-          modeling, data science, and decisioning across regulated industries.
-        </p>
+    <SplitHeroLayout title="SAS" subtitle="Work">
+      <p className="font-body text-lg text-muted-foreground leading-relaxed">
+        SAS is an enterprise analytics company focused on large-scale statistical 
+        modeling, data science, and decisioning across regulated industries.
+      </p>
+
+      <h2 className="font-display text-xl font-semibold text-foreground">Arc</h2>
+      <p className="font-body text-lg text-muted-foreground leading-relaxed">
+        Progressed from individual contributor to senior, principal, and team 
+        lead—launching three major products along the way.
+      </p>
+
+      <h2 className="font-display text-xl font-semibold text-foreground">Model Studio</h2>
+      <p className="font-body text-lg text-muted-foreground leading-relaxed">
+        Led design across the advanced analytics platform, coordinating multiple product managers
+        and design teams spanning forecasting, text analytics, and core 
+        analytics workflows. Established the flagship analytics platform that 
+        remains central to SAS's ecosystem today.
+      </p>
+
+      <video src={sasDiagram} poster={analyticsAnalyze} autoPlay loop muted playsInline className="w-full h-auto" />
+
+      <div className="grid grid-cols-4">
+        <img src={analyticsPrepare} alt="SAS Analytics Prepare" className="w-full h-auto" />
+        <img src={analyticsExplore} alt="SAS Analytics Explore" className="w-full h-auto" />
+        <img src={analyticsAnalyze} alt="SAS Analytics Analyze" className="w-full h-auto" />
+        <img src={analyticsReport} alt="SAS Analytics Report" className="w-full h-auto" />
       </div>
 
-      <div className="mt-6 px-8 lg:px-12 xl:px-16">
-        <h2 className="font-display text-xl font-semibold mb-4">Arc</h2>
-        <p className="prose">
-          Progressed from individual contributor to senior, principal, and team 
-          lead—launching three major products along the way.
-        </p>
+      <h2 className="font-display text-xl font-semibold text-foreground">Factory Miner</h2>
+      <p className="font-body text-lg text-muted-foreground leading-relaxed">
+        Delivered model comparison and selection workflows that ran multiple 
+        statistical models in parallel, enabling teams to identify the strongest 
+        performer using metrics like lift and cumulative lift.
+      </p>
+
+      <img src={factoryResults} alt="SAS Factory Results" className="w-full h-auto" />
+
+      <div className="grid grid-cols-4">
+        <img src={factoryData} alt="SAS Factory Data" className="w-full h-auto" />
+        <img src={factoryProfile} alt="SAS Factory Profile" className="w-full h-auto" />
+        <img src={factoryModelTemplates} alt="SAS Factory Model Templates" className="w-full h-auto" />
+        <img src={factorySegment} alt="SAS Factory Segment" className="w-full h-auto" />
       </div>
 
-      <div className="mt-6 px-8 lg:px-12 xl:px-16">
-        <h2 className="font-display text-xl font-semibold mb-4">Model Studio</h2>
-        <p className="prose">
-          Led design across the advanced analytics platform, coordinating multiple product managers
-          and design teams spanning forecasting, text analytics, and core 
-          analytics workflows. Established the flagship analytics platform that 
-          remains central to SAS's ecosystem today.
-        </p>
-      </div>
+      <h2 className="font-display text-xl font-semibold text-foreground">Visual Statistics</h2>
+      <p className="font-body text-lg text-muted-foreground leading-relaxed">
+        Built a drag-and-drop, visual interface for exploring statistical models, 
+        making advanced analytics more accessible without flattening complexity.
+      </p>
 
-      {/* Analytics Video - BIG */}
-      <div className="mt-8 px-8 lg:px-12 xl:px-16">
-        <video src={sasDiagram} poster={analyticsAnalyze} autoPlay loop muted playsInline className="w-full h-auto block" />
-      </div>
+      <img src={visualStatsRoles} alt="SAS Visual Stats Roles" className="w-full h-auto" />
 
-      {/* Analytics 4-up */}
-      <div className="mt-8 px-8 lg:px-12 xl:px-16">
-        <div className="grid grid-cols-4 gap-4">
-          <img src={analyticsPrepare} alt="SAS Analytics Prepare" className="w-full h-auto" />
-          <img src={analyticsExplore} alt="SAS Analytics Explore" className="w-full h-auto" />
-          <img src={analyticsAnalyze} alt="SAS Analytics Analyze" className="w-full h-auto" />
-          <img src={analyticsReport} alt="SAS Analytics Report" className="w-full h-auto" />
-        </div>
-      </div>
-
-      {/* Factory Miner Section */}
-      <div className="mt-8 px-8 lg:px-12 xl:px-16">
-        <h2 className="font-display text-xl font-semibold mb-4">Factory Miner</h2>
-        <p className="prose">
-          Delivered model comparison and selection workflows that ran multiple 
-          statistical models in parallel, enabling teams to identify the strongest 
-          performer using metrics like lift and cumulative lift.
-        </p>
-      </div>
-
-      {/* Factory 1-up */}
-      <div className="mt-8 px-8 lg:px-12 xl:px-16">
-        <img src={factoryResults} alt="SAS Factory Results" className="w-full h-auto" />
-      </div>
-
-      {/* Factory 4-up */}
-      <div className="mt-8 px-8 lg:px-12 xl:px-16">
-        <div className="grid grid-cols-4 gap-4">
-          <img src={factoryData} alt="SAS Factory Data" className="w-full h-auto" />
-          <img src={factoryProfile} alt="SAS Factory Profile" className="w-full h-auto" />
-          <img src={factoryModelTemplates} alt="SAS Factory Model Templates" className="w-full h-auto" />
-          <img src={factorySegment} alt="SAS Factory Segment" className="w-full h-auto" />
-        </div>
-      </div>
-
-      {/* Visual Statistics Section */}
-      <div className="mt-8 px-8 lg:px-12 xl:px-16">
-        <h2 className="font-display text-xl font-semibold mb-4">Visual Statistics</h2>
-        <p className="prose">
-          Built a drag-and-drop, visual interface for exploring statistical models, 
-          making advanced analytics more accessible without flattening complexity.
-        </p>
-      </div>
-
-      {/* Visual Stats 1-up BIG */}
-      <div className="mt-8 px-8 lg:px-12 xl:px-16">
-        <img src={visualStatsRoles} alt="SAS Visual Stats Roles" className="w-full h-auto" />
-      </div>
-
-      {/* Visual Stats 2-up */}
-      <div className="mt-8 px-8 lg:px-12 xl:px-16 pb-16">
-        <div className="grid grid-cols-2 gap-4">
-          <img src={visualStatsProperties} alt="SAS Visual Stats Properties" className="w-full h-auto" />
-          <img src={visualStatsShare} alt="SAS Visual Stats Share" className="w-full h-auto" />
-        </div>
+      <div className="grid grid-cols-2">
+        <img src={visualStatsProperties} alt="SAS Visual Stats Properties" className="w-full h-auto" />
+        <img src={visualStatsShare} alt="SAS Visual Stats Share" className="w-full h-auto" />
       </div>
     </SplitHeroLayout>
   );

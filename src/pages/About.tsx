@@ -13,24 +13,15 @@ const experience = [
 
 export default function About() {
   return (
-    <SplitHeroLayout title="Experience" subtitle="About" colorClass="card-mustard">
-      <div className="p-8 lg:p-12 xl:p-16">
-        <div className="border border-border rounded-md overflow-hidden">
-          {experience.map((job, index) => (
-            <div 
-              key={index} 
-              className="grid grid-cols-1 md:grid-cols-[1fr_1fr_150px] gap-2 md:gap-8 py-6 px-6 border-b border-border last:border-b-0 text-lg hover:bg-muted/50 transition-colors"
-            >
-              <div>
-                <h3 className="font-display text-lg font-semibold text-foreground">{job.company}</h3>
-                <p className="font-body text-muted-foreground">{job.location}</p>
-              </div>
-              <p className="font-body text-muted-foreground">{job.role}</p>
-              <p className="font-body text-muted-foreground tabular-nums">{job.years}</p>
-            </div>
-          ))}
+    <SplitHeroLayout title="Experience" subtitle="About">
+      {experience.map((job, index) => (
+        <div key={index}>
+          <h3 className="font-display text-lg font-semibold text-foreground">{job.company}</h3>
+          <p className="font-body text-muted-foreground">{job.location}</p>
+          <p className="font-body text-muted-foreground">{job.role}</p>
+          <p className="font-body text-muted-foreground">{job.years}</p>
         </div>
-      </div>
+      ))}
     </SplitHeroLayout>
   );
 }

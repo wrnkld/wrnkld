@@ -22,94 +22,61 @@ import rhboRosterVideo from "@/assets/redhat/rhbo-roster.mp4";
 
 export default function RedHat() {
   return (
-    <SplitHeroLayout title="Red Hat" subtitle="Work" colorClass="card-teal">
-      <div className="pt-8 px-8 lg:pt-12 lg:px-12 xl:pt-16 xl:px-16">
-        <p className="prose">
-          Red Hat is an open-source enterprise software company known for bringing 
-          Linux and middleware to enterprise scale. I worked there up until the 
-          IBM acquisition.
-        </p>
+    <SplitHeroLayout title="Red Hat" subtitle="Work">
+      <p className="font-body text-lg text-muted-foreground leading-relaxed">
+        Red Hat is an open-source enterprise software company known for bringing 
+        Linux and middleware to enterprise scale. I worked there up until the 
+        IBM acquisition.
+      </p>
+
+      <h2 className="font-display text-xl font-semibold text-foreground">Role</h2>
+      <p className="font-body text-lg text-muted-foreground leading-relaxed">
+        Led a cross-disciplinary team of interaction designers, front-end 
+        engineers, and brand designers to modernize the middleware portfolio.
+      </p>
+
+      <h2 className="font-display text-xl font-semibold text-foreground">Approach</h2>
+      <p className="font-body text-lg text-muted-foreground leading-relaxed">
+        Designed in the open using PatternFly, working closely with the 
+        open-source and developer communities for feedback and iteration.
+      </p>
+
+      <video src={rhbaPreviewVideo} poster={rhbaWorkflowModeler} autoPlay loop muted playsInline className="w-full h-auto" />
+
+      <div className="grid grid-cols-4">
+        <img src={rhbaPropertiesPanel} alt="Red Hat Business Automation Properties Panel" className="w-full h-auto" />
+        <img src={rhbaNavigator} alt="Red Hat Business Automation Navigator" className="w-full h-auto" />
+        <img src={rhbaVersionControl} alt="Red Hat Business Automation Version Control" className="w-full h-auto" />
+        <img src={rhbaComments} alt="Red Hat Business Automation Comments" className="w-full h-auto" />
       </div>
 
-      <div className="mt-6 px-8 lg:px-12 xl:px-16">
-        <h2 className="font-display text-xl font-semibold mb-4">Role</h2>
-        <p className="prose">
-          Led a cross-disciplinary team of interaction designers, front-end 
-          engineers, and brand designers to modernize the middleware portfolio.
-        </p>
+      <img src={rhbaProjectMetrics} alt="Red Hat Business Automation Project Metrics" className="w-full h-auto" />
+
+      <div className="grid grid-cols-2">
+        <img src={rhbaAssetsList} alt="Red Hat Business Automation Assets List" className="w-full h-auto" />
+        <img src={rhbaContributors} alt="Red Hat Business Automation Contributors" className="w-full h-auto" />
       </div>
 
-      <div className="mt-6 px-8 lg:px-12 xl:px-16">
-        <h2 className="font-display text-xl font-semibold mb-4">Approach</h2>
-        <p className="prose">
-          Designed in the open using PatternFly, working closely with the 
-          open-source and developer communities for feedback and iteration.
-        </p>
+      <video src={rhbaTrackVideo} poster={rhbaTrack} autoPlay loop muted playsInline className="w-full h-auto" />
+
+      <div className="grid grid-cols-2">
+        <img src={rhbaEmptyState} alt="Red Hat Business Automation Empty State" className="w-full h-auto" />
+        <img src={rhbaSpace} alt="Red Hat Business Automation Space" className="w-full h-auto" />
       </div>
 
-      {/* Video - Platform Demo */}
-      <div className="mt-8 px-8 lg:px-12 xl:px-16">
-        <video src={rhbaPreviewVideo} poster={rhbaWorkflowModeler} autoPlay loop muted playsInline className="w-full h-auto" />
-      </div>
+      <h2 className="font-display text-xl font-semibold text-foreground">Extend</h2>
+      <p className="font-body text-lg text-muted-foreground leading-relaxed">
+        Created shared design patterns across Business Automation and Business 
+        Optimization to improve consistency across the portfolio.
+      </p>
 
-      {/* 4-column grid */}
-      <div className="mt-8 px-8 lg:px-12 xl:px-16">
-        <div className="grid grid-cols-4 gap-4">
-          <img src={rhbaPropertiesPanel} alt="Red Hat Business Automation Properties Panel" className="w-full h-auto" />
-          <img src={rhbaNavigator} alt="Red Hat Business Automation Navigator" className="w-full h-auto" />
-          <img src={rhbaVersionControl} alt="Red Hat Business Automation Version Control" className="w-full h-auto" />
-          <img src={rhbaComments} alt="Red Hat Business Automation Comments" className="w-full h-auto" />
-        </div>
-      </div>
+      <video src={rhboRosterVideo} poster={rhboRoster} autoPlay loop muted playsInline className="w-full h-auto" />
 
-      {/* 1-up large image */}
-      <div className="mt-8 px-8 lg:px-12 xl:px-16">
-        <img src={rhbaProjectMetrics} alt="Red Hat Business Automation Project Metrics" className="w-full h-auto" />
-      </div>
-
-      {/* 2-column grid */}
-      <div className="mt-8 px-8 lg:px-12 xl:px-16">
-        <div className="grid grid-cols-2 gap-4">
-          <img src={rhbaAssetsList} alt="Red Hat Business Automation Assets List" className="w-full h-auto" />
-          <img src={rhbaContributors} alt="Red Hat Business Automation Contributors" className="w-full h-auto" />
-        </div>
-      </div>
-
-      {/* Video - Track Demo */}
-      <div className="mt-8 px-8 lg:px-12 xl:px-16">
-        <video src={rhbaTrackVideo} poster={rhbaTrack} autoPlay loop muted playsInline className="w-full h-auto" />
-      </div>
-
-      {/* 2-column grid */}
-      <div className="mt-8 px-8 lg:px-12 xl:px-16">
-        <div className="grid grid-cols-2 gap-4">
-          <img src={rhbaEmptyState} alt="Red Hat Business Automation Empty State" className="w-full h-auto" />
-          <img src={rhbaSpace} alt="Red Hat Business Automation Space" className="w-full h-auto" />
-        </div>
-      </div>
-
-      {/* Extend Section */}
-      <div className="mt-8 px-8 lg:px-12 xl:px-16">
-        <h2 className="font-display text-xl font-semibold mb-4">Extend</h2>
-        <p className="prose">
-          Created shared design patterns across Business Automation and Business 
-          Optimization to improve consistency across the portfolio.
-        </p>
-      </div>
-
-      {/* Video - Roster Demo */}
-      <div className="mt-8 px-8 lg:px-12 xl:px-16">
-        <video src={rhboRosterVideo} poster={rhboRoster} autoPlay loop muted playsInline className="w-full h-auto" />
-      </div>
-
-      {/* 4-column grid */}
-      <div className="mt-8 px-8 lg:px-12 xl:px-16 pb-16">
-        <div className="grid grid-cols-4 gap-4">
-          <img src={rhboEmployees} alt="Red Hat Business Optaplanner Employees" className="w-full h-auto" />
-          <img src={rhboAvailability} alt="Red Hat Business Optaplanner Availability" className="w-full h-auto" />
-          <img src={rhboRoster} alt="Red Hat Business Optaplanner Roster" className="w-full h-auto" />
-          <img src={rhboRoute} alt="Red Hat Business Optaplanner Route" className="w-full h-auto" />
-        </div>
+      <div className="grid grid-cols-4">
+        <img src={rhboEmployees} alt="Red Hat Business Optaplanner Employees" className="w-full h-auto" />
+        <img src={rhboAvailability} alt="Red Hat Business Optaplanner Availability" className="w-full h-auto" />
+        <img src={rhboRoster} alt="Red Hat Business Optaplanner Roster" className="w-full h-auto" />
+        <img src={rhboRoute} alt="Red Hat Business Optaplanner Route" className="w-full h-auto" />
       </div>
     </SplitHeroLayout>
   );

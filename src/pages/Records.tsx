@@ -24,7 +24,6 @@ export default function Records() {
   const filteredAndSortedRecords = useMemo(() => {
     let result = [...records];
 
-    // Search filter
     if (search) {
       const searchLower = search.toLowerCase();
       result = result.filter(
@@ -35,8 +34,6 @@ export default function Records() {
       );
     }
 
-
-    // Sort
     result.sort((a, b) => {
       let comparison = 0;
       if (sortField === "album" || sortField === "artist") {
@@ -69,76 +66,60 @@ export default function Records() {
     <Button
       variant="ghost"
       size="sm"
-      className="-ml-3 h-8 hover:bg-transparent text-lg text-foreground"
       onClick={() => handleSort(field)}
     >
       {children}
-      <ArrowUpDown className="ml-2 h-4 w-4 text-muted-foreground" />
+      <ArrowUpDown className="h-4 w-4 text-muted-foreground" />
     </Button>
   );
 
   return (
-    <SplitHeroLayout title="Records" subtitle="About" colorClass="card-plum">
-      <div className="p-8 lg:p-12 xl:p-16">
-        <p className="prose mb-8">
-          A relatively exhaustive list of records I like. Updated often.
-        </p>
+    <SplitHeroLayout title="Records" subtitle="About">
+      <p className="font-body text-lg text-muted-foreground">
+        A relatively exhaustive list of records I like. Updated often.
+      </p>
 
-        {/* Search */}
-        <div className="relative mb-6">
-          <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
-          <Input
-            placeholder={`Search ${records.length} records`}
-            value={search}
-            onChange={(e) => setSearch(e.target.value)}
-            className="pl-9 pr-9"
-          />
-          {search && (
-            <button
-              onClick={() => setSearch("")}
-              className="absolute right-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground hover:text-foreground transition-colors"
-            >
-              <X className="h-4 w-4" />
-            </button>
-          )}
-        </div>
-
-        {/* Table */}
-        <div className="border border-border rounded-md overflow-hidden prose">
-          <Table>
-            <TableHeader>
-              <TableRow className="bg-muted/50">
-                <TableHead>
-                  <SortButton field="artist">Artist</SortButton>
-                </TableHead>
-                <TableHead>
-                  <SortButton field="album">Album</SortButton>
-                </TableHead>
-                <TableHead className="w-[100px] hidden md:table-cell">
-                  <SortButton field="year">Year</SortButton>
-                </TableHead>
-              </TableRow>
-            </TableHeader>
-            <TableBody>
-              {filteredAndSortedRecords.map((record, index) => (
-                <TableRow
-                  key={record.id}
-                  className="animate-fade-in"
-                  style={{ animationDelay: `${Math.min(index * 20, 500)}ms` }}
-                >
-                  <TableCell className="text-muted-foreground">{record.artist}</TableCell>
-                  <TableCell className="text-foreground">
-                    {record.album}
-                  </TableCell>
-                  <TableCell className="text-muted-foreground hidden md:table-cell">
-                    {record.year}
-                  </TableCell>
-                </TableRow>
-              ))}
-            </TableBody>
-          </Table>
-        </div>
+      <div className="relative">
+        <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
+        <Input
+          placeholder={`Search ${records.length} records`}
+          value={search}
+          onChange={(e) => setSearch(e.target.value)}
+        />
+        {search && (
+          <button
+            onClick={() => setSearch("")}
+            className="absolute right-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground hover:text-foreground transition-colors"
+          >
+            <X className="h-4 w-4" />
+          </button>
+        )}
       </div>
+
+      <Table>
+        <TableHeader>
+          <TableRow>
+            <TableHead>
+              <SortButton field="artist">Artist</SortButton>
+            </TableHead>
+            <TableHead>
+              <SortButton field="album">Album</SortButton>
+            </TableHead>
+            <TableHead>
+              <SortButton field="year">Year</SortButton>
+            </TableHead>
+          </TableRow>
+        </TableHeader>
+        <TableBody>
+          {filteredAndSortedRecords.map((record) => (
+            <TableRow key={record.id}>
+              <TableCell className="text-muted-foreground">{record.artist}</TableCell>
+              <TableCell className="text-foreground">{record.album}</TableCell>
+              <TableCell className="text-muted-foreground">{record.year}</TableCell>
+            </TableRow>
+          ))}
+        </TableBody>
+      </Table>
     </SplitHeroLayout>
   );
 }

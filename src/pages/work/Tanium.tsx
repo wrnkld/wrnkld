@@ -15,69 +15,43 @@ import taniumEnforce from "@/assets/tanium/tanium-enforce.mp4";
 
 export default function Tanium() {
   return (
-    <SplitHeroLayout title="Tanium" subtitle="Work" colorClass="card-coral">
-      <div className="pt-8 px-8 lg:pt-12 lg:px-12 xl:pt-16 xl:px-16">
-        <p className="prose">
-          Tanium is a large-scale endpoint security platform used by some of the world's biggest organizations to manage, secure, and respond across millions of devices in real time. I worked on the product during a period of rapid growth and sustained pressure.
-        </p>
+    <SplitHeroLayout title="Tanium" subtitle="Work">
+      <p className="font-body text-lg text-muted-foreground leading-relaxed">
+        Tanium is a large-scale endpoint security platform used by some of the world's biggest organizations to manage, secure, and respond across millions of devices in real time. I worked on the product during a period of rapid growth and sustained pressure.
+      </p>
+
+      <h2 className="font-display text-xl font-semibold text-foreground">Challenge</h2>
+      <p className="font-body text-lg text-muted-foreground leading-relaxed">
+        Support as many products as humanly possible, move fast, and keep shipping through peak COVID years—when timelines were tight, stakes were high, and work was a reliable distraction.
+      </p>
+
+      <h2 className="font-display text-xl font-semibold text-foreground">Reinvent</h2>
+      <p className="font-body text-lg text-muted-foreground leading-relaxed">
+        Redesigned three flagship products—Discover, Asset, and Threat Response—simplifying dense interfaces, tightening information architecture, and speeding up core security workflows.
+      </p>
+
+      <h2 className="font-display text-xl font-semibold text-foreground">Ship</h2>
+      <p className="font-body text-lg text-muted-foreground leading-relaxed">
+        Built and shipped two entirely new products from scratch: Assurance, focused on MITRE ATT&CK visibility, and Enforce, designed for policy enforcement at enterprise scale.
+      </p>
+
+      <video src={taniumNavigation} poster={taniumNavigationViews} autoPlay loop muted playsInline className="w-full h-auto" />
+
+      <div className="grid grid-cols-2">
+        <img src={taniumThreatAlerts} alt="Tanium Threat Alerts" className="w-full h-auto" />
+        <img src={taniumThreatDocuments} alt="Tanium Threat Documents" className="w-full h-auto" />
       </div>
 
-      <div className="mt-6 px-8 lg:px-12 xl:px-16">
-        <h2 className="font-display text-xl font-semibold mb-4">Challenge</h2>
-        <p className="prose">
-          Support as many products as humanly possible, move fast, and keep shipping through peak COVID years—when timelines were tight, stakes were high, and work was a reliable distraction.
-        </p>
+      <video src={taniumAssurance} poster={taniumAssuranceFindings} autoPlay loop muted playsInline className="w-full h-auto" />
+
+      <video src={taniumDiscover} poster={taniumDiscoverInterfaces} autoPlay loop muted playsInline className="w-full h-auto" />
+
+      <div className="grid grid-cols-2">
+        <img src={taniumDiscoverInterfaces} alt="Tanium Discover Interfaces" className="w-full h-auto" />
+        <img src={taniumAssetVendor} alt="Tanium Asset Vendor" className="w-full h-auto" />
       </div>
 
-      <div className="mt-6 px-8 lg:px-12 xl:px-16">
-        <h2 className="font-display text-xl font-semibold mb-4">Reinvent</h2>
-        <p className="prose">
-          Redesigned three flagship products—Discover, Asset, and Threat Response—simplifying dense interfaces, tightening information architecture, and speeding up core security workflows.
-        </p>
-      </div>
-
-      <div className="mt-6 px-8 lg:px-12 xl:px-16">
-        <h2 className="font-display text-xl font-semibold mb-4">Ship</h2>
-        <p className="prose">
-          Built and shipped two entirely new products from scratch: Assurance, focused on MITRE ATT&CK visibility, and Enforce, designed for policy enforcement at enterprise scale.
-        </p>
-      </div>
-
-      {/* Video - Navigation */}
-      <div className="mt-8 px-8 lg:px-12 xl:px-16">
-        <video src={taniumNavigation} poster={taniumNavigationViews} autoPlay loop muted playsInline className="w-full h-auto" />
-      </div>
-
-      {/* Two-up Threat Response images */}
-      <div className="mt-8 px-8 lg:px-12 xl:px-16">
-        <div className="grid grid-cols-2 gap-4">
-          <img src={taniumThreatAlerts} alt="Tanium Threat Alerts" className="w-full h-auto" />
-          <img src={taniumThreatDocuments} alt="Tanium Threat Documents" className="w-full h-auto" />
-        </div>
-      </div>
-
-      {/* Video - Assurance */}
-      <div className="mt-8 px-8 lg:px-12 xl:px-16">
-        <video src={taniumAssurance} poster={taniumAssuranceFindings} autoPlay loop muted playsInline className="w-full h-auto" />
-      </div>
-
-      {/* Video - Discover */}
-      <div className="mt-8 px-8 lg:px-12 xl:px-16">
-        <video src={taniumDiscover} poster={taniumDiscoverInterfaces} autoPlay loop muted playsInline className="w-full h-auto" />
-      </div>
-
-      {/* Two-up Asset and Discover images */}
-      <div className="mt-8 px-8 lg:px-12 xl:px-16">
-        <div className="grid grid-cols-2 gap-4">
-          <img src={taniumDiscoverInterfaces} alt="Tanium Discover Interfaces" className="w-full h-auto" />
-          <img src={taniumAssetVendor} alt="Tanium Asset Vendor" className="w-full h-auto" />
-        </div>
-      </div>
-
-      {/* Video - Enforce */}
-      <div className="mt-8 px-8 lg:px-12 xl:px-16 pb-16">
-        <video src={taniumEnforce} poster={taniumEnforceOverview} autoPlay loop muted playsInline className="w-full h-auto" />
-      </div>
+      <video src={taniumEnforce} poster={taniumEnforceOverview} autoPlay loop muted playsInline className="w-full h-auto" />
     </SplitHeroLayout>
   );
 }
