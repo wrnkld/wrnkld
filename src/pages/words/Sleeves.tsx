@@ -8,7 +8,7 @@ function FootnoteRef({ number }: { number: number }) {
 export default function Sleeves() {
   return (
     <SplitHeroLayout title="Pt 3 → Sleeves" subtitle="Design & AI">
-      <article className="font-body text-lg text-muted-foreground leading-relaxed">
+      <article className="font-body text-lg text-muted-foreground leading-relaxed space-y-6">
         <p>
           You can't really quibble with <Link to="/designai/tools" className="text-foreground underline underline-offset-4 hover:opacity-70 transition-opacity">Part 1</Link> — it's basically my life story. You could 
           nitpick <Link to="/designai/vibes" className="text-foreground underline underline-offset-4 hover:opacity-70 transition-opacity">Part 2</Link>, especially when I admit I haven't explored Figma Make. But Part 3 
