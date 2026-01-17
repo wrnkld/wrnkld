@@ -22,7 +22,7 @@ import rhboRosterVideo from "@/assets/redhat/rhbo-roster.mp4";
 
 export default function RedHat() {
   return (
-    <SplitHeroLayout title="Red Hat" subtitle="Work">
+    <SplitHeroLayout title="Red Hat" subtitle="Work" colorClass="card-teal">
       <p className="font-body text-lg text-muted-foreground leading-relaxed">
         Red Hat is an open-source enterprise software company known for bringing 
         Linux and middleware to enterprise scale. I worked there up until the 

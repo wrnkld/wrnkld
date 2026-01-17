@@ -72,7 +72,7 @@ export default function Records() {
   );
 
   return (
-    <SplitHeroLayout title="Records" subtitle="About">
+    <SplitHeroLayout title="Records" subtitle="About" colorClass="card-plum">
       <p className="font-body text-lg text-muted-foreground">
         A relatively exhaustive list of records I like. Updated often.
       </p>

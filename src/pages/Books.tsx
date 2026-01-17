@@ -73,7 +73,7 @@ export default function Books() {
   );
 
   return (
-    <SplitHeroLayout title="Books" subtitle="About">
+    <SplitHeroLayout title="Books" subtitle="About" colorClass="card-slate">
       <p className="font-body text-lg text-muted-foreground">
         I recently started tracking the books I read.
       </p>
