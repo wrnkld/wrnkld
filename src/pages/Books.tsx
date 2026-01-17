@@ -24,7 +24,6 @@ export default function Books() {
   const filteredAndSortedBooks = useMemo(() => {
     let result = [...books];
 
-    // Search filter
     if (search) {
       const searchLower = search.toLowerCase();
       result = result.filter(
@@ -36,8 +35,6 @@ export default function Books() {
       );
     }
 
-
-    // Sort
     result.sort((a, b) => {
       let comparison = 0;
       if (sortField === "title" || sortField === "author") {
@@ -70,90 +67,76 @@ export default function Books() {
     <Button
       variant="ghost"
       size="sm"
-      className="-ml-3 h-8 hover:bg-transparent text-lg text-foreground"
       onClick={() => handleSort(field)}
     >
       {children}
-      <ArrowUpDown className="ml-2 h-4 w-4 text-muted-foreground" />
+      <ArrowUpDown className="h-4 w-4 text-muted-foreground" />
     </Button>
   );
 
   return (
-    <SplitHeroLayout title="Books" subtitle="About" colorClass="card-slate">
-      <div className="p-8 lg:p-12 xl:p-16">
-        <p className="prose mb-8">
-          I recently started tracking the books I read.
-        </p>
+    <SplitHeroLayout title="Books" subtitle="About">
+      <p className="font-body text-lg text-muted-foreground">
+        I recently started tracking the books I read.
+      </p>
 
-        {/* Search */}
-        <div className="relative mb-6">
-          <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
-          <Input
-            placeholder={`Search ${books.length} books`}
-            value={search}
-            onChange={(e) => setSearch(e.target.value)}
-            className="pl-9 pr-9"
-          />
-          {search && (
-            <button
-              onClick={() => setSearch("")}
-              className="absolute right-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground hover:text-foreground transition-colors"
-            >
-              <X className="h-4 w-4" />
-            </button>
-          )}
-        </div>
-
-        {/* Table */}
-        <div className="border border-border rounded-md overflow-hidden prose">
-          <Table>
-            <TableHeader>
-              <TableRow className="bg-muted/50">
-                <TableHead className="w-14 !p-0 !pr-0"></TableHead>
-                <TableHead>
-                  <SortButton field="author">Author</SortButton>
-                </TableHead>
-                <TableHead>
-                  <SortButton field="title">Title</SortButton>
-                </TableHead>
-                <TableHead className="w-[100px] hidden md:table-cell">
-                  <SortButton field="year">Published</SortButton>
-                </TableHead>
-                <TableHead className="w-[100px] hidden md:table-cell">
-                  <SortButton field="yearRead">Read</SortButton>
-                </TableHead>
-              </TableRow>
-            </TableHeader>
-            <TableBody>
-              {filteredAndSortedBooks.map((book, index) => (
-                <TableRow
-                  key={book.id}
-                  className="animate-fade-in"
-                  style={{ animationDelay: `${Math.min(index * 20, 500)}ms` }}
-                >
-                  <TableCell className="w-14 !p-0">
-                    <div className="h-full w-full flex items-center justify-center pl-4">
-                      {book.recommended && (
-                        <Star className="h-4 w-4 text-yellow-500 fill-yellow-500" />
-                      )}
-                    </div>
-                  </TableCell>
-                  <TableCell className="text-muted-foreground">
-                    {book.author}
-                  </TableCell>
-                  <TableCell className="text-foreground">{book.title}</TableCell>
-                  <TableCell className="text-muted-foreground hidden md:table-cell">
-                    {book.year}
-                  </TableCell>
-                  <TableCell className="text-muted-foreground hidden md:table-cell">
-                    {book.yearRead}
-                  </TableCell>
-                </TableRow>
-              ))}
-            </TableBody>
-          </Table>
-        </div>
+      <div className="relative">
+        <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
+        <Input
+          placeholder={`Search ${books.length} books`}
+          value={search}
+          onChange={(e) => setSearch(e.target.value)}
+        />
+        {search && (
+          <button
+            onClick={() => setSearch("")}
+            className="absolute right-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground hover:text-foreground transition-colors"
+          >
+            <X className="h-4 w-4" />
+          </button>
+        )}
       </div>
+
+      <Table>
+        <TableHeader>
+          <TableRow>
+            <TableHead></TableHead>
+            <TableHead>
+              <SortButton field="author">Author</SortButton>
+            </TableHead>
+            <TableHead>
+              <SortButton field="title">Title</SortButton>
+            </TableHead>
+            <TableHead>
+              <SortButton field="year">Published</SortButton>
+            </TableHead>
+            <TableHead>
+              <SortButton field="yearRead">Read</SortButton>
+            </TableHead>
+          </TableRow>
+        </TableHeader>
+        <TableBody>
+          {filteredAndSortedBooks.map((book) => (
+            <TableRow key={book.id}>
+              <TableCell>
+                {book.recommended && (
+                  <Star className="h-4 w-4 text-yellow-500 fill-yellow-500" />
+                )}
+              </TableCell>
+              <TableCell className="text-muted-foreground">
+                {book.author}
+              </TableCell>
+              <TableCell className="text-foreground">{book.title}</TableCell>
+              <TableCell className="text-muted-foreground">
+                {book.year}
+              </TableCell>
+              <TableCell className="text-muted-foreground">
+                {book.yearRead}
+              </TableCell>
+            </TableRow>
+          ))}
+        </TableBody>
+      </Table>
     </SplitHeroLayout>
   );
 }
