@@ -9,9 +9,10 @@ interface SplitHeroLayoutProps {
   colorClass?: string;
 }
 
-export function SplitHeroLayout({ title, subtitle, children }: SplitHeroLayoutProps) {
+export function SplitHeroLayout({ title, subtitle, children, colorClass }: SplitHeroLayoutProps) {
   return (
     <div className="min-h-screen bg-background">
+      {colorClass && <div className={`h-1.5 w-full ${colorClass}`} />}
       <div className="max-w-3xl mx-auto px-6 py-12 md:py-16 space-y-6">
         {subtitle && (
           <Link 

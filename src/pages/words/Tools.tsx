@@ -6,7 +6,7 @@ function FootnoteRef({ number }: { number: number }) {
 
 export default function Tools() {
   return (
-    <SplitHeroLayout title="Pt 1 → Tools" subtitle="Design & AI">
+    <SplitHeroLayout title="Pt 1 → Tools" subtitle="Design & AI" colorClass="card-terracotta">
       <article className="font-body text-lg text-muted-foreground leading-relaxed space-y-6">
         <p>
           Every time I log into LinkedIn, a product designer is sharing how they took 

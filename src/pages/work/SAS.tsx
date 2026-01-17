@@ -16,7 +16,7 @@ import visualStatsShare from "@/assets/sas/visual-stats-share.png";
 
 export default function SAS() {
   return (
-    <SplitHeroLayout title="SAS" subtitle="Work">
+    <SplitHeroLayout title="SAS" subtitle="Work" colorClass="card-terracotta">
       <p className="font-body text-lg text-muted-foreground leading-relaxed">
         SAS is an enterprise analytics company focused on large-scale statistical 
         modeling, data science, and decisioning across regulated industries.
