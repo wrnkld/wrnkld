@@ -11,7 +11,6 @@ import {
   TableRow,
 } from "@/components/ui/table";
 import { ArrowUpDown, Search, X } from "lucide-react";
-import { Button } from "@/components/ui/button";
 
 type SortField = "album" | "artist" | "year";
 type SortDirection = "asc" | "desc";
@@ -56,21 +55,20 @@ export default function Records() {
     }
   };
 
-  const SortButton = ({
+  const SortHeader = ({
     field,
     children,
   }: {
     field: SortField;
     children: React.ReactNode;
   }) => (
-    <Button
-      variant="ghost"
-      size="sm"
+    <button
       onClick={() => handleSort(field)}
+      className="inline-flex items-center gap-1 text-muted-foreground hover:text-foreground transition-colors"
     >
       {children}
-      <ArrowUpDown className="h-4 w-4 text-muted-foreground" />
-    </Button>
+      <ArrowUpDown className="h-3 w-3" />
+    </button>
   );
 
   return (
@@ -85,6 +83,7 @@ export default function Records() {
           placeholder={`Search ${records.length} records`}
           value={search}
           onChange={(e) => setSearch(e.target.value)}
+          className="pl-9"
         />
         {search && (
           <button
@@ -96,30 +95,32 @@ export default function Records() {
         )}
       </div>
 
-      <Table>
-        <TableHeader>
-          <TableRow>
-            <TableHead>
-              <SortButton field="artist">Artist</SortButton>
-            </TableHead>
-            <TableHead>
-              <SortButton field="album">Album</SortButton>
-            </TableHead>
-            <TableHead>
-              <SortButton field="year">Year</SortButton>
-            </TableHead>
-          </TableRow>
-        </TableHeader>
-        <TableBody>
-          {filteredAndSortedRecords.map((record) => (
-            <TableRow key={record.id}>
-              <TableCell className="text-muted-foreground">{record.artist}</TableCell>
-              <TableCell className="text-foreground">{record.album}</TableCell>
-              <TableCell className="text-muted-foreground">{record.year}</TableCell>
+      <div className="border border-border rounded-md overflow-hidden">
+        <Table>
+          <TableHeader>
+            <TableRow>
+              <TableHead className="text-left font-normal">
+                <SortHeader field="artist">Artist</SortHeader>
+              </TableHead>
+              <TableHead className="text-left font-normal">
+                <SortHeader field="album">Album</SortHeader>
+              </TableHead>
+              <TableHead className="text-left font-normal">
+                <SortHeader field="year">Year</SortHeader>
+              </TableHead>
             </TableRow>
-          ))}
-        </TableBody>
-      </Table>
+          </TableHeader>
+          <TableBody>
+            {filteredAndSortedRecords.map((record) => (
+              <TableRow key={record.id}>
+                <TableCell className="text-muted-foreground">{record.artist}</TableCell>
+                <TableCell className="text-foreground">{record.album}</TableCell>
+                <TableCell className="text-muted-foreground">{record.year}</TableCell>
+              </TableRow>
+            ))}
+          </TableBody>
+        </Table>
+      </div>
     </SplitHeroLayout>
   );
 }
