@@ -97,6 +97,7 @@
     --card-slate: 220 15% 45%;
     --card-plum: 280 35% 40%;
     --card-teal: 175 50% 40%;
+    --card-indigo: 230 45% 45%;
     
     /* Typography */
     --font-display: 'Tiempos', Georgia, serif;
@@ -205,6 +206,11 @@
   
   .card-teal {
     background-color: hsl(var(--card-teal));
+    color: hsl(45 30% 96%);
+  }
+  
+  .card-indigo {
+    background-color: hsl(var(--card-indigo));
     color: hsl(45 30% 96%);
   }
 }
