@@ -23,7 +23,7 @@ const sectionOrder = ["Design & AI", "Work", "About"];
 export default function Index() {
   return (
     <div className="min-h-screen bg-background">
-      <div className="max-w-2xl mx-auto px-6 py-12 md:py-16 space-y-10">
+      <div className="max-w-3xl mx-auto px-6 py-12 md:py-16 space-y-10">
         <div className="space-y-4">
           <h1 className="font-display text-2xl md:text-3xl font-semibold text-foreground">
             Matthew Stevens

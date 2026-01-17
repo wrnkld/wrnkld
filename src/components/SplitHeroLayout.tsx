@@ -12,7 +12,7 @@ interface SplitHeroLayoutProps {
 export function SplitHeroLayout({ title, subtitle, children }: SplitHeroLayoutProps) {
   return (
     <div className="min-h-screen bg-background">
-      <div className="max-w-2xl mx-auto px-6 py-12 md:py-16 space-y-6">
+      <div className="max-w-3xl mx-auto px-6 py-12 md:py-16 space-y-6">
         {subtitle && (
           <Link 
             to="/"
