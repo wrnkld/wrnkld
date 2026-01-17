@@ -62,7 +62,7 @@ export default function Vibes() {
         </p>
 
         <hr className="border-border" />
-        <div className="text-muted-foreground space-y-2">
+        <div className="text-sm text-muted-foreground space-y-2">
           <p><sup>1</sup> Disclaimer: I have not yet dug deep on Figma Make or MCP</p>
           <p><sup>2</sup> 💸 credits</p>
           <p><sup>3</sup> Who am I to judge?</p>

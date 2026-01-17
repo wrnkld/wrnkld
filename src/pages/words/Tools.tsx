@@ -77,7 +77,7 @@ export default function Tools() {
         </p>
 
         <hr className="border-border" />
-        <div className="text-muted-foreground space-y-2">
+        <div className="text-sm text-muted-foreground space-y-2">
           <p><sup>1</sup> Psychology major = no ragrets</p>
           <p><sup>2</sup> Shout out Josh Hart</p>
           <p><sup>3</sup> Expression Blend somehow more complicated than Photoshop</p>

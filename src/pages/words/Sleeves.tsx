@@ -88,7 +88,7 @@ export default function Sleeves() {
         </p>
 
         <hr className="border-border" />
-        <div className="text-muted-foreground space-y-2">
+        <div className="text-sm text-muted-foreground space-y-2">
           <p><sup>1</sup> <a href="https://www.youtube.com/watch?v=gPNdFHSLAeI" target="_blank" rel="noopener noreferrer" className="underline underline-offset-2 hover:opacity-70 transition-opacity">youtube.com/watch?v=gPNdFHSLAeI</a></p>
           <p><sup>2</sup> Less cursing, less ALL CAPS</p>
           <p><sup>3</sup> It still blows my mind that Resend is just an email sender. I spent way too long trying to figure out where I was supposed to design the emails.</p>
