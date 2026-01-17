@@ -1,72 +1,27 @@
-import { useRef, useState, useCallback } from "react";
-import { PortfolioCard } from "@/components/PortfolioCard";
+import { Link } from "react-router-dom";
 
-const cards = [
-  { title: "Pt 1 → Tools", subtitle: "Design & AI", to: "/designai/tools", colorClass: "card-terracotta" },
-  { title: "Pt 2 → Vibes", subtitle: "Design & AI", to: "/designai/vibes", colorClass: "card-forest" },
-  { title: "Pt 3 → Sleeves", subtitle: "Design & AI", to: "/designai/sleeves", colorClass: "card-navy" },
-  { title: "Experience", subtitle: "About", to: "/about/experience", colorClass: "card-mustard" },
-  { title: "Tanium", subtitle: "Work", to: "/work/tanium", colorClass: "card-coral" },
-  { title: "Books", subtitle: "About", to: "/about/books", colorClass: "card-slate" },
-  { title: "Records", subtitle: "About", to: "/about/records", colorClass: "card-plum" },
-  { title: "Red Hat", subtitle: "Work", to: "/work/redhat", colorClass: "card-teal" },
-  { title: "SAS", subtitle: "Work", to: "/work/sas", colorClass: "card-terracotta" },
+const links = [
+  { title: "Tools", section: "Design & AI", to: "/designai/tools" },
+  { title: "Vibes", section: "Design & AI", to: "/designai/vibes" },
+  { title: "Sleeves", section: "Design & AI", to: "/designai/sleeves" },
+  { title: "Experience", section: "About", to: "/about/experience" },
+  { title: "Books", section: "About", to: "/about/books" },
+  { title: "Records", section: "About", to: "/about/records" },
+  { title: "Tanium", section: "Work", to: "/work/tanium" },
+  { title: "Red Hat", section: "Work", to: "/work/redhat" },
+  { title: "SAS", section: "Work", to: "/work/sas" },
 ];
 
+// Group links by section
+const groupedLinks = links.reduce((acc, link) => {
+  if (!acc[link.section]) acc[link.section] = [];
+  acc[link.section].push(link);
+  return acc;
+}, {} as Record<string, typeof links>);
+
+const sectionOrder = ["Design & AI", "Work", "About"];
+
 export default function Index() {
-  const scrollRef = useRef<HTMLDivElement>(null);
-  const [hasDragged, setHasDragged] = useState(false);
-  const [isDragging, setIsDragging] = useState(false);
-  const dragState = useRef({ startX: 0, scrollLeft: 0, lastX: 0, lastTime: 0, velocity: 0 });
-
-  const handleMouseDown = useCallback((e: React.MouseEvent) => {
-    if (!scrollRef.current) return;
-    setIsDragging(true);
-    setHasDragged(false);
-    const state = dragState.current;
-    state.startX = e.pageX;
-    state.scrollLeft = scrollRef.current.scrollLeft;
-    state.lastX = e.pageX;
-    state.lastTime = Date.now();
-    state.velocity = 0;
-  }, []);
-
-  const handleMouseMove = useCallback((e: React.MouseEvent) => {
-    if (!isDragging || !scrollRef.current) return;
-    e.preventDefault();
-    const state = dragState.current;
-    const dx = e.pageX - state.startX;
-    
-    // Track velocity
-    const now = Date.now();
-    const dt = now - state.lastTime;
-    if (dt > 0) {
-      state.velocity = (e.pageX - state.lastX) / dt;
-    }
-    state.lastX = e.pageX;
-    state.lastTime = now;
-    
-    if (Math.abs(dx) > 5) setHasDragged(true);
-    scrollRef.current.scrollLeft = state.scrollLeft - dx;
-  }, [isDragging]);
-
-  const handleMouseUp = useCallback(() => {
-    if (!scrollRef.current || !isDragging) return;
-    setIsDragging(false);
-    
-    // Apply momentum
-    const momentum = -dragState.current.velocity * 300;
-    scrollRef.current.scrollBy({ left: momentum, behavior: "smooth" });
-    
-    setTimeout(() => setHasDragged(false), 100);
-  }, [isDragging]);
-
-  const handleCardClick = (e: React.MouseEvent) => {
-    if (hasDragged) {
-      e.preventDefault();
-    }
-  };
-
   return (
     <div className="min-h-screen bg-background">
       {/* Header Section */}
@@ -81,27 +36,28 @@ export default function Index() {
         </div>
       </header>
       
-      {/* Horizontal Scrolling Cards */}
-      <section className="pb-12 md:pb-20">
-        <div 
-          ref={scrollRef}
-          className="overflow-x-auto overflow-y-visible scrollbar-hide cursor-grab active:cursor-grabbing touch-auto"
-          onMouseDown={handleMouseDown}
-          onMouseMove={handleMouseMove}
-          onMouseUp={handleMouseUp}
-          onMouseLeave={handleMouseUp}
-        >
-          <div className="flex gap-6 px-6 pt-4 pb-4" style={{ width: "max-content" }}>
-            {cards.map((card, index) => (
-              <PortfolioCard
-                key={card.to}
-                title={card.title}
-                subtitle={card.subtitle}
-                to={card.to}
-                colorClass={card.colorClass}
-                index={index}
-                onClick={handleCardClick}
-              />
+      {/* Links Section */}
+      <section className="px-6 pb-12 md:pb-20">
+        <div className="max-w-4xl mx-auto animate-fade-in" style={{ animationDelay: "100ms" }}>
+          <div className="grid gap-8 md:gap-12">
+            {sectionOrder.map((section) => (
+              <div key={section}>
+                <h2 className="font-body text-sm uppercase tracking-widest text-muted-foreground mb-4">
+                  {section}
+                </h2>
+                <ul className="space-y-2">
+                  {groupedLinks[section]?.map((link) => (
+                    <li key={link.to}>
+                      <Link
+                        to={link.to}
+                        className="font-display text-xl md:text-2xl text-foreground hover:text-muted-foreground transition-colors"
+                      >
+                        {link.title}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
             ))}
           </div>
         </div>
