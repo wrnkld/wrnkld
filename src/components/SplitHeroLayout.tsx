@@ -19,8 +19,15 @@ export function SplitHeroLayout({ title, subtitle, children, colorClass }: Split
             to="/"
             className="inline-flex items-center gap-2 text-sm font-body uppercase tracking-widest text-muted-foreground hover:text-foreground transition-colors group"
           >
-            <ArrowLeft className="w-4 h-4 transition-transform duration-300 group-hover:-translate-x-1" />
-            {subtitle}
+            <ArrowLeft className="w-4 h-4" />
+            <span className="relative overflow-hidden">
+              <span className="inline-block transition-transform duration-300 group-hover:-translate-y-full">
+                {subtitle}
+              </span>
+              <span className="absolute left-0 top-full inline-block transition-transform duration-300 group-hover:-translate-y-full">
+                Back
+              </span>
+            </span>
           </Link>
         )}
         <h1 className="font-display text-4xl md:text-5xl font-semibold text-foreground">
