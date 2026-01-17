@@ -24,9 +24,12 @@ const sectionOrder = ["Design & AI", "Work", "About"];
 export default function Index() {
   return (
     <div className="min-h-screen bg-background">
+      {/* Accent bar */}
+      <div className="h-1.5 w-full card-slate" />
+      
       {/* Header Section */}
-      <header className="px-6 pt-12 md:pt-20 pb-12 md:pb-16">
-        <div className="max-w-4xl mx-auto animate-fade-in">
+      <header className="px-6 pt-8 md:pt-12 pb-8 md:pb-12">
+        <div className="max-w-3xl animate-fade-in">
           <h1 className="font-display text-2xl md:text-3xl font-semibold text-foreground mb-6 text-left">
             Matthew Stevens
           </h1>
@@ -38,7 +41,7 @@ export default function Index() {
       
       {/* Links Section */}
       <section className="px-6 pb-12 md:pb-20">
-        <div className="max-w-4xl mx-auto animate-fade-in" style={{ animationDelay: "100ms" }}>
+        <div className="max-w-3xl animate-fade-in" style={{ animationDelay: "100ms" }}>
           <div className="grid gap-8 md:gap-12">
             {sectionOrder.map((section) => (
               <div key={section}>
@@ -65,7 +68,7 @@ export default function Index() {
       
       {/* Footer */}
       <footer className="px-6 pb-12">
-        <div className="max-w-4xl mx-auto">
+        <div className="max-w-3xl">
           <p className="font-body text-lg text-muted-foreground">
             Say hello → <a href="mailto:hello@wrnkld.tv" className="underline hover:text-foreground transition-colors">hello@wrnkld.tv</a>
           </p>

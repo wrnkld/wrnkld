@@ -17,7 +17,7 @@ export function SplitHeroLayout({ title, subtitle, children, colorClass }: Split
       
       {/* Header */}
       <header className="px-6 pt-8 md:pt-12 pb-8 md:pb-12">
-        <div className="max-w-4xl mx-auto animate-fade-in">
+        <div className="max-w-3xl animate-fade-in">
           {subtitle && (
             <Link 
               to="/"
