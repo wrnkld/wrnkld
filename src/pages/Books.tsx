@@ -11,7 +11,6 @@ import {
   TableRow,
 } from "@/components/ui/table";
 import { ArrowUpDown, Search, Star, X } from "lucide-react";
-import { Button } from "@/components/ui/button";
 
 type SortField = "title" | "author" | "year" | "yearRead";
 type SortDirection = "asc" | "desc";
@@ -57,21 +56,20 @@ export default function Books() {
     }
   };
 
-  const SortButton = ({
+  const SortHeader = ({
     field,
     children,
   }: {
     field: SortField;
     children: React.ReactNode;
   }) => (
-    <Button
-      variant="ghost"
-      size="sm"
+    <button
       onClick={() => handleSort(field)}
+      className="inline-flex items-center gap-1 text-muted-foreground hover:text-foreground transition-colors"
     >
       {children}
-      <ArrowUpDown className="h-4 w-4 text-muted-foreground" />
-    </Button>
+      <ArrowUpDown className="h-3 w-3" />
+    </button>
   );
 
   return (
@@ -86,6 +84,7 @@ export default function Books() {
           placeholder={`Search ${books.length} books`}
           value={search}
           onChange={(e) => setSearch(e.target.value)}
+          className="pl-9"
         />
         {search && (
           <button
@@ -97,46 +96,48 @@ export default function Books() {
         )}
       </div>
 
-      <Table>
-        <TableHeader>
-          <TableRow>
-            <TableHead></TableHead>
-            <TableHead>
-              <SortButton field="author">Author</SortButton>
-            </TableHead>
-            <TableHead>
-              <SortButton field="title">Title</SortButton>
-            </TableHead>
-            <TableHead>
-              <SortButton field="year">Published</SortButton>
-            </TableHead>
-            <TableHead>
-              <SortButton field="yearRead">Read</SortButton>
-            </TableHead>
-          </TableRow>
-        </TableHeader>
-        <TableBody>
-          {filteredAndSortedBooks.map((book) => (
-            <TableRow key={book.id}>
-              <TableCell>
-                {book.recommended && (
-                  <Star className="h-4 w-4 text-yellow-500 fill-yellow-500" />
-                )}
-              </TableCell>
-              <TableCell className="text-muted-foreground">
-                {book.author}
-              </TableCell>
-              <TableCell className="text-foreground">{book.title}</TableCell>
-              <TableCell className="text-muted-foreground">
-                {book.year}
-              </TableCell>
-              <TableCell className="text-muted-foreground">
-                {book.yearRead}
-              </TableCell>
+      <div className="border border-border rounded-md overflow-hidden">
+        <Table>
+          <TableHeader>
+            <TableRow>
+              <TableHead className="w-8"></TableHead>
+              <TableHead className="text-left font-normal">
+                <SortHeader field="author">Author</SortHeader>
+              </TableHead>
+              <TableHead className="text-left font-normal">
+                <SortHeader field="title">Title</SortHeader>
+              </TableHead>
+              <TableHead className="text-left font-normal">
+                <SortHeader field="year">Published</SortHeader>
+              </TableHead>
+              <TableHead className="text-left font-normal">
+                <SortHeader field="yearRead">Read</SortHeader>
+              </TableHead>
             </TableRow>
-          ))}
-        </TableBody>
-      </Table>
+          </TableHeader>
+          <TableBody>
+            {filteredAndSortedBooks.map((book) => (
+              <TableRow key={book.id}>
+                <TableCell className="w-8">
+                  {book.recommended && (
+                    <Star className="h-4 w-4 text-yellow-500 fill-yellow-500" />
+                  )}
+                </TableCell>
+                <TableCell className="text-muted-foreground">
+                  {book.author}
+                </TableCell>
+                <TableCell className="text-foreground">{book.title}</TableCell>
+                <TableCell className="text-muted-foreground">
+                  {book.year}
+                </TableCell>
+                <TableCell className="text-muted-foreground">
+                  {book.yearRead}
+                </TableCell>
+              </TableRow>
+            ))}
+          </TableBody>
+        </Table>
+      </div>
     </SplitHeroLayout>
   );
 }
