@@ -1,15 +1,15 @@
 import { Link } from "react-router-dom";
 
 const links = [
-  { title: "Tools", section: "Design & AI", to: "/designai/tools" },
-  { title: "Vibes", section: "Design & AI", to: "/designai/vibes" },
-  { title: "Sleeves", section: "Design & AI", to: "/designai/sleeves" },
-  { title: "Experience", section: "About", to: "/about/experience" },
-  { title: "Books", section: "About", to: "/about/books" },
-  { title: "Records", section: "About", to: "/about/records" },
-  { title: "Tanium", section: "Work", to: "/work/tanium" },
-  { title: "Red Hat", section: "Work", to: "/work/redhat" },
-  { title: "SAS", section: "Work", to: "/work/sas" },
+  { title: "Tools", section: "Design & AI", to: "/designai/tools", date: "2025", hoverClass: "hover:bg-[hsl(12_76%_52%)]" },
+  { title: "Vibes", section: "Design & AI", to: "/designai/vibes", date: "2025", hoverClass: "hover:bg-[hsl(160_40%_35%)]" },
+  { title: "Sleeves", section: "Design & AI", to: "/designai/sleeves", date: "2025", hoverClass: "hover:bg-[hsl(220_50%_25%)]" },
+  { title: "Experience", section: "About", to: "/about/experience", date: "2004–", hoverClass: "hover:bg-[hsl(45_80%_55%)]" },
+  { title: "Books", section: "About", to: "/about/books", date: "2023–", hoverClass: "hover:bg-[hsl(220_15%_45%)]" },
+  { title: "Records", section: "About", to: "/about/records", date: "1990–", hoverClass: "hover:bg-[hsl(280_35%_40%)]" },
+  { title: "Tanium", section: "Work", to: "/work/tanium", date: "2019–21", hoverClass: "hover:bg-[hsl(5_85%_65%)]" },
+  { title: "Red Hat", section: "Work", to: "/work/redhat", date: "2016–19", hoverClass: "hover:bg-[hsl(175_50%_40%)]" },
+  { title: "SAS", section: "Work", to: "/work/sas", date: "2011–16", hoverClass: "hover:bg-[hsl(12_76%_52%)]" },
 ];
 
 const groupedLinks = links.reduce((acc, link) => {
@@ -38,18 +38,22 @@ export default function Index() {
             <p className="font-body text-sm uppercase tracking-widest text-muted-foreground">
               {section}
             </p>
-            <ul className="space-y-1">
+            <div className="border border-border rounded-md overflow-hidden">
               {groupedLinks[section]?.map((link) => (
-                <li key={link.to}>
-                  <Link
-                    to={link.to}
-                    className="font-display text-xl md:text-2xl text-foreground hover:text-muted-foreground transition-colors"
-                  >
+                <Link
+                  key={link.to}
+                  to={link.to}
+                  className={`flex items-center justify-between py-3 px-4 border-b border-border last:border-b-0 transition-all duration-200 group ${link.hoverClass} hover:text-white`}
+                >
+                  <span className="font-display text-xl text-foreground group-hover:text-white transition-colors">
                     {link.title}
-                  </Link>
-                </li>
+                  </span>
+                  <span className="font-body text-muted-foreground group-hover:text-white/80 transition-colors">
+                    {link.date}
+                  </span>
+                </Link>
               ))}
-            </ul>
+            </div>
           </div>
         ))}
         
