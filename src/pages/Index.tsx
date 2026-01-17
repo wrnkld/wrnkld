@@ -12,7 +12,6 @@ const links = [
   { title: "SAS", section: "Work", to: "/work/sas" },
 ];
 
-// Group links by section
 const groupedLinks = links.reduce((acc, link) => {
   if (!acc[link.section]) acc[link.section] = [];
   acc[link.section].push(link);
@@ -24,12 +23,10 @@ const sectionOrder = ["Design & AI", "Work", "About"];
 export default function Index() {
   return (
     <div className="min-h-screen bg-white">
-      {/* Accent bar */}
       <div className="h-1.5 w-full card-slate" />
       
-      {/* Header Section */}
-      <header className="bg-background">
-        <div className="max-w-3xl mx-auto px-6 pt-12 pb-16 animate-fade-in">
+      <div className="bg-background py-12 md:py-16">
+        <div className="w-full max-w-3xl px-6 md:px-12">
           <h1 className="font-display text-2xl md:text-3xl font-semibold text-foreground mb-6">
             Matthew Stevens
           </h1>
@@ -37,17 +34,16 @@ export default function Index() {
             Head of Design at <a href="https://montecarlodata.com" target="_blank" rel="noopener noreferrer" className="text-foreground underline hover:text-foreground/60 transition-colors">Monte Carlo</a>. Recently built <a href="https://sleeves.app" target="_blank" rel="noopener noreferrer" className="text-foreground underline hover:text-foreground/60 transition-colors">Sleeves</a>, an app for tracking albums you love with friends. Product design leader with 20 years of experience designing elegant solutions for complex software, leading teams while working as an individual contributor. I work closely with customers and partners in product and engineering to ship clear, usable products.
           </p>
         </div>
-      </header>
+      </div>
       
-      {/* Links Section */}
-      <section className="bg-white">
-        <div className="max-w-3xl mx-auto px-6 py-12 md:py-16 animate-fade-in" style={{ animationDelay: "100ms" }}>
-          <div className="grid gap-8 md:gap-12">
+      <div className="py-12 md:py-16">
+        <div className="w-full max-w-3xl px-6 md:px-12">
+          <div className="grid gap-10 md:gap-14">
             {sectionOrder.map((section) => (
               <div key={section}>
-                <h2 className="font-body text-sm uppercase tracking-widest text-muted-foreground mb-4">
+                <p className="font-body text-sm uppercase tracking-widest text-muted-foreground mb-4">
                   {section}
-                </h2>
+                </p>
                 <ul className="space-y-2">
                   {groupedLinks[section]?.map((link) => (
                     <li key={link.to}>
@@ -64,16 +60,15 @@ export default function Index() {
             ))}
           </div>
         </div>
-      </section>
+      </div>
       
-      {/* Footer */}
-      <footer className="bg-white">
-        <div className="max-w-3xl mx-auto px-6 pb-12">
+      <div className="pb-12">
+        <div className="w-full max-w-3xl px-6 md:px-12">
           <p className="font-body text-lg text-muted-foreground">
             Say hello → <a href="mailto:hello@wrnkld.tv" className="underline hover:text-foreground transition-colors">hello@wrnkld.tv</a>
           </p>
         </div>
-      </footer>
+      </div>
     </div>
   );
 }
