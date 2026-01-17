@@ -43,7 +43,7 @@ export default function Index() {
                 <Link
                   key={link.to}
                   to={link.to}
-                  className={`flex items-center justify-between py-3 px-4 border-b border-border last:border-b-0 transition-all duration-300 ease-out group ${link.hoverClass} hover:translate-x-1 hover:shadow-lg`}
+                  className={`flex items-center justify-between py-3 px-4 border-b border-border last:border-b-0 transition-colors duration-300 group ${link.hoverClass}`}
                 >
                   <span className={`font-display text-xl text-foreground transition-colors duration-300 ${link.darkText ? 'group-hover:text-foreground' : 'group-hover:text-white'}`}>
                     {link.title}
