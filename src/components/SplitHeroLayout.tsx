@@ -12,12 +12,10 @@ interface SplitHeroLayoutProps {
 export function SplitHeroLayout({ title, subtitle, children, colorClass }: SplitHeroLayoutProps) {
   return (
     <div className="min-h-screen bg-white">
-      {/* Accent bar */}
       <div className={`h-1.5 w-full ${colorClass}`} />
       
-      {/* Hero */}
-      <div className="bg-background">
-        <div className="max-w-3xl mx-auto px-6 pt-12 pb-20">
+      <div className="bg-background py-12 md:py-16">
+        <div className="w-full max-w-3xl px-6 md:px-12">
           {subtitle && (
             <Link 
               to="/"
@@ -33,9 +31,10 @@ export function SplitHeroLayout({ title, subtitle, children, colorClass }: Split
         </div>
       </div>
       
-      {/* Content */}
-      <div className="max-w-3xl mx-auto px-6 py-16">
-        {children}
+      <div className="py-12 md:py-16">
+        <div className="w-full max-w-3xl px-6 md:px-12">
+          {children}
+        </div>
       </div>
     </div>
   );
