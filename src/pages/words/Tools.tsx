@@ -1,4 +1,4 @@
-import { SplitHeroLayout } from "@/components/SplitHeroLayout";
+import { DetailLayout } from "@/components/DetailLayout";
 
 function FootnoteRef({ number }: { number: number }) {
   return <sup className="text-muted-foreground">{number}</sup>;
@@ -6,7 +6,7 @@ function FootnoteRef({ number }: { number: number }) {
 
 export default function Tools() {
   return (
-    <SplitHeroLayout title="Pt 1 → Tools" subtitle="Design & AI" colorClass="card-terracotta">
+    <DetailLayout title="Pt 1 → Tools" subtitle="Design & AI" colorClass="card-terracotta">
       <article className="font-body text-lg text-muted-foreground leading-relaxed space-y-6">
         <p>
           Every time I log into LinkedIn, a product designer is sharing how they took 
@@ -84,6 +84,6 @@ export default function Tools() {
           <p><sup>4</sup> Maybe slightly less</p>
         </div>
       </article>
-    </SplitHeroLayout>
+    </DetailLayout>
   );
 }

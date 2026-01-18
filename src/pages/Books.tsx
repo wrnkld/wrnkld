@@ -1,5 +1,5 @@
 import { useState, useMemo } from "react";
-import { SplitHeroLayout } from "@/components/SplitHeroLayout";
+import { DetailLayout } from "@/components/DetailLayout";
 import { books } from "@/data/books";
 import { Input } from "@/components/ui/input";
 import {
@@ -73,7 +73,7 @@ export default function Books() {
   );
 
   return (
-    <SplitHeroLayout title="Books" subtitle="About" colorClass="card-slate">
+    <DetailLayout title="Books" subtitle="About" colorClass="card-slate">
       <p className="font-body text-lg text-muted-foreground">
         I recently started tracking the books I read.
       </p>
@@ -138,6 +138,6 @@ export default function Books() {
           </TableBody>
         </Table>
       </div>
-    </SplitHeroLayout>
+    </DetailLayout>
   );
 }

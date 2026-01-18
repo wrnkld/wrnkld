@@ -1,5 +1,5 @@
 import { useState, useMemo } from "react";
-import { SplitHeroLayout } from "@/components/SplitHeroLayout";
+import { DetailLayout } from "@/components/DetailLayout";
 import { records } from "@/data/records";
 import { Input } from "@/components/ui/input";
 import {
@@ -72,7 +72,7 @@ export default function Records() {
   );
 
   return (
-    <SplitHeroLayout title="Records" subtitle="About" colorClass="card-plum">
+    <DetailLayout title="Records" subtitle="About" colorClass="card-plum">
       <p className="font-body text-lg text-muted-foreground">
         A relatively exhaustive list of records I like. Updated often.
       </p>
@@ -121,6 +121,6 @@ export default function Records() {
           </TableBody>
         </Table>
       </div>
-    </SplitHeroLayout>
+    </DetailLayout>
   );
 }

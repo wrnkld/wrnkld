@@ -2,7 +2,7 @@ import { ReactNode, Children, isValidElement } from "react";
 import { Link } from "react-router-dom";
 import { ArrowLeft } from "lucide-react";
 
-interface SplitHeroLayoutProps {
+interface DetailLayoutProps {
   title: string;
   subtitle?: string;
   children: ReactNode;
@@ -22,7 +22,7 @@ function isMediaElement(child: React.ReactElement<{ className?: string }>): bool
   return false;
 }
 
-export function SplitHeroLayout({ title, subtitle, children, colorClass }: SplitHeroLayoutProps) {
+export function DetailLayout({ title, subtitle, children, colorClass }: DetailLayoutProps) {
   // Process children to wrap them appropriately
   const processedChildren = Children.map(children, (child) => {
     if (!isValidElement(child)) return child;
@@ -30,7 +30,7 @@ export function SplitHeroLayout({ title, subtitle, children, colorClass }: Split
     if (isMediaElement(child)) {
       // Media elements get the wider "bust out" container
       return (
-        <div className="max-w-4xl mx-auto px-6">
+        <div className="max-w-5xl mx-auto px-6">
           {child}
         </div>
       );

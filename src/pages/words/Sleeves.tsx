@@ -1,4 +1,4 @@
-import { SplitHeroLayout } from "@/components/SplitHeroLayout";
+import { DetailLayout } from "@/components/DetailLayout";
 import { Link } from "react-router-dom";
 
 function FootnoteRef({ number }: { number: number }) {
@@ -7,7 +7,7 @@ function FootnoteRef({ number }: { number: number }) {
 
 export default function Sleeves() {
   return (
-    <SplitHeroLayout title="Pt 3 → Sleeves" subtitle="Design & AI" colorClass="card-navy">
+    <DetailLayout title="Pt 3 → Sleeves" subtitle="Design & AI" colorClass="card-navy">
       <article className="font-body text-lg text-muted-foreground leading-relaxed space-y-6">
         <p>
           You can't really quibble with <Link to="/designai/tools" className="text-foreground underline underline-offset-4 hover:opacity-70 transition-opacity">Part 1</Link> — it's basically my life story. You could 
@@ -95,6 +95,6 @@ export default function Sleeves() {
           <p><sup>4</sup> <a href="https://www.youtube.com/watch?v=RFZZEpNKjg0" target="_blank" rel="noopener noreferrer" className="underline underline-offset-2 hover:opacity-70 transition-opacity">youtube.com/watch?v=RFZZEpNKjg0</a></p>
         </div>
       </article>
-    </SplitHeroLayout>
+    </DetailLayout>
   );
 }
