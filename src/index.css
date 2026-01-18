@@ -88,16 +88,16 @@
     
     --radius: 0.75rem;
     
-    /* Custom card colors */
-    --card-terracotta: 12 76% 52%;
-    --card-forest: 160 40% 35%;
-    --card-navy: 220 50% 25%;
-    --card-mustard: 45 80% 55%;
-    --card-coral: 5 85% 65%;
-    --card-slate: 220 15% 45%;
-    --card-plum: 280 35% 40%;
-    --card-teal: 175 50% 40%;
-    --card-indigo: 230 45% 45%;
+    /* Custom card colors - mapped to Tailwind palette */
+    --card-terracotta: 25 95% 53%;    /* orange-500 */
+    --card-forest: 160 84% 39%;        /* emerald-600 */
+    --card-navy: 224 55% 25%;          /* indigo-900 */
+    --card-mustard: 38 92% 50%;        /* amber-500 */
+    --card-coral: 351 95% 71%;         /* rose-400 */
+    --card-slate: 215 16% 47%;         /* slate-500 */
+    --card-plum: 271 91% 65%;          /* purple-600 */
+    --card-teal: 166 64% 47%;          /* teal-500 */
+    --card-indigo: 221 83% 53%;        /* blue-600 */
     
     /* Typography */
     --font-display: 'Tiempos', Georgia, serif;
