@@ -1,4 +1,4 @@
-import { SplitHeroLayout } from "@/components/SplitHeroLayout";
+import { DetailLayout } from "@/components/DetailLayout";
 import { Link } from "react-router-dom";
 
 function FootnoteRef({ number }: { number: number }) {
@@ -7,7 +7,7 @@ function FootnoteRef({ number }: { number: number }) {
 
 export default function Vibes() {
   return (
-    <SplitHeroLayout title="Pt 2 → Vibes" subtitle="Design & AI" colorClass="card-forest">
+    <DetailLayout title="Pt 2 → Vibes" subtitle="Design & AI" colorClass="card-forest">
       <article className="font-body text-lg text-muted-foreground leading-relaxed space-y-6">
         <p>
           <Link to="/designai/tools" className="text-foreground underline underline-offset-4 hover:opacity-70 transition-opacity">Part 1</Link> was probably too much information about my history with design 
@@ -68,6 +68,6 @@ export default function Vibes() {
           <p><sup>3</sup> Who am I to judge?</p>
         </div>
       </article>
-    </SplitHeroLayout>
+    </DetailLayout>
   );
 }

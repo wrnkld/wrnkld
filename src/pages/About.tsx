@@ -1,4 +1,4 @@
-import { SplitHeroLayout } from "@/components/SplitHeroLayout";
+import { DetailLayout } from "@/components/DetailLayout";
 
 const experience = [
   { company: "Monte Carlo", role: "Head of Design", location: "San Francisco, CA", years: "2022 – present" },
@@ -13,7 +13,7 @@ const experience = [
 
 export default function About() {
   return (
-    <SplitHeroLayout title="Experience" subtitle="About" colorClass="card-mustard">
+    <DetailLayout title="Experience" subtitle="About" colorClass="card-mustard">
       <div className="border border-border rounded-md overflow-hidden">
         {experience.map((job, index) => (
           <div 
@@ -31,6 +31,6 @@ export default function About() {
           </div>
         ))}
       </div>
-    </SplitHeroLayout>
+    </DetailLayout>
   );
 }

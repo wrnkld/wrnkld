@@ -1,4 +1,4 @@
-import { SplitHeroLayout } from "@/components/SplitHeroLayout";
+import { DetailLayout } from "@/components/DetailLayout";
 
 import analyticsAnalyze from "@/assets/sas/analytics-analyze.png";
 import analyticsExplore from "@/assets/sas/analytics-explore.png";
@@ -16,7 +16,7 @@ import visualStatsShare from "@/assets/sas/visual-stats-share.png";
 
 export default function SAS() {
   return (
-    <SplitHeroLayout title="SAS" subtitle="Work" colorClass="card-indigo">
+    <DetailLayout title="SAS" subtitle="Work" colorClass="card-indigo">
       <p className="font-body text-lg text-muted-foreground leading-relaxed">
         SAS is an enterprise analytics company focused on large-scale statistical 
         modeling, data science, and decisioning across regulated industries.
@@ -73,6 +73,6 @@ export default function SAS() {
         <img src={visualStatsProperties} alt="SAS Visual Stats Properties" className="w-full h-auto" />
         <img src={visualStatsShare} alt="SAS Visual Stats Share" className="w-full h-auto" />
       </div>
-    </SplitHeroLayout>
+    </DetailLayout>
   );
 }
