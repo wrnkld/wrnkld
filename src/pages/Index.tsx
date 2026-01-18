@@ -4,7 +4,7 @@ const links = [
   { title: "Pt 1 → Tools", section: "Design & AI", to: "/designai/tools", date: "2025", hoverClass: "hover:bg-[hsl(12_76%_52%)]" },
   { title: "Pt 2 → Vibes", section: "Design & AI", to: "/designai/vibes", date: "2025", hoverClass: "hover:bg-[hsl(160_40%_35%)]" },
   { title: "Pt 3 → Sleeves", section: "Design & AI", to: "/designai/sleeves", date: "2025", hoverClass: "hover:bg-[hsl(220_50%_25%)]" },
-  { title: "Experience", section: "About", to: "/about/experience", date: "2026", hoverClass: "hover:bg-[hsl(45_80%_55%)]", darkText: true },
+  { title: "Experience", section: "About", to: "/about/experience", date: "2026", hoverClass: "hover:bg-[hsl(32_65%_55%)]", darkText: true },
   { title: "Books", section: "About", to: "/about/books", date: "2026", hoverClass: "hover:bg-[hsl(220_15%_45%)]" },
   { title: "Records", section: "About", to: "/about/records", date: "2026", hoverClass: "hover:bg-[hsl(280_35%_40%)]" },
   { title: "Tanium", section: "Work", to: "/work/tanium", date: "2019–21", hoverClass: "hover:bg-[hsl(5_85%_65%)]" },
