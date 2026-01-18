@@ -18,7 +18,7 @@ export default function About() {
         {experience.map((job, index) => (
           <div 
             key={index}
-            className="flex flex-col md:flex-row md:items-center justify-between py-4 px-4 border-b border-border last:border-b-0 hover:bg-muted/50 transition-colors"
+            className="flex flex-col md:flex-row md:items-center justify-between py-4 px-4 border-b border-border last:border-b-0 hover:bg-muted/50 transition-colors duration-200"
           >
             <div>
               <h3 className="font-display text-xl font-semibold text-foreground">{job.company}</h3>
