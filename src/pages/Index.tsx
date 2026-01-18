@@ -35,7 +35,7 @@ export default function Index() {
             Product design leader with 20 years of experience designing elegant solutions for complex software, leading teams while working as an individual contributor. I work closely with customers and partners in product and engineering to ship clear, usable products.
           </p>
           <p className="font-body text-lg text-muted-foreground">
-            Say hello → <a href="mailto:hello@wrnkld.tv" className="underline hover:text-foreground transition-colors duration-200">hello@wrnkld.tv</a>
+            Say hello → <a href="mailto:hello@wrnkld.tv" className="text-foreground underline hover:text-foreground/60 transition-colors duration-200">hello@wrnkld.tv</a>
           </p>
         </div>
         
