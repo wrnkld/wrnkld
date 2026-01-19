@@ -20,17 +20,17 @@ export default function Tanium() {
         Tanium is a large-scale endpoint security platform used by some of the world's biggest organizations to manage, secure, and respond across millions of devices in real time. I worked on the product during a period of rapid growth and sustained pressure.
       </p>
 
-      <h2 className="font-display text-xl font-semibold text-foreground">Challenge</h2>
+      <h2 className="font-display text-xl font-medium text-foreground">Challenge</h2>
       <p className="font-body text-lg text-muted-foreground leading-relaxed">
         Support as many products as humanly possible, move fast, and keep shipping through peak COVID years—when timelines were tight, stakes were high, and work was a reliable distraction.
       </p>
 
-      <h2 className="font-display text-xl font-semibold text-foreground">Reinvent</h2>
+      <h2 className="font-display text-xl font-medium text-foreground">Reinvent</h2>
       <p className="font-body text-lg text-muted-foreground leading-relaxed">
         Redesigned three flagship products—Discover, Asset, and Threat Response—simplifying dense interfaces, tightening information architecture, and speeding up core security workflows.
       </p>
 
-      <h2 className="font-display text-xl font-semibold text-foreground">Ship</h2>
+      <h2 className="font-display text-xl font-medium text-foreground">Ship</h2>
       <p className="font-body text-lg text-muted-foreground leading-relaxed">
         Built and shipped two entirely new products from scratch: Assurance, focused on MITRE ATT&CK visibility, and Enforce, designed for policy enforcement at enterprise scale.
       </p>

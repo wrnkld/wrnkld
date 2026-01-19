@@ -25,7 +25,7 @@ export default function Index() {
     <div className="min-h-screen bg-background">
       <div className="max-w-3xl mx-auto px-6 py-12 md:py-16 space-y-10">
         <div className="space-y-4">
-          <h1 className="font-display text-2xl md:text-3xl font-semibold text-foreground">
+          <h1 className="font-display text-2xl md:text-3xl font-medium text-foreground">
             Matthew Stevens
           </h1>
           <p className="font-body text-lg text-muted-foreground leading-relaxed">
@@ -51,7 +51,7 @@ export default function Index() {
                   to={link.to}
                   className={`flex items-center justify-between py-3 px-4 border-b border-border last:border-b-0 transition-colors duration-200 group ${link.hoverClass}`}
                 >
-                  <span className={`font-display text-xl font-semibold text-foreground transition-colors duration-200 ${link.darkText ? 'group-hover:text-foreground' : 'group-hover:text-white'}`}>
+                  <span className={`font-display text-xl font-medium text-foreground transition-colors duration-200 ${link.darkText ? 'group-hover:text-foreground' : 'group-hover:text-white'}`}>
                     {link.title}
                   </span>
                   <span className={`font-body text-muted-foreground transition-colors duration-200 ${link.darkText ? 'group-hover:text-foreground/70' : 'group-hover:text-white/80'}`}>

@@ -36,7 +36,7 @@ export function WorkLayout({ title, subtitle, children, accentColor }: WorkLayou
             </Link>
           )}
           <h1 
-            className="font-display text-2xl md:text-3xl font-semibold text-foreground"
+            className="font-display text-2xl md:text-3xl font-medium text-foreground"
             style={accentColor ? { color: accentColor } : {}}
           >
             {title}

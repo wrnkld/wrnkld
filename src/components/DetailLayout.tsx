@@ -66,7 +66,7 @@ export function DetailLayout({ title, subtitle, children, colorClass }: DetailLa
               </span>
             </Link>
           )}
-          <h1 className="font-display text-4xl md:text-5xl font-semibold text-foreground mt-4">
+          <h1 className="font-display text-4xl md:text-5xl font-medium text-foreground mt-4">
             {title}
           </h1>
         </div>

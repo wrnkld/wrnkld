@@ -29,13 +29,13 @@ export default function RedHat() {
         IBM acquisition.
       </p>
 
-      <h2 className="font-display text-xl font-semibold text-foreground">Role</h2>
+      <h2 className="font-display text-xl font-medium text-foreground">Role</h2>
       <p className="font-body text-lg text-muted-foreground leading-relaxed">
         Led a cross-disciplinary team of interaction designers, front-end 
         engineers, and brand designers to modernize the middleware portfolio.
       </p>
 
-      <h2 className="font-display text-xl font-semibold text-foreground">Approach</h2>
+      <h2 className="font-display text-xl font-medium text-foreground">Approach</h2>
       <p className="font-body text-lg text-muted-foreground leading-relaxed">
         Designed in the open using PatternFly, working closely with the 
         open-source and developer communities for feedback and iteration.
@@ -64,7 +64,7 @@ export default function RedHat() {
         <img src={rhbaSpace} alt="Red Hat Business Automation Space" className="w-full h-auto" />
       </div>
 
-      <h2 className="font-display text-xl font-semibold text-foreground">Extend</h2>
+      <h2 className="font-display text-xl font-medium text-foreground">Extend</h2>
       <p className="font-body text-lg text-muted-foreground leading-relaxed">
         Created shared design patterns across Business Automation and Business 
         Optimization to improve consistency across the portfolio.
