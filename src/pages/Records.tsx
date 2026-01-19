@@ -112,21 +112,12 @@ export default function Records() {
             </TableRow>
           </TableHeader>
           <TableBody>
-            <AnimatePresence mode="popLayout">
-              {filteredAndSortedRecords.map((record, index) => (
+            <AnimatePresence>
+              {filteredAndSortedRecords.map((record) => (
                 <motion.tr
                   key={record.id}
                   layout
-                  initial={{ rotateX: -90, opacity: 0 }}
-                  animate={{ rotateX: 0, opacity: 1 }}
-                  exit={{ rotateX: 90, opacity: 0 }}
-                  transition={{ 
-                    type: "spring",
-                    stiffness: 500,
-                    damping: 30,
-                    delay: index * 0.02
-                  }}
-                  style={{ transformOrigin: "top center", transformStyle: "preserve-3d" }}
+                  transition={{ duration: 0.15 }}
                   className="border-b transition-colors hover:bg-muted/50 data-[state=selected]:bg-muted"
                 >
                   <TableCell className="text-muted-foreground">{record.artist}</TableCell>
