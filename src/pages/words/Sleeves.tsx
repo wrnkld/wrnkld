@@ -10,8 +10,8 @@ export default function Sleeves() {
     <DetailLayout title="Pt 3 → Sleeves" subtitle="Design & AI" colorClass="card-navy">
       <article className="font-body text-base text-muted-foreground leading-relaxed space-y-6">
         <p>
-          You can't really quibble with <Link to="/designai/tools" className="text-foreground hover:text-foreground/60 transition-colors">Part 1</Link> — it's basically my life story. You could 
-          nitpick <Link to="/designai/vibes" className="text-foreground hover:text-foreground/60 transition-colors">Part 2</Link>, especially when I admit I haven't explored Figma Make. But Part 3 
+          You can't really quibble with <Link to="/designai/tools" className="text-foreground hover:text-muted-foreground transition-colors">Pt 1</Link> — it's basically my life story. You could 
+          nitpick <Link to="/designai/vibes" className="text-foreground hover:text-muted-foreground transition-colors">Pt 2</Link>, especially when I admit I haven't explored Figma Make. But Pt 3 
           is different. It's where I'm deliberately pushing into new territory.
         </p>
         
@@ -27,7 +27,7 @@ export default function Sleeves() {
         
         <h2 className="font-display text-lg font-medium text-foreground">Lovable</h2>
         <p>
-          As I mentioned in Part 2, I tried almost every AI app builder and ended up with Lovable. 
+          As I mentioned in <Link to="/designai/vibes" className="text-foreground hover:text-muted-foreground transition-colors">Pt 2</Link>, I tried almost every AI app builder and ended up with Lovable. 
           It's hard to overstate how much better it is than it was a few months ago. I burned through 
           credits and spent about $200 total, but with loose wireframes, decent prompts, and a lot of 
           help from ChatGPT, I had something working in a couple of weeks.
