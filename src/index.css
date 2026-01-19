@@ -193,7 +193,7 @@
 
 @layer utilities {
   .prose {
-    @apply font-body text-lg text-muted-foreground leading-relaxed;
+    @apply font-body text-base text-muted-foreground leading-relaxed;
   }
   
   .scrollbar-hide {

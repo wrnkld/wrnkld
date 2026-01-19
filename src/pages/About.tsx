@@ -21,12 +21,12 @@ export default function About() {
             className="flex flex-col md:flex-row md:items-center justify-between py-4 px-4 border-b border-border last:border-b-0 hover:bg-white transition-colors duration-200"
           >
             <div>
-              <h3 className="font-display text-xl font-medium text-foreground">{job.company}</h3>
-              <p className="font-body text-muted-foreground">{job.role}</p>
+              <h3 className="font-display text-base font-medium text-foreground">{job.company}</h3>
+              <p className="font-body text-sm text-muted-foreground">{job.role}</p>
             </div>
             <div className="md:text-right">
-              <p className="font-body text-muted-foreground">{job.location}</p>
-              <p className="font-body text-muted-foreground">{job.years}</p>
+              <p className="font-body text-sm text-muted-foreground">{job.location}</p>
+              <p className="font-body text-sm text-muted-foreground">{job.years}</p>
             </div>
           </div>
         ))}

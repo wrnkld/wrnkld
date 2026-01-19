@@ -47,15 +47,15 @@ export function DetailLayout({ title, subtitle, children, colorClass }: DetailLa
   return (
     <div className="min-h-screen bg-background">
       {colorClass && <div className={`h-1.5 w-full ${colorClass}`} />}
-      <div className="py-12 md:py-16 space-y-6">
+      <div className="py-16 md:py-24 space-y-8">
         {/* Header stays narrow */}
         <div className="max-w-3xl mx-auto px-6">
           {subtitle && (
             <Link 
               to="/"
-              className="inline-flex items-center gap-2 text-sm font-body uppercase tracking-widest text-muted-foreground hover:text-foreground transition-colors group"
+              className="inline-flex items-center gap-2 text-xs font-body uppercase tracking-widest text-muted-foreground hover:text-foreground transition-colors group"
             >
-              <ArrowLeft className="w-4 h-4" />
+              <ArrowLeft className="w-3 h-3" />
               <span className="relative overflow-hidden">
                 <span className="inline-block transition-transform duration-300 group-hover:-translate-y-full">
                   {subtitle}
@@ -66,13 +66,13 @@ export function DetailLayout({ title, subtitle, children, colorClass }: DetailLa
               </span>
             </Link>
           )}
-          <h1 className="font-display text-4xl md:text-5xl font-medium text-foreground mt-4">
+          <h1 className="font-display text-2xl md:text-3xl font-medium text-foreground mt-4">
             {title}
           </h1>
         </div>
         
         {/* Content with mixed widths */}
-        <div className="space-y-6">
+        <div className="space-y-8">
           {processedChildren}
         </div>
       </div>
