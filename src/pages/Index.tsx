@@ -1,15 +1,15 @@
 import { Link } from "react-router-dom";
 
 const links = [
-  { title: "Pt 1 → Tools", section: "Design & AI", to: "/designai/tools", date: "2025", accentText: "hover:text-orange-500" },
-  { title: "Pt 2 → Vibes", section: "Design & AI", to: "/designai/vibes", date: "2025", accentText: "hover:text-emerald-600" },
-  { title: "Pt 3 → Sleeves", section: "Design & AI", to: "/designai/sleeves", date: "2025", accentText: "hover:text-indigo-700" },
-  { title: "Experience", section: "About", to: "/about/experience", date: "2026", accentText: "hover:text-amber-500" },
-  { title: "Books", section: "About", to: "/about/books", date: "2026", accentText: "hover:text-slate-500" },
-  { title: "Records", section: "About", to: "/about/records", date: "2026", accentText: "hover:text-purple-600" },
-  { title: "Tanium", section: "Work", to: "/work/tanium", date: "2019–21", accentText: "hover:text-rose-500" },
-  { title: "Red Hat", section: "Work", to: "/work/redhat", date: "2016–19", accentText: "hover:text-teal-500" },
-  { title: "SAS", section: "Work", to: "/work/sas", date: "2011–16", accentText: "hover:text-blue-600" },
+  { title: "Pt 1 → Tools", section: "Design & AI", to: "/designai/tools", date: "2025", accentText: "group-hover:text-orange-500" },
+  { title: "Pt 2 → Vibes", section: "Design & AI", to: "/designai/vibes", date: "2025", accentText: "group-hover:text-emerald-600" },
+  { title: "Pt 3 → Sleeves", section: "Design & AI", to: "/designai/sleeves", date: "2025", accentText: "group-hover:text-indigo-700" },
+  { title: "Experience", section: "About", to: "/about/experience", date: "2026", accentText: "group-hover:text-amber-500" },
+  { title: "Books", section: "About", to: "/about/books", date: "2026", accentText: "group-hover:text-slate-500" },
+  { title: "Records", section: "About", to: "/about/records", date: "2026", accentText: "group-hover:text-purple-600" },
+  { title: "Tanium", section: "Work", to: "/work/tanium", date: "2019–21", accentText: "group-hover:text-rose-500" },
+  { title: "Red Hat", section: "Work", to: "/work/redhat", date: "2016–19", accentText: "group-hover:text-teal-500" },
+  { title: "SAS", section: "Work", to: "/work/sas", date: "2011–16", accentText: "group-hover:text-blue-600" },
 ];
 
 const groupedLinks = links.reduce((acc, link) => {
