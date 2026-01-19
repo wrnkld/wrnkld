@@ -100,7 +100,7 @@ export default function Books() {
         <Table>
           <TableHeader>
             <TableRow>
-              <TableHead className="w-8"></TableHead>
+              <TableHead className="w-6 pr-0"></TableHead>
               <TableHead>
                 <SortHeader field="author">Author</SortHeader>
               </TableHead>
@@ -110,15 +110,12 @@ export default function Books() {
               <TableHead>
                 <SortHeader field="year">Published</SortHeader>
               </TableHead>
-              <TableHead>
-                <SortHeader field="yearRead">Read</SortHeader>
-              </TableHead>
             </TableRow>
           </TableHeader>
           <TableBody>
             {filteredAndSortedBooks.map((book) => (
               <TableRow key={book.id}>
-                <TableCell className="w-8">
+                <TableCell className="w-6 pr-0">
                   {book.recommended && (
                     <Star className="h-4 w-4 text-yellow-500 fill-yellow-500" />
                   )}
@@ -129,9 +126,6 @@ export default function Books() {
                 <TableCell className="text-foreground">{book.title}</TableCell>
                 <TableCell className="text-muted-foreground">
                   {book.year}
-                </TableCell>
-                <TableCell className="text-muted-foreground">
-                  {book.yearRead}
                 </TableCell>
               </TableRow>
             ))}
