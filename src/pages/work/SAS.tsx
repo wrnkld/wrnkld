@@ -36,7 +36,7 @@ export default function SAS() {
         remains central to SAS's ecosystem today.
       </p>
 
-      <video src={sasDiagram} poster={analyticsAnalyze} autoPlay loop muted playsInline className="w-full h-auto border border-border/40 rounded-sm" />
+      <video src={sasDiagram} poster={analyticsAnalyze} autoPlay loop muted playsInline className="w-full h-auto border border-border/40" />
 
       <div className="grid grid-cols-4">
         <img src={analyticsPrepare} alt="SAS Analytics Prepare" className="w-full h-auto border border-border/40" />
@@ -52,7 +52,7 @@ export default function SAS() {
         performer using metrics like lift and cumulative lift.
       </p>
 
-      <img src={factoryResults} alt="SAS Factory Results" className="w-full h-auto border border-border/40 rounded-sm" />
+      <img src={factoryResults} alt="SAS Factory Results" className="w-full h-auto border border-border/40" />
 
       <div className="grid grid-cols-4">
         <img src={factoryData} alt="SAS Factory Data" className="w-full h-auto border border-border/40" />
@@ -67,7 +67,7 @@ export default function SAS() {
         making advanced analytics more accessible without flattening complexity.
       </p>
 
-      <img src={visualStatsRoles} alt="SAS Visual Stats Roles" className="w-full h-auto border border-border/40 rounded-sm" />
+      <img src={visualStatsRoles} alt="SAS Visual Stats Roles" className="w-full h-auto border border-border/40" />
 
       <div className="grid grid-cols-2">
         <img src={visualStatsProperties} alt="SAS Visual Stats Properties" className="w-full h-auto border border-border/40" />
