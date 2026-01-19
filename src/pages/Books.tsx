@@ -11,6 +11,7 @@ import {
   TableRow,
 } from "@/components/ui/table";
 import { ArrowUpDown, Search, X } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
 
 type SortField = "title" | "author" | "year" | "yearRead";
 type SortDirection = "asc" | "desc";
@@ -112,17 +113,27 @@ export default function Books() {
             </TableRow>
           </TableHeader>
           <TableBody>
-            {filteredAndSortedBooks.map((book) => (
-              <TableRow key={book.id} className={book.recommended ? "bg-yellow-100 dark:bg-yellow-900/30" : ""}>
-                <TableCell className="text-muted-foreground">
-                  {book.author}
-                </TableCell>
-                <TableCell className="text-foreground">{book.title}</TableCell>
-                <TableCell className="text-muted-foreground">
-                  {book.year}
-                </TableCell>
-              </TableRow>
-            ))}
+            <AnimatePresence>
+              {filteredAndSortedBooks.map((book) => (
+                <motion.tr
+                  key={book.id}
+                  layout
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  transition={{ duration: 0.2 }}
+                  className={`border-b transition-colors hover:bg-muted/50 data-[state=selected]:bg-muted ${book.recommended ? "bg-yellow-100 dark:bg-yellow-900/30" : ""}`}
+                >
+                  <TableCell className="text-muted-foreground">
+                    {book.author}
+                  </TableCell>
+                  <TableCell className="text-foreground">{book.title}</TableCell>
+                  <TableCell className="text-muted-foreground">
+                    {book.year}
+                  </TableCell>
+                </motion.tr>
+              ))}
+            </AnimatePresence>
           </TableBody>
         </Table>
       </div>
