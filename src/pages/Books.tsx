@@ -113,15 +113,21 @@ export default function Books() {
             </TableRow>
           </TableHeader>
           <TableBody>
-            <AnimatePresence>
-              {filteredAndSortedBooks.map((book) => (
+            <AnimatePresence mode="popLayout">
+              {filteredAndSortedBooks.map((book, index) => (
                 <motion.tr
                   key={book.id}
                   layout
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  exit={{ opacity: 0 }}
-                  transition={{ duration: 0.2 }}
+                  initial={{ rotateX: -90, opacity: 0 }}
+                  animate={{ rotateX: 0, opacity: 1 }}
+                  exit={{ rotateX: 90, opacity: 0 }}
+                  transition={{ 
+                    type: "spring",
+                    stiffness: 500,
+                    damping: 30,
+                    delay: index * 0.02
+                  }}
+                  style={{ transformOrigin: "top center", transformStyle: "preserve-3d" }}
                   className={`border-b transition-colors hover:bg-muted/50 data-[state=selected]:bg-muted ${book.recommended ? "bg-yellow-100 dark:bg-yellow-900/30" : ""}`}
                 >
                   <TableCell className="text-muted-foreground">
