@@ -44,12 +44,12 @@ export default function Index() {
             <p className="font-body text-sm uppercase tracking-widest text-muted-foreground">
               {section}
             </p>
-            <div className="space-y-1">
+            <div className="border border-border rounded-md overflow-hidden">
               {groupedLinks[section]?.map((link) => (
                 <Link
                   key={link.to}
                   to={link.to}
-                  className={`flex items-center justify-between py-3 px-4 border border-transparent -mb-px last:mb-0 rounded-md transition-all duration-200 hover:bg-white ${link.accentBorder}`}
+                  className={`flex items-center justify-between py-3 px-4 border-b border-border last:border-b-0 transition-all duration-200 hover:bg-white ${link.accentBorder}`}
                 >
                   <span className="font-display text-xl font-medium text-foreground">
                     {link.title}
