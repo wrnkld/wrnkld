@@ -10,7 +10,7 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
-import { ArrowUpDown, Search, Star, X } from "lucide-react";
+import { ArrowUpDown, Search, X } from "lucide-react";
 
 type SortField = "title" | "author" | "year" | "yearRead";
 type SortDirection = "asc" | "desc";
@@ -100,7 +100,6 @@ export default function Books() {
         <Table>
           <TableHeader>
             <TableRow>
-              <TableHead className="w-6 pr-0"></TableHead>
               <TableHead>
                 <SortHeader field="author">Author</SortHeader>
               </TableHead>
@@ -108,18 +107,13 @@ export default function Books() {
                 <SortHeader field="title">Title</SortHeader>
               </TableHead>
               <TableHead>
-                <SortHeader field="year">Published</SortHeader>
+                <SortHeader field="year">Year</SortHeader>
               </TableHead>
             </TableRow>
           </TableHeader>
           <TableBody>
             {filteredAndSortedBooks.map((book) => (
-              <TableRow key={book.id}>
-                <TableCell className="w-6 pr-0">
-                  {book.recommended && (
-                    <Star className="h-4 w-4 text-yellow-500 fill-yellow-500" />
-                  )}
-                </TableCell>
+              <TableRow key={book.id} className={book.recommended ? "bg-yellow-100 dark:bg-yellow-900/30" : ""}>
                 <TableCell className="text-muted-foreground">
                   {book.author}
                 </TableCell>
