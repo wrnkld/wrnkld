@@ -99,13 +99,13 @@ export default function Records() {
         <Table>
           <TableHeader>
             <TableRow>
-              <TableHead className="text-left font-normal">
+              <TableHead>
                 <SortHeader field="artist">Artist</SortHeader>
               </TableHead>
-              <TableHead className="text-left font-normal">
+              <TableHead>
                 <SortHeader field="album">Album</SortHeader>
               </TableHead>
-              <TableHead className="text-left font-normal">
+              <TableHead>
                 <SortHeader field="year">Year</SortHeader>
               </TableHead>
             </TableRow>
