@@ -36,13 +36,13 @@ export default function SAS() {
         remains central to SAS's ecosystem today.
       </p>
 
-      <video src={sasDiagram} poster={analyticsAnalyze} autoPlay loop muted playsInline className="w-full h-auto" />
+      <video src={sasDiagram} poster={analyticsAnalyze} autoPlay loop muted playsInline className="w-full h-auto border border-border/40 rounded-sm" />
 
       <div className="grid grid-cols-4">
-        <img src={analyticsPrepare} alt="SAS Analytics Prepare" className="w-full h-auto" />
-        <img src={analyticsExplore} alt="SAS Analytics Explore" className="w-full h-auto" />
-        <img src={analyticsAnalyze} alt="SAS Analytics Analyze" className="w-full h-auto" />
-        <img src={analyticsReport} alt="SAS Analytics Report" className="w-full h-auto" />
+        <img src={analyticsPrepare} alt="SAS Analytics Prepare" className="w-full h-auto border border-border/40" />
+        <img src={analyticsExplore} alt="SAS Analytics Explore" className="w-full h-auto border border-border/40" />
+        <img src={analyticsAnalyze} alt="SAS Analytics Analyze" className="w-full h-auto border border-border/40" />
+        <img src={analyticsReport} alt="SAS Analytics Report" className="w-full h-auto border border-border/40" />
       </div>
 
       <h2 className="font-display text-lg font-medium text-foreground">Factory Miner</h2>
@@ -52,13 +52,13 @@ export default function SAS() {
         performer using metrics like lift and cumulative lift.
       </p>
 
-      <img src={factoryResults} alt="SAS Factory Results" className="w-full h-auto" />
+      <img src={factoryResults} alt="SAS Factory Results" className="w-full h-auto border border-border/40 rounded-sm" />
 
       <div className="grid grid-cols-4">
-        <img src={factoryData} alt="SAS Factory Data" className="w-full h-auto" />
-        <img src={factoryProfile} alt="SAS Factory Profile" className="w-full h-auto" />
-        <img src={factoryModelTemplates} alt="SAS Factory Model Templates" className="w-full h-auto" />
-        <img src={factorySegment} alt="SAS Factory Segment" className="w-full h-auto" />
+        <img src={factoryData} alt="SAS Factory Data" className="w-full h-auto border border-border/40" />
+        <img src={factoryProfile} alt="SAS Factory Profile" className="w-full h-auto border border-border/40" />
+        <img src={factoryModelTemplates} alt="SAS Factory Model Templates" className="w-full h-auto border border-border/40" />
+        <img src={factorySegment} alt="SAS Factory Segment" className="w-full h-auto border border-border/40" />
       </div>
 
       <h2 className="font-display text-lg font-medium text-foreground">Visual Statistics</h2>
@@ -67,11 +67,11 @@ export default function SAS() {
         making advanced analytics more accessible without flattening complexity.
       </p>
 
-      <img src={visualStatsRoles} alt="SAS Visual Stats Roles" className="w-full h-auto" />
+      <img src={visualStatsRoles} alt="SAS Visual Stats Roles" className="w-full h-auto border border-border/40 rounded-sm" />
 
       <div className="grid grid-cols-2">
-        <img src={visualStatsProperties} alt="SAS Visual Stats Properties" className="w-full h-auto" />
-        <img src={visualStatsShare} alt="SAS Visual Stats Share" className="w-full h-auto" />
+        <img src={visualStatsProperties} alt="SAS Visual Stats Properties" className="w-full h-auto border border-border/40" />
+        <img src={visualStatsShare} alt="SAS Visual Stats Share" className="w-full h-auto border border-border/40" />
       </div>
     </DetailLayout>
   );
