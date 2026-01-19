@@ -58,22 +58,22 @@
 
 @layer base {
   :root {
-    --background: 45 30% 96%;
+    --background: 30 10% 96%;
     --foreground: 220 20% 15%;
     
-    --card: 45 30% 96%;
+    --card: 30 10% 96%;
     --card-foreground: 220 20% 15%;
     
-    --popover: 45 30% 96%;
+    --popover: 30 10% 96%;
     --popover-foreground: 220 20% 15%;
     
     --primary: 12 76% 52%;
-    --primary-foreground: 45 30% 96%;
+    --primary-foreground: 30 10% 96%;
     
     --secondary: 160 40% 35%;
-    --secondary-foreground: 45 30% 96%;
+    --secondary-foreground: 30 10% 96%;
     
-    --muted: 45 20% 90%;
+    --muted: 30 6% 90%;
     --muted-foreground: 220 10% 45%;
     
     --accent: 45 80% 55%;
@@ -100,7 +100,7 @@
     --card-indigo: 221 83% 53%;        /* blue-600 */
     
     /* Typography */
-    --font-display: 'Tiempos', Georgia, serif;
+    --font-display: 'Calibre', system-ui, sans-serif;
     --font-body: 'Calibre', system-ui, sans-serif;
     
     --sidebar-background: 0 0% 98%;

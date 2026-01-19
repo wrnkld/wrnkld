@@ -10,7 +10,7 @@ export default function Vibes() {
     <DetailLayout title="Pt 2 → Vibes" subtitle="Design & AI" colorClass="card-forest">
       <article className="font-body text-lg text-muted-foreground leading-relaxed space-y-6">
         <p>
-          <Link to="/designai/tools" className="text-foreground underline underline-offset-4 hover:opacity-70 transition-opacity">Part 1</Link> was probably too much information about my history with design 
+          <Link to="/designai/tools" className="text-foreground hover:text-foreground/60 transition-colors">Part 1</Link> was probably too much information about my history with design 
           tools. Part 2 is simpler: it's about all the new stuff.
         </p>
 
@@ -27,9 +27,9 @@ export default function Vibes() {
         </p>
 
         <p>
-          The first is structural. Cursor aside, most of these tools generate <a href="https://tailwindcss.com" target="_blank" rel="noopener noreferrer" className="text-foreground underline underline-offset-4 hover:opacity-70 transition-opacity">Tailwind</a> + <a href="https://ui.shadcn.com" target="_blank" rel="noopener noreferrer" className="text-foreground underline underline-offset-4 hover:opacity-70 transition-opacity">shadcn</a>-based
+          The first is structural. Cursor aside, most of these tools generate <a href="https://tailwindcss.com" target="_blank" rel="noopener noreferrer" className="text-foreground hover:text-foreground/60 transition-colors">Tailwind</a> + <a href="https://ui.shadcn.com" target="_blank" rel="noopener noreferrer" className="text-foreground hover:text-foreground/60 transition-colors">shadcn</a>-based
           UIs. That ecosystem overlaps conceptually with our internal component library, 
-          but the code itself isn't portable. You still hit the same abstraction gap: 
+          but the code itself isn't portable. You still hit the same abstraction gap:
           cool prototype… how does this map to our components? A few tools let you 
           reference existing components, but most still treat design systems as 
           inspiration, not constraints.
