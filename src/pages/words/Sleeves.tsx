@@ -8,7 +8,7 @@ function FootnoteRef({ number }: { number: number }) {
 export default function Sleeves() {
   return (
     <DetailLayout title="Pt 3 → Sleeves" subtitle="Design & AI" colorClass="card-navy">
-      <article className="font-body text-lg text-muted-foreground leading-relaxed space-y-6">
+      <article className="font-body text-base text-muted-foreground leading-relaxed space-y-6">
         <p>
           You can't really quibble with <Link to="/designai/tools" className="text-foreground hover:text-foreground/60 transition-colors">Part 1</Link> — it's basically my life story. You could 
           nitpick <Link to="/designai/vibes" className="text-foreground hover:text-foreground/60 transition-colors">Part 2</Link>, especially when I admit I haven't explored Figma Make. But Part 3 
@@ -25,7 +25,7 @@ export default function Sleeves() {
           Here's the stack I used to make that happen:
         </p>
         
-        <h2 className="font-display text-xl font-medium text-foreground">Lovable</h2>
+        <h2 className="font-display text-lg font-medium text-foreground">Lovable</h2>
         <p>
           As I mentioned in Part 2, I tried almost every AI app builder and ended up with Lovable. 
           It's hard to overstate how much better it is than it was a few months ago. I burned through 
@@ -33,45 +33,45 @@ export default function Sleeves() {
           help from ChatGPT, I had something working in a couple of weeks.
         </p>
         
-        <h2 className="font-display text-xl font-medium text-foreground">ChatGPT</h2>
+        <h2 className="font-display text-lg font-medium text-foreground">ChatGPT</h2>
         <p>
           I should think more about my prompts in general.<FootnoteRef number={2} /> For this project, at least at the start, 
           I did. ChatGPT helped at almost every step, especially early architecture decisions.
         </p>
         
-        <h2 className="font-display text-xl font-medium text-foreground">Supabase</h2>
+        <h2 className="font-display text-lg font-medium text-foreground">Supabase</h2>
         <p>
           Lovable integrates with Supabase for Postgres, auth, and storage. 
           I needed a database and login flow, and this handled both. The integration is mostly invisible 
           to me, which is fine — I know it's there and that it works.
         </p>
         
-        <h2 className="font-display text-xl font-medium text-foreground">Resend</h2>
+        <h2 className="font-display text-lg font-medium text-foreground">Resend</h2>
         <p>
           I decided users should get a welcome email. Lovable suggested Resend. I signed up, wired a 
           couple of keys, and got it working without leaving the free tier.
         </p>
         
-        <h2 className="font-display text-xl font-medium text-foreground">Vercel</h2>
+        <h2 className="font-display text-lg font-medium text-foreground">Vercel</h2>
         <p>
           Once I had a working product with auth and emails, I needed it deployed somewhere that wasn't a 
           Lovable subdomain. Lovable recommended Vercel, which worked out since I already use it for 
           this portfolio.
         </p>
         
-        <h2 className="font-display text-xl font-medium text-foreground">Namecheap</h2>
+        <h2 className="font-display text-lg font-medium text-foreground">Namecheap</h2>
         <p>
           I bought a domain on Namecheap, then pointed the DNS at Vercel so it would serve the app 
           under the real domain. With some help from ChatGPT, this mostly worked on the first try.
         </p>
         
-        <h2 className="font-display text-xl font-medium text-foreground">GitHub</h2>
+        <h2 className="font-display text-lg font-medium text-foreground">GitHub</h2>
         <p>
           Eventually, I had to put this in GitHub because… It's code. More importantly, I wanted a 
           path out of the Lovable universe so I wouldn't have to pay maintenance forever.
         </p>
         
-        <h2 className="font-display text-xl font-medium text-foreground">Cursor</h2>
+        <h2 className="font-display text-lg font-medium text-foreground">Cursor</h2>
         <p>
           Here's where I briefly lost the plot. Cursor is impressive, but I initially couldn't get 
           the project running locally and needed help to get through the git and npm setup. Once it 
