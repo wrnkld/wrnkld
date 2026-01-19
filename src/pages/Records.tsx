@@ -64,7 +64,7 @@ export default function Records() {
   }) => (
     <button
       onClick={() => handleSort(field)}
-      className="inline-flex items-center gap-1 text-muted-foreground hover:text-foreground transition-colors"
+      className="inline-flex items-center gap-1 text-muted-foreground hover:text-foreground transition-colors duration-200"
     >
       {children}
       <ArrowUpDown className="h-3 w-3" />
@@ -88,7 +88,7 @@ export default function Records() {
         {search && (
           <button
             onClick={() => setSearch("")}
-            className="absolute right-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground hover:text-foreground transition-colors"
+            className="absolute right-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground hover:text-foreground transition-colors duration-200"
           >
             <X className="h-4 w-4" />
           </button>
