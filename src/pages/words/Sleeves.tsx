@@ -10,13 +10,13 @@ export default function Sleeves() {
     <DetailLayout title="Pt 3 → Sleeves" subtitle="Design & AI" colorClass="card-navy">
       <article className="font-body text-lg text-muted-foreground leading-relaxed space-y-6">
         <p>
-          You can't really quibble with <Link to="/designai/tools" className="text-foreground underline underline-offset-4 hover:opacity-70 transition-opacity">Part 1</Link> — it's basically my life story. You could 
-          nitpick <Link to="/designai/vibes" className="text-foreground underline underline-offset-4 hover:opacity-70 transition-opacity">Part 2</Link>, especially when I admit I haven't explored Figma Make. But Part 3 
+          You can't really quibble with <Link to="/designai/tools" className="text-foreground hover:text-foreground/60 transition-colors">Part 1</Link> — it's basically my life story. You could 
+          nitpick <Link to="/designai/vibes" className="text-foreground hover:text-foreground/60 transition-colors">Part 2</Link>, especially when I admit I haven't explored Figma Make. But Part 3 
           is different. It's where I'm deliberately pushing into new territory.
         </p>
         
         <p>
-          My app, <a href="https://sleeves.app" target="_blank" rel="noopener noreferrer" className="text-foreground underline underline-offset-4 hover:opacity-70 transition-opacity">Sleeves</a>, is super simple: you search for music albums and mark your favorites, 
+          My app, <a href="https://sleeves.app" target="_blank" rel="noopener noreferrer" className="text-foreground hover:text-foreground/60 transition-colors">Sleeves</a>, is super simple: you search for music albums and mark your favorites, 
           or current listens. You can make lists, follow friends, and write reviews. That's it. 
           Pretty basic. But I wanted it to work for real, real.<FootnoteRef number={1} />
         </p>
@@ -89,9 +89,9 @@ export default function Sleeves() {
 
         <hr className="border-border" />
         <div className="text-sm text-muted-foreground space-y-2">
-          <p><sup>1</sup> <a href="https://www.youtube.com/watch?v=gPNdFHSLAeI" target="_blank" rel="noopener noreferrer" className="underline underline-offset-2 hover:opacity-70 transition-opacity">youtube.com/watch?v=gPNdFHSLAeI</a></p>
+          <p><sup>1</sup> <a href="https://www.youtube.com/watch?v=gPNdFHSLAeI" target="_blank" rel="noopener noreferrer" className="text-foreground hover:text-foreground/60 transition-colors">youtube.com/watch?v=gPNdFHSLAeI</a></p>
           <p><sup>2</sup> Less cursing, less ALL CAPS</p>
-          <p><sup>3</sup> <a href="https://www.youtube.com/watch?v=RFZZEpNKjg0" target="_blank" rel="noopener noreferrer" className="underline underline-offset-2 hover:opacity-70 transition-opacity">youtube.com/watch?v=RFZZEpNKjg0</a></p>
+          <p><sup>3</sup> <a href="https://www.youtube.com/watch?v=RFZZEpNKjg0" target="_blank" rel="noopener noreferrer" className="text-foreground hover:text-foreground/60 transition-colors">youtube.com/watch?v=RFZZEpNKjg0</a></p>
         </div>
       </article>
     </DetailLayout>
