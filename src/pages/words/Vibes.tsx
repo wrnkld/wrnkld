@@ -10,8 +10,8 @@ export default function Vibes() {
     <DetailLayout title="Pt 2 → Vibes" subtitle="Design & AI" colorClass="card-forest">
       <article className="font-body text-base text-muted-foreground leading-relaxed space-y-6">
         <p>
-          <Link to="/designai/tools" className="text-foreground hover:text-foreground/60 transition-colors">Part 1</Link> was probably too much information about my history with design 
-          tools. Part 2 is simpler: it's about all the new stuff.
+          <Link to="/designai/tools" className="text-foreground hover:text-muted-foreground transition-colors">Pt 1</Link> was probably too much information about my history with design 
+          tools. Pt 2 is simpler: it's about all the new stuff.
         </p>
 
         <p>
@@ -58,7 +58,7 @@ export default function Vibes() {
 
         <p>
           Whatever happens, I still wanted to try building something real 
-          from scratch—on my own, mistakes and all (Part 3 soon).
+          from scratch—on my own, mistakes and all (<Link to="/designai/sleeves" className="text-foreground hover:text-muted-foreground transition-colors">Pt 3</Link> soon).
         </p>
 
         <hr className="border-border" />

@@ -1,4 +1,5 @@
 import { DetailLayout } from "@/components/DetailLayout";
+import { Link } from "react-router-dom";
 
 function FootnoteRef({ number }: { number: number }) {
   return <sup className="text-muted-foreground">{number}</sup>;
@@ -73,7 +74,7 @@ export default function Tools() {
         </p>
 
         <p>
-          So, can AI help do that? I'll get into that in part 2.
+          So, can AI help do that? I'll get into that in <Link to="/designai/vibes" className="text-foreground hover:text-muted-foreground transition-colors">Pt 2</Link>.
         </p>
 
         <hr className="border-border" />
