@@ -95,7 +95,7 @@ export default function Records() {
         )}
       </div>
 
-      <div className="border border-border rounded-md overflow-hidden">
+      <div className="border border-border rounded-sm overflow-hidden">
         <Table>
           <TableHeader>
             <TableRow>
