@@ -101,16 +101,16 @@ export default function Books() {
           <TableHeader>
             <TableRow>
               <TableHead className="w-8"></TableHead>
-              <TableHead className="text-left font-normal">
+              <TableHead>
                 <SortHeader field="author">Author</SortHeader>
               </TableHead>
-              <TableHead className="text-left font-normal">
+              <TableHead>
                 <SortHeader field="title">Title</SortHeader>
               </TableHead>
-              <TableHead className="text-left font-normal">
+              <TableHead>
                 <SortHeader field="year">Published</SortHeader>
               </TableHead>
-              <TableHead className="text-left font-normal">
+              <TableHead>
                 <SortHeader field="yearRead">Read</SortHeader>
               </TableHead>
             </TableRow>
