@@ -1,5 +1,6 @@
-@import 'geist/font/sans/index.css';
-
+@import '@fontsource/ibm-plex-sans/400.css';
+@import '@fontsource/ibm-plex-sans/500.css';
+@import '@fontsource/ibm-plex-sans/600.css';
 @font-face {
   font-family: 'Tiempos';
   src: url('/fonts/tiempos-text-web-regular.woff2') format('woff2'),
@@ -75,8 +76,8 @@
     --card-indigo: 221 83% 53%;        /* blue-600 */
     
     /* Typography */
-    --font-display: 'Geist', system-ui, sans-serif;
-    --font-body: 'Geist', system-ui, sans-serif;
+    --font-display: 'IBM Plex Sans', system-ui, sans-serif;
+    --font-body: 'IBM Plex Sans', system-ui, sans-serif;
     
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;

@@ -22,13 +22,13 @@ export default function SAS() {
         modeling, data science, and decisioning across regulated industries.
       </p>
 
-      <h2 className="font-display text-xl font-semibold text-foreground">Arc</h2>
+      <h2 className="font-display text-xl font-medium text-foreground">Arc</h2>
       <p className="font-body text-lg text-muted-foreground leading-relaxed">
         Progressed from individual contributor to senior, principal, and team 
         lead—launching three major products along the way.
       </p>
 
-      <h2 className="font-display text-xl font-semibold text-foreground">Model Studio</h2>
+      <h2 className="font-display text-xl font-medium text-foreground">Model Studio</h2>
       <p className="font-body text-lg text-muted-foreground leading-relaxed">
         Led design across the advanced analytics platform, coordinating multiple product managers
         and design teams spanning forecasting, text analytics, and core 
@@ -45,7 +45,7 @@ export default function SAS() {
         <img src={analyticsReport} alt="SAS Analytics Report" className="w-full h-auto" />
       </div>
 
-      <h2 className="font-display text-xl font-semibold text-foreground">Factory Miner</h2>
+      <h2 className="font-display text-xl font-medium text-foreground">Factory Miner</h2>
       <p className="font-body text-lg text-muted-foreground leading-relaxed">
         Delivered model comparison and selection workflows that ran multiple 
         statistical models in parallel, enabling teams to identify the strongest 
@@ -61,7 +61,7 @@ export default function SAS() {
         <img src={factorySegment} alt="SAS Factory Segment" className="w-full h-auto" />
       </div>
 
-      <h2 className="font-display text-xl font-semibold text-foreground">Visual Statistics</h2>
+      <h2 className="font-display text-xl font-medium text-foreground">Visual Statistics</h2>
       <p className="font-body text-lg text-muted-foreground leading-relaxed">
         Built a drag-and-drop, visual interface for exploring statistical models, 
         making advanced analytics more accessible without flattening complexity.
