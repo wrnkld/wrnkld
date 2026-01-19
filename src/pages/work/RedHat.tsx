@@ -41,7 +41,7 @@ export default function RedHat() {
         open-source and developer communities for feedback and iteration.
       </p>
 
-      <video src={rhbaPreviewVideo} poster={rhbaWorkflowModeler} autoPlay loop muted playsInline className="w-full h-auto border border-border/40 rounded-sm" />
+      <video src={rhbaPreviewVideo} poster={rhbaWorkflowModeler} autoPlay loop muted playsInline className="w-full h-auto border border-border/40" />
 
       <div className="grid grid-cols-4">
         <img src={rhbaPropertiesPanel} alt="Red Hat Business Automation Properties Panel" className="w-full h-auto border border-border/40" />
@@ -50,14 +50,14 @@ export default function RedHat() {
         <img src={rhbaComments} alt="Red Hat Business Automation Comments" className="w-full h-auto border border-border/40" />
       </div>
 
-      <img src={rhbaProjectMetrics} alt="Red Hat Business Automation Project Metrics" className="w-full h-auto border border-border/40 rounded-sm" />
+      <img src={rhbaProjectMetrics} alt="Red Hat Business Automation Project Metrics" className="w-full h-auto border border-border/40" />
 
       <div className="grid grid-cols-2">
         <img src={rhbaAssetsList} alt="Red Hat Business Automation Assets List" className="w-full h-auto border border-border/40" />
         <img src={rhbaContributors} alt="Red Hat Business Automation Contributors" className="w-full h-auto border border-border/40" />
       </div>
 
-      <video src={rhbaTrackVideo} poster={rhbaTrack} autoPlay loop muted playsInline className="w-full h-auto border border-border/40 rounded-sm" />
+      <video src={rhbaTrackVideo} poster={rhbaTrack} autoPlay loop muted playsInline className="w-full h-auto border border-border/40" />
 
       <div className="grid grid-cols-2">
         <img src={rhbaEmptyState} alt="Red Hat Business Automation Empty State" className="w-full h-auto border border-border/40" />
@@ -70,7 +70,7 @@ export default function RedHat() {
         Optimization to improve consistency across the portfolio.
       </p>
 
-      <video src={rhboRosterVideo} poster={rhboRoster} autoPlay loop muted playsInline className="w-full h-auto border border-border/40 rounded-sm" />
+      <video src={rhboRosterVideo} poster={rhboRoster} autoPlay loop muted playsInline className="w-full h-auto border border-border/40" />
 
       <div className="grid grid-cols-4">
         <img src={rhboEmployees} alt="Red Hat Business Optaplanner Employees" className="w-full h-auto border border-border/40" />

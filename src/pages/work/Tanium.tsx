@@ -35,23 +35,23 @@ export default function Tanium() {
         Built and shipped two entirely new products from scratch: Assurance, focused on MITRE ATT&CK visibility, and Enforce, designed for policy enforcement at enterprise scale.
       </p>
 
-      <video src={taniumNavigation} poster={taniumNavigationViews} autoPlay loop muted playsInline className="w-full h-auto border border-border/40 rounded-sm" />
+      <video src={taniumNavigation} poster={taniumNavigationViews} autoPlay loop muted playsInline className="w-full h-auto border border-border/40" />
 
       <div className="grid grid-cols-2">
         <img src={taniumThreatAlerts} alt="Tanium Threat Alerts" className="w-full h-auto border border-border/40" />
         <img src={taniumThreatDocuments} alt="Tanium Threat Documents" className="w-full h-auto border border-border/40" />
       </div>
 
-      <video src={taniumAssurance} poster={taniumAssuranceFindings} autoPlay loop muted playsInline className="w-full h-auto border border-border/40 rounded-sm" />
+      <video src={taniumAssurance} poster={taniumAssuranceFindings} autoPlay loop muted playsInline className="w-full h-auto border border-border/40" />
 
-      <video src={taniumDiscover} poster={taniumDiscoverInterfaces} autoPlay loop muted playsInline className="w-full h-auto border border-border/40 rounded-sm" />
+      <video src={taniumDiscover} poster={taniumDiscoverInterfaces} autoPlay loop muted playsInline className="w-full h-auto border border-border/40" />
 
       <div className="grid grid-cols-2">
         <img src={taniumDiscoverInterfaces} alt="Tanium Discover Interfaces" className="w-full h-auto border border-border/40" />
         <img src={taniumAssetVendor} alt="Tanium Asset Vendor" className="w-full h-auto border border-border/40" />
       </div>
 
-      <video src={taniumEnforce} poster={taniumEnforceOverview} autoPlay loop muted playsInline className="w-full h-auto border border-border/40 rounded-sm" />
+      <video src={taniumEnforce} poster={taniumEnforceOverview} autoPlay loop muted playsInline className="w-full h-auto border border-border/40" />
     </DetailLayout>
   );
 }
