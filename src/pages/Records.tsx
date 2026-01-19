@@ -11,6 +11,7 @@ import {
   TableRow,
 } from "@/components/ui/table";
 import { ArrowUpDown, Search, X } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
 
 type SortField = "album" | "artist" | "year";
 type SortDirection = "asc" | "desc";
@@ -111,13 +112,23 @@ export default function Records() {
             </TableRow>
           </TableHeader>
           <TableBody>
-            {filteredAndSortedRecords.map((record) => (
-              <TableRow key={record.id}>
-                <TableCell className="text-muted-foreground">{record.artist}</TableCell>
-                <TableCell className="text-foreground">{record.album}</TableCell>
-                <TableCell className="text-muted-foreground">{record.year}</TableCell>
-              </TableRow>
-            ))}
+            <AnimatePresence>
+              {filteredAndSortedRecords.map((record) => (
+                <motion.tr
+                  key={record.id}
+                  layout
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  transition={{ duration: 0.2 }}
+                  className="border-b transition-colors hover:bg-muted/50 data-[state=selected]:bg-muted"
+                >
+                  <TableCell className="text-muted-foreground">{record.artist}</TableCell>
+                  <TableCell className="text-foreground">{record.album}</TableCell>
+                  <TableCell className="text-muted-foreground">{record.year}</TableCell>
+                </motion.tr>
+              ))}
+            </AnimatePresence>
           </TableBody>
         </Table>
       </div>
