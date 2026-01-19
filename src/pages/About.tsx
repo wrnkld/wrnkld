@@ -22,11 +22,11 @@ export default function About() {
           >
             <div>
               <h3 className="font-display text-base font-medium text-foreground">{job.company}</h3>
-              <p className="font-body text-sm text-muted-foreground">{job.role}</p>
+              <p className="font-body text-base text-muted-foreground">{job.role}</p>
             </div>
             <div className="md:text-right">
-              <p className="font-body text-sm text-muted-foreground">{job.location}</p>
-              <p className="font-body text-sm text-muted-foreground">{job.years}</p>
+              <p className="font-body text-base text-muted-foreground">{job.location}</p>
+              <p className="font-body text-base text-muted-foreground">{job.years}</p>
             </div>
           </div>
         ))}
