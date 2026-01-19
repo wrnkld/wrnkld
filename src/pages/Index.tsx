@@ -1,15 +1,15 @@
 import { Link } from "react-router-dom";
 
 const links = [
-  { title: "Pt 1 → Tools", section: "Design & AI", to: "/designai/tools", date: "2025", hoverClass: "hover:bg-orange-500" },
-  { title: "Pt 2 → Vibes", section: "Design & AI", to: "/designai/vibes", date: "2025", hoverClass: "hover:bg-emerald-600" },
-  { title: "Pt 3 → Sleeves", section: "Design & AI", to: "/designai/sleeves", date: "2025", hoverClass: "hover:bg-indigo-900" },
-  { title: "Experience", section: "About", to: "/about/experience", date: "2026", hoverClass: "hover:bg-amber-500", darkText: true },
-  { title: "Books", section: "About", to: "/about/books", date: "2026", hoverClass: "hover:bg-slate-500" },
-  { title: "Records", section: "About", to: "/about/records", date: "2026", hoverClass: "hover:bg-purple-600" },
-  { title: "Tanium", section: "Work", to: "/work/tanium", date: "2019–21", hoverClass: "hover:bg-rose-400", darkText: true },
-  { title: "Red Hat", section: "Work", to: "/work/redhat", date: "2016–19", hoverClass: "hover:bg-teal-500" },
-  { title: "SAS", section: "Work", to: "/work/sas", date: "2011–16", hoverClass: "hover:bg-blue-600" },
+  { title: "Pt 1 → Tools", section: "Design & AI", to: "/designai/tools", date: "2025", accentColor: "group-hover:border-l-orange-500" },
+  { title: "Pt 2 → Vibes", section: "Design & AI", to: "/designai/vibes", date: "2025", accentColor: "group-hover:border-l-emerald-600" },
+  { title: "Pt 3 → Sleeves", section: "Design & AI", to: "/designai/sleeves", date: "2025", accentColor: "group-hover:border-l-indigo-900" },
+  { title: "Experience", section: "About", to: "/about/experience", date: "2026", accentColor: "group-hover:border-l-amber-500" },
+  { title: "Books", section: "About", to: "/about/books", date: "2026", accentColor: "group-hover:border-l-slate-500" },
+  { title: "Records", section: "About", to: "/about/records", date: "2026", accentColor: "group-hover:border-l-purple-600" },
+  { title: "Tanium", section: "Work", to: "/work/tanium", date: "2019–21", accentColor: "group-hover:border-l-rose-400" },
+  { title: "Red Hat", section: "Work", to: "/work/redhat", date: "2016–19", accentColor: "group-hover:border-l-teal-500" },
+  { title: "SAS", section: "Work", to: "/work/sas", date: "2011–16", accentColor: "group-hover:border-l-blue-600" },
 ];
 
 const groupedLinks = links.reduce((acc, link) => {
@@ -49,12 +49,12 @@ export default function Index() {
                 <Link
                   key={link.to}
                   to={link.to}
-                  className={`flex items-center justify-between py-3 px-4 border-b border-border last:border-b-0 transition-colors duration-200 group ${link.hoverClass}`}
+                  className={`flex items-center justify-between py-3 px-4 border-b border-border last:border-b-0 border-l-4 border-l-transparent transition-all duration-200 group ${link.accentColor}`}
                 >
-                  <span className={`font-display text-xl font-medium text-foreground transition-colors duration-200 ${link.darkText ? 'group-hover:text-foreground' : 'group-hover:text-white'}`}>
+                  <span className="font-display text-xl font-medium text-foreground">
                     {link.title}
                   </span>
-                  <span className={`font-body text-muted-foreground transition-colors duration-200 ${link.darkText ? 'group-hover:text-foreground/70' : 'group-hover:text-white/80'}`}>
+                  <span className="font-body text-muted-foreground">
                     {link.date}
                   </span>
                 </Link>
