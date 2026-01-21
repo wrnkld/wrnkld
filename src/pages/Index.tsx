@@ -23,6 +23,23 @@ const sectionOrder = ["Design & AI", "Work", "About"];
 export default function Index() {
   return (
     <div className="min-h-screen bg-background">
+      {/* Rainbow gradient bar with all 9 colors */}
+      <div 
+        className="h-1.5 w-full"
+        style={{
+          background: `linear-gradient(to right, 
+            hsl(25 95% 53%), 
+            hsl(160 84% 39%), 
+            hsl(224 55% 25%), 
+            hsl(38 92% 50%), 
+            hsl(351 95% 71%), 
+            hsl(215 16% 47%), 
+            hsl(271 91% 65%), 
+            hsl(166 64% 47%), 
+            hsl(221 83% 53%)
+          )`
+        }}
+      />
       <div className="max-w-3xl mx-auto px-6 py-16 md:py-24 space-y-12">
         <div className="space-y-5">
           <h1 className="font-display text-xl md:text-2xl font-medium text-foreground">
