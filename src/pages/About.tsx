@@ -18,16 +18,13 @@ export default function About() {
         {experience.map((job, index) => (
           <div 
             key={index}
-            className="flex flex-col md:flex-row md:items-center justify-between py-4 px-4 border-b border-border last:border-b-0 hover:bg-white transition-colors duration-200"
+            className="py-4 px-4 border-b border-border last:border-b-0 hover:bg-white transition-colors duration-200"
           >
-            <div>
+            <div className="flex items-center justify-between">
               <h3 className="font-display text-base font-medium text-foreground">{job.company}</h3>
-              <p className="font-body text-base text-muted-foreground">{job.role}</p>
-            </div>
-            <div className="md:text-right">
-              <p className="font-body text-base text-muted-foreground">{job.location}</p>
               <p className="font-body text-base text-muted-foreground">{job.years}</p>
             </div>
+            <p className="font-body text-base text-muted-foreground">{job.role}</p>
           </div>
         ))}
       </div>
