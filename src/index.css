@@ -67,6 +67,7 @@
     /* Custom card colors - 9 bright colors */
     --card-terracotta: 25 95% 53%;    /* orange-500 */
     --card-forest: 160 84% 39%;        /* emerald-600 */
+    --card-cyan: 188 94% 43%;          /* cyan-500 */
     --card-mustard: 38 92% 50%;        /* amber-500 */
     --card-coral: 351 95% 71%;         /* rose-400 */
     --card-pink: 330 81% 60%;          /* pink-500 */
@@ -152,6 +153,11 @@
   .card-forest {
     background-color: hsl(var(--card-forest));
     color: hsl(45 30% 96%);
+  }
+  
+  .card-cyan {
+    background-color: hsl(var(--card-cyan));
+    color: hsl(220 20% 15%);
   }
   
   .card-mustard {

@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 const links = [
   { title: "Pt 1 → Tools", section: "Design & AI", to: "/designai/tools", date: "2025", accentText: "group-hover:text-orange-500" },
   { title: "Pt 2 → Vibes", section: "Design & AI", to: "/designai/vibes", date: "2025", accentText: "group-hover:text-emerald-600" },
-  { title: "Pt 3 → Sleeves", section: "Design & AI", to: "/designai/sleeves", date: "2025", accentText: "group-hover:text-blue-600" },
+  { title: "Pt 3 → Sleeves", section: "Design & AI", to: "/designai/sleeves", date: "2025", accentText: "group-hover:text-cyan-500" },
   { title: "Experience", section: "About", to: "/about/experience", date: "2026", accentText: "group-hover:text-amber-500" },
   { title: "Books", section: "About", to: "/about/books", date: "2026", accentText: "group-hover:text-pink-500" },
   { title: "Records", section: "About", to: "/about/records", date: "2026", accentText: "group-hover:text-purple-500" },
@@ -32,6 +32,7 @@ export default function Index() {
             hsl(38 92% 50%),
             hsl(160 84% 39%),
             hsl(166 64% 47%),
+            hsl(188 94% 43%),
             hsl(221 83% 53%),
             hsl(271 81% 56%),
             hsl(330 81% 60%),
