@@ -7,7 +7,7 @@ function FootnoteRef({ number }: { number: number }) {
 
 export default function Sleeves() {
   return (
-    <DetailLayout title="Pt 3 → Sleeves" subtitle="Design & AI" colorClass="card-navy">
+    <DetailLayout title="Pt 3 → Sleeves" subtitle="Design & AI" colorClass="card-indigo">
       <article className="font-body text-base text-muted-foreground leading-relaxed space-y-6">
         <p>
           You can't really quibble with <Link to="/designai/tools" className="text-foreground hover:text-muted-foreground transition-colors">Pt 1</Link> — it's basically my life story. You could 

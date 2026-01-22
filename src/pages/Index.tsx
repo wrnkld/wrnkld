@@ -3,11 +3,11 @@ import { Link } from "react-router-dom";
 const links = [
   { title: "Pt 1 → Tools", section: "Design & AI", to: "/designai/tools", date: "2025", accentText: "group-hover:text-orange-500" },
   { title: "Pt 2 → Vibes", section: "Design & AI", to: "/designai/vibes", date: "2025", accentText: "group-hover:text-emerald-600" },
-  { title: "Pt 3 → Sleeves", section: "Design & AI", to: "/designai/sleeves", date: "2025", accentText: "group-hover:text-indigo-900" },
+  { title: "Pt 3 → Sleeves", section: "Design & AI", to: "/designai/sleeves", date: "2025", accentText: "group-hover:text-blue-600" },
   { title: "Experience", section: "About", to: "/about/experience", date: "2026", accentText: "group-hover:text-amber-500" },
-  { title: "Books", section: "About", to: "/about/books", date: "2026", accentText: "group-hover:text-slate-500" },
-  { title: "Records", section: "About", to: "/about/records", date: "2026", accentText: "group-hover:text-purple-600" },
-  { title: "Tanium", section: "Work", to: "/work/tanium", date: "2019–21", accentText: "group-hover:text-rose-500" },
+  { title: "Books", section: "About", to: "/about/books", date: "2026", accentText: "group-hover:text-pink-500" },
+  { title: "Records", section: "About", to: "/about/records", date: "2026", accentText: "group-hover:text-purple-500" },
+  { title: "Tanium", section: "Work", to: "/work/tanium", date: "2019–21", accentText: "group-hover:text-rose-400" },
   { title: "Red Hat", section: "Work", to: "/work/redhat", date: "2016–19", accentText: "group-hover:text-teal-500" },
   { title: "SAS", section: "Work", to: "/work/sas", date: "2011–16", accentText: "group-hover:text-blue-600" },
 ];
@@ -23,19 +23,19 @@ const sectionOrder = ["Design & AI", "Work", "About"];
 export default function Index() {
   return (
     <div className="min-h-screen bg-background">
-      {/* Rainbow gradient bar with all 9 colors */}
+      {/* Rainbow gradient bar with all 9 bright colors */}
       <div 
         className="h-1.5 w-full"
         style={{
           background: `linear-gradient(to right, 
-            hsl(351 95% 71%), 
-            hsl(25 95% 53%), 
-            hsl(38 92% 50%), 
-            hsl(160 84% 39%), 
-            hsl(166 64% 47%), 
-            hsl(221 83% 53%), 
-            hsl(271 91% 65%), 
-            hsl(330 81% 60%)
+            hsl(25 95% 53%),
+            hsl(38 92% 50%),
+            hsl(160 84% 39%),
+            hsl(166 64% 47%),
+            hsl(221 83% 53%),
+            hsl(271 81% 56%),
+            hsl(330 81% 60%),
+            hsl(351 95% 71%)
           )`
         }}
       />
