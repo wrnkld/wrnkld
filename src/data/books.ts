@@ -1229,4 +1229,12 @@ export const books: Book[] = [
     yearRead: 2026,
     recommended: true,
   },
+  {
+    id: 164,
+    title: "What We Can Know",
+    author: "Ian McEwan",
+    year: 2025,
+    yearRead: 2026,
+    recommended: false,
+  },
 ];
