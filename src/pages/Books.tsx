@@ -114,22 +114,30 @@ export default function Books() {
           </TableHeader>
           <TableBody>
             <AnimatePresence>
-              {filteredAndSortedBooks.map((book) => (
-                <motion.tr
-                  key={book.id}
-                  layout
-                  transition={{ duration: 0.15 }}
-                  className={`border-b transition-colors hover:bg-muted/50 data-[state=selected]:bg-muted ${book.recommended ? "bg-yellow-100 dark:bg-yellow-900/30" : ""}`}
-                >
-                  <TableCell className="text-muted-foreground">
-                    {book.author}
+              {filteredAndSortedBooks.length === 0 ? (
+                <TableRow>
+                  <TableCell colSpan={3} className="text-center text-muted-foreground py-8">
+                    No results
                   </TableCell>
-                  <TableCell className="text-foreground">{book.title}</TableCell>
-                  <TableCell className="text-muted-foreground">
-                    {book.year}
-                  </TableCell>
-                </motion.tr>
-              ))}
+                </TableRow>
+              ) : (
+                filteredAndSortedBooks.map((book) => (
+                  <motion.tr
+                    key={book.id}
+                    layout
+                    transition={{ duration: 0.15 }}
+                    className={`border-b transition-colors hover:bg-muted/50 data-[state=selected]:bg-muted ${book.recommended ? "bg-yellow-100 dark:bg-yellow-900/30" : ""}`}
+                  >
+                    <TableCell className="text-muted-foreground">
+                      {book.author}
+                    </TableCell>
+                    <TableCell className="text-foreground">{book.title}</TableCell>
+                    <TableCell className="text-muted-foreground">
+                      {book.year}
+                    </TableCell>
+                  </motion.tr>
+                ))
+              )}
             </AnimatePresence>
           </TableBody>
         </Table>
