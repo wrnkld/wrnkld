@@ -7,7 +7,7 @@ import { Analytics } from "@vercel/analytics/react";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import About from "./pages/About";
-import MonteCarlo from "./pages/work/MonteCarlo";
+
 import Tanium from "./pages/work/Tanium";
 import SAS from "./pages/work/SAS";
 import RedHat from "./pages/work/RedHat";
@@ -28,7 +28,7 @@ const App = () => (
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/about/experience" element={<About />} />
-          <Route path="/work/montecarlo" element={<MonteCarlo />} />
+          
           <Route path="/work/tanium" element={<Tanium />} />
           <Route path="/work/sas" element={<SAS />} />
           <Route path="/work/redhat" element={<RedHat />} />
