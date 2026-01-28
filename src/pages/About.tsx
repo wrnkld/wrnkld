@@ -1,14 +1,14 @@
 import { DetailLayout } from "@/components/DetailLayout";
 
 const experience = [
-  { company: "Monte Carlo", role: "Head of Design", location: "San Francisco, CA", years: "2022 – present" },
-  { company: "Workato", role: "Staff Product Designer", location: "Mountain View, CA", years: "2021 – 2022" },
-  { company: "Tanium", role: "Senior Product Designer", location: "Emeryville, CA", years: "2019 – 2021" },
-  { company: "Pendo", role: "Lead Product Designer", location: "Raleigh, NC", years: "2019 – 2019" },
-  { company: "Red Hat", role: "Senior Interaction Designer", location: "Raleigh, NC", years: "2016 – 2019" },
-  { company: "SAS", role: "Principal Interaction Designer", location: "Cary, NC", years: "2011 – 2016" },
-  { company: "HumanCentric", role: "Product Design Manager", location: "Raleigh, NC", years: "2006 – 2011" },
-  { company: "Frog", role: "Associate Interaction Designer", location: "Austin, TX", years: "2004 – 2006" },
+  { company: "Monte Carlo", role: "Head of Design", location: "San Francisco, CA", years: "2022 - Present" },
+  { company: "Workato", role: "Staff Product Designer", location: "Mountain View, CA", years: "2021 - 2022" },
+  { company: "Tanium", role: "Senior Product Designer", location: "Emeryville, CA", years: "2019 - 2021" },
+  { company: "Pendo", role: "Lead Product Designer", location: "Raleigh, NC", years: "2019" },
+  { company: "Red Hat", role: "Senior Interaction Designer", location: "Raleigh, NC", years: "2016 - 2019" },
+  { company: "SAS", role: "Principal Interaction Designer", location: "Cary, NC", years: "2011 - 2016" },
+  { company: "HumanCentric", role: "Product Design Manager", location: "Raleigh, NC", years: "2006 - 2011" },
+  { company: "Frog", role: "Associate Interaction Designer", location: "Austin, TX", years: "2004 - 2006" },
 ];
 
 export default function About() {
@@ -22,7 +22,7 @@ export default function About() {
           >
             <div className="flex items-center justify-between">
               <h3 className="font-display text-base font-medium text-foreground">{job.company}</h3>
-              <p className="font-body text-base text-muted-foreground">{job.years}</p>
+              <p className="font-body text-sm text-muted-foreground">{job.years}</p>
             </div>
             <p className="font-body text-base text-muted-foreground">{job.role}</p>
           </div>

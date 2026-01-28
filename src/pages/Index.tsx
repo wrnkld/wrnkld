@@ -8,9 +8,9 @@ const links = [
   { title: "Books", section: "About", to: "/about/books", date: "Current", accentText: "group-hover:text-pink-500" },
   { title: "Records", section: "About", to: "/about/records", date: "Current", accentText: "group-hover:text-purple-500" },
   { title: "Monte Carlo", section: "Work", to: "/work/montecarlo", date: "2022 - Present", accentText: "group-hover:text-violet-500" },
-  { title: "Tanium", section: "Work", to: "/work/tanium", date: "2019–21", accentText: "group-hover:text-rose-400" },
-  { title: "Red Hat", section: "Work", to: "/work/redhat", date: "2016–19", accentText: "group-hover:text-teal-500" },
-  { title: "SAS", section: "Work", to: "/work/sas", date: "2011–16", accentText: "group-hover:text-blue-600" },
+  { title: "Tanium", section: "Work", to: "/work/tanium", date: "2019 - 2021", accentText: "group-hover:text-rose-400" },
+  { title: "Red Hat", section: "Work", to: "/work/redhat", date: "2016 - 2019", accentText: "group-hover:text-teal-500" },
+  { title: "SAS", section: "Work", to: "/work/sas", date: "2011 - 2016", accentText: "group-hover:text-blue-600" },
 ];
 
 const groupedLinks = links.reduce((acc, link) => {
