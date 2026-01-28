@@ -74,6 +74,7 @@
     --card-plum: 271 81% 56%;          /* purple-500 */
     --card-teal: 166 64% 47%;          /* teal-500 */
     --card-indigo: 221 83% 53%;        /* blue-600 */
+    --card-violet: 258 90% 66%;        /* violet-500 */
     
     /* Typography */
     --font-display: 'Inter', system-ui, sans-serif;
@@ -187,6 +188,11 @@
   
   .card-indigo {
     background-color: hsl(var(--card-indigo));
+    color: hsl(45 30% 96%);
+  }
+  
+  .card-violet {
+    background-color: hsl(var(--card-violet));
     color: hsl(45 30% 96%);
   }
 }
