@@ -113,18 +113,26 @@ export default function Records() {
           </TableHeader>
           <TableBody>
             <AnimatePresence>
-              {filteredAndSortedRecords.map((record) => (
-                <motion.tr
-                  key={record.id}
-                  layout
-                  transition={{ duration: 0.15 }}
-                  className="border-b transition-colors hover:bg-muted/50 data-[state=selected]:bg-muted"
-                >
-                  <TableCell className="text-muted-foreground">{record.artist}</TableCell>
-                  <TableCell className="text-foreground">{record.album}</TableCell>
-                  <TableCell className="text-muted-foreground">{record.year}</TableCell>
-                </motion.tr>
-              ))}
+              {filteredAndSortedRecords.length === 0 ? (
+                <TableRow>
+                  <TableCell colSpan={3} className="text-center text-muted-foreground py-8">
+                    No results
+                  </TableCell>
+                </TableRow>
+              ) : (
+                filteredAndSortedRecords.map((record) => (
+                  <motion.tr
+                    key={record.id}
+                    layout
+                    transition={{ duration: 0.15 }}
+                    className="border-b transition-colors hover:bg-muted/50 data-[state=selected]:bg-muted"
+                  >
+                    <TableCell className="text-muted-foreground">{record.artist}</TableCell>
+                    <TableCell className="text-foreground">{record.album}</TableCell>
+                    <TableCell className="text-muted-foreground">{record.year}</TableCell>
+                  </motion.tr>
+                ))
+              )}
             </AnimatePresence>
           </TableBody>
         </Table>
