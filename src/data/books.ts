@@ -312,7 +312,7 @@ export const books: Book[] = [
     author: "George Saunders",
     year: 2022,
     yearRead: 2022,
-    recommended: true,
+    recommended: false,
   },
   {
     id: 40,
@@ -393,7 +393,7 @@ export const books: Book[] = [
     author: "Cormac McCarthy",
     year: 2022,
     yearRead: 2023,
-    recommended: true,
+    recommended: false,
   },
   {
     id: 60,
@@ -521,7 +521,7 @@ export const books: Book[] = [
     author: "Danya Kukafka",
     year: 2022,
     yearRead: 2023,
-    recommended: true,
+    recommended: false,
   },
   {
     id: 76,
@@ -1043,7 +1043,7 @@ export const books: Book[] = [
     author: "Jordan Castro",
     year: 2022,
     yearRead: 2025,
-    recommended: true,
+    recommended: false,
   },
   {
     id: 141,
@@ -1147,7 +1147,7 @@ export const books: Book[] = [
     author: "Selva Almada",
     year: 2020,
     yearRead: 2025,
-    recommended: true,
+    recommended: false,
   },
   {
     id: 154,
@@ -1187,7 +1187,7 @@ export const books: Book[] = [
     author: "Samanta Schweblin",
     year: 2014,
     yearRead: 2026,
-    recommended: true,
+    recommended: false,
   },
   {
     id: 159,
@@ -1227,7 +1227,7 @@ export const books: Book[] = [
     author: "Bryan Washington",
     year: 2025,
     yearRead: 2026,
-    recommended: true,
+    recommended: false,
   },
   {
     id: 164,
