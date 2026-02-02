@@ -1240,8 +1240,8 @@ export const books: Book[] = [
   {
     id: 165,
     title: "Heartwood",
-    author: "James Lee Burke",
-    year: 1999,
+    author: "Amity Gaige",
+    year: 2025,
     yearRead: 2026,
     recommended: false,
   },
