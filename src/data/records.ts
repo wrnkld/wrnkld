@@ -4969,4 +4969,10 @@ export const records: Record[] = [
     artist: "Mary Lattimore & Julianna Barwick",
     album: "Tragic Magic",
   },
+  {
+    id: 829,
+    year: 2025,
+    artist: "The Bug vs Ghost Dubs",
+    album: "Implosion",
+  },
 ];
