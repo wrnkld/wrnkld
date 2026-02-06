@@ -4957,4 +4957,10 @@ export const records: Record[] = [
     artist: "Juana Molina",
     album: "DOGA",
   },
+  {
+    id: 827,
+    year: 2025,
+    artist: "Glyders",
+    album: "Forever",
+  },
 ];
