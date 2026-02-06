@@ -2606,12 +2606,6 @@ export const records: Record[] = [
     album: "Madvillainy",
   },
   {
-    id: 435,
-    year: 1985,
-    artist: "Mekons",
-    album: "Fear and Whiskey",
-  },
-  {
     id: 436,
     year: 2004,
     artist: "MF DOOM",
