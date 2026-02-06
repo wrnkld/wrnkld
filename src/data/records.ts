@@ -4963,4 +4963,10 @@ export const records: Record[] = [
     artist: "Glyders",
     album: "Forever",
   },
+  {
+    id: 828,
+    year: 2026,
+    artist: "Mary Lattimore & Julianna Barwick",
+    album: "Tragic Magic",
+  },
 ];
