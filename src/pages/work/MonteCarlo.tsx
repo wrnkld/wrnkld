@@ -19,14 +19,14 @@ export default function MonteCarlo() {
         Grew the design team while shipping product across multiple workstreams. Balanced leadership responsibilities with hands-on product work, maintaining quality and consistency across the platform at both the system and detail level.
       </p>
 
-      <h2 className="font-display text-lg font-medium text-foreground">Integrations</h2>
-      <p className="font-body text-base text-muted-foreground leading-relaxed">
-        Owned design for a scalable integrations platform, spanning data warehouses, orchestration frameworks, code repositories, and incident response tools. Standardized how alerts and events are configured and delivered across teams, improving consistency and reliability for data, platform, and engineering operators.
-      </p>
-
       <h2 className="font-display text-lg font-medium text-foreground">Performance</h2>
       <p className="font-body text-base text-muted-foreground leading-relaxed">
         Designed an end-to-end performance investigation workflow for modern data stacks, enabling teams to understand where cost and latency originate and why across Snowflake, dbt, Airflow, and Looker. The product connects anomaly detection, cost attribution, job-run timelines, and downstream consumer impact into a single guided experience—replacing ad-hoc debugging with a repeatable operational flow.
+      </p>
+
+      <h2 className="font-display text-lg font-medium text-foreground">Integrations</h2>
+      <p className="font-body text-base text-muted-foreground leading-relaxed">
+        Owned design for a scalable integrations platform, spanning data warehouses, orchestration frameworks, code repositories, and incident response tools. Standardized how alerts and events are configured and delivered across teams, improving consistency and reliability for data, platform, and engineering operators.
       </p>
     </DetailLayout>
   );
