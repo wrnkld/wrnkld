@@ -21,7 +21,7 @@ export default function MonteCarlo() {
 
       <h2 className="font-display text-lg font-medium text-foreground">Performance</h2>
       <p className="font-body text-base text-muted-foreground leading-relaxed">
-        Designed a dashboard that surfaces and troubleshoots slow queries, ETL jobs, and pipeline bottlenecks across Snowflake, dbt, Airflow, and Looker. Users can drill from high-level cost spikes down to individual query metadata, gantt-view job runs, and consumer-facing latency—turning performance investigation from guesswork into a guided workflow.
+        Designed monitoring and dashboards that surface and troubleshoot slow queries, ETL jobs, and pipeline bottlenecks across Snowflake, dbt, Airflow, and Looker. Users can drill from high-level cost spikes down to individual query metadata, gantt-view job runs, and consumer-facing latency—turning performance investigation from guesswork into a guided workflow.
       </p>
     </DetailLayout>
   );
