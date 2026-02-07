@@ -16,7 +16,7 @@ export default function MonteCarlo() {
 
       <h2 className="font-display text-lg font-medium text-foreground">Scale</h2>
       <p className="font-body text-base text-muted-foreground leading-relaxed">
-        Built and scaled the design team while delivering product across multiple workstreams. Took equal ownership of leadership, culture, and execution—ensuring both the organization and the product matured with rigor and consistency.
+        Grew the design team while shipping product across multiple workstreams. Balanced leadership responsibilities with hands-on product work, maintaining quality and consistency across the platform at both the system and detail level.
       </p>
     </DetailLayout>
   );
