@@ -16,7 +16,7 @@ export default function MonteCarlo() {
 
       <h2 className="font-display text-lg font-medium text-foreground">Scale</h2>
       <p className="font-body text-base text-muted-foreground leading-relaxed">
-        Grew the design team while simultaneously shipping product across multiple workstreams. Balanced the glamorous work of hiring, mentoring, and building culture with the less glamorous work of fixing tooltip alignment and debating whether "warning" should be yellow or amber. Spoiler: it's amber.
+        Built and scaled the design team while delivering product across multiple workstreams. Took equal ownership of leadership, culture, and execution—ensuring both the organization and the product matured with rigor and consistency.
       </p>
     </DetailLayout>
   );
