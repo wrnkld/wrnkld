@@ -4,7 +4,7 @@ export default function MonteCarlo() {
   return (
     <DetailLayout title="Monte Carlo" subtitle="Work" colorClass="card-mustard">
       <p className="font-body text-base text-muted-foreground leading-relaxed">
-        Monte Carlo is the leading data observability platform, helping data teams detect, resolve, and prevent data quality issues across the modern data stack.
+        Monte Carlo is the leading data and AI observability platform, helping data teams detect, resolve, and prevent data quality issues across the modern data stack.
       </p>
 
       <h2 className="font-display text-lg font-medium text-foreground">Role</h2>
