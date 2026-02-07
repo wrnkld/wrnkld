@@ -12,10 +12,7 @@ export default function MonteCarlo() {
         Joined as founding designer to build and lead the design function from the ground up. Hired designers, established design systems, created research practices, and partnered directly with the founders and product leadership to shape the product vision across the entire platform.
       </p>
 
-      <h2 className="font-display text-lg font-medium text-foreground">Design System</h2>
-      <p className="font-body text-base text-muted-foreground leading-relaxed">
-        Built a component library and design system from scratch because the existing UI was a patchwork of one-off components held together by developer good intentions and inconsistent spacing. Established tokens, patterns, and guidelines that made it possible for the team to ship coherent interfaces without a designer reviewing every pull request like a hall monitor.
-      </p>
+
 
       <h2 className="font-display text-lg font-medium text-foreground">Scale</h2>
       <p className="font-body text-base text-muted-foreground leading-relaxed">
