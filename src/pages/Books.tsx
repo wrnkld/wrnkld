@@ -13,12 +13,12 @@ import {
 import { ArrowUpDown, Search, X } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
 
-type SortField = "title" | "author" | "year" | "yearRead";
+type SortField = "title" | "author" | "year";
 type SortDirection = "asc" | "desc";
 
 export default function Books() {
   const [search, setSearch] = useState("");
-  const [sortField, setSortField] = useState<SortField>("yearRead");
+  const [sortField, setSortField] = useState<SortField>("year");
   const [sortDirection, setSortDirection] = useState<SortDirection>("desc");
 
   const filteredAndSortedBooks = useMemo(() => {
@@ -30,8 +30,7 @@ export default function Books() {
         (book) =>
           book.title.toLowerCase().includes(searchLower) ||
           book.author.toLowerCase().includes(searchLower) ||
-          book.year.toString().includes(searchLower) ||
-          book.yearRead.toString().includes(searchLower)
+          book.year.toString().includes(searchLower)
       );
     }
 

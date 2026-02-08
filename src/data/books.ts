@@ -7,7 +7,6 @@ export const books: Book[] = [
     title: "The Every",
     author: "Dave Eggers",
     year: 2021,
-    yearRead: 2022,
     recommended: false,
   },
   {
@@ -15,7 +14,6 @@ export const books: Book[] = [
     title: "Sisters Brothers",
     author: "Patrick deWitt",
     year: 2011,
-    yearRead: 2022,
     recommended: true,
   },
   {
@@ -23,7 +21,6 @@ export const books: Book[] = [
     title: "Eve's Hollywood",
     author: "Eve Babitz",
     year: 1974,
-    yearRead: 2022,
     recommended: false,
   },
   {
@@ -31,7 +28,6 @@ export const books: Book[] = [
     title: "The Peregrine",
     author: "J. A. Baker",
     year: 1967,
-    yearRead: 2022,
     recommended: true,
   },
   {
@@ -39,7 +35,6 @@ export const books: Book[] = [
     title: "The Go-Between",
     author: "L. P. Hartley",
     year: 1953,
-    yearRead: 2022,
     recommended: true,
   },
   {
@@ -47,7 +42,6 @@ export const books: Book[] = [
     title: "Devil House",
     author: "John Darnielle",
     year: 2022,
-    yearRead: 2022,
     recommended: false,
   },
   {
@@ -55,7 +49,6 @@ export const books: Book[] = [
     title: "A Little Devil in America",
     author: "Hanif Abdurraqib",
     year: 2021,
-    yearRead: 2022,
     recommended: true,
   },
   {
@@ -63,7 +56,6 @@ export const books: Book[] = [
     title: "True Grit",
     author: "Charles Portis",
     year: 1968,
-    yearRead: 2022,
     recommended: false,
   },
   {
@@ -71,7 +63,6 @@ export const books: Book[] = [
     title: "Sag Harbor",
     author: "Colson Whitehead",
     year: 2009,
-    yearRead: 2022,
     recommended: true,
   },
   {
@@ -79,7 +70,6 @@ export const books: Book[] = [
     title: "The Sellout",
     author: "Paul Beatty",
     year: 2015,
-    yearRead: 2022,
     recommended: false,
   },
   {
@@ -87,7 +77,6 @@ export const books: Book[] = [
     title: "People from My Neighborhood",
     author: "Hiromi Kawakami",
     year: 2020,
-    yearRead: 2022,
     recommended: false,
   },
   {
@@ -95,7 +84,6 @@ export const books: Book[] = [
     title: "No One Is Talking About This",
     author: "Patricia Lockwood",
     year: 2021,
-    yearRead: 2022,
     recommended: true,
   },
   {
@@ -103,7 +91,6 @@ export const books: Book[] = [
     title: "The Dog of the South",
     author: "Charles Portis",
     year: 1979,
-    yearRead: 2022,
     recommended: false,
   },
   {
@@ -111,7 +98,6 @@ export const books: Book[] = [
     title: "The Door",
     author: "Magda Szabo",
     year: 1987,
-    yearRead: 2022,
     recommended: false,
   },
   {
@@ -119,7 +105,6 @@ export const books: Book[] = [
     title: "Never Mind",
     author: "Edward St Aubyn",
     year: 1992,
-    yearRead: 2022,
     recommended: false,
   },
   {
@@ -127,7 +112,6 @@ export const books: Book[] = [
     title: "Bad News",
     author: "Edward St Aubyn",
     year: 1992,
-    yearRead: 2022,
     recommended: false,
   },
   {
@@ -135,7 +119,6 @@ export const books: Book[] = [
     title: "Some Hope",
     author: "Edward St Aubyn",
     year: 1994,
-    yearRead: 2022,
     recommended: false,
   },
   {
@@ -143,7 +126,6 @@ export const books: Book[] = [
     title: "Mother's Milk",
     author: "Edward St Aubyn",
     year: 2005,
-    yearRead: 2022,
     recommended: true,
   },
   {
@@ -151,7 +133,6 @@ export const books: Book[] = [
     title: "At Last",
     author: "Edward St Aubyn",
     year: 2011,
-    yearRead: 2022,
     recommended: false,
   },
   {
@@ -159,7 +140,6 @@ export const books: Book[] = [
     title: "The Premonition",
     author: "Michael Lewis",
     year: 2021,
-    yearRead: 2022,
     recommended: false,
   },
   {
@@ -167,7 +147,6 @@ export const books: Book[] = [
     title: "Razorblade Tears",
     author: "S. A. Cosby",
     year: 2021,
-    yearRead: 2022,
     recommended: false,
   },
   {
@@ -175,7 +154,6 @@ export const books: Book[] = [
     title: "Corporate Rock Sucks",
     author: "Jim Ruland",
     year: 2022,
-    yearRead: 2022,
     recommended: false,
   },
   {
@@ -183,7 +161,6 @@ export const books: Book[] = [
     title: "The Other Dr. Gilmer",
     author: "Benjamin Gilmer",
     year: 2022,
-    yearRead: 2022,
     recommended: false,
   },
   {
@@ -191,7 +168,6 @@ export const books: Book[] = [
     title: "Either/Or",
     author: "Elif Batuman",
     year: 2022,
-    yearRead: 2022,
     recommended: false,
   },
   {
@@ -199,7 +175,6 @@ export const books: Book[] = [
     title: "The Friends of Eddie Coyle",
     author: "George V. Higgins",
     year: 1972,
-    yearRead: 2022,
     recommended: false,
   },
   {
@@ -207,7 +182,6 @@ export const books: Book[] = [
     title: "Chaos: Charles Manson, the CIA, and the Secret History of the Sixties",
     author: "Tom O'Neill",
     year: 2019,
-    yearRead: 2022,
     recommended: false,
   },
   {
@@ -215,7 +189,6 @@ export const books: Book[] = [
     title: "Guston in Time",
     author: "Ross Feld",
     year: 2003,
-    yearRead: 2022,
     recommended: false,
   },
   {
@@ -223,7 +196,6 @@ export const books: Book[] = [
     title: "Generations",
     author: "Lucille Clifton",
     year: 1976,
-    yearRead: 2022,
     recommended: true,
   },
   {
@@ -231,7 +203,6 @@ export const books: Book[] = [
     title: "One-Shot Harry",
     author: "Gary Phillips",
     year: 2022,
-    yearRead: 2022,
     recommended: false,
   },
   {
@@ -239,7 +210,6 @@ export const books: Book[] = [
     title: "We Had to Remove This Post",
     author: "Hanna Bervoets",
     year: 2022,
-    yearRead: 2022,
     recommended: false,
   },
   {
@@ -247,7 +217,6 @@ export const books: Book[] = [
     title: "The Hearing Trumpet",
     author: "Leonora Carrington",
     year: 1974,
-    yearRead: 2022,
     recommended: false,
   },
   {
@@ -255,7 +224,6 @@ export const books: Book[] = [
     title: "Do Not Sell at Any Price",
     author: "Amanda Petrusich",
     year: 2014,
-    yearRead: 2022,
     recommended: false,
   },
   {
@@ -263,7 +231,6 @@ export const books: Book[] = [
     title: "Childhood",
     author: "Tove Ditlevsen",
     year: 1969,
-    yearRead: 2022,
     recommended: false,
   },
   {
@@ -271,7 +238,6 @@ export const books: Book[] = [
     title: "Lemon",
     author: "Kwon Yeo-sun",
     year: 2021,
-    yearRead: 2022,
     recommended: false,
   },
   {
@@ -279,7 +245,6 @@ export const books: Book[] = [
     title: "Filthy Animals",
     author: "Brandon Taylor",
     year: 2021,
-    yearRead: 2022,
     recommended: false,
   },
   {
@@ -287,7 +252,6 @@ export const books: Book[] = [
     title: "My Government Means to Kill Me",
     author: "Rasheed Newson",
     year: 2021,
-    yearRead: 2022,
     recommended: false,
   },
   {
@@ -295,7 +259,6 @@ export const books: Book[] = [
     title: "Subdivision",
     author: "J Robert Lennon",
     year: 2022,
-    yearRead: 2022,
     recommended: false,
   },
   {
@@ -303,7 +266,6 @@ export const books: Book[] = [
     title: "First Love",
     author: "Gwendoline Riley",
     year: 2017,
-    yearRead: 2022,
     recommended: false,
   },
   {
@@ -311,7 +273,6 @@ export const books: Book[] = [
     title: "Liberation Day",
     author: "George Saunders",
     year: 2022,
-    yearRead: 2022,
     recommended: false,
   },
   {
@@ -319,7 +280,6 @@ export const books: Book[] = [
     title: "The Passenger",
     author: "Cormac McCarthy",
     year: 2022,
-    yearRead: 2022,
     recommended: false,
   },
   {
@@ -327,7 +287,6 @@ export const books: Book[] = [
     title: "Seven Years of Darkness",
     author: "You-Jeong Jeong",
     year: 2015,
-    yearRead: 2022,
     recommended: false,
   },
   {
@@ -335,7 +294,6 @@ export const books: Book[] = [
     title: "Less Is Lost",
     author: "Andrew Sean Greer",
     year: 2022,
-    yearRead: 2022,
     recommended: false,
   },
   {
@@ -343,7 +301,6 @@ export const books: Book[] = [
     title: "My Phantoms",
     author: "Gwendoline Riley",
     year: 2021,
-    yearRead: 2022,
     recommended: true,
   },
   {
@@ -351,16 +308,14 @@ export const books: Book[] = [
     title: "Flights",
     author: "Olga Tokarczuk",
     year: 2007,
-    yearRead: 2022,
     recommended: false,
   },
-  // Additional 2023 books
+  // 2023 books
   {
     id: 55,
     title: "No One Left to Come Looking for You",
     author: "Sam Lipsyte",
     year: 2022,
-    yearRead: 2023,
     recommended: false,
   },
   {
@@ -368,7 +323,6 @@ export const books: Book[] = [
     title: "Now Is Not the Time to Panic",
     author: "Kevin Wilson",
     year: 2021,
-    yearRead: 2023,
     recommended: false,
   },
   {
@@ -376,7 +330,6 @@ export const books: Book[] = [
     title: "The Candy House",
     author: "Jennifer Egan",
     year: 2022,
-    yearRead: 2023,
     recommended: false,
   },
   {
@@ -384,7 +337,6 @@ export const books: Book[] = [
     title: "Reward System",
     author: "Jem Calder",
     year: 2022,
-    yearRead: 2023,
     recommended: false,
   },
   {
@@ -392,7 +344,6 @@ export const books: Book[] = [
     title: "Stella Maris",
     author: "Cormac McCarthy",
     year: 2022,
-    yearRead: 2023,
     recommended: false,
   },
   {
@@ -400,7 +351,6 @@ export const books: Book[] = [
     title: "Tomorrow, and Tomorrow, and Tomorrow",
     author: "Gabrielle Zevin",
     year: 2022,
-    yearRead: 2023,
     recommended: true,
   },
   {
@@ -408,7 +358,6 @@ export const books: Book[] = [
     title: "Cult Classic",
     author: "Sloane Crosley",
     year: 2022,
-    yearRead: 2023,
     recommended: false,
   },
   {
@@ -416,7 +365,6 @@ export const books: Book[] = [
     title: "Stay True",
     author: "Hua Hsu",
     year: 2022,
-    yearRead: 2023,
     recommended: false,
   },
   {
@@ -424,7 +372,6 @@ export const books: Book[] = [
     title: "Notes of a Crocodile",
     author: "Qiu Miaojin",
     year: 1994,
-    yearRead: 2023,
     recommended: false,
   },
   {
@@ -432,7 +379,6 @@ export const books: Book[] = [
     title: "Hard Rain Falling",
     author: "Don Carpenter",
     year: 1966,
-    yearRead: 2023,
     recommended: false,
   },
   {
@@ -440,7 +386,6 @@ export const books: Book[] = [
     title: "Sugar Street",
     author: "Jonathan Dee",
     year: 2022,
-    yearRead: 2023,
     recommended: true,
   },
   {
@@ -448,7 +393,6 @@ export const books: Book[] = [
     title: "Case Study",
     author: "Graeme Macrae Burnet",
     year: 2021,
-    yearRead: 2023,
     recommended: false,
   },
   {
@@ -456,7 +400,6 @@ export const books: Book[] = [
     title: "City on Fire",
     author: "Don Winslow",
     year: 2022,
-    yearRead: 2023,
     recommended: false,
   },
   {
@@ -464,7 +407,6 @@ export const books: Book[] = [
     title: "Vernon Subutex",
     author: "Virginie Despentes",
     year: 2015,
-    yearRead: 2023,
     recommended: false,
   },
   {
@@ -472,7 +414,6 @@ export const books: Book[] = [
     title: "Small Mercies",
     author: "Dennis Lehane",
     year: 2023,
-    yearRead: 2023,
     recommended: false,
   },
   {
@@ -480,7 +421,6 @@ export const books: Book[] = [
     title: "Birnam Wood",
     author: "Eleanor Catton",
     year: 2023,
-    yearRead: 2023,
     recommended: true,
   },
   {
@@ -488,7 +428,6 @@ export const books: Book[] = [
     title: "The Disappeared",
     author: "Andrew Porter",
     year: 2023,
-    yearRead: 2023,
     recommended: true,
   },
   {
@@ -496,7 +435,6 @@ export const books: Book[] = [
     title: "I Have Some Questions for You",
     author: "Rebecca Makkai",
     year: 2022,
-    yearRead: 2023,
     recommended: false,
   },
   {
@@ -504,7 +442,6 @@ export const books: Book[] = [
     title: "All the Sinners Bleed",
     author: "S. A. Cosby",
     year: 2023,
-    yearRead: 2023,
     recommended: false,
   },
   {
@@ -512,7 +449,6 @@ export const books: Book[] = [
     title: "Pineapple Street",
     author: "Jenny Jackson",
     year: 2023,
-    yearRead: 2023,
     recommended: false,
   },
   {
@@ -520,7 +456,6 @@ export const books: Book[] = [
     title: "Notes on an Execution",
     author: "Danya Kukafka",
     year: 2022,
-    yearRead: 2023,
     recommended: false,
   },
   {
@@ -528,7 +463,6 @@ export const books: Book[] = [
     title: "Still Pictures",
     author: "Janet Malcolm",
     year: 2023,
-    yearRead: 2023,
     recommended: false,
   },
   {
@@ -536,7 +470,6 @@ export const books: Book[] = [
     title: "First Love",
     author: "Ivan Turgenev",
     year: 1860,
-    yearRead: 2023,
     recommended: false,
   },
   {
@@ -544,7 +477,6 @@ export const books: Book[] = [
     title: "Crook Manifesto",
     author: "Colson Whitehead",
     year: 2023,
-    yearRead: 2023,
     recommended: false,
   },
   {
@@ -552,7 +484,6 @@ export const books: Book[] = [
     title: "American Tabloid",
     author: "James Ellroy",
     year: 1995,
-    yearRead: 2023,
     recommended: false,
   },
   {
@@ -560,7 +491,6 @@ export const books: Book[] = [
     title: "City of Dreams",
     author: "Don Winslow",
     year: 2023,
-    yearRead: 2023,
     recommended: false,
   },
   {
@@ -568,7 +498,6 @@ export const books: Book[] = [
     title: "Lucky Jim",
     author: "Kingsley Amis",
     year: 1953,
-    yearRead: 2023,
     recommended: false,
   },
   {
@@ -576,7 +505,6 @@ export const books: Book[] = [
     title: "Nothing Special",
     author: "Nicole Flattery",
     year: 2022,
-    yearRead: 2023,
     recommended: false,
   },
   {
@@ -584,7 +512,6 @@ export const books: Book[] = [
     title: "Declassified",
     author: "Arianna Warsaw-Fan Rauch",
     year: 2023,
-    yearRead: 2023,
     recommended: false,
   },
   {
@@ -592,7 +519,6 @@ export const books: Book[] = [
     title: "Family Meal",
     author: "Bryan Washington",
     year: 2023,
-    yearRead: 2023,
     recommended: false,
   },
   {
@@ -600,7 +526,6 @@ export const books: Book[] = [
     title: "The Children's Bach",
     author: "Helen Garner",
     year: 1984,
-    yearRead: 2023,
     recommended: false,
   },
   {
@@ -608,7 +533,6 @@ export const books: Book[] = [
     title: "Sonic Life",
     author: "Thurston Moore",
     year: 2023,
-    yearRead: 2023,
     recommended: false,
   },
   // 2024 books
@@ -617,7 +541,6 @@ export const books: Book[] = [
     title: "The Bee Sting",
     author: "Paul Murray",
     year: 2023,
-    yearRead: 2024,
     recommended: true,
   },
   {
@@ -625,7 +548,6 @@ export const books: Book[] = [
     title: "The Spy Who Came in from the Cold",
     author: "John le Carré",
     year: 1963,
-    yearRead: 2024,
     recommended: false,
   },
   {
@@ -633,7 +555,6 @@ export const books: Book[] = [
     title: "Y/N",
     author: "Esther Yi",
     year: 2023,
-    yearRead: 2024,
     recommended: false,
   },
   {
@@ -641,7 +562,6 @@ export const books: Book[] = [
     title: "City Primeval",
     author: "Elmore Leonard",
     year: 1980,
-    yearRead: 2024,
     recommended: true,
   },
   {
@@ -649,7 +569,6 @@ export const books: Book[] = [
     title: "A Sport and a Pastime",
     author: "James Salter",
     year: 1967,
-    yearRead: 2024,
     recommended: false,
   },
   {
@@ -657,7 +576,6 @@ export const books: Book[] = [
     title: "The Last Samurai",
     author: "Helen DeWitt",
     year: 2000,
-    yearRead: 2024,
     recommended: false,
   },
   {
@@ -665,7 +583,6 @@ export const books: Book[] = [
     title: "James",
     author: "Percival Everett",
     year: 2024,
-    yearRead: 2024,
     recommended: false,
   },
   {
@@ -673,7 +590,6 @@ export const books: Book[] = [
     title: "There's Always This Year",
     author: "Hanif Abdurraqib",
     year: 2024,
-    yearRead: 2024,
     recommended: true,
   },
   {
@@ -681,7 +597,6 @@ export const books: Book[] = [
     title: "Skippy Dies",
     author: "Paul Murray",
     year: 2010,
-    yearRead: 2024,
     recommended: true,
   },
   {
@@ -689,7 +604,6 @@ export const books: Book[] = [
     title: "Help Wanted",
     author: "Adelle Waldman",
     year: 2024,
-    yearRead: 2024,
     recommended: false,
   },
   {
@@ -697,7 +611,6 @@ export const books: Book[] = [
     title: "The Guest",
     author: "Emma Cline",
     year: 2023,
-    yearRead: 2024,
     recommended: true,
   },
   {
@@ -705,7 +618,6 @@ export const books: Book[] = [
     title: "Long Island Compromise",
     author: "Taffy Brodesser-Akner",
     year: 2024,
-    yearRead: 2024,
     recommended: false,
   },
   {
@@ -713,7 +625,6 @@ export const books: Book[] = [
     title: "All Fours",
     author: "Miranda July",
     year: 2024,
-    yearRead: 2024,
     recommended: true,
   },
   {
@@ -721,7 +632,6 @@ export const books: Book[] = [
     title: "After Claude",
     author: "Iris Owens",
     year: 1973,
-    yearRead: 2024,
     recommended: false,
   },
   {
@@ -729,7 +639,6 @@ export const books: Book[] = [
     title: "Loved and Missed",
     author: "Susan Boyt",
     year: 2021,
-    yearRead: 2024,
     recommended: true,
   },
   {
@@ -737,7 +646,6 @@ export const books: Book[] = [
     title: "The Netanyahus",
     author: "Joshua Cohen",
     year: 2021,
-    yearRead: 2024,
     recommended: false,
   },
   {
@@ -745,7 +653,6 @@ export const books: Book[] = [
     title: "City in Ruins",
     author: "Don Winslow",
     year: 2024,
-    yearRead: 2024,
     recommended: false,
   },
   {
@@ -753,7 +660,6 @@ export const books: Book[] = [
     title: "The Winner",
     author: "Teddy Wayne",
     year: 2024,
-    yearRead: 2024,
     recommended: false,
   },
   {
@@ -761,7 +667,6 @@ export const books: Book[] = [
     title: "A Visit from the Goon Squad",
     author: "Jennifer Egan",
     year: 2010,
-    yearRead: 2024,
     recommended: false,
   },
   {
@@ -769,7 +674,6 @@ export const books: Book[] = [
     title: "Early Sobrieties",
     author: "Michael Deagler",
     year: 2024,
-    yearRead: 2024,
     recommended: true,
   },
   {
@@ -777,7 +681,6 @@ export const books: Book[] = [
     title: "The Goldfinch",
     author: "Donna Tartt",
     year: 2013,
-    yearRead: 2024,
     recommended: false,
   },
   {
@@ -785,7 +688,6 @@ export const books: Book[] = [
     title: "Glory Days",
     author: "Simon Rich",
     year: 2024,
-    yearRead: 2024,
     recommended: false,
   },
   {
@@ -793,7 +695,6 @@ export const books: Book[] = [
     title: "The Night Gardener",
     author: "George Pelecanos",
     year: 2006,
-    yearRead: 2024,
     recommended: false,
   },
   {
@@ -801,7 +702,6 @@ export const books: Book[] = [
     title: "Skeletons in the Closet",
     author: "Jean-Patrick Manchette",
     year: 1976,
-    yearRead: 2024,
     recommended: false,
   },
   {
@@ -809,7 +709,6 @@ export const books: Book[] = [
     title: "Creation Lake",
     author: "Rachel Kushner",
     year: 2024,
-    yearRead: 2024,
     recommended: false,
   },
   {
@@ -817,7 +716,6 @@ export const books: Book[] = [
     title: "Point Omega",
     author: "Don DeLillo",
     year: 2010,
-    yearRead: 2024,
     recommended: true,
   },
   {
@@ -825,7 +723,6 @@ export const books: Book[] = [
     title: "We The Animals",
     author: "Justin Torres",
     year: 2011,
-    yearRead: 2024,
     recommended: false,
   },
   {
@@ -833,7 +730,6 @@ export const books: Book[] = [
     title: "11/22/63",
     author: "Stephen King",
     year: 2011,
-    yearRead: 2024,
     recommended: false,
   },
   // 2025 books
@@ -842,7 +738,6 @@ export const books: Book[] = [
     title: "The Drowned",
     author: "John Banville",
     year: 2023,
-    yearRead: 2025,
     recommended: false,
   },
   {
@@ -850,7 +745,6 @@ export const books: Book[] = [
     title: "Outline",
     author: "Rachel Cusk",
     year: 2014,
-    yearRead: 2025,
     recommended: false,
   },
   {
@@ -858,7 +752,6 @@ export const books: Book[] = [
     title: "Health and Safety",
     author: "Emily Witt",
     year: 2024,
-    yearRead: 2025,
     recommended: false,
   },
   {
@@ -866,7 +759,6 @@ export const books: Book[] = [
     title: "Rejection",
     author: "Tony Tulathimutte",
     year: 2024,
-    yearRead: 2025,
     recommended: true,
   },
   {
@@ -874,7 +766,6 @@ export const books: Book[] = [
     title: "Bad Behavior",
     author: "Mary Gaitskill",
     year: 1988,
-    yearRead: 2025,
     recommended: false,
   },
   {
@@ -882,7 +773,6 @@ export const books: Book[] = [
     title: "Masters of Atlantis",
     author: "Charles Portis",
     year: 1985,
-    yearRead: 2025,
     recommended: false,
   },
   {
@@ -890,7 +780,6 @@ export const books: Book[] = [
     title: "Dead in Long Beach, California",
     author: "Venita Blackburn",
     year: 2024,
-    yearRead: 2025,
     recommended: true,
   },
   {
@@ -898,7 +787,6 @@ export const books: Book[] = [
     title: "Cosmopolis",
     author: "Don DeLillo",
     year: 2003,
-    yearRead: 2025,
     recommended: false,
   },
   {
@@ -906,7 +794,6 @@ export const books: Book[] = [
     title: "Eileen",
     author: "Ottessa Moshfegh",
     year: 2015,
-    yearRead: 2025,
     recommended: true,
   },
   {
@@ -914,7 +801,6 @@ export const books: Book[] = [
     title: "Headshot",
     author: "Rita Bullwinkel",
     year: 2024,
-    yearRead: 2025,
     recommended: false,
   },
   {
@@ -922,7 +808,6 @@ export const books: Book[] = [
     title: "The Colossus of New York",
     author: "Colson Whitehead",
     year: 2003,
-    yearRead: 2025,
     recommended: false,
   },
   {
@@ -930,7 +815,6 @@ export const books: Book[] = [
     title: "Command Performance",
     author: "Jean Echenoz",
     year: 2013,
-    yearRead: 2025,
     recommended: false,
   },
   {
@@ -938,7 +822,6 @@ export const books: Book[] = [
     title: "Death Takes Me",
     author: "Cristina Rivera Garza",
     year: 2024,
-    yearRead: 2025,
     recommended: false,
   },
   {
@@ -946,7 +829,6 @@ export const books: Book[] = [
     title: "My Death",
     author: "Lisa Tuttle",
     year: 2018,
-    yearRead: 2025,
     recommended: false,
   },
   {
@@ -954,7 +836,6 @@ export const books: Book[] = [
     title: "Audition",
     author: "Katie Kitamura",
     year: 2025,
-    yearRead: 2025,
     recommended: true,
   },
   {
@@ -962,7 +843,6 @@ export const books: Book[] = [
     title: "Transit",
     author: "Rachel Cusk",
     year: 2016,
-    yearRead: 2025,
     recommended: true,
   },
   {
@@ -970,7 +850,6 @@ export const books: Book[] = [
     title: "Ablutions",
     author: "Patrick deWitt",
     year: 2009,
-    yearRead: 2025,
     recommended: false,
   },
   {
@@ -978,7 +857,6 @@ export const books: Book[] = [
     title: "Child of God",
     author: "Cormac McCarthy",
     year: 1973,
-    yearRead: 2025,
     recommended: false,
   },
   {
@@ -986,7 +864,6 @@ export const books: Book[] = [
     title: "Run for the Hills",
     author: "Kevin Wilson",
     year: 2025,
-    yearRead: 2025,
     recommended: false,
   },
   {
@@ -994,7 +871,6 @@ export const books: Book[] = [
     title: "The Wide Wide Sea",
     author: "Hampton Sides",
     year: 2024,
-    yearRead: 2025,
     recommended: false,
   },
   {
@@ -1002,7 +878,6 @@ export const books: Book[] = [
     title: "Perfection",
     author: "Vincenzo Latronico",
     year: 2022,
-    yearRead: 2025,
     recommended: false,
   },
   {
@@ -1010,7 +885,6 @@ export const books: Book[] = [
     title: "Swag",
     author: "Elmore Leonard",
     year: 1976,
-    yearRead: 2025,
     recommended: true,
   },
   {
@@ -1018,7 +892,6 @@ export const books: Book[] = [
     title: "The Stars at Noon",
     author: "Denis Johnson",
     year: 1986,
-    yearRead: 2025,
     recommended: false,
   },
   {
@@ -1026,7 +899,6 @@ export const books: Book[] = [
     title: "Zero K",
     author: "Don DeLillo",
     year: 2016,
-    yearRead: 2025,
     recommended: false,
   },
   {
@@ -1034,7 +906,6 @@ export const books: Book[] = [
     title: "Kudos",
     author: "Rachel Cusk",
     year: 2019,
-    yearRead: 2025,
     recommended: true,
   },
   {
@@ -1042,7 +913,6 @@ export const books: Book[] = [
     title: "The Novelist",
     author: "Jordan Castro",
     year: 2022,
-    yearRead: 2025,
     recommended: false,
   },
   {
@@ -1050,7 +920,6 @@ export const books: Book[] = [
     title: "The Compound",
     author: "Aisling Rawle",
     year: 2025,
-    yearRead: 2025,
     recommended: false,
   },
   {
@@ -1058,7 +927,6 @@ export const books: Book[] = [
     title: "Vineland",
     author: "Thomas Pynchon",
     year: 1990,
-    yearRead: 2025,
     recommended: true,
   },
   {
@@ -1066,7 +934,6 @@ export const books: Book[] = [
     title: "A Judgement in Stone",
     author: "Barbara Vine",
     year: 1977,
-    yearRead: 2025,
     recommended: false,
   },
   {
@@ -1074,7 +941,6 @@ export const books: Book[] = [
     title: "The Anthropologists",
     author: "Ayşegül Savaş",
     year: 2024,
-    yearRead: 2025,
     recommended: true,
   },
   {
@@ -1082,7 +948,6 @@ export const books: Book[] = [
     title: "Autocorrect: Stories",
     author: "Etgar Keret",
     year: 2025,
-    yearRead: 2025,
     recommended: false,
   },
   {
@@ -1090,7 +955,6 @@ export const books: Book[] = [
     title: "I Heard Her Call My Name",
     author: "Lucy Sante",
     year: 2024,
-    yearRead: 2025,
     recommended: false,
   },
   {
@@ -1098,7 +962,6 @@ export const books: Book[] = [
     title: "Seven Empty Houses",
     author: "Samanta Schweblin",
     year: 2022,
-    yearRead: 2025,
     recommended: false,
   },
   {
@@ -1106,7 +969,6 @@ export const books: Book[] = [
     title: "The Silence",
     author: "Don DeLillo",
     year: 2020,
-    yearRead: 2025,
     recommended: false,
   },
   {
@@ -1114,7 +976,6 @@ export const books: Book[] = [
     title: "The English Understand Wool",
     author: "Helen DeWitt",
     year: 2022,
-    yearRead: 2025,
     recommended: false,
   },
   {
@@ -1122,7 +983,6 @@ export const books: Book[] = [
     title: "The Body Artist",
     author: "Don DeLillo",
     year: 2001,
-    yearRead: 2025,
     recommended: false,
   },
   {
@@ -1130,7 +990,6 @@ export const books: Book[] = [
     title: "On the Calculation of Volume, Book I",
     author: "Balle Solvej",
     year: 2020,
-    yearRead: 2025,
     recommended: false,
   },
   {
@@ -1138,7 +997,6 @@ export const books: Book[] = [
     title: "Muscle Man",
     author: "Jordan Castro",
     year: 2025,
-    yearRead: 2025,
     recommended: false,
   },
   {
@@ -1146,7 +1004,6 @@ export const books: Book[] = [
     title: "Not a River",
     author: "Selva Almada",
     year: 2020,
-    yearRead: 2025,
     recommended: false,
   },
   {
@@ -1154,15 +1011,14 @@ export const books: Book[] = [
     title: "Elena Knows",
     author: "Claudia Piñeiro",
     year: 2007,
-    yearRead: 2025,
     recommended: true,
   },
+  // 2026 books
   {
     id: 155,
     title: "I See You've Called in Dead",
     author: "John Kenney",
     year: 2025,
-    yearRead: 2026,
     recommended: false,
   },
   {
@@ -1170,7 +1026,6 @@ export const books: Book[] = [
     title: "On the Calculation of Volume, Book II",
     author: "Solvej Balle",
     year: 2020,
-    yearRead: 2026,
     recommended: false,
   },
   {
@@ -1178,7 +1033,6 @@ export const books: Book[] = [
     title: "Discontent",
     author: "Beatriz Serrano",
     year: 2025,
-    yearRead: 2026,
     recommended: false,
   },
   {
@@ -1186,7 +1040,6 @@ export const books: Book[] = [
     title: "Fever Dream",
     author: "Samanta Schweblin",
     year: 2014,
-    yearRead: 2026,
     recommended: false,
   },
   {
@@ -1194,7 +1047,6 @@ export const books: Book[] = [
     title: "Pariah",
     author: "Dan Fesperman",
     year: 2025,
-    yearRead: 2026,
     recommended: false,
   },
   {
@@ -1202,7 +1054,6 @@ export const books: Book[] = [
     title: "Lion",
     author: "Sonya Walger",
     year: 2025,
-    yearRead: 2026,
     recommended: true,
   },
   {
@@ -1210,7 +1061,6 @@ export const books: Book[] = [
     title: "Good and Evil",
     author: "Samanta Schweblin",
     year: 2025,
-    yearRead: 2026,
     recommended: true,
   },
   {
@@ -1218,7 +1068,6 @@ export const books: Book[] = [
     title: "Trip",
     author: "Amie Barrodale",
     year: 2025,
-    yearRead: 2026,
     recommended: false,
   },
   {
@@ -1226,7 +1075,6 @@ export const books: Book[] = [
     title: "Palaver",
     author: "Bryan Washington",
     year: 2025,
-    yearRead: 2026,
     recommended: false,
   },
   {
@@ -1234,7 +1082,6 @@ export const books: Book[] = [
     title: "What We Can Know",
     author: "Ian McEwan",
     year: 2025,
-    yearRead: 2026,
     recommended: false,
   },
   {
@@ -1242,15 +1089,13 @@ export const books: Book[] = [
     title: "Heartwood",
     author: "Amity Gaige",
     year: 2025,
-    yearRead: 2026,
     recommended: false,
   },
   {
     id: 166,
     title: "Vigil",
     author: "George Saunders",
-    year: 2025,
-    yearRead: 2026,
+    year: 2026,
     recommended: false,
   },
 ];
