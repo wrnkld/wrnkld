@@ -1245,4 +1245,12 @@ export const books: Book[] = [
     yearRead: 2026,
     recommended: false,
   },
+  {
+    id: 166,
+    title: "Vigil",
+    author: "George Saunders",
+    year: 2025,
+    yearRead: 2026,
+    recommended: false,
+  },
 ];
