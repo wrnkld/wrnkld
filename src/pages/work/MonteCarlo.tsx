@@ -2,7 +2,7 @@ import { DetailLayout } from "@/components/DetailLayout";
 
 export default function MonteCarlo() {
   return (
-    <DetailLayout title="Monte Carlo" subtitle="Work" colorClass="card-mustard">
+    <DetailLayout title="Monte Carlo" subtitle="Work" colorClass="card-violet">
       <p className="font-body text-base text-muted-foreground leading-relaxed">
         Monte Carlo is the leading data and AI observability platform, helping data teams detect, resolve, and prevent data quality issues across the modern data stack.
       </p>
