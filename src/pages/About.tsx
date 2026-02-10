@@ -103,7 +103,7 @@ export default function About() {
           >
             <div className="shrink-0 w-56">
               <h3 className="font-display text-base print:text-sm font-bold text-foreground">{job.company}</h3>
-              <p className="font-body text-base print:text-sm text-muted-foreground font-normal">{job.years}</p>
+              <p className="font-body text-base print:text-sm text-muted-foreground font-normal mt-1">{job.years}</p>
             </div>
             <div>
               <p className="font-body text-base print:text-sm text-foreground font-normal">{job.role}</p>
