@@ -107,15 +107,9 @@ export default function About() {
             </div>
             <div>
               <p className="font-body text-base print:text-sm text-foreground font-normal">{job.role}</p>
-              {job.bullets && (
-                <ul>
-                  {job.bullets.map((bullet, i) => (
-                  <li key={i} className="font-body text-base print:text-sm text-muted-foreground">
-                    {bullet}
-                  </li>
-                  ))}
-                </ul>
-              )}
+              {job.bullets && job.bullets.map((bullet, i) => (
+                <p key={i} className="font-body text-base print:text-sm text-muted-foreground mt-1">{bullet}</p>
+              ))}
             </div>
           </div>
         ))}
