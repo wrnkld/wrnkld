@@ -89,8 +89,10 @@ export default function About() {
       }
     >
       {/* Print-only header */}
-      <div className="hidden print:flex print:mb-6">
+      <div className="hidden print:block print:mb-6">
         <h2 className="font-display text-2xl font-medium text-foreground">Matthew Stevens</h2>
+        <p className="font-body text-sm text-foreground print:text-xs"><a href="https://www.wrnkld.tv/">wrnkld.tv</a></p>
+        <p className="font-body text-sm text-foreground print:text-xs"><a href="https://www.linkedin.com/in/wrnkld/">linkedin.com/in/wrnkld</a></p>
       </div>
 
       <div>
@@ -126,19 +128,8 @@ export default function About() {
             <p className="font-body text-base text-muted-foreground print:text-xs">BA Psychology, Cum Laude</p>
           </div>
         </div>
-        <div className="hidden print:flex py-4 print:py-3 gap-8">
-           <div className="shrink-0 w-56">
-            <h3 className="font-display text-base font-bold text-foreground print:text-sm">Contact</h3>
-          </div>
-          <div>
-            <p className="font-body text-base text-foreground font-normal print:text-sm">
-              <a href="https://www.wrnkld.tv/">wrnkld.tv</a>
-            </p>
-            <p className="font-body text-base text-muted-foreground print:text-xs">
-              <a href="https://www.linkedin.com/in/wrnkld/">linkedin.com/in/wrnkld</a>
-            </p>
-          </div>
-        </div>
+
+
       </div>
     </DetailLayout>
   );
