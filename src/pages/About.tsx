@@ -108,7 +108,7 @@ export default function About() {
             <div className="space-y-1">
               <p className="font-body text-base print:text-sm text-foreground font-normal">{job.role}</p>
               {job.bullets && (
-                <ul className="space-y-1 pt-0.5">
+                <ul className="space-y-1">
                   {job.bullets.map((bullet, i) => (
                   <li key={i} className="font-body text-base print:text-sm text-muted-foreground">
                     {bullet}
