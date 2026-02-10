@@ -90,9 +90,9 @@ export default function About() {
     >
       {/* Print-only header */}
       <div className="hidden print:block print:mb-6">
-        <h2 className="font-display text-2xl font-medium text-foreground">Matthew Stevens</h2>
-        <p className="font-body text-sm text-foreground print:text-xs"><a href="https://www.wrnkld.tv/">wrnkld.tv</a></p>
-        <p className="font-body text-sm text-foreground print:text-xs"><a href="https://www.linkedin.com/in/wrnkld/">linkedin.com/in/wrnkld</a></p>
+        <h2 className="font-display text-2xl font-medium text-foreground print:text-lg">Matthew Stevens</h2>
+        <p className="font-body text-base text-muted-foreground print:text-xs mt-1"><a href="https://www.wrnkld.tv/">wrnkld.tv</a></p>
+        <p className="font-body text-base text-muted-foreground print:text-xs"><a href="https://www.linkedin.com/in/wrnkld/">linkedin.com/in/wrnkld</a></p>
       </div>
 
       <div>
