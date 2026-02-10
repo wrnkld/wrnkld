@@ -101,7 +101,7 @@ export default function About() {
         {experience.map((job, index) => (
           <div
             key={index}
-            className="py-4 print:py-3 flex gap-8"
+            className={`py-4 print:py-3 flex gap-8 ${index > 0 ? 'border-t border-border/40' : ''}`}
           >
             <div className="shrink-0 w-64">
               <h3 className="font-display text-base font-bold text-foreground print:text-sm">{job.company}</h3>
