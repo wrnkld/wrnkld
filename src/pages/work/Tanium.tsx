@@ -37,7 +37,7 @@ export default function Tanium() {
 
       <video src={taniumNavigation} poster={taniumNavigationViews} autoPlay loop muted playsInline className="w-full h-auto border border-border/40" />
 
-      <div className="grid grid-cols-2">
+      <div className="grid grid-cols-2 gap-4">
         <img src={taniumThreatAlerts} alt="Tanium Threat Alerts" className="w-full h-auto border border-border/40" />
         <img src={taniumThreatDocuments} alt="Tanium Threat Documents" className="w-full h-auto border border-border/40" />
       </div>
@@ -46,7 +46,7 @@ export default function Tanium() {
 
       <video src={taniumDiscover} poster={taniumDiscoverInterfaces} autoPlay loop muted playsInline className="w-full h-auto border border-border/40" />
 
-      <div className="grid grid-cols-2">
+      <div className="grid grid-cols-2 gap-4">
         <img src={taniumDiscoverInterfaces} alt="Tanium Discover Interfaces" className="w-full h-auto border border-border/40" />
         <img src={taniumAssetVendor} alt="Tanium Asset Vendor" className="w-full h-auto border border-border/40" />
       </div>

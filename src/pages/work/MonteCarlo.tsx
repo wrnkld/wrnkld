@@ -31,7 +31,7 @@ export default function MonteCarlo() {
 
       <img src={mcdWrites} alt="Monte Carlo write queries overview showing total credits and query performance trends" className="w-full h-auto border border-border/40" />
 
-      <div className="grid grid-cols-2">
+      <div className="grid grid-cols-2 gap-4">
         <img src={mcdWrite1} alt="Monte Carlo write query detail with observability agent explaining performance" className="w-full h-auto border border-border/40" />
         <img src={mcdWrite2} alt="Monte Carlo write query detail with optimization recommendations" className="w-full h-auto border border-border/40" />
       </div>
