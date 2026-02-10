@@ -93,15 +93,15 @@ export default function About() {
         {experience.map((job, index) => (
           <div
             key={index}
-            className="py-4 print:py-3"
+            className="py-4 print:py-3 flex gap-8"
           >
-            <div className="flex items-center justify-between">
+            <div className="shrink-0 w-48">
               <h3 className="font-display text-base font-medium text-foreground print:text-sm">{job.company}</h3>
+              <p className="font-body text-base text-muted-foreground print:text-sm">{job.role}</p>
               <p className="font-body text-sm text-muted-foreground print:text-xs">{job.years}</p>
             </div>
-            <p className="font-body text-base text-muted-foreground print:text-sm">{job.role}</p>
             {job.bullets && (
-              <ul className="mt-2 space-y-1">
+              <ul className="space-y-1 pt-0.5">
                 {job.bullets.map((bullet, i) => (
                   <li key={i} className="font-body text-sm text-muted-foreground flex items-start gap-2 print:text-xs">
                     <span className="mt-0.5 shrink-0">→</span>
