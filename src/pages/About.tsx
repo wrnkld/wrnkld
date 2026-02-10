@@ -88,22 +88,6 @@ export default function About() {
         </button>
       }
     >
-      {/* Print-only header */}
-      <div className="hidden print:flex print:mb-6 print:gap-8">
-        <div className="shrink-0 w-64">
-          <h2 className="font-display text-2xl font-medium text-foreground">Matthew Stevens</h2>
-        </div>
-        <ul className="space-y-1 pt-0.5">
-          <li className="font-body text-sm text-muted-foreground flex items-start gap-2 print:text-xs">
-            <span className="mt-0.5 shrink-0">→</span>
-            <a href="https://www.wrnkld.tv/">wrnkld.tv</a>
-          </li>
-          <li className="font-body text-sm text-muted-foreground flex items-start gap-2 print:text-xs">
-            <span className="mt-0.5 shrink-0">→</span>
-            <a href="https://www.linkedin.com/in/wrnkld/">linkedin.com/in/wrnkld</a>
-          </li>
-        </ul>
-      </div>
 
       <div>
         {experience.map((job, index) => (
