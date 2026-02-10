@@ -105,19 +105,21 @@ export default function About() {
           >
             <div className="shrink-0 w-64">
               <h3 className="font-display text-base font-bold text-foreground print:text-sm">{job.company}</h3>
-              <p className="font-body text-base text-foreground font-normal print:text-sm">{job.role}</p>
               <p className="font-body text-base text-muted-foreground font-normal print:text-xs">{job.years}</p>
             </div>
-            {job.bullets && (
-              <ul className="space-y-1 pt-0.5">
-                {job.bullets.map((bullet, i) => (
-                  <li key={i} className="font-body text-sm text-muted-foreground flex items-start gap-2 print:text-xs">
-                    <span className="mt-0.5 shrink-0">→</span>
-                    <span>{bullet}</span>
-                  </li>
-                ))}
-              </ul>
-            )}
+            <div className="space-y-1">
+              <p className="font-body text-base text-foreground font-normal print:text-sm">{job.role}</p>
+              {job.bullets && (
+                <ul className="space-y-1 pt-0.5">
+                  {job.bullets.map((bullet, i) => (
+                    <li key={i} className="font-body text-sm text-muted-foreground flex items-start gap-2 print:text-xs">
+                      <span className="mt-0.5 shrink-0">→</span>
+                      <span>{bullet}</span>
+                    </li>
+                  ))}
+                </ul>
+              )}
+            </div>
           </div>
         ))}
         <div className="py-4 print:py-3 border-t border-border/40">
