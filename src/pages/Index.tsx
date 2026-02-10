@@ -4,10 +4,9 @@ const links = [
   { title: "Pt 1 → Tools", section: "Design & AI", to: "/designai/tools", date: "2025", accentText: "group-hover:text-orange-500" },
   { title: "Pt 2 → Vibes", section: "Design & AI", to: "/designai/vibes", date: "2025", accentText: "group-hover:text-emerald-600" },
   { title: "Pt 3 → Sleeves", section: "Design & AI", to: "/designai/sleeves", date: "2025", accentText: "group-hover:text-cyan-500" },
-  { title: "Experience", section: "About", to: "/about/experience", accentText: "group-hover:text-amber-500" },
-  { title: "Books", section: "About", to: "/about/books", accentText: "group-hover:text-pink-500" },
-  { title: "Records", section: "About", to: "/about/records", accentText: "group-hover:text-purple-500" },
-  
+  { title: "Experience", section: "About", to: "/about/experience", date: "Current", accentText: "group-hover:text-amber-500" },
+  { title: "Books", section: "About", to: "/about/books", date: "Current", accentText: "group-hover:text-pink-500" },
+  { title: "Records", section: "About", to: "/about/records", date: "Current", accentText: "group-hover:text-purple-500" },
 
   { title: "Tanium", section: "Work", to: "/work/tanium", date: "2019 - 2021", accentText: "group-hover:text-rose-400" },
   { title: "Red Hat", section: "Work", to: "/work/redhat", date: "2016 - 2019", accentText: "group-hover:text-teal-500" },
