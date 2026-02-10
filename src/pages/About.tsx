@@ -81,9 +81,11 @@ export default function About() {
       }
     >
       {/* Print-only header */}
-      <div className="hidden print:block print:mb-6">
-        <h2 className="font-display text-2xl font-medium text-foreground">Matthew Stevens</h2>
-        <div className="flex gap-4 mt-1">
+      <div className="hidden print:flex print:mb-6 print:gap-8">
+        <div className="shrink-0 w-64">
+          <h2 className="font-display text-2xl font-medium text-foreground">Matthew Stevens</h2>
+        </div>
+        <div className="flex gap-4 items-end">
           <a href="https://www.wrnkld.tv/" className="font-body text-sm text-muted-foreground">wrnkld.tv</a>
           <a href="https://www.linkedin.com/in/wrnkld/" className="font-body text-sm text-muted-foreground">linkedin.com/in/wrnkld</a>
         </div>
