@@ -105,10 +105,10 @@ export default function About() {
               <h3 className="font-display text-base print:text-sm font-bold text-foreground">{job.company}</h3>
               <p className="font-body text-base print:text-sm text-muted-foreground font-normal">{job.years}</p>
             </div>
-            <div className="space-y-1">
+            <div>
               <p className="font-body text-base print:text-sm text-foreground font-normal">{job.role}</p>
               {job.bullets && (
-                <ul className="space-y-1">
+                <ul>
                   {job.bullets.map((bullet, i) => (
                   <li key={i} className="font-body text-base print:text-sm text-muted-foreground">
                     {bullet}
