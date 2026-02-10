@@ -85,10 +85,16 @@ export default function About() {
         <div className="shrink-0 w-64">
           <h2 className="font-display text-2xl font-medium text-foreground">Matthew Stevens</h2>
         </div>
-        <div className="flex gap-4 items-end">
-          <a href="https://www.wrnkld.tv/" className="font-body text-sm text-muted-foreground">wrnkld.tv</a>
-          <a href="https://www.linkedin.com/in/wrnkld/" className="font-body text-sm text-muted-foreground">linkedin.com/in/wrnkld</a>
-        </div>
+        <ul className="space-y-1 pt-0.5">
+          <li className="font-body text-sm text-muted-foreground flex items-start gap-2 print:text-xs">
+            <span className="mt-0.5 shrink-0">→</span>
+            <a href="https://www.wrnkld.tv/">wrnkld.tv</a>
+          </li>
+          <li className="font-body text-sm text-muted-foreground flex items-start gap-2 print:text-xs">
+            <span className="mt-0.5 shrink-0">→</span>
+            <a href="https://www.linkedin.com/in/wrnkld/">linkedin.com/in/wrnkld</a>
+          </li>
+        </ul>
       </div>
 
       <div>
