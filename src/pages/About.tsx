@@ -89,28 +89,28 @@ export default function About() {
       }
     >
       {/* Print-only header */}
-      <div className="hidden print:block print:mb-6">
-        <h2 className="font-display text-2xl font-medium text-foreground">Matthew Stevens</h2>
-        <p className="font-body text-base text-muted-foreground mt-1"><a href="https://www.wrnkld.tv/">wrnkld.tv</a></p>
-        <p className="font-body text-base text-muted-foreground"><a href="https://www.linkedin.com/in/wrnkld/">linkedin.com/in/wrnkld</a></p>
+      <div className="hidden print:block print:mb-4">
+        <h2 className="font-display text-2xl print:text-lg font-medium text-foreground">Matthew Stevens</h2>
+        <p className="font-body text-base print:text-sm text-muted-foreground mt-1"><a href="https://www.wrnkld.tv/">wrnkld.tv</a></p>
+        <p className="font-body text-base print:text-sm text-muted-foreground"><a href="https://www.linkedin.com/in/wrnkld/">linkedin.com/in/wrnkld</a></p>
       </div>
 
       <div>
         {experience.map((job, index) => (
           <div
             key={index}
-            className="py-4 flex gap-8"
+            className="py-4 print:py-2 flex gap-8"
           >
             <div className="shrink-0 w-56">
-              <h3 className="font-display text-base font-bold text-foreground">{job.company}</h3>
-              <p className="font-body text-base text-muted-foreground font-normal">{job.years}</p>
+              <h3 className="font-display text-base print:text-sm font-bold text-foreground">{job.company}</h3>
+              <p className="font-body text-base print:text-sm text-muted-foreground font-normal">{job.years}</p>
             </div>
             <div className="space-y-1">
-              <p className="font-body text-base text-foreground font-normal">{job.role}</p>
+              <p className="font-body text-base print:text-sm text-foreground font-normal">{job.role}</p>
               {job.bullets && (
                 <ul className="space-y-1 pt-0.5">
                   {job.bullets.map((bullet, i) => (
-                  <li key={i} className="font-body text-base text-muted-foreground">
+                  <li key={i} className="font-body text-base print:text-sm text-muted-foreground">
                     {bullet}
                   </li>
                   ))}
@@ -119,13 +119,13 @@ export default function About() {
             </div>
           </div>
         ))}
-        <div className="py-4 flex gap-8">
+        <div className="py-4 print:py-2 flex gap-8">
            <div className="shrink-0 w-56">
-            <h3 className="font-display text-base font-bold text-foreground">Education</h3>
+            <h3 className="font-display text-base print:text-sm font-bold text-foreground">Education</h3>
           </div>
           <div>
-            <p className="font-body text-base text-foreground font-normal">Georgetown University</p>
-            <p className="font-body text-base text-muted-foreground">BA Psychology, Cum Laude</p>
+            <p className="font-body text-base print:text-sm text-foreground font-normal">Georgetown University</p>
+            <p className="font-body text-base print:text-sm text-muted-foreground">BA Psychology, Cum Laude</p>
           </div>
         </div>
 
