@@ -96,9 +96,9 @@ export default function About() {
             className="py-4 print:py-3 flex gap-8"
           >
             <div className="shrink-0 w-64">
-              <h3 className="font-display text-base font-medium text-muted-foreground print:text-sm">{job.company}</h3>
-              <p className="font-body text-base text-muted-foreground print:text-sm">{job.role}</p>
-              <p className="font-body text-base text-foreground print:text-xs">{job.years}</p>
+              <h3 className="font-display text-base font-bold text-foreground print:text-sm">{job.company}</h3>
+              <p className="font-body text-base text-foreground font-normal print:text-sm">{job.role}</p>
+              <p className="font-body text-base text-muted-foreground font-normal print:text-xs">{job.years}</p>
             </div>
             {job.bullets && (
               <ul className="space-y-1 pt-0.5">
