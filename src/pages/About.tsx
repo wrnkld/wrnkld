@@ -1,4 +1,5 @@
 import { DetailLayout } from "@/components/DetailLayout";
+import { Printer } from "lucide-react";
 
 const experience: {
   company: string;
@@ -63,13 +64,31 @@ const experience: {
 ];
 
 export default function About() {
+  const handlePrint = () => window.print();
+
   return (
     <DetailLayout title="Experience" subtitle="About" colorClass="card-mustard">
-      <div className="border border-border rounded-md overflow-hidden">
+      {/* Print-only header */}
+      <div className="hidden print:block print:mb-6">
+        <h2 className="font-display text-2xl font-medium text-foreground">Matthew Stevens</h2>
+        <p className="font-body text-sm text-muted-foreground">wrnkld.lovable.app</p>
+      </div>
+
+      <div className="flex justify-end mb-4 print:hidden">
+        <button
+          onClick={handlePrint}
+          className="inline-flex items-center gap-2 text-xs font-body uppercase tracking-widest text-muted-foreground hover:text-foreground transition-colors"
+        >
+          <Printer className="w-3.5 h-3.5" />
+          <span>Save as PDF</span>
+        </button>
+      </div>
+
+      <div className="border border-border rounded-md overflow-hidden print:border-0 print:rounded-none">
         {experience.map((job, index) => (
           <div
             key={index}
-            className="py-4 px-4 border-b border-border last:border-b-0 hover:bg-white transition-colors duration-200"
+            className="py-4 px-4 border-b border-border last:border-b-0 hover:bg-white transition-colors duration-200 print:px-0 print:py-3 print:hover:bg-transparent"
           >
             <div className="flex items-center justify-between">
               <h3 className="font-display text-base font-medium text-foreground">{job.company}</h3>
