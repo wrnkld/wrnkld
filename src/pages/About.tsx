@@ -113,7 +113,7 @@ export default function About() {
           </div>
         ))}
         <div className="py-4 print:py-3">
-          <h3 className="font-display text-base font-medium text-foreground print:text-sm">Education</h3>
+          <h3 className="font-display text-base font-bold text-foreground print:text-sm">Education</h3>
           <p className="font-body text-base text-muted-foreground print:text-sm">Georgetown University — BA Psychology, Cum Laude</p>
         </div>
       </div>
