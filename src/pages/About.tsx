@@ -67,21 +67,27 @@ export default function About() {
   const handlePrint = () => window.print();
 
   return (
-    <DetailLayout title="Experience" subtitle="About" colorClass="card-mustard">
+    <DetailLayout
+      title="Experience"
+      subtitle="About"
+      colorClass="card-mustard"
+      headerAction={
+        <button
+          onClick={handlePrint}
+          className="inline-flex items-center gap-2 text-xs font-body uppercase tracking-widest text-muted-foreground hover:text-foreground transition-colors print:hidden"
+        >
+          <Printer className="w-3.5 h-3.5" />
+          <span>PDF</span>
+        </button>
+      }
+    >
       {/* Print-only header */}
       <div className="hidden print:block print:mb-6">
         <h2 className="font-display text-2xl font-medium text-foreground">Matthew Stevens</h2>
-        <p className="font-body text-sm text-muted-foreground">wrnkld.lovable.app</p>
-      </div>
-
-      <div className="flex justify-end mb-4 print:hidden">
-        <button
-          onClick={handlePrint}
-          className="inline-flex items-center gap-2 text-xs font-body uppercase tracking-widest text-muted-foreground hover:text-foreground transition-colors"
-        >
-          <Printer className="w-3.5 h-3.5" />
-          <span>Save as PDF</span>
-        </button>
+        <div className="flex gap-4 mt-1">
+          <a href="https://www.wrnkld.tv/" className="font-body text-sm text-muted-foreground">wrnkld.tv</a>
+          <a href="https://www.linkedin.com/in/wrnkld/" className="font-body text-sm text-muted-foreground">linkedin.com/in/wrnkld</a>
+        </div>
       </div>
 
       <div className="border border-border rounded-md overflow-hidden print:border-0 print:rounded-none">

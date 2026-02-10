@@ -223,10 +223,15 @@
     font-size: 12pt;
   }
 
-  /* Hide navigation, back links, color bar */
+  /* Hide navigation, back links, color bar, title area */
   .card-mustard,
   nav,
   footer {
+    display: none !important;
+  }
+
+  /* Hide the DetailLayout header (subtitle + title) */
+  .min-h-screen > div > div:first-child {
     display: none !important;
   }
 
