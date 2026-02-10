@@ -11,34 +11,37 @@ const experience: {
     company: "Monte Carlo",
     role: "Head of Design",
     years: "2022 - Present",
-    bullets: [
-      "Built and scaled the design team from founding designer to a multi-disciplinary group",
-      "Defined product vision and design strategy for data observability platform",
-      "Shipped end-to-end investigation workflows across Snowflake, dbt, Airflow, and Looker",
-    ],
   },
   {
     company: "Workato",
     role: "Staff Product Designer",
     years: "2021 - 2022",
+    bullets: [
+      "Designed automation workflows for enterprise integration platform",
+    ],
   },
   {
     company: "Tanium",
     role: "Senior Product Designer",
     years: "2019 - 2021",
     bullets: [
-      "Designed asset discovery and network interface exploration tools",
-      "Led design for compliance assurance and policy enforcement modules",
+      "Designed asset discovery, compliance assurance, and policy enforcement modules",
     ],
   },
-  { company: "Pendo", role: "Lead Product Designer", years: "2019" },
+  {
+    company: "Pendo",
+    role: "Lead Product Designer",
+    years: "2019",
+    bullets: [
+      "Led design for product analytics and user engagement tools",
+    ],
+  },
   {
     company: "Red Hat",
     role: "Senior Interaction Designer",
     years: "2016 - 2019",
     bullets: [
       "Led cross-disciplinary design team modernizing the middleware portfolio",
-      "Created shared patterns across Business Automation and Business Optimization",
     ],
   },
   {
@@ -47,7 +50,6 @@ const experience: {
     years: "2011 - 2016",
     bullets: [
       "Owned interaction design for visual analytics and statistical modeling products",
-      "Shipped data preparation and reporting workflows used by enterprise customers",
     ],
   },
   {
@@ -56,10 +58,13 @@ const experience: {
     years: "2006 - 2011",
     bullets: [
       "Managed a team of designers delivering UX for enterprise and government clients",
-      "Established design processes and quality standards across concurrent projects",
     ],
   },
-  { company: "Frog", role: "Associate Interaction Designer", years: "2004 - 2006" },
+  { company: "Frog", role: "Associate Interaction Designer", years: "2004 - 2006",
+    bullets: [
+      "Contributed to interaction design for consumer electronics and enterprise clients",
+    ],
+  },
 ];
 
 export default function About() {
