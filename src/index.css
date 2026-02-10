@@ -215,3 +215,29 @@
     text-wrap: balance;
   }
 }
+
+@media print {
+  body {
+    background: white !important;
+    color: black !important;
+    font-size: 12pt;
+  }
+
+  /* Hide navigation, back links, color bar */
+  .card-mustard,
+  nav,
+  footer {
+    display: none !important;
+  }
+
+  /* Clean up spacing */
+  .min-h-screen {
+    min-height: auto !important;
+  }
+
+  .py-16,
+  .md\:py-24 {
+    padding-top: 1rem !important;
+    padding-bottom: 0 !important;
+  }
+}
