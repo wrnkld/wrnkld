@@ -114,7 +114,7 @@ export default function About() {
         ))}
       </div>
 
-      <div className="pt-4">
+      <div className="pt-0">
         <h3 className="font-display text-base font-medium text-foreground print:text-sm">Education</h3>
         <p className="font-body text-base text-muted-foreground print:text-sm">Georgetown University — BA Psychology, Cum Laude</p>
       </div>
