@@ -99,7 +99,7 @@ export default function About() {
             key={index}
             className="py-4 print:py-3 flex gap-8"
           >
-            <div className="shrink-0 w-64">
+            <div className="shrink-0 w-56">
               <h3 className="font-display text-base font-bold text-foreground print:text-sm">{job.company}</h3>
               <p className="font-body text-base text-muted-foreground font-normal print:text-xs">{job.years}</p>
             </div>
@@ -118,7 +118,7 @@ export default function About() {
           </div>
         ))}
         <div className="py-4 print:py-3 flex gap-8">
-          <div className="shrink-0 w-64">
+           <div className="shrink-0 w-56">
             <h3 className="font-display text-base font-bold text-foreground print:text-sm">Education</h3>
           </div>
           <div>
@@ -127,7 +127,7 @@ export default function About() {
           </div>
         </div>
         <div className="hidden print:flex py-4 print:py-3 gap-8">
-          <div className="shrink-0 w-64">
+           <div className="shrink-0 w-56">
             <h3 className="font-display text-base font-bold text-foreground print:text-sm">Contact</h3>
           </div>
           <div>
