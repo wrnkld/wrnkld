@@ -95,10 +95,10 @@ export default function About() {
             key={index}
             className="py-4 print:py-3 flex gap-8"
           >
-            <div className="shrink-0 w-48">
-              <h3 className="font-display text-base font-medium text-foreground print:text-sm">{job.company}</h3>
+            <div className="shrink-0 w-56">
+              <h3 className="font-display text-base font-bold text-foreground print:text-sm">{job.company}</h3>
               <p className="font-body text-base text-muted-foreground print:text-sm">{job.role}</p>
-              <p className="font-body text-sm text-muted-foreground print:text-xs">{job.years}</p>
+              <p className="font-body text-base text-muted-foreground print:text-xs">{job.years}</p>
             </div>
             {job.bullets && (
               <ul className="space-y-1 pt-0.5">
