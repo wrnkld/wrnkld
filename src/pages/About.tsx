@@ -112,10 +112,9 @@ export default function About() {
               {job.bullets && (
                 <ul className="space-y-1 pt-0.5">
                   {job.bullets.map((bullet, i) => (
-                    <li key={i} className="font-body text-sm text-muted-foreground flex items-start gap-2 print:text-xs">
-                      <span className="mt-0.5 shrink-0">→</span>
-                      <span>{bullet}</span>
-                    </li>
+                  <li key={i} className="font-body text-base text-muted-foreground print:text-xs">
+                    {bullet}
+                  </li>
                   ))}
                 </ul>
               )}
