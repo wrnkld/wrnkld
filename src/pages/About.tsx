@@ -11,6 +11,9 @@ const experience: {
     company: "Monte Carlo",
     role: "Head of Design",
     years: "2022 - Present",
+    bullets: [
+      "Built and scaled design for data observability from founding designer to team lead",
+    ],
   },
   {
     company: "Workato",
