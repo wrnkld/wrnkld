@@ -50,7 +50,15 @@ const experience: {
       "Shipped data preparation and reporting workflows used by enterprise customers",
     ],
   },
-  { company: "HumanCentric", role: "Product Design Manager", years: "2006 - 2011" },
+  {
+    company: "HumanCentric",
+    role: "Product Design Manager",
+    years: "2006 - 2011",
+    bullets: [
+      "Managed a team of designers delivering UX for enterprise and government clients",
+      "Established design processes and quality standards across concurrent projects",
+    ],
+  },
   { company: "Frog", role: "Associate Interaction Designer", years: "2004 - 2006" },
 ];
 
