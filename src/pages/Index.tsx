@@ -74,7 +74,7 @@ export default function Index() {
                     {link.title}
                   </span>
                   {link.date && (
-                    <span className="font-body text-sm text-muted-foreground">
+                    <span className="font-body text-base text-muted-foreground">
                       {link.date}
                     </span>
                   )}
