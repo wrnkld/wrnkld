@@ -109,7 +109,7 @@ export default function About() {
         {experience.map((job, index) => (
           <div
             key={index}
-            className={`py-4 print:py-3 flex gap-8 ${index > 0 ? 'border-t border-border/40' : ''}`}
+            className="py-4 print:py-3 flex gap-8"
           >
             <div className="shrink-0 w-64">
               <h3 className="font-display text-base font-bold text-foreground print:text-sm">{job.company}</h3>
@@ -129,13 +129,26 @@ export default function About() {
             </div>
           </div>
         ))}
-        <div className="py-4 print:py-3 border-t border-border/40 flex gap-8">
+        <div className="py-4 print:py-3 flex gap-8">
           <div className="shrink-0 w-64">
             <h3 className="font-display text-base font-bold text-foreground print:text-sm">Education</h3>
           </div>
           <div>
             <p className="font-body text-base text-foreground font-normal print:text-sm">Georgetown University</p>
             <p className="font-body text-base text-muted-foreground print:text-xs">BA Psychology, Cum Laude</p>
+          </div>
+        </div>
+        <div className="py-4 print:py-3 flex gap-8">
+          <div className="shrink-0 w-64">
+            <h3 className="font-display text-base font-bold text-foreground print:text-sm">Contact</h3>
+          </div>
+          <div>
+            <p className="font-body text-base text-foreground font-normal print:text-sm">
+              <a href="https://www.wrnkld.tv/" className="hover:text-muted-foreground transition-colors">wrnkld.tv</a>
+            </p>
+            <p className="font-body text-base text-muted-foreground print:text-xs">
+              <a href="https://www.linkedin.com/in/wrnkld/" className="hover:text-foreground transition-colors">linkedin.com/in/wrnkld</a>
+            </p>
           </div>
         </div>
       </div>
