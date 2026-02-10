@@ -38,7 +38,6 @@ const experience: {
     years: "2016 - 2019",
     bullets: [
       "Led cross-disciplinary design team modernizing the middleware portfolio",
-      "Designed in the open using PatternFly with community feedback loops",
       "Created shared patterns across Business Automation and Business Optimization",
     ],
   },
@@ -94,7 +93,7 @@ export default function About() {
         {experience.map((job, index) => (
           <div
             key={index}
-            className="py-4 px-4 border-b border-border last:border-b-0 hover:bg-white transition-colors duration-200 print:px-0 print:py-3 print:hover:bg-transparent"
+            className="py-4 px-4 border-b border-border last:border-b-0 hover:bg-white transition-colors duration-200 print:px-0 print:py-2 print:hover:bg-transparent print:border-b-0"
           >
             <div className="flex items-center justify-between">
               <h3 className="font-display text-base font-medium text-foreground">{job.company}</h3>
