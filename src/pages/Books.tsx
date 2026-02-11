@@ -106,7 +106,7 @@ export default function Books() {
               <TableHead>
                 <SortHeader field="title">Title</SortHeader>
               </TableHead>
-              <TableHead className="hidden md:table-cell">
+              <TableHead>
                 <SortHeader field="year">Year</SortHeader>
               </TableHead>
             </TableRow>
@@ -131,7 +131,7 @@ export default function Books() {
                       {book.author}
                     </TableCell>
                     <TableCell className="text-foreground">{book.title}</TableCell>
-                    <TableCell className="text-muted-foreground hidden md:table-cell">
+                    <TableCell className="text-muted-foreground">
                       {book.year}
                     </TableCell>
                   </motion.tr>
