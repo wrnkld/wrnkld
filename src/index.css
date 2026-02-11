@@ -198,6 +198,10 @@
 }
 
 @layer utilities {
+  .text-print {
+    font-size: 13px;
+    line-height: 1.4;
+  }
   .prose {
     @apply font-body text-base text-muted-foreground leading-relaxed;
   }
