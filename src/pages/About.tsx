@@ -120,9 +120,16 @@ export default function About() {
             </div>
             <div>
               <p className="font-body text-base print:text-sm text-foreground font-normal">{job.role}</p>
-              {job.bullets && job.bullets.map((bullet, i) => (
-                <p key={i} className="font-body text-base print:text-sm text-muted-foreground mt-1">→ {bullet}</p>
-              ))}
+              {job.bullets && job.bullets.length === 1 ? (
+                <p className="font-body text-base print:text-sm text-muted-foreground mt-1">{job.bullets[0]}</p>
+              ) : (
+                job.bullets?.map((bullet, i) => (
+                  <div key={i} className="flex gap-1.5 mt-1">
+                    <span className="font-body text-base print:text-sm text-muted-foreground shrink-0">→</span>
+                    <p className="font-body text-base print:text-sm text-muted-foreground">{bullet}</p>
+                  </div>
+                ))
+              )}
             </div>
           </div>
         ))}
