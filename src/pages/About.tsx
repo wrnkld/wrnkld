@@ -103,9 +103,9 @@ export default function About() {
     >
       {/* Print-only header */}
       <div className="hidden print:block print:mb-4">
-        <h2 className="font-display text-2xl print:text-lg font-medium text-foreground">Matthew Stevens</h2>
-        <p className="font-body text-base print:text-sm text-muted-foreground mt-1"><a href="https://www.wrnkld.tv/">wrnkld.tv</a></p>
-        <p className="font-body text-base print:text-sm text-muted-foreground"><a href="https://www.linkedin.com/in/wrnkld/">linkedin.com/in/wrnkld</a></p>
+        <h2 className="font-display text-2xl print:text-base font-medium text-foreground">Matthew Stevens</h2>
+        <p className="font-body text-base print:text-xs text-muted-foreground mt-1"><a href="https://www.wrnkld.tv/">wrnkld.tv</a></p>
+        <p className="font-body text-base print:text-xs text-muted-foreground"><a href="https://www.linkedin.com/in/wrnkld/">linkedin.com/in/wrnkld</a></p>
       </div>
 
       <div>
@@ -114,19 +114,19 @@ export default function About() {
             key={index}
             className="py-4 print:py-2 flex flex-col md:flex-row print:flex-row gap-1 md:gap-8 print:gap-8"
           >
-            <div className="shrink-0 md:w-48 print:w-48">
-              <h3 className="font-display text-base print:text-sm font-bold text-foreground">{job.company}</h3>
-              <p className="font-body text-base print:text-sm text-muted-foreground font-normal mt-1">{job.years}</p>
+            <div className="shrink-0 md:w-48 print:w-40">
+              <h3 className="font-display text-base print:text-xs font-bold text-foreground">{job.company}</h3>
+              <p className="font-body text-base print:text-xs text-muted-foreground font-normal mt-1">{job.years}</p>
             </div>
             <div>
-              <p className="font-body text-base print:text-sm text-foreground font-normal">{job.role}</p>
+              <p className="font-body text-base print:text-xs text-foreground font-normal">{job.role}</p>
               {job.bullets && job.bullets.length === 1 ? (
-                <p className="font-body text-base print:text-sm text-muted-foreground mt-1">{job.bullets[0]}</p>
+                <p className="font-body text-base print:text-xs text-muted-foreground mt-1">{job.bullets[0]}</p>
               ) : (
                 job.bullets?.map((bullet, i) => (
                   <div key={i} className="flex gap-1.5 mt-1">
-                    <span className="font-body text-base print:text-sm text-muted-foreground shrink-0">→</span>
-                    <p className="font-body text-base print:text-sm text-muted-foreground">{bullet}</p>
+                    <span className="font-body text-base print:text-xs text-muted-foreground shrink-0">→</span>
+                    <p className="font-body text-base print:text-xs text-muted-foreground">{bullet}</p>
                   </div>
                 ))
               )}
@@ -134,12 +134,12 @@ export default function About() {
           </div>
         ))}
         <div className="py-4 print:py-2 flex flex-col md:flex-row print:flex-row gap-1 md:gap-8 print:gap-8">
-           <div className="shrink-0 md:w-48 print:w-48">
-            <h3 className="font-display text-base print:text-sm font-bold text-foreground">Education</h3>
+           <div className="shrink-0 md:w-48 print:w-40">
+            <h3 className="font-display text-base print:text-xs font-bold text-foreground">Education</h3>
           </div>
           <div>
-            <p className="font-body text-base print:text-sm text-foreground font-normal">Georgetown University</p>
-            <p className="font-body text-base print:text-sm text-muted-foreground">BA Psychology, Cum Laude</p>
+            <p className="font-body text-base print:text-xs text-foreground font-normal">Georgetown University</p>
+            <p className="font-body text-base print:text-xs text-muted-foreground">BA Psychology, Cum Laude</p>
           </div>
         </div>
 
