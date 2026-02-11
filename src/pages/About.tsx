@@ -12,7 +12,10 @@ const experience: {
     role: "Head of Design",
     years: "2022 - Present",
     bullets: [
-      "Built and scaled design for data observability from founding designer to team lead",
+      "Founding design leader; built and scaled the design organization, hiring and mentoring senior talent while establishing operating standards.",
+      "Drove UX strategy across the data observability platform, shaping foundational workflows and system-level coherence.",
+      "Led customer research and executive alignment to inform product direction and platform evolution.",
+      "Advanced AI-driven and agentic workflows that made complex data systems usable and trustworthy for expert teams.",
     ],
   },
   {
@@ -118,7 +121,7 @@ export default function About() {
             <div>
               <p className="font-body text-base print:text-sm text-foreground font-normal">{job.role}</p>
               {job.bullets && job.bullets.map((bullet, i) => (
-                <p key={i} className="font-body text-base print:text-sm text-muted-foreground mt-1">{bullet}</p>
+                <p key={i} className="font-body text-base print:text-sm text-muted-foreground mt-1">→ {bullet}</p>
               ))}
             </div>
           </div>
