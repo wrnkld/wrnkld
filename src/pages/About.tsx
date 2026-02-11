@@ -71,7 +71,17 @@ const experience: {
 ];
 
 export default function About() {
-  const handlePrint = () => window.print();
+  const handlePrint = () => {
+    // If inside an iframe (Lovable preview), open in new tab for printing
+    if (window.self !== window.top) {
+      const newWindow = window.open(window.location.href, '_blank');
+      if (newWindow) {
+        newWindow.addEventListener('load', () => newWindow.print());
+      }
+    } else {
+      window.print();
+    }
+  };
 
   return (
     <DetailLayout
@@ -99,11 +109,13 @@ export default function About() {
         {experience.map((job, index) => (
           <div
             key={index}
-            className="py-4 print:py-2 flex gap-8"
+            className="py-4 print:py-2 flex flex-col md:flex-row gap-1 md:gap-8"
           >
-            <div className="shrink-0 w-56">
-              <h3 className="font-display text-base print:text-sm font-bold text-foreground">{job.company}</h3>
-              <p className="font-body text-base print:text-sm text-muted-foreground font-normal mt-1">{job.years}</p>
+            <div className="shrink-0 md:w-56">
+              <h3 className="font-display text-base print:text-sm font-bold text-foreground">
+                {job.company} <span className="font-body font-normal text-muted-foreground md:hidden">· {job.years}</span>
+              </h3>
+              <p className="font-body text-base print:text-sm text-muted-foreground font-normal mt-1 hidden md:block">{job.years}</p>
             </div>
             <div>
               <p className="font-body text-base print:text-sm text-foreground font-normal">{job.role}</p>
@@ -113,8 +125,8 @@ export default function About() {
             </div>
           </div>
         ))}
-        <div className="py-4 print:py-2 flex gap-8">
-           <div className="shrink-0 w-56">
+        <div className="py-4 print:py-2 flex flex-col md:flex-row gap-1 md:gap-8">
+           <div className="shrink-0 md:w-56">
             <h3 className="font-display text-base print:text-sm font-bold text-foreground">Education</h3>
           </div>
           <div>
