@@ -52,7 +52,7 @@ const experience: {
     role: "Principal Interaction Designer",
     years: "2011 - 2016",
     bullets: [
-      "Owned interaction design for visual analytics and statistical modeling products",
+      "Led UX for SAS's flagship analytics platform, driving a foundational redesign and bringing two new enterprise products to market",
     ],
   },
   {
