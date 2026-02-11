@@ -114,7 +114,7 @@ export default function About() {
             key={index}
             className="py-4 print:py-2 flex flex-col md:flex-row print:flex-row gap-1 md:gap-8 print:gap-8"
           >
-            <div className="shrink-0 md:w-56 print:w-56">
+            <div className="shrink-0 md:w-48 print:w-48">
               <h3 className="font-display text-base print:text-sm font-bold text-foreground">{job.company}</h3>
               <p className="font-body text-base print:text-sm text-muted-foreground font-normal mt-1">{job.years}</p>
             </div>
@@ -134,7 +134,7 @@ export default function About() {
           </div>
         ))}
         <div className="py-4 print:py-2 flex flex-col md:flex-row print:flex-row gap-1 md:gap-8 print:gap-8">
-           <div className="shrink-0 md:w-56 print:w-56">
+           <div className="shrink-0 md:w-48 print:w-48">
             <h3 className="font-display text-base print:text-sm font-bold text-foreground">Education</h3>
           </div>
           <div>
