@@ -44,7 +44,7 @@ const experience: {
     role: "Senior Interaction Designer",
     years: "2016 - 2019",
     bullets: [
-      "Led cross-disciplinary design team modernizing the middleware portfolio",
+      "Directed UX initiatives across a five-person team, delivering enterprise improvements grounded in open-source collaboration and PatternFly standards",
     ],
   },
   {
@@ -65,7 +65,7 @@ const experience: {
   },
   { company: "Frog", role: "Associate Interaction Designer", years: "2004 - 2006",
     bullets: [
-      "Contributed to interaction design for consumer electronics and enterprise clients",
+      "Contributed to high-profile client engagements for Microsoft, HP, and Dell, building foundational interaction design expertise",
     ],
   },
 ];
