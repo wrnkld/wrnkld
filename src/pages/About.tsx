@@ -112,10 +112,8 @@ export default function About() {
             className="py-4 print:py-2 flex flex-col md:flex-row print:flex-row gap-1 md:gap-8 print:gap-8"
           >
             <div className="shrink-0 md:w-56 print:w-56">
-              <h3 className="font-display text-base print:text-sm font-bold text-foreground">
-                {job.company} <span className="font-body font-normal text-muted-foreground md:hidden">· {job.years}</span>
-              </h3>
-              <p className="font-body text-base print:text-sm text-muted-foreground font-normal mt-1 hidden md:block">{job.years}</p>
+              <h3 className="font-display text-base print:text-sm font-bold text-foreground">{job.company}</h3>
+              <p className="font-body text-base print:text-sm text-muted-foreground font-normal mt-1">{job.years}</p>
             </div>
             <div>
               <p className="font-body text-base print:text-sm text-foreground font-normal">{job.role}</p>
