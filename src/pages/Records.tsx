@@ -106,7 +106,7 @@ export default function Records() {
               <TableHead>
                 <SortHeader field="album">Album</SortHeader>
               </TableHead>
-              <TableHead>
+              <TableHead className="hidden md:table-cell">
                 <SortHeader field="year">Year</SortHeader>
               </TableHead>
             </TableRow>
@@ -129,7 +129,7 @@ export default function Records() {
                   >
                     <TableCell className="text-muted-foreground">{record.artist}</TableCell>
                     <TableCell className="text-foreground">{record.album}</TableCell>
-                    <TableCell className="text-muted-foreground">{record.year}</TableCell>
+                    <TableCell className="text-muted-foreground hidden md:table-cell">{record.year}</TableCell>
                   </motion.tr>
                 ))
               )}
