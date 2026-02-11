@@ -109,9 +109,9 @@ export default function About() {
         {experience.map((job, index) => (
           <div
             key={index}
-            className="py-4 print:py-2 flex flex-col md:flex-row gap-1 md:gap-8"
+            className="py-4 print:py-2 flex flex-col md:flex-row print:flex-row gap-1 md:gap-8 print:gap-8"
           >
-            <div className="shrink-0 md:w-56">
+            <div className="shrink-0 md:w-56 print:w-56">
               <h3 className="font-display text-base print:text-sm font-bold text-foreground">
                 {job.company} <span className="font-body font-normal text-muted-foreground md:hidden">· {job.years}</span>
               </h3>
@@ -125,8 +125,8 @@ export default function About() {
             </div>
           </div>
         ))}
-        <div className="py-4 print:py-2 flex flex-col md:flex-row gap-1 md:gap-8">
-           <div className="shrink-0 md:w-56">
+        <div className="py-4 print:py-2 flex flex-col md:flex-row print:flex-row gap-1 md:gap-8 print:gap-8">
+           <div className="shrink-0 md:w-56 print:w-56">
             <h3 className="font-display text-base print:text-sm font-bold text-foreground">Education</h3>
           </div>
           <div>
