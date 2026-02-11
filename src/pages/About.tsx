@@ -20,7 +20,7 @@ const experience: {
     role: "Staff Product Designer",
     years: "2021 - 2022",
     bullets: [
-      "Designed automation workflows for enterprise integration platform",
+      "Owned UX for Workato Workflow Apps, turning complex automation configuration into a reusable, productized experience for enterprise users",
     ],
   },
   {
@@ -28,7 +28,7 @@ const experience: {
     role: "Senior Product Designer",
     years: "2019 - 2021",
     bullets: [
-      "Designed asset discovery, compliance assurance, and policy enforcement modules",
+      "Led UX for Threat Response and launched two new products while supporting multiple additional product teams",
     ],
   },
   {
@@ -36,7 +36,7 @@ const experience: {
     role: "Lead Product Designer",
     years: "2019",
     bullets: [
-      "Led design for product analytics and user engagement tools",
+      "Led design for core product areas and strengthened system-level consistency across the platform",
     ],
   },
   {
@@ -60,7 +60,7 @@ const experience: {
     role: "Product Design Manager",
     years: "2006 - 2011",
     bullets: [
-      "Managed a team of designers delivering UX for enterprise and government clients",
+      "Balanced hands-on design with leadership of an eight-person UX team serving enterprise clients",
     ],
   },
   { company: "Frog", role: "Associate Interaction Designer", years: "2004 - 2006",
