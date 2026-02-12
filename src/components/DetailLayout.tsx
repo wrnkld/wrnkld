@@ -7,7 +7,7 @@ interface DetailLayoutProps {
   subtitle?: string;
   children: ReactNode;
   colorClass?: string;
-  headerAction?: ReactNode;
+  
 }
 
 // Helper to check if element is media (img, video, or a div containing them like grids)
@@ -23,7 +23,7 @@ function isMediaElement(child: React.ReactElement<{ className?: string }>): bool
   return false;
 }
 
-export function DetailLayout({ title, subtitle, children, colorClass, headerAction }: DetailLayoutProps) {
+export function DetailLayout({ title, subtitle, children, colorClass }: DetailLayoutProps) {
   // Process children to wrap them appropriately
   const processedChildren = Children.map(children, (child) => {
     if (!isValidElement(child)) return child;
@@ -67,12 +67,9 @@ export function DetailLayout({ title, subtitle, children, colorClass, headerActi
               </span>
             </Link>
           )}
-          <div className="flex items-center justify-between mt-4">
-            <h1 className="font-display text-2xl md:text-3xl font-medium text-foreground">
+          <h1 className="font-display text-2xl md:text-3xl font-medium text-foreground">
               {title}
             </h1>
-            {headerAction}
-          </div>
         </div>
         
         {/* Content with mixed widths */}
