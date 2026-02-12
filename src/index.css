@@ -221,14 +221,30 @@
 }
 
 @media print {
+  * {
+    background: transparent !important;
+    box-shadow: none !important;
+  }
+
   body {
     background: white !important;
     color: black !important;
     font-size: 12pt;
+    margin: 0 !important;
+    padding: 0 !important;
   }
 
   /* Hide navigation, back links, color bar, title area */
   .card-mustard,
+  .card-terracotta,
+  .card-forest,
+  .card-cyan,
+  .card-coral,
+  .card-pink,
+  .card-plum,
+  .card-teal,
+  .card-indigo,
+  .card-violet,
   nav,
   footer {
     display: none !important;
@@ -242,11 +258,16 @@
   /* Clean up spacing */
   .min-h-screen {
     min-height: auto !important;
+    background: white !important;
   }
 
   .py-16,
   .md\:py-24 {
-    padding-top: 1rem !important;
+    padding-top: 0.5rem !important;
     padding-bottom: 0 !important;
+  }
+
+  @page {
+    margin: 0.4in;
   }
 }
