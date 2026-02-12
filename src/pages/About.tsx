@@ -1,5 +1,4 @@
 import { DetailLayout } from "@/components/DetailLayout";
-import { Printer } from "lucide-react";
 
 const experience: {
   company: string;
@@ -74,76 +73,47 @@ const experience: {
 ];
 
 export default function About() {
-  const handlePrint = () => {
-    // If inside an iframe (Lovable preview), open in new tab for printing
-    if (window.self !== window.top) {
-      const newWindow = window.open(window.location.href, '_blank');
-      if (newWindow) {
-        newWindow.addEventListener('load', () => newWindow.print());
-      }
-    } else {
-      window.print();
-    }
-  };
-
   return (
     <DetailLayout
       title="Experience"
       subtitle="About"
       colorClass="card-mustard"
-      headerAction={
-        <button
-          onClick={handlePrint}
-          className="inline-flex items-center gap-2 text-xs font-body uppercase tracking-widest text-muted-foreground hover:text-foreground transition-colors print:hidden"
-        >
-          <Printer className="w-3.5 h-3.5" />
-          <span>PDF</span>
-        </button>
-      }
     >
-      {/* Print-only header */}
-      <div className="hidden print:block print:mb-4">
-        <h2 className="font-display text-2xl print:text-base font-medium text-foreground">Matthew Stevens</h2>
-        <p className="font-body text-base print:text-print text-muted-foreground mt-1"><a href="https://www.wrnkld.tv/">wrnkld.tv</a></p>
-        <p className="font-body text-base print:text-print text-muted-foreground"><a href="https://www.linkedin.com/in/wrnkld/">linkedin.com/in/wrnkld</a></p>
-      </div>
 
       <div>
         {experience.map((job, index) => (
           <div
             key={index}
-            className="py-3 print:py-1 flex flex-col md:flex-row print:flex-row gap-1 md:gap-8 print:gap-4"
+            className="py-3 flex flex-col md:flex-row gap-1 md:gap-8"
           >
-            <div className="shrink-0 md:w-48 print:w-40">
-              <h3 className="font-display text-base print:text-print font-bold text-foreground">{job.company}</h3>
-              <p className="font-body text-base print:text-print text-muted-foreground font-normal mt-1">{job.years}</p>
+            <div className="shrink-0 md:w-48">
+              <h3 className="font-display text-base font-bold text-foreground">{job.company}</h3>
+              <p className="font-body text-base text-muted-foreground font-normal mt-1">{job.years}</p>
             </div>
             <div>
-              <p className="font-body text-base print:text-print text-foreground font-normal">{job.role}</p>
+              <p className="font-body text-base text-foreground font-normal">{job.role}</p>
               {job.bullets && job.bullets.length === 1 ? (
-                <p className="font-body text-base print:text-print text-muted-foreground mt-1">{job.bullets[0]}</p>
+                <p className="font-body text-base text-muted-foreground mt-1">{job.bullets[0]}</p>
               ) : (
                 job.bullets?.map((bullet, i) => (
                   <div key={i} className="flex gap-1.5 mt-1">
-                    <span className="font-body text-base print:text-print text-muted-foreground shrink-0">→</span>
-                    <p className="font-body text-base print:text-print text-muted-foreground">{bullet}</p>
+                    <span className="font-body text-base text-muted-foreground shrink-0">→</span>
+                    <p className="font-body text-base text-muted-foreground">{bullet}</p>
                   </div>
                 ))
               )}
             </div>
           </div>
         ))}
-        <div className="py-3 print:py-1 flex flex-col md:flex-row print:flex-row gap-1 md:gap-8 print:gap-4">
-           <div className="shrink-0 md:w-48 print:w-40">
-            <h3 className="font-display text-base print:text-print font-bold text-foreground">Education</h3>
+        <div className="py-3 flex flex-col md:flex-row gap-1 md:gap-8">
+           <div className="shrink-0 md:w-48">
+            <h3 className="font-display text-base font-bold text-foreground">Education</h3>
           </div>
           <div>
-            <p className="font-body text-base print:text-print text-foreground font-normal">Georgetown University</p>
-            <p className="font-body text-base print:text-print text-muted-foreground">BA Psychology, Cum Laude</p>
+            <p className="font-body text-base text-foreground font-normal">Georgetown University</p>
+            <p className="font-body text-base text-muted-foreground">BA Psychology, Cum Laude</p>
           </div>
         </div>
-
-
       </div>
     </DetailLayout>
   );

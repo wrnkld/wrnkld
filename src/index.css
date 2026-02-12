@@ -198,10 +198,6 @@
 }
 
 @layer utilities {
-  .text-print {
-    font-size: 12px;
-    line-height: 1.3;
-  }
   .prose {
     @apply font-body text-base text-muted-foreground leading-relaxed;
   }
@@ -217,64 +213,5 @@
   
   .text-balance {
     text-wrap: balance;
-  }
-}
-
-@media print {
-  * {
-    background: transparent !important;
-    box-shadow: none !important;
-    -webkit-print-color-adjust: exact;
-  }
-
-  body {
-    background: white !important;
-    color: black !important;
-    font-size: 11pt;
-    margin: 0 !important;
-    padding: 0 !important;
-  }
-
-  /* Hide navigation, back links, color bar, title area */
-  .card-mustard,
-  .card-terracotta,
-  .card-forest,
-  .card-cyan,
-  .card-coral,
-  .card-pink,
-  .card-plum,
-  .card-teal,
-  .card-indigo,
-  .card-violet,
-  nav,
-  footer {
-    display: none !important;
-    height: 0 !important;
-    overflow: hidden !important;
-  }
-
-  /* Hide the DetailLayout header (subtitle + title) */
-  .min-h-screen > div > div:first-child {
-    display: none !important;
-  }
-
-  /* Clean up spacing */
-  .min-h-screen {
-    min-height: auto !important;
-    background: white !important;
-  }
-
-  .py-16,
-  .md\:py-24 {
-    padding-top: 0 !important;
-    padding-bottom: 0 !important;
-  }
-
-  .space-y-8 > :not(:first-child) {
-    margin-top: 0.25rem !important;
-  }
-
-  @page {
-    margin: 0.3in;
   }
 }
