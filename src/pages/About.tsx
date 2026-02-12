@@ -112,7 +112,7 @@ export default function About() {
         {experience.map((job, index) => (
           <div
             key={index}
-            className="py-4 print:py-2 flex flex-col md:flex-row print:flex-row gap-1 md:gap-8 print:gap-8"
+            className="py-3 print:py-1 flex flex-col md:flex-row print:flex-row gap-1 md:gap-8 print:gap-4"
           >
             <div className="shrink-0 md:w-48 print:w-40">
               <h3 className="font-display text-base print:text-print font-bold text-foreground">{job.company}</h3>
@@ -133,7 +133,7 @@ export default function About() {
             </div>
           </div>
         ))}
-        <div className="py-4 print:py-2 flex flex-col md:flex-row print:flex-row gap-1 md:gap-8 print:gap-8">
+        <div className="py-3 print:py-1 flex flex-col md:flex-row print:flex-row gap-1 md:gap-8 print:gap-4">
            <div className="shrink-0 md:w-48 print:w-40">
             <h3 className="font-display text-base print:text-print font-bold text-foreground">Education</h3>
           </div>
