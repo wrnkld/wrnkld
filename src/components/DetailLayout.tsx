@@ -65,9 +65,9 @@ export function DetailLayout({ title, subtitle, children, colorClass }: DetailLa
                   Back
                 </span>
               </span>
-            </Link>
+          </Link>
           )}
-          <h1 className="font-display text-2xl md:text-3xl font-medium text-foreground">
+          <h1 className="font-display text-2xl md:text-3xl font-medium text-foreground mt-4">
               {title}
             </h1>
         </div>
