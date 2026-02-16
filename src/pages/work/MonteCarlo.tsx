@@ -38,7 +38,11 @@ export default function MonteCarlo() {
         Owned design for a scalable integrations platform, spanning data warehouses, orchestration frameworks, code repositories, and incident response tools. Standardized how alerts and events are configured and delivered across teams, improving consistency and reliability for data, platform, and engineering operators.
       </p>
 
-      
+      <h2 className="font-display text-lg font-medium text-foreground">Permissions</h2>
+      <p className="font-body text-base text-muted-foreground leading-relaxed">
+        Designed a flexible permissions model supporting custom roles, granular sampling policies, and domain-scoped access controls. Enabled organizations to define who can view, edit, or manage monitors, alerts, and incident workflows—down to individual table and pipeline levels. Built admin tooling for role assignment, permission inheritance, and audit logging, giving platform teams full control over data access governance without requiring engineering intervention.
+      </p>
+
     </DetailLayout>
   );
 }
