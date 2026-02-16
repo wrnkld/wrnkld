@@ -1,5 +1,8 @@
 import { DetailLayout } from "@/components/DetailLayout";
 
+import mcdWrites from "@/assets/montecarlo/mcd-writes.png";
+import mcdWrite from "@/assets/montecarlo/mcd-write.png";
+import mcdPerfMon from "@/assets/montecarlo/mcd-perf-mon.png";
 
 export default function MonteCarlo() {
   return (
@@ -22,6 +25,12 @@ export default function MonteCarlo() {
       <p className="font-body text-base text-muted-foreground leading-relaxed">
         Designed an end-to-end performance investigation workflow for modern data stacks, enabling teams to understand where cost and latency originate and why across Snowflake, dbt, Airflow, and Looker. The product connects anomaly detection, cost attribution, job-run timelines, and downstream consumer impact into a single guided experience—replacing ad-hoc debugging with a repeatable operational flow.
       </p>
+
+      <img src={mcdWrites} alt="Monte Carlo write queries overview showing total credits and query performance trends" className="w-full h-auto border border-border/40" />
+
+      <img src={mcdWrite} alt="Monte Carlo write query detail with observability agent explaining performance" className="w-full h-auto border border-border/40" />
+
+      <img src={mcdPerfMon} alt="Monte Carlo query performance monitor configuration with alert conditions" className="w-full h-auto border border-border/40" />
 
 
       <h2 className="font-display text-lg font-medium text-foreground">Integrations</h2>
