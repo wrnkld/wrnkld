@@ -42,9 +42,10 @@ export default function MonteCarlo() {
         Owned design for a scalable integrations platform, spanning data warehouses, orchestration frameworks, code repositories, and incident response tools. Standardized how alerts and events are configured and delivered across teams, improving consistency and reliability for data, platform, and engineering operators.
       </p>
 
-      <img src={mcdIntegrations} alt="Monte Carlo integrations catalog showing available data warehouse and tool connections" className="w-full h-auto border border-border/40" />
-
-      <img src={mcdAudiences} alt="Monte Carlo audience configuration with recipient channels and notification routing" className="w-full h-auto border border-border/40" />
+      <div className="grid grid-cols-2 gap-4">
+        <img src={mcdIntegrations} alt="Monte Carlo integrations catalog showing available data warehouse and tool connections" className="w-full h-auto border border-border/40" />
+        <img src={mcdAudiences} alt="Monte Carlo audience configuration with recipient channels and notification routing" className="w-full h-auto border border-border/40" />
+      </div>
 
       <img src={mcdJob} alt="Monte Carlo job performance view showing run time trends and failure tracking for dbt jobs" className="w-full h-auto border border-border/40" />
 
