@@ -53,9 +53,10 @@ export default function MonteCarlo() {
         Designed a flexible permissions model supporting custom roles, granular sampling policies, and domain-scoped access controls. Enabled organizations to define who can view, edit, or manage monitors, alerts, and incident workflows.
       </p>
 
-      <img src={mcdRoles} alt="Monte Carlo custom role creation with granular permission controls" className="w-full h-auto border border-border/40" />
-
-      <img src={mcdSampling} alt="Monte Carlo integration detail showing sampling policies and connection configuration" className="w-full h-auto border border-border/40" />
+      <div className="grid grid-cols-2 gap-4">
+        <img src={mcdRoles} alt="Monte Carlo custom role creation with granular permission controls" className="w-full h-auto border border-border/40" />
+        <img src={mcdSampling} alt="Monte Carlo integration detail showing sampling policies and connection configuration" className="w-full h-auto border border-border/40" />
+      </div>
 
     </DetailLayout>
   );
