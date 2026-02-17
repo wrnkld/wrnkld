@@ -1112,4 +1112,18 @@ export const books: Book[] = [
     year: 1980,
     recommended: false,
   },
+  {
+    id: 169,
+    title: "The Gods of New York",
+    author: "Jonathan Mahler",
+    year: 2025,
+    recommended: false,
+  },
+  {
+    id: 170,
+    title: "Long Distance",
+    author: "Ayşegül Savaş",
+    year: 2025,
+    recommended: false,
+  },
 ];
