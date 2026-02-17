@@ -6,6 +6,7 @@ import mcdPerfMon from "@/assets/montecarlo/mcd-perf-mon.png";
 import mcdIntegrations from "@/assets/montecarlo/mcd-integrations.png";
 import mcdAudiences from "@/assets/montecarlo/mcd-audiences.png";
 import mcdRoles from "@/assets/montecarlo/mcd-roles.png";
+import mcdSampling from "@/assets/montecarlo/mcd-sampling.png";
 import mcdJob from "@/assets/montecarlo/mcd-job.png";
 
 export default function MonteCarlo() {
@@ -53,6 +54,8 @@ export default function MonteCarlo() {
       </p>
 
       <img src={mcdRoles} alt="Monte Carlo custom role creation with granular permission controls" className="w-full h-auto border border-border/40" />
+
+      <img src={mcdSampling} alt="Monte Carlo integration detail showing sampling policies and connection configuration" className="w-full h-auto border border-border/40" />
 
     </DetailLayout>
   );
