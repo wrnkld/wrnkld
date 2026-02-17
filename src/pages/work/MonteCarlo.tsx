@@ -25,8 +25,6 @@ export default function MonteCarlo() {
         Grew the design team while shipping product across multiple workstreams. Balanced leadership responsibilities with hands-on product work, maintaining quality and consistency across the platform at both the system and detail level.
       </p>
 
-      <img src={mcdJob} alt="Monte Carlo job performance view showing run time trends and failure tracking for dbt jobs" className="w-full h-auto border border-border/40" />
-
       <h2 className="font-display text-lg font-medium text-foreground">Performance</h2>
       <p className="font-body text-base text-muted-foreground leading-relaxed">
         Designed an end-to-end performance investigation workflow for modern data stacks, enabling teams to understand where cost and latency originate and why across Snowflake, dbt, Airflow, and Looker. The product connects anomaly detection, cost attribution, job-run timelines, and downstream consumer impact into a single guided experience—replacing ad-hoc debugging with a repeatable operational flow.
@@ -46,6 +44,8 @@ export default function MonteCarlo() {
       <img src={mcdIntegrations} alt="Monte Carlo integrations catalog showing available data warehouse and tool connections" className="w-full h-auto border border-border/40" />
 
       <img src={mcdAudiences} alt="Monte Carlo audience configuration with recipient channels and notification routing" className="w-full h-auto border border-border/40" />
+
+      <img src={mcdJob} alt="Monte Carlo job performance view showing run time trends and failure tracking for dbt jobs" className="w-full h-auto border border-border/40" />
 
       <h2 className="font-display text-lg font-medium text-foreground">Permissions</h2>
       <p className="font-body text-base text-muted-foreground leading-relaxed">
