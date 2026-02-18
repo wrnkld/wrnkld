@@ -20,7 +20,7 @@ const groupedLinks = links.reduce((acc, link) => {
   return acc;
 }, {} as Record<string, typeof links>);
 
-const sectionOrder = ["Design & AI", "Work", "About"];
+const sectionOrder = ["Work", "Design & AI", "About"];
 
 export default function Index() {
   return (
