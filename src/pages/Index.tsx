@@ -73,11 +73,6 @@ export default function Index() {
                   <span className={`font-display text-base font-medium text-foreground transition-colors duration-200 ${link.accentText}`}>
                     {link.title}
                   </span>
-                  {link.date && (
-                    <span className="font-body text-base text-muted-foreground">
-                      {link.date}
-                    </span>
-                  )}
                 </Link>
               ))}
             </div>
