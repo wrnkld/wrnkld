@@ -1126,4 +1126,18 @@ export const books: Book[] = [
     year: 2025,
     recommended: false,
   },
+  {
+    id: 171,
+    title: "Priestdaddy",
+    author: "Patricia Lockwood",
+    year: 2017,
+    recommended: true,
+  },
+  {
+    id: 172,
+    title: "A Childhood: The Biography of a Place",
+    author: "Harry Crews",
+    year: 1978,
+    recommended: false,
+  },
 ];
