@@ -1140,4 +1140,11 @@ export const books: Book[] = [
     year: 1978,
     recommended: false,
   },
+  {
+    id: 173,
+    title: "Woodcutters",
+    author: "Thomas Bernhard",
+    year: 1984,
+    recommended: true,
+  },
 ];
