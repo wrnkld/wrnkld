@@ -48,17 +48,6 @@ export function WorkLayout({ title, subtitle, children, accentColor }: WorkLayou
       <main className="animate-fade-in pb-12 md:pb-20" style={{ animationDelay: "100ms" }}>
         {children}
       </main>
-
-      {/* Footer back link */}
-      <div className="max-w-4xl mx-auto px-6 pb-12 md:pb-20">
-        <Link 
-          to="/"
-          className="inline-flex items-center gap-2 text-sm font-body uppercase tracking-widest opacity-70 hover:opacity-100 transition-opacity duration-300"
-        >
-          <ArrowLeft className="w-4 h-4" />
-          <span>Back</span>
-        </Link>
-      </div>
     </div>
   );
 }
