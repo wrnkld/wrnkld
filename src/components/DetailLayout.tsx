@@ -76,6 +76,17 @@ export function DetailLayout({ title, subtitle, children, colorClass }: DetailLa
         <div className="space-y-8">
           {processedChildren}
         </div>
+
+        {/* Footer back link */}
+        <div className="max-w-3xl mx-auto px-6 pt-12">
+          <Link 
+            to="/"
+            className="inline-flex items-center gap-2 text-xs font-body uppercase tracking-widest text-muted-foreground hover:text-foreground transition-colors group"
+          >
+            <ArrowLeft className="w-3 h-3" />
+            <span>Back</span>
+          </Link>
+        </div>
       </div>
     </div>
   );
