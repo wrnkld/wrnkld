@@ -1131,7 +1131,7 @@ export const books: Book[] = [
     title: "Priestdaddy",
     author: "Patricia Lockwood",
     year: 2017,
-    recommended: true,
+    recommended: false,
   },
   {
     id: 172,
