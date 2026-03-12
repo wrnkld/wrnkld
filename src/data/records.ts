@@ -4969,4 +4969,10 @@ export const records: Record[] = [
     artist: "The Bug vs Ghost Dubs",
     album: "Implosion",
   },
+  {
+    id: 830,
+    year: 1979,
+    artist: "Stephen McCraven",
+    album: "Wooley the Newt",
+  },
 ];
