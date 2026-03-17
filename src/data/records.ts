@@ -4981,4 +4981,10 @@ export const records: Record[] = [
     artist: "Ed Kuepper & Jim White",
     album: "After The Flood",
   },
+  {
+    id: 832,
+    year: 2026,
+    artist: "The Messthetics & James Brandon Lewis",
+    album: "Deface The Currency",
+  },
 ];
