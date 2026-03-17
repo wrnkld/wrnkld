@@ -4975,4 +4975,10 @@ export const records: Record[] = [
     artist: "Stephen McCraven",
     album: "Wooley the Newt",
   },
+  {
+    id: 831,
+    year: 2025,
+    artist: "Ed Kuepper & Jim White",
+    album: "After The Flood",
+  },
 ];
