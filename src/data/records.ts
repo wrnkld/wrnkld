@@ -4987,4 +4987,10 @@ export const records: Record[] = [
     artist: "The Messthetics & James Brandon Lewis",
     album: "Deface The Currency",
   },
+  {
+    id: 833,
+    year: 2026,
+    artist: "Pullman",
+    album: "III",
+  },
 ];
