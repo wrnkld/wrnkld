@@ -1154,4 +1154,11 @@ export const books: Book[] = [
     year: 1958,
     recommended: false,
   },
+  {
+    id: 175,
+    title: "John & Paul: A Love Story in Songs",
+    author: "Ian Leslie",
+    year: 2025,
+    recommended: false,
+  },
 ];
