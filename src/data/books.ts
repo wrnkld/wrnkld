@@ -1161,4 +1161,11 @@ export const books: Book[] = [
     year: 2025,
     recommended: false,
   },
+  {
+    id: 176,
+    title: "Bina",
+    author: "Anakana Schofield",
+    year: 2019,
+    recommended: false,
+  },
 ];
