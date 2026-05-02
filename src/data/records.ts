@@ -4993,4 +4993,10 @@ export const records: Record[] = [
     artist: "Pullman",
     album: "III",
   },
+  {
+    id: 834,
+    year: 2026,
+    artist: "Various Artists",
+    album: "Pop Ambient 2026",
+  },
 ];
