@@ -1,17 +1,4 @@
 import { Link } from "react-router-dom";
-import {
-  Wrench,
-  Sparkles,
-  Disc3,
-  Briefcase,
-  BookOpen,
-  Disc,
-  LineChart,
-  ShieldCheck,
-  HardHat,
-  BarChart3,
-  type LucideIcon,
-} from "lucide-react";
 
 const links: {
   title: string;
@@ -19,19 +6,18 @@ const links: {
   to: string;
   date: string;
   accentText: string;
-  Icon: LucideIcon;
 }[] = [
-  { title: "Pt 1 → Tools", section: "Design & AI", to: "/designai/tools", date: "2025", accentText: "group-hover:text-orange-500", Icon: Wrench },
-  { title: "Pt 2 → Vibes", section: "Design & AI", to: "/designai/vibes", date: "2025", accentText: "group-hover:text-emerald-600", Icon: Sparkles },
-  { title: "Pt 3 → Sleeves", section: "Design & AI", to: "/designai/sleeves", date: "2025", accentText: "group-hover:text-cyan-500", Icon: Disc3 },
-  { title: "Experience", section: "About", to: "/about/experience", date: "Current", accentText: "group-hover:text-amber-500", Icon: Briefcase },
-  { title: "Books", section: "About", to: "/about/books", date: "Current", accentText: "group-hover:text-pink-500", Icon: BookOpen },
-  { title: "Records", section: "About", to: "/about/records", date: "Current", accentText: "group-hover:text-purple-500", Icon: Disc },
+  { title: "Pt 1 → Tools", section: "Design & AI", to: "/designai/tools", date: "2025", accentText: "group-hover:text-orange-500" },
+  { title: "Pt 2 → Vibes", section: "Design & AI", to: "/designai/vibes", date: "2025", accentText: "group-hover:text-emerald-600" },
+  { title: "Pt 3 → Sleeves", section: "Design & AI", to: "/designai/sleeves", date: "2025", accentText: "group-hover:text-cyan-500" },
+  { title: "Experience", section: "About", to: "/about/experience", date: "Current", accentText: "group-hover:text-amber-500" },
+  { title: "Books", section: "About", to: "/about/books", date: "Current", accentText: "group-hover:text-pink-500" },
+  { title: "Records", section: "About", to: "/about/records", date: "Current", accentText: "group-hover:text-purple-500" },
 
-  { title: "Monte Carlo", section: "Work", to: "/work/montecarlo", date: "2022 - Present", accentText: "group-hover:text-violet-500", Icon: LineChart },
-  { title: "Tanium", section: "Work", to: "/work/tanium", date: "2019 - 2021", accentText: "group-hover:text-rose-400", Icon: ShieldCheck },
-  { title: "Red Hat", section: "Work", to: "/work/redhat", date: "2016 - 2019", accentText: "group-hover:text-teal-500", Icon: HardHat },
-  { title: "SAS", section: "Work", to: "/work/sas", date: "2011 - 2016", accentText: "group-hover:text-blue-600", Icon: BarChart3 },
+  { title: "Monte Carlo", section: "Work", to: "/work/montecarlo", date: "2022 - Present", accentText: "group-hover:text-violet-500" },
+  { title: "Tanium", section: "Work", to: "/work/tanium", date: "2019 - 2021", accentText: "group-hover:text-rose-400" },
+  { title: "Red Hat", section: "Work", to: "/work/redhat", date: "2016 - 2019", accentText: "group-hover:text-teal-500" },
+  { title: "SAS", section: "Work", to: "/work/sas", date: "2011 - 2016", accentText: "group-hover:text-blue-600" },
 ];
 
 const groupedLinks = links.reduce((acc, link) => {
@@ -84,24 +70,17 @@ export default function Index() {
               {section}
             </p>
             <div className="border border-border rounded-md overflow-hidden">
-              {groupedLinks[section]?.map((link) => {
-                const Icon = link.Icon;
-                return (
-                  <Link
-                    key={link.to}
-                    to={link.to}
-                    className="flex items-center gap-3 py-3 px-4 border-b border-border last:border-b-0 transition-all duration-200 hover:bg-white group"
-                  >
-                    <Icon
-                      className={`w-4 h-4 text-muted-foreground transition-colors duration-200 ${link.accentText}`}
-                      strokeWidth={1.75}
-                    />
-                    <span className={`font-display text-base font-medium text-foreground transition-colors duration-200 ${link.accentText}`}>
-                      {link.title}
-                    </span>
-                  </Link>
-                );
-              })}
+              {groupedLinks[section]?.map((link) => (
+                <Link
+                  key={link.to}
+                  to={link.to}
+                  className="flex items-center py-3 px-4 border-b border-border last:border-b-0 transition-all duration-200 hover:bg-white group"
+                >
+                  <span className={`font-display text-base font-medium text-foreground transition-colors duration-200 ${link.accentText}`}>
+                    {link.title}
+                  </span>
+                </Link>
+              ))}
             </div>
           </div>
         ))}
