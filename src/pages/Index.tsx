@@ -90,15 +90,15 @@ export default function Index() {
                   <Link
                     key={link.to}
                     to={link.to}
-                    className="flex items-center justify-between py-3 px-4 border-b border-border last:border-b-0 transition-all duration-200 hover:bg-white group"
+                    className="flex items-center gap-3 py-3 px-4 border-b border-border last:border-b-0 transition-all duration-200 hover:bg-white group"
                   >
-                    <span className={`font-display text-base font-medium text-foreground transition-colors duration-200 ${link.accentText}`}>
-                      {link.title}
-                    </span>
                     <Icon
                       className={`w-4 h-4 text-muted-foreground transition-colors duration-200 ${link.accentText}`}
                       strokeWidth={1.75}
                     />
+                    <span className={`font-display text-base font-medium text-foreground transition-colors duration-200 ${link.accentText}`}>
+                      {link.title}
+                    </span>
                   </Link>
                 );
               })}
