@@ -1179,7 +1179,7 @@ export const books: Book[] = [
     id: 178,
     title: "Small Things Like These",
     author: "Claire Keegan",
-    year: 2021,
+    year: 2020,
     recommended: false,
   },
 ];
