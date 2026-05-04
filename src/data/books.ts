@@ -1168,4 +1168,18 @@ export const books: Book[] = [
     year: 2019,
     recommended: false,
   },
+  {
+    id: 177,
+    title: "Never Let Me Go",
+    author: "Kazuo Ishiguro",
+    year: 2005,
+    recommended: false,
+  },
+  {
+    id: 178,
+    title: "Small Things Like These",
+    author: "Claire Keegan",
+    year: 2021,
+    recommended: false,
+  },
 ];
