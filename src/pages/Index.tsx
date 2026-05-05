@@ -335,32 +335,6 @@ function SelectedChyron({ channel, program }: { channel: Channel; program: Progr
   );
 }
 
-function DPad({
-  onUp, onDown, onLeft, onRight, onOk,
-}: {
-  onUp: () => void; onDown: () => void; onLeft: () => void; onRight: () => void; onOk: () => void;
-}) {
-  const btn = "bg-secondary hover:bg-muted active:bg-live border border-border/60 flex items-center justify-center text-foreground/70 hover:text-foreground transition-colors";
-  return (
-    <div className="hidden md:block fixed bottom-6 right-6 z-40 select-none">
-      <div className="font-mono text-[9px] uppercase tracking-[0.3em] text-muted-foreground mb-2 text-right">
-        WRNKLD REMOTE
-      </div>
-      <div className="grid grid-cols-3 grid-rows-3 gap-1 w-28 h-28">
-        <div />
-        <button aria-label="Up" onClick={onUp} className={btn}>▲</button>
-        <div />
-        <button aria-label="Left" onClick={onLeft} className={btn}>◀</button>
-        <button aria-label="OK" onClick={onOk} className="bg-live text-foreground border border-live flex items-center justify-center text-[10px] font-mono tracking-[0.2em] hover:brightness-110 transition">OK</button>
-        <button aria-label="Right" onClick={onRight} className={btn}>▶</button>
-        <div />
-        <button aria-label="Down" onClick={onDown} className={btn}>▼</button>
-        <div />
-      </div>
-    </div>
-  );
-}
-
 function Clock() {
   const [now, setNow] = useState(() => new Date());
   useEffect(() => {
