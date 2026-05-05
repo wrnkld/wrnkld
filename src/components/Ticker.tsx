@@ -7,15 +7,15 @@ interface TickerProps {
 }
 
 export function Ticker({ items, speed = "slow", className = "" }: TickerProps) {
-  const sep = (
-    <span className="mx-4 text-live">·</span>
-  );
-  const Row = (
-    <span className="inline-flex items-center font-mono text-[10px] uppercase tracking-[0.3em] text-foreground/80 px-2">
+  // Repeat content enough times so the marquee always fills wide screens.
+  // The track animates 0 → -50%, so the first half must be ≥ viewport width.
+  const repeated = Array.from({ length: 8 }, (_, i) => i);
+  const Row = (key: number) => (
+    <span key={key} className="inline-flex items-center font-mono text-[10px] uppercase tracking-[0.3em] text-foreground/80 px-2">
       {items.map((it, i) => (
         <span key={i} className="inline-flex items-center">
           {it}
-          {sep}
+          <span className="mx-4 text-live">·</span>
         </span>
       ))}
     </span>
@@ -23,8 +23,8 @@ export function Ticker({ items, speed = "slow", className = "" }: TickerProps) {
   return (
     <div className={`relative overflow-hidden border-y border-border/60 bg-secondary/40 ${className}`}>
       <div className={`ticker-track ${speed === "fast" ? "ticker-track-fast" : ""} py-2`}>
-        {Row}
-        {Row}
+        {repeated.map((i) => Row(i))}
+        {repeated.map((i) => Row(i + 100))}
       </div>
       {/* edge fades */}
       <div className="pointer-events-none absolute inset-y-0 left-0 w-12 bg-gradient-to-r from-background to-transparent" />
