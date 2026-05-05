@@ -60,7 +60,8 @@ const CHANNELS: Channel[] = [
   },
 ];
 
-const ALL_CHANNELS: Channel[] = CHANNELS;
+// Order: Work, Bullshit, About, Design & AI (bottom)
+const ALL_CHANNELS: Channel[] = [CHANNELS[0], CHANNELS[2], CHANNELS[3], CHANNELS[1]];
 
 const TICKER_ITEMS = [
   "WRNKLD.TV",
