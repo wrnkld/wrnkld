@@ -242,7 +242,7 @@ const ProgramTile = forwardRef<HTMLAnchorElement | HTMLDivElement, {
   const base =
     "relative w-[320px] md:w-[400px] h-[180px] md:h-[200px] shrink-0 p-4 border bg-card transition-all duration-150 group select-none overflow-hidden";
   const state = focused
-    ? "border-live shadow-[0_0_12px_-6px_hsl(var(--primary))] -translate-y-0.5"
+    ? "border-live"
     : "border-border/60 hover:border-foreground/40";
   const dim = offAir ? "opacity-50" : "";
 
