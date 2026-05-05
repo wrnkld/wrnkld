@@ -1,5 +1,6 @@
 import { ReactNode, Children, isValidElement } from "react";
 import { Link } from "react-router-dom";
+import { Ticker, SignalBars } from "@/components/Ticker";
 
 interface DetailLayoutProps {
   title: string;
@@ -45,15 +46,24 @@ export function DetailLayout({ title, subtitle, children }: DetailLayoutProps) {
     return <div className="max-w-3xl mx-auto px-6">{child}</div>;
   });
 
+  const tickerItems = [
+    title.toUpperCase(),
+    channel ? `CH ${channel.num}` : "WRNKLD.TV",
+    channel ? channel.name : "BROADCAST",
+    "WRNKLD.TV",
+    "NOW BROADCASTING",
+  ];
+
   return (
     <div className="min-h-screen bg-background text-foreground scanlines">
       {/* Top broadcast bar */}
       <div className="border-b border-border/60">
         <div className="max-w-5xl mx-auto px-6 py-3 flex items-center justify-between font-mono text-[10px] uppercase tracking-[0.3em] text-muted-foreground">
-          <Link to="/" className="hover:text-live transition-colors">
+          <Link to="/" className="hover:text-live transition-colors hover-channel">
             ← RETURN TO GUIDE
           </Link>
           <div className="flex items-center gap-3">
+            <SignalBars />
             {channel && (
               <span>
                 CH <span className="text-live">{channel.num}</span> · {channel.name}
@@ -68,7 +78,12 @@ export function DetailLayout({ title, subtitle, children }: DetailLayoutProps) {
       </div>
 
       {/* NOW BROADCASTING chyron */}
-      <div className="max-w-5xl mx-auto px-6 pt-10 md:pt-14">
+      <div className="relative max-w-5xl mx-auto px-6 pt-10 md:pt-14">
+        {/* REC indicator */}
+        <div className="absolute top-4 right-6 flex items-center gap-1.5 font-mono text-[10px] uppercase tracking-[0.3em] text-muted-foreground">
+          <span className="w-2 h-2 rounded-full bg-live blink" />
+          <span className="text-foreground/80">REC</span>
+        </div>
         <div className="inline-block bg-foreground text-background px-3 py-1 font-mono text-[10px] uppercase tracking-[0.3em] animate-chyron-in chyron-shadow">
           NOW BROADCASTING
         </div>
@@ -82,7 +97,7 @@ export function DetailLayout({ title, subtitle, children }: DetailLayoutProps) {
         )}
       </div>
 
-      <main className="py-10 md:py-14 space-y-8 animate-fade-in">{processedChildren}</main>
+      <main className="broadcast-content py-10 md:py-14 space-y-8 animate-fade-in">{processedChildren}</main>
 
       {/* Footer */}
       <footer className="border-t border-border/60 mt-16">
@@ -93,6 +108,9 @@ export function DetailLayout({ title, subtitle, children }: DetailLayoutProps) {
           <span>WRNKLD<span className="text-live">.</span>TV</span>
         </div>
       </footer>
+
+      {/* Bottom slow-scrolling ticker */}
+      <Ticker items={tickerItems} />
     </div>
   );
 }
