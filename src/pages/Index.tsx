@@ -60,7 +60,8 @@ const CHANNELS: Channel[] = [
   },
 ];
 
-const ALL_CHANNELS: Channel[] = CHANNELS;
+// Order: Work, Bullshit, About, Design & AI (bottom)
+const ALL_CHANNELS: Channel[] = [CHANNELS[0], CHANNELS[2], CHANNELS[3], CHANNELS[1]];
 
 const TICKER_ITEMS = [
   "WRNKLD.TV",
@@ -197,7 +198,7 @@ export default function Index() {
               </div>
 
               {/* Programs row */}
-              <div className="overflow-x-auto scrollbar-hide -mx-4 md:mx-0 px-4 md:px-0 py-3">
+              <div className="overflow-x-auto scrollbar-hide -mx-4 md:-mx-2 px-4 md:px-2 py-3">
                 <div className="flex gap-3 md:gap-4 min-w-max">
                   {ch.programs.map((prog, pi) => {
                     const isFocused = focus.ch === ci && focus.p === pi;
@@ -241,7 +242,7 @@ const ProgramTile = forwardRef<HTMLAnchorElement | HTMLDivElement, {
   const base =
     "relative w-[320px] md:w-[400px] h-[180px] md:h-[200px] shrink-0 p-4 border bg-card transition-all duration-150 group select-none overflow-hidden";
   const state = focused
-    ? "border-live shadow-[0_0_0_1px_hsl(var(--primary)),0_0_30px_-10px_hsl(var(--primary))] -translate-y-0.5"
+    ? "border-live shadow-[0_0_12px_-6px_hsl(var(--primary))] -translate-y-0.5"
     : "border-border/60 hover:border-foreground/40";
   const dim = offAir ? "opacity-50" : "";
 
