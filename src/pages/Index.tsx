@@ -81,6 +81,7 @@ const TICKER_ITEMS = [
 export default function Index() {
   const navigate = useNavigate();
   const [focus, setFocus] = useState<{ ch: number; p: number }>({ ch: 0, p: ALL_CHANNELS[0].programs.length - 1 });
+  const inputModeRef = useRef<"keyboard" | "mouse">("keyboard");
   const rowRefs = useRef<Array<HTMLDivElement | null>>([]);
   const tileRefs = useRef<Array<Array<HTMLAnchorElement | HTMLDivElement | null>>>([]);
 
@@ -104,16 +105,21 @@ export default function Index() {
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
       switch (e.key) {
-        case "ArrowUp":    e.preventDefault(); move(-1, 0); break;
-        case "ArrowDown":  e.preventDefault(); move(1, 0);  break;
-        case "ArrowLeft":  e.preventDefault(); move(0, -1); break;
-        case "ArrowRight": e.preventDefault(); move(0, 1);  break;
+        case "ArrowUp":    e.preventDefault(); inputModeRef.current = "keyboard"; move(-1, 0); break;
+        case "ArrowDown":  e.preventDefault(); inputModeRef.current = "keyboard"; move(1, 0);  break;
+        case "ArrowLeft":  e.preventDefault(); inputModeRef.current = "keyboard"; move(0, -1); break;
+        case "ArrowRight": e.preventDefault(); inputModeRef.current = "keyboard"; move(0, 1);  break;
         case "Enter":
         case " ":          e.preventDefault(); tuneIn();    break;
       }
     };
     window.addEventListener("keydown", onKey);
-    return () => window.removeEventListener("keydown", onKey);
+    const onMouseDown = () => { inputModeRef.current = "mouse"; };
+    window.addEventListener("mousedown", onMouseDown);
+    return () => {
+      window.removeEventListener("keydown", onKey);
+      window.removeEventListener("mousedown", onMouseDown);
+    };
   }, [move, tuneIn]);
 
   // scroll selected tile into view
@@ -213,7 +219,13 @@ export default function Index() {
                         prog={prog}
                         focused={isFocused}
                         offAir={offAir}
-                        onFocus={() => setFocus({ ch: ci, p: pi })}
+                        onHoverFocus={() => {
+                          if (inputModeRef.current === "mouse") setFocus({ ch: ci, p: pi });
+                        }}
+                        onClickFocus={() => {
+                          inputModeRef.current = "mouse";
+                          setFocus({ ch: ci, p: pi });
+                        }}
                       />
                     );
                   })}
@@ -237,8 +249,9 @@ const ProgramTile = forwardRef<HTMLAnchorElement | HTMLDivElement, {
   prog: Program;
   focused: boolean;
   offAir: boolean;
-  onFocus: () => void;
-}>(function ProgramTile({ prog, focused, offAir, onFocus }, ref) {
+  onHoverFocus: () => void;
+  onClickFocus: () => void;
+}>(function ProgramTile({ prog, focused, offAir, onHoverFocus, onClickFocus }, ref) {
   const base =
     "relative w-[320px] md:w-[400px] h-[180px] md:h-[200px] shrink-0 p-4 border bg-card transition-all duration-150 group select-none overflow-hidden";
   const state = focused
@@ -309,7 +322,8 @@ const ProgramTile = forwardRef<HTMLAnchorElement | HTMLDivElement, {
     return (
       <div
         ref={ref as React.Ref<HTMLDivElement>}
-        onMouseEnter={onFocus}
+        onMouseEnter={onHoverFocus}
+        onClick={onClickFocus}
         className={`${base} ${state} ${dim} cursor-not-allowed`}
         aria-disabled
       >
@@ -321,8 +335,8 @@ const ProgramTile = forwardRef<HTMLAnchorElement | HTMLDivElement, {
     <Link
       to={prog.to!}
       ref={ref as React.Ref<HTMLAnchorElement>}
-      onMouseEnter={onFocus}
-      onFocus={onFocus}
+      onMouseEnter={onHoverFocus}
+      onClick={onClickFocus}
       className={`${base} ${state} hover:bg-card/80`}
     >
       {inner}
