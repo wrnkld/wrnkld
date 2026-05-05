@@ -38,7 +38,7 @@ export default function SAS() {
 
       <video src={sasDiagram} poster={analyticsAnalyze} autoPlay loop muted playsInline className="w-full h-auto border border-border/40" />
 
-      <div className="grid grid-cols-4 gap-4">
+      <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
         <img src={analyticsPrepare} alt="SAS Analytics Prepare" className="w-full h-auto border border-border/40" />
         <img src={analyticsExplore} alt="SAS Analytics Explore" className="w-full h-auto border border-border/40" />
         <img src={analyticsAnalyze} alt="SAS Analytics Analyze" className="w-full h-auto border border-border/40" />
@@ -54,7 +54,7 @@ export default function SAS() {
 
       <img src={factoryResults} alt="SAS Factory Results" className="w-full h-auto border border-border/40" />
 
-      <div className="grid grid-cols-4 gap-4">
+      <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
         <img src={factoryData} alt="SAS Factory Data" className="w-full h-auto border border-border/40" />
         <img src={factoryProfile} alt="SAS Factory Profile" className="w-full h-auto border border-border/40" />
         <img src={factoryModelTemplates} alt="SAS Factory Model Templates" className="w-full h-auto border border-border/40" />
@@ -69,7 +69,7 @@ export default function SAS() {
 
       <img src={visualStatsRoles} alt="SAS Visual Stats Roles" className="w-full h-auto border border-border/40" />
 
-      <div className="grid grid-cols-2 gap-4">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         <img src={visualStatsProperties} alt="SAS Visual Stats Properties" className="w-full h-auto border border-border/40" />
         <img src={visualStatsShare} alt="SAS Visual Stats Share" className="w-full h-auto border border-border/40" />
       </div>

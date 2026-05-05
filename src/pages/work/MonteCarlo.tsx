@@ -42,7 +42,7 @@ export default function MonteCarlo() {
         Owned design for a scalable integrations platform, spanning data warehouses, orchestration frameworks, code repositories, and incident response tools. Standardized how alerts and events are configured and delivered across teams, improving consistency and reliability for data, platform, and engineering operators.
       </p>
 
-      <div className="grid grid-cols-2 gap-4">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         <img src={mcdIntegrations} alt="Monte Carlo integrations catalog showing available data warehouse and tool connections" className="w-full h-auto border border-border/40" />
         <img src={mcdAudiences} alt="Monte Carlo audience configuration with recipient channels and notification routing" className="w-full h-auto border border-border/40" />
       </div>
@@ -54,7 +54,7 @@ export default function MonteCarlo() {
         Designed a flexible permissions model supporting custom roles, granular sampling policies, and domain-scoped access controls. Enabled organizations to define who can view, edit, or manage monitors, alerts, and incident workflows.
       </p>
 
-      <div className="grid grid-cols-2 gap-4">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         <img src={mcdRoles} alt="Monte Carlo custom role creation with granular permission controls" className="w-full h-auto border border-border/40" />
         <img src={mcdSampling} alt="Monte Carlo integration detail showing sampling policies and connection configuration" className="w-full h-auto border border-border/40" />
       </div>
