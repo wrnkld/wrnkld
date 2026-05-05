@@ -3,7 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { ColdOpen } from "@/components/ColdOpen";
 import { Ticker, SignalBars } from "@/components/Ticker";
 
-type Status = "ON AIR" | "RERUN" | "ARCHIVE" | "PILOT" | "LIVE" | "OFF AIR";
+type Status = "ON AIR" | "RERUN" | "ARCHIVE" | "PILOT" | "LIVE" | "OFF AIR" | "COLOR BARS" | "SNOW" | "STANDBY";
 
 type Program = {
   title: string;
@@ -25,10 +25,10 @@ const CHANNELS: Channel[] = [
     num: "01",
     name: "WORK",
     programs: [
-      { title: "Monte Carlo", logline: "Data observability. Still on air.", airtime: "2022 — NOW", to: "/work/montecarlo", status: "ON AIR" },
-      { title: "Tanium",      logline: "Filmed during COVID. Do not adjust your set.", airtime: "2019 — 2022", to: "/work/tanium", status: "RERUN" },
-      { title: "Red Hat",     logline: "Enterprise. Shot on location.", airtime: "2017 — 2019", to: "/work/redhat", status: "RERUN" },
       { title: "SAS",         logline: "A period piece.", airtime: "2004 — 2017", to: "/work/sas", status: "ARCHIVE" },
+      { title: "Red Hat",     logline: "Enterprise. Shot on location.", airtime: "2017 — 2019", to: "/work/redhat", status: "RERUN" },
+      { title: "Tanium",      logline: "Filmed during COVID. Do not adjust your set.", airtime: "2019 — 2022", to: "/work/tanium", status: "RERUN" },
+      { title: "Monte Carlo", logline: "Data observability. Still on air.", airtime: "2022 — NOW", to: "/work/montecarlo", status: "ON AIR" },
     ],
   },
   {
@@ -60,6 +60,47 @@ const CHANNELS: Channel[] = [
   },
 ];
 
+const FILLER_CHANNELS: Channel[] = [
+  {
+    num: "07",
+    name: "STATS",
+    programs: [
+      { title: "20 YRS", logline: "Years shipping software.", airtime: "ALL TIME", status: "STANDBY" },
+      { title: "168", logline: "Books read. Counting.", airtime: "ALL TIME", status: "STANDBY" },
+      { title: "04:13", logline: "Avg. sleep deficit.", airtime: "NIGHTLY", status: "STANDBY" },
+      { title: "0", logline: "LinkedIn posts this year.", airtime: "YTD", status: "STANDBY" },
+    ],
+  },
+  {
+    num: "13",
+    name: "TEST PATTERN",
+    programs: [
+      { title: "COLOR BARS", logline: "Stand by. Do not adjust your set.", airtime: "24/7", status: "COLOR BARS" },
+      { title: "TONE", logline: "1 kHz. Calibration in progress.", airtime: "LOOP", status: "COLOR BARS" },
+    ],
+  },
+  {
+    num: "99",
+    name: "DEAD AIR",
+    programs: [
+      { title: "SNOW", logline: "Signal lost. Try another channel.", airtime: "—", status: "SNOW" },
+      { title: "STATIC", logline: "Nothing here. Keep moving.", airtime: "—", status: "SNOW" },
+      { title: "PLEASE STAND BY", logline: "We'll be right back.", airtime: "—", status: "STANDBY" },
+    ],
+  },
+];
+
+// Insert filler channels between real ones
+const ALL_CHANNELS: Channel[] = [
+  CHANNELS[0],            // 01 WORK
+  FILLER_CHANNELS[0],     // 07 STATS
+  CHANNELS[1],            // 02 DESIGN & AI
+  FILLER_CHANNELS[1],     // 13 TEST PATTERN
+  CHANNELS[2],            // 03 BULLSHIT
+  CHANNELS[3],            // 04 ABOUT
+  FILLER_CHANNELS[2],     // 99 DEAD AIR
+];
+
 const TICKER_ITEMS = [
   "WRNKLD.TV",
   "TONIGHT'S PROGRAMMING",
@@ -76,14 +117,14 @@ const TICKER_ITEMS = [
 
 export default function Index() {
   const navigate = useNavigate();
-  const [focus, setFocus] = useState<{ ch: number; p: number }>({ ch: 0, p: 0 });
+  const [focus, setFocus] = useState<{ ch: number; p: number }>({ ch: 0, p: ALL_CHANNELS[0].programs.length - 1 });
   const rowRefs = useRef<Array<HTMLDivElement | null>>([]);
   const tileRefs = useRef<Array<Array<HTMLAnchorElement | HTMLDivElement | null>>>([]);
 
   const move = useCallback((dCh: number, dP: number) => {
     setFocus((cur) => {
-      const ch = Math.max(0, Math.min(CHANNELS.length - 1, cur.ch + dCh));
-      const len = CHANNELS[ch].programs.length;
+      const ch = Math.max(0, Math.min(ALL_CHANNELS.length - 1, cur.ch + dCh));
+      const len = ALL_CHANNELS[ch].programs.length;
       let p = cur.p + dP;
       if (dCh !== 0) p = Math.min(p, len - 1);
       p = Math.max(0, Math.min(len - 1, p));
@@ -92,7 +133,7 @@ export default function Index() {
   }, []);
 
   const tuneIn = useCallback(() => {
-    const prog = CHANNELS[focus.ch].programs[focus.p];
+    const prog = ALL_CHANNELS[focus.ch].programs[focus.p];
     if (prog?.to) navigate(prog.to);
   }, [focus, navigate]);
 
@@ -176,7 +217,7 @@ export default function Index() {
         </div>
 
         <div className="divide-y divide-border/60">
-          {CHANNELS.map((ch, ci) => (
+          {ALL_CHANNELS.map((ch, ci) => (
             <div
               key={ch.num}
               ref={(el) => { rowRefs.current[ci] = el; }}
@@ -220,7 +261,7 @@ export default function Index() {
         </div>
 
         {/* NOW SELECTED chyron */}
-        <SelectedChyron channel={CHANNELS[focus.ch]} program={CHANNELS[focus.ch].programs[focus.p]} />
+        <SelectedChyron channel={ALL_CHANNELS[focus.ch]} program={ALL_CHANNELS[focus.ch].programs[focus.p]} />
       </main>
 
     </div>
@@ -236,7 +277,7 @@ const ProgramTile = forwardRef<HTMLAnchorElement | HTMLDivElement, {
   onFocus: () => void;
 }>(function ProgramTile({ prog, focused, offAir, onFocus }, ref) {
   const base =
-    "relative w-[260px] md:w-[300px] h-[180px] md:h-[200px] shrink-0 p-4 border bg-card transition-all duration-150 group select-none overflow-hidden";
+    "relative w-[320px] md:w-[400px] h-[180px] md:h-[200px] shrink-0 p-4 border bg-card transition-all duration-150 group select-none overflow-hidden";
   const state = focused
     ? "border-live shadow-[0_0_0_1px_hsl(var(--primary)),0_0_30px_-10px_hsl(var(--primary))] -translate-y-0.5"
     : "border-border/60 hover:border-foreground/40";
@@ -252,6 +293,11 @@ const ProgramTile = forwardRef<HTMLAnchorElement | HTMLDivElement, {
         return <span className="w-1.5 h-1.5 rounded-full border border-foreground/60 inline-block" />;
       case "PILOT":
         return <span className="w-1.5 h-1.5 rounded-full bg-foreground/80 inline-block" />;
+      case "COLOR BARS":
+        return <span className="w-1.5 h-1.5 rounded-full bg-foreground/80 inline-block" />;
+      case "SNOW":
+      case "STANDBY":
+        return <span className="w-1.5 h-1.5 rounded-full border border-foreground/40 inline-block" />;
       default:
         return null;
     }
@@ -260,7 +306,11 @@ const ProgramTile = forwardRef<HTMLAnchorElement | HTMLDivElement, {
   const inner = (
     <>
       {/* background */}
-      {prog.thumb ? (
+      {prog.status === "COLOR BARS" ? (
+        <div className="absolute inset-0 color-bars opacity-80" />
+      ) : prog.status === "SNOW" ? (
+        <div className="absolute inset-0 tv-snow opacity-70" />
+      ) : prog.thumb ? (
         <>
           <div
             className="absolute inset-0 bg-cover bg-center"

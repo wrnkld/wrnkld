@@ -229,6 +229,36 @@
     background-size: 160px 160px;
   }
 
+  /* ---- SMPTE-ish color bars (muted) ---- */
+  .color-bars {
+    background: linear-gradient(
+      to right,
+      #6e6e6e 0 14.28%,
+      #b8b800 14.28% 28.57%,
+      #00b8b8 28.57% 42.85%,
+      #00a000 42.85% 57.14%,
+      #b800b8 57.14% 71.42%,
+      #b80000 71.42% 85.71%,
+      #1a1a8a 85.71% 100%
+    );
+    filter: saturate(0.55) brightness(0.55);
+  }
+
+  /* ---- Snow / static ---- */
+  .tv-snow {
+    background-image:
+      url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='s'><feTurbulence type='fractalNoise' baseFrequency='1.6' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 0.55 0'/></filter><rect width='100%' height='100%' filter='url(%23s)'/></svg>");
+    background-size: 200px 200px;
+    animation: snow-shift 0.3s steps(4) infinite;
+  }
+  @keyframes snow-shift {
+    0%   { background-position: 0 0; }
+    25%  { background-position: -40px 20px; }
+    50%  { background-position: 30px -25px; }
+    75%  { background-position: -15px 35px; }
+    100% { background-position: 0 0; }
+  }
+
   /* ---- Section headers on detail pages: lower-third left border ---- */
   .broadcast-content h2 {
     border-left: 2px solid hsl(var(--primary));
