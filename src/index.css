@@ -104,6 +104,7 @@
 
   .text-live { color: hsl(var(--primary)); }
   .bg-live   { background-color: hsl(var(--primary)); }
+  .border-live { border-color: hsl(var(--primary)); }
 
   .scanlines::before {
     content: "";
