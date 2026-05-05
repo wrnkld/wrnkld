@@ -249,8 +249,9 @@ const ProgramTile = forwardRef<HTMLAnchorElement | HTMLDivElement, {
   prog: Program;
   focused: boolean;
   offAir: boolean;
-  onFocus: () => void;
-}>(function ProgramTile({ prog, focused, offAir, onFocus }, ref) {
+  onHoverFocus: () => void;
+  onClickFocus: () => void;
+}>(function ProgramTile({ prog, focused, offAir, onHoverFocus, onClickFocus }, ref) {
   const base =
     "relative w-[320px] md:w-[400px] h-[180px] md:h-[200px] shrink-0 p-4 border bg-card transition-all duration-150 group select-none overflow-hidden";
   const state = focused
@@ -321,7 +322,8 @@ const ProgramTile = forwardRef<HTMLAnchorElement | HTMLDivElement, {
     return (
       <div
         ref={ref as React.Ref<HTMLDivElement>}
-        onMouseEnter={onFocus}
+        onMouseEnter={onHoverFocus}
+        onClick={onClickFocus}
         className={`${base} ${state} ${dim} cursor-not-allowed`}
         aria-disabled
       >
@@ -333,8 +335,8 @@ const ProgramTile = forwardRef<HTMLAnchorElement | HTMLDivElement, {
     <Link
       to={prog.to!}
       ref={ref as React.Ref<HTMLAnchorElement>}
-      onMouseEnter={onFocus}
-      onFocus={onFocus}
+      onMouseEnter={onHoverFocus}
+      onClick={onClickFocus}
       className={`${base} ${state} hover:bg-card/80`}
     >
       {inner}
