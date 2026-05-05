@@ -1,12 +1,22 @@
 import { useEffect, useRef, useState, useCallback } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { ColdOpen } from "@/components/ColdOpen";
+import { Ticker, SignalBars } from "@/components/Ticker";
+
+import mcThumb from "@/assets/montecarlo/mcd-perf-mon.png";
+import taniumThumb from "@/assets/tanium/tanium-enforce-overview.png";
+import redhatThumb from "@/assets/redhat/rhba-workflow-modeler.png";
+import sasThumb from "@/assets/sas/analytics-report.png";
+
+type Status = "ON AIR" | "RERUN" | "ARCHIVE" | "PILOT" | "LIVE" | "OFF AIR";
 
 type Program = {
   title: string;
   logline: string;
   airtime: string;
   to?: string; // undefined = OFF AIR
+  thumb?: string;
+  status: Status;
 };
 
 type Channel = {
@@ -20,39 +30,53 @@ const CHANNELS: Channel[] = [
     num: "01",
     name: "WORK",
     programs: [
-      { title: "Monte Carlo", logline: "Data observability. Still on air.", airtime: "2022 — NOW", to: "/work/montecarlo" },
-      { title: "Tanium",      logline: "Filmed during COVID. Do not adjust your set.", airtime: "2019 — 2022", to: "/work/tanium" },
-      { title: "Red Hat",     logline: "Enterprise. Shot on location.", airtime: "2017 — 2019", to: "/work/redhat" },
-      { title: "SAS",         logline: "A period piece.", airtime: "2004 — 2017", to: "/work/sas" },
+      { title: "Monte Carlo", logline: "Data observability. Still on air.", airtime: "2022 — NOW", to: "/work/montecarlo", thumb: mcThumb, status: "ON AIR" },
+      { title: "Tanium",      logline: "Filmed during COVID. Do not adjust your set.", airtime: "2019 — 2022", to: "/work/tanium", thumb: taniumThumb, status: "RERUN" },
+      { title: "Red Hat",     logline: "Enterprise. Shot on location.", airtime: "2017 — 2019", to: "/work/redhat", thumb: redhatThumb, status: "RERUN" },
+      { title: "SAS",         logline: "A period piece.", airtime: "2004 — 2017", to: "/work/sas", thumb: sasThumb, status: "ARCHIVE" },
     ],
   },
   {
     num: "02",
     name: "DESIGN & AI",
     programs: [
-      { title: "Pt 1 → Tools",   logline: "What I'm actually using.", airtime: "EP 01 · 12 MIN", to: "/designai/tools" },
-      { title: "Pt 2 → Vibes",   logline: "What I think is happening.", airtime: "EP 02 · 9 MIN",  to: "/designai/vibes" },
-      { title: "Pt 3 → Sleeves", logline: "How it turned into a real thing.", airtime: "EP 03 · 14 MIN", to: "/designai/sleeves" },
+      { title: "Pt 1 → Tools",   logline: "What I'm actually using.", airtime: "EP 01 · 12 MIN", to: "/designai/tools", status: "ON AIR" },
+      { title: "Pt 2 → Vibes",   logline: "What I think is happening.", airtime: "EP 02 · 9 MIN",  to: "/designai/vibes", status: "ON AIR" },
+      { title: "Pt 3 → Sleeves", logline: "How it turned into a real thing.", airtime: "EP 03 · 14 MIN", to: "/designai/sleeves", status: "ON AIR" },
     ],
   },
   {
     num: "03",
     name: "BULLSHIT",
     programs: [
-      { title: "Sleeves",    logline: "Track albums with friends. Somehow works.", airtime: "ON AIR" },
-      { title: "StudyDrop",  logline: "Learning thing. Jury's out.", airtime: "PILOT" },
-      { title: "Slacker",    logline: "Built this instead of something responsible.", airtime: "RERUN" },
+      { title: "Sleeves",    logline: "Track albums with friends. Somehow works.", airtime: "ON AIR", status: "ON AIR" },
+      { title: "StudyDrop",  logline: "Learning thing. Jury's out.", airtime: "PILOT", status: "PILOT" },
+      { title: "Slacker",    logline: "Built this instead of something responsible.", airtime: "PILOT", status: "PILOT" },
     ],
   },
   {
     num: "04",
     name: "ABOUT",
     programs: [
-      { title: "Experience", logline: "20 years. Still going.", airtime: "FEATURED", to: "/about/experience" },
-      { title: "Books",      logline: "168 and counting. Yellow = recommended.", airtime: "ARCHIVE", to: "/about/books" },
-      { title: "Records",    logline: "The other thing I collect.", airtime: "ARCHIVE", to: "/about/records" },
+      { title: "Experience", logline: "20 years. Still going.", airtime: "FEATURED", to: "/about/experience", status: "ON AIR" },
+      { title: "Books",      logline: "168 and counting. Red = recommended.", airtime: "ARCHIVE", to: "/about/books", status: "LIVE" },
+      { title: "Records",    logline: "The other thing I collect.", airtime: "ARCHIVE", to: "/about/records", status: "LIVE" },
     ],
   },
+];
+
+const TICKER_ITEMS = [
+  "WRNKLD.TV",
+  "TONIGHT'S PROGRAMMING",
+  "CH 01 WORK",
+  "CH 02 DESIGN & AI",
+  "CH 03 BULLSHIT",
+  "CH 04 ABOUT",
+  "NOW BROADCASTING: MATTHEW STEVENS",
+  "HEAD OF DESIGN",
+  "20 YEARS",
+  "CURRENTLY AT MONTE CARLO",
+  "SIGNAL STRONG",
 ];
 
 export default function Index() {
@@ -115,6 +139,7 @@ export default function Index() {
             </span>
           </div>
           <div className="flex items-center gap-4 font-mono text-[10px] uppercase tracking-[0.3em] text-muted-foreground">
+            <SignalBars />
             <span className="hidden md:flex items-center gap-2">
               <span className="w-2 h-2 rounded-full bg-live blink" />
               <span className="text-foreground">LIVE</span>
@@ -144,6 +169,9 @@ export default function Index() {
           </p>
         </div>
       </section>
+
+      {/* News ticker */}
+      <Ticker items={TICKER_ITEMS} className="mb-2" />
 
       {/* The Guide */}
       <main className="max-w-[1400px] mx-auto px-4 md:px-8 pb-32">
@@ -225,34 +253,59 @@ const ProgramTile = forwardRef<HTMLAnchorElement | HTMLDivElement, {
   onFocus: () => void;
 }>(function ProgramTile({ prog, focused, offAir, onFocus }, ref) {
   const base =
-    "relative w-[260px] md:w-[300px] shrink-0 p-4 border bg-card transition-all duration-150 group select-none";
+    "relative w-[260px] md:w-[300px] h-[180px] md:h-[200px] shrink-0 p-4 border bg-card transition-all duration-150 group select-none overflow-hidden";
   const state = focused
     ? "border-live shadow-[0_0_0_1px_hsl(var(--primary)),0_0_30px_-10px_hsl(var(--primary))] -translate-y-0.5"
     : "border-border/60 hover:border-foreground/40";
   const dim = offAir ? "opacity-50" : "";
 
+  const statusDot = (() => {
+    switch (prog.status) {
+      case "ON AIR":
+      case "LIVE":
+        return <span className="w-1.5 h-1.5 rounded-full bg-live blink inline-block" />;
+      case "RERUN":
+      case "ARCHIVE":
+        return <span className="w-1.5 h-1.5 rounded-full border border-foreground/60 inline-block" />;
+      case "PILOT":
+        return <span className="w-1.5 h-1.5 rounded-full bg-foreground/80 inline-block" />;
+      default:
+        return null;
+    }
+  })();
+
   const inner = (
     <>
-      <div className="flex items-center justify-between font-mono text-[9px] uppercase tracking-[0.3em] text-muted-foreground mb-3">
-        <span>{prog.airtime}</span>
-        {offAir ? (
-          <span className="text-muted-foreground">OFF AIR</span>
-        ) : (
-          <span className="flex items-center gap-1.5">
-            <span className="w-1.5 h-1.5 rounded-full bg-live" />
-            <span className="text-foreground/80">ON AIR</span>
-          </span>
-        )}
-      </div>
-      <div className="font-display text-2xl md:text-3xl text-foreground leading-none tracking-[0.02em] mb-3">
-        {prog.title.toUpperCase()}
-      </div>
-      <div className="font-mono text-xs text-muted-foreground leading-relaxed min-h-[2.5em]">
-        {prog.logline}
-      </div>
-      {focused && (
-        <div className="absolute -bottom-px left-0 right-0 h-px bg-live" />
+      {/* background */}
+      {prog.thumb ? (
+        <>
+          <div
+            className="absolute inset-0 bg-cover bg-center"
+            style={{ backgroundImage: `url(${prog.thumb})`, filter: "blur(2px) saturate(0.7)" }}
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-background via-background/85 to-background/40" />
+        </>
+      ) : (
+        <div className="absolute inset-0 card-noise opacity-60" />
       )}
+
+      {/* content */}
+      <div className="relative h-full flex flex-col">
+        <div className="flex items-center justify-between font-mono text-[9px] uppercase tracking-[0.3em] text-muted-foreground mb-3">
+          <span>{prog.airtime}</span>
+          <span className="flex items-center gap-1.5">
+            {statusDot}
+            <span className="text-foreground/80">{prog.status}</span>
+          </span>
+        </div>
+        <div className="font-display text-2xl md:text-3xl text-foreground leading-none tracking-[0.02em] mb-3">
+          {prog.title.toUpperCase()}
+        </div>
+        <div className="font-mono text-xs text-muted-foreground leading-relaxed">
+          {prog.logline}
+        </div>
+      </div>
+      {focused && <div className="absolute -bottom-px left-0 right-0 h-px bg-live" />}
     </>
   );
 
@@ -328,10 +381,11 @@ function DPad({
 function Clock() {
   const [now, setNow] = useState(() => new Date());
   useEffect(() => {
-    const id = setInterval(() => setNow(new Date()), 1000 * 30);
+    const id = setInterval(() => setNow(new Date()), 1000);
     return () => clearInterval(id);
   }, []);
   const hh = now.getHours().toString().padStart(2, "0");
   const mm = now.getMinutes().toString().padStart(2, "0");
-  return <span className="text-foreground">{hh}:{mm}</span>;
+  const ss = now.getSeconds().toString().padStart(2, "0");
+  return <span className="text-foreground tabular-nums">{hh}:{mm}:{ss}</span>;
 }
