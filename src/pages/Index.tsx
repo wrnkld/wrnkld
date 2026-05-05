@@ -277,7 +277,7 @@ const ProgramTile = forwardRef<HTMLAnchorElement | HTMLDivElement, {
   onFocus: () => void;
 }>(function ProgramTile({ prog, focused, offAir, onFocus }, ref) {
   const base =
-    "relative w-[260px] md:w-[300px] h-[180px] md:h-[200px] shrink-0 p-4 border bg-card transition-all duration-150 group select-none overflow-hidden";
+    "relative w-[320px] md:w-[400px] h-[180px] md:h-[200px] shrink-0 p-4 border bg-card transition-all duration-150 group select-none overflow-hidden";
   const state = focused
     ? "border-live shadow-[0_0_0_1px_hsl(var(--primary)),0_0_30px_-10px_hsl(var(--primary))] -translate-y-0.5"
     : "border-border/60 hover:border-foreground/40";
@@ -293,6 +293,11 @@ const ProgramTile = forwardRef<HTMLAnchorElement | HTMLDivElement, {
         return <span className="w-1.5 h-1.5 rounded-full border border-foreground/60 inline-block" />;
       case "PILOT":
         return <span className="w-1.5 h-1.5 rounded-full bg-foreground/80 inline-block" />;
+      case "COLOR BARS":
+        return <span className="w-1.5 h-1.5 rounded-full bg-foreground/80 inline-block" />;
+      case "SNOW":
+      case "STANDBY":
+        return <span className="w-1.5 h-1.5 rounded-full border border-foreground/40 inline-block" />;
       default:
         return null;
     }
@@ -301,7 +306,11 @@ const ProgramTile = forwardRef<HTMLAnchorElement | HTMLDivElement, {
   const inner = (
     <>
       {/* background */}
-      {prog.thumb ? (
+      {prog.status === "COLOR BARS" ? (
+        <div className="absolute inset-0 color-bars opacity-80" />
+      ) : prog.status === "SNOW" ? (
+        <div className="absolute inset-0 tv-snow opacity-70" />
+      ) : prog.thumb ? (
         <>
           <div
             className="absolute inset-0 bg-cover bg-center"
