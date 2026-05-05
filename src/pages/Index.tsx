@@ -223,14 +223,6 @@ export default function Index() {
         <SelectedChyron channel={CHANNELS[focus.ch]} program={CHANNELS[focus.ch].programs[focus.p]} />
       </main>
 
-      {/* Decorative D-pad */}
-      <DPad
-        onUp={() => move(-1, 0)}
-        onDown={() => move(1, 0)}
-        onLeft={() => move(0, -1)}
-        onRight={() => move(0, 1)}
-        onOk={tuneIn}
-      />
     </div>
   );
 }
