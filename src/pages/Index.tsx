@@ -197,7 +197,7 @@ export default function Index() {
               </div>
 
               {/* Programs row */}
-              <div className="overflow-x-auto scrollbar-hide -mx-4 md:mx-0 px-4 md:px-0">
+              <div className="overflow-x-auto scrollbar-hide -mx-4 md:mx-0 px-4 md:px-0 py-3">
                 <div className="flex gap-3 md:gap-4 min-w-max">
                   {ch.programs.map((prog, pi) => {
                     const isFocused = focus.ch === ci && focus.p === pi;
