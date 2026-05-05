@@ -208,9 +208,9 @@
   .ticker-track {
     display: inline-flex;
     white-space: nowrap;
-    animation: ticker-scroll 60s linear infinite;
+    animation: ticker-scroll 180s linear infinite;
   }
-  .ticker-track-fast { animation-duration: 45s; }
+  .ticker-track-fast { animation-duration: 90s; }
 
   /* ---- Channel-changing flicker (hover) ---- */
   @keyframes channel-flicker {
