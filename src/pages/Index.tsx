@@ -32,7 +32,7 @@ const CHANNELS: Channel[] = [
     ],
   },
   {
-    num: "02",
+    num: "04",
     name: "DESIGN & AI",
     programs: [
       { title: "Pt 1 → Tools",   logline: "What I'm actually using.", airtime: "EP 01 · 12 MIN", to: "/designai/tools", status: "ON AIR" },
@@ -41,7 +41,7 @@ const CHANNELS: Channel[] = [
     ],
   },
   {
-    num: "03",
+    num: "02",
     name: "BULLSHIT",
     programs: [
       { title: "Sleeves",    logline: "Track albums with friends. Somehow works.", airtime: "ON AIR", status: "ON AIR" },
@@ -50,7 +50,7 @@ const CHANNELS: Channel[] = [
     ],
   },
   {
-    num: "04",
+    num: "03",
     name: "ABOUT",
     programs: [
       { title: "Experience", logline: "20 years. Still going.", airtime: "FEATURED", to: "/about/experience", status: "ON AIR" },
@@ -67,9 +67,9 @@ const TICKER_ITEMS = [
   "WRNKLD.TV",
   "TONIGHT'S PROGRAMMING",
   "CH 01 WORK",
-  "CH 02 DESIGN & AI",
-  "CH 03 BULLSHIT",
-  "CH 04 ABOUT",
+  "CH 02 BULLSHIT",
+  "CH 03 ABOUT",
+  "CH 04 DESIGN & AI",
   "NOW BROADCASTING: MATTHEW STEVENS",
   "HEAD OF DESIGN",
   "20 YEARS",
