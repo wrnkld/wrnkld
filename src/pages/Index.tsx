@@ -3,7 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { ColdOpen } from "@/components/ColdOpen";
 import { Ticker, SignalBars } from "@/components/Ticker";
 
-type Status = "ON AIR" | "RERUN" | "ARCHIVE" | "PILOT" | "LIVE" | "OFF AIR";
+type Status = "ON AIR" | "RERUN" | "ARCHIVE" | "PILOT" | "LIVE" | "OFF AIR" | "COLOR BARS" | "SNOW" | "STANDBY";
 
 type Program = {
   title: string;
@@ -25,10 +25,10 @@ const CHANNELS: Channel[] = [
     num: "01",
     name: "WORK",
     programs: [
-      { title: "Monte Carlo", logline: "Data observability. Still on air.", airtime: "2022 — NOW", to: "/work/montecarlo", status: "ON AIR" },
-      { title: "Tanium",      logline: "Filmed during COVID. Do not adjust your set.", airtime: "2019 — 2022", to: "/work/tanium", status: "RERUN" },
-      { title: "Red Hat",     logline: "Enterprise. Shot on location.", airtime: "2017 — 2019", to: "/work/redhat", status: "RERUN" },
       { title: "SAS",         logline: "A period piece.", airtime: "2004 — 2017", to: "/work/sas", status: "ARCHIVE" },
+      { title: "Red Hat",     logline: "Enterprise. Shot on location.", airtime: "2017 — 2019", to: "/work/redhat", status: "RERUN" },
+      { title: "Tanium",      logline: "Filmed during COVID. Do not adjust your set.", airtime: "2019 — 2022", to: "/work/tanium", status: "RERUN" },
+      { title: "Monte Carlo", logline: "Data observability. Still on air.", airtime: "2022 — NOW", to: "/work/montecarlo", status: "ON AIR" },
     ],
   },
   {
@@ -58,6 +58,47 @@ const CHANNELS: Channel[] = [
       { title: "Records",    logline: "The other thing I collect.", airtime: "ARCHIVE", to: "/about/records", status: "LIVE" },
     ],
   },
+];
+
+const FILLER_CHANNELS: Channel[] = [
+  {
+    num: "07",
+    name: "STATS",
+    programs: [
+      { title: "20 YRS", logline: "Years shipping software.", airtime: "ALL TIME", status: "STANDBY" },
+      { title: "168", logline: "Books read. Counting.", airtime: "ALL TIME", status: "STANDBY" },
+      { title: "04:13", logline: "Avg. sleep deficit.", airtime: "NIGHTLY", status: "STANDBY" },
+      { title: "0", logline: "LinkedIn posts this year.", airtime: "YTD", status: "STANDBY" },
+    ],
+  },
+  {
+    num: "13",
+    name: "TEST PATTERN",
+    programs: [
+      { title: "COLOR BARS", logline: "Stand by. Do not adjust your set.", airtime: "24/7", status: "COLOR BARS" },
+      { title: "TONE", logline: "1 kHz. Calibration in progress.", airtime: "LOOP", status: "COLOR BARS" },
+    ],
+  },
+  {
+    num: "99",
+    name: "DEAD AIR",
+    programs: [
+      { title: "SNOW", logline: "Signal lost. Try another channel.", airtime: "—", status: "SNOW" },
+      { title: "STATIC", logline: "Nothing here. Keep moving.", airtime: "—", status: "SNOW" },
+      { title: "PLEASE STAND BY", logline: "We'll be right back.", airtime: "—", status: "STANDBY" },
+    ],
+  },
+];
+
+// Insert filler channels between real ones
+const ALL_CHANNELS: Channel[] = [
+  CHANNELS[0],            // 01 WORK
+  FILLER_CHANNELS[0],     // 07 STATS
+  CHANNELS[1],            // 02 DESIGN & AI
+  FILLER_CHANNELS[1],     // 13 TEST PATTERN
+  CHANNELS[2],            // 03 BULLSHIT
+  CHANNELS[3],            // 04 ABOUT
+  FILLER_CHANNELS[2],     // 99 DEAD AIR
 ];
 
 const TICKER_ITEMS = [
