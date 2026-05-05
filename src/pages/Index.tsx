@@ -166,8 +166,12 @@ export default function Index() {
           <div className="font-mono text-[10px] uppercase tracking-[0.35em] text-muted-foreground">
             TONIGHT'S PROGRAMMING
           </div>
-          <div className="font-mono text-[10px] uppercase tracking-[0.35em] text-muted-foreground hidden md:block">
-            ↑↓ CHANNEL · ←→ PROGRAM · ENTER TUNE IN
+          <div className="hidden md:flex items-center gap-2 font-mono text-xs uppercase tracking-[0.25em] text-foreground border border-live/60 bg-live/10 px-3 py-1.5">
+            <span className="text-live">↑↓</span><span>CHANNEL</span>
+            <span className="text-live/40">·</span>
+            <span className="text-live">←→</span><span>PROGRAM</span>
+            <span className="text-live/40">·</span>
+            <span className="text-live">ENTER</span><span>TUNE IN</span>
           </div>
         </div>
 
