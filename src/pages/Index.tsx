@@ -81,6 +81,7 @@ const TICKER_ITEMS = [
 export default function Index() {
   const navigate = useNavigate();
   const [focus, setFocus] = useState<{ ch: number; p: number }>({ ch: 0, p: ALL_CHANNELS[0].programs.length - 1 });
+  const inputModeRef = useRef<"keyboard" | "mouse">("keyboard");
   const rowRefs = useRef<Array<HTMLDivElement | null>>([]);
   const tileRefs = useRef<Array<Array<HTMLAnchorElement | HTMLDivElement | null>>>([]);
 
@@ -104,16 +105,21 @@ export default function Index() {
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
       switch (e.key) {
-        case "ArrowUp":    e.preventDefault(); move(-1, 0); break;
-        case "ArrowDown":  e.preventDefault(); move(1, 0);  break;
-        case "ArrowLeft":  e.preventDefault(); move(0, -1); break;
-        case "ArrowRight": e.preventDefault(); move(0, 1);  break;
+        case "ArrowUp":    e.preventDefault(); inputModeRef.current = "keyboard"; move(-1, 0); break;
+        case "ArrowDown":  e.preventDefault(); inputModeRef.current = "keyboard"; move(1, 0);  break;
+        case "ArrowLeft":  e.preventDefault(); inputModeRef.current = "keyboard"; move(0, -1); break;
+        case "ArrowRight": e.preventDefault(); inputModeRef.current = "keyboard"; move(0, 1);  break;
         case "Enter":
         case " ":          e.preventDefault(); tuneIn();    break;
       }
     };
     window.addEventListener("keydown", onKey);
-    return () => window.removeEventListener("keydown", onKey);
+    const onMouseDown = () => { inputModeRef.current = "mouse"; };
+    window.addEventListener("mousedown", onMouseDown);
+    return () => {
+      window.removeEventListener("keydown", onKey);
+      window.removeEventListener("mousedown", onMouseDown);
+    };
   }, [move, tuneIn]);
 
   // scroll selected tile into view
@@ -213,7 +219,13 @@ export default function Index() {
                         prog={prog}
                         focused={isFocused}
                         offAir={offAir}
-                        onFocus={() => setFocus({ ch: ci, p: pi })}
+                        onHoverFocus={() => {
+                          if (inputModeRef.current === "mouse") setFocus({ ch: ci, p: pi });
+                        }}
+                        onClickFocus={() => {
+                          inputModeRef.current = "mouse";
+                          setFocus({ ch: ci, p: pi });
+                        }}
                       />
                     );
                   })}
