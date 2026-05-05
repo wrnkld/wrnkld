@@ -84,16 +84,23 @@ export default function Index() {
   const inputModeRef = useRef<"keyboard" | "mouse">("keyboard");
   const rowRefs = useRef<Array<HTMLDivElement | null>>([]);
   const tileRefs = useRef<Array<Array<HTMLAnchorElement | HTMLDivElement | null>>>([]);
+  const heroLinkRef = useRef<HTMLAnchorElement | null>(null);
+  const belowGridRef = useRef<HTMLDivElement | null>(null);
 
-  const move = useCallback((dCh: number, dP: number) => {
+  const move = useCallback((dCh: number, dP: number): "escape-up" | "escape-down" | null => {
+    let escape: "escape-up" | "escape-down" | null = null;
     setFocus((cur) => {
-      const ch = Math.max(0, Math.min(ALL_CHANNELS.length - 1, cur.ch + dCh));
+      const nextCh = cur.ch + dCh;
+      if (nextCh < 0) { escape = "escape-up"; return cur; }
+      if (nextCh > ALL_CHANNELS.length - 1) { escape = "escape-down"; return cur; }
+      const ch = nextCh;
       const len = ALL_CHANNELS[ch].programs.length;
       let p = cur.p + dP;
       if (dCh !== 0) p = Math.min(p, len - 1);
       p = Math.max(0, Math.min(len - 1, p));
       return { ch, p };
     });
+    return escape;
   }, []);
 
   const tuneIn = useCallback(() => {
@@ -104,14 +111,17 @@ export default function Index() {
   // keyboard
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
+      let escaped: "escape-up" | "escape-down" | null = null;
       switch (e.key) {
-        case "ArrowUp":    e.preventDefault(); inputModeRef.current = "keyboard"; move(-1, 0); break;
-        case "ArrowDown":  e.preventDefault(); inputModeRef.current = "keyboard"; move(1, 0);  break;
+        case "ArrowUp":    e.preventDefault(); inputModeRef.current = "keyboard"; escaped = move(-1, 0); break;
+        case "ArrowDown":  e.preventDefault(); inputModeRef.current = "keyboard"; escaped = move(1, 0);  break;
         case "ArrowLeft":  e.preventDefault(); inputModeRef.current = "keyboard"; move(0, -1); break;
         case "ArrowRight": e.preventDefault(); inputModeRef.current = "keyboard"; move(0, 1);  break;
         case "Enter":
         case " ":          e.preventDefault(); tuneIn();    break;
       }
+      if (escaped === "escape-up") heroLinkRef.current?.focus();
+      if (escaped === "escape-down") belowGridRef.current?.focus();
     };
     window.addEventListener("keydown", onKey);
     const onMouseDown = () => { inputModeRef.current = "mouse"; };
@@ -162,7 +172,7 @@ export default function Index() {
           </h1>
           <p className="font-mono text-xs text-muted-foreground">
             <span className="text-muted-foreground">SAY HELLO →</span>{" "}
-            <a href="mailto:hello@wrnkld.tv" className="text-foreground hover:text-live transition-colors">hello@wrnkld.tv</a>
+            <a ref={heroLinkRef} href="mailto:hello@wrnkld.tv" className="text-foreground hover:text-live transition-colors">hello@wrnkld.tv</a>
           </p>
         </div>
       </section>
@@ -237,6 +247,7 @@ export default function Index() {
 
         {/* NOW SELECTED chyron */}
         <SelectedChyron channel={ALL_CHANNELS[focus.ch]} program={ALL_CHANNELS[focus.ch].programs[focus.p]} />
+        <div ref={belowGridRef} tabIndex={-1} aria-hidden className="outline-none" />
       </main>
 
     </div>
