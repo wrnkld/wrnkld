@@ -1,4 +1,4 @@
-import { ReactNode, Children, isValidElement } from "react";
+import { ReactNode, Children, isValidElement, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { Ticker, SignalBars } from "@/components/Ticker";
 
@@ -64,15 +64,11 @@ export function DetailLayout({ title, subtitle, children }: DetailLayoutProps) {
           </Link>
           <div className="flex items-center gap-3">
             <SignalBars />
-            {channel && (
-              <span>
-                CH <span className="text-live">{channel.num}</span> · {channel.name}
-              </span>
-            )}
-            <span className="hidden sm:flex items-center gap-1.5">
+            <span className="flex items-center gap-1.5">
               <span className="w-1.5 h-1.5 rounded-full bg-live blink" />
               <span className="text-foreground/80">LIVE</span>
             </span>
+            <DetailClock />
           </div>
         </div>
       </div>
@@ -108,4 +104,16 @@ export function DetailLayout({ title, subtitle, children }: DetailLayoutProps) {
       <Ticker items={tickerItems} />
     </div>
   );
+}
+
+function DetailClock() {
+  const [now, setNow] = useState(() => new Date());
+  useEffect(() => {
+    const id = setInterval(() => setNow(new Date()), 1000);
+    return () => clearInterval(id);
+  }, []);
+  const hh = now.getHours().toString().padStart(2, "0");
+  const mm = now.getMinutes().toString().padStart(2, "0");
+  const ss = now.getSeconds().toString().padStart(2, "0");
+  return <span className="text-foreground tabular-nums">{hh}:{mm}:{ss}</span>;
 }
