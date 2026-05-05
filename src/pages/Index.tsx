@@ -253,7 +253,7 @@ const ProgramTile = forwardRef<HTMLAnchorElement | HTMLDivElement, {
   onClickFocus: () => void;
 }>(function ProgramTile({ prog, focused, offAir, onHoverFocus, onClickFocus }, ref) {
   const base =
-    "relative w-[320px] md:w-[400px] h-[180px] md:h-[200px] shrink-0 p-4 border bg-card transition-all duration-150 group select-none overflow-hidden";
+    "relative w-[260px] md:w-[400px] h-[180px] md:h-[200px] shrink-0 p-4 border bg-card transition-all duration-150 group select-none overflow-hidden";
   const state = focused
     ? "border-live"
     : "border-border/60 hover:border-foreground/40";
