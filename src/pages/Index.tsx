@@ -117,14 +117,14 @@ const TICKER_ITEMS = [
 
 export default function Index() {
   const navigate = useNavigate();
-  const [focus, setFocus] = useState<{ ch: number; p: number }>({ ch: 0, p: 0 });
+  const [focus, setFocus] = useState<{ ch: number; p: number }>({ ch: 0, p: ALL_CHANNELS[0].programs.length - 1 });
   const rowRefs = useRef<Array<HTMLDivElement | null>>([]);
   const tileRefs = useRef<Array<Array<HTMLAnchorElement | HTMLDivElement | null>>>([]);
 
   const move = useCallback((dCh: number, dP: number) => {
     setFocus((cur) => {
-      const ch = Math.max(0, Math.min(CHANNELS.length - 1, cur.ch + dCh));
-      const len = CHANNELS[ch].programs.length;
+      const ch = Math.max(0, Math.min(ALL_CHANNELS.length - 1, cur.ch + dCh));
+      const len = ALL_CHANNELS[ch].programs.length;
       let p = cur.p + dP;
       if (dCh !== 0) p = Math.min(p, len - 1);
       p = Math.max(0, Math.min(len - 1, p));
@@ -133,7 +133,7 @@ export default function Index() {
   }, []);
 
   const tuneIn = useCallback(() => {
-    const prog = CHANNELS[focus.ch].programs[focus.p];
+    const prog = ALL_CHANNELS[focus.ch].programs[focus.p];
     if (prog?.to) navigate(prog.to);
   }, [focus, navigate]);
 
@@ -217,7 +217,7 @@ export default function Index() {
         </div>
 
         <div className="divide-y divide-border/60">
-          {CHANNELS.map((ch, ci) => (
+          {ALL_CHANNELS.map((ch, ci) => (
             <div
               key={ch.num}
               ref={(el) => { rowRefs.current[ci] = el; }}
@@ -261,7 +261,7 @@ export default function Index() {
         </div>
 
         {/* NOW SELECTED chyron */}
-        <SelectedChyron channel={CHANNELS[focus.ch]} program={CHANNELS[focus.ch].programs[focus.p]} />
+        <SelectedChyron channel={ALL_CHANNELS[focus.ch]} program={ALL_CHANNELS[focus.ch].programs[focus.p]} />
       </main>
 
     </div>
