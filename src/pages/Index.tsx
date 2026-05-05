@@ -160,7 +160,7 @@ export default function Index() {
           {CHANNELS.map((ch, ci) => (
             <div
               key={ch.num}
-              ref={(el) => (rowRefs.current[ci] = el)}
+              ref={(el) => { rowRefs.current[ci] = el; }}
               className="grid grid-cols-[88px_1fr] md:grid-cols-[140px_1fr] gap-3 md:gap-6 py-5"
             >
               {/* Channel label */}
