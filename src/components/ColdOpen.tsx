@@ -7,8 +7,7 @@ type Phase = "static" | "testcard" | "done";
 export function ColdOpen() {
   // Skip if already played in this tab session
   const [phase, setPhase] = useState<Phase>(() => {
-    if (typeof window === "undefined") return "done";
-    return sessionStorage.getItem(STORAGE_KEY) ? "done" : "static";
+    return "done";
   });
 
   useEffect(() => {

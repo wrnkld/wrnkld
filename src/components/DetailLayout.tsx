@@ -79,11 +79,6 @@ export function DetailLayout({ title, subtitle, children }: DetailLayoutProps) {
 
       {/* NOW BROADCASTING chyron */}
       <div className="relative max-w-5xl mx-auto px-6 pt-10 md:pt-14">
-        {/* REC indicator */}
-        <div className="absolute top-4 right-6 flex items-center gap-1.5 font-mono text-[10px] uppercase tracking-[0.3em] text-muted-foreground">
-          <span className="w-2 h-2 rounded-full bg-live blink" />
-          <span className="text-foreground/80">REC</span>
-        </div>
         <div className="inline-block bg-foreground text-background px-3 py-1 font-mono text-[10px] uppercase tracking-[0.3em] animate-chyron-in chyron-shadow">
           NOW BROADCASTING
         </div>

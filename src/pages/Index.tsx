@@ -3,11 +3,6 @@ import { Link, useNavigate } from "react-router-dom";
 import { ColdOpen } from "@/components/ColdOpen";
 import { Ticker, SignalBars } from "@/components/Ticker";
 
-import mcThumb from "@/assets/montecarlo/mcd-perf-mon.png";
-import taniumThumb from "@/assets/tanium/tanium-enforce-overview.png";
-import redhatThumb from "@/assets/redhat/rhba-workflow-modeler.png";
-import sasThumb from "@/assets/sas/analytics-report.png";
-
 type Status = "ON AIR" | "RERUN" | "ARCHIVE" | "PILOT" | "LIVE" | "OFF AIR";
 
 type Program = {
@@ -30,10 +25,10 @@ const CHANNELS: Channel[] = [
     num: "01",
     name: "WORK",
     programs: [
-      { title: "Monte Carlo", logline: "Data observability. Still on air.", airtime: "2022 — NOW", to: "/work/montecarlo", thumb: mcThumb, status: "ON AIR" },
-      { title: "Tanium",      logline: "Filmed during COVID. Do not adjust your set.", airtime: "2019 — 2022", to: "/work/tanium", thumb: taniumThumb, status: "RERUN" },
-      { title: "Red Hat",     logline: "Enterprise. Shot on location.", airtime: "2017 — 2019", to: "/work/redhat", thumb: redhatThumb, status: "RERUN" },
-      { title: "SAS",         logline: "A period piece.", airtime: "2004 — 2017", to: "/work/sas", thumb: sasThumb, status: "ARCHIVE" },
+      { title: "Monte Carlo", logline: "Data observability. Still on air.", airtime: "2022 — NOW", to: "/work/montecarlo", status: "ON AIR" },
+      { title: "Tanium",      logline: "Filmed during COVID. Do not adjust your set.", airtime: "2019 — 2022", to: "/work/tanium", status: "RERUN" },
+      { title: "Red Hat",     logline: "Enterprise. Shot on location.", airtime: "2017 — 2019", to: "/work/redhat", status: "RERUN" },
+      { title: "SAS",         logline: "A period piece.", airtime: "2004 — 2017", to: "/work/sas", status: "ARCHIVE" },
     ],
   },
   {
@@ -134,9 +129,6 @@ export default function Index() {
             <span className="font-display text-xl md:text-2xl tracking-[0.15em]">
               WRNKLD<span className="text-live">.</span>TV
             </span>
-            <span className="font-mono text-[10px] uppercase tracking-[0.3em] text-muted-foreground hidden sm:inline">
-              The Programming Guide
-            </span>
           </div>
           <div className="flex items-center gap-4 font-mono text-[10px] uppercase tracking-[0.3em] text-muted-foreground">
             <SignalBars />
@@ -153,16 +145,11 @@ export default function Index() {
       <section className="max-w-[1400px] mx-auto px-4 md:px-8 pt-8 md:pt-10 pb-6 grid md:grid-cols-[1fr_auto] gap-6 items-end">
         <div className="space-y-3 max-w-2xl">
           <div className="font-mono text-[10px] uppercase tracking-[0.35em] text-muted-foreground">
-            NOW BROADCASTING · YOUR HOST
+            NOW BROADCASTING
           </div>
           <h1 className="font-display text-5xl md:text-7xl leading-none tracking-tight">
             MATTHEW STEVENS
           </h1>
-          <p className="font-prose text-sm md:text-base text-muted-foreground leading-relaxed max-w-xl">
-            Head of Design at <a href="https://montecarlodata.com" target="_blank" rel="noopener noreferrer" className="text-foreground hover:text-live transition-colors">Monte Carlo</a>.
-            Recently built <a href="https://sleeves.app" target="_blank" rel="noopener noreferrer" className="text-foreground hover:text-live transition-colors">Sleeves</a>,
-            an app for tracking albums you love with friends.
-          </p>
           <p className="font-mono text-xs text-muted-foreground">
             <span className="text-muted-foreground">SAY HELLO →</span>{" "}
             <a href="mailto:hello@wrnkld.tv" className="text-foreground hover:text-live transition-colors">hello@wrnkld.tv</a>
