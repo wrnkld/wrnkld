@@ -27,6 +27,7 @@ const CHANNELS: Channel[] = [
     programs: [
       { title: "SAS",         logline: "A period piece.", airtime: "2004 — 2017", to: "/work/sas", status: "ARCHIVE" },
       { title: "Red Hat",     logline: "Enterprise. Shot on location.", airtime: "2017 — 2019", to: "/work/redhat", status: "RERUN" },
+      { title: "COLOR BARS",  logline: "Stand by. Do not adjust your set.", airtime: "INTERSTITIAL", status: "COLOR BARS" },
       { title: "Tanium",      logline: "Filmed during COVID. Do not adjust your set.", airtime: "2019 — 2022", to: "/work/tanium", status: "RERUN" },
       { title: "Monte Carlo", logline: "Data observability. Still on air.", airtime: "2022 — NOW", to: "/work/montecarlo", status: "ON AIR" },
     ],
@@ -37,6 +38,7 @@ const CHANNELS: Channel[] = [
     programs: [
       { title: "Pt 1 → Tools",   logline: "What I'm actually using.", airtime: "EP 01 · 12 MIN", to: "/designai/tools", status: "ON AIR" },
       { title: "Pt 2 → Vibes",   logline: "What I think is happening.", airtime: "EP 02 · 9 MIN",  to: "/designai/vibes", status: "ON AIR" },
+      { title: "SNOW",           logline: "Signal lost. Try another channel.", airtime: "—", status: "SNOW" },
       { title: "Pt 3 → Sleeves", logline: "How it turned into a real thing.", airtime: "EP 03 · 14 MIN", to: "/designai/sleeves", status: "ON AIR" },
     ],
   },
@@ -45,8 +47,10 @@ const CHANNELS: Channel[] = [
     name: "BULLSHIT",
     programs: [
       { title: "Sleeves",    logline: "Track albums with friends. Somehow works.", airtime: "ON AIR", status: "ON AIR" },
+      { title: "PLEASE STAND BY", logline: "We'll be right back.", airtime: "—", status: "STANDBY" },
       { title: "StudyDrop",  logline: "Learning thing. Jury's out.", airtime: "PILOT", status: "PILOT" },
       { title: "Slacker",    logline: "Built this instead of something responsible.", airtime: "PILOT", status: "PILOT" },
+      { title: "TEST PATTERN", logline: "1 kHz tone. Calibration in progress.", airtime: "LOOP", status: "COLOR BARS" },
     ],
   },
   {
@@ -54,52 +58,14 @@ const CHANNELS: Channel[] = [
     name: "ABOUT",
     programs: [
       { title: "Experience", logline: "20 years. Still going.", airtime: "FEATURED", to: "/about/experience", status: "ON AIR" },
+      { title: "DEAD AIR",   logline: "Nothing here. Keep moving.", airtime: "—", status: "SNOW" },
       { title: "Books",      logline: "168 and counting. Red = recommended.", airtime: "ARCHIVE", to: "/about/books", status: "LIVE" },
       { title: "Records",    logline: "The other thing I collect.", airtime: "ARCHIVE", to: "/about/records", status: "LIVE" },
     ],
   },
 ];
 
-const FILLER_CHANNELS: Channel[] = [
-  {
-    num: "07",
-    name: "STATS",
-    programs: [
-      { title: "20 YRS", logline: "Years shipping software.", airtime: "ALL TIME", status: "STANDBY" },
-      { title: "168", logline: "Books read. Counting.", airtime: "ALL TIME", status: "STANDBY" },
-      { title: "04:13", logline: "Avg. sleep deficit.", airtime: "NIGHTLY", status: "STANDBY" },
-      { title: "0", logline: "LinkedIn posts this year.", airtime: "YTD", status: "STANDBY" },
-    ],
-  },
-  {
-    num: "13",
-    name: "TEST PATTERN",
-    programs: [
-      { title: "COLOR BARS", logline: "Stand by. Do not adjust your set.", airtime: "24/7", status: "COLOR BARS" },
-      { title: "TONE", logline: "1 kHz. Calibration in progress.", airtime: "LOOP", status: "COLOR BARS" },
-    ],
-  },
-  {
-    num: "99",
-    name: "DEAD AIR",
-    programs: [
-      { title: "SNOW", logline: "Signal lost. Try another channel.", airtime: "—", status: "SNOW" },
-      { title: "STATIC", logline: "Nothing here. Keep moving.", airtime: "—", status: "SNOW" },
-      { title: "PLEASE STAND BY", logline: "We'll be right back.", airtime: "—", status: "STANDBY" },
-    ],
-  },
-];
-
-// Insert filler channels between real ones
-const ALL_CHANNELS: Channel[] = [
-  CHANNELS[0],            // 01 WORK
-  FILLER_CHANNELS[0],     // 07 STATS
-  CHANNELS[1],            // 02 DESIGN & AI
-  FILLER_CHANNELS[1],     // 13 TEST PATTERN
-  CHANNELS[2],            // 03 BULLSHIT
-  CHANNELS[3],            // 04 ABOUT
-  FILLER_CHANNELS[2],     // 99 DEAD AIR
-];
+const ALL_CHANNELS: Channel[] = CHANNELS;
 
 const TICKER_ITEMS = [
   "WRNKLD.TV",
@@ -113,6 +79,7 @@ const TICKER_ITEMS = [
   "20 YEARS",
   "CURRENTLY AT MONTE CARLO",
   "SIGNAL STRONG",
+  "0 LINKEDIN POSTS THIS YEAR",
 ];
 
 export default function Index() {
