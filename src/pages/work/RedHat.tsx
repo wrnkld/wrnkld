@@ -43,7 +43,7 @@ export default function RedHat() {
 
       <video src={rhbaPreviewVideo} poster={rhbaWorkflowModeler} autoPlay loop muted playsInline className="w-full h-auto border border-border/40" />
 
-      <div className="grid grid-cols-4 gap-4">
+      <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
         <img src={rhbaPropertiesPanel} alt="Red Hat Business Automation Properties Panel" className="w-full h-auto border border-border/40" />
         <img src={rhbaNavigator} alt="Red Hat Business Automation Navigator" className="w-full h-auto border border-border/40" />
         <img src={rhbaVersionControl} alt="Red Hat Business Automation Version Control" className="w-full h-auto border border-border/40" />
@@ -52,14 +52,14 @@ export default function RedHat() {
 
       <img src={rhbaProjectMetrics} alt="Red Hat Business Automation Project Metrics" className="w-full h-auto border border-border/40" />
 
-      <div className="grid grid-cols-2 gap-4">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         <img src={rhbaAssetsList} alt="Red Hat Business Automation Assets List" className="w-full h-auto border border-border/40" />
         <img src={rhbaContributors} alt="Red Hat Business Automation Contributors" className="w-full h-auto border border-border/40" />
       </div>
 
       <video src={rhbaTrackVideo} poster={rhbaTrack} autoPlay loop muted playsInline className="w-full h-auto border border-border/40" />
 
-      <div className="grid grid-cols-2 gap-4">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         <img src={rhbaEmptyState} alt="Red Hat Business Automation Empty State" className="w-full h-auto border border-border/40" />
         <img src={rhbaSpace} alt="Red Hat Business Automation Space" className="w-full h-auto border border-border/40" />
       </div>
@@ -72,7 +72,7 @@ export default function RedHat() {
 
       <video src={rhboRosterVideo} poster={rhboRoster} autoPlay loop muted playsInline className="w-full h-auto border border-border/40" />
 
-      <div className="grid grid-cols-4 gap-4">
+      <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
         <img src={rhboEmployees} alt="Red Hat Business Optaplanner Employees" className="w-full h-auto border border-border/40" />
         <img src={rhboAvailability} alt="Red Hat Business Optaplanner Availability" className="w-full h-auto border border-border/40" />
         <img src={rhboRoster} alt="Red Hat Business Optaplanner Roster" className="w-full h-auto border border-border/40" />
