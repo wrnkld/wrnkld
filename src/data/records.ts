@@ -4282,12 +4282,6 @@ export const records: Record[] = [
   {
     id: 715,
     year: 2021,
-    artist: "Ana Roxanne",
-    album: "Because of a Flower",
-  },
-  {
-    id: 716,
-    year: 2021,
     artist: "Anna Fox Rochinski",
     album: "Cherry",
   },
