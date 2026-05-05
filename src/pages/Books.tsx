@@ -125,7 +125,7 @@ export default function Books() {
                     key={book.id}
                     layout
                     transition={{ duration: 0.15 }}
-                    className={`border-b transition-colors hover:bg-muted/50 data-[state=selected]:bg-muted ${book.recommended ? "bg-yellow-100 dark:bg-yellow-900/30" : ""}`}
+                    className={`border-b border-border/40 transition-colors hover:bg-muted/40 ${book.recommended ? "text-live" : ""}`}
                   >
                     <TableCell className="text-muted-foreground">
                       {book.author}

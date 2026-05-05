@@ -1,82 +1,98 @@
 import { ReactNode, Children, isValidElement } from "react";
 import { Link } from "react-router-dom";
-import { ArrowLeft } from "lucide-react";
 
 interface DetailLayoutProps {
   title: string;
   subtitle?: string;
   children: ReactNode;
+  /** Legacy prop, ignored — kept so existing pages compile */
   colorClass?: string;
-  
 }
 
-// Helper to check if element is media (img, video, or a div containing them like grids)
+const CHANNEL_BY_SUBTITLE: Record<string, { num: string; name: string }> = {
+  Work: { num: "01", name: "WORK" },
+  "Design & AI": { num: "02", name: "DESIGN & AI" },
+  About: { num: "04", name: "ABOUT" },
+};
+
 function isMediaElement(child: React.ReactElement<{ className?: string }>): boolean {
-  const type = child.type;
-  if (type === 'img' || type === 'video') {
-    return true;
-  }
-  // Check if it's a div with grid class (image grids)
-  if (type === 'div' && child.props?.className?.includes('grid')) {
-    return true;
-  }
+  const type = child.type as string | unknown;
+  if (type === "img" || type === "video") return true;
+  if (type === "div" && (child.props?.className ?? "").includes("grid")) return true;
   return false;
 }
 
-export function DetailLayout({ title, subtitle, children, colorClass }: DetailLayoutProps) {
-  // Process children to wrap them appropriately
+export function DetailLayout({ title, subtitle, children }: DetailLayoutProps) {
+  const channel = subtitle ? CHANNEL_BY_SUBTITLE[subtitle] : undefined;
+
   const processedChildren = Children.map(children, (child) => {
     if (!isValidElement(child)) return child;
-    
+
     if (isMediaElement(child)) {
-      // Media elements get the wider "bust out" container
       return (
         <div className="max-w-5xl mx-auto px-6">
-          {child}
+          <div className="relative">
+            {child}
+            {/* broadcast vignette */}
+            <div
+              className="pointer-events-none absolute inset-0"
+              style={{ boxShadow: "inset 0 0 90px 10px rgba(0,0,0,0.65)" }}
+            />
+          </div>
         </div>
       );
     }
-    
-    // Text elements stay in the narrower container
-    return (
-      <div className="max-w-3xl mx-auto px-6">
-        {child}
-      </div>
-    );
+    return <div className="max-w-3xl mx-auto px-6">{child}</div>;
   });
 
   return (
-    <div className="min-h-screen bg-background">
-      {colorClass && <div className={`h-1.5 w-full ${colorClass}`} />}
-      <div className="py-16 md:py-24 space-y-8">
-        {/* Header stays narrow */}
-        <div className="max-w-3xl mx-auto px-6">
-          {subtitle && (
-            <Link 
-              to="/"
-              className="inline-flex items-center gap-2 text-xs font-body uppercase tracking-widest text-muted-foreground hover:text-foreground transition-colors group"
-            >
-              <ArrowLeft className="w-3 h-3" />
-              <span className="relative overflow-hidden">
-                <span className="inline-block transition-transform duration-300 group-hover:-translate-y-full">
-                  {subtitle}
-                </span>
-                <span className="absolute left-0 top-full inline-block transition-transform duration-300 group-hover:-translate-y-full">
-                  Back
-                </span>
-              </span>
+    <div className="min-h-screen bg-background text-foreground scanlines">
+      {/* Top broadcast bar */}
+      <div className="border-b border-border/60">
+        <div className="max-w-5xl mx-auto px-6 py-3 flex items-center justify-between font-mono text-[10px] uppercase tracking-[0.3em] text-muted-foreground">
+          <Link to="/" className="hover:text-live transition-colors">
+            ← RETURN TO GUIDE
           </Link>
-          )}
-          <h1 className="font-display text-2xl md:text-3xl font-medium text-foreground mt-4">
-              {title}
-            </h1>
-        </div>
-        
-        {/* Content with mixed widths */}
-        <div className="space-y-8">
-          {processedChildren}
+          <div className="flex items-center gap-3">
+            {channel && (
+              <span>
+                CH <span className="text-live">{channel.num}</span> · {channel.name}
+              </span>
+            )}
+            <span className="hidden sm:flex items-center gap-1.5">
+              <span className="w-1.5 h-1.5 rounded-full bg-live blink" />
+              <span className="text-foreground/80">LIVE</span>
+            </span>
+          </div>
         </div>
       </div>
+
+      {/* NOW BROADCASTING chyron */}
+      <div className="max-w-5xl mx-auto px-6 pt-10 md:pt-14">
+        <div className="inline-block bg-foreground text-background px-3 py-1 font-mono text-[10px] uppercase tracking-[0.3em] animate-chyron-in chyron-shadow">
+          NOW BROADCASTING
+        </div>
+        <h1 className="font-display text-5xl md:text-7xl tracking-[0.02em] leading-none mt-4 text-foreground">
+          {title.toUpperCase()}
+        </h1>
+        {channel && (
+          <div className="mt-3 font-mono text-[10px] uppercase tracking-[0.35em] text-muted-foreground">
+            CH <span className="text-live">{channel.num}</span> · {channel.name}
+          </div>
+        )}
+      </div>
+
+      <main className="py-10 md:py-14 space-y-8 animate-fade-in">{processedChildren}</main>
+
+      {/* Footer */}
+      <footer className="border-t border-border/60 mt-16">
+        <div className="max-w-5xl mx-auto px-6 py-6 flex items-center justify-between font-mono text-[10px] uppercase tracking-[0.3em] text-muted-foreground">
+          <Link to="/" className="hover:text-live transition-colors">
+            ← RETURN TO GUIDE
+          </Link>
+          <span>WRNKLD<span className="text-live">.</span>TV</span>
+        </div>
+      </footer>
     </div>
   );
 }
