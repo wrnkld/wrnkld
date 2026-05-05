@@ -166,8 +166,12 @@ export default function Index() {
           <div className="font-mono text-[10px] uppercase tracking-[0.35em] text-muted-foreground">
             TONIGHT'S PROGRAMMING
           </div>
-          <div className="font-mono text-[10px] uppercase tracking-[0.35em] text-muted-foreground hidden md:block">
-            ↑↓ CHANNEL · ←→ PROGRAM · ENTER TUNE IN
+          <div className="hidden md:flex items-center gap-2 font-mono text-xs uppercase tracking-[0.25em] text-foreground border border-live/60 bg-live/10 px-3 py-1.5">
+            <span className="text-live">↑↓</span><span>CHANNEL</span>
+            <span className="text-live/40">·</span>
+            <span className="text-live">←→</span><span>PROGRAM</span>
+            <span className="text-live/40">·</span>
+            <span className="text-live">ENTER</span><span>TUNE IN</span>
           </div>
         </div>
 
@@ -219,14 +223,6 @@ export default function Index() {
         <SelectedChyron channel={CHANNELS[focus.ch]} program={CHANNELS[focus.ch].programs[focus.p]} />
       </main>
 
-      {/* Decorative D-pad */}
-      <DPad
-        onUp={() => move(-1, 0)}
-        onDown={() => move(1, 0)}
-        onLeft={() => move(0, -1)}
-        onRight={() => move(0, 1)}
-        onOk={tuneIn}
-      />
     </div>
   );
 }
@@ -334,32 +330,6 @@ function SelectedChyron({ channel, program }: { channel: Channel; program: Progr
         <span className="font-display text-base tracking-[0.08em]">
           CH {channel.num} · {program.title.toUpperCase()}
         </span>
-      </div>
-    </div>
-  );
-}
-
-function DPad({
-  onUp, onDown, onLeft, onRight, onOk,
-}: {
-  onUp: () => void; onDown: () => void; onLeft: () => void; onRight: () => void; onOk: () => void;
-}) {
-  const btn = "bg-secondary hover:bg-muted active:bg-live border border-border/60 flex items-center justify-center text-foreground/70 hover:text-foreground transition-colors";
-  return (
-    <div className="hidden md:block fixed bottom-6 right-6 z-40 select-none">
-      <div className="font-mono text-[9px] uppercase tracking-[0.3em] text-muted-foreground mb-2 text-right">
-        WRNKLD REMOTE
-      </div>
-      <div className="grid grid-cols-3 grid-rows-3 gap-1 w-28 h-28">
-        <div />
-        <button aria-label="Up" onClick={onUp} className={btn}>▲</button>
-        <div />
-        <button aria-label="Left" onClick={onLeft} className={btn}>◀</button>
-        <button aria-label="OK" onClick={onOk} className="bg-live text-foreground border border-live flex items-center justify-center text-[10px] font-mono tracking-[0.2em] hover:brightness-110 transition">OK</button>
-        <button aria-label="Right" onClick={onRight} className={btn}>▶</button>
-        <div />
-        <button aria-label="Down" onClick={onDown} className={btn}>▼</button>
-        <div />
       </div>
     </div>
   );
