@@ -82,7 +82,7 @@ const TICKER_ITEMS = [
 
 export default function Index() {
   const navigate = useNavigate();
-  const [focus, setFocus] = useState<{ ch: number; p: number }>({ ch: 0, p: ALL_CHANNELS[0].programs.length - 1 });
+  const [focus, setFocus] = useState<{ ch: number; p: number }>({ ch: 0, p: 0 });
   const inputModeRef = useRef<"keyboard" | "mouse">("keyboard");
   const rowRefs = useRef<Array<HTMLDivElement | null>>([]);
   const tileRefs = useRef<Array<Array<HTMLAnchorElement | HTMLDivElement | null>>>([]);
