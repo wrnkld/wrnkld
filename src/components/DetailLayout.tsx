@@ -1,5 +1,5 @@
 import { ReactNode, Children, isValidElement, useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { Ticker, SignalBars } from "@/components/Ticker";
 
 interface DetailLayoutProps {
@@ -16,18 +16,34 @@ const CHANNEL_BY_SUBTITLE: Record<string, { num: string; name: string }> = {
   About: { num: "03", name: "ABOUT" },
 };
 
-const STATUS_BY_TITLE: Record<string, string> = {
-  "Monte Carlo": "ON AIR",
-  Tanium: "RERUN",
-  "Red Hat": "RERUN",
-  SAS: "RERUN",
-  Tools: "RERUN",
-  Vibes: "RERUN",
-  Sleeves: "RERUN",
-  Experience: "ON AIR",
-  Books: "ON AIR",
-  Records: "ON AIR",
+type DetailStatus = "ON AIR" | "RERUN" | "PILOT" | "ARCHIVE";
+
+const STATUS_BY_PATH: Record<string, DetailStatus> = {
+  "/work/sas": "RERUN",
+  "/work/redhat": "RERUN",
+  "/work/tanium": "RERUN",
+  "/work/montecarlo": "ON AIR",
+  "/designai/tools": "RERUN",
+  "/designai/vibes": "RERUN",
+  "/designai/sleeves": "RERUN",
+  "/about/experience": "ON AIR",
+  "/about/books": "ON AIR",
+  "/about/records": "ON AIR",
 };
+
+function StatusDot({ status }: { status: DetailStatus }) {
+  switch (status) {
+    case "ON AIR":
+      return <span className="w-1.5 h-1.5 rounded-full bg-live blink inline-block" />;
+    case "RERUN":
+    case "ARCHIVE":
+      return <span className="w-1.5 h-1.5 rounded-full border border-foreground/60 inline-block" />;
+    case "PILOT":
+      return <span className="w-1.5 h-1.5 rounded-full bg-foreground/80 inline-block" />;
+    default:
+      return null;
+  }
+}
 
 function isMediaElement(child: React.ReactElement<{ className?: string }>): boolean {
   const type = child.type as string | unknown;
@@ -37,8 +53,9 @@ function isMediaElement(child: React.ReactElement<{ className?: string }>): bool
 }
 
 export function DetailLayout({ title, subtitle, children }: DetailLayoutProps) {
+  const { pathname } = useLocation();
   const channel = subtitle ? CHANNEL_BY_SUBTITLE[subtitle] : undefined;
-  const status = STATUS_BY_TITLE[title] ?? "ON AIR";
+  const status = STATUS_BY_PATH[pathname] ?? "ON AIR";
 
   const processedChildren = Children.map(children, (child) => {
     if (!isValidElement(child)) return child;
@@ -79,11 +96,7 @@ export function DetailLayout({ title, subtitle, children }: DetailLayoutProps) {
           <div className="flex items-center gap-4 font-mono text-[10px] uppercase tracking-[0.3em] text-muted-foreground">
             <SignalBars />
             <span className="hidden md:flex items-center gap-2">
-              {status === "ON AIR" ? (
-                <span className="w-1.5 h-1.5 rounded-full bg-live blink inline-block" />
-              ) : (
-                <span className="w-1.5 h-1.5 rounded-full border border-foreground/60 inline-block" />
-              )}
+              <StatusDot status={status} />
               <span className="text-foreground">{status}</span>
             </span>
             <DetailClock />
