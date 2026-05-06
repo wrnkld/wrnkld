@@ -217,11 +217,18 @@ export default function Index() {
               </div>
 
               {/* Programs row */}
-              <div className="overflow-x-auto scrollbar-hide -mx-4 md:-mx-2 px-4 md:px-2 py-3">
-                <div
-                  className="flex gap-3 md:gap-4 min-w-max"
-                  style={{ paddingLeft: `${ci * 48}px` }}
-                >
+              <div
+                ref={(el) => {
+                  if (el && !el.dataset.scrolled) {
+                    // stagger initial scroll so each channel sits at a different offset
+                    const offsets = [0, 220, 80, 320];
+                    el.scrollLeft = offsets[ci % offsets.length] ?? 0;
+                    el.dataset.scrolled = "1";
+                  }
+                }}
+                className="overflow-x-auto scrollbar-hide -mx-4 md:-mx-2 px-4 md:px-2 py-3"
+              >
+                <div className="flex gap-3 md:gap-4 min-w-max">
                   {ch.programs.map((prog, pi) => {
                     const isFocused = focus.ch === ci && focus.p === pi;
                     const offAir = !prog.to && !prog.href;
