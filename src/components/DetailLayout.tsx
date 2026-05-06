@@ -80,9 +80,9 @@ export function DetailLayout({ title, subtitle, children }: DetailLayoutProps) {
             <SignalBars />
             <span className="hidden md:flex items-center gap-2">
               {status === "ON AIR" ? (
-                <span className="w-2 h-2 rounded-full bg-live blink" />
+                <span className="w-1.5 h-1.5 rounded-full bg-live blink inline-block" />
               ) : (
-                <span className="w-2 h-2 rounded-full bg-muted-foreground/60" />
+                <span className="w-1.5 h-1.5 rounded-full border border-foreground/60 inline-block" />
               )}
               <span className="text-foreground">{status}</span>
             </span>
