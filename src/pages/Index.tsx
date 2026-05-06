@@ -27,7 +27,7 @@ const CHANNELS: Channel[] = [
     num: "01",
     name: "WORK",
     programs: [
-      { title: "SAS",         logline: "Enterprise analytics", airtime: "2011 — 2016", to: "/work/sas", status: "ARCHIVE", slot: "md" },
+      { title: "SAS",         logline: "Enterprise analytics", airtime: "2011 — 2016", to: "/work/sas", status: "RERUN", slot: "md" },
       { title: "Red Hat",     logline: "Open source enterprise software", airtime: "2016 — 2019", to: "/work/redhat", status: "RERUN", slot: "lg" },
       { title: "Tanium",      logline: "Endpoint security at massive scale", airtime: "2019 — 2021", to: "/work/tanium", status: "RERUN", slot: "lg" },
       { title: "Monte Carlo", logline: "Data and AI observability platform", airtime: "2022 — NOW", to: "/work/montecarlo", status: "ON AIR", slot: "lg" },
