@@ -1,5 +1,5 @@
 import { ReactNode, Children, isValidElement, useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { Ticker, SignalBars } from "@/components/Ticker";
 
 interface DetailLayoutProps {
@@ -18,17 +18,17 @@ const CHANNEL_BY_SUBTITLE: Record<string, { num: string; name: string }> = {
 
 type DetailStatus = "ON AIR" | "RERUN" | "PILOT" | "ARCHIVE";
 
-const STATUS_BY_TITLE: Record<string, DetailStatus> = {
-  "Monte Carlo": "ON AIR",
-  Tanium: "RERUN",
-  "Red Hat": "RERUN",
-  SAS: "RERUN",
-  "Pt 1 → Tools": "RERUN",
-  "Pt 2 → Vibes": "RERUN",
-  "Pt 3 → Sleeves": "RERUN",
-  Experience: "ON AIR",
-  Books: "ON AIR",
-  Records: "ON AIR",
+const STATUS_BY_PATH: Record<string, DetailStatus> = {
+  "/work/sas": "RERUN",
+  "/work/redhat": "RERUN",
+  "/work/tanium": "RERUN",
+  "/work/montecarlo": "ON AIR",
+  "/designai/tools": "RERUN",
+  "/designai/vibes": "RERUN",
+  "/designai/sleeves": "RERUN",
+  "/about/experience": "ON AIR",
+  "/about/books": "ON AIR",
+  "/about/records": "ON AIR",
 };
 
 function StatusDot({ status }: { status: DetailStatus }) {
@@ -53,8 +53,9 @@ function isMediaElement(child: React.ReactElement<{ className?: string }>): bool
 }
 
 export function DetailLayout({ title, subtitle, children }: DetailLayoutProps) {
+  const { pathname } = useLocation();
   const channel = subtitle ? CHANNEL_BY_SUBTITLE[subtitle] : undefined;
-  const status = STATUS_BY_TITLE[title] ?? "ON AIR";
+  const status = STATUS_BY_PATH[pathname] ?? "ON AIR";
 
   const processedChildren = Children.map(children, (child) => {
     if (!isValidElement(child)) return child;
