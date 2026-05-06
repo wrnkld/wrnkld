@@ -218,7 +218,10 @@ export default function Index() {
 
               {/* Programs row */}
               <div className="overflow-x-auto scrollbar-hide -mx-4 md:-mx-2 px-4 md:px-2 py-3">
-                <div className="flex gap-3 md:gap-4 min-w-max">
+                <div
+                  className="flex gap-3 md:gap-4 min-w-max"
+                  style={{ paddingLeft: `${ci * 48}px` }}
+                >
                   {ch.programs.map((prog, pi) => {
                     const isFocused = focus.ch === ci && focus.p === pi;
                     const offAir = !prog.to && !prog.href;
@@ -229,7 +232,7 @@ export default function Index() {
                           tileRefs.current[ci] = tileRefs.current[ci] || [];
                           tileRefs.current[ci][pi] = el;
                         }}
-                        prog={prog}
+                        prog={{ ...prog, slot: "lg" }}
                         focused={isFocused}
                         offAir={offAir}
                         onHoverFocus={() => {
