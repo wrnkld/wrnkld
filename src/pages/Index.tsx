@@ -56,8 +56,8 @@ const CHANNELS: Channel[] = [
     name: "ABOUT",
     programs: [
       { title: "Experience", logline: "I like working", airtime: "FEATURED", to: "/about/experience", status: "ON AIR", slot: "lg" },
-      { title: "Books",      logline: "I like making lists", airtime: "ARCHIVE", to: "/about/books", status: "LIVE", slot: "md" },
-      { title: "Records",    logline: "I like making lists", airtime: "ARCHIVE", to: "/about/records", status: "LIVE", slot: "md" },
+      { title: "Books",      logline: "I like making lists", airtime: "ARCHIVE", to: "/about/books", status: "ON AIR", slot: "md" },
+      { title: "Records",    logline: "I like making lists", airtime: "ARCHIVE", to: "/about/records", status: "ON AIR", slot: "md" },
     ],
   },
 ];
