@@ -157,7 +157,7 @@ export default function Index() {
             <SignalBars />
             <span className="hidden md:flex items-center gap-2">
               <span className="w-2 h-2 rounded-full bg-live blink" />
-              <span className="text-foreground">LIVE</span>
+              <span className="text-foreground">ON AIR</span>
             </span>
             <Clock />
           </div>

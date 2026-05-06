@@ -62,11 +62,11 @@ export function DetailLayout({ title, subtitle, children }: DetailLayoutProps) {
           <Link to="/" className="hover:text-live transition-colors hover-channel">
             ← RETURN TO GUIDE
           </Link>
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-4 font-mono text-[10px] uppercase tracking-[0.3em] text-muted-foreground">
             <SignalBars />
-            <span className="flex items-center gap-1.5">
-              <span className="w-1.5 h-1.5 rounded-full bg-live blink" />
-              <span className="text-foreground/80">LIVE</span>
+            <span className="hidden md:flex items-center gap-2">
+              <span className="w-2 h-2 rounded-full bg-live blink" />
+              <span className="text-foreground">ON AIR</span>
             </span>
             <DetailClock />
           </div>
