@@ -18,6 +18,7 @@ import Records from "./pages/Records";
 import Tools from "./pages/words/Tools";
 import Vibes from "./pages/words/Vibes";
 import Sleeves from "./pages/words/Sleeves";
+import Claude from "./pages/words/Claude";
 
 const queryClient = new QueryClient();
 
@@ -41,6 +42,7 @@ const App = () => (
           <Route path="/designai/tools" element={<Tools />} />
           <Route path="/designai/vibes" element={<Vibes />} />
           <Route path="/designai/sleeves" element={<Sleeves />} />
+          <Route path="/designai/claude" element={<Claude />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
