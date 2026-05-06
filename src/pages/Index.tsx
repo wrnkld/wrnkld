@@ -27,9 +27,9 @@ const CHANNELS: Channel[] = [
     num: "01",
     name: "WORK",
     programs: [
-      { title: "SAS",         logline: "Enterprise analytics", airtime: "2011 — 2016", to: "/work/sas", status: "ARCHIVE", slot: "lg" },
-      { title: "Red Hat",     logline: "Open source enterprise software", airtime: "2016 — 2019", to: "/work/redhat", status: "RERUN", slot: "md" },
-      { title: "Tanium",      logline: "Endpoint security at massive scale", airtime: "2019 — 2021", to: "/work/tanium", status: "RERUN", slot: "md" },
+      { title: "SAS",         logline: "Enterprise analytics", airtime: "2011 — 2016", to: "/work/sas", status: "ARCHIVE", slot: "md" },
+      { title: "Red Hat",     logline: "Open source enterprise software", airtime: "2016 — 2019", to: "/work/redhat", status: "RERUN", slot: "lg" },
+      { title: "Tanium",      logline: "Endpoint security at massive scale", airtime: "2019 — 2021", to: "/work/tanium", status: "RERUN", slot: "lg" },
       { title: "Monte Carlo", logline: "Data and AI observability platform", airtime: "2022 — NOW", to: "/work/montecarlo", status: "ON AIR", slot: "xl" },
     ],
   },
@@ -38,8 +38,8 @@ const CHANNELS: Channel[] = [
     name: "DESIGN & AI",
     programs: [
       { title: "Pt 1 → Tools",   logline: "Twenty years of design tools", airtime: "EP 01 · 12 MIN", to: "/designai/tools", status: "ON AIR", slot: "md" },
-      { title: "Pt 2 → Vibes",   logline: "Building with AI", airtime: "EP 02 · 9 MIN",  to: "/designai/vibes", status: "ON AIR", slot: "sm" },
-      { title: "Pt 3 → Sleeves", logline: "A real app and stack", airtime: "EP 03 · 14 MIN", to: "/designai/sleeves", status: "ON AIR", slot: "lg" },
+      { title: "Pt 2 → Vibes",   logline: "Building with AI", airtime: "EP 02 · 9 MIN",  to: "/designai/vibes", status: "ON AIR", slot: "md" },
+      { title: "Pt 3 → Sleeves", logline: "A real app and stack", airtime: "EP 03 · 14 MIN", to: "/designai/sleeves", status: "ON AIR", slot: "md" },
     ],
   },
   {
