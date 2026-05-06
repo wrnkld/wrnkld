@@ -16,6 +16,19 @@ const CHANNEL_BY_SUBTITLE: Record<string, { num: string; name: string }> = {
   About: { num: "03", name: "ABOUT" },
 };
 
+const STATUS_BY_TITLE: Record<string, string> = {
+  "Monte Carlo": "ON AIR",
+  Tanium: "RERUN",
+  "Red Hat": "RERUN",
+  SAS: "RERUN",
+  Tools: "RERUN",
+  Vibes: "RERUN",
+  Sleeves: "RERUN",
+  Experience: "ON AIR",
+  Books: "ON AIR",
+  Records: "ON AIR",
+};
+
 function isMediaElement(child: React.ReactElement<{ className?: string }>): boolean {
   const type = child.type as string | unknown;
   if (type === "img" || type === "video") return true;
@@ -25,6 +38,7 @@ function isMediaElement(child: React.ReactElement<{ className?: string }>): bool
 
 export function DetailLayout({ title, subtitle, children }: DetailLayoutProps) {
   const channel = subtitle ? CHANNEL_BY_SUBTITLE[subtitle] : undefined;
+  const status = STATUS_BY_TITLE[title] ?? "ON AIR";
 
   const processedChildren = Children.map(children, (child) => {
     if (!isValidElement(child)) return child;
@@ -66,7 +80,7 @@ export function DetailLayout({ title, subtitle, children }: DetailLayoutProps) {
             <SignalBars />
             <span className="hidden md:flex items-center gap-2">
               <span className="w-2 h-2 rounded-full bg-live blink" />
-              <span className="text-foreground">ON AIR</span>
+              <span className="text-foreground">{status}</span>
             </span>
             <DetailClock />
           </div>
