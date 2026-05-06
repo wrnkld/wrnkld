@@ -10,6 +10,7 @@ type Program = {
   logline: string;
   airtime: string;
   to?: string; // undefined = OFF AIR
+  href?: string; // external URL (opens in new tab)
   thumb?: string;
   status: Status;
 };
@@ -44,8 +45,8 @@ const CHANNELS: Channel[] = [
     num: "02",
     name: "BULLSHIT",
     programs: [
-      { title: "Sleeves",    logline: "Track albums with friends. Somehow works.", airtime: "ON AIR", status: "ON AIR" },
-      { title: "StudyDrop",  logline: "Learning thing. Jury's out.", airtime: "PILOT", status: "PILOT" },
+      { title: "Sleeves",    logline: "Track albums with friends. Somehow works.", airtime: "ON AIR", href: "https://sleeves.app", status: "ON AIR" },
+      { title: "StudyDrop",  logline: "Learning thing. Jury's out.", airtime: "PILOT", href: "https://studydrop.app", status: "PILOT" },
       { title: "Slacker",    logline: "Built this instead of something responsible.", airtime: "PILOT", status: "PILOT" },
     ],
   },
