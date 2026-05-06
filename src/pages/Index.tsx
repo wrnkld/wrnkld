@@ -26,9 +26,9 @@ const CHANNELS: Channel[] = [
     num: "01",
     name: "WORK",
     programs: [
-      { title: "SAS",         logline: "A period piece.", airtime: "2004 — 2017", to: "/work/sas", status: "ARCHIVE" },
-      { title: "Red Hat",     logline: "Enterprise. Shot on location.", airtime: "2017 — 2019", to: "/work/redhat", status: "RERUN" },
-      { title: "Tanium",      logline: "Filmed during COVID. Do not adjust your set.", airtime: "2019 — 2022", to: "/work/tanium", status: "RERUN" },
+      { title: "SAS",         logline: "A period piece.", airtime: "2011 — 2016", to: "/work/sas", status: "ARCHIVE" },
+      { title: "Red Hat",     logline: "Enterprise. Shot on location.", airtime: "2016 — 2019", to: "/work/redhat", status: "RERUN" },
+      { title: "Tanium",      logline: "Filmed during COVID. Do not adjust your set.", airtime: "2019 — 2021", to: "/work/tanium", status: "RERUN" },
       { title: "Monte Carlo", logline: "Data observability. Still on air.", airtime: "2022 — NOW", to: "/work/montecarlo", status: "ON AIR" },
     ],
   },
