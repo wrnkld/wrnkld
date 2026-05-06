@@ -99,7 +99,7 @@ export default function Records() {
       <div className="border border-border rounded-sm overflow-hidden">
         <Table>
           <TableHeader>
-            <TableRow>
+            <TableRow className="hover:bg-transparent">
               <TableHead>
                 <SortHeader field="artist">Artist</SortHeader>
               </TableHead>
