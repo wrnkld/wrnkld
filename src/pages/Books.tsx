@@ -99,7 +99,7 @@ export default function Books() {
       <div className="border border-border rounded-sm overflow-hidden">
         <Table>
           <TableHeader>
-            <TableRow>
+            <TableRow className="hover:bg-muted/40">
               <TableHead>
                 <SortHeader field="author">Author</SortHeader>
               </TableHead>
