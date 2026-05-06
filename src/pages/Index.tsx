@@ -135,8 +135,10 @@ export default function Index() {
     };
   }, [move, tuneIn]);
 
-  // scroll selected tile into view
+  // scroll selected tile into view (skip initial mount so rows start at 0)
+  const didMountRef = useRef(false);
   useEffect(() => {
+    if (!didMountRef.current) { didMountRef.current = true; return; }
     const el = tileRefs.current[focus.ch]?.[focus.p];
     el?.scrollIntoView({ behavior: "smooth", block: "nearest", inline: "center" });
   }, [focus]);
