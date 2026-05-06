@@ -107,6 +107,7 @@ export default function Index() {
   const tuneIn = useCallback(() => {
     const prog = ALL_CHANNELS[focus.ch].programs[focus.p];
     if (prog?.to) navigate(prog.to);
+    else if (prog?.href) window.open(prog.href, "_blank", "noopener,noreferrer");
   }, [focus, navigate]);
 
   // keyboard
@@ -219,7 +220,7 @@ export default function Index() {
                 <div className="flex gap-3 md:gap-4 min-w-max">
                   {ch.programs.map((prog, pi) => {
                     const isFocused = focus.ch === ci && focus.p === pi;
-                    const offAir = !prog.to;
+                    const offAir = !prog.to && !prog.href;
                     return (
                       <ProgramTile
                         key={prog.title}
@@ -341,6 +342,21 @@ const ProgramTile = forwardRef<HTMLAnchorElement | HTMLDivElement, {
       >
         {inner}
       </div>
+    );
+  }
+  if (prog.href) {
+    return (
+      <a
+        href={prog.href}
+        target="_blank"
+        rel="noopener noreferrer"
+        ref={ref as React.Ref<HTMLAnchorElement>}
+        onMouseEnter={onHoverFocus}
+        onClick={onClickFocus}
+        className={`${base} ${state} hover:bg-card/80`}
+      >
+        {inner}
+      </a>
     );
   }
   return (
