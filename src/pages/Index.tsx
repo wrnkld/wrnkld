@@ -30,7 +30,7 @@ const CHANNELS: Channel[] = [
       { title: "SAS",         logline: "Enterprise analytics", airtime: "2011 — 2016", to: "/work/sas", status: "ARCHIVE", slot: "md" },
       { title: "Red Hat",     logline: "Open source enterprise software", airtime: "2016 — 2019", to: "/work/redhat", status: "RERUN", slot: "lg" },
       { title: "Tanium",      logline: "Endpoint security at massive scale", airtime: "2019 — 2021", to: "/work/tanium", status: "RERUN", slot: "lg" },
-      { title: "Monte Carlo", logline: "Data and AI observability platform", airtime: "2022 — NOW", to: "/work/montecarlo", status: "ON AIR", slot: "xl" },
+      { title: "Monte Carlo", logline: "Data and AI observability platform", airtime: "2022 — NOW", to: "/work/montecarlo", status: "ON AIR", slot: "lg" },
     ],
   },
   {
@@ -47,8 +47,8 @@ const CHANNELS: Channel[] = [
     name: "BULLSHIT",
     programs: [
       { title: "Sleeves",    logline: "Track albums, make lists, and follow friends", airtime: "ON AIR", href: "https://sleeves.app", status: "ON AIR", slot: "lg" },
-      { title: "StudyDrop",  logline: "UX research, without the friction", airtime: "PILOT", href: "https://studydrop.app", status: "PILOT", slot: "md" },
-      { title: "Slacker",    logline: "GIF finder", airtime: "PILOT", status: "PILOT", slot: "xs" },
+      { title: "StudyDrop",  logline: "UX research, without the friction", airtime: "PILOT", href: "https://studydrop.app", status: "PILOT", slot: "lg" },
+      { title: "Slacker",    logline: "GIF finder", airtime: "PILOT", status: "PILOT", slot: "md" },
     ],
   },
   {
@@ -56,8 +56,8 @@ const CHANNELS: Channel[] = [
     name: "ABOUT",
     programs: [
       { title: "Experience", logline: "I like working", airtime: "FEATURED", to: "/about/experience", status: "ON AIR", slot: "lg" },
-      { title: "Books",      logline: "I like making lists", airtime: "ARCHIVE", to: "/about/books", status: "LIVE", slot: "sm" },
-      { title: "Records",    logline: "I like making lists", airtime: "ARCHIVE", to: "/about/records", status: "LIVE", slot: "sm" },
+      { title: "Books",      logline: "I like making lists", airtime: "ARCHIVE", to: "/about/books", status: "LIVE", slot: "md" },
+      { title: "Records",    logline: "I like making lists", airtime: "ARCHIVE", to: "/about/records", status: "LIVE", slot: "md" },
     ],
   },
 ];
