@@ -79,7 +79,11 @@ export function DetailLayout({ title, subtitle, children }: DetailLayoutProps) {
           <div className="flex items-center gap-4 font-mono text-[10px] uppercase tracking-[0.3em] text-muted-foreground">
             <SignalBars />
             <span className="hidden md:flex items-center gap-2">
-              <span className="w-2 h-2 rounded-full bg-live blink" />
+              {status === "ON AIR" ? (
+                <span className="w-2 h-2 rounded-full bg-live blink" />
+              ) : (
+                <span className="w-2 h-2 rounded-full bg-muted-foreground/60" />
+              )}
               <span className="text-foreground">{status}</span>
             </span>
             <DetailClock />
