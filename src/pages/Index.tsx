@@ -27,10 +27,10 @@ const CHANNELS: Channel[] = [
     num: "01",
     name: "WORK",
     programs: [
-      { title: "SAS",         logline: "Enterprise analytics", airtime: "2011 — 2016", to: "/work/sas", status: "RERUN", slot: "md" },
-      { title: "Red Hat",     logline: "Open source enterprise software", airtime: "2016 — 2019", to: "/work/redhat", status: "RERUN", slot: "lg" },
-      { title: "Tanium",      logline: "Endpoint security at massive scale", airtime: "2019 — 2021", to: "/work/tanium", status: "RERUN", slot: "lg" },
       { title: "Monte Carlo", logline: "Data and AI observability platform", airtime: "2022 — NOW", to: "/work/montecarlo", status: "ON AIR", slot: "lg" },
+      { title: "Tanium",      logline: "Endpoint security at massive scale", airtime: "2019 — 2021", to: "/work/tanium", status: "RERUN", slot: "lg" },
+      { title: "Red Hat",     logline: "Open source enterprise software", airtime: "2016 — 2019", to: "/work/redhat", status: "RERUN", slot: "lg" },
+      { title: "SAS",         logline: "Enterprise analytics", airtime: "2011 — 2016", to: "/work/sas", status: "RERUN", slot: "md" },
     ],
   },
   {
@@ -82,7 +82,7 @@ const TICKER_ITEMS = [
 
 export default function Index() {
   const navigate = useNavigate();
-  const [focus, setFocus] = useState<{ ch: number; p: number }>({ ch: 0, p: ALL_CHANNELS[0].programs.length - 1 });
+  const [focus, setFocus] = useState<{ ch: number; p: number }>({ ch: 0, p: 0 });
   const inputModeRef = useRef<"keyboard" | "mouse">("keyboard");
   const rowRefs = useRef<Array<HTMLDivElement | null>>([]);
   const tileRefs = useRef<Array<Array<HTMLAnchorElement | HTMLDivElement | null>>>([]);
@@ -218,14 +218,6 @@ export default function Index() {
 
               {/* Programs row */}
               <div
-                ref={(el) => {
-                  if (el && !el.dataset.scrolled) {
-                    // stagger initial scroll so each channel sits at a different offset
-                    const offsets = [0, 220, 80, 320];
-                    el.scrollLeft = offsets[ci % offsets.length] ?? 0;
-                    el.dataset.scrolled = "1";
-                  }
-                }}
                 className="overflow-x-auto scrollbar-hide -mx-4 md:-mx-2 px-4 md:px-2 py-3"
               >
                 <div className="flex gap-3 md:gap-4 min-w-max">
