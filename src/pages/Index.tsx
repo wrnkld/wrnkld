@@ -321,8 +321,7 @@ const ProgramTile = forwardRef<HTMLAnchorElement | HTMLDivElement, {
 
       {/* content */}
       <div className="relative h-full flex flex-col">
-        <div className="flex items-center justify-between font-mono text-[9px] uppercase tracking-[0.3em] text-muted-foreground mb-3">
-          <span>{prog.airtime}</span>
+        <div className="flex items-center font-mono text-[9px] uppercase tracking-[0.3em] text-muted-foreground mb-3">
           <span className="flex items-center gap-1.5">
             {statusDot}
             <span className="text-foreground/80">{prog.status}</span>
