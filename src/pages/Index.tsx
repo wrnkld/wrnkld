@@ -37,9 +37,9 @@ const CHANNELS: Channel[] = [
     num: "04",
     name: "DESIGN & AI",
     programs: [
-      { title: "Pt 1 → Tools",   logline: "Twenty years of design tools", airtime: "EP 01 · 12 MIN", to: "/designai/tools", status: "ON AIR", slot: "md" },
-      { title: "Pt 2 → Vibes",   logline: "Building with AI", airtime: "EP 02 · 9 MIN",  to: "/designai/vibes", status: "ON AIR", slot: "md" },
-      { title: "Pt 3 → Sleeves", logline: "A real app and stack", airtime: "EP 03 · 14 MIN", to: "/designai/sleeves", status: "ON AIR", slot: "md" },
+      { title: "Pt 1 → Tools",   logline: "Twenty years of design tools", airtime: "EP 01 · 12 MIN", to: "/designai/tools", status: "RERUN", slot: "md" },
+      { title: "Pt 2 → Vibes",   logline: "Building with AI", airtime: "EP 02 · 9 MIN",  to: "/designai/vibes", status: "RERUN", slot: "md" },
+      { title: "Pt 3 → Sleeves", logline: "A real app and stack", airtime: "EP 03 · 14 MIN", to: "/designai/sleeves", status: "RERUN", slot: "md" },
     ],
   },
   {
