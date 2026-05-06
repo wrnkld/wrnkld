@@ -13,6 +13,7 @@ type Program = {
   href?: string; // external URL (opens in new tab)
   thumb?: string;
   status: Status;
+  slot?: "xs" | "sm" | "md" | "lg" | "xl";
 };
 
 type Channel = {
@@ -26,37 +27,37 @@ const CHANNELS: Channel[] = [
     num: "01",
     name: "WORK",
     programs: [
-      { title: "SAS",         logline: "Enterprise analytics", airtime: "2011 — 2016", to: "/work/sas", status: "ARCHIVE" },
-      { title: "Red Hat",     logline: "Open source enterprise software", airtime: "2016 — 2019", to: "/work/redhat", status: "RERUN" },
-      { title: "Tanium",      logline: "Endpoint security at massive scale", airtime: "2019 — 2021", to: "/work/tanium", status: "RERUN" },
-      { title: "Monte Carlo", logline: "Data and AI observability platform", airtime: "2022 — NOW", to: "/work/montecarlo", status: "ON AIR" },
+      { title: "SAS",         logline: "Enterprise analytics", airtime: "2011 — 2016", to: "/work/sas", status: "ARCHIVE", slot: "lg" },
+      { title: "Red Hat",     logline: "Open source enterprise software", airtime: "2016 — 2019", to: "/work/redhat", status: "RERUN", slot: "md" },
+      { title: "Tanium",      logline: "Endpoint security at massive scale", airtime: "2019 — 2021", to: "/work/tanium", status: "RERUN", slot: "md" },
+      { title: "Monte Carlo", logline: "Data and AI observability platform", airtime: "2022 — NOW", to: "/work/montecarlo", status: "ON AIR", slot: "xl" },
     ],
   },
   {
     num: "04",
     name: "DESIGN & AI",
     programs: [
-      { title: "Pt 1 → Tools",   logline: "Twenty years of design tools", airtime: "EP 01 · 12 MIN", to: "/designai/tools", status: "ON AIR" },
-      { title: "Pt 2 → Vibes",   logline: "Building with AI", airtime: "EP 02 · 9 MIN",  to: "/designai/vibes", status: "ON AIR" },
-      { title: "Pt 3 → Sleeves", logline: "A real app and stack", airtime: "EP 03 · 14 MIN", to: "/designai/sleeves", status: "ON AIR" },
+      { title: "Pt 1 → Tools",   logline: "Twenty years of design tools", airtime: "EP 01 · 12 MIN", to: "/designai/tools", status: "ON AIR", slot: "md" },
+      { title: "Pt 2 → Vibes",   logline: "Building with AI", airtime: "EP 02 · 9 MIN",  to: "/designai/vibes", status: "ON AIR", slot: "sm" },
+      { title: "Pt 3 → Sleeves", logline: "A real app and stack", airtime: "EP 03 · 14 MIN", to: "/designai/sleeves", status: "ON AIR", slot: "lg" },
     ],
   },
   {
     num: "02",
     name: "BULLSHIT",
     programs: [
-      { title: "Sleeves",    logline: "Track albums, make lists, and follow friends", airtime: "ON AIR", href: "https://sleeves.app", status: "ON AIR" },
-      { title: "StudyDrop",  logline: "UX research, without the friction", airtime: "PILOT", href: "https://studydrop.app", status: "PILOT" },
-      { title: "Slacker",    logline: "GIF finder", airtime: "PILOT", status: "PILOT" },
+      { title: "Sleeves",    logline: "Track albums, make lists, and follow friends", airtime: "ON AIR", href: "https://sleeves.app", status: "ON AIR", slot: "lg" },
+      { title: "StudyDrop",  logline: "UX research, without the friction", airtime: "PILOT", href: "https://studydrop.app", status: "PILOT", slot: "md" },
+      { title: "Slacker",    logline: "GIF finder", airtime: "PILOT", status: "PILOT", slot: "xs" },
     ],
   },
   {
     num: "03",
     name: "ABOUT",
     programs: [
-      { title: "Experience", logline: "I like working", airtime: "FEATURED", to: "/about/experience", status: "ON AIR" },
-      { title: "Books",      logline: "I like making lists", airtime: "ARCHIVE", to: "/about/books", status: "LIVE" },
-      { title: "Records",    logline: "I like making lists", airtime: "ARCHIVE", to: "/about/records", status: "LIVE" },
+      { title: "Experience", logline: "I like working", airtime: "FEATURED", to: "/about/experience", status: "ON AIR", slot: "lg" },
+      { title: "Books",      logline: "I like making lists", airtime: "ARCHIVE", to: "/about/books", status: "LIVE", slot: "sm" },
+      { title: "Records",    logline: "I like making lists", airtime: "ARCHIVE", to: "/about/records", status: "LIVE", slot: "sm" },
     ],
   },
 ];
@@ -265,8 +266,15 @@ const ProgramTile = forwardRef<HTMLAnchorElement | HTMLDivElement, {
   onHoverFocus: () => void;
   onClickFocus: () => void;
 }>(function ProgramTile({ prog, focused, offAir, onHoverFocus, onClickFocus }, ref) {
+  const slotWidth = {
+    xs: "w-[180px] md:w-[220px]",
+    sm: "w-[220px] md:w-[300px]",
+    md: "w-[260px] md:w-[400px]",
+    lg: "w-[300px] md:w-[520px]",
+    xl: "w-[340px] md:w-[640px]",
+  }[prog.slot ?? "md"];
   const base =
-    "relative w-[260px] md:w-[400px] h-[180px] md:h-[200px] shrink-0 p-4 border bg-card transition-all duration-150 group select-none overflow-hidden";
+    `relative ${slotWidth} h-[180px] md:h-[200px] shrink-0 p-4 border bg-card transition-all duration-150 group select-none overflow-hidden`;
   const state = focused
     ? "border-live"
     : "border-border/60 hover:border-foreground/40";
