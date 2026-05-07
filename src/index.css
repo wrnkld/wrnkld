@@ -10,35 +10,35 @@
 
 @layer base {
   :root {
-    /* WRNKLD.TV — late night cable */
-    --background: 0 0% 4%;            /* #0a0a0a */
-    --foreground: 0 0% 94%;           /* #f0f0f0 */
+    /* WRNKLD.TV — Intent-inspired cool dark */
+    --background: 220 20% 5%;            /* near-black, slight cool tint */
+    --foreground: 220 15% 92%;
 
-    --card: 0 0% 6%;
-    --card-foreground: 0 0% 94%;
+    --card: 220 22% 8%;                  /* dark blue-tinted card */
+    --card-foreground: 220 15% 92%;
 
-    --popover: 0 0% 6%;
-    --popover-foreground: 0 0% 94%;
+    --popover: 220 22% 8%;
+    --popover-foreground: 220 15% 92%;
 
-    /* the only accent color in the system */
-    --primary: 212 100% 60%;           /* #cc2200 */
-    --primary-foreground: 0 0% 94%;
+    /* accent — soft cool blue, not vivid */
+    --primary: 215 70% 70%;
+    --primary-foreground: 220 30% 8%;
 
-    --secondary: 0 0% 10%;
-    --secondary-foreground: 0 0% 94%;
+    --secondary: 220 18% 12%;
+    --secondary-foreground: 220 15% 92%;
 
-    --muted: 0 0% 12%;
-    --muted-foreground: 0 0% 55%;
+    --muted: 220 18% 14%;
+    --muted-foreground: 220 10% 60%;
 
-    --accent: 212 100% 60%;
-    --accent-foreground: 0 0% 94%;
+    --accent: 215 70% 70%;
+    --accent-foreground: 220 30% 8%;
 
-    --destructive: 212 100% 60%;
-    --destructive-foreground: 0 0% 94%;
+    --destructive: 215 70% 70%;
+    --destructive-foreground: 220 30% 8%;
 
-    --border: 0 0% 15%;
-    --input: 0 0% 15%;
-    --ring: 212 100% 60%;
+    --border: 220 20% 16%;
+    --input: 220 20% 16%;
+    --ring: 215 70% 70%;
 
     --radius: 0.125rem;
 
@@ -49,12 +49,12 @@
 
     --sidebar-background: 0 0% 4%;
     --sidebar-foreground: 0 0% 94%;
-    --sidebar-primary: 212 100% 60%;
+    --sidebar-primary: 215 70% 70%;
     --sidebar-primary-foreground: 0 0% 94%;
     --sidebar-accent: 0 0% 10%;
     --sidebar-accent-foreground: 0 0% 94%;
     --sidebar-border: 0 0% 15%;
-    --sidebar-ring: 212 100% 60%;
+    --sidebar-ring: 215 70% 70%;
   }
 
   .dark {
