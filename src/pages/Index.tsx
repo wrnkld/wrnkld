@@ -280,10 +280,10 @@ const ProgramTile = forwardRef<HTMLAnchorElement | HTMLDivElement, {
     xl: "w-[340px] md:w-[640px]",
   }[prog.slot ?? "md"];
   const base =
-    `relative ${slotWidth} h-[180px] md:h-[200px] shrink-0 p-4 border bg-card transition-all duration-150 group select-none overflow-hidden`;
+    `relative ${slotWidth} h-[180px] md:h-[200px] shrink-0 p-4 border bg-card shadow-intent-card transition-all duration-150 group select-none overflow-hidden`;
   const state = focused
-    ? "border-live"
-    : "border-border/60 hover:border-foreground/40";
+    ? "border-foreground/70"
+    : "border-border/60 hover:border-foreground/30";
   const dim = offAir ? "opacity-50" : "";
 
   const statusDot = (() => {
@@ -322,7 +322,7 @@ const ProgramTile = forwardRef<HTMLAnchorElement | HTMLDivElement, {
           <div className="absolute inset-0 bg-gradient-to-t from-background via-background/85 to-background/40" />
         </>
       ) : (
-        <div className="absolute inset-0 card-noise opacity-60" />
+          <div className="absolute inset-0 card-noise opacity-100" />
       )}
 
       {/* content */}
@@ -340,7 +340,7 @@ const ProgramTile = forwardRef<HTMLAnchorElement | HTMLDivElement, {
           {prog.logline}
         </div>
       </div>
-      {focused && <div className="absolute -bottom-px left-0 right-0 h-px bg-live" />}
+      {focused && <div className="absolute -bottom-px left-0 right-0 h-px bg-foreground/80" />}
     </>
   );
 
