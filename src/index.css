@@ -135,7 +135,7 @@
   }
 
   .shadow-intent-card {
-    box-shadow: 0 12px 28px hsl(0 0% 0% / 0.14);
+    box-shadow: 0 8px 20px hsl(0 0% 0% / 0.10);
   }
 
   .bg-channel-card {
