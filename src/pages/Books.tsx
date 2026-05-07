@@ -75,7 +75,7 @@ export default function Books() {
   return (
     <DetailLayout title="Books" subtitle="About" colorClass="card-pink">
       <p className="font-body text-base text-muted-foreground">
-        I recently started tracking the books I read. Recommended in red.
+        I recently started tracking the books I read. Recommended in blue.
       </p>
 
       <div className="relative">
