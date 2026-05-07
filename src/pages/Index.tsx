@@ -136,10 +136,11 @@ export default function Index() {
     };
   }, [move, tuneIn]);
 
-  // scroll selected tile into view (skip initial mount so rows start at 0)
+  // scroll selected tile into view — only for keyboard nav (skip mouse hover and initial mount)
   const didMountRef = useRef(false);
   useEffect(() => {
     if (!didMountRef.current) { didMountRef.current = true; return; }
+    if (inputModeRef.current !== "keyboard") return;
     const el = tileRefs.current[focus.ch]?.[focus.p];
     el?.scrollIntoView({ behavior: "smooth", block: "nearest", inline: "center" });
   }, [focus]);
