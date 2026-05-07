@@ -10,35 +10,35 @@
 
 @layer base {
   :root {
-    /* WRNKLD.TV — Intent-inspired cool dark */
-    --background: 220 20% 5%;            /* near-black, slight cool tint */
-    --foreground: 220 15% 92%;
+    /* WRNKLD.TV — Intent sampled dark neutral palette */
+    --background: 240 14% 7%;
+    --foreground: 235 35% 93%;
 
-    --card: 220 22% 8%;                  /* dark blue-tinted card */
-    --card-foreground: 220 15% 92%;
+    --card: 240 13% 9%;
+    --card-foreground: 235 35% 93%;
 
-    --popover: 220 22% 8%;
-    --popover-foreground: 220 15% 92%;
+    --popover: 240 9% 14%;
+    --popover-foreground: 235 35% 93%;
 
-    /* accent — soft cool blue, not vivid */
-    --primary: 215 70% 70%;
-    --primary-foreground: 220 30% 8%;
+    /* accent sampled from Intent's blue UI/code highlights */
+    --primary: 213 73% 65%;
+    --primary-foreground: 240 14% 7%;
 
-    --secondary: 220 18% 12%;
-    --secondary-foreground: 220 15% 92%;
+    --secondary: 240 9% 14%;
+    --secondary-foreground: 235 35% 93%;
 
-    --muted: 220 18% 14%;
-    --muted-foreground: 220 10% 60%;
+    --muted: 240 6% 19%;
+    --muted-foreground: 240 5% 69%;
 
-    --accent: 215 70% 70%;
-    --accent-foreground: 220 30% 8%;
+    --accent: 213 73% 65%;
+    --accent-foreground: 240 14% 7%;
 
-    --destructive: 215 70% 70%;
-    --destructive-foreground: 220 30% 8%;
+    --destructive: 213 73% 65%;
+    --destructive-foreground: 240 14% 7%;
 
-    --border: 220 20% 16%;
-    --input: 220 20% 16%;
-    --ring: 215 70% 70%;
+    --border: 240 4% 27%;
+    --input: 240 6% 19%;
+    --ring: 213 73% 65%;
 
     --radius: 0.125rem;
 
@@ -47,19 +47,19 @@
     --font-mono: 'IBM Plex Mono', ui-monospace, monospace;
     --font-prose: 'Inter', system-ui, sans-serif;
 
-    --sidebar-background: 0 0% 4%;
-    --sidebar-foreground: 0 0% 94%;
+    --sidebar-background: 240 14% 7%;
+    --sidebar-foreground: 235 35% 93%;
     --sidebar-primary: 215 70% 70%;
-    --sidebar-primary-foreground: 0 0% 94%;
-    --sidebar-accent: 0 0% 10%;
-    --sidebar-accent-foreground: 0 0% 94%;
-    --sidebar-border: 0 0% 15%;
-    --sidebar-ring: 215 70% 70%;
+    --sidebar-primary-foreground: 240 14% 7%;
+    --sidebar-accent: 240 9% 14%;
+    --sidebar-accent-foreground: 235 35% 93%;
+    --sidebar-border: 240 4% 27%;
+    --sidebar-ring: 213 73% 65%;
   }
 
   .dark {
-    --background: 0 0% 4%;
-    --foreground: 0 0% 94%;
+    --background: 240 14% 7%;
+    --foreground: 235 35% 93%;
   }
 }
 
