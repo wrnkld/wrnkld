@@ -131,11 +131,11 @@
   }
 
   .chyron-shadow {
-    box-shadow: 0 0 0 1px hsl(var(--foreground) / 0.08), 0 18px 42px hsl(0 0% 0% / 0.32);
+    box-shadow: 0 0 0 1px hsl(var(--foreground) / 0.06), 0 12px 28px hsl(0 0% 0% / 0.16);
   }
 
   .shadow-intent-card {
-    box-shadow: 0 18px 42px hsl(0 0% 0% / 0.28);
+    box-shadow: 0 12px 28px hsl(0 0% 0% / 0.14);
   }
 
   .bg-channel-card {
