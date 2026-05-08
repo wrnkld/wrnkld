@@ -38,10 +38,9 @@ export default function SAS() {
 
       <video src={sasDiagram} poster={analyticsAnalyze} autoPlay loop muted playsInline className="w-full h-auto border border-border/40" />
 
-      <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
         <img src={analyticsPrepare} alt="SAS Analytics Prepare" className="w-full h-auto border border-border/40" />
         <img src={analyticsExplore} alt="SAS Analytics Explore" className="w-full h-auto border border-border/40" />
-        <img src={analyticsAnalyze} alt="SAS Analytics Analyze" className="w-full h-auto border border-border/40" />
         <img src={analyticsReport} alt="SAS Analytics Report" className="w-full h-auto border border-border/40" />
       </div>
 
