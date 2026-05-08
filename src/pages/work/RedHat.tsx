@@ -72,7 +72,7 @@ export default function RedHat() {
 
       <video src={rhboRosterVideo} poster={rhboRoster} autoPlay loop muted playsInline className="w-full h-auto border border-border/40" />
 
-      <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
         <img src={rhboEmployees} alt="Red Hat Business Optaplanner Employees" className="w-full h-auto border border-border/40" />
         <img src={rhboAvailability} alt="Red Hat Business Optaplanner Availability" className="w-full h-auto border border-border/40" />
         <img src={rhboRoute} alt="Red Hat Business Optaplanner Route" className="w-full h-auto border border-border/40" />
