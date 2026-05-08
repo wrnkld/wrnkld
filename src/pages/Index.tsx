@@ -222,26 +222,40 @@ export default function Index() {
 
               {/* Programs row */}
               <div
-                className="overflow-x-auto scrollbar-hide -mx-4 md:-mx-2 px-4 md:px-2 py-3"
-                onWheel={(e) => {
-                  // Only translate vertical wheel → horizontal on desktop mouse wheels.
-                  // Trackpads emit small fractional deltas and often nonzero deltaX; skip those.
-                  if (e.deltaX !== 0) return;
-                  const absY = Math.abs(e.deltaY);
-                  const isMouseWheel =
-                    e.deltaMode === 1 || // DOM_DELTA_LINE
-                    (absY >= 40 && Number.isInteger(e.deltaY));
-                  if (!isMouseWheel) return;
+                className="overflow-x-auto scrollbar-hide -mx-4 md:-mx-2 px-4 md:px-2 py-3 cursor-grab active:cursor-grabbing select-none"
+                onPointerDown={(e) => {
+                  // Only left mouse button; ignore touch (let native vertical scroll work)
+                  if (e.pointerType !== "mouse" || e.button !== 0) return;
                   const el = e.currentTarget;
-                  const max = el.scrollWidth - el.clientWidth;
-                  if (max <= 0) return;
-                  // If we're at an edge and scrolling further that way, let the page scroll.
-                  if (
-                    (e.deltaY < 0 && el.scrollLeft <= 0) ||
-                    (e.deltaY > 0 && el.scrollLeft >= max)
-                  ) return;
-                  e.preventDefault();
-                  el.scrollLeft += e.deltaY;
+                  const startX = e.clientX;
+                  const startScroll = el.scrollLeft;
+                  let moved = false;
+                  const onMove = (ev: PointerEvent) => {
+                    const dx = ev.clientX - startX;
+                    if (!moved && Math.abs(dx) > 4) {
+                      moved = true;
+                      el.setPointerCapture(ev.pointerId);
+                    }
+                    if (moved) {
+                      el.scrollLeft = startScroll - dx;
+                      ev.preventDefault();
+                    }
+                  };
+                  const onUp = (ev: PointerEvent) => {
+                    window.removeEventListener("pointermove", onMove);
+                    window.removeEventListener("pointerup", onUp);
+                    if (moved) {
+                      // Suppress the click that would otherwise navigate
+                      const stop = (clickEv: MouseEvent) => {
+                        clickEv.preventDefault();
+                        clickEv.stopPropagation();
+                      };
+                      el.addEventListener("click", stop, { capture: true, once: true });
+                      ev.preventDefault();
+                    }
+                  };
+                  window.addEventListener("pointermove", onMove);
+                  window.addEventListener("pointerup", onUp);
                 }}
               >
                 <div className="flex gap-3 md:gap-4 min-w-max">
