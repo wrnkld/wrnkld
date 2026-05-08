@@ -223,6 +223,26 @@ export default function Index() {
               {/* Programs row */}
               <div
                 className="overflow-x-auto scrollbar-hide -mx-4 md:-mx-2 px-4 md:px-2 py-3"
+                onWheel={(e) => {
+                  // Only translate vertical wheel → horizontal on desktop mouse wheels.
+                  // Trackpads emit small fractional deltas and often nonzero deltaX; skip those.
+                  if (e.deltaX !== 0) return;
+                  const absY = Math.abs(e.deltaY);
+                  const isMouseWheel =
+                    e.deltaMode === 1 || // DOM_DELTA_LINE
+                    (absY >= 40 && Number.isInteger(e.deltaY));
+                  if (!isMouseWheel) return;
+                  const el = e.currentTarget;
+                  const max = el.scrollWidth - el.clientWidth;
+                  if (max <= 0) return;
+                  // If we're at an edge and scrolling further that way, let the page scroll.
+                  if (
+                    (e.deltaY < 0 && el.scrollLeft <= 0) ||
+                    (e.deltaY > 0 && el.scrollLeft >= max)
+                  ) return;
+                  e.preventDefault();
+                  el.scrollLeft += e.deltaY;
+                }}
               >
                 <div className="flex gap-3 md:gap-4 min-w-max">
                   {ch.programs.map((prog, pi) => {
