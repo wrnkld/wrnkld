@@ -1,6 +1,7 @@
 import { DetailLayout } from "@/components/DetailLayout";
 
 import taniumAssetVendor from "@/assets/tanium/tanium-asset-vendor.png";
+import taniumDiscoverInterfaces from "@/assets/tanium/tanium-discover-interfaces.png";
 import taniumThreatAlerts from "@/assets/tanium/tanium-threat-alerts.png";
 import taniumThreatDocuments from "@/assets/tanium/tanium-threat-documents.png";
 import taniumAssuranceFindings from "@/assets/tanium/tanium-assurance-findings.png";
