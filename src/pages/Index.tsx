@@ -222,41 +222,7 @@ export default function Index() {
 
               {/* Programs row */}
               <div
-                className="overflow-x-auto scrollbar-hide -mx-4 md:-mx-2 px-4 md:px-2 py-3 cursor-grab active:cursor-grabbing select-none"
-                onPointerDown={(e) => {
-                  // Only left mouse button; ignore touch (let native vertical scroll work)
-                  if (e.pointerType !== "mouse" || e.button !== 0) return;
-                  const el = e.currentTarget;
-                  const startX = e.clientX;
-                  const startScroll = el.scrollLeft;
-                  let moved = false;
-                  const onMove = (ev: PointerEvent) => {
-                    const dx = ev.clientX - startX;
-                    if (!moved && Math.abs(dx) > 4) {
-                      moved = true;
-                      el.setPointerCapture(ev.pointerId);
-                    }
-                    if (moved) {
-                      el.scrollLeft = startScroll - dx;
-                      ev.preventDefault();
-                    }
-                  };
-                  const onUp = (ev: PointerEvent) => {
-                    window.removeEventListener("pointermove", onMove);
-                    window.removeEventListener("pointerup", onUp);
-                    if (moved) {
-                      // Suppress the click that would otherwise navigate
-                      const stop = (clickEv: MouseEvent) => {
-                        clickEv.preventDefault();
-                        clickEv.stopPropagation();
-                      };
-                      el.addEventListener("click", stop, { capture: true, once: true });
-                      ev.preventDefault();
-                    }
-                  };
-                  window.addEventListener("pointermove", onMove);
-                  window.addEventListener("pointerup", onUp);
-                }}
+                className="overflow-x-auto scrollbar-hide -mx-4 md:-mx-2 px-4 md:px-2 py-3"
               >
                 <div className="flex gap-3 md:gap-4 min-w-max">
                   {ch.programs.map((prog, pi) => {
