@@ -46,10 +46,7 @@ export default function Tanium() {
 
       <video src={taniumDiscover} poster={taniumDiscoverInterfaces} autoPlay loop muted playsInline className="w-full h-auto border border-border/40" />
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-        <img src={taniumDiscoverInterfaces} alt="Tanium Discover Interfaces" className="w-full h-auto border border-border/40" />
-        <img src={taniumAssetVendor} alt="Tanium Asset Vendor" className="w-full h-auto border border-border/40" />
-      </div>
+      <img src={taniumAssetVendor} alt="Tanium Asset Vendor" className="w-full h-auto border border-border/40" />
 
       <video src={taniumEnforce} poster={taniumEnforceOverview} autoPlay loop muted playsInline className="w-full h-auto border border-border/40" />
     </DetailLayout>
