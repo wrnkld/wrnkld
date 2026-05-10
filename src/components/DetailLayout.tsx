@@ -63,14 +63,7 @@ export function DetailLayout({ title, subtitle, children }: DetailLayoutProps) {
     if (isMediaElement(child)) {
       return (
         <div className="max-w-5xl mx-auto px-6">
-          <div className="relative">
-            {child}
-            {/* broadcast vignette */}
-            <div
-              className="pointer-events-none absolute inset-0"
-              style={{ boxShadow: "inset 0 0 90px 10px rgba(0,0,0,0.65)" }}
-            />
-          </div>
+          {child}
         </div>
       );
     }
