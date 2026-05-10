@@ -835,7 +835,7 @@ export const books: Book[] = [
     id: 129,
     title: "Audition",
     author: "Katie Kitamura",
-    year: 2026,
+    year: 2025,
     recommended: true,
   },
   {
@@ -1186,7 +1186,7 @@ export const books: Book[] = [
     id: 179,
     title: "Transcription",
     author: "Ben Lerner",
-    year: 2025,
+    year: 2026,
     recommended: true,
   },
 ];
