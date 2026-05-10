@@ -189,7 +189,7 @@ export default function Index() {
 
       {/* The Guide */}
       <main className="max-w-[1400px] mx-auto px-4 md:px-8 pb-32">
-        <div className="border-t border-border/60 pt-6 mb-3 flex items-center justify-between">
+        <div className="pt-6 mb-3 flex items-center justify-between">
           <div className="font-mono text-[10px] uppercase tracking-[0.35em] text-muted-foreground">
             TONIGHT'S PROGRAMMING
           </div>
