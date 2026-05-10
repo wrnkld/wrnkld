@@ -4993,4 +4993,16 @@ export const records: Record[] = [
     artist: "Various Artists",
     album: "Pop Ambient 2026",
   },
+  {
+    id: 835,
+    year: 2026,
+    artist: "Twisted Teens",
+    album: "Blame The Clown",
+  },
+  {
+    id: 836,
+    year: 2024,
+    artist: "Twisted Teens",
+    album: "Twisted Teens",
+  },
 ];
