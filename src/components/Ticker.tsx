@@ -41,20 +41,6 @@ export function Ticker({ items, speed = "slow", className = "" }: TickerProps) {
   );
 }
 
-export function SignalBars({ active = 4 }: { active?: number }) {
-  return (
-    <div className="flex items-end gap-0.5 h-3" aria-hidden>
-      {[1, 2, 3, 4].map((b) => (
-        <span
-          key={b}
-          className={`w-0.5 ${b === 1 ? "h-1" : b === 2 ? "h-1.5" : b === 3 ? "h-2" : "h-3"} ${
-            b <= active ? "bg-foreground" : "bg-muted"
-          }`}
-        />
-      ))}
-    </div>
-  );
-}
 
 // Helper not exported as component but used elsewhere
 export function _unused(_: ReactNode) { return null; }
