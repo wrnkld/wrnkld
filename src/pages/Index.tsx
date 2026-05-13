@@ -45,7 +45,7 @@ const CHANNELS: Channel[] = [
   },
   {
     num: "02",
-    name: "BULLSHIT",
+    name: "BONUS CONTENT",
     programs: [
       { title: "Sleeves",    logline: "Track albums, make lists, and follow friends", airtime: "ON AIR", href: "https://sleeves.app", status: "ON AIR", slot: "lg" },
       { title: "StudyDrop",  logline: "UX research, without the friction", airtime: "PILOT", href: "https://studydrop.app", status: "PILOT", slot: "lg" },
@@ -63,14 +63,14 @@ const CHANNELS: Channel[] = [
   },
 ];
 
-// Order: Work, Bullshit, About, Design & AI (bottom)
+// Order: Work, Bonus Content, About, Design & AI (bottom)
 const ALL_CHANNELS: Channel[] = [CHANNELS[0], CHANNELS[2], CHANNELS[3], CHANNELS[1]];
 
 const TICKER_ITEMS = [
   "WRNKLD.TV",
   "TONIGHT'S PROGRAMMING",
   "CH 01 WORK",
-  "CH 02 BULLSHIT",
+  "CH 02 BONUS CONTENT",
   "CH 03 ABOUT",
   "CH 04 DESIGN & AI",
   "NOW BROADCASTING: MATTHEW STEVENS",
@@ -271,11 +271,11 @@ const ProgramTile = forwardRef<HTMLAnchorElement | HTMLDivElement, {
   onClickFocus: () => void;
 }>(function ProgramTile({ prog, focused, offAir, onHoverFocus, onClickFocus }, ref) {
   const slotWidth = {
-    xs: "w-[180px] md:w-[220px]",
-    sm: "w-[220px] md:w-[300px]",
-    md: "w-[260px] md:w-[400px]",
-    lg: "w-[300px] md:w-[520px]",
-    xl: "w-[340px] md:w-[640px]",
+    xs: "w-[140px] md:w-[220px]",
+    sm: "w-[180px] md:w-[300px]",
+    md: "w-[200px] md:w-[400px]",
+    lg: "w-[240px] md:w-[520px]",
+    xl: "w-[280px] md:w-[640px]",
   }[prog.slot ?? "md"];
   const base =
     `relative ${slotWidth} h-[180px] md:h-[200px] shrink-0 p-4 border bg-channel-card shadow-intent-card transition-all duration-150 group select-none overflow-hidden`;
