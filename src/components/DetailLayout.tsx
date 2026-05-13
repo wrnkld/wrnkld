@@ -1,6 +1,6 @@
 import { ReactNode, Children, isValidElement, useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Ticker, SignalBars } from "@/components/Ticker";
+import { Ticker } from "@/components/Ticker";
 
 interface DetailLayoutProps {
   title: string;

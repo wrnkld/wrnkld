@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState, useCallback } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { ColdOpen } from "@/components/ColdOpen";
-import { Ticker, SignalBars } from "@/components/Ticker";
+import { Ticker } from "@/components/Ticker";
 
 type Status = "ON AIR" | "RERUN" | "ARCHIVE" | "PILOT" | "LIVE" | "OFF AIR" | "COLOR BARS" | "SNOW" | "STANDBY";
 
