@@ -239,7 +239,7 @@
   }
   .hover-channel:hover { animation: channel-flicker 0.35s steps(8) 1; }
 
-  /* ---- Card noise (BULLSHIT etc.) ---- */
+  /* ---- Card noise (Bonus Content etc.) ---- */
   .card-noise {
     background-image:
       linear-gradient(180deg, hsl(var(--channel-card-top)) 0%, hsl(var(--channel-card)) 100%),
