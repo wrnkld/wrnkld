@@ -87,7 +87,6 @@ export function DetailLayout({ title, subtitle, children }: DetailLayoutProps) {
             ← RETURN TO GUIDE
           </Link>
           <div className="flex items-center gap-4 font-mono text-[10px] uppercase tracking-[0.3em] text-muted-foreground">
-            <SignalBars />
             <span className="hidden md:flex items-center gap-2">
               <StatusDot status={status} />
               <span className="text-foreground">{status}</span>

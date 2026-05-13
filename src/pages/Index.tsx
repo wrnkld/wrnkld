@@ -77,7 +77,6 @@ const TICKER_ITEMS = [
   "HEAD OF DESIGN",
   "20 YEARS",
   "CURRENTLY AT MONTE CARLO",
-  "SIGNAL STRONG",
   "0 LINKEDIN POSTS THIS YEAR",
 ];
 
@@ -158,7 +157,6 @@ export default function Index() {
             </span>
           </div>
           <div className="flex items-center gap-4 font-mono text-[10px] uppercase tracking-[0.3em] text-muted-foreground">
-            <SignalBars />
             <span className="hidden md:flex items-center gap-2">
               <span className="w-2 h-2 rounded-full bg-live blink" />
               <span className="text-foreground">ON AIR</span>
