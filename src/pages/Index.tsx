@@ -24,7 +24,7 @@ type Channel = {
 const CHANNELS: Channel[] = [
   {
     num: "01",
-    name: "WORK",
+    name: "PRIME TIME",
     programs: [
       { title: "Monte Carlo", logline: "Data and AI observability platform", to: "/work/montecarlo", status: "ON AIR", slot: "lg" },
       { title: "Tanium",      logline: "Endpoint security at massive scale", to: "/work/tanium", status: "RERUN", slot: "lg" },
@@ -68,7 +68,7 @@ const ALL_CHANNELS: Channel[] = [CHANNELS[0], CHANNELS[2], CHANNELS[3], CHANNELS
 const TICKER_ITEMS = [
   "WRNKLD.TV",
   "TONIGHT'S PROGRAMMING",
-  "CH 01 WORK",
+  "CH 01 PRIME TIME",
   "CH 02 BONUS CONTENT",
   "CH 03 THE HOST",
   "CH 04 DISPATCHES",

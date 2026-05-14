@@ -11,7 +11,7 @@ interface DetailLayoutProps {
 }
 
 const CHANNEL_BY_SUBTITLE: Record<string, { num: string; name: string }> = {
-  Work: { num: "01", name: "WORK" },
+  Work: { num: "01", name: "PRIME TIME" },
   "Design & AI": { num: "04", name: "DISPATCHES" },
   About: { num: "03", name: "THE HOST" },
 };
