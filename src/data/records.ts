@@ -5011,4 +5011,10 @@ export const records: Record[] = [
     artist: "Flea",
     album: "Honora",
   },
+  {
+    id: 838,
+    year: 2026,
+    artist: "Charlotte Cornfield",
+    album: "Hurts Like Hell",
+  },
 ];
