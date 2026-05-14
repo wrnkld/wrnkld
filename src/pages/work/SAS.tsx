@@ -46,9 +46,7 @@ export default function SAS() {
 
       <h2 className="font-display text-lg font-medium text-foreground">Factory Miner</h2>
       <p className="font-body text-base text-muted-foreground leading-relaxed">
-        Delivered model comparison and selection workflows that ran multiple 
-        statistical models in parallel, enabling teams to identify the strongest 
-        performer using metrics like lift and cumulative lift.
+        Delivered model comparison and optimization workflows, enabling teams to identify the strongest statistical models using metrics like lift and cumulative lift.
       </p>
 
       <img src={factoryResults} alt="SAS Factory Results" className="w-full h-auto border border-border/40" />
@@ -63,7 +61,7 @@ export default function SAS() {
       <h2 className="font-display text-lg font-medium text-foreground">Visual Statistics</h2>
       <p className="font-body text-base text-muted-foreground leading-relaxed">
         Built a drag-and-drop, visual interface for exploring statistical models, 
-        making advanced analytics more accessible without flattening complexity.
+        making advanced analytics more accessible without compromising sophistication.
       </p>
 
       <img src={visualStatsRoles} alt="SAS Visual Stats Roles" className="w-full h-auto border border-border/40" />
