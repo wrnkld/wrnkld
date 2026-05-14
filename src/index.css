@@ -110,22 +110,6 @@
   .bg-live   { background-color: hsl(var(--primary)); }
   .border-live { border-color: hsl(var(--primary)); }
 
-  .scanlines::before {
-    content: "";
-    position: fixed;
-    inset: 0;
-    pointer-events: none;
-    z-index: 50;
-    background: repeating-linear-gradient(
-      to bottom,
-      hsl(var(--foreground) / 0.025) 0px,
-      hsl(var(--foreground) / 0.025) 1px,
-      transparent 1px,
-      transparent 3px
-    );
-    mix-blend-mode: normal;
-  }
-
   .vignette {
     box-shadow: inset 0 0 120px 20px hsl(var(--background) / 0.72);
   }
