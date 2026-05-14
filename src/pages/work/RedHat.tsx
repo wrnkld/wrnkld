@@ -67,7 +67,7 @@ export default function RedHat() {
       <h2 className="font-display text-lg font-medium text-foreground">Extend</h2>
       <p className="font-body text-base text-muted-foreground leading-relaxed">
         Created shared design patterns across Business Automation and Business 
-        Optimization to improve consistency across the portfolio.
+        Optimization to improve usability across the portfolio.
       </p>
 
       <video src={rhboRosterVideo} poster={rhboRoster} autoPlay loop muted playsInline className="w-full h-auto border border-border/40" />
