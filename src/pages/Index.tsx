@@ -145,7 +145,7 @@ export default function Index() {
   }, [focus]);
 
   return (
-    <div className="min-h-screen bg-background text-foreground scanlines flicker">
+    <div className="min-h-screen bg-background text-foreground flicker">
       <ColdOpen />
 
       {/* Top broadcast header */}
