@@ -5005,4 +5005,10 @@ export const records: Record[] = [
     artist: "Twisted Teens",
     album: "Twisted Teens",
   },
+  {
+    id: 837,
+    year: 2026,
+    artist: "Flea",
+    album: "Honora",
+  },
 ];
