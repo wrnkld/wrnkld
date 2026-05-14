@@ -12,8 +12,8 @@ interface DetailLayoutProps {
 
 const CHANNEL_BY_SUBTITLE: Record<string, { num: string; name: string }> = {
   Work: { num: "01", name: "WORK" },
-  "Design & AI": { num: "04", name: "DESIGN & AI" },
-  About: { num: "03", name: "ABOUT" },
+  "Design & AI": { num: "04", name: "DISPATCHES" },
+  About: { num: "03", name: "THE HOST" },
 };
 
 type DetailStatus = "ON AIR" | "RERUN" | "PILOT" | "ARCHIVE";
