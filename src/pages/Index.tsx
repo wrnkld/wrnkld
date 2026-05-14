@@ -8,7 +8,6 @@ type Status = "ON AIR" | "RERUN" | "ARCHIVE" | "PILOT" | "LIVE" | "OFF AIR" | "C
 type Program = {
   title: string;
   logline: string;
-  airtime: string;
   to?: string; // undefined = OFF AIR
   href?: string; // external URL (opens in new tab)
   thumb?: string;
@@ -27,38 +26,38 @@ const CHANNELS: Channel[] = [
     num: "01",
     name: "WORK",
     programs: [
-      { title: "Monte Carlo", logline: "Data and AI observability platform", airtime: "2022 — NOW", to: "/work/montecarlo", status: "ON AIR", slot: "lg" },
-      { title: "Tanium",      logline: "Endpoint security at massive scale", airtime: "2019 — 2021", to: "/work/tanium", status: "RERUN", slot: "lg" },
-      { title: "Red Hat",     logline: "Open source enterprise software", airtime: "2016 — 2019", to: "/work/redhat", status: "RERUN", slot: "lg" },
-      { title: "SAS",         logline: "Enterprise analytics", airtime: "2011 — 2016", to: "/work/sas", status: "RERUN", slot: "md" },
+      { title: "Monte Carlo", logline: "Data and AI observability platform", to: "/work/montecarlo", status: "ON AIR", slot: "lg" },
+      { title: "Tanium",      logline: "Endpoint security at massive scale", to: "/work/tanium", status: "RERUN", slot: "lg" },
+      { title: "Red Hat",     logline: "Open source enterprise software", to: "/work/redhat", status: "RERUN", slot: "lg" },
+      { title: "SAS",         logline: "Enterprise analytics", to: "/work/sas", status: "RERUN", slot: "md" },
     ],
   },
   {
     num: "04",
-    name: "DESIGN & AI",
+    name: "DISPATCHES",
     programs: [
-      { title: "Pt 1 → Tools",   logline: "Twenty years of design tools", airtime: "EP 01 · 12 MIN", to: "/designai/tools", status: "RERUN", slot: "md" },
-      { title: "Pt 2 → Vibes",   logline: "Building with AI", airtime: "EP 02 · 9 MIN",  to: "/designai/vibes", status: "RERUN", slot: "md" },
-      { title: "Pt 3 → Sleeves", logline: "A real app and stack", airtime: "EP 03 · 14 MIN", to: "/designai/sleeves", status: "RERUN", slot: "md" },
-      { title: "Pt 4 → Claude",  logline: "Deep in Claude Code",  airtime: "EP 04 · 6 MIN",  to: "/designai/claude", status: "ON AIR", slot: "md" },
+      { title: "Pt 1 → Tools",   logline: "Twenty years of design tools", to: "/designai/tools", status: "RERUN", slot: "md" },
+      { title: "Pt 2 → Vibes",   logline: "Building with AI", to: "/designai/vibes", status: "RERUN", slot: "md" },
+      { title: "Pt 3 → Sleeves", logline: "A real app and stack", to: "/designai/sleeves", status: "RERUN", slot: "md" },
+      { title: "Pt 4 → Claude",  logline: "Deep in Claude Code", to: "/designai/claude", status: "ON AIR", slot: "md" },
     ],
   },
   {
     num: "02",
     name: "BONUS CONTENT",
     programs: [
-      { title: "Sleeves",    logline: "Track albums, make lists, and follow friends", airtime: "ON AIR", href: "https://sleeves.app", status: "ON AIR", slot: "lg" },
-      { title: "StudyDrop",  logline: "UX research, without the friction", airtime: "PILOT", href: "https://studydrop.app", status: "PILOT", slot: "lg" },
-      { title: "Slacker",    logline: "GIF finder", airtime: "PILOT", status: "PILOT", slot: "md" },
+      { title: "Sleeves",    logline: "Track albums, make lists, and follow friends", href: "https://sleeves.app", status: "ON AIR", slot: "lg" },
+      { title: "StudyDrop",  logline: "UX research, without the friction", href: "https://studydrop.app", status: "PILOT", slot: "lg" },
+      { title: "Slacker",    logline: "GIF finder", status: "PILOT", slot: "md" },
     ],
   },
   {
     num: "03",
-    name: "ABOUT",
+    name: "THE HOST",
     programs: [
-      { title: "Experience", logline: "I like working", airtime: "FEATURED", to: "/about/experience", status: "ON AIR", slot: "lg" },
-      { title: "Books",      logline: "I like making lists", airtime: "ARCHIVE", to: "/about/books", status: "ON AIR", slot: "md" },
-      { title: "Records",    logline: "I like making lists", airtime: "ARCHIVE", to: "/about/records", status: "ON AIR", slot: "md" },
+      { title: "Experience", logline: "I like working", to: "/about/experience", status: "ON AIR", slot: "lg" },
+      { title: "Books",      logline: "I like making lists", to: "/about/books", status: "ON AIR", slot: "md" },
+      { title: "Records",    logline: "I like making lists", to: "/about/records", status: "ON AIR", slot: "md" },
     ],
   },
 ];
@@ -71,8 +70,8 @@ const TICKER_ITEMS = [
   "TONIGHT'S PROGRAMMING",
   "CH 01 WORK",
   "CH 02 BONUS CONTENT",
-  "CH 03 ABOUT",
-  "CH 04 DESIGN & AI",
+  "CH 03 THE HOST",
+  "CH 04 DISPATCHES",
   "NOW BROADCASTING: MATTHEW STEVENS",
   "HEAD OF DESIGN",
   "20 YEARS",
