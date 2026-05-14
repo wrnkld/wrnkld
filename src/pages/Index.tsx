@@ -271,11 +271,11 @@ const ProgramTile = forwardRef<HTMLAnchorElement | HTMLDivElement, {
   onClickFocus: () => void;
 }>(function ProgramTile({ prog, focused, offAir, onHoverFocus, onClickFocus }, ref) {
   const slotWidth = {
-    xs: "w-[140px] md:w-[220px]",
-    sm: "w-[180px] md:w-[300px]",
-    md: "w-[200px] md:w-[400px]",
-    lg: "w-[240px] md:w-[520px]",
-    xl: "w-[280px] md:w-[640px]",
+    xs: "w-[140px] md:w-[180px]",
+    sm: "w-[180px] md:w-[240px]",
+    md: "w-[200px] md:w-[320px]",
+    lg: "w-[240px] md:w-[420px]",
+    xl: "w-[280px] md:w-[540px]",
   }[prog.slot ?? "md"];
   const base =
     `relative ${slotWidth} h-[180px] md:h-[200px] shrink-0 p-4 border bg-channel-card shadow-intent-card transition-all duration-150 group select-none overflow-hidden`;
