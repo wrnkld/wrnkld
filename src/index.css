@@ -10,17 +10,11 @@
     --background: 215 45% 28%;
     --foreground: 40 30% 94%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 0 0% 10%;
-
     --popover: 0 0% 100%;
     --popover-foreground: 0 0% 10%;
 
     --primary: 0 0% 10%;
     --primary-foreground: 0 0% 98%;
-
-    --secondary: 0 0% 96%;
-    --secondary-foreground: 0 0% 10%;
 
     --muted: 215 40% 34%;
     --muted-foreground: 215 25% 75%;
@@ -32,12 +26,6 @@
     --chip-words: 335 75% 80%;
     --chip-ink: 215 60% 14%;
 
-    --accent: 0 0% 96%;
-    --accent-foreground: 0 0% 10%;
-
-    --destructive: 0 70% 50%;
-    --destructive-foreground: 0 0% 98%;
-
     --border: 0 0% 90%;
     --input: 0 0% 90%;
     --ring: 0 0% 10%;
@@ -47,8 +35,6 @@
     --font-display: 'Inter', system-ui, sans-serif;
     --font-body:    'Inter', system-ui, sans-serif;
     --font-mono:    ui-monospace, SFMono-Regular, Menlo, monospace;
-    --font-prose:   'Inter', system-ui, sans-serif;
-
   }
 }
 
@@ -78,24 +64,14 @@
   .font-display { font-family: var(--font-display); }
   .font-body    { font-family: var(--font-body); }
   .font-mono    { font-family: var(--font-mono); }
-  .font-prose   { font-family: var(--font-prose); }
-
-  .text-live   { color: hsl(var(--foreground)); }
-  .bg-live     { background-color: hsl(var(--foreground)); }
-  .border-live { border-color: hsl(var(--foreground)); }
 
   .text-recommended { color: hsl(48 90% 68%); }
 
-  .text-balance { text-wrap: balance; }
-
   .prose {
     @apply text-base leading-relaxed;
-    font-family: var(--font-prose);
+    font-family: var(--font-body);
     color: hsl(var(--foreground));
   }
-
-  .scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
-  .scrollbar-hide::-webkit-scrollbar { display: none; }
 
   @keyframes fade-in-up {
     from { opacity: 0; transform: translateY(4px); }
