@@ -12,18 +12,18 @@ type Item = {
 
 const ITEMS: Item[] = [
   { title: "Monte Carlo", category: "Work", to: "/work/montecarlo", note: "Data and AI observability" },
-  { title: "Pt 3 — Sleeves", category: "Words", to: "/words/sleeves", note: "I built an app" },
+  { title: "Pt 3 → Sleeves", category: "Words", to: "/words/sleeves", note: "I built an app" },
   { title: "Sleeves", category: "Side", href: "https://sleeves.app", note: "Track albums, make lists, and follow friends" },
   { title: "Tanium", category: "Work", to: "/work/tanium", note: "Endpoint security at scale" },
   { title: "Experience 👨‍💼", category: "About", to: "/about/experience" },
-  { title: "Pt 1 — Tools", category: "Words", to: "/words/tools", note: "TMI" },
+  { title: "Pt 1 → Tools", category: "Words", to: "/words/tools", note: "TMI" },
   { title: "Red Hat", category: "Work", to: "/work/redhat", note: "Open source enterprise software" },
   { title: "Records", category: "About", to: "/about/records", note: "A relatively exhaustive list of records I like" },
   { title: "StudyDrop", category: "Side", href: "https://studydrop.app", note: "UX research, without the friction" },
-  { title: "Pt 2 — Vibes", category: "Words", to: "/words/vibes", note: "Prompts v Boxes" },
+  { title: "Pt 2 → Vibes", category: "Words", to: "/words/vibes", note: "Prompts v Boxes" },
   { title: "SAS", category: "Work", to: "/work/sas", note: "Enterprise analytics" },
   { title: "Books", category: "About", to: "/about/books", note: "Recommended in yellow" },
-  { title: "Pt 4 — Claude", category: "Words", to: "/words/claude", note: "Think piece 901" },
+  { title: "Pt 4 → Claude", category: "Words", to: "/words/claude", note: "Think piece 901" },
 ];
 
 const CHIP: Record<Category, string> = {
