@@ -103,7 +103,7 @@ export default function Index() {
         <main>
           <TooltipProvider delayDuration={150}>
             <Tabs value={sort} onValueChange={(v) => setSort(v as SortMode)} className="mb-4">
-              <TabsList className="h-10 rounded-lg bg-foreground/15 p-1 shadow-inner ring-1 ring-foreground/20">
+              <TabsList className="h-9 rounded-md bg-muted p-0.5">
                 {([
                   { mode: "default" as const, Icon: Clock, label: "Chronological" },
                   { mode: "category" as const, Icon: LayoutGrid, label: "Categorical" },
@@ -117,10 +117,10 @@ export default function Index() {
                       <TabsTrigger
                         value={mode}
                         aria-label={label}
-                        className={`h-8 w-10 rounded-md transition-colors hover:bg-foreground/10 hover:text-foreground ${
+                        className={`h-8 w-9 rounded-sm transition-colors hover:bg-background/15 hover:text-foreground ${
                           isSelected
-                            ? "bg-foreground text-background shadow-sm"
-                            : "text-foreground/55"
+                            ? "bg-foreground text-background"
+                            : "text-muted-foreground"
                         }`}
                       >
                         <Icon className="h-4 w-4" />
