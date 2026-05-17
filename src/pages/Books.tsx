@@ -75,7 +75,7 @@ export default function Books() {
   return (
     <DetailLayout title="Books" subtitle="About" colorClass="card-pink">
       <p className="font-body text-base text-muted-foreground">
-        I recently started tracking the books I read. Recommended in blue.
+        I started tracking the books I read. Recommended in yellow.
       </p>
 
       <div className="relative">
@@ -127,13 +127,13 @@ export default function Books() {
                     transition={{ duration: 0.15 }}
                     className="border-b border-border/40 transition-colors hover:bg-muted/40"
                   >
-                    <TableCell className={book.recommended ? "text-live" : "text-muted-foreground"}>
+                    <TableCell className={book.recommended ? "text-recommended" : "text-muted-foreground"}>
                       {book.author}
                     </TableCell>
-                    <TableCell className={book.recommended ? "text-live" : "text-foreground"}>
+                    <TableCell className={book.recommended ? "text-recommended" : "text-foreground"}>
                       {book.title}
                     </TableCell>
-                    <TableCell className={book.recommended ? "text-live" : "text-muted-foreground"}>
+                    <TableCell className={book.recommended ? "text-recommended" : "text-muted-foreground"}>
                       {book.year}
                     </TableCell>
                   </motion.tr>
