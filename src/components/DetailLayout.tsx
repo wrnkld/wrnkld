@@ -55,7 +55,7 @@ export function DetailLayout({ title, subtitle, children }: DetailLayoutProps) {
         </header>
       </div>
 
-      <main className="pb-20 space-y-8 animate-fade-in">{processed}</main>
+      <main className="pb-8 space-y-8 animate-fade-in">{processed}</main>
 
       <footer className="max-w-4xl mx-auto px-6 pb-16">
         <Link
