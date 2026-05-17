@@ -18,7 +18,7 @@ type Item = {
 
 const ITEMS: Item[] = [
   { title: "Monte Carlo", category: "Work", to: "/work/montecarlo", note: "Data and AI observability", gif: "" },
-  { title: "Experience", category: "About", to: "/about/experience", note: "👨‍💼", gif: "" },
+  { title: "Experience", category: "About", to: "/about/experience", note: "💼", gif: "" },
   { title: "Pt 4 → Claude", category: "Words", to: "/words/claude", note: "Think piece 901", gif: "" },
   { title: "StudyDrop", category: "Side", href: "https://studydrop.app", note: "UX research, without the friction", gif: "" },
   { title: "Sleeves", category: "Side", href: "https://sleeves.app", note: "Track albums, make lists, and follow friends", gif: "" },
