@@ -3,6 +3,7 @@ import { useState, useMemo } from "react";
 import { motion, LayoutGroup } from "motion/react";
 import { ArrowDownAZ, LayoutGrid, Clock } from "lucide-react";
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 
 type Category = "Work" | "Words" | "Side" | "About";
 
@@ -101,23 +102,28 @@ export default function Index() {
 
         <main>
           <Tabs value={sort} onValueChange={(v) => setSort(v as SortMode)} className="mb-4">
-            <TabsList className="h-9 rounded-md bg-muted p-0.5">
+            <TooltipProvider delayDuration={250}>
+              <TabsList className="h-9 rounded-lg bg-muted p-0.5">
                 {([
                   { mode: "default" as const, Icon: Clock, label: "Chronological" },
                   { mode: "category" as const, Icon: LayoutGrid, label: "Categorical" },
                   { mode: "alpha" as const, Icon: ArrowDownAZ, label: "Alphabetical" },
                 ]).map(({ mode, Icon, label }) => (
-                  <TabsTrigger
-                    key={mode}
-                    value={mode}
-                    aria-label={label}
-                    title={label}
-                    className="h-8 w-9 rounded-[4px] p-0 text-muted-foreground transition-colors data-[state=active]:bg-foreground data-[state=active]:text-background data-[state=active]:shadow-none"
-                  >
-                    <Icon className="h-4 w-4" />
-                  </TabsTrigger>
+                  <Tooltip key={mode}>
+                    <TooltipTrigger asChild>
+                      <TabsTrigger
+                        value={mode}
+                        aria-label={label}
+                        className="h-8 w-9 rounded-md p-0 text-muted-foreground transition-colors data-[state=active]:bg-foreground data-[state=active]:text-background data-[state=active]:shadow-none"
+                      >
+                        <Icon className="h-4 w-4" />
+                      </TabsTrigger>
+                    </TooltipTrigger>
+                    <TooltipContent side="top">{label}</TooltipContent>
+                  </Tooltip>
                 ))}
-            </TabsList>
+              </TabsList>
+            </TooltipProvider>
           </Tabs>
           <LayoutGroup>
             <ul className="space-y-3">
