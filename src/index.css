@@ -92,7 +92,7 @@
   .bg-live     { background-color: hsl(var(--foreground)); }
   .border-live { border-color: hsl(var(--foreground)); }
 
-  .text-recommended { color: hsl(45 95% 45%); }
+  .text-recommended { color: hsl(48 90% 68%); }
 
   .text-balance { text-wrap: balance; }
 
