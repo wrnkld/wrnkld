@@ -37,7 +37,7 @@ function Row({ item }: { item: Item }) {
     <span
       className={`chip ${CHIP[item.category]} inline-flex items-baseline gap-3 px-3 py-1.5 rounded-full`}
     >
-      <span className="font-mono text-[10px] uppercase tracking-[0.14em] opacity-70">
+      <span className="font-mono text-[10px] uppercase tracking-[0.14em] opacity-70 inline-block w-12 shrink-0">
         {item.category}
       </span>
       <span className="text-base font-medium">{item.title}</span>
