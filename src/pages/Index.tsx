@@ -42,7 +42,7 @@ const SECTIONS: Section[] = [
 export default function Index() {
   return (
     <div className="min-h-screen bg-background text-foreground">
-      <div className="max-w-2xl mx-auto px-6 py-16 md:py-24">
+      <div className="max-w-4xl mx-auto px-6 py-16 md:py-24">
         <header className="mb-16">
           <h1 className="text-2xl font-medium">Matthew Stevens</h1>
           <p className="text-muted-foreground mt-2">
