@@ -7,20 +7,21 @@ type Item = {
   category: Category;
   to?: string;
   href?: string;
+  note?: string;
 };
 
 const ITEMS: Item[] = [
-  { title: "Monte Carlo", category: "Work", to: "/work/montecarlo" },
+  { title: "Monte Carlo", category: "Work", to: "/work/montecarlo", note: "Data and AI observability" },
   { title: "Pt 3 — Sleeves", category: "Words", to: "/words/sleeves" },
-  { title: "Sleeves", category: "Side", href: "https://sleeves.app" },
-  { title: "Tanium", category: "Work", to: "/work/tanium" },
+  { title: "Sleeves", category: "Side", href: "https://sleeves.app", note: "Track albums, make lists, and follow friends" },
+  { title: "Tanium", category: "Work", to: "/work/tanium", note: "Endpoint security at scale" },
   { title: "Experience", category: "About", to: "/about/experience" },
   { title: "Pt 1 — Tools", category: "Words", to: "/words/tools" },
-  { title: "Red Hat", category: "Work", to: "/work/redhat" },
+  { title: "Red Hat", category: "Work", to: "/work/redhat", note: "Open source enterprise software" },
   { title: "Records", category: "About", to: "/about/records" },
-  { title: "StudyDrop", category: "Side", href: "https://studydrop.app" },
+  { title: "StudyDrop", category: "Side", href: "https://studydrop.app", note: "UX research, without the friction" },
   { title: "Pt 2 — Vibes", category: "Words", to: "/words/vibes" },
-  { title: "SAS", category: "Work", to: "/work/sas" },
+  { title: "SAS", category: "Work", to: "/work/sas", note: "Enterprise analytics" },
   { title: "Books", category: "About", to: "/about/books" },
   { title: "Pt 4 — Claude", category: "Words", to: "/words/claude" },
 ];
@@ -41,6 +42,9 @@ function Row({ item }: { item: Item }) {
         {item.category}
       </span>
       <span className="text-base font-medium">{item.title}</span>
+      {item.note && (
+        <span className="text-sm opacity-70 font-normal">{item.note}</span>
+      )}
     </span>
   );
 
