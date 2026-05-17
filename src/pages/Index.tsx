@@ -218,7 +218,7 @@ export default function Index() {
             exit={{ opacity: 0, scale: 0.92 }}
             transition={{ duration: 0.15 }}
             style={{ top: cursor.y + 20, left: cursor.x + 20 }}
-            className="hidden sm:block fixed z-50 pointer-events-none w-56 h-56 object-cover rounded-lg border border-border/40 shadow-lg"
+            className="hidden sm:block fixed z-50 pointer-events-none w-56 h-auto rounded-lg border border-border/40 shadow-lg"
           />
         )}
       </AnimatePresence>
