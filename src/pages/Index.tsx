@@ -17,7 +17,7 @@ type Item = {
 
 const ITEMS: Item[] = [
   { title: "Monte Carlo", category: "Work", to: "/work/montecarlo", note: "Data and AI observability" },
-  { title: "Experience 👨‍💼", category: "About", to: "/about/experience" },
+  { title: "Experience", category: "About", to: "/about/experience", note: "👨‍💼" },
   { title: "Pt 4 → Claude", category: "Words", to: "/words/claude", note: "Think piece 901" },
   { title: "StudyDrop", category: "Side", href: "https://studydrop.app", note: "UX research, without the friction" },
   { title: "Sleeves", category: "Side", href: "https://sleeves.app", note: "Track albums, make lists, and follow friends" },
@@ -46,7 +46,7 @@ const CATEGORICAL_ORDER = [
   "SAS",
   "Sleeves",
   "StudyDrop",
-  "Experience 👨‍💼",
+  "Experience",
   "Records",
   "Books",
 ];
@@ -81,7 +81,16 @@ function RowInner({ item }: { item: Item }) {
 }
 
 export default function Index() {
-  const [sort, setSort] = useState<SortMode>("default");
+  const [sort, setSort] = useState<SortMode>(() => {
+    if (typeof window === "undefined") return "default";
+    const saved = sessionStorage.getItem("index-sort");
+    return saved === "alpha" || saved === "category" || saved === "default" ? saved : "default";
+  });
+
+  const handleSortChange = (v: SortMode) => {
+    setSort(v);
+    sessionStorage.setItem("index-sort", v);
+  };
 
   const items = useMemo(() => {
     if (sort === "alpha") {
@@ -119,7 +128,7 @@ export default function Index() {
         </header>
 
         <main>
-          <Tabs value={sort} onValueChange={(v) => setSort(v as SortMode)} className="mb-4">
+          <Tabs value={sort} onValueChange={(v) => handleSortChange(v as SortMode)} className="mb-4">
             <TooltipProvider delayDuration={250}>
               <TabsList className="h-9 rounded-lg bg-muted p-0.5">
                 {([
