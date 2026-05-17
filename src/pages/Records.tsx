@@ -99,7 +99,7 @@ export default function Records() {
       <div className="border border-border/40 rounded-lg overflow-hidden">
         <Table>
           <TableHeader>
-            <TableRow className="hover:bg-muted/50 border-b-border/40">
+            <TableRow className="hover:bg-muted/40 border-b-border/40">
               <TableHead>
                 <SortHeader field="artist">Artist</SortHeader>
               </TableHead>
@@ -124,7 +124,7 @@ export default function Records() {
                     key={record.id}
                     layout
                     transition={{ duration: 0.15 }}
-                    className="border-b transition-colors hover:bg-muted/50 data-[state=selected]:bg-muted"
+                    className="border-b border-border/40 transition-colors hover:bg-muted/40"
                   >
                     <TableCell className="text-muted-foreground">{record.artist}</TableCell>
                     <TableCell className="text-foreground">{record.album}</TableCell>
