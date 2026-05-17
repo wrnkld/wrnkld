@@ -77,7 +77,7 @@ export default function Tools() {
           So, can AI help do that? I'll get into that in <Link to="/designai/vibes" className="text-foreground hover:text-muted-foreground transition-colors">Pt 2</Link>.
         </p>
 
-        <hr className="border-border" />
+        <hr className="border-t border-border/40" />
         <div className="text-sm text-muted-foreground space-y-2">
           <p><sup>1</sup> Psychology major = no ragrets</p>
           <p><sup>2</sup> Shout out Josh Hart</p>
