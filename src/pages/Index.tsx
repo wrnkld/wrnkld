@@ -18,7 +18,7 @@ const ITEMS: Item[] = [
   { title: "Experience", category: "About", to: "/about/experience" },
   { title: "Pt 1 — Tools", category: "Words", to: "/words/tools" },
   { title: "Red Hat", category: "Work", to: "/work/redhat", note: "Open source enterprise software" },
-  { title: "Records", category: "About", to: "/about/records" },
+  { title: "Records", category: "About", to: "/about/records", note: "A relatively exhaustive list of records I like" },
   { title: "StudyDrop", category: "Side", href: "https://studydrop.app", note: "UX research, without the friction" },
   { title: "Pt 2 — Vibes", category: "Words", to: "/words/vibes" },
   { title: "SAS", category: "Work", to: "/work/sas", note: "Enterprise analytics" },
@@ -36,7 +36,7 @@ const CHIP: Record<Category, string> = {
 function Row({ item }: { item: Item }) {
   const inner = (
     <span
-      className={`chip ${CHIP[item.category]} inline-flex items-baseline gap-3 px-3 py-1.5 rounded-full`}
+      className={`chip ${CHIP[item.category]} inline-flex items-baseline gap-3 px-3 py-1.5 rounded-md`}
     >
       <span className="font-mono text-[10px] uppercase tracking-[0.14em] opacity-70 inline-block w-12 shrink-0">
         {item.category}
