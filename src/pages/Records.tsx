@@ -73,7 +73,7 @@ export default function Records() {
   );
 
   return (
-    <DetailLayout title="Records" subtitle="About" colorClass="card-plum">
+    <DetailLayout title="Records" subtitle="About">
       <p className="font-body text-base text-muted-foreground">
         A relatively exhaustive list of records I like. Updated often.
       </p>

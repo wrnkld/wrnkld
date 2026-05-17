@@ -77,7 +77,6 @@ export default function About() {
     <DetailLayout
       title="Experience"
       subtitle="About"
-      colorClass="card-mustard"
     >
 
       <div>

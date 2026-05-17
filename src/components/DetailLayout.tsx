@@ -6,8 +6,6 @@ interface DetailLayoutProps {
   title: string;
   subtitle?: string;
   children: ReactNode;
-  /** Legacy, ignored */
-  colorClass?: string;
 }
 
 function isMediaElement(child: React.ReactElement<{ className?: string }>): boolean {

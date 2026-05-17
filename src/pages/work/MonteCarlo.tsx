@@ -11,7 +11,7 @@ import mcdJob from "@/assets/montecarlo/mcd-job.png";
 
 export default function MonteCarlo() {
   return (
-    <DetailLayout title="Monte Carlo" subtitle="Work" colorClass="card-violet">
+    <DetailLayout title="Monte Carlo" subtitle="Work">
       <p className="font-body text-base text-muted-foreground leading-relaxed">
         Monte Carlo is the leading data and AI observability platform, helping data teams detect, resolve, and prevent data quality issues across the modern data stack.
       </p>

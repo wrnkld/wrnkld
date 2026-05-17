@@ -6,7 +6,7 @@ function FootnoteRef({ number }: { number: number }) {
 
 export default function Claude() {
   return (
-    <DetailLayout title="Pt 4 → Claude" subtitle="Words" colorClass="card-forest">
+    <DetailLayout title="Pt 4 → Claude" subtitle="Words">
       <article className="font-body text-base text-muted-foreground leading-relaxed space-y-6">
         <p>One more quick update on design and AI.</p>
 

@@ -15,7 +15,7 @@ import taniumEnforce from "@/assets/tanium/tanium-enforce.mp4";
 
 export default function Tanium() {
   return (
-    <DetailLayout title="Tanium" subtitle="Work" colorClass="card-coral">
+    <DetailLayout title="Tanium" subtitle="Work">
       <p className="font-body text-base text-muted-foreground leading-relaxed">
         Tanium is a large-scale endpoint security platform used by some of the world's biggest organizations to manage, secure, and respond across millions of devices in real time. I worked on the product during a period of rapid growth and sustained pressure.
       </p>
