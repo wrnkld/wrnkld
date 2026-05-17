@@ -103,7 +103,7 @@ export default function Index() {
         <main>
           <TooltipProvider delayDuration={150}>
             <Tabs value={sort} onValueChange={(v) => setSort(v as SortMode)} className="mb-4">
-              <TabsList className="h-9 p-1 bg-foreground/10">
+              <TabsList className="h-10 rounded-lg bg-foreground/15 p-1 shadow-inner ring-1 ring-foreground/20">
                 {([
                   { mode: "default" as const, Icon: Clock, label: "Chronological" },
                   { mode: "category" as const, Icon: LayoutGrid, label: "Categorical" },
@@ -114,7 +114,7 @@ export default function Index() {
                       <TabsTrigger
                         value={mode}
                         aria-label={label}
-                        className="px-3 h-7 text-foreground/60 data-[state=active]:text-foreground"
+                        className="h-8 w-10 rounded-md text-foreground/55 transition-colors hover:bg-foreground/10 hover:text-foreground data-[state=active]:bg-foreground data-[state=active]:text-background data-[state=active]:shadow-sm"
                       >
                         <Icon className="h-4 w-4" />
                       </TabsTrigger>
