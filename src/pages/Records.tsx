@@ -84,7 +84,7 @@ export default function Records() {
           placeholder={`Search ${records.length} records`}
           value={search}
           onChange={(e) => setSearch(e.target.value)}
-          className="pl-9 rounded-md"
+          className="pl-9 rounded-lg border-border/40"
         />
         {search && (
           <button
@@ -96,7 +96,7 @@ export default function Records() {
         )}
       </div>
 
-      <div className="border border-border rounded-md overflow-hidden">
+      <div className="border border-border/40 rounded-lg overflow-hidden">
         <Table>
           <TableHeader>
             <TableRow className="hover:bg-muted/50">
