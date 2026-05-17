@@ -24,7 +24,7 @@ const ITEMS: Item[] = [
   { title: "Sleeves", category: "Side", href: "https://sleeves.app", note: "Track albums, make lists, and follow friends", gif: "https://media.giphy.com/media/gj0CJcKVtmAoSq5v9d/giphy.gif" },
   { title: "Books", category: "About", to: "/about/books", note: "Recommended in yellow", gif: "https://media.giphy.com/media/TEEewgFfvMvvkSzw7w/giphy.gif" },
   { title: "Records", category: "About", to: "/about/records", note: "A relatively exhaustive list of records I like", gif: "https://media.giphy.com/media/KHEIcdVp8oSKo4zvmZ/giphy.gif" },
-  { title: "Pt 3 → Sleeves", category: "Words", to: "/words/sleeves", note: "I built an app", gif: "https://media.giphy.com/media/gj0CJcKVtmAoSq5v9d/giphy.gif" },
+  { title: "Pt 3 → Sleeves", category: "Words", to: "/words/sleeves", note: "I built an app", gif: "https://media.giphy.com/media/XB3WTIY5GhgcBosgE4/giphy.gif" },
   { title: "Pt 2 → Vibes", category: "Words", to: "/words/vibes", note: "Prompts v Boxes", gif: "https://media.giphy.com/media/S9WCr3cTm6qHq6LmRi/giphy.gif" },
   { title: "Pt 1 → Tools", category: "Words", to: "/words/tools", note: "TMI", gif: "https://media.giphy.com/media/MCXp9DOVi5xKQhicLs/giphy.gif" },
   { title: "Tanium", category: "Work", to: "/work/tanium", note: "Endpoint security at scale", gif: "https://media.giphy.com/media/YPQ7McRYvkGrnPPg2x/giphy.gif" },
