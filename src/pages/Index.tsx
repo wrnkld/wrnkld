@@ -25,7 +25,7 @@ const SECTIONS: Section[] = [
   {
     name: "Side projects",
     items: [
-      { title: "Sleeves",   href: "https://sleeves.app",   note: "Track albums, make lists" },
+      { title: "Sleeves",   href: "https://sleeves.app",   note: "Track albums, make lists, and follow friends." },
       { title: "StudyDrop", href: "https://studydrop.app", note: "UX research, without the friction" },
     ],
   },
