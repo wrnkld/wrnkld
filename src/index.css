@@ -7,8 +7,8 @@
 
 @layer base {
   :root {
-    --background: 0 0% 98%;
-    --foreground: 0 0% 10%;
+    --background: 215 45% 28%;
+    --foreground: 40 30% 94%;
 
     --card: 0 0% 100%;
     --card-foreground: 0 0% 10%;
@@ -22,8 +22,15 @@
     --secondary: 0 0% 96%;
     --secondary-foreground: 0 0% 10%;
 
-    --muted: 0 0% 96%;
-    --muted-foreground: 0 0% 45%;
+    --muted: 215 40% 34%;
+    --muted-foreground: 215 25% 75%;
+
+    /* Category accent backgrounds */
+    --chip-work: 95 55% 70%;
+    --chip-about: 48 90% 68%;
+    --chip-side: 280 55% 75%;
+    --chip-designai: 335 75% 80%;
+    --chip-ink: 215 60% 14%;
 
     --accent: 0 0% 96%;
     --accent-foreground: 0 0% 10%;

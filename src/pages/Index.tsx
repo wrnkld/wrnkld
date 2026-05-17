@@ -1,43 +1,69 @@
 import { Link } from "react-router-dom";
 
-type Item = { title: string; to?: string; href?: string; note?: string };
-type Section = { name: string; items: Item[] };
+type Category = "Work" | "Design & AI" | "Side" | "About";
 
-const SECTIONS: Section[] = [
-  {
-    name: "Work",
-    items: [
-      { title: "Monte Carlo", to: "/work/montecarlo", note: "Data and AI observability" },
-      { title: "Tanium",      to: "/work/tanium",     note: "Endpoint security at scale" },
-      { title: "Red Hat",     to: "/work/redhat",     note: "Open source enterprise software" },
-      { title: "SAS",         to: "/work/sas",        note: "Enterprise analytics" },
-    ],
-  },
-  {
-    name: "Design & AI",
-    items: [
-      { title: "Pt 1 — Tools",   to: "/designai/tools" },
-      { title: "Pt 2 — Vibes",   to: "/designai/vibes" },
-      { title: "Pt 3 — Sleeves", to: "/designai/sleeves" },
-      { title: "Pt 4 — Claude",  to: "/designai/claude" },
-    ],
-  },
-  {
-    name: "Side projects",
-    items: [
-      { title: "Sleeves",   href: "https://sleeves.app",   note: "Track albums, make lists, and follow friends." },
-      { title: "StudyDrop", href: "https://studydrop.app", note: "UX research, without the friction" },
-    ],
-  },
-  {
-    name: "About",
-    items: [
-      { title: "Experience", to: "/about/experience" },
-      { title: "Books",      to: "/about/books" },
-      { title: "Records",    to: "/about/records" },
-    ],
-  },
+type Item = {
+  title: string;
+  category: Category;
+  to?: string;
+  href?: string;
+  note?: string;
+};
+
+const ITEMS: Item[] = [
+  { title: "Monte Carlo", category: "Work", to: "/work/montecarlo", note: "Data and AI observability" },
+  { title: "Pt 3 — Sleeves", category: "Design & AI", to: "/designai/sleeves" },
+  { title: "Sleeves", category: "Side", href: "https://sleeves.app", note: "Track albums, make lists, and follow friends." },
+  { title: "Tanium", category: "Work", to: "/work/tanium", note: "Endpoint security at scale" },
+  { title: "Experience", category: "About", to: "/about/experience" },
+  { title: "Pt 1 — Tools", category: "Design & AI", to: "/designai/tools" },
+  { title: "Red Hat", category: "Work", to: "/work/redhat", note: "Open source enterprise software" },
+  { title: "Records", category: "About", to: "/about/records" },
+  { title: "StudyDrop", category: "Side", href: "https://studydrop.app", note: "UX research, without the friction" },
+  { title: "Pt 2 — Vibes", category: "Design & AI", to: "/designai/vibes" },
+  { title: "SAS", category: "Work", to: "/work/sas", note: "Enterprise analytics" },
+  { title: "Books", category: "About", to: "/about/books" },
+  { title: "Pt 4 — Claude", category: "Design & AI", to: "/designai/claude" },
 ];
+
+const CHIP: Record<Category, string> = {
+  "Work": "bg-[hsl(var(--chip-work))]",
+  "About": "bg-[hsl(var(--chip-about))]",
+  "Side": "bg-[hsl(var(--chip-side))]",
+  "Design & AI": "bg-[hsl(var(--chip-designai))]",
+};
+
+function Row({ item }: { item: Item }) {
+  const inner = (
+    <span
+      className={`${CHIP[item.category]} text-[hsl(var(--chip-ink))] inline-flex items-baseline gap-3 px-2.5 py-1 rounded-sm transition-all duration-300 ease-out group-hover:px-4 group-hover:tracking-[0.01em]`}
+    >
+      <span className="font-mono text-[10px] uppercase tracking-[0.14em] opacity-70">
+        {item.category}
+      </span>
+      <span className="text-base font-medium">{item.title}</span>
+    </span>
+  );
+
+  return (
+    <li className="flex items-baseline justify-between gap-6 group">
+      {item.to ? (
+        <Link to={item.to}>{inner}</Link>
+      ) : item.href ? (
+        <a href={item.href} target="_blank" rel="noopener noreferrer">
+          {inner}
+        </a>
+      ) : (
+        inner
+      )}
+      {item.note && (
+        <span className="text-sm text-muted-foreground text-right shrink-0 max-w-[55%]">
+          {item.note}
+        </span>
+      )}
+    </li>
+  );
+}
 
 export default function Index() {
   return (
@@ -55,40 +81,12 @@ export default function Index() {
           </p>
         </header>
 
-        <main className="space-y-12">
-          {SECTIONS.map((section) => (
-            <section key={section.name}>
-              <h2 className="text-sm text-muted-foreground mb-3">{section.name}</h2>
-              <ul className="space-y-2">
-                {section.items.map((item) => (
-                  <li key={item.title} className="flex items-baseline justify-between gap-4">
-                    {item.to ? (
-                      <Link
-                        to={item.to}
-                        className="text-foreground hover:text-muted-foreground transition-colors"
-                      >
-                        {item.title}
-                      </Link>
-                    ) : item.href ? (
-                      <a
-                        href={item.href}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-foreground hover:text-muted-foreground transition-colors"
-                      >
-                        {item.title}
-                      </a>
-                    ) : (
-                      <span className="text-muted-foreground">{item.title}</span>
-                    )}
-                    {item.note && (
-                      <span className="text-sm text-muted-foreground text-right">{item.note}</span>
-                    )}
-                  </li>
-                ))}
-              </ul>
-            </section>
-          ))}
+        <main>
+          <ul className="space-y-3">
+            {ITEMS.map((item) => (
+              <Row key={item.title} item={item} />
+            ))}
+          </ul>
         </main>
       </div>
     </div>
