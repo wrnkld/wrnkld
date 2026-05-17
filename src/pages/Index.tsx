@@ -36,7 +36,7 @@ const CHIP: Record<Category, string> = {
 function Row({ item }: { item: Item }) {
   const inner = (
     <span
-      className={`chip ${CHIP[item.category]} inline-flex items-baseline gap-3 px-3 py-1.5 rounded-xl`}
+      className={`chip ${CHIP[item.category]} inline-flex items-baseline gap-3 px-3 py-1.5 rounded-lg`}
     >
       <span className="font-mono text-[10px] uppercase tracking-[0.14em] opacity-70 inline-block w-12 shrink-0">
         {item.category}
