@@ -48,13 +48,14 @@ export default function Claude() {
           lot smaller, or disappears into a different job entirely.
         </p>
 
+        <p>Sorry if this is, in fact, a think piece.</p>
+
+        <h2 className="font-display text-lg font-medium text-foreground">End</h2>
+
         <p>
-          But the job has always been changing. The tools were never the point.
-          And right now, for the first time in a while, I'm closer to the actual
+          But the job evolves. The tools change. I'm closer to the actual
           product than I've ever been. I like it. For now.
         </p>
-
-        <p>Sorry if this is, in fact, a think piece.</p>
 
         <hr className="border-t border-border/40" />
         <div className="text-sm text-muted-foreground space-y-2">
