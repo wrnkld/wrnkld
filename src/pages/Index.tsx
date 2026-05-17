@@ -106,7 +106,7 @@ export default function Index() {
               type="single"
               value={sort}
               onValueChange={(v) => v && setSort(v as SortMode)}
-              className="mb-3 justify-start gap-0.5 rounded-lg bg-foreground/5 p-1 w-fit"
+              className="mb-3 justify-start gap-1 w-fit"
             >
               {([
                 { mode: "default" as const, Icon: Clock, label: "Chronological" },
@@ -118,7 +118,7 @@ export default function Index() {
                     <ToggleGroupItem
                       value={mode}
                       aria-label={label}
-                      className="h-7 w-7 rounded-md text-muted-foreground hover:bg-foreground/5 hover:text-foreground data-[state=on]:bg-background data-[state=on]:text-foreground data-[state=on]:shadow-sm"
+                      className="h-8 w-8 rounded-full text-muted-foreground hover:text-foreground data-[state=on]:bg-foreground/10 data-[state=on]:text-foreground"
                     >
                       <Icon className="h-4 w-4" />
                     </ToggleGroupItem>
