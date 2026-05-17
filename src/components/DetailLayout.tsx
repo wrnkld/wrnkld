@@ -33,19 +33,21 @@ export function DetailLayout({ title, subtitle, children }: DetailLayoutProps) {
           {subtitle && (
             <Link
               to="/"
-              className="group relative inline-block text-base text-muted-foreground hover:text-foreground transition-colors mb-3 overflow-hidden align-baseline"
+              className="group inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors mb-3 align-baseline"
               aria-label="Back to home"
             >
-              {/* sizer — preserves width of the wider label */}
-              <span className="invisible block whitespace-nowrap">
-                {subtitle.length >= 4 ? subtitle : "Back"}
-              </span>
-              <span className="absolute inset-0 flex items-center transition-all duration-300 ease-out group-hover:-translate-y-full group-hover:opacity-0">
-                {subtitle}
-              </span>
-              <span className="absolute inset-0 flex items-center gap-2 translate-y-full opacity-0 transition-all duration-300 ease-out group-hover:translate-y-0 group-hover:opacity-100">
-                <ArrowLeft className="w-5 h-5" />
-                Back
+              <ArrowLeft className="w-4 h-4" />
+              <span className="relative inline-block overflow-hidden">
+                {/* sizer — preserves width of the wider label */}
+                <span className="invisible block whitespace-nowrap">
+                  {subtitle.length >= 4 ? subtitle : "Back"}
+                </span>
+                <span className="absolute inset-0 flex items-center transition-all duration-300 ease-out group-hover:-translate-y-full group-hover:opacity-0">
+                  {subtitle}
+                </span>
+                <span className="absolute inset-0 flex items-center translate-y-full opacity-0 transition-all duration-300 ease-out group-hover:translate-y-0 group-hover:opacity-100">
+                  Back
+                </span>
               </span>
             </Link>
           )}
