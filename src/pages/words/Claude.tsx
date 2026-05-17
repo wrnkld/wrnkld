@@ -48,12 +48,12 @@ export default function Claude() {
           lot smaller, or disappears into a different job entirely.
         </p>
 
-        <p>Sorry if this is, in fact, a think piece.</p>
-
         <p>
           But the job evolves. The tools change. I'm closer to the actual
           product than I've ever been. I like it. For now.
         </p>
+
+        <p>Sorry if this is, in fact, a think piece.</p>
 
         <hr className="border-t border-border/40" />
         <div className="text-sm text-muted-foreground space-y-2">
