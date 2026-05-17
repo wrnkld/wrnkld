@@ -91,9 +91,9 @@ export default function Index() {
       return [...ITEMS].sort((a, b) => {
         const ai = CATEGORICAL_ORDER.indexOf(a.title);
         const bi = CATEGORICAL_ORDER.indexOf(b.title);
-        // Words: keep authored order, always last
+        // Words: sort by title (Pt 1 → Pt 4), always last
         if (ai === -1 && bi === -1) {
-          return ITEMS.indexOf(a) - ITEMS.indexOf(b);
+          return a.title.localeCompare(b.title);
         }
         if (ai === -1) return 1;
         if (bi === -1) return -1;
