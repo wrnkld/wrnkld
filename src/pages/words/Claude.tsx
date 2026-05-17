@@ -56,7 +56,7 @@ export default function Claude() {
 
         <p>Sorry if this is, in fact, a think piece.</p>
 
-        <hr className="border-border" />
+        <hr className="border-t border-border/40" />
         <div className="text-sm text-muted-foreground space-y-2">
           <p><sup>1</sup> I'm no longer using Cursor, by the way. Found an IDE called Zed that I really like.</p>
         </div>

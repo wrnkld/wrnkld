@@ -61,7 +61,7 @@ export default function Vibes() {
           from scratch—on my own, mistakes and all (<Link to="/designai/sleeves" className="text-foreground hover:text-muted-foreground transition-colors">Pt 3</Link> soon).
         </p>
 
-        <hr className="border-border" />
+        <hr className="border-t border-border/40" />
         <div className="text-sm text-muted-foreground space-y-2">
           <p><sup>1</sup> Disclaimer: I have not yet dug deep on Figma Make or MCP</p>
           <p><sup>2</sup> 💸 credits</p>
