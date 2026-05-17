@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-type Category = "Work" | "Design & AI" | "Side" | "About";
+type Category = "Work" | "Words" | "Side" | "About";
 
 type Item = {
   title: string;
@@ -11,25 +11,25 @@ type Item = {
 
 const ITEMS: Item[] = [
   { title: "Monte Carlo", category: "Work", to: "/work/montecarlo" },
-  { title: "Pt 3 — Sleeves", category: "Design & AI", to: "/designai/sleeves" },
+  { title: "Pt 3 — Sleeves", category: "Words", to: "/words/sleeves" },
   { title: "Sleeves", category: "Side", href: "https://sleeves.app" },
   { title: "Tanium", category: "Work", to: "/work/tanium" },
   { title: "Experience", category: "About", to: "/about/experience" },
-  { title: "Pt 1 — Tools", category: "Design & AI", to: "/designai/tools" },
+  { title: "Pt 1 — Tools", category: "Words", to: "/words/tools" },
   { title: "Red Hat", category: "Work", to: "/work/redhat" },
   { title: "Records", category: "About", to: "/about/records" },
   { title: "StudyDrop", category: "Side", href: "https://studydrop.app" },
-  { title: "Pt 2 — Vibes", category: "Design & AI", to: "/designai/vibes" },
+  { title: "Pt 2 — Vibes", category: "Words", to: "/words/vibes" },
   { title: "SAS", category: "Work", to: "/work/sas" },
   { title: "Books", category: "About", to: "/about/books" },
-  { title: "Pt 4 — Claude", category: "Design & AI", to: "/designai/claude" },
+  { title: "Pt 4 — Claude", category: "Words", to: "/words/claude" },
 ];
 
 const CHIP: Record<Category, string> = {
   "Work": "chip-work",
   "About": "chip-about",
   "Side": "chip-side",
-  "Design & AI": "chip-designai",
+  "Words": "chip-designai",
 };
 
 function Row({ item }: { item: Item }) {
