@@ -108,20 +108,28 @@ export default function Index() {
                   { mode: "default" as const, Icon: Clock, label: "Chronological" },
                   { mode: "category" as const, Icon: LayoutGrid, label: "Categorical" },
                   { mode: "alpha" as const, Icon: ArrowDownAZ, label: "Alphabetical" },
-                ]).map(({ mode, Icon, label }) => (
+                ]).map(({ mode, Icon, label }) => {
+                  const isSelected = sort === mode;
+
+                  return (
                   <Tooltip key={mode}>
                     <TooltipTrigger asChild>
                       <TabsTrigger
                         value={mode}
                         aria-label={label}
-                        className="h-8 w-10 rounded-md text-foreground/55 transition-colors hover:bg-foreground/10 hover:text-foreground data-[state=active]:bg-foreground data-[state=active]:text-background data-[state=active]:shadow-sm"
+                        className={`h-8 w-10 rounded-md transition-colors hover:bg-foreground/10 hover:text-foreground ${
+                          isSelected
+                            ? "bg-foreground text-background shadow-sm"
+                            : "text-foreground/55"
+                        }`}
                       >
                         <Icon className="h-4 w-4" />
                       </TabsTrigger>
                     </TooltipTrigger>
                     <TooltipContent>{label}</TooltipContent>
                   </Tooltip>
-                ))}
+                  );
+                })}
               </TabsList>
             </Tabs>
           </TooltipProvider>
