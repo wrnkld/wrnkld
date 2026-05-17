@@ -43,7 +43,7 @@ function Row({ item }: { item: Item }) {
       </span>
       <span className="text-base font-medium">{item.title}</span>
       {item.note && (
-        <span className="text-sm opacity-70 font-normal">{item.note}</span>
+        <span className="hidden sm:inline text-sm opacity-70 font-normal">{item.note}</span>
       )}
     </span>
   );
