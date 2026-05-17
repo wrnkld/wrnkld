@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
-import { useState, useMemo } from "react";
-import { motion } from "motion/react";
+import { useState, useMemo, useRef } from "react";
+import { motion, AnimatePresence } from "motion/react";
 import { ArrowDownAZ, LayoutGrid, Clock } from "lucide-react";
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
@@ -13,22 +13,23 @@ type Item = {
   to?: string;
   href?: string;
   note?: string;
+  gif?: string;
 };
 
 const ITEMS: Item[] = [
-  { title: "Monte Carlo", category: "Work", to: "/work/montecarlo", note: "Data and AI observability" },
-  { title: "Experience", category: "About", to: "/about/experience", note: "👨‍💼" },
-  { title: "Pt 4 → Claude", category: "Words", to: "/words/claude", note: "Think piece 901" },
-  { title: "StudyDrop", category: "Side", href: "https://studydrop.app", note: "UX research, without the friction" },
-  { title: "Sleeves", category: "Side", href: "https://sleeves.app", note: "Track albums, make lists, and follow friends" },
-  { title: "Books", category: "About", to: "/about/books", note: "Recommended in yellow" },
-  { title: "Records", category: "About", to: "/about/records", note: "A relatively exhaustive list of records I like" },
-  { title: "Pt 3 → Sleeves", category: "Words", to: "/words/sleeves", note: "I built an app" },
-  { title: "Pt 2 → Vibes", category: "Words", to: "/words/vibes", note: "Prompts v Boxes" },
-  { title: "Pt 1 → Tools", category: "Words", to: "/words/tools", note: "TMI" },
-  { title: "Tanium", category: "Work", to: "/work/tanium", note: "Endpoint security at scale" },
-  { title: "Red Hat", category: "Work", to: "/work/redhat", note: "Open source enterprise software" },
-  { title: "SAS", category: "Work", to: "/work/sas", note: "Enterprise analytics" },
+  { title: "Monte Carlo", category: "Work", to: "/work/montecarlo", note: "Data and AI observability", gif: "" },
+  { title: "Experience", category: "About", to: "/about/experience", note: "👨‍💼", gif: "" },
+  { title: "Pt 4 → Claude", category: "Words", to: "/words/claude", note: "Think piece 901", gif: "" },
+  { title: "StudyDrop", category: "Side", href: "https://studydrop.app", note: "UX research, without the friction", gif: "" },
+  { title: "Sleeves", category: "Side", href: "https://sleeves.app", note: "Track albums, make lists, and follow friends", gif: "" },
+  { title: "Books", category: "About", to: "/about/books", note: "Recommended in yellow", gif: "" },
+  { title: "Records", category: "About", to: "/about/records", note: "A relatively exhaustive list of records I like", gif: "" },
+  { title: "Pt 3 → Sleeves", category: "Words", to: "/words/sleeves", note: "I built an app", gif: "" },
+  { title: "Pt 2 → Vibes", category: "Words", to: "/words/vibes", note: "Prompts v Boxes", gif: "" },
+  { title: "Pt 1 → Tools", category: "Words", to: "/words/tools", note: "TMI", gif: "" },
+  { title: "Tanium", category: "Work", to: "/work/tanium", note: "Endpoint security at scale", gif: "" },
+  { title: "Red Hat", category: "Work", to: "/work/redhat", note: "Open source enterprise software", gif: "" },
+  { title: "SAS", category: "Work", to: "/work/sas", note: "Enterprise analytics", gif: "" },
 ];
 
 const CHIP: Record<Category, string> = {
@@ -52,7 +53,15 @@ const CATEGORICAL_ORDER = [
 ];
 type SortMode = "default" | "alpha" | "category";
 
-function RowInner({ item }: { item: Item }) {
+function RowInner({
+  item,
+  onHover,
+  onLeave,
+}: {
+  item: Item;
+  onHover: (item: Item) => void;
+  onLeave: () => void;
+}) {
   const inner = (
     <span
       className={`chip ${CHIP[item.category]} inline-flex items-baseline gap-2 px-3 py-1.5 rounded-lg`}
@@ -68,11 +77,27 @@ function RowInner({ item }: { item: Item }) {
   );
 
   if (item.to) {
-    return <Link to={item.to} className="group inline-block">{inner}</Link>;
+    return (
+      <Link
+        to={item.to}
+        className="group inline-block"
+        onMouseEnter={() => onHover(item)}
+        onMouseLeave={onLeave}
+      >
+        {inner}
+      </Link>
+    );
   }
   if (item.href) {
     return (
-      <a href={item.href} target="_blank" rel="noopener noreferrer" className="group inline-block">
+      <a
+        href={item.href}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="group inline-block"
+        onMouseEnter={() => onHover(item)}
+        onMouseLeave={onLeave}
+      >
         {inner}
       </a>
     );
@@ -112,8 +137,19 @@ export default function Index() {
     return ITEMS;
   }, [sort]);
 
+  const [hovered, setHovered] = useState<Item | null>(null);
+  const [cursor, setCursor] = useState({ x: 0, y: 0 });
+  const rafRef = useRef<number | null>(null);
+
+  const handleMouseMove = (e: React.MouseEvent) => {
+    const x = e.clientX;
+    const y = e.clientY;
+    if (rafRef.current) cancelAnimationFrame(rafRef.current);
+    rafRef.current = requestAnimationFrame(() => setCursor({ x, y }));
+  };
+
   return (
-    <div className="min-h-screen bg-background text-foreground">
+    <div className="min-h-screen bg-background text-foreground" onMouseMove={handleMouseMove}>
       <div className="max-w-4xl mx-auto px-6 py-16 md:py-24">
         <header className="mb-16">
           <h1 className="text-2xl font-medium">Matthew Stevens</h1>
@@ -159,12 +195,33 @@ export default function Index() {
                 layout
                 transition={{ type: "spring", stiffness: 400, damping: 32 }}
               >
-                <RowInner item={item} />
+                <RowInner
+                  item={item}
+                  onHover={(it) => setHovered(it)}
+                  onLeave={() => setHovered(null)}
+                />
               </motion.li>
             ))}
           </ul>
         </main>
       </div>
+
+      {/* Cursor-following gif preview — desktop hover only */}
+      <AnimatePresence>
+        {hovered?.gif && (
+          <motion.img
+            key={hovered.title}
+            src={hovered.gif}
+            alt=""
+            initial={{ opacity: 0, scale: 0.92 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0, scale: 0.92 }}
+            transition={{ duration: 0.15 }}
+            style={{ top: cursor.y + 20, left: cursor.x + 20 }}
+            className="hidden sm:block fixed z-50 pointer-events-none w-56 h-56 object-cover rounded-lg border border-border/40 shadow-lg"
+          />
+        )}
+      </AnimatePresence>
     </div>
   );
 }
