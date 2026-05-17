@@ -208,19 +208,31 @@ export default function Index() {
 
       {/* Cursor-following gif preview — desktop hover only */}
       <AnimatePresence>
-        {hovered?.gif && (
-          <motion.img
-            key={hovered.title}
-            src={hovered.gif}
-            alt=""
-            initial={{ opacity: 0, scale: 0.92 }}
-            animate={{ opacity: 1, scale: 1 }}
-            exit={{ opacity: 0, scale: 0.92 }}
-            transition={{ duration: 0.15 }}
-            style={{ top: cursor.y + 20, left: cursor.x + 20 }}
-            className="hidden sm:block fixed z-50 pointer-events-none w-56 h-auto rounded-lg border border-border/40 shadow-lg"
-          />
-        )}
+        {hovered?.gif && (() => {
+          const W = 384;
+          const margin = 16;
+          const vw = typeof window !== "undefined" ? window.innerWidth : 1024;
+          const vh = typeof window !== "undefined" ? window.innerHeight : 768;
+          const flipX = cursor.x + 20 + W + margin > vw;
+          const left = flipX ? Math.max(margin, cursor.x - 20 - W) : cursor.x + 20;
+          // Assume tall-ish gif; clamp top so it never goes below viewport
+          const estH = W; // square-ish fallback for clamping
+          let top = cursor.y + 20;
+          if (top + estH + margin > vh) top = Math.max(margin, vh - estH - margin);
+          return (
+            <motion.img
+              key={hovered.title}
+              src={hovered.gif}
+              alt=""
+              initial={{ opacity: 0, scale: 0.92 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 0.92 }}
+              transition={{ duration: 0.15 }}
+              style={{ top, left, width: W, maxHeight: vh - margin * 2 }}
+              className="hidden sm:block fixed z-50 pointer-events-none h-auto object-contain rounded-lg border border-border/40 shadow-lg"
+            />
+          );
+        })()}
       </AnimatePresence>
     </div>
   );
