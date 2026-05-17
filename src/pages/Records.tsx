@@ -11,7 +11,7 @@ import {
   TableRow,
 } from "@/components/ui/table";
 import { ArrowUpDown, Search, X } from "lucide-react";
-import { motion, AnimatePresence } from "motion/react";
+import { motion } from "motion/react";
 
 type SortField = "album" | "artist" | "year";
 type SortDirection = "asc" | "desc";
@@ -112,8 +112,7 @@ export default function Records() {
             </TableRow>
           </TableHeader>
           <TableBody>
-            <AnimatePresence>
-              {filteredAndSortedRecords.length === 0 ? (
+          {filteredAndSortedRecords.length === 0 ? (
                 <TableRow>
                   <TableCell colSpan={3} className="text-center text-muted-foreground py-8">
                     No results
@@ -133,7 +132,6 @@ export default function Records() {
                   </motion.tr>
                 ))
               )}
-            </AnimatePresence>
           </TableBody>
         </Table>
       </div>
