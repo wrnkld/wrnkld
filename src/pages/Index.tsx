@@ -80,7 +80,7 @@ function RowInner({
     return (
       <Link
         to={item.to}
-        className="group block"
+        className="group inline-block"
         onMouseEnter={() => onHover(item)}
         onMouseLeave={onLeave}
       >
@@ -94,7 +94,7 @@ function RowInner({
         href={item.href}
         target="_blank"
         rel="noopener noreferrer"
-        className="group block"
+        className="group inline-block"
         onMouseEnter={() => onHover(item)}
         onMouseLeave={onLeave}
       >
