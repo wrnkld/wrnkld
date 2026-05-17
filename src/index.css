@@ -118,5 +118,5 @@
   .chip-side     { background-color: hsl(var(--chip-side)); }
   .chip-designai { background-color: hsl(var(--chip-designai)); }
 
-  .group:hover .chip { filter: brightness(1.05); padding-left: 1rem; padding-right: 1rem; }
+  .group:hover .chip { padding-right: 2.25rem; }
 }
