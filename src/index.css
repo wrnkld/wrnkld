@@ -29,7 +29,7 @@
     --chip-work: 95 55% 70%;
     --chip-about: 48 90% 68%;
     --chip-side: 280 55% 75%;
-    --chip-designai: 335 75% 80%;
+    --chip-words: 335 75% 80%;
     --chip-ink: 215 60% 14%;
 
     --accent: 0 0% 96%;
@@ -118,7 +118,7 @@
   .chip-work     { background-color: hsl(var(--chip-work)); }
   .chip-about    { background-color: hsl(var(--chip-about)); }
   .chip-side     { background-color: hsl(var(--chip-side)); }
-  .chip-designai { background-color: hsl(var(--chip-designai)); }
+  .chip-words { background-color: hsl(var(--chip-words)); }
 
   .group:hover .chip { padding-right: 2.25rem; }
 }

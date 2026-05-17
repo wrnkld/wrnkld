@@ -35,7 +35,7 @@ const CHIP: Record<Category, string> = {
   "Work": "chip-work",
   "About": "chip-about",
   "Side": "chip-side",
-  "Words": "chip-designai",
+  "Words": "chip-words",
 };
 
 const CATEGORY_ORDER: Category[] = ["Work", "Side", "About", "Words"];
