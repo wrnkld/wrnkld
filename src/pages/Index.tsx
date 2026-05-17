@@ -1,4 +1,7 @@
 import { Link } from "react-router-dom";
+import { useState, useMemo } from "react";
+import { motion, LayoutGroup } from "motion/react";
+import { ArrowDownAZ, LayoutGrid, Clock } from "lucide-react";
 
 type Category = "Work" | "Words" | "Side" | "About";
 
@@ -33,6 +36,9 @@ const CHIP: Record<Category, string> = {
   "Words": "chip-designai",
 };
 
+const CATEGORY_ORDER: Category[] = ["Work", "Words", "Side", "About"];
+type SortMode = "default" | "alpha" | "category";
+
 function Row({ item }: { item: Item }) {
   const inner = (
     <span
@@ -64,6 +70,21 @@ function Row({ item }: { item: Item }) {
 }
 
 export default function Index() {
+  const [sort, setSort] = useState<SortMode>("default");
+
+  const items = useMemo(() => {
+    if (sort === "alpha") {
+      return [...ITEMS].sort((a, b) => a.title.localeCompare(b.title));
+    }
+    if (sort === "category") {
+      return [...ITEMS].sort((a, b) => {
+        const c = CATEGORY_ORDER.indexOf(a.category) - CATEGORY_ORDER.indexOf(b.category);
+        return c !== 0 ? c : a.title.localeCompare(b.title);
+      });
+    }
+    return ITEMS;
+  }, [sort]);
+
   return (
     <div className="min-h-screen bg-background text-foreground">
       <div className="max-w-4xl mx-auto px-6 py-16 md:py-24">
@@ -80,11 +101,38 @@ export default function Index() {
         </header>
 
         <main>
-          <ul className="space-y-3">
-            {ITEMS.map((item) => (
-              <Row key={item.title} item={item} />
+          <div className="mb-3 flex items-center gap-1 text-muted-foreground">
+            {([
+              { mode: "default" as const, Icon: Clock, label: "Chronological" },
+              { mode: "alpha" as const, Icon: ArrowDownAZ, label: "Alphabetical" },
+              { mode: "category" as const, Icon: LayoutGrid, label: "Categorical" },
+            ]).map(({ mode, Icon, label }) => (
+              <button
+                key={mode}
+                onClick={() => setSort(mode)}
+                aria-label={label}
+                title={label}
+                className={`p-1.5 rounded-md transition-colors duration-200 hover:text-foreground ${
+                  sort === mode ? "text-foreground" : ""
+                }`}
+              >
+                <Icon className="h-4 w-4" />
+              </button>
             ))}
-          </ul>
+          </div>
+          <LayoutGroup>
+            <ul className="space-y-3">
+              {items.map((item) => (
+                <motion.li
+                  key={item.title}
+                  layout
+                  transition={{ type: "spring", stiffness: 400, damping: 32 }}
+                >
+                  <RowInner item={item} />
+                </motion.li>
+              ))}
+            </ul>
+          </LayoutGroup>
         </main>
       </div>
     </div>
