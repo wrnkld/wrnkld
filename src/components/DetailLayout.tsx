@@ -21,14 +21,14 @@ export function DetailLayout({ title, subtitle, children }: DetailLayoutProps) {
   const processed = Children.map(children, (child) => {
     if (!isValidElement(child)) return child;
     if (isMediaElement(child)) {
-      return <div className="max-w-3xl mx-auto px-6">{child}</div>;
+      return <div className="max-w-6xl mx-auto px-6">{child}</div>;
     }
-    return <div className="max-w-2xl mx-auto px-6">{child}</div>;
+    return <div className="max-w-4xl mx-auto px-6">{child}</div>;
   });
 
   return (
     <div className="min-h-screen bg-background text-foreground">
-      <div className="max-w-2xl mx-auto px-6 pt-12 md:pt-16">
+      <div className="max-w-4xl mx-auto px-6 pt-12 md:pt-16">
         <Link
           to="/"
           className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors mb-10"
@@ -47,7 +47,7 @@ export function DetailLayout({ title, subtitle, children }: DetailLayoutProps) {
 
       <main className="pb-20 space-y-8 animate-fade-in">{processed}</main>
 
-      <footer className="max-w-2xl mx-auto px-6 pb-16">
+      <footer className="max-w-4xl mx-auto px-6 pb-16">
         <Link
           to="/"
           className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors"
