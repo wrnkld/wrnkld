@@ -18,7 +18,7 @@ export default function Claude() {
           what's happening for me.
         </p>
 
-        <p>I use Lovable, and I am deep in Claude Code.<FootnoteRef number={2} /></p>
+        <p>I use Lovable, and I am deep in Claude Code.<FootnoteRef number={1} /></p>
 
         <p>
           At my current job, I know our front-end repo (well enough to be dangerous)
@@ -38,7 +38,7 @@ export default function Claude() {
 
         <p>
           Which brings me to the part where I might be participating in my own
-          demise, and feeling very conflicted.<FootnoteRef number={1} />
+          demise, and feeling very conflicted.<FootnoteRef number={2} />
         </p>
 
         <p>
@@ -57,8 +57,8 @@ export default function Claude() {
 
         <hr className="border-t border-border/40" />
         <div className="text-sm text-muted-foreground space-y-2">
-          <p><sup>1</sup> I like to call AI agents "dummy."</p>
-          <p><sup>2</sup> I'm no longer using Cursor, by the way. Found an IDE called Zed that I really like.</p>
+          <p><sup>1</sup> I'm no longer using Cursor, by the way. Found an IDE called Zed that I really like.</p>
+          <p><sup>2</sup> I like to call AI agents "dummy."</p>
         </div>
       </article>
     </DetailLayout>
