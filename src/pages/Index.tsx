@@ -182,7 +182,7 @@ export default function Index() {
                         <Icon className="h-4 w-4" />
                       </TabsTrigger>
                     </TooltipTrigger>
-                    <TooltipContent side="top">{label}</TooltipContent>
+                    <TooltipContent side="top" className="hidden sm:block">{label}</TooltipContent>
                   </Tooltip>
                 ))}
               </TabsList>
