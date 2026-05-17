@@ -84,7 +84,7 @@ export default function Books() {
           placeholder={`Search ${books.length} books`}
           value={search}
           onChange={(e) => setSearch(e.target.value)}
-          className="pl-9 rounded-lg border-border/40"
+          className="pl-9 rounded-xl border-border/40"
         />
         {search && (
           <button
@@ -96,10 +96,10 @@ export default function Books() {
         )}
       </div>
 
-      <div className="border border-border/40 rounded-lg overflow-hidden">
+      <div className="border border-border/40 rounded-xl overflow-hidden">
         <Table>
           <TableHeader>
-            <TableRow className="hover:bg-muted/40">
+            <TableRow className="hover:bg-muted/40 border-b-border/40">
               <TableHead>
                 <SortHeader field="author">Author</SortHeader>
               </TableHead>
