@@ -49,11 +49,11 @@ function Row({ item }: { item: Item }) {
   );
 
   return (
-    <li className="group">
+    <li>
       {item.to ? (
-        <Link to={item.to}>{inner}</Link>
+        <Link to={item.to} className="group inline-block">{inner}</Link>
       ) : item.href ? (
-        <a href={item.href} target="_blank" rel="noopener noreferrer">
+        <a href={item.href} target="_blank" rel="noopener noreferrer" className="group inline-block">
           {inner}
         </a>
       ) : (
