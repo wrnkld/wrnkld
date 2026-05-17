@@ -2,6 +2,8 @@ import { Link } from "react-router-dom";
 import { useState, useMemo } from "react";
 import { motion, LayoutGroup } from "motion/react";
 import { ArrowDownAZ, LayoutGrid, Clock } from "lucide-react";
+import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group";
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 
 type Category = "Work" | "Words" | "Side" | "About";
 
@@ -36,7 +38,7 @@ const CHIP: Record<Category, string> = {
   "Words": "chip-designai",
 };
 
-const CATEGORY_ORDER: Category[] = ["Work", "Words", "Side", "About"];
+const CATEGORY_ORDER: Category[] = ["Work", "Side", "About", "Words"];
 type SortMode = "default" | "alpha" | "category";
 
 function RowInner({ item }: { item: Item }) {
@@ -99,25 +101,33 @@ export default function Index() {
         </header>
 
         <main>
-          <div className="mb-3 flex items-center gap-1 text-muted-foreground">
-            {([
-              { mode: "default" as const, Icon: Clock, label: "Chronological" },
-              { mode: "alpha" as const, Icon: ArrowDownAZ, label: "Alphabetical" },
-              { mode: "category" as const, Icon: LayoutGrid, label: "Categorical" },
-            ]).map(({ mode, Icon, label }) => (
-              <button
-                key={mode}
-                onClick={() => setSort(mode)}
-                aria-label={label}
-                title={label}
-                className={`p-1.5 rounded-md transition-colors duration-200 hover:text-foreground ${
-                  sort === mode ? "text-foreground" : ""
-                }`}
-              >
-                <Icon className="h-4 w-4" />
-              </button>
-            ))}
-          </div>
+          <TooltipProvider delayDuration={150}>
+            <ToggleGroup
+              type="single"
+              value={sort}
+              onValueChange={(v) => v && setSort(v as SortMode)}
+              className="mb-3 justify-start gap-0 rounded-lg border border-border/40 p-0.5 w-fit"
+            >
+              {([
+                { mode: "default" as const, Icon: Clock, label: "Chronological" },
+                { mode: "category" as const, Icon: LayoutGrid, label: "Categorical" },
+                { mode: "alpha" as const, Icon: ArrowDownAZ, label: "Alphabetical" },
+              ]).map(({ mode, Icon, label }) => (
+                <Tooltip key={mode}>
+                  <TooltipTrigger asChild>
+                    <ToggleGroupItem
+                      value={mode}
+                      aria-label={label}
+                      className="h-7 w-7 rounded-md text-muted-foreground data-[state=on]:bg-foreground/10 data-[state=on]:text-foreground"
+                    >
+                      <Icon className="h-4 w-4" />
+                    </ToggleGroupItem>
+                  </TooltipTrigger>
+                  <TooltipContent>{label}</TooltipContent>
+                </Tooltip>
+              ))}
+            </ToggleGroup>
+          </TooltipProvider>
           <LayoutGroup>
             <ul className="space-y-3">
               {items.map((item) => (
