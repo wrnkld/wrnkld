@@ -2,7 +2,7 @@ import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { ScrollToTop } from "./components/ScrollToTop";
 import { Analytics } from "@vercel/analytics/react";
 import Index from "./pages/Index";
@@ -39,10 +39,15 @@ const App = () => (
           <Route path="/work/redhat" element={<RedHat />} />
           <Route path="/about/books" element={<Books />} />
           <Route path="/about/records" element={<Records />} />
-          <Route path="/designai/tools" element={<Tools />} />
-          <Route path="/designai/vibes" element={<Vibes />} />
-          <Route path="/designai/sleeves" element={<Sleeves />} />
-          <Route path="/designai/claude" element={<Claude />} />
+          <Route path="/words/tools" element={<Tools />} />
+          <Route path="/words/vibes" element={<Vibes />} />
+          <Route path="/words/sleeves" element={<Sleeves />} />
+          <Route path="/words/claude" element={<Claude />} />
+          {/* Redirects from old /designai paths */}
+          <Route path="/designai/tools" element={<Navigate to="/words/tools" replace />} />
+          <Route path="/designai/vibes" element={<Navigate to="/words/vibes" replace />} />
+          <Route path="/designai/sleeves" element={<Navigate to="/words/sleeves" replace />} />
+          <Route path="/designai/claude" element={<Navigate to="/words/claude" replace />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
