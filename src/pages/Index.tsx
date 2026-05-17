@@ -15,7 +15,7 @@ const ITEMS: Item[] = [
   { title: "Pt 3 — Sleeves", category: "Words", to: "/words/sleeves", note: "I built an app" },
   { title: "Sleeves", category: "Side", href: "https://sleeves.app", note: "Track albums, make lists, and follow friends" },
   { title: "Tanium", category: "Work", to: "/work/tanium", note: "Endpoint security at scale" },
-  { title: "Experience 🕴️", category: "About", to: "/about/experience" },
+  { title: "Experience 👨‍💼", category: "About", to: "/about/experience" },
   { title: "Pt 1 — Tools", category: "Words", to: "/words/tools", note: "TMI" },
   { title: "Red Hat", category: "Work", to: "/work/redhat", note: "Open source enterprise software" },
   { title: "Records", category: "About", to: "/about/records", note: "A relatively exhaustive list of records I like" },
@@ -36,7 +36,7 @@ const CHIP: Record<Category, string> = {
 function Row({ item }: { item: Item }) {
   const inner = (
     <span
-      className={`chip ${CHIP[item.category]} inline-flex items-baseline gap-3 px-3 py-1.5 rounded-lg`}
+      className={`chip ${CHIP[item.category]} inline-flex items-baseline gap-2.5 px-3 py-1.5 rounded-lg`}
     >
       <span className="font-mono text-[10px] uppercase tracking-[0.14em] opacity-70 inline-block w-12 shrink-0">
         {item.category}
