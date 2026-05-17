@@ -39,7 +39,7 @@ const CHIP: Record<Category, string> = {
 const CATEGORY_ORDER: Category[] = ["Work", "Words", "Side", "About"];
 type SortMode = "default" | "alpha" | "category";
 
-function Row({ item }: { item: Item }) {
+function RowInner({ item }: { item: Item }) {
   const inner = (
     <span
       className={`chip ${CHIP[item.category]} inline-flex items-baseline gap-2 px-3 py-1.5 rounded-lg`}
@@ -54,19 +54,17 @@ function Row({ item }: { item: Item }) {
     </span>
   );
 
-  return (
-    <li>
-      {item.to ? (
-        <Link to={item.to} className="group inline-block">{inner}</Link>
-      ) : item.href ? (
-        <a href={item.href} target="_blank" rel="noopener noreferrer" className="group inline-block">
-          {inner}
-        </a>
-      ) : (
-        inner
-      )}
-    </li>
-  );
+  if (item.to) {
+    return <Link to={item.to} className="group inline-block">{inner}</Link>;
+  }
+  if (item.href) {
+    return (
+      <a href={item.href} target="_blank" rel="noopener noreferrer" className="group inline-block">
+        {inner}
+      </a>
+    );
+  }
+  return inner;
 }
 
 export default function Index() {
