@@ -39,6 +39,17 @@ const CHIP: Record<Category, string> = {
 };
 
 const CATEGORY_ORDER: Category[] = ["Work", "Side", "About", "Words"];
+const CATEGORICAL_ORDER = [
+  "Monte Carlo",
+  "Tanium",
+  "Red Hat",
+  "SAS",
+  "Sleeves",
+  "StudyDrop",
+  "Experience 👨‍💼",
+  "Records",
+  "Books",
+];
 type SortMode = "default" | "alpha" | "category";
 
 function RowInner({ item }: { item: Item }) {
@@ -78,8 +89,15 @@ export default function Index() {
     }
     if (sort === "category") {
       return [...ITEMS].sort((a, b) => {
-        const c = CATEGORY_ORDER.indexOf(a.category) - CATEGORY_ORDER.indexOf(b.category);
-        return c !== 0 ? c : a.title.localeCompare(b.title);
+        const ai = CATEGORICAL_ORDER.indexOf(a.title);
+        const bi = CATEGORICAL_ORDER.indexOf(b.title);
+        // Words: keep authored order, always last
+        if (ai === -1 && bi === -1) {
+          return ITEMS.indexOf(a) - ITEMS.indexOf(b);
+        }
+        if (ai === -1) return 1;
+        if (bi === -1) return -1;
+        return ai - bi;
       });
     }
     return ITEMS;
