@@ -7,7 +7,7 @@ function FootnoteRef({ number }: { number: number }) {
 
 export default function Vibes() {
   return (
-    <DetailLayout title="Pt 2 → Vibes" subtitle="Design & AI" colorClass="card-forest">
+    <DetailLayout title="Pt 2 → Vibes" subtitle="Words" colorClass="card-forest">
       <article className="font-body text-base text-muted-foreground leading-relaxed space-y-6">
         <p>
           <Link to="/designai/tools" className="text-foreground hover:text-muted-foreground transition-colors">Pt 1</Link> was probably too much information about my history with design 

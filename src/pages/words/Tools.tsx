@@ -7,7 +7,7 @@ function FootnoteRef({ number }: { number: number }) {
 
 export default function Tools() {
   return (
-    <DetailLayout title="Pt 1 → Tools" subtitle="Design & AI" colorClass="card-terracotta">
+    <DetailLayout title="Pt 1 → Tools" subtitle="Words" colorClass="card-terracotta">
       <article className="font-body text-base text-muted-foreground leading-relaxed space-y-6">
         <p>
           Every time I log into LinkedIn, a product designer is sharing how they took 

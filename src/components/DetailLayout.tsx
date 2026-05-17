@@ -29,17 +29,25 @@ export function DetailLayout({ title, subtitle, children }: DetailLayoutProps) {
   return (
     <div className="min-h-screen bg-background text-foreground">
       <div className="max-w-4xl mx-auto px-6 pt-12 md:pt-16">
-        <Link
-          to="/"
-          className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors mb-10"
-        >
-          <ArrowLeft className="w-4 h-4" />
-          <span>Back</span>
-        </Link>
-
-        <header className="mb-10">
+        <header className="mb-10 mt-2">
           {subtitle && (
-            <div className="text-sm text-muted-foreground mb-2">{subtitle}</div>
+            <Link
+              to="/"
+              className="group relative inline-block text-sm text-muted-foreground hover:text-foreground transition-colors mb-2 overflow-hidden align-baseline"
+              aria-label="Back to home"
+            >
+              {/* sizer — preserves width of the wider label */}
+              <span className="invisible block whitespace-nowrap">
+                {subtitle.length >= 4 ? subtitle : "Back"}
+              </span>
+              <span className="absolute inset-0 flex items-center transition-all duration-300 ease-out group-hover:-translate-y-full group-hover:opacity-0">
+                {subtitle}
+              </span>
+              <span className="absolute inset-0 flex items-center gap-1.5 translate-y-full opacity-0 transition-all duration-300 ease-out group-hover:translate-y-0 group-hover:opacity-100">
+                <ArrowLeft className="w-3.5 h-3.5" />
+                Back
+              </span>
+            </Link>
           )}
           <h1 className="text-2xl md:text-3xl font-medium">{title}</h1>
         </header>
