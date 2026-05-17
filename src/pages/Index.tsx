@@ -22,7 +22,7 @@ const ITEMS: Item[] = [
   { title: "StudyDrop", category: "Side", href: "https://studydrop.app", note: "UX research, without the friction" },
   { title: "Pt 2 — Vibes", category: "Words", to: "/words/vibes" },
   { title: "SAS", category: "Work", to: "/work/sas", note: "Enterprise analytics" },
-  { title: "Books", category: "About", to: "/about/books" },
+  { title: "Books", category: "About", to: "/about/books", note: "Recommended in yellow" },
   { title: "Pt 4 — Claude", category: "Words", to: "/words/claude" },
 ];
 
