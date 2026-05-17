@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { useState, useMemo } from "react";
-import { motion, LayoutGroup } from "motion/react";
+import { motion } from "motion/react";
 import { ArrowDownAZ, LayoutGrid, Clock } from "lucide-react";
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
@@ -143,19 +143,17 @@ export default function Index() {
               </TabsList>
             </TooltipProvider>
           </Tabs>
-          <LayoutGroup>
-            <ul className="space-y-3">
-              {items.map((item) => (
-                <motion.li
-                  key={item.title}
-                  layout
-                  transition={{ type: "spring", stiffness: 400, damping: 32 }}
-                >
-                  <RowInner item={item} />
-                </motion.li>
-              ))}
-            </ul>
-          </LayoutGroup>
+          <ul className="space-y-3">
+            {items.map((item) => (
+              <motion.li
+                key={item.title}
+                layout
+                transition={{ type: "spring", stiffness: 400, damping: 32 }}
+              >
+                <RowInner item={item} />
+              </motion.li>
+            ))}
+          </ul>
         </main>
       </div>
     </div>
