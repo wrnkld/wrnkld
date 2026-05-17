@@ -44,7 +44,7 @@ export function DetailLayout({ title, subtitle, children }: DetailLayoutProps) {
                 {subtitle}
               </span>
               <span className="absolute inset-0 flex items-center gap-1.5 translate-y-full opacity-0 transition-all duration-300 ease-out group-hover:translate-y-0 group-hover:opacity-100">
-                <ArrowLeft className="w-3.5 h-3.5" />
+                <ArrowLeft className="w-4 h-4" />
                 Back
               </span>
             </Link>
