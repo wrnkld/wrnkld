@@ -7,21 +7,20 @@ type Item = {
   category: Category;
   to?: string;
   href?: string;
-  note?: string;
 };
 
 const ITEMS: Item[] = [
-  { title: "Monte Carlo", category: "Work", to: "/work/montecarlo", note: "Data and AI observability" },
+  { title: "Monte Carlo", category: "Work", to: "/work/montecarlo" },
   { title: "Pt 3 — Sleeves", category: "Design & AI", to: "/designai/sleeves" },
-  { title: "Sleeves", category: "Side", href: "https://sleeves.app", note: "Track albums, make lists, and follow friends." },
-  { title: "Tanium", category: "Work", to: "/work/tanium", note: "Endpoint security at scale" },
+  { title: "Sleeves", category: "Side", href: "https://sleeves.app" },
+  { title: "Tanium", category: "Work", to: "/work/tanium" },
   { title: "Experience", category: "About", to: "/about/experience" },
   { title: "Pt 1 — Tools", category: "Design & AI", to: "/designai/tools" },
-  { title: "Red Hat", category: "Work", to: "/work/redhat", note: "Open source enterprise software" },
+  { title: "Red Hat", category: "Work", to: "/work/redhat" },
   { title: "Records", category: "About", to: "/about/records" },
-  { title: "StudyDrop", category: "Side", href: "https://studydrop.app", note: "UX research, without the friction" },
+  { title: "StudyDrop", category: "Side", href: "https://studydrop.app" },
   { title: "Pt 2 — Vibes", category: "Design & AI", to: "/designai/vibes" },
-  { title: "SAS", category: "Work", to: "/work/sas", note: "Enterprise analytics" },
+  { title: "SAS", category: "Work", to: "/work/sas" },
   { title: "Books", category: "About", to: "/about/books" },
   { title: "Pt 4 — Claude", category: "Design & AI", to: "/designai/claude" },
 ];
@@ -46,7 +45,7 @@ function Row({ item }: { item: Item }) {
   );
 
   return (
-    <li className="flex items-baseline justify-between gap-6 group">
+    <li className="group">
       {item.to ? (
         <Link to={item.to}>{inner}</Link>
       ) : item.href ? (
@@ -55,11 +54,6 @@ function Row({ item }: { item: Item }) {
         </a>
       ) : (
         inner
-      )}
-      {item.note && (
-        <span className="text-sm text-muted-foreground text-right shrink-0 max-w-[55%]">
-          {item.note}
-        </span>
       )}
     </li>
   );
