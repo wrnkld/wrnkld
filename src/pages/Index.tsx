@@ -27,16 +27,16 @@ const ITEMS: Item[] = [
 ];
 
 const CHIP: Record<Category, string> = {
-  "Work": "bg-[hsl(var(--chip-work))]",
-  "About": "bg-[hsl(var(--chip-about))]",
-  "Side": "bg-[hsl(var(--chip-side))]",
-  "Design & AI": "bg-[hsl(var(--chip-designai))]",
+  "Work": "chip-work",
+  "About": "chip-about",
+  "Side": "chip-side",
+  "Design & AI": "chip-designai",
 };
 
 function Row({ item }: { item: Item }) {
   const inner = (
     <span
-      className={`${CHIP[item.category]} text-[hsl(var(--chip-ink))] inline-flex items-baseline gap-3 px-2.5 py-1 rounded-sm transition-all duration-300 ease-out group-hover:px-4 group-hover:tracking-[0.01em]`}
+      className={`chip ${CHIP[item.category]} inline-flex items-baseline gap-3 px-2.5 py-1 rounded-sm`}
     >
       <span className="font-mono text-[10px] uppercase tracking-[0.14em] opacity-70">
         {item.category}
