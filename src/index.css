@@ -26,8 +26,8 @@
     --chip-words: 271 100% 82%;
     --chip-ink: 226 100% 17%;
 
-    --border: 0 0% 90%;
-    --input: 0 0% 90%;
+    --border: 226 30% 82%;
+    --input: 226 30% 82%;
     --ring: 0 0% 10%;
 
     --radius: 0.25rem;
@@ -65,7 +65,7 @@
   .font-body    { font-family: var(--font-body); }
   .font-mono    { font-family: var(--font-mono); }
 
-  .text-recommended { color: hsl(48 90% 68%); }
+    .text-recommended { color: hsl(330 75% 45%); }
 
   @keyframes fade-in-up {
     from { opacity: 0; transform: translateY(4px); }
