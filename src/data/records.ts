@@ -5029,4 +5029,10 @@ export const records: Record[] = [
     artist: "Steve Gunn",
     album: "Shape of a Wave - EP",
   },
+  {
+    id: 841,
+    year: 2025,
+    artist: "Emptyset",
+    album: "Dissever",
+  },
 ];
