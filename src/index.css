@@ -7,8 +7,8 @@
 
 @layer base {
   :root {
-    --background: 215 45% 28%;
-    --foreground: 40 30% 94%;
+    --background: 39 89% 95%;
+    --foreground: 226 100% 17%;
 
     --popover: 0 0% 100%;
     --popover-foreground: 0 0% 10%;
@@ -16,15 +16,15 @@
     --primary: 0 0% 10%;
     --primary-foreground: 0 0% 98%;
 
-    --muted: 215 40% 34%;
-    --muted-foreground: 215 25% 75%;
+    --muted: 39 50% 88%;
+    --muted-foreground: 226 30% 40%;
 
     /* Category accent backgrounds */
-    --chip-work: 95 55% 70%;
-    --chip-about: 48 90% 68%;
-    --chip-side: 280 55% 75%;
-    --chip-words: 335 75% 80%;
-    --chip-ink: 215 60% 14%;
+    --chip-work: 186 55% 71%;
+    --chip-about: 50 100% 51%;
+    --chip-side: 338 86% 74%;
+    --chip-words: 271 100% 82%;
+    --chip-ink: 226 100% 17%;
 
     --border: 0 0% 90%;
     --input: 0 0% 90%;
