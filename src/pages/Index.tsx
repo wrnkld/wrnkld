@@ -59,7 +59,7 @@ function RowInner({
   onLeave,
 }: {
   item: Item;
-  onHover: (item: Item) => void;
+  onHover: (item: Item, e: React.MouseEvent) => void;
   onLeave: () => void;
 }) {
   const inner = (
@@ -81,7 +81,7 @@ function RowInner({
       <Link
         to={item.to}
         className="group inline-block"
-        onMouseEnter={() => onHover(item)}
+        onMouseEnter={(e) => onHover(item, e)}
         onMouseLeave={onLeave}
       >
         {inner}
@@ -95,7 +95,7 @@ function RowInner({
         target="_blank"
         rel="noopener noreferrer"
         className="group inline-block"
-        onMouseEnter={() => onHover(item)}
+        onMouseEnter={(e) => onHover(item, e)}
         onMouseLeave={onLeave}
       >
         {inner}
@@ -197,7 +197,10 @@ export default function Index() {
               >
                 <RowInner
                   item={item}
-                  onHover={(it) => setHovered(it)}
+                  onHover={(it, e) => {
+                    setCursor({ x: e.clientX, y: e.clientY });
+                    setHovered(it);
+                  }}
                   onLeave={() => setHovered(null)}
                 />
               </motion.li>
