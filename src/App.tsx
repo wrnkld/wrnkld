@@ -4,14 +4,14 @@ import { ScrollToTop } from "./components/ScrollToTop";
 import { Analytics } from "@vercel/analytics/react";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
-import About from "./pages/About";
+import Experience from "./pages/about/Experience";
 
 import MonteCarlo from "./pages/work/MonteCarlo";
 import Tanium from "./pages/work/Tanium";
 import SAS from "./pages/work/SAS";
 import RedHat from "./pages/work/RedHat";
-import Books from "./pages/Books";
-import Records from "./pages/Records";
+import Books from "./pages/about/Books";
+import Records from "./pages/about/Records";
 import Tools from "./pages/words/Tools";
 import Vibes from "./pages/words/Vibes";
 import Sleeves from "./pages/words/Sleeves";
@@ -23,7 +23,7 @@ const App = () => (
       <ScrollToTop />
       <Routes>
         <Route path="/" element={<Index />} />
-        <Route path="/about/experience" element={<About />} />
+        <Route path="/about/experience" element={<Experience />} />
 
         <Route path="/work/montecarlo" element={<MonteCarlo />} />
         <Route path="/work/tanium" element={<Tanium />} />
