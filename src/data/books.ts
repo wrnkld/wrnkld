@@ -1230,7 +1230,7 @@ export const books: Book[] = [
     author: "Colson Whitehead",
     year: 2021,
     recommended: false,
-  {
+  },
     id: 180,
     title: "Players",
     author: "Don DeLillo",
