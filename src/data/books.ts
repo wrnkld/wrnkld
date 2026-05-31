@@ -11,7 +11,7 @@ export const books: Book[] = [
   },
   {
     id: 2,
-    title: "Sisters Brothers",
+    title: "The Sisters Brothers",
     author: "Patrick deWitt",
     year: 2011,
     recommended: true,
