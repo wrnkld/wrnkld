@@ -1523,7 +1523,7 @@ export const books: Book[] = [
     title: "Democracy",
     author: "Joan Didion",
     year: 1984,
-    recommended: true,
+    recommended: false,
   },
   {
     id: 228,
@@ -2097,14 +2097,14 @@ export const books: Book[] = [
     title: "Memorial",
     author: "Bryan Washington",
     year: 2020,
-    recommended: false,
+    recommended: true,
   },
   {
     id: 310,
     title: "Battleborn",
     author: "Claire Vaye Watkins",
     year: 2012,
-    recommended: false,
+    recommended: true,
   },
   {
     id: 311,
