@@ -1498,6 +1498,13 @@ export const books: Book[] = [
     recommended: false,
   },
   {
+    id: 312,
+    title: "Slouching Towards Bethlehem",
+    author: "Joan Didion",
+    year: 1968,
+    recommended: true,
+  },
+  {
     id: 224,
     title: "Play It As It Lays",
     author: "Joan Didion",
