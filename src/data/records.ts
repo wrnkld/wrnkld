@@ -5035,4 +5035,10 @@ export const records: Record[] = [
     artist: "Emptyset",
     album: "Dissever",
   },
+  {
+    id: 842,
+    year: 2026,
+    artist: "Work Money Death",
+    album: "A Portal to Here",
+  },
 ];
