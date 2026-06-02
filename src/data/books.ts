@@ -2120,4 +2120,11 @@ export const books: Book[] = [
     year: 1940,
     recommended: false,
   },
+  {
+    id: 313,
+    title: "White on White",
+    author: "Ayşegül Savaş",
+    year: 2021,
+    recommended: false,
+  },
 ];
