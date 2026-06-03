@@ -5041,4 +5041,10 @@ export const records: Record[] = [
     artist: "Work Money Death",
     album: "A Portal to Here",
   },
+  {
+    id: 843,
+    year: 2026,
+    artist: "Dagmar Zuniga",
+    album: "In Filth Your Mystery Is Kingdom / Far Smile Peasant In Yellow Music",
+  },
 ];
