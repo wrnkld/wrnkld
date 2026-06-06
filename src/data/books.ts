@@ -987,8 +987,8 @@ export const books: Book[] = [
   },
   {
     id: 151,
-    title: "On the Calculation of Volume, Book I",
-    author: "Balle Solvej",
+    title: "On the Calculation of Volume (Book I)",
+    author: "Solvej Balle",
     year: 2020,
     recommended: false,
   },
@@ -1023,7 +1023,7 @@ export const books: Book[] = [
   },
   {
     id: 156,
-    title: "On the Calculation of Volume, Book II",
+    title: "On the Calculation of Volume (Book II)",
     author: "Solvej Balle",
     year: 2020,
     recommended: false,
