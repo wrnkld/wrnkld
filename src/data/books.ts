@@ -2134,4 +2134,11 @@ export const books: Book[] = [
     year: 2025,
     recommended: false,
   },
+  {
+    id: 315,
+    title: "No Way Home",
+    author: "T.C. Boyle",
+    year: 2026,
+    recommended: false,
+  },
 ];
