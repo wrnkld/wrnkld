@@ -2141,4 +2141,11 @@ export const books: Book[] = [
     year: 2026,
     recommended: false,
   },
+  {
+    id: 316,
+    title: "Stoner",
+    author: "John Williams",
+    year: 1965,
+    recommended: true,
+  },
 ];
