@@ -2148,4 +2148,11 @@ export const books: Book[] = [
     year: 1965,
     recommended: true,
   },
+  {
+    id: 317,
+    title: "Walking on the Ceiling",
+    author: "Aysegül Savaş",
+    year: 2022,
+    recommended: false,
+  },
 ];
