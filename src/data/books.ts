@@ -2211,4 +2211,11 @@ export const books: Book[] = [
     year: 2016,
     recommended: false,
   },
+  {
+    id: 326,
+    title: "Light While There Is Light",
+    author: "Keith Waldrop",
+    year: 1993,
+    recommended: false,
+  },
 ];
