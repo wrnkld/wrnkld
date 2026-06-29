@@ -2218,4 +2218,11 @@ export const books: Book[] = [
     year: 1993,
     recommended: false,
   },
+  {
+    id: 327,
+    title: "The Oyster Diaries",
+    author: "Nancy Lemann",
+    year: 2026,
+    recommended: false,
+  },
 ];
