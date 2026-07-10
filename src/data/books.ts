@@ -2225,4 +2225,11 @@ export const books: Book[] = [
     year: 2026,
     recommended: false,
   },
+  {
+    id: 328,
+    title: "Lapvona",
+    author: "Ottessa Moshfegh",
+    year: 2022,
+    recommended: false,
+  },
 ];
