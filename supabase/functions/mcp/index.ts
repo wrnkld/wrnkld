@@ -2270,6 +2270,13 @@ var books = [
     author: "Tana French",
     year: 2020,
     recommended: false
+  },
+  {
+    id: 330,
+    title: "Transcendence for Beginners",
+    author: "Clare Carlisle",
+    year: 2026,
+    recommended: false
   }
 ];
 
