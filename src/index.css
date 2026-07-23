@@ -7,28 +7,29 @@
 
 @layer base {
   :root {
-    --background: 39 89% 95%;
-    --foreground: 226 100% 17%;
+    /* Cool-as-fuck: near-black paper, bone-white ink, electric chips */
+    --background: 240 8% 6%;
+    --foreground: 60 15% 94%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 0 0% 10%;
+    --popover: 240 8% 9%;
+    --popover-foreground: 60 15% 94%;
 
-    --primary: 0 0% 10%;
-    --primary-foreground: 0 0% 98%;
+    --primary: 60 15% 94%;
+    --primary-foreground: 240 8% 6%;
 
-    --muted: 39 50% 88%;
-    --muted-foreground: 226 30% 40%;
+    --muted: 240 6% 12%;
+    --muted-foreground: 240 6% 62%;
 
     /* Category accent backgrounds */
-    --chip-work: 186 55% 71%;
-    --chip-about: 50 100% 51%;
-    --chip-side: 338 86% 74%;
-    --chip-words: 271 100% 82%;
-    --chip-ink: 226 100% 17%;
+    --chip-work: 22 100% 58%;    /* electric orange */
+    --chip-about: 75 95% 60%;    /* acid lime */
+    --chip-side: 328 100% 65%;   /* hot magenta */
+    --chip-words: 260 100% 76%;  /* electric violet */
+    --chip-ink: 240 10% 6%;      /* near-black ink on chips */
 
-    --border: 226 30% 82%;
-    --input: 226 30% 82%;
-    --ring: 0 0% 10%;
+    --border: 240 6% 18%;
+    --input: 240 6% 18%;
+    --ring: 60 15% 94%;
 
     --radius: 0.25rem;
 
@@ -52,6 +53,31 @@
   body {
     @apply antialiased;
     font-family: var(--font-body);
+    position: relative;
+  }
+
+  /* Global vertical grid lines — Replit-style lattice, fixed to viewport */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+    background-image:
+      linear-gradient(to right, hsl(var(--border) / 0.55) 1px, transparent 1px);
+    background-size: 25% 100%;
+    background-position: 0 0;
+  }
+
+  @media (min-width: 768px) {
+    body::before {
+      background-size: 12.5% 100%;
+    }
+  }
+
+  #root {
+    position: relative;
+    z-index: 1;
   }
 
   h1, h2, h3, h4, h5, h6 {
