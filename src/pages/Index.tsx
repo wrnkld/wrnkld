@@ -55,7 +55,7 @@ type SortMode = "default" | "alpha" | "category";
 
 function Card({ item }: { item: Item }) {
   const inner = (
-    <div className="group h-full flex flex-col gap-3 p-5 transition-colors hover:bg-muted/40">
+    <div className="group h-full flex flex-col gap-3 p-5 bg-background transition-colors hover:bg-muted/40">
       {item.gif && (
         <div className="aspect-[4/3] overflow-hidden rounded-md border border-border/40 bg-muted/30">
           <img
@@ -128,7 +128,7 @@ export default function Index() {
   }, [sort]);
 
   return (
-    <div className="min-h-screen bg-background text-foreground">
+    <div className="min-h-screen text-foreground">
       <div className="max-w-6xl mx-auto px-6 py-16 md:py-24">
         <header className="mb-12">
           <h1 className="text-2xl font-medium">Matthew Stevens</h1>

@@ -25,7 +25,7 @@ export function DetailLayout({ title, subtitle, children }: DetailLayoutProps) {
   });
 
   return (
-    <div className="min-h-screen bg-background text-foreground">
+    <div className="min-h-screen text-foreground">
       <div className="max-w-4xl mx-auto px-6 pt-12 md:pt-16">
         <header className="mb-10 mt-2">
           {subtitle && (
