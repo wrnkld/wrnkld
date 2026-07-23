@@ -130,20 +130,24 @@ export default function Index() {
   return (
     <div className="relative z-10 min-h-screen text-foreground">
       <div className="max-w-6xl mx-auto px-6 py-16 md:py-24">
-        <header className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 border-t border-b border-border/60">
-          <div className="p-5 border-b border-border/60 sm:border-b-0 sm:border-r">
-            <h1 className="text-2xl font-medium">Matthew Stevens</h1>
-            <p className="text-muted-foreground mt-2">
-              <a
-                href="mailto:hello@wrnkld.tv"
-                className="text-foreground hover:text-muted-foreground transition-colors"
-              >
-                hello@wrnkld.tv
-              </a>
-            </p>
+        <header className="border-t border-b border-border/60">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 border-b border-border/60">
+            <div className="p-5 sm:border-r border-border/60">
+              <h1 className="text-2xl font-medium">Matthew Stevens</h1>
+              <p className="text-muted-foreground mt-2">
+                <a
+                  href="mailto:hello@wrnkld.tv"
+                  className="text-foreground hover:text-muted-foreground transition-colors"
+                >
+                  hello@wrnkld.tv
+                </a>
+              </p>
+            </div>
+            <div className="hidden sm:block lg:col-span-2" />
           </div>
-          <div className="p-5 flex items-end lg:border-r border-border/60">
-            <Tabs value={sort} onValueChange={(v) => handleSortChange(v as SortMode)}>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
+            <div className="p-5 flex items-center sm:border-r border-border/60">
+              <Tabs value={sort} onValueChange={(v) => handleSortChange(v as SortMode)}>
             <TooltipProvider delayDuration={250}>
               <TabsList className="h-9 rounded-lg bg-muted p-0.5">
                 {([
@@ -166,9 +170,10 @@ export default function Index() {
                 ))}
               </TabsList>
             </TooltipProvider>
-          </Tabs>
+              </Tabs>
+            </div>
+            <div className="hidden sm:block lg:col-span-2" />
           </div>
-          <div className="hidden lg:block p-5" />
         </header>
 
         <main>
