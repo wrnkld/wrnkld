@@ -66,8 +66,8 @@ export function DetailLayout({ title, subtitle, children }: DetailLayoutProps) {
               <ArrowLeft className="w-4 h-4" />
               <span>Back</span>
             </Link>
-          </footer>
           </div>
+        </footer>
       </div>
     </div>
   );
