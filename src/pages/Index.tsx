@@ -188,7 +188,7 @@ export default function Index() {
                             <TabsTrigger
                               value={mode}
                               aria-label={label}
-                              className="h-full w-7 rounded-none p-0 text-muted-foreground/60 hover:text-foreground transition-colors aria-[selected=true]:text-foreground aria-[selected=true]:bg-muted data-[state=active]:shadow-none"
+                              className="h-full w-7 rounded-none p-0 text-muted-foreground/60 hover:text-foreground transition-colors aria-[selected=true]:text-foreground aria-[selected=true]:bg-foreground aria-[selected=true]:text-background data-[state=active]:shadow-none"
                             >
                               <Icon className="h-3.5 w-3.5" />
                             </TabsTrigger>
@@ -209,7 +209,7 @@ export default function Index() {
                             <TabsTrigger
                               value={mode}
                               aria-label={label}
-                              className="h-full w-7 rounded-none p-0 text-muted-foreground/60 hover:text-foreground transition-colors aria-[selected=true]:text-foreground aria-[selected=true]:bg-muted data-[state=active]:shadow-none"
+                              className="h-full w-7 rounded-none p-0 text-muted-foreground/60 hover:text-foreground transition-colors aria-[selected=true]:text-foreground aria-[selected=true]:bg-foreground aria-[selected=true]:text-background data-[state=active]:shadow-none"
                             >
                               <Icon className="h-3.5 w-3.5" />
                             </TabsTrigger>
@@ -230,7 +230,7 @@ export default function Index() {
                             <TabsTrigger
                               value={mode}
                               aria-label={label}
-                              className="h-full w-7 rounded-none p-0 text-muted-foreground/60 hover:text-foreground transition-colors aria-[selected=true]:text-foreground aria-[selected=true]:bg-muted data-[state=active]:shadow-none"
+                              className="h-full w-7 rounded-none p-0 text-muted-foreground/60 hover:text-foreground transition-colors aria-[selected=true]:text-foreground aria-[selected=true]:bg-foreground aria-[selected=true]:text-background data-[state=active]:shadow-none"
                             >
                               <Icon className="h-3.5 w-3.5" />
                             </TabsTrigger>
