@@ -30,7 +30,7 @@ export function DetailLayout({ title, subtitle, children }: DetailLayoutProps) {
 
   return (
     <div className="relative z-10 min-h-screen text-foreground">
-      <div className="max-w-6xl mx-auto px-6 pt-12 md:pt-16">
+      <div className="max-w-6xl mx-auto px-6 py-16 md:py-24">
         <header className="border-t border-b border-border/60 mb-10">
           <div className="p-5">
             {subtitle && (
