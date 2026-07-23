@@ -180,7 +180,7 @@ export default function Index() {
             <div className="p-5 flex flex-wrap items-center gap-3 sm:col-span-2 lg:col-span-3">
               <Tabs value={sort} onValueChange={(v) => handleSortChange(v as SortMode)}>
             <TooltipProvider delayDuration={250}>
-              <TabsList className="h-7 gap-1 bg-transparent p-0">
+              <TabsList className="h-7 gap-0.5 rounded-lg bg-muted p-0.5">
                 {([
                   { mode: "default" as const, Icon: Clock, label: "Chronological" },
                   { mode: "category" as const, Icon: LayoutGrid, label: "Categorical" },
@@ -191,7 +191,7 @@ export default function Index() {
                       <TabsTrigger
                         value={mode}
                         aria-label={label}
-                        className="h-7 w-7 rounded-md p-0 text-muted-foreground/60 hover:text-foreground transition-colors aria-[selected=true]:text-foreground aria-[selected=true]:bg-transparent data-[state=active]:shadow-none"
+                        className="h-6 w-7 rounded-md p-0 text-muted-foreground transition-colors aria-[selected=true]:bg-foreground aria-[selected=true]:text-background data-[state=active]:shadow-none"
                       >
                         <Icon className="h-3.5 w-3.5" />
                       </TabsTrigger>
@@ -204,7 +204,7 @@ export default function Index() {
               </Tabs>
               <Tabs value={filter} onValueChange={(v) => handleFilterChange(v as FilterMode)} className="hidden sm:block">
                 <TooltipProvider delayDuration={250}>
-                  <TabsList className="h-7 gap-1 bg-transparent p-0">
+                  <TabsList className="h-7 gap-0.5 rounded-lg bg-muted p-0.5">
                     {([
                       { mode: "all" as const, Icon: Circle, label: "All shit" },
                       { mode: "dope" as const, Icon: Cherry, label: "Dope shit" },
@@ -214,7 +214,7 @@ export default function Index() {
                           <TabsTrigger
                             value={mode}
                             aria-label={label}
-                            className="h-7 w-7 rounded-md p-0 text-muted-foreground/60 hover:text-foreground transition-colors aria-[selected=true]:text-foreground aria-[selected=true]:bg-transparent data-[state=active]:shadow-none"
+                            className="h-6 w-7 rounded-md p-0 text-muted-foreground transition-colors aria-[selected=true]:bg-foreground aria-[selected=true]:text-background data-[state=active]:shadow-none"
                           >
                             <Icon className="h-3.5 w-3.5" />
                           </TabsTrigger>
@@ -227,7 +227,7 @@ export default function Index() {
               </Tabs>
               <Tabs value={theme} onValueChange={(v) => handleThemeChange(v as "dark" | "light")} className="hidden lg:block">
                 <TooltipProvider delayDuration={250}>
-                  <TabsList className="h-7 gap-1 bg-transparent p-0">
+                  <TabsList className="h-7 gap-0.5 rounded-lg bg-muted p-0.5">
                     {([
                       { mode: "light" as const, Icon: Sun, label: "Light mode" },
                       { mode: "dark" as const, Icon: Moon, label: "Dark mode" },
@@ -237,7 +237,7 @@ export default function Index() {
                           <TabsTrigger
                             value={mode}
                             aria-label={label}
-                            className="h-7 w-7 rounded-md p-0 text-muted-foreground/60 hover:text-foreground transition-colors aria-[selected=true]:text-foreground aria-[selected=true]:bg-transparent data-[state=active]:shadow-none"
+                            className="h-6 w-7 rounded-md p-0 text-muted-foreground transition-colors aria-[selected=true]:bg-foreground aria-[selected=true]:text-background data-[state=active]:shadow-none"
                           >
                             <Icon className="h-3.5 w-3.5" />
                           </TabsTrigger>
