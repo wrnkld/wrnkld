@@ -4,6 +4,7 @@ import { useLocation } from "react-router-dom";
 // 2 = default (both middle rails), 1 = single middle rail, 0 = only outer rails.
 function interiorRailsFor(pathname: string): number {
   if (pathname.startsWith("/words")) return 0;
+  if (pathname.startsWith("/work")) return 0;
   if (pathname.startsWith("/about/experience")) return 1;
   return 2;
 }
