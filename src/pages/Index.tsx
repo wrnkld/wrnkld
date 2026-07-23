@@ -161,9 +161,9 @@ export default function Index() {
   return (
     <div className="relative z-10 min-h-screen text-foreground">
       <div className="max-w-6xl mx-auto px-6 py-16 md:py-24">
-        <header className="border-t border-b border-border/60">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 border-b border-border/60">
-            <div className="p-5 sm:border-r border-border/60">
+        <header className="border-t border-b border-border/70">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 border-b border-border/70">
+            <div className="p-5 sm:border-r border-border/70">
               <h1 className="text-2xl font-medium">Matthew Stevens</h1>
               <p className="text-muted-foreground mt-2">
                 <a
@@ -180,7 +180,7 @@ export default function Index() {
             <div className="p-5 flex flex-wrap items-center gap-3 sm:col-span-2 lg:col-span-3">
               <Tabs value={sort} onValueChange={(v) => handleSortChange(v as SortMode)}>
             <TooltipProvider delayDuration={250}>
-              <TabsList className="h-7 gap-0.5 rounded-lg border border-border/60 bg-transparent p-0.5">
+              <TabsList className="h-7 gap-0.5 rounded-lg border border-border/70 bg-transparent p-0.5">
                 {([
                   { mode: "default" as const, Icon: Clock, label: "Chronological" },
                   { mode: "category" as const, Icon: LayoutGrid, label: "Categorical" },
@@ -204,7 +204,7 @@ export default function Index() {
               </Tabs>
               <Tabs value={filter} onValueChange={(v) => handleFilterChange(v as FilterMode)}>
                 <TooltipProvider delayDuration={250}>
-                  <TabsList className="h-7 gap-0.5 rounded-lg border border-border/60 bg-transparent p-0.5">
+                  <TabsList className="h-7 gap-0.5 rounded-lg border border-border/70 bg-transparent p-0.5">
                     {([
                       { mode: "all" as const, Icon: Circle, label: "All shit" },
                       { mode: "dope" as const, Icon: Cherry, label: "Dope shit" },
@@ -227,7 +227,7 @@ export default function Index() {
               </Tabs>
               <Tabs value={theme} onValueChange={(v) => handleThemeChange(v as "dark" | "light")}>
                 <TooltipProvider delayDuration={250}>
-                  <TabsList className="h-7 gap-0.5 rounded-lg border border-border/60 bg-transparent p-0.5">
+                  <TabsList className="h-7 gap-0.5 rounded-lg border border-border/70 bg-transparent p-0.5">
                     {([
                       { mode: "light" as const, Icon: Sun, label: "Light mode" },
                       { mode: "dark" as const, Icon: Moon, label: "Dark mode" },
@@ -253,13 +253,13 @@ export default function Index() {
         </header>
 
         <main>
-          <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 border-b border-border/60">
+          <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 border-b border-border/70">
             {items.map((item) => (
               <motion.li
                 key={item.title}
                 layout
                 transition={{ type: "spring", stiffness: 400, damping: 32 }}
-                className="border-b border-border/60 last:border-b-0 sm:[&:nth-last-child(-n+2)]:border-b-0 lg:[&:nth-last-child(-n+3)]:border-b-0"
+                className="border-b border-border/70 last:border-b-0 sm:[&:nth-last-child(-n+2)]:border-b-0 lg:[&:nth-last-child(-n+3)]:border-b-0"
               >
                 <Card item={item} />
               </motion.li>
