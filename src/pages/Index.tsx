@@ -196,13 +196,13 @@ export default function Index() {
                         <Icon className="h-3.5 w-3.5" />
                       </TabsTrigger>
                     </TooltipTrigger>
-                    <TooltipContent side="top" className="hidden sm:block">{label}</TooltipContent>
+                    <TooltipContent side="top">{label}</TooltipContent>
                   </Tooltip>
                 ))}
               </TabsList>
             </TooltipProvider>
               </Tabs>
-              <Tabs value={filter} onValueChange={(v) => handleFilterChange(v as FilterMode)} className="hidden sm:block">
+              <Tabs value={filter} onValueChange={(v) => handleFilterChange(v as FilterMode)}>
                 <TooltipProvider delayDuration={250}>
                   <TabsList className="h-7 gap-0.5 rounded-lg border border-border/60 bg-transparent p-0.5">
                     {([
@@ -219,13 +219,13 @@ export default function Index() {
                             <Icon className="h-3.5 w-3.5" />
                           </TabsTrigger>
                         </TooltipTrigger>
-                        <TooltipContent side="top" className="hidden sm:block">{label}</TooltipContent>
+                        <TooltipContent side="top">{label}</TooltipContent>
                       </Tooltip>
                     ))}
                   </TabsList>
                 </TooltipProvider>
               </Tabs>
-              <Tabs value={theme} onValueChange={(v) => handleThemeChange(v as "dark" | "light")} className="hidden lg:block">
+              <Tabs value={theme} onValueChange={(v) => handleThemeChange(v as "dark" | "light")}>
                 <TooltipProvider delayDuration={250}>
                   <TabsList className="h-7 gap-0.5 rounded-lg border border-border/60 bg-transparent p-0.5">
                     {([
@@ -242,7 +242,7 @@ export default function Index() {
                             <Icon className="h-3.5 w-3.5" />
                           </TabsTrigger>
                         </TooltipTrigger>
-                        <TooltipContent side="top" className="hidden sm:block">{label}</TooltipContent>
+                        <TooltipContent side="top">{label}</TooltipContent>
                       </Tooltip>
                     ))}
                   </TabsList>
