@@ -216,10 +216,9 @@ export default function Index() {
                           <TabsTrigger
                             value={mode}
                             aria-label={label}
-                            className="h-8 px-3 rounded-md text-xs text-muted-foreground transition-colors aria-[selected=true]:bg-foreground aria-[selected=true]:text-background data-[state=active]:shadow-none inline-flex items-center gap-1.5"
+                            className="h-8 w-9 rounded-md p-0 text-muted-foreground transition-colors aria-[selected=true]:bg-foreground aria-[selected=true]:text-background data-[state=active]:shadow-none"
                           >
-                            <Icon className="h-3.5 w-3.5" />
-                            {mode === "dope" ? "Dope" : "All"}
+                            <Icon className="h-4 w-4" />
                           </TabsTrigger>
                         </TooltipTrigger>
                         <TooltipContent side="top" className="hidden sm:block">{label}</TooltipContent>
