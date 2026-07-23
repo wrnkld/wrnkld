@@ -172,7 +172,8 @@ export default function Index() {
             </TooltipProvider>
               </Tabs>
             </div>
-            <div className="hidden sm:block lg:col-span-2" />
+            <div className="hidden sm:flex items-center p-5 lg:border-r border-border/60 text-muted-foreground">shit</div>
+            <div className="hidden lg:flex items-center p-5 text-muted-foreground">fuck</div>
           </div>
         </header>
 
