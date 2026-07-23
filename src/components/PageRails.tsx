@@ -7,7 +7,7 @@ function interiorRailsFor(pathname: string): number {
   if (pathname.startsWith("/work")) return 0;
   if (pathname.startsWith("/about/books")) return 0;
   if (pathname.startsWith("/about/records")) return 0;
-  if (pathname.startsWith("/about/experience")) return 1;
+  if (pathname.startsWith("/about/experience")) return 0;
   return 2;
 }
 
@@ -21,7 +21,7 @@ export function PageRails() {
     >
       <div className="w-full max-w-6xl h-full px-6">
         <div className="h-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 border-l border-r border-border/70">
-          <div className={interior >= 1 ? "border-r border-border/70 last:border-r-0" : ""} />
+          <div className={interior >= 1 ? "sm:border-r sm:border-border/70 last:border-r-0" : ""} />
           <div className={`hidden sm:block ${interior >= 2 ? "border-r border-border/70 last:border-r-0" : ""}`} />
           <div className="hidden lg:block" />
         </div>
