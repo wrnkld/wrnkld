@@ -21,7 +21,11 @@ export function DetailLayout({ title, subtitle, children }: DetailLayoutProps) {
     if (isMediaElement(child)) {
       return <div className="max-w-6xl mx-auto px-6">{child}</div>;
     }
-    return <div className="max-w-6xl mx-auto px-6">{child}</div>;
+    return (
+      <div className="max-w-6xl mx-auto px-6">
+        <div className="px-5">{child}</div>
+      </div>
+    );
   });
 
   return (
