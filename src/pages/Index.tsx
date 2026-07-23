@@ -130,20 +130,20 @@ export default function Index() {
   return (
     <div className="relative z-10 min-h-screen text-foreground">
       <div className="max-w-6xl mx-auto px-6 py-16 md:py-24">
-        <header className="mb-12 pt-2">
-          <h1 className="text-2xl font-medium">Matthew Stevens</h1>
-          <p className="text-muted-foreground mt-2">
-            <a
-              href="mailto:hello@wrnkld.tv"
-              className="text-foreground hover:text-muted-foreground transition-colors"
-            >
-              hello@wrnkld.tv
-            </a>
-          </p>
-        </header>
-
-        <main>
-          <Tabs value={sort} onValueChange={(v) => handleSortChange(v as SortMode)} className="mb-4">
+        <header className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 border-t border-b border-border/60">
+          <div className="p-5 border-b border-border/60 sm:border-b-0 sm:border-r">
+            <h1 className="text-2xl font-medium">Matthew Stevens</h1>
+            <p className="text-muted-foreground mt-2">
+              <a
+                href="mailto:hello@wrnkld.tv"
+                className="text-foreground hover:text-muted-foreground transition-colors"
+              >
+                hello@wrnkld.tv
+              </a>
+            </p>
+          </div>
+          <div className="p-5 flex items-end lg:border-r border-border/60">
+            <Tabs value={sort} onValueChange={(v) => handleSortChange(v as SortMode)}>
             <TooltipProvider delayDuration={250}>
               <TabsList className="h-9 rounded-lg bg-muted p-0.5">
                 {([
@@ -167,7 +167,12 @@ export default function Index() {
               </TabsList>
             </TooltipProvider>
           </Tabs>
-          <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 border-t border-b border-border/60">
+          </div>
+          <div className="hidden lg:block p-5" />
+        </header>
+
+        <main>
+          <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 border-b border-border/60">
             {items.map((item) => (
               <motion.li
                 key={item.title}
