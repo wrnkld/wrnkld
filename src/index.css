@@ -75,12 +75,9 @@
 
   .chip {
     color: hsl(var(--chip-ink));
-    transition: padding 300ms ease-out, letter-spacing 300ms ease-out, filter 300ms ease-out;
   }
   .chip-work     { background-color: hsl(var(--chip-work)); }
   .chip-about    { background-color: hsl(var(--chip-about)); }
   .chip-side     { background-color: hsl(var(--chip-side)); }
   .chip-words { background-color: hsl(var(--chip-words)); }
-
-  .group:hover .chip { padding-right: 2.25rem; }
 }
