@@ -21,49 +21,54 @@ export function DetailLayout({ title, subtitle, children }: DetailLayoutProps) {
     if (isMediaElement(child)) {
       return <div className="max-w-6xl mx-auto px-6">{child}</div>;
     }
-    return <div className="max-w-4xl mx-auto px-6">{child}</div>;
+    return <div className="max-w-6xl mx-auto px-6">{child}</div>;
   });
 
   return (
     <div className="relative z-10 min-h-screen text-foreground">
-      <div className="max-w-4xl mx-auto px-6 pt-12 md:pt-16 pb-2">
-        <header className="mb-10 mt-2">
-          {subtitle && (
-            <Link
-              to="/"
-              className="group inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors mb-3 align-baseline"
-              aria-label="Back to home"
-            >
-              <ArrowLeft className="w-4 h-4" />
-              <span className="relative inline-block overflow-hidden">
-                {/* sizer — preserves width of the wider label */}
-                <span className="invisible block whitespace-nowrap">
-                  {subtitle.length >= 4 ? subtitle : "Back"}
+      <div className="max-w-6xl mx-auto px-6 pt-12 md:pt-16">
+        <header className="border-t border-b border-border/60 mb-10">
+          <div className="p-5">
+            {subtitle && (
+              <Link
+                to="/"
+                className="group inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors mb-3 align-baseline"
+                aria-label="Back to home"
+              >
+                <ArrowLeft className="w-4 h-4" />
+                <span className="relative inline-block overflow-hidden">
+                  <span className="invisible block whitespace-nowrap">
+                    {subtitle.length >= 4 ? subtitle : "Back"}
+                  </span>
+                  <span className="absolute inset-0 flex items-center transition-all duration-300 ease-out group-hover:-translate-y-full group-hover:opacity-0">
+                    {subtitle}
+                  </span>
+                  <span className="absolute inset-0 flex items-center translate-y-full opacity-0 transition-all duration-300 ease-out group-hover:translate-y-0 group-hover:opacity-100">
+                    Back
+                  </span>
                 </span>
-                <span className="absolute inset-0 flex items-center transition-all duration-300 ease-out group-hover:-translate-y-full group-hover:opacity-0">
-                  {subtitle}
-                </span>
-                <span className="absolute inset-0 flex items-center translate-y-full opacity-0 transition-all duration-300 ease-out group-hover:translate-y-0 group-hover:opacity-100">
-                  Back
-                </span>
-              </span>
-            </Link>
-          )}
-          <h1 className="text-2xl md:text-3xl font-medium">{title}</h1>
+              </Link>
+            )}
+            <h1 className="text-2xl md:text-3xl font-medium">{title}</h1>
+          </div>
         </header>
       </div>
 
       <main className="pb-8 space-y-8 animate-fade-in">{processed}</main>
 
-      <footer className="max-w-4xl mx-auto px-6 pt-8 pb-16">
-        <Link
-          to="/"
-          className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors"
-        >
-          <ArrowLeft className="w-4 h-4" />
-          <span>Back</span>
-        </Link>
-      </footer>
+      <div className="max-w-6xl mx-auto px-6 pt-8 pb-16">
+        <footer className="border-t border-b border-border/60">
+          <div className="p-5">
+            <Link
+              to="/"
+              className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors"
+            >
+              <ArrowLeft className="w-4 h-4" />
+              <span>Back</span>
+            </Link>
+          </div>
+        </footer>
+      </div>
     </div>
   );
 }
