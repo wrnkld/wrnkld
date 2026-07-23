@@ -129,8 +129,8 @@ export default function Index() {
 
   return (
     <div className="min-h-screen text-foreground">
-      <div className="max-w-6xl mx-auto px-6 py-16 md:py-24">
-        <header className="mb-12">
+      <div className="lattice lattice-cards max-w-6xl mx-auto px-6 py-16 md:py-24">
+        <header className="mb-12 pt-2">
           <h1 className="text-2xl font-medium">Matthew Stevens</h1>
           <p className="text-muted-foreground mt-2">
             <a
@@ -167,13 +167,13 @@ export default function Index() {
               </TabsList>
             </TooltipProvider>
           </Tabs>
-          <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 border-t border-l border-border/60">
+          <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 border-t border-b border-border/60">
             {items.map((item) => (
               <motion.li
                 key={item.title}
                 layout
                 transition={{ type: "spring", stiffness: 400, damping: 32 }}
-                className="border-r border-b border-border/60"
+                className="border-b border-border/60 last:border-b-0 sm:[&:nth-last-child(-n+2)]:border-b-0 lg:[&:nth-last-child(-n+3)]:border-b-0"
               >
                 <Card item={item} />
               </motion.li>
