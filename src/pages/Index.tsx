@@ -62,7 +62,7 @@ function Card({ item }: { item: Item }) {
             src={item.gif}
             alt=""
             loading="lazy"
-            className="w-full h-full object-cover grayscale contrast-95 brightness-95 opacity-90 transition-all duration-500 ease-out group-hover:grayscale-0 group-hover:contrast-100 group-hover:brightness-100 group-hover:opacity-100 group-hover:scale-[1.04]"
+            className="w-full h-full object-cover"
           />
         </div>
       )}
