@@ -176,70 +176,63 @@ export default function Index() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
             <div className="p-5 sm:col-span-2 lg:col-span-3">
               <TooltipProvider delayDuration={250}>
-                <div className="inline-flex h-7 items-stretch border border-border/70 bg-transparent divide-x divide-border/70">
-                  <Tabs value={sort} onValueChange={(v) => handleSortChange(v as SortMode)}>
-                    <TabsList className="h-full gap-0 rounded-none border-0 bg-transparent p-0">
-                      {([
-                        { mode: "default" as const, Icon: Clock, label: "Chronological" },
-                        { mode: "category" as const, Icon: LayoutGrid, label: "Categorical" },
-                      ]).map(({ mode, Icon, label }) => (
-                        <Tooltip key={mode}>
-                          <TooltipTrigger asChild>
-                            <TabsTrigger
-                              value={mode}
-                              aria-label={label}
-                              className="h-full w-7 rounded-none p-0 text-muted-foreground/60 hover:text-foreground transition-colors aria-[selected=true]:text-foreground aria-[selected=true]:bg-foreground aria-[selected=true]:text-background data-[state=active]:shadow-none"
-                            >
-                              <Icon className="h-3.5 w-3.5" />
-                            </TabsTrigger>
-                          </TooltipTrigger>
-                          <TooltipContent side="top">{label}</TooltipContent>
-                        </Tooltip>
-                      ))}
-                    </TabsList>
-                  </Tabs>
-                  <Tabs value={filter} onValueChange={(v) => handleFilterChange(v as FilterMode)}>
-                    <TabsList className="h-full gap-0 rounded-none border-0 bg-transparent p-0">
-                      {([
-                        { mode: "all" as const, Icon: Circle, label: "All shit" },
-                        { mode: "dope" as const, Icon: Cherry, label: "Dope shit" },
-                      ]).map(({ mode, Icon, label }) => (
-                        <Tooltip key={mode}>
-                          <TooltipTrigger asChild>
-                            <TabsTrigger
-                              value={mode}
-                              aria-label={label}
-                              className="h-full w-7 rounded-none p-0 text-muted-foreground/60 hover:text-foreground transition-colors aria-[selected=true]:text-foreground aria-[selected=true]:bg-foreground aria-[selected=true]:text-background data-[state=active]:shadow-none"
-                            >
-                              <Icon className="h-3.5 w-3.5" />
-                            </TabsTrigger>
-                          </TooltipTrigger>
-                          <TooltipContent side="top">{label}</TooltipContent>
-                        </Tooltip>
-                      ))}
-                    </TabsList>
-                  </Tabs>
-                  <Tabs value={theme} onValueChange={(v) => handleThemeChange(v as "dark" | "light")}>
-                    <TabsList className="h-full gap-0 rounded-none border-0 bg-transparent p-0">
-                      {([
-                        { mode: "light" as const, Icon: Sun, label: "Light mode" },
-                        { mode: "dark" as const, Icon: Moon, label: "Dark mode" },
-                      ]).map(({ mode, Icon, label }) => (
-                        <Tooltip key={mode}>
-                          <TooltipTrigger asChild>
-                            <TabsTrigger
-                              value={mode}
-                              aria-label={label}
-                              className="h-full w-7 rounded-none p-0 text-muted-foreground/60 hover:text-foreground transition-colors aria-[selected=true]:text-foreground aria-[selected=true]:bg-foreground aria-[selected=true]:text-background data-[state=active]:shadow-none"
-                            >
-                              <Icon className="h-3.5 w-3.5" />
-                            </TabsTrigger>
-                          </TooltipTrigger>
-                          <TooltipContent side="top">{label}</TooltipContent>
-                        </Tooltip>
-                      ))}
-                    </TabsList>
-                  </Tabs>
+                <div className="flex flex-wrap items-center gap-x-4 gap-y-2">
+                  {([
+                    {
+                      key: "sort",
+                      label: "sort",
+                      value: sort,
+                      onChange: (v: string) => handleSortChange(v as SortMode),
+                      options: [
+                        { mode: "default", Icon: Clock, label: "Chronological" },
+                        { mode: "category", Icon: LayoutGrid, label: "Categorical" },
+                      ],
+                    },
+                    {
+                      key: "filter",
+                      label: "show",
+                      value: filter,
+                      onChange: (v: string) => handleFilterChange(v as FilterMode),
+                      options: [
+                        { mode: "all", Icon: Circle, label: "All shit" },
+                        { mode: "dope", Icon: Cherry, label: "Dope shit" },
+                      ],
+                    },
+                    {
+                      key: "theme",
+                      label: "theme",
+                      value: theme,
+                      onChange: (v: string) => handleThemeChange(v as "dark" | "light"),
+                      options: [
+                        { mode: "light", Icon: Sun, label: "Light mode" },
+                        { mode: "dark", Icon: Moon, label: "Dark mode" },
+                      ],
+                    },
+                  ]).map((group) => (
+                    <div key={group.key} className="flex items-center gap-2">
+                      <span className="font-mono text-[10px] uppercase tracking-[0.14em] text-muted-foreground">
+                        {group.label}
+                      </span>
+                      <Tabs value={group.value} onValueChange={group.onChange}>
+                        <TabsList className="inline-flex h-7 items-stretch gap-0 rounded-full border border-border/70 bg-transparent p-0 divide-x divide-border/70 overflow-hidden">
+                          {group.options.map(({ mode, Icon, label }) => (
+                            <Tooltip key={mode}>
+                              <TooltipTrigger asChild>
+                                <TabsTrigger
+                                  value={mode}
+                                  aria-label={label}
+                                  className="h-full w-7 rounded-none p-0 text-muted-foreground/60 hover:text-foreground transition-colors aria-[selected=true]:bg-foreground aria-[selected=true]:text-background data-[state=active]:shadow-none"
+                                >
+                                  <Icon className="h-3.5 w-3.5" />
+                                </TabsTrigger>
+                              </TooltipTrigger>
+                              <TooltipContent side="top">{label}</TooltipContent>
+                            </Tooltip>
+                          ))}
+                        </TabsList>
+                      </Tabs>
+                    </div>
+                  ))}
                 </div>
               </TooltipProvider>
             </div>
