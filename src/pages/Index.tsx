@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { useState, useMemo, useEffect } from "react";
 import { motion } from "motion/react";
-import { ArrowDownAZ, LayoutGrid, Clock, Sun, Moon, Sparkles, Layers } from "lucide-react";
+import { ArrowDownAZ, LayoutGrid, Clock, Sun, Moon, Cherry, Circle } from "lucide-react";
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 
@@ -208,8 +208,8 @@ export default function Index() {
                 <TooltipProvider delayDuration={250}>
                   <TabsList className="h-9 rounded-lg bg-muted p-0.5">
                     {([
-                      { mode: "all" as const, Icon: Layers, label: "All shit" },
-                      { mode: "dope" as const, Icon: Sparkles, label: "Dope shit" },
+                      { mode: "all" as const, Icon: Circle, label: "All shit" },
+                      { mode: "dope" as const, Icon: Cherry, label: "Dope shit" },
                     ]).map(({ mode, Icon, label }) => (
                       <Tooltip key={mode}>
                         <TooltipTrigger asChild>
