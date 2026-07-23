@@ -128,8 +128,8 @@ export default function Index() {
   }, [sort]);
 
   return (
-    <div className="min-h-screen text-foreground">
-      <div className="lattice lattice-cards max-w-6xl mx-auto px-6 py-16 md:py-24">
+    <div className="relative z-10 min-h-screen text-foreground">
+      <div className="max-w-6xl mx-auto px-6 py-16 md:py-24">
         <header className="mb-12 pt-2">
           <h1 className="text-2xl font-medium">Matthew Stevens</h1>
           <p className="text-muted-foreground mt-2">
