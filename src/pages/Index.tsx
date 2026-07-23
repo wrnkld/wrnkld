@@ -233,8 +233,8 @@ export default function Index() {
                 <TooltipProvider delayDuration={250}>
                   <TabsList className="h-9 rounded-lg bg-muted p-0.5">
                     {([
-                      { mode: "dark" as const, Icon: Moon, label: "Dark mode" },
                       { mode: "light" as const, Icon: Sun, label: "Light mode" },
+                      { mode: "dark" as const, Icon: Moon, label: "Dark mode" },
                     ]).map(({ mode, Icon, label }) => (
                       <Tooltip key={mode}>
                         <TooltipTrigger asChild>
