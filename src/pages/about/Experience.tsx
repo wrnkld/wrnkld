@@ -83,13 +83,13 @@ export default function About() {
         {experience.map((job, index) => (
           <div
             key={index}
-            className="py-3 flex flex-col md:flex-row gap-1 md:gap-8"
+            className="py-3 flex flex-col gap-1 lg:grid lg:grid-cols-3 lg:gap-8"
           >
-            <div className="shrink-0 md:w-48">
+            <div className="lg:col-span-1">
               <h3 className="font-display text-base font-bold text-foreground">{job.company}</h3>
               <p className="font-body text-base text-muted-foreground font-normal mt-1">{job.years}</p>
             </div>
-            <div>
+            <div className="lg:col-span-2">
               <p className="font-body text-base text-foreground font-normal">{job.role}</p>
               {job.bullets && job.bullets.length === 1 ? (
                 <p className="font-body text-base text-muted-foreground mt-1">{job.bullets[0]}</p>
@@ -104,11 +104,11 @@ export default function About() {
             </div>
           </div>
         ))}
-        <div className="py-3 flex flex-col md:flex-row gap-1 md:gap-8">
-           <div className="shrink-0 md:w-48">
+        <div className="py-3 flex flex-col gap-1 lg:grid lg:grid-cols-3 lg:gap-8">
+          <div className="lg:col-span-1">
             <h3 className="font-display text-base font-bold text-foreground">Education</h3>
           </div>
-          <div>
+          <div className="lg:col-span-2">
             <p className="font-body text-base text-foreground font-normal">Georgetown University</p>
             <p className="font-body text-base text-muted-foreground">BA Psychology, Cum Laude</p>
           </div>
