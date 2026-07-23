@@ -26,7 +26,7 @@ export function DetailLayout({ title, subtitle, children }: DetailLayoutProps) {
 
   return (
     <div className="min-h-screen text-foreground">
-      <div className="max-w-4xl mx-auto px-6 pt-12 md:pt-16">
+      <div className="lattice lattice-detail max-w-4xl mx-auto px-6 pt-12 md:pt-16 pb-2">
         <header className="mb-10 mt-2">
           {subtitle && (
             <Link
@@ -55,7 +55,7 @@ export function DetailLayout({ title, subtitle, children }: DetailLayoutProps) {
 
       <main className="pb-8 space-y-8 animate-fade-in">{processed}</main>
 
-      <footer className="max-w-4xl mx-auto px-6 pb-16">
+      <footer className="lattice lattice-detail max-w-4xl mx-auto px-6 pt-8 pb-16">
         <Link
           to="/"
           className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors"
