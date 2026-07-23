@@ -128,7 +128,7 @@ export default function Index() {
   }, [sort]);
 
   return (
-    <div className="min-h-screen bg-background text-foreground">
+    <div className="min-h-screen text-foreground">
       <div className="max-w-6xl mx-auto px-6 py-16 md:py-24">
         <header className="mb-12">
           <h1 className="text-2xl font-medium">Matthew Stevens</h1>
