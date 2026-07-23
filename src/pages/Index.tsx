@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { useState, useMemo, useEffect } from "react";
 import { motion } from "motion/react";
-import { ArrowDownAZ, LayoutGrid, Clock, Sun, Moon, Cherry, Circle } from "lucide-react";
+import { LayoutGrid, Clock, Sun, Moon, Cherry, Circle } from "lucide-react";
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 
@@ -51,7 +51,7 @@ const CATEGORICAL_ORDER = [
   "Records",
   "Books",
 ];
-type SortMode = "default" | "alpha" | "category";
+type SortMode = "default" | "category";
 type FilterMode = "all" | "dope";
 const DOPE_TITLES = new Set([
   "Monte Carlo",
@@ -108,7 +108,7 @@ export default function Index() {
   const [sort, setSort] = useState<SortMode>(() => {
     if (typeof window === "undefined") return "default";
     const saved = sessionStorage.getItem("index-sort");
-    return saved === "alpha" || saved === "category" || saved === "default" ? saved : "default";
+    return saved === "category" || saved === "default" ? saved : "default";
   });
 
   const handleSortChange = (v: SortMode) => {
@@ -139,9 +139,6 @@ export default function Index() {
 
   const items = useMemo(() => {
     const base = filter === "dope" ? ITEMS.filter((i) => DOPE_TITLES.has(i.title)) : ITEMS;
-    if (sort === "alpha") {
-      return [...base].sort((a, b) => a.title.localeCompare(b.title));
-    }
     if (sort === "category") {
       return [...base].sort((a, b) => {
         const ai = CATEGORICAL_ORDER.indexOf(a.title);
@@ -163,7 +160,7 @@ export default function Index() {
       <div className="max-w-6xl mx-auto px-6 py-16 md:py-24">
         <header className="border-t border-b border-border/70">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 border-b border-border/70">
-            <div className="p-5 sm:border-r border-border/70">
+            <div className="p-5">
               <h1 className="text-2xl font-medium">Matthew Stevens</h1>
               <p className="text-muted-foreground mt-2">
                 <a
@@ -184,7 +181,6 @@ export default function Index() {
                 {([
                   { mode: "default" as const, Icon: Clock, label: "Chronological" },
                   { mode: "category" as const, Icon: LayoutGrid, label: "Categorical" },
-                  { mode: "alpha" as const, Icon: ArrowDownAZ, label: "Alphabetical" },
                 ]).map(({ mode, Icon, label }) => (
                   <Tooltip key={mode}>
                     <TooltipTrigger asChild>
