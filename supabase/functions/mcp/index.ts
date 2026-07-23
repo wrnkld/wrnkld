@@ -2284,6 +2284,13 @@ var books = [
     author: "Samanta Schweblin",
     year: 2019,
     recommended: false
+  },
+  {
+    id: 332,
+    title: "Daddy",
+    author: "Emma Cline",
+    year: 2020,
+    recommended: false
   }
 ];
 
