@@ -84,7 +84,7 @@ export default function Books() {
           placeholder={`Search ${books.length} books`}
           value={search}
           onChange={(e) => setSearch(e.target.value)}
-          className="pl-9 rounded-lg border-border/40"
+          className="pl-9 rounded-lg border-border/70"
         />
         {search && (
           <button
@@ -99,7 +99,7 @@ export default function Books() {
       <div className="full-bleed border-y border-border/70 overflow-hidden">
         <Table>
           <TableHeader>
-            <TableRow className="hover:bg-muted/40 border-b-border/40">
+            <TableRow className="hover:bg-muted/40 border-b-border/70">
               <TableHead>
                 <SortHeader field="author">Author</SortHeader>
               </TableHead>
@@ -124,7 +124,7 @@ export default function Books() {
                     key={book.id}
                     layout
                     transition={{ duration: 0.15 }}
-                    className="border-b border-border/40 transition-colors hover:bg-muted/40"
+                    className="border-b border-border/70 transition-colors hover:bg-muted/40"
                   >
                     <TableCell className={book.recommended ? "text-recommended" : "text-muted-foreground"}>
                       {book.author}
