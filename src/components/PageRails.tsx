@@ -20,7 +20,7 @@ export function PageRails() {
     rails.sm ? "sm:border-r sm:border-border/70" : "",
     rails.lg >= 1 ? "lg:border-r lg:border-border/70" : "lg:border-r-0",
   ].join(" ");
-  const secondRail = rails.lg >= 2 ? "border-r border-border/70" : "";
+  const secondRail = rails.lg >= 2 ? "lg:border-r lg:border-border/70" : "";
   return (
     <div
       aria-hidden
