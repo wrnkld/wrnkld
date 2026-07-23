@@ -209,7 +209,7 @@ export default function Index() {
                       ],
                     },
                   ]).map((group) => (
-                    <div key={group.key} className="flex items-center gap-2">
+                    <div key={group.key} className="flex flex-col gap-1.5">
                       <span className="font-mono text-[10px] uppercase tracking-[0.14em] text-muted-foreground">
                         {group.label}
                       </span>
