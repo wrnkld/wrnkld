@@ -5,6 +5,8 @@ import { useLocation } from "react-router-dom";
 function interiorRailsFor(pathname: string): number {
   if (pathname.startsWith("/words")) return 0;
   if (pathname.startsWith("/work")) return 0;
+  if (pathname.startsWith("/about/books")) return 0;
+  if (pathname.startsWith("/about/records")) return 0;
   if (pathname.startsWith("/about/experience")) return 1;
   return 2;
 }
