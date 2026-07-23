@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
-import { useState, useMemo } from "react";
+import { useState, useMemo, useEffect } from "react";
 import { motion } from "motion/react";
-import { ArrowDownAZ, LayoutGrid, Clock } from "lucide-react";
+import { ArrowDownAZ, LayoutGrid, Clock, Sun, Moon, Sparkles, Layers } from "lucide-react";
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 
@@ -52,6 +52,15 @@ const CATEGORICAL_ORDER = [
   "Books",
 ];
 type SortMode = "default" | "alpha" | "category";
+type FilterMode = "all" | "dope";
+const DOPE_TITLES = new Set([
+  "Monte Carlo",
+  "Experience",
+  "Books",
+  "StudyDrop",
+  "Sleeves",
+  "Records",
+]);
 
 function Card({ item }: { item: Item }) {
   const inner = (
@@ -107,12 +116,34 @@ export default function Index() {
     sessionStorage.setItem("index-sort", v);
   };
 
+  const [filter, setFilter] = useState<FilterMode>(() => {
+    if (typeof window === "undefined") return "all";
+    const saved = sessionStorage.getItem("index-filter");
+    return saved === "dope" ? "dope" : "all";
+  });
+  const handleFilterChange = (v: FilterMode) => {
+    setFilter(v);
+    sessionStorage.setItem("index-filter", v);
+  };
+
+  const [theme, setTheme] = useState<"dark" | "light">(() => {
+    if (typeof window === "undefined") return "dark";
+    return localStorage.getItem("theme") === "light" ? "light" : "dark";
+  });
+  useEffect(() => {
+    const root = document.documentElement;
+    root.classList.toggle("light", theme === "light");
+    localStorage.setItem("theme", theme);
+  }, [theme]);
+  const handleThemeChange = (v: "dark" | "light") => setTheme(v);
+
   const items = useMemo(() => {
+    const base = filter === "dope" ? ITEMS.filter((i) => DOPE_TITLES.has(i.title)) : ITEMS;
     if (sort === "alpha") {
-      return [...ITEMS].sort((a, b) => a.title.localeCompare(b.title));
+      return [...base].sort((a, b) => a.title.localeCompare(b.title));
     }
     if (sort === "category") {
-      return [...ITEMS].sort((a, b) => {
+      return [...base].sort((a, b) => {
         const ai = CATEGORICAL_ORDER.indexOf(a.title);
         const bi = CATEGORICAL_ORDER.indexOf(b.title);
         // Words: sort by title (Pt 1 → Pt 4), always last
@@ -124,8 +155,8 @@ export default function Index() {
         return ai - bi;
       });
     }
-    return ITEMS;
-  }, [sort]);
+    return base;
+  }, [sort, filter]);
 
   return (
     <div className="relative z-10 min-h-screen text-foreground">
@@ -172,8 +203,57 @@ export default function Index() {
             </TooltipProvider>
               </Tabs>
             </div>
-            <div className="hidden sm:flex items-center p-5 lg:border-r border-border/60 text-muted-foreground">shit</div>
-            <div className="hidden lg:flex items-center p-5 text-muted-foreground">fuck</div>
+            <div className="hidden sm:flex items-center p-5 lg:border-r border-border/60">
+              <Tabs value={filter} onValueChange={(v) => handleFilterChange(v as FilterMode)}>
+                <TooltipProvider delayDuration={250}>
+                  <TabsList className="h-9 rounded-lg bg-muted p-0.5">
+                    {([
+                      { mode: "all" as const, Icon: Layers, label: "All shit" },
+                      { mode: "dope" as const, Icon: Sparkles, label: "Dope shit" },
+                    ]).map(({ mode, Icon, label }) => (
+                      <Tooltip key={mode}>
+                        <TooltipTrigger asChild>
+                          <TabsTrigger
+                            value={mode}
+                            aria-label={label}
+                            className="h-8 px-3 rounded-md text-xs text-muted-foreground transition-colors aria-[selected=true]:bg-foreground aria-[selected=true]:text-background data-[state=active]:shadow-none inline-flex items-center gap-1.5"
+                          >
+                            <Icon className="h-3.5 w-3.5" />
+                            {mode === "dope" ? "Dope" : "All"}
+                          </TabsTrigger>
+                        </TooltipTrigger>
+                        <TooltipContent side="top" className="hidden sm:block">{label}</TooltipContent>
+                      </Tooltip>
+                    ))}
+                  </TabsList>
+                </TooltipProvider>
+              </Tabs>
+            </div>
+            <div className="hidden lg:flex items-center p-5">
+              <Tabs value={theme} onValueChange={(v) => handleThemeChange(v as "dark" | "light")}>
+                <TooltipProvider delayDuration={250}>
+                  <TabsList className="h-9 rounded-lg bg-muted p-0.5">
+                    {([
+                      { mode: "dark" as const, Icon: Moon, label: "Dark mode" },
+                      { mode: "light" as const, Icon: Sun, label: "Light mode" },
+                    ]).map(({ mode, Icon, label }) => (
+                      <Tooltip key={mode}>
+                        <TooltipTrigger asChild>
+                          <TabsTrigger
+                            value={mode}
+                            aria-label={label}
+                            className="h-8 w-9 rounded-md p-0 text-muted-foreground transition-colors aria-[selected=true]:bg-foreground aria-[selected=true]:text-background data-[state=active]:shadow-none"
+                          >
+                            <Icon className="h-4 w-4" />
+                          </TabsTrigger>
+                        </TooltipTrigger>
+                        <TooltipContent side="top" className="hidden sm:block">{label}</TooltipContent>
+                      </Tooltip>
+                    ))}
+                  </TabsList>
+                </TooltipProvider>
+              </Tabs>
+            </div>
           </div>
         </header>
 
