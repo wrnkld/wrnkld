@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
-import { useState, useMemo, useRef } from "react";
-import { motion, AnimatePresence } from "motion/react";
+import { useState, useMemo } from "react";
+import { motion } from "motion/react";
 import { ArrowDownAZ, LayoutGrid, Clock } from "lucide-react";
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
@@ -53,51 +53,41 @@ const CATEGORICAL_ORDER = [
 ];
 type SortMode = "default" | "alpha" | "category";
 
-function RowInner({
-  item,
-  onHover,
-  onLeave,
-}: {
-  item: Item;
-  onHover: (item: Item, e: React.MouseEvent) => void;
-  onLeave: () => void;
-}) {
+function Card({ item }: { item: Item }) {
   const inner = (
-    <span
-      className={`chip ${CHIP[item.category]} inline-flex items-baseline gap-2 px-3 py-1.5 rounded-lg`}
-    >
-      <span className="font-mono text-[10px] uppercase tracking-[0.14em] opacity-70 inline-block w-12 shrink-0">
-        {item.category}
-      </span>
-      <span className="text-base font-medium">{item.title}</span>
-      {item.note && (
-        <span className="hidden sm:inline text-sm opacity-70 font-normal">{item.note}</span>
+    <div className="group h-full flex flex-col gap-3 p-5 transition-colors hover:bg-muted/40">
+      {item.gif && (
+        <div className="aspect-[4/3] overflow-hidden rounded-md border border-border/40 bg-muted/30">
+          <img
+            src={item.gif}
+            alt=""
+            loading="lazy"
+            className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-[1.02]"
+          />
+        </div>
       )}
-    </span>
+      <div className="flex items-center gap-2">
+        <span
+          className={`chip ${CHIP[item.category]} font-mono text-[10px] uppercase tracking-[0.14em] px-2 py-0.5 rounded`}
+        >
+          {item.category}
+        </span>
+      </div>
+      <div className="flex flex-col gap-1">
+        <h2 className="text-base font-medium leading-snug">{item.title}</h2>
+        {item.note && (
+          <p className="text-sm text-muted-foreground leading-snug">{item.note}</p>
+        )}
+      </div>
+    </div>
   );
 
   if (item.to) {
-    return (
-      <Link
-        to={item.to}
-        className="group inline-block"
-        onMouseEnter={(e) => onHover(item, e)}
-        onMouseLeave={onLeave}
-      >
-        {inner}
-      </Link>
-    );
+    return <Link to={item.to} className="block h-full">{inner}</Link>;
   }
   if (item.href) {
     return (
-      <a
-        href={item.href}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="group inline-block"
-        onMouseEnter={(e) => onHover(item, e)}
-        onMouseLeave={onLeave}
-      >
+      <a href={item.href} target="_blank" rel="noopener noreferrer" className="block h-full">
         {inner}
       </a>
     );
@@ -137,21 +127,10 @@ export default function Index() {
     return ITEMS;
   }, [sort]);
 
-  const [hovered, setHovered] = useState<Item | null>(null);
-  const [cursor, setCursor] = useState({ x: 0, y: 0 });
-  const rafRef = useRef<number | null>(null);
-
-  const handleMouseMove = (e: React.MouseEvent) => {
-    const x = e.clientX;
-    const y = e.clientY;
-    if (rafRef.current) cancelAnimationFrame(rafRef.current);
-    rafRef.current = requestAnimationFrame(() => setCursor({ x, y }));
-  };
-
   return (
-    <div className="min-h-screen bg-background text-foreground" onMouseMove={handleMouseMove}>
-      <div className="max-w-4xl mx-auto px-6 py-16 md:py-24">
-        <header className="mb-16">
+    <div className="min-h-screen bg-background text-foreground">
+      <div className="max-w-6xl mx-auto px-6 py-16 md:py-24">
+        <header className="mb-12">
           <h1 className="text-2xl font-medium">Matthew Stevens</h1>
           <p className="text-muted-foreground mt-2">
             <a
@@ -188,55 +167,20 @@ export default function Index() {
               </TabsList>
             </TooltipProvider>
           </Tabs>
-          <ul className="space-y-3">
+          <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 border-t border-l border-border/60">
             {items.map((item) => (
               <motion.li
                 key={item.title}
                 layout
                 transition={{ type: "spring", stiffness: 400, damping: 32 }}
+                className="border-r border-b border-border/60"
               >
-                <RowInner
-                  item={item}
-                  onHover={(it, e) => {
-                    setCursor({ x: e.clientX, y: e.clientY });
-                    setHovered(it);
-                  }}
-                  onLeave={() => setHovered(null)}
-                />
+                <Card item={item} />
               </motion.li>
             ))}
           </ul>
         </main>
       </div>
-
-      {/* Cursor-following gif preview — desktop hover only */}
-      <AnimatePresence>
-        {hovered?.gif && (() => {
-          const W = 384;
-          const margin = 16;
-          const vw = typeof window !== "undefined" ? window.innerWidth : 1024;
-          const vh = typeof window !== "undefined" ? window.innerHeight : 768;
-          const flipX = cursor.x + 20 + W + margin > vw;
-          const left = flipX ? Math.max(margin, cursor.x - 20 - W) : cursor.x + 20;
-          // Assume tall-ish gif; clamp top so it never goes below viewport
-          const estH = W; // square-ish fallback for clamping
-          let top = cursor.y + 20;
-          if (top + estH + margin > vh) top = Math.max(margin, vh - estH - margin);
-          return (
-            <motion.img
-              key={hovered.title}
-              src={hovered.gif}
-              alt=""
-              initial={{ opacity: 0, scale: 0.92 }}
-              animate={{ opacity: 1, scale: 1 }}
-              exit={{ opacity: 0, scale: 0.92 }}
-              transition={{ duration: 0.15 }}
-              style={{ top, left, width: W, maxHeight: vh - margin * 2 }}
-              className="hidden sm:block fixed z-50 pointer-events-none h-auto object-contain rounded-lg border border-border/40 shadow-lg"
-            />
-          );
-        })()}
-      </AnimatePresence>
     </div>
   );
 }
