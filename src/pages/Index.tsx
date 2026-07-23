@@ -177,7 +177,7 @@ export default function Index() {
             <div className="hidden sm:block lg:col-span-2" />
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
-            <div className="p-5 flex items-center sm:border-r border-border/60">
+            <div className="p-5 flex flex-wrap items-center gap-3 sm:col-span-2 lg:col-span-3">
               <Tabs value={sort} onValueChange={(v) => handleSortChange(v as SortMode)}>
             <TooltipProvider delayDuration={250}>
               <TabsList className="h-9 rounded-lg bg-muted p-0.5">
@@ -202,9 +202,7 @@ export default function Index() {
               </TabsList>
             </TooltipProvider>
               </Tabs>
-            </div>
-            <div className="hidden sm:flex items-center p-5 lg:border-r border-border/60">
-              <Tabs value={filter} onValueChange={(v) => handleFilterChange(v as FilterMode)}>
+              <Tabs value={filter} onValueChange={(v) => handleFilterChange(v as FilterMode)} className="hidden sm:block">
                 <TooltipProvider delayDuration={250}>
                   <TabsList className="h-9 rounded-lg bg-muted p-0.5">
                     {([
@@ -227,9 +225,7 @@ export default function Index() {
                   </TabsList>
                 </TooltipProvider>
               </Tabs>
-            </div>
-            <div className="hidden lg:flex items-center p-5">
-              <Tabs value={theme} onValueChange={(v) => handleThemeChange(v as "dark" | "light")}>
+              <Tabs value={theme} onValueChange={(v) => handleThemeChange(v as "dark" | "light")} className="hidden lg:block">
                 <TooltipProvider delayDuration={250}>
                   <TabsList className="h-9 rounded-lg bg-muted p-0.5">
                     {([
