@@ -11,7 +11,9 @@ interface DetailLayoutProps {
 function isMediaElement(child: React.ReactElement<{ className?: string }>): boolean {
   const type = child.type as string | unknown;
   if (type === "img" || type === "video") return true;
-  if (type === "div" && (child.props?.className ?? "").includes("grid")) return true;
+  const cls = child.props?.className ?? "";
+  if (type === "div" && cls.includes("grid")) return true;
+  if (cls.includes("full-bleed")) return true;
   return false;
 }
 
