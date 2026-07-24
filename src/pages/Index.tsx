@@ -210,16 +210,16 @@ export default function Index() {
                     },
                   ]).map((group) => (
                     <Tabs key={group.key} value={group.value} onValueChange={group.onChange}>
-                      <TabsList className="inline-flex h-7 items-stretch gap-0 rounded-none bg-transparent p-0">
+                      <TabsList className="inline-flex h-8 items-stretch gap-0 rounded-none bg-transparent p-0">
                           {group.options.map(({ mode, Icon, label }) => (
                             <Tooltip key={mode}>
                               <TooltipTrigger asChild>
                                 <TabsTrigger
                                   value={mode}
                                   aria-label={label}
-                                  className="h-7 w-7 rounded-none p-0 bg-transparent text-muted-foreground/50 hover:text-foreground transition-colors aria-[selected=true]:bg-transparent aria-[selected=true]:text-foreground data-[state=active]:shadow-none"
+                                  className="h-8 w-8 rounded-none p-0 bg-transparent text-muted-foreground/50 hover:text-foreground transition-colors aria-[selected=true]:bg-transparent aria-[selected=true]:text-foreground data-[state=active]:shadow-none"
                                 >
-                                  <Icon className="h-3.5 w-3.5" />
+                                  <Icon className="h-4 w-4" />
                                 </TabsTrigger>
                               </TooltipTrigger>
                               <TooltipContent side="top">{label}</TooltipContent>
