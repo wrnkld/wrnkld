@@ -55,7 +55,7 @@ export default function Claude() {
 
         <p>Sorry if this is, in fact, a think piece.</p>
 
-        <hr className="border-t border-border/40" />
+        <hr className="-mx-5 border-t border-border/70" />
         <div className="text-sm text-muted-foreground space-y-2">
           <p><sup>1</sup> I'm no longer using Cursor, by the way. Found an IDE called Zed that I really like.</p>
           <p><sup>2</sup> I like to call AI agents "dummy."</p>
