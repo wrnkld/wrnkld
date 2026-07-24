@@ -87,7 +87,7 @@ export default function Sleeves() {
           I learned a lot building it.
         </p>
 
-        <hr className="border-t border-border/40" />
+        <hr className="-mx-5 border-t border-border/70" />
         <div className="text-sm text-muted-foreground space-y-2">
           <p><sup>1</sup> <a href="https://www.youtube.com/watch?v=gPNdFHSLAeI" target="_blank" rel="noopener noreferrer" className="text-foreground hover:text-foreground/60 transition-colors">youtube.com/watch?v=gPNdFHSLAeI</a></p>
           <p><sup>2</sup> Less cursing, less ALL CAPS</p>
