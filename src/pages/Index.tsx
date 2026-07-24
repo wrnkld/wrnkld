@@ -210,7 +210,7 @@ export default function Index() {
                     },
                   ]).map((group) => (
                     <Tabs key={group.key} value={group.value} onValueChange={group.onChange}>
-                      <TabsList className="inline-flex h-7 items-stretch gap-0 rounded-none bg-transparent p-0 divide-x divide-border/70">
+                      <TabsList className="inline-flex h-7 items-stretch gap-0 rounded-none bg-transparent p-0">
                           {group.options.map(({ mode, Icon, label }) => (
                             <Tooltip key={mode}>
                               <TooltipTrigger asChild>
