@@ -214,14 +214,14 @@ export default function Index() {
                         {group.label}
                       </span>
                       <Tabs value={group.value} onValueChange={group.onChange}>
-                        <TabsList className="inline-flex h-7 items-stretch gap-0 rounded border border-border/70 bg-transparent p-0 divide-x divide-border/70 overflow-hidden">
+                        <TabsList className="inline-flex h-7 items-center gap-1 rounded-none bg-transparent p-0">
                           {group.options.map(({ mode, Icon, label }) => (
                             <Tooltip key={mode}>
                               <TooltipTrigger asChild>
                                 <TabsTrigger
                                   value={mode}
                                   aria-label={label}
-                                  className="h-full w-7 rounded-none p-0 text-muted-foreground/60 hover:text-foreground transition-colors aria-[selected=true]:bg-foreground aria-[selected=true]:text-background data-[state=active]:shadow-none"
+                                  className="h-7 w-7 rounded-none p-0 bg-transparent text-muted-foreground/50 hover:text-foreground transition-colors aria-[selected=true]:bg-transparent aria-[selected=true]:text-foreground data-[state=active]:shadow-none"
                                 >
                                   <Icon className="h-3.5 w-3.5" />
                                 </TabsTrigger>
