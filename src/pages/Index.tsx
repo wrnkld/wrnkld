@@ -176,7 +176,7 @@ export default function Index() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
             <div className="p-5 sm:col-span-2 lg:col-span-3">
               <TooltipProvider delayDuration={250}>
-                <div className="flex flex-wrap items-center gap-x-4 gap-y-2">
+                <div className="inline-flex items-stretch rounded border border-border/70 divide-x divide-border/70 overflow-hidden">
                   {([
                     {
                       key: "sort",
@@ -209,19 +209,15 @@ export default function Index() {
                       ],
                     },
                   ]).map((group) => (
-                    <div key={group.key} className="flex flex-col gap-1.5">
-                      <span className="font-mono text-[10px] uppercase tracking-[0.14em] text-muted-foreground">
-                        {group.label}
-                      </span>
-                      <Tabs value={group.value} onValueChange={group.onChange}>
-                        <TabsList className="inline-flex h-7 items-center gap-1 rounded-none bg-transparent p-0">
+                    <Tabs key={group.key} value={group.value} onValueChange={group.onChange}>
+                      <TabsList className="inline-flex h-7 items-stretch gap-0 rounded-none bg-transparent p-0 divide-x divide-border/70">
                           {group.options.map(({ mode, Icon, label }) => (
                             <Tooltip key={mode}>
                               <TooltipTrigger asChild>
                                 <TabsTrigger
                                   value={mode}
                                   aria-label={label}
-                                  className="h-7 w-7 rounded-none p-0 bg-transparent text-muted-foreground/50 hover:text-foreground transition-colors aria-[selected=true]:bg-transparent aria-[selected=true]:text-foreground data-[state=active]:shadow-none"
+                                  className="h-7 w-7 rounded-none p-0 bg-transparent text-muted-foreground/50 hover:text-foreground transition-colors aria-[selected=true]:bg-foreground aria-[selected=true]:text-background data-[state=active]:shadow-none"
                                 >
                                   <Icon className="h-3.5 w-3.5" />
                                 </TabsTrigger>
@@ -229,9 +225,8 @@ export default function Index() {
                               <TooltipContent side="top">{label}</TooltipContent>
                             </Tooltip>
                           ))}
-                        </TabsList>
-                      </Tabs>
-                    </div>
+                      </TabsList>
+                    </Tabs>
                   ))}
                 </div>
               </TooltipProvider>
