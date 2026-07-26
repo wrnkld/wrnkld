@@ -53,7 +53,7 @@ type FilterMode = "all" | "dope";
 type ViewMode = "everything" | "dope" | "category";
 const VIEW_CYCLE: ViewMode[] = ["everything", "dope", "category"];
 const VIEW_LABEL: Record<ViewMode, string> = {
-  everything: "Everything",
+  everything: "Chronological",
   dope: "Dope only",
   category: "By category",
 };
