@@ -1,6 +1,9 @@
 import { Link } from "react-router-dom";
 import { useState, useMemo } from "react";
 import { motion } from "motion/react";
+import { Clock, LayoutGrid, AArrowDown, Circle, Cherry } from "lucide-react";
+import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 
 type Category = "Work" | "Words" | "Side" | "About";
 
@@ -48,15 +51,8 @@ const CATEGORICAL_ORDER = [
   "Records",
   "Books",
 ];
-type SortMode = "default" | "category";
+type SortMode = "default" | "category" | "alpha";
 type FilterMode = "all" | "dope";
-type ViewMode = "everything" | "dope" | "category";
-const VIEW_CYCLE: ViewMode[] = ["everything", "dope", "category"];
-const VIEW_LABEL: Record<ViewMode, string> = {
-  everything: "Chronological",
-  dope: "Dope only",
-  category: "By category",
-};
 const DOPE_TITLES = new Set([
   "Monte Carlo",
   "Experience",
@@ -109,21 +105,29 @@ function Card({ item }: { item: Item }) {
 }
 
 export default function Index() {
-  const [view, setView] = useState<ViewMode>(() => {
-    if (typeof window === "undefined") return "everything";
-    const saved = sessionStorage.getItem("index-view");
-    return (VIEW_CYCLE as string[]).includes(saved ?? "") ? (saved as ViewMode) : "everything";
+  const [sort, setSort] = useState<SortMode>(() => {
+    if (typeof window === "undefined") return "default";
+    const s = sessionStorage.getItem("index-sort");
+    return s === "category" || s === "alpha" || s === "default" ? s : "default";
   });
-  const cycleView = () => {
-    const next = VIEW_CYCLE[(VIEW_CYCLE.indexOf(view) + 1) % VIEW_CYCLE.length];
-    setView(next);
-    sessionStorage.setItem("index-view", next);
+  const handleSortChange = (v: SortMode) => {
+    setSort(v);
+    sessionStorage.setItem("index-sort", v);
   };
-  const sort: SortMode = view === "category" ? "category" : "default";
-  const filter: FilterMode = view === "dope" ? "dope" : "all";
+  const [filter, setFilter] = useState<FilterMode>(() => {
+    if (typeof window === "undefined") return "all";
+    return sessionStorage.getItem("index-filter") === "dope" ? "dope" : "all";
+  });
+  const handleFilterChange = (v: FilterMode) => {
+    setFilter(v);
+    sessionStorage.setItem("index-filter", v);
+  };
 
   const items = useMemo(() => {
     const base = filter === "dope" ? ITEMS.filter((i) => DOPE_TITLES.has(i.title)) : ITEMS;
+    if (sort === "alpha") {
+      return [...base].sort((a, b) => a.title.localeCompare(b.title));
+    }
     if (sort === "category") {
       return [...base].sort((a, b) => {
         const ai = CATEGORICAL_ORDER.indexOf(a.title);
@@ -160,14 +164,50 @@ export default function Index() {
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
             <div className="p-5 sm:col-span-2 lg:col-span-3">
-              <button
-                type="button"
-                onClick={cycleView}
-                aria-label={`View: ${VIEW_LABEL[view]}. Click to change.`}
-                className="inline-flex h-8 items-center rounded border border-border/70 px-3 text-sm text-foreground hover:bg-muted/40 transition-colors"
-              >
-                {VIEW_LABEL[view]}
-              </button>
+              <TooltipProvider delayDuration={250}>
+                <div className="inline-flex items-stretch rounded border border-border/70 divide-x divide-border/70 overflow-hidden">
+                  {([
+                    {
+                      key: "sort",
+                      value: sort,
+                      onChange: (v: string) => handleSortChange(v as SortMode),
+                      options: [
+                        { mode: "default", Icon: Clock, label: "Chronological" },
+                        { mode: "category", Icon: LayoutGrid, label: "Categorical" },
+                        { mode: "alpha", Icon: AArrowDown, label: "Alphabetical" },
+                      ],
+                    },
+                    {
+                      key: "filter",
+                      value: filter,
+                      onChange: (v: string) => handleFilterChange(v as FilterMode),
+                      options: [
+                        { mode: "all", Icon: Circle, label: "All shit" },
+                        { mode: "dope", Icon: Cherry, label: "Dope shit" },
+                      ],
+                    },
+                  ]).map((group) => (
+                    <Tabs key={group.key} value={group.value} onValueChange={group.onChange}>
+                      <TabsList className="inline-flex h-8 items-stretch gap-0 rounded-none bg-transparent p-0">
+                        {group.options.map(({ mode, Icon, label }) => (
+                          <Tooltip key={mode}>
+                            <TooltipTrigger asChild>
+                              <TabsTrigger
+                                value={mode}
+                                aria-label={label}
+                                className="h-8 w-8 rounded-none p-0 bg-transparent text-muted-foreground/50 hover:text-foreground transition-colors aria-[selected=true]:bg-transparent aria-[selected=true]:text-foreground data-[state=active]:shadow-none"
+                              >
+                                <Icon className="h-4 w-4" />
+                              </TabsTrigger>
+                            </TooltipTrigger>
+                            <TooltipContent side="top" className="hidden sm:block">{label}</TooltipContent>
+                          </Tooltip>
+                        ))}
+                      </TabsList>
+                    </Tabs>
+                  ))}
+                </div>
+              </TooltipProvider>
             </div>
           </div>
         </header>
