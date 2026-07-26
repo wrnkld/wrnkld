@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { useState, useMemo, useEffect } from "react";
+import { useState, useMemo } from "react";
 import { motion } from "motion/react";
 
 type Category = "Work" | "Words" | "Side" | "About";
