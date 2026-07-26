@@ -182,8 +182,8 @@ export default function Index() {
                       value: filter,
                       onChange: (v: string) => handleFilterChange(v as FilterMode),
                       options: [
-                        { mode: "all", Icon: Circle, label: "All shit" },
-                        { mode: "dope", Icon: Cherry, label: "Dope shit" },
+                        { mode: "all", Icon: Circle, label: "Everything" },
+                        { mode: "dope", Icon: Cherry, label: "Favorites" },
                       ],
                     },
                   ]).map((group) => (
