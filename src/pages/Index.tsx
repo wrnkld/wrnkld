@@ -148,7 +148,7 @@ export default function Index() {
     <div className="relative z-10 min-h-screen text-foreground">
       <div className="max-w-6xl mx-auto px-6 py-16 md:py-24">
         <header className="border-t border-b border-border/70">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 border-b border-border/70">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
             <div className="p-5">
               <h1 className="text-2xl font-medium">Matthew Stevens</h1>
               <p className="text-muted-foreground mt-2">
@@ -160,10 +160,7 @@ export default function Index() {
                 </a>
               </p>
             </div>
-            <div className="hidden sm:block lg:col-span-2" />
-          </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
-            <div className="p-5 sm:col-span-2 lg:col-span-3">
+            <div className="p-5 sm:col-span-1 lg:col-span-2 flex sm:justify-end sm:items-end">
               <TooltipProvider delayDuration={250}>
                 <div className="inline-flex items-stretch rounded border border-border/70 divide-x divide-border/70 overflow-hidden">
                   {([
