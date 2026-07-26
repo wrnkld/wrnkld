@@ -192,7 +192,7 @@ export default function Index() {
                               <TabsTrigger
                                 value={mode}
                                 aria-label={label}
-                                className="h-7 w-7 rounded-sm p-0 bg-transparent text-muted-foreground hover:text-foreground transition-colors data-[state=active]:bg-background data-[state=active]:text-foreground data-[state=active]:shadow-sm"
+                                className="h-7 w-7 rounded p-0 bg-transparent text-muted-foreground hover:text-foreground transition-colors data-[state=active]:bg-background data-[state=active]:text-foreground data-[state=active]:shadow-sm"
                               >
                                 <Icon className="h-4 w-4" />
                               </TabsTrigger>
