@@ -7,18 +7,17 @@
 
 @layer base {
   :root {
-    /* Cool-as-fuck: near-black paper, bone-white ink, electric chips */
-    --background: 240 8% 6%;
-    --foreground: 60 15% 94%;
+    --background: 40 30% 96%;
+    --foreground: 240 10% 10%;
 
-    --popover: 240 8% 9%;
-    --popover-foreground: 60 15% 94%;
+    --popover: 40 30% 98%;
+    --popover-foreground: 240 10% 10%;
 
-    --primary: 60 15% 94%;
-    --primary-foreground: 240 8% 6%;
+    --primary: 240 10% 10%;
+    --primary-foreground: 40 30% 96%;
 
-    --muted: 240 6% 12%;
-    --muted-foreground: 240 6% 62%;
+    --muted: 240 8% 88%;
+    --muted-foreground: 240 6% 38%;
 
     /* Category accent backgrounds */
     --chip-work: 22 100% 58%;    /* electric orange */
@@ -27,29 +26,15 @@
     --chip-words: 260 100% 76%;  /* electric violet */
     --chip-ink: 240 10% 6%;      /* near-black ink on chips */
 
-    --border: 240 6% 18%;
-    --input: 240 6% 18%;
-    --ring: 60 15% 94%;
+    --border: 240 8% 82%;
+    --input: 240 8% 82%;
+    --ring: 240 10% 10%;
 
     --radius: 0.25rem;
 
     --font-display: 'Inter', system-ui, sans-serif;
     --font-body:    'Inter', system-ui, sans-serif;
     --font-mono:    ui-monospace, SFMono-Regular, Menlo, monospace;
-  }
-
-  .light {
-    --background: 40 30% 96%;
-    --foreground: 240 10% 10%;
-    --popover: 40 30% 98%;
-    --popover-foreground: 240 10% 10%;
-    --primary: 240 10% 10%;
-    --primary-foreground: 40 30% 96%;
-    --muted: 240 8% 88%;
-    --muted-foreground: 240 6% 38%;
-    --border: 240 8% 82%;
-    --input: 240 8% 82%;
-    --ring: 240 10% 10%;
   }
 }
 
