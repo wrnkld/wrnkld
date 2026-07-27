@@ -131,7 +131,8 @@
     border: 1px solid transparent;
   }
 
-  .control-trigger[data-state='active'] {
+  .control-trigger[data-state='active'],
+  .control-trigger[aria-selected='true'] {
     background: linear-gradient(180deg, hsl(var(--control-selected-top)), hsl(var(--control-selected-bottom)));
     border-color: hsl(var(--control-selected-border));
     color: hsl(var(--foreground));
