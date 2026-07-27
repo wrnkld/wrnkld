@@ -185,7 +185,7 @@ export default function Index() {
                   <Tabs key={group.key} value={group.value} onValueChange={group.onChange}>
                     <TabsList>
                       {group.options.map(({ mode, Icon, label }) => (
-                        <TabsTrigger key={mode} value={mode} aria-label={label} className="px-2.5">
+                        <TabsTrigger key={mode} value={mode} aria-label={label} className="px-1.5 rounded">
                           <Icon className="h-4 w-4" />
                         </TabsTrigger>
                       ))}
