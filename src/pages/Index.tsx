@@ -3,7 +3,6 @@ import { useState, useMemo } from "react";
 import { motion } from "motion/react";
 import { Clock, LayoutGrid, AArrowDown, Circle, Cherry } from "lucide-react";
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 
 type Category = "Work" | "Words" | "Side" | "About";
 
@@ -161,50 +160,39 @@ export default function Index() {
               </p>
             </div>
             <div className="p-5 sm:col-span-1 lg:col-span-2 flex sm:justify-end sm:items-end">
-              <TooltipProvider delayDuration={250}>
-                <div className="inline-flex items-center gap-2">
-                  {([
-                    {
-                      key: "sort",
-                      value: sort,
-                      onChange: (v: string) => handleSortChange(v as SortMode),
-                      options: [
-                        { mode: "default", Icon: Clock, label: "Chronological" },
-                        { mode: "category", Icon: LayoutGrid, label: "Categorical" },
-                        { mode: "alpha", Icon: AArrowDown, label: "Alphabetical" },
-                      ],
-                    },
-                    {
-                      key: "filter",
-                      value: filter,
-                      onChange: (v: string) => handleFilterChange(v as FilterMode),
-                      options: [
-                        { mode: "all", Icon: Circle, label: "Everything" },
-                        { mode: "dope", Icon: Cherry, label: "Favorites" },
-                      ],
-                    },
-                  ]).map((group) => (
-                    <Tabs key={group.key} value={group.value} onValueChange={group.onChange}>
-                      <TabsList className="control-track inline-flex h-8 items-center gap-0.5 rounded p-0.5">
-                        {group.options.map(({ mode, Icon, label }) => (
-                          <Tooltip key={mode}>
-                            <TooltipTrigger asChild>
-                              <TabsTrigger
-                                value={mode}
-                                aria-label={label}
-                                className="control-trigger h-7 w-7 rounded p-0 bg-transparent text-muted-foreground hover:text-foreground transition-colors"
-                              >
-                                <Icon className="h-4 w-4" />
-                              </TabsTrigger>
-                            </TooltipTrigger>
-                            <TooltipContent side="top" className="hidden sm:block">{label}</TooltipContent>
-                          </Tooltip>
-                        ))}
-                      </TabsList>
-                    </Tabs>
-                  ))}
-                </div>
-              </TooltipProvider>
+              <div className="inline-flex items-center gap-2">
+                {([
+                  {
+                    key: "sort",
+                    value: sort,
+                    onChange: (v: string) => handleSortChange(v as SortMode),
+                    options: [
+                      { mode: "default", Icon: Clock, label: "Chronological" },
+                      { mode: "category", Icon: LayoutGrid, label: "Categorical" },
+                      { mode: "alpha", Icon: AArrowDown, label: "Alphabetical" },
+                    ],
+                  },
+                  {
+                    key: "filter",
+                    value: filter,
+                    onChange: (v: string) => handleFilterChange(v as FilterMode),
+                    options: [
+                      { mode: "all", Icon: Circle, label: "Everything" },
+                      { mode: "dope", Icon: Cherry, label: "Favorites" },
+                    ],
+                  },
+                ]).map((group) => (
+                  <Tabs key={group.key} value={group.value} onValueChange={group.onChange}>
+                    <TabsList>
+                      {group.options.map(({ mode, Icon, label }) => (
+                        <TabsTrigger key={mode} value={mode} aria-label={label} className="px-2.5">
+                          <Icon className="h-4 w-4" />
+                        </TabsTrigger>
+                      ))}
+                    </TabsList>
+                  </Tabs>
+                ))}
+              </div>
             </div>
           </div>
         </header>
