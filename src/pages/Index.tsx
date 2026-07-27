@@ -189,9 +189,11 @@ export default function Index() {
                       {group.options.map(({ mode, Icon, label }) => (
                         <Tooltip key={mode}>
                           <TooltipTrigger asChild>
-                            <TabsTrigger value={mode} aria-label={label} className="px-1.5 rounded data-[state=active]:shadow-[0_1px_2px_rgba(0,0,0,0.08),0_1px_3px_rgba(0,0,0,0.06)]">
-                              <Icon className="h-4 w-4" />
-                            </TabsTrigger>
+                            <span className="inline-flex">
+                              <TabsTrigger value={mode} aria-label={label} className="px-1.5 rounded data-[state=active]:shadow-[0_1px_2px_rgba(0,0,0,0.08),0_1px_3px_rgba(0,0,0,0.06)]">
+                                <Icon className="h-4 w-4" />
+                              </TabsTrigger>
+                            </span>
                           </TooltipTrigger>
                           <TooltipContent className="hidden sm:block">{label}</TooltipContent>
                         </Tooltip>
