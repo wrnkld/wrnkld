@@ -3,6 +3,7 @@ import { useState, useMemo } from "react";
 import { motion } from "motion/react";
 import { Clock, LayoutGrid, AArrowDown, Circle, Cherry } from "lucide-react";
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 
 type Category = "Work" | "Words" | "Side" | "About";
 
@@ -144,6 +145,7 @@ export default function Index() {
   }, [sort, filter]);
 
   return (
+    <TooltipProvider delayDuration={200}>
     <div className="relative z-10 min-h-screen text-foreground">
       <div className="max-w-6xl mx-auto px-6 py-16 md:py-24">
         <header className="border-t border-b border-border/70">
@@ -185,9 +187,14 @@ export default function Index() {
                   <Tabs key={group.key} value={group.value} onValueChange={group.onChange}>
                     <TabsList className="p-1.5">
                       {group.options.map(({ mode, Icon, label }) => (
-                        <TabsTrigger key={mode} value={mode} aria-label={label} className="px-1.5 rounded data-[state=active]:shadow-[0_1px_2px_rgba(0,0,0,0.08),0_1px_3px_rgba(0,0,0,0.06)]">
-                          <Icon className="h-4 w-4" />
-                        </TabsTrigger>
+                        <Tooltip key={mode}>
+                          <TooltipTrigger asChild>
+                            <TabsTrigger value={mode} aria-label={label} className="px-1.5 rounded data-[state=active]:shadow-[0_1px_2px_rgba(0,0,0,0.08),0_1px_3px_rgba(0,0,0,0.06)]">
+                              <Icon className="h-4 w-4" />
+                            </TabsTrigger>
+                          </TooltipTrigger>
+                          <TooltipContent className="hidden sm:block">{label}</TooltipContent>
+                        </Tooltip>
                       ))}
                     </TabsList>
                   </Tabs>
@@ -213,5 +220,6 @@ export default function Index() {
         </main>
       </div>
     </div>
+    </TooltipProvider>
   );
 }
