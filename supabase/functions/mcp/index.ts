@@ -7381,6 +7381,12 @@ var records = [
     year: 2026,
     artist: "Mabe Fratti & Bill Orcutt",
     album: "Almost Waking"
+  },
+  {
+    id: 845,
+    year: 2026,
+    artist: "Souled American",
+    album: "Sanctions"
   }
 ];
 
