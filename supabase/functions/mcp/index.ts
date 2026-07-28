@@ -7375,6 +7375,12 @@ var records = [
     year: 2026,
     artist: "Dagmar Zuniga",
     album: "In Filth Your Mystery Is Kingdom / Far Smile Peasant In Yellow Music"
+  },
+  {
+    id: 844,
+    year: 2026,
+    artist: "Mabe Fratti & Bill Orcutt",
+    album: "Almost Waking"
   }
 ];
 
