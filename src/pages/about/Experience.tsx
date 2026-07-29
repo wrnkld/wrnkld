@@ -4,71 +4,74 @@ const experience: {
   company: string;
   role: string;
   years: string;
-  bullets?: string[];
+  description?: string;
 }[] = [
+  {
+    company: "StudyDrop",
+    role: "Product Designer & Builder",
+    years: "2026 - Present",
+    description:
+      "Launched a UX research platform for surveys, card sorting, tree testing, and first-click testing.",
+  },
+  {
+    company: "Sleeves",
+    role: "Product Designer & Builder",
+    years: "2025 - Present",
+    description:
+      "Built and shipped a social music app using Lovable, Claude Code, ChatGPT, React, Supabase, GitHub, and Vercel.",
+  },
   {
     company: "Monte Carlo",
     role: "Head of Design",
     years: "2022 - Present",
-    bullets: [
-      "Founding design leader; built and scaled the design organization, hiring and mentoring senior talent while establishing operating standards.",
-      "Drove UX strategy across the data observability platform, shaping foundational workflows and system-level coherence.",
-      "Led customer research and executive alignment to inform product direction and platform evolution.",
-      "Advanced AI-driven and agentic workflows that made complex data systems usable and trustworthy for expert teams.",
-    ],
+    description:
+      "Joined as founding designer and built the design function while remaining hands-on across the product. Designed core workflows for observability, investigations, integrations, permissions, and AI-assisted data operations. Hired and mentored designers; established the design system, research practice, and operating model.",
   },
   {
     company: "Workato",
     role: "Staff Product Designer",
     years: "2021 - 2022",
-    bullets: [
-      "Owned UX for Workato Workflow Apps, turning complex automation configuration into a reusable, productized experience for enterprise users",
-    ],
+    description:
+      "Designed Workflow Apps, turning complex automation into reusable enterprise applications.",
   },
   {
     company: "Tanium",
     role: "Senior Product Designer",
     years: "2019 - 2021",
-    bullets: [
-      "Led UX for Threat Response and launched two new products while supporting multiple additional product teams",
-    ],
+    description:
+      "Led Threat Response and launched two enterprise security products.",
   },
   {
     company: "Pendo",
     role: "Lead Product Designer",
     years: "2019",
-    bullets: [
-      "Led design for core product areas and strengthened system-level consistency across the platform",
-    ],
+    description:
+      "Designed core product experiences and improved platform consistency.",
   },
   {
     company: "Red Hat",
     role: "Senior Interaction Designer",
     years: "2016 - 2019",
-    bullets: [
-      "Directed UX initiatives across a five-person team, delivering enterprise improvements grounded in open-source collaboration and PatternFly standards",
-    ],
+    description:
+      "Led UX for hybrid-cloud products using PatternFly and open-source collaboration.",
   },
   {
     company: "SAS",
     role: "Principal Interaction Designer",
     years: "2011 - 2016",
-    bullets: [
-      "Led UX for SAS's flagship analytics platform, driving a foundational redesign and bringing two new enterprise products to market",
-    ],
+    description:
+      "Redesigned SAS's flagship analytics platform and launched two enterprise products.",
   },
   {
     company: "HumanCentric",
     role: "Product Design Manager",
     years: "2006 - 2011",
-    bullets: [
-      "Balanced hands-on design with leadership of an eight-person UX team serving enterprise clients",
-    ],
+    description:
+      "Managed an eight-person UX team while remaining hands-on with enterprise client work.",
   },
   { company: "Frog", role: "Associate Interaction Designer", years: "2004 - 2006",
-    bullets: [
-      "Contributed to high-profile client engagements for Microsoft, HP, and Dell, building foundational interaction design expertise",
-    ],
+    description:
+      "Designed products for Microsoft, HP, and Dell.",
   },
 ];
 
@@ -91,15 +94,8 @@ export default function About() {
             </div>
             <div className="lg:col-span-2">
               <p className="font-body text-base text-foreground font-normal">{job.role}</p>
-              {job.bullets && job.bullets.length === 1 ? (
-                <p className="font-body text-base text-muted-foreground mt-1">{job.bullets[0]}</p>
-              ) : (
-                job.bullets?.map((bullet, i) => (
-                  <div key={i} className="flex gap-1.5 mt-1">
-                    <span className="font-body text-base text-muted-foreground shrink-0">→</span>
-                    <p className="font-body text-base text-muted-foreground">{bullet}</p>
-                  </div>
-                ))
+              {job.description && (
+                <p className="font-body text-base text-muted-foreground mt-1">{job.description}</p>
               )}
             </div>
           </div>
