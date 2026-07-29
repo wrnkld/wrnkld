@@ -185,7 +185,7 @@ export default function Index() {
                   },
                 ]).map((group) => (
                   <Tabs key={group.key} value={group.value} onValueChange={group.onChange}>
-                    <TabsList className="p-1.5">
+                    <TabsList className="bg-muted/40 p-1.5">
                       {group.options.map(({ mode, Icon, label }) => (
                         <Tooltip key={mode}>
                           <TooltipTrigger asChild>
