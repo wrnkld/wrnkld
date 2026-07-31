@@ -2260,4 +2260,11 @@ export const books: Book[] = [
     year: 2020,
     recommended: false,
   },
+  {
+    id: 333,
+    title: "The Universal Baseball Association, Inc., J. Henry Waugh, Prop.",
+    author: "Robert Coover",
+    year: 1968,
+    recommended: false,
+  },
 ];
