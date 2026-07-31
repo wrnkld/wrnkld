@@ -2294,7 +2294,7 @@ var books = [
   },
   {
     id: 333,
-    title: "The Universal Baseball Association, Inc., J. Henry Waugh, Prop.",
+    title: "The Universal Baseball Association",
     author: "Robert Coover",
     year: 1968,
     recommended: false
