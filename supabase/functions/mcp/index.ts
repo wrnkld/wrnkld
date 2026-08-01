@@ -2298,6 +2298,13 @@ var books = [
     author: "Robert Coover",
     year: 1968,
     recommended: false
+  },
+  {
+    id: 334,
+    title: "Little Eyes",
+    author: "Samanta Schweblin",
+    year: 2020,
+    recommended: false
   }
 ];
 
