@@ -2274,4 +2274,11 @@ export const books: Book[] = [
     year: 2020,
     recommended: false,
   },
+  {
+    id: 335,
+    title: "The Poisoned Chocolates Case",
+    author: "Anthony Berkeley",
+    year: 1929,
+    recommended: false,
+  },
 ];
