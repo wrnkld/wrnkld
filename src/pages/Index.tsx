@@ -64,7 +64,7 @@ const DOPE_TITLES = new Set([
 
 function Card({ item }: { item: Item }) {
   const inner = (
-    <div className="group h-full flex flex-col gap-3 p-5 transition-colors hover:bg-muted">
+    <div className="group h-full flex flex-col gap-3 p-5 transition-colors surface-tint-hover">
       {item.gif && (
         <div className="aspect-[4/3] overflow-hidden rounded-md border border-border/40 bg-muted/30">
           <img
@@ -185,7 +185,7 @@ export default function Index() {
                   },
                 ]).map((group) => (
                   <Tabs key={group.key} value={group.value} onValueChange={group.onChange}>
-                    <TabsList className="bg-muted p-1.5">
+                    <TabsList className="surface-tint p-1.5">
                       {group.options.map(({ mode, Icon, label }) => (
                         <Tooltip key={mode}>
                           <TooltipTrigger asChild>

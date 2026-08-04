@@ -99,7 +99,7 @@ export default function Books() {
       <div className="full-bleed border-y border-border/70 overflow-hidden">
         <Table>
           <TableHeader>
-            <TableRow className="hover:bg-muted border-b-border/70">
+            <TableRow className="surface-tint-hover border-b-border/70">
               <TableHead>
                 <SortHeader field="author">Author</SortHeader>
               </TableHead>
@@ -124,7 +124,7 @@ export default function Books() {
                     key={book.id}
                     layout
                     transition={{ duration: 0.15 }}
-                    className="border-b border-border/70 transition-colors hover:bg-muted"
+                    className="border-b border-border/70 transition-colors surface-tint-hover"
                   >
                     <TableCell className={book.recommended ? "text-recommended" : "text-muted-foreground"}>
                       {book.author}
