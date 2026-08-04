@@ -112,6 +112,10 @@
   .chip {
     color: hsl(var(--chip-ink));
   }
+  /* Shared surface tint for card hover, table row hover and the toggle track.
+     Kept translucent so the page gridlines stay visible underneath. */
+  .surface-tint { background-color: hsl(var(--border) / 0.45); }
+  .surface-tint-hover:hover { background-color: hsl(var(--border) / 0.45); }
   .chip-work     { background-color: hsl(var(--chip-work)); }
   .chip-about    { background-color: hsl(var(--chip-about)); }
   .chip-side     { background-color: hsl(var(--chip-side)); }
