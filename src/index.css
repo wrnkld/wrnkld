@@ -7,17 +7,18 @@
 
 @layer base {
   :root {
-    --background: 214 40% 99%;
-    --foreground: 219 45% 7%;
+    /* Tailwind / shadcn slate family */
+    --background: 210 40% 98%;      /* slate-50 */
+    --foreground: 222 47% 11%;      /* slate-900 */
 
-    --popover: 214 40% 100%;
-    --popover-foreground: 219 45% 7%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 11%;
 
-    --primary: 219 45% 7%;
-    --primary-foreground: 214 40% 99%;
+    --primary: 222 47% 11%;         /* slate-900 */
+    --primary-foreground: 210 40% 98%;
 
-    --muted: 214 24% 93%;
-    --muted-foreground: 217 12% 46%;
+    --muted: 210 40% 96%;           /* slate-100 */
+    --muted-foreground: 215 16% 47%;/* slate-500 */
 
     /* Category accent backgrounds */
     --chip-work: 20 92% 56%;     /* burnt orange */
@@ -26,9 +27,9 @@
     --chip-words: 258 88% 72%;   /* softened violet */
     --chip-ink: 220 40% 6%;      /* near-black blue ink on chips */
 
-    --border: 214 20% 89%;
-    --input: 214 20% 89%;
-    --ring: 219 45% 7%;
+    --border: 214 32% 91%;          /* slate-200 */
+    --input: 214 32% 91%;
+    --ring: 215 20% 65%;            /* slate-400 */
 
     --radius: 0.25rem;
 
