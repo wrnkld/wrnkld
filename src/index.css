@@ -7,27 +7,27 @@
 
 @layer base {
   :root {
-    --background: 40 30% 96%;
+    --background: 40 14% 97%;
     --foreground: 240 10% 10%;
 
-    --popover: 40 30% 98%;
+    --popover: 40 14% 99%;
     --popover-foreground: 240 10% 10%;
 
     --primary: 240 10% 10%;
-    --primary-foreground: 40 30% 96%;
+    --primary-foreground: 40 14% 97%;
 
-    --muted: 240 8% 88%;
-    --muted-foreground: 240 6% 38%;
+    --muted: 240 6% 89%;
+    --muted-foreground: 240 5% 40%;
 
     /* Category accent backgrounds */
-    --chip-work: 22 100% 58%;    /* electric orange */
-    --chip-about: 75 95% 60%;    /* acid lime */
-    --chip-side: 328 100% 65%;   /* hot magenta */
-    --chip-words: 260 100% 76%;  /* electric violet */
+    --chip-work: 20 92% 56%;     /* burnt orange */
+    --chip-about: 78 70% 56%;    /* muted lime */
+    --chip-side: 335 85% 62%;    /* deep pink */
+    --chip-words: 258 88% 72%;   /* softened violet */
     --chip-ink: 240 10% 6%;      /* near-black ink on chips */
 
-    --border: 240 8% 82%;
-    --input: 240 8% 82%;
+    --border: 240 6% 84%;
+    --input: 240 6% 84%;
     --ring: 240 10% 10%;
 
     --radius: 0.25rem;
