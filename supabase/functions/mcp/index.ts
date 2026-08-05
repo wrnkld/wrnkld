@@ -488,7 +488,7 @@ var books = [
     title: "Notes on an Execution",
     author: "Danya Kukafka",
     year: 2022,
-    recommended: false
+    recommended: true
   },
   {
     id: 76,
