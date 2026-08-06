@@ -2281,4 +2281,11 @@ export const books: Book[] = [
     year: 1929,
     recommended: false,
   },
+  {
+    id: 336,
+    title: "Lost Lambs",
+    author: "Madeline Cash",
+    year: 2026,
+    recommended: true,
+  },
 ];
