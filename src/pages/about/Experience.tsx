@@ -21,7 +21,7 @@ const experience: {
       "Built and shipped a social music app using Lovable, Claude Code, ChatGPT, React, Supabase, GitHub, and Vercel.",
   },
   {
-    company: "Monte Carlo",
+    company: "Monte Carlo AI",
     role: "Head of Design",
     years: "2022 - Present",
     description:
