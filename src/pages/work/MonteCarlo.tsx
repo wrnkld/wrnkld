@@ -11,9 +11,9 @@ import mcdJob from "@/assets/montecarlo/mcd-job.png";
 
 export default function MonteCarlo() {
   return (
-    <DetailLayout title="Monte Carlo" subtitle="Work">
+    <DetailLayout title="Monte Carlo AI" subtitle="Work">
       <p className="font-body text-base text-muted-foreground leading-relaxed">
-        Monte Carlo is the leading agent trust platform, helping data teams detect, resolve, and prevent data quality issues across the modern data stack.
+        Monte Carlo AI is the leading agent trust platform, helping data teams detect, resolve, and prevent data quality issues across the modern data stack.
       </p>
 
       <h2 className="font-display text-lg font-medium text-foreground">Role</h2>
