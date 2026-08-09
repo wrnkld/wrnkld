@@ -92,19 +92,19 @@ export default function MonteCarlo() {
         <Table>
           <TableHeader>
             <TableRow className="surface-tint-hover border-b-border/70">
-              <TableHead className="w-[90px]">
+              <TableHead className="w-[90px] hidden sm:table-cell">
                 <SortHeader field="id">PR</SortHeader>
               </TableHead>
               <TableHead>
                 <SortHeader field="title">Title</SortHeader>
               </TableHead>
-              <TableHead className="text-right w-[90px]">
+              <TableHead className="text-right w-[90px] hidden sm:table-cell">
                 <SortHeader field="files">Files</SortHeader>
               </TableHead>
-              <TableHead className="text-right w-[70px]">
+              <TableHead className="text-right w-[70px] hidden sm:table-cell">
                 <SortHeader field="additions">Added</SortHeader>
               </TableHead>
-              <TableHead className="text-right w-[70px]">
+              <TableHead className="text-right w-[70px] hidden sm:table-cell">
                 <SortHeader field="deletions">Removed</SortHeader>
               </TableHead>
             </TableRow>
@@ -112,15 +112,15 @@ export default function MonteCarlo() {
           <TableBody>
             {sortedPullRequests.map((pr) => (
               <TableRow key={pr.id} className="border-b border-border/70 transition-colors surface-tint-hover">
-                <TableCell className="text-muted-foreground tabular-nums">#{pr.id}</TableCell>
+                <TableCell className="text-muted-foreground tabular-nums hidden sm:table-cell">#{pr.id}</TableCell>
                 <TableCell className="text-foreground">{pr.title}</TableCell>
-                <TableCell className="text-right text-muted-foreground tabular-nums whitespace-nowrap">
+                <TableCell className="text-right text-muted-foreground tabular-nums whitespace-nowrap hidden sm:table-cell">
                   {pr.files}
                 </TableCell>
-                <TableCell className="text-right tabular-nums whitespace-nowrap text-additions w-[70px]">
+                <TableCell className="text-right tabular-nums whitespace-nowrap text-additions w-[70px] hidden sm:table-cell">
                   +{pr.additions}
                 </TableCell>
-                <TableCell className="text-right tabular-nums whitespace-nowrap text-deletions w-[70px]">
+                <TableCell className="text-right tabular-nums whitespace-nowrap text-deletions w-[70px] hidden sm:table-cell">
                   −{pr.deletions}
                 </TableCell>
               </TableRow>
