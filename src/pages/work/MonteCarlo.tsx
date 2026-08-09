@@ -43,6 +43,41 @@ const pullRequests = [
 ];
 
 export default function MonteCarlo() {
+  type SortField = "id" | "title" | "files" | "changes";
+  const [sortField, setSortField] = useState<SortField>("id");
+  const [sortDirection, setSortDirection] = useState<"asc" | "desc">("desc");
+
+  const handleSort = (field: SortField) => {
+    if (sortField === field) {
+      setSortDirection(sortDirection === "asc" ? "desc" : "asc");
+    } else {
+      setSortField(field);
+      setSortDirection("asc");
+    }
+  };
+
+  const sortedPullRequests = useMemo(() => {
+    const value = (pr: (typeof pullRequests)[number]) =>
+      sortField === "changes" ? pr.additions + pr.deletions : pr[sortField];
+    return [...pullRequests].sort((a, b) => {
+      const av = value(a);
+      const bv = value(b);
+      const comparison =
+        typeof av === "string" && typeof bv === "string" ? av.localeCompare(bv) : Number(av) - Number(bv);
+      return sortDirection === "asc" ? comparison : -comparison;
+    });
+  }, [sortField, sortDirection]);
+
+  const SortHeader = ({ field, children }: { field: SortField; children: React.ReactNode }) => (
+    <button
+      onClick={() => handleSort(field)}
+      className="inline-flex items-center gap-1 text-muted-foreground hover:text-foreground transition-colors duration-200"
+    >
+      {children}
+      <ArrowUpDown className="h-3 w-3" />
+    </button>
+  );
+
   return (
     <DetailLayout title="Monte Carlo AI" subtitle="Work">
       <p className="font-body text-base text-muted-foreground leading-relaxed">
@@ -54,20 +89,26 @@ export default function MonteCarlo() {
         Contributed directly to the frontend through AI-assisted development. Shipped changes across AI workflows, navigation, monitoring, and product quality through hundreds of merged pull requests.
       </p>
 
-      <div className="full-bleed border-y border-border/70 overflow-hidden">
+      <div className="full-bleed border-y border-border/70 overflow-hidden table-gutter">
         <Table>
           <TableHeader>
-            <TableRow className="border-b-border/70">
-              <TableHead className="w-[90px]">PR</TableHead>
-              <TableHead>Title</TableHead>
-              <TableHead className="text-right w-[90px]">Files</TableHead>
+            <TableRow className="surface-tint-hover border-b-border/70">
+              <TableHead className="w-[90px]">
+                <SortHeader field="id">PR</SortHeader>
+              </TableHead>
+              <TableHead>
+                <SortHeader field="title">Title</SortHeader>
+              </TableHead>
+              <TableHead className="text-right w-[90px]">
+                <SortHeader field="files">Files</SortHeader>
+              </TableHead>
               <TableHead className="text-right w-[140px]" colSpan={2}>
-                Changes
+                <SortHeader field="changes">Changes</SortHeader>
               </TableHead>
             </TableRow>
           </TableHeader>
           <TableBody>
-            {pullRequests.map((pr) => (
+            {sortedPullRequests.map((pr) => (
               <TableRow key={pr.id} className="border-b border-border/70 transition-colors surface-tint-hover">
                 <TableCell className="text-muted-foreground tabular-nums">#{pr.id}</TableCell>
                 <TableCell className="text-foreground">{pr.title}</TableCell>
