@@ -179,7 +179,7 @@ export default function Index() {
                     value: filter,
                     onChange: (v: string) => handleFilterChange(v as FilterMode),
                     options: [
-                      { mode: "all", Icon: Circle, label: "Everything" },
+                      { mode: "all", Icon: Circle, label: "All" },
                       { mode: "dope", Icon: Cherry, label: "Favorites" },
                     ],
                   },
