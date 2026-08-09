@@ -59,7 +59,9 @@ export default function MonteCarlo() {
               <TableHead className="w-[90px]">PR</TableHead>
               <TableHead>Title</TableHead>
               <TableHead className="text-right w-[90px]">Files</TableHead>
-              <TableHead className="text-right w-[120px]">Changes</TableHead>
+              <TableHead className="text-right w-[140px]" colSpan={2}>
+                Changes
+              </TableHead>
             </TableRow>
           </TableHeader>
           <TableBody>
@@ -68,11 +70,13 @@ export default function MonteCarlo() {
                 <TableCell className="text-muted-foreground tabular-nums">#{pr.id}</TableCell>
                 <TableCell className="text-foreground">{pr.title}</TableCell>
                 <TableCell className="text-right text-muted-foreground tabular-nums whitespace-nowrap">
-                  {pr.files} {pr.files === 1 ? "file" : "files"}
+                  {pr.files}
                 </TableCell>
-                <TableCell className="text-right tabular-nums whitespace-nowrap">
-                  <span className="text-additions">+{pr.additions}</span>{" "}
-                  <span className="text-deletions">−{pr.deletions}</span>
+                <TableCell className="text-right tabular-nums whitespace-nowrap text-additions w-[70px]">
+                  +{pr.additions}
+                </TableCell>
+                <TableCell className="text-right tabular-nums whitespace-nowrap text-deletions w-[70px]">
+                  −{pr.deletions}
                 </TableCell>
               </TableRow>
             ))}
