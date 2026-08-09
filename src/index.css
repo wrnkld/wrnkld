@@ -119,6 +119,9 @@
      Kept translucent so the page gridlines stay visible underneath. */
   .surface-tint { background-color: hsl(var(--border) / 0.45); }
   .surface-tint-hover:hover { background-color: hsl(var(--border) / 0.45); }
+  /* Full-bleed tables: outer cells align with the page's px-5 text gutter. */
+  .table-gutter :is(th, td):first-child { padding-left: 1.25rem; }
+  .table-gutter :is(th, td):last-child { padding-right: 1.25rem; }
   .chip-work     { background-color: hsl(var(--chip-work)); }
   .chip-about    { background-color: hsl(var(--chip-about)); }
   .chip-side     { background-color: hsl(var(--chip-side)); }

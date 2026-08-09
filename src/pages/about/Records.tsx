@@ -96,7 +96,7 @@ export default function Records() {
         )}
       </div>
 
-      <div className="full-bleed border-y border-border/70 overflow-hidden">
+      <div className="full-bleed border-y border-border/70 overflow-hidden table-gutter">
         <Table>
           <TableHeader>
             <TableRow className="surface-tint-hover border-b-border/70">
