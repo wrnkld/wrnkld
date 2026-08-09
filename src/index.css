@@ -103,6 +103,9 @@
 
     .text-recommended { color: hsl(330 75% 45%); }
 
+  .text-additions { color: hsl(142 55% 32%); }
+  .text-deletions { color: hsl(0 65% 45%); }
+
   @keyframes fade-in-up {
     from { opacity: 0; transform: translateY(4px); }
     to   { opacity: 1; transform: translateY(0); }
