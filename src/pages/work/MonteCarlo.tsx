@@ -16,19 +16,24 @@ export default function MonteCarlo() {
         Monte Carlo AI is the leading agent trust platform, helping data teams detect, resolve, and prevent data quality issues across the modern data stack.
       </p>
 
-      <h2 className="font-display text-lg font-medium text-foreground">Role</h2>
+      <h2 className="font-display text-lg font-medium text-foreground">Shipping</h2>
       <p className="font-body text-base text-muted-foreground leading-relaxed">
-        Joined as a founding designer to build and lead the design function from the ground up. Hired designers, established design systems, created research practices, and partnered directly with the founders and product leadership to shape the product vision.
+        Contributed directly to the frontend through AI-assisted development. Shipped changes across AI workflows, navigation, monitoring, and product quality through hundreds of merged pull requests.
       </p>
 
-      <h2 className="font-display text-lg font-medium text-foreground">Scale</h2>
+      <h2 className="font-display text-lg font-medium text-foreground">CLI</h2>
       <p className="font-body text-base text-muted-foreground leading-relaxed">
-        Grew the design team while shipping product across multiple workstreams. Balanced leadership responsibilities with hands-on product work, maintaining quality and consistency across the platform.
+        Explored a new way for people and AI agents to interact directly with Monte Carlo's APIs—inspecting assets, investigating incidents, and taking action outside the main application.
+      </p>
+
+      <h2 className="font-display text-lg font-medium text-foreground">Role</h2>
+      <p className="font-body text-base text-muted-foreground leading-relaxed">
+        Joined as founding designer and built the design function while remaining hands-on across the product. Partnered with founders, product, and engineering to shape the platform, hired and mentored designers, and established research and design-system practices.
       </p>
 
       <h2 className="font-display text-lg font-medium text-foreground">Performance</h2>
       <p className="font-body text-base text-muted-foreground leading-relaxed">
-        Designed an end-to-end performance investigation workflow, enabling teams to understand where cost and latency originate and why across Snowflake, dbt, Airflow, and Looker.
+        Designed an end-to-end investigation workflow connecting cost, latency, query behavior, and operational context across Snowflake, dbt, Airflow, and Looker.
       </p>
 
       <img src={mcdWrites} alt="Monte Carlo write queries overview showing total credits and query performance trends" className="w-full h-auto border border-border/40" />
@@ -39,7 +44,7 @@ export default function MonteCarlo() {
 
       <h2 className="font-display text-lg font-medium text-foreground">Integrations</h2>
       <p className="font-body text-base text-muted-foreground leading-relaxed">
-        Designed a scalable integrations platform, spanning data warehouses, orchestration frameworks, code repositories, and incident response tools.
+        Designed a scalable integrations framework for warehouses, orchestration tools, repositories, BI platforms, and incident-response systems.
       </p>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -51,7 +56,7 @@ export default function MonteCarlo() {
 
       <h2 className="font-display text-lg font-medium text-foreground">Permissions</h2>
       <p className="font-body text-base text-muted-foreground leading-relaxed">
-        Designed a flexible permissions model supporting custom roles, granular sampling policies, and domain-scoped access controls. Enabled organizations to define who can view, edit, or manage monitors, alerts, and data assets.
+        Designed a flexible permissions model supporting custom roles, domain-scoped access, and granular policies across assets, monitors, alerts, integrations, and sampling.
       </p>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
