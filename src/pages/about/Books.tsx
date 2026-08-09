@@ -108,7 +108,7 @@ export default function Books() {
           <Tabs value={filter} onValueChange={(v) => setFilter(v as FilterMode)}>
             <TabsList className="surface-tint p-1.5">
               {[
-                { mode: "all", Icon: Circle, label: "Everything" },
+                { mode: "all", Icon: Circle, label: "All" },
                 { mode: "recommended", Icon: Cherry, label: "Recommended" },
               ].map(({ mode, Icon, label }) => (
                 <Tooltip key={mode}>
