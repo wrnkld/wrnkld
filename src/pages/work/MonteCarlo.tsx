@@ -43,7 +43,7 @@ const pullRequests = [
 ];
 
 export default function MonteCarlo() {
-  type SortField = "id" | "title" | "files" | "changes";
+  type SortField = "id" | "title" | "files" | "additions" | "deletions";
   const [sortField, setSortField] = useState<SortField>("id");
   const [sortDirection, setSortDirection] = useState<"asc" | "desc">("desc");
 
@@ -57,8 +57,7 @@ export default function MonteCarlo() {
   };
 
   const sortedPullRequests = useMemo(() => {
-    const value = (pr: (typeof pullRequests)[number]) =>
-      sortField === "changes" ? pr.additions + pr.deletions : pr[sortField];
+    const value = (pr: (typeof pullRequests)[number]) => pr[sortField];
     return [...pullRequests].sort((a, b) => {
       const av = value(a);
       const bv = value(b);
@@ -102,8 +101,11 @@ export default function MonteCarlo() {
               <TableHead className="text-right w-[90px]">
                 <SortHeader field="files">Files</SortHeader>
               </TableHead>
-              <TableHead className="text-right w-[140px]" colSpan={2}>
-                <SortHeader field="changes">Changes</SortHeader>
+              <TableHead className="text-right w-[70px]">
+                <SortHeader field="additions">Added</SortHeader>
+              </TableHead>
+              <TableHead className="text-right w-[70px]">
+                <SortHeader field="deletions">Removed</SortHeader>
               </TableHead>
             </TableRow>
           </TableHeader>
