@@ -1,4 +1,12 @@
 import { DetailLayout } from "@/components/DetailLayout";
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from "@/components/ui/table";
 
 import mcdWrites from "@/assets/montecarlo/mcd-writes.png";
 import mcdWrite from "@/assets/montecarlo/mcd-write.png";
@@ -8,6 +16,29 @@ import mcdAudiences from "@/assets/montecarlo/mcd-audiences.png";
 import mcdRoles from "@/assets/montecarlo/mcd-roles.png";
 import mcdSampling from "@/assets/montecarlo/mcd-sampling.png";
 import mcdJob from "@/assets/montecarlo/mcd-job.png";
+
+const pullRequests = [
+  { id: 15254, title: "Remove the copy link action from asset detail pages", files: 2, additions: 2, deletions: 21 },
+  { id: 15255, title: "Fix the data product asset selector layout", files: 4, additions: 91, deletions: 62 },
+  { id: 15252, title: "Render legacy monitor details as metadata list section cards", files: 4, additions: 281, deletions: 361 },
+  { id: 15253, title: "Drop the bespoke styling layer on the Resources menu", files: 7, additions: 171, deletions: 79 },
+  { id: 15228, title: "Remove deleted alert comments from the Apollo cache", files: 11, additions: 385, deletions: 137 },
+  { id: 15251, title: "Withhold generated-key dismissal until the list refetch lands", files: 3, additions: 74, deletions: 7 },
+  { id: 15209, title: "Rework the SCIM settings page into cards with a modal editor", files: 16, additions: 390, deletions: 279 },
+  { id: 15196, title: "Remove noise from the alert page", files: 25, additions: 256, deletions: 379 },
+  { id: 15072, title: "Agents list: header Add button, search, and persisted view", files: 2, additions: 214, deletions: 12 },
+  { id: 15090, title: "Alert page: remove the header chip row, move priority into the Details rail", files: 14, additions: 96, deletions: 300 },
+  { id: 15054, title: "Move the Monitors Apply properties button onto the bulk-actions row", files: 2, additions: 2, deletions: 2 },
+  { id: 15071, title: "Match the Alerts toolbar to the Monitors tab layout", files: 4, additions: 131, deletions: 48 },
+  { id: 15038, title: "Show the ETL integrations announcement banner on the Integrations settings page", files: 1, additions: 5, deletions: 1 },
+  { id: 15039, title: "Move the Monitors Columns button onto the bulk-actions row", files: 2, additions: 7, deletions: 6 },
+  { id: 15037, title: "Remove Alerts from default Monitors list filters", files: 4, additions: 14, deletions: 11 },
+  { id: 15008, title: "Add ETL integrations announcement banner to the Jobs page", files: 8, additions: 286, deletions: 13 },
+  { id: 14942, title: "Let the asset nav tree and Operations agent panel open independently", files: 21, additions: 368, deletions: 178 },
+  { id: 14945, title: "Add ETL & orchestration integrations sidebar callout", files: 5, additions: 203, deletions: 17 },
+  { id: 14921, title: "Fix invisible Copy button in the AI tool triage drawer in light mode", files: 2, additions: 18, deletions: 9 },
+  { id: 14884, title: "Add a Type column to the alerts table", files: 10, additions: 230, deletions: 33 },
+];
 
 export default function MonteCarlo() {
   return (
@@ -20,6 +51,34 @@ export default function MonteCarlo() {
       <p className="font-body text-base text-muted-foreground leading-relaxed">
         Contributed directly to the frontend through AI-assisted development. Shipped changes across AI workflows, navigation, monitoring, and product quality through hundreds of merged pull requests.
       </p>
+
+      <div className="full-bleed border-y border-border/70 overflow-hidden">
+        <Table>
+          <TableHeader>
+            <TableRow className="border-b-border/70">
+              <TableHead className="w-[90px]">PR</TableHead>
+              <TableHead>Title</TableHead>
+              <TableHead className="text-right w-[90px]">Files</TableHead>
+              <TableHead className="text-right w-[120px]">Changes</TableHead>
+            </TableRow>
+          </TableHeader>
+          <TableBody>
+            {pullRequests.map((pr) => (
+              <TableRow key={pr.id} className="border-b border-border/70 transition-colors surface-tint-hover">
+                <TableCell className="text-muted-foreground tabular-nums">#{pr.id}</TableCell>
+                <TableCell className="text-foreground">{pr.title}</TableCell>
+                <TableCell className="text-right text-muted-foreground tabular-nums whitespace-nowrap">
+                  {pr.files} {pr.files === 1 ? "file" : "files"}
+                </TableCell>
+                <TableCell className="text-right tabular-nums whitespace-nowrap">
+                  <span className="text-additions">+{pr.additions}</span>{" "}
+                  <span className="text-deletions">−{pr.deletions}</span>
+                </TableCell>
+              </TableRow>
+            ))}
+          </TableBody>
+        </Table>
+      </div>
 
       <h2 className="font-display text-lg font-medium text-foreground">CLI</h2>
       <p className="font-body text-base text-muted-foreground leading-relaxed">
