@@ -12,17 +12,25 @@ import {
 } from "@/components/ui/table";
 import { ArrowUpDown, Search, X } from "lucide-react";
 import { motion } from "motion/react";
+import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 
 type SortField = "title" | "author" | "year";
 type SortDirection = "asc" | "desc";
+type FilterMode = "all" | "recommended";
 
 export default function Books() {
   const [search, setSearch] = useState("");
   const [sortField, setSortField] = useState<SortField>("year");
   const [sortDirection, setSortDirection] = useState<SortDirection>("desc");
+  const [filter, setFilter] = useState<FilterMode>("all");
 
   const filteredAndSortedBooks = useMemo(() => {
     let result = [...books];
+
+    if (filter === "recommended") {
+      result = result.filter((book) => book.recommended);
+    }
 
     if (search) {
       const searchLower = search.toLowerCase();
@@ -45,7 +53,7 @@ export default function Books() {
     });
 
     return result;
-  }, [search, sortField, sortDirection]);
+  }, [search, sortField, sortDirection, filter]);
 
   const handleSort = (field: SortField) => {
     if (sortField === field) {
@@ -78,23 +86,46 @@ export default function Books() {
         I started tracking the books I read. Recommended in pink.
       </p>
 
-      <div className="relative">
-        <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
-        <Input
-          placeholder={`Search ${books.length} books`}
-          value={search}
-          onChange={(e) => setSearch(e.target.value)}
-          className="pl-9 rounded-lg border-border/70"
-        />
-        {search && (
-          <button
-            onClick={() => setSearch("")}
-            className="absolute right-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground hover:text-foreground transition-colors duration-200"
-          >
-            <X className="h-4 w-4" />
-          </button>
-        )}
-      </div>
+      <TooltipProvider delayDuration={200}>
+        <div className="flex items-center gap-3">
+          <div className="relative flex-1">
+            <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
+            <Input
+              placeholder={`Search ${books.length} books`}
+              value={search}
+              onChange={(e) => setSearch(e.target.value)}
+              className="pl-9 rounded-lg border-border/70"
+            />
+            {search && (
+              <button
+                onClick={() => setSearch("")}
+                className="absolute right-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground hover:text-foreground transition-colors duration-200"
+              >
+                <X className="h-4 w-4" />
+              </button>
+            )}
+          </div>
+          <Tabs value={filter} onValueChange={(v) => setFilter(v as FilterMode)}>
+            <TabsList className="surface-tint p-1.5">
+              {[
+                { mode: "all", Icon: Circle, label: "Everything" },
+                { mode: "recommended", Icon: Cherry, label: "Recommended" },
+              ].map(({ mode, Icon, label }) => (
+                <Tooltip key={mode}>
+                  <TooltipTrigger asChild>
+                    <span className="inline-flex">
+                      <TabsTrigger value={mode} aria-label={label} className="px-1.5 rounded data-[state=active]:shadow-[0_1px_2px_rgba(0,0,0,0.08),0_1px_3px_rgba(0,0,0,0.06)]">
+                        <Icon className="h-4 w-4" />
+                      </TabsTrigger>
+                    </span>
+                  </TooltipTrigger>
+                  <TooltipContent className="hidden sm:block">{label}</TooltipContent>
+                </Tooltip>
+              ))}
+            </TabsList>
+          </Tabs>
+        </div>
+      </TooltipProvider>
 
       <div className="full-bleed border-y border-border/70 overflow-hidden table-gutter">
         <Table>
