@@ -103,20 +103,13 @@ export function McCliDemo() {
                             : "bg-muted-foreground/50 group-hover:bg-foreground"
                         }`}
                       />
-                      <span className="flex flex-col gap-px">
-                        <span
+                      <span
                           className={`font-body text-xs leading-tight ${
                             isActive ? "text-foreground" : "text-muted-foreground"
                           }`}
                         >
                           {s.name}
                         </span>
-                        {isActive && (
-                          <span className="font-mono text-[10px] text-muted-foreground">
-                            {s.cmdLabel}
-                          </span>
-                        )}
-                      </span>
                     </button>
                   );
                 })}
@@ -136,9 +129,9 @@ export function McCliDemo() {
           </span>
         </div>
 
-        <div className="p-5 md:p-6 flex-1 min-h-[380px] max-h-[520px] overflow-y-auto min-w-0">
+        <div className="p-5 md:p-6 h-[440px] overflow-y-auto min-w-0">
           {!active ? (
-            <div className="flex h-full min-h-[380px] flex-col items-center justify-center gap-1 text-center font-body text-xs text-[hsl(var(--term-t3))]">
+            <div className="flex h-full flex-col items-center justify-center gap-1 text-center font-body text-xs text-[hsl(var(--term-t3))]">
               <span className="text-lg md:hidden">↑</span>
               <span className="hidden text-lg md:inline">←</span>
               <span className="md:hidden">Pick a scenario above</span>
