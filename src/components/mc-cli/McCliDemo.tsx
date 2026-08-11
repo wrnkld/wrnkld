@@ -76,7 +76,7 @@ export function McCliDemo() {
       >
         <div className="flex items-center px-4 py-2.5 border-b border-border/70">
           <span className="font-mono text-[11px] text-muted-foreground truncate">
-            commands
+            CLI
           </span>
         </div>
         <div className="flex md:flex-col gap-1 md:gap-0 px-3 md:px-0 py-2 md:py-3 overflow-x-auto">
@@ -130,7 +130,7 @@ export function McCliDemo() {
           <span className="h-2.5 w-2.5 rounded-full bg-[#ffbd2e]" />
           <span className="h-2.5 w-2.5 rounded-full bg-[#28c840]" />
           <span className="font-mono text-[11px] text-[hsl(var(--term-t3))] ml-1.5 truncate">
-            {active ? `montecarlo — ${active.title.toLowerCase()}` : "montecarlo — cli"}
+            {active ? `montecarlo — ${active.title.toLowerCase()}` : "montecarlo"}
           </span>
         </div>
 
