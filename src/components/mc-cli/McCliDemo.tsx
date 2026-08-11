@@ -246,7 +246,7 @@ function MobileScenarioPicker({
           {active ? `montecarlo — ${active.title.toLowerCase()}` : "CLI — pick a scenario"}
         </SelectValue>
       </SelectTrigger>
-      <SelectContent className="border border-border/70 bg-background rounded shadow-md p-2">
+      <SelectContent className="border border-border/70 bg-background rounded shadow-md p-2 w-[var(--radix-select-trigger-width)]">
         <SelectGroup>
           <SelectItem
             value=""
