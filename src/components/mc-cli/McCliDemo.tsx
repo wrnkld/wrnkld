@@ -68,16 +68,16 @@ export function McCliDemo() {
   const fullJson = active ? JSON.stringify(active.res, null, 2) : "";
 
   return (
-    <div className="mc-terminal border border-border/70 bg-[hsl(var(--term-bg))] text-[hsl(var(--term-t1))] grid grid-cols-1 md:grid-cols-[236px_1fr]">
+    <div className="mc-terminal border border-border/70 bg-background grid grid-cols-1 md:grid-cols-[236px_1fr]">
       {/* Scenario list */}
       <nav
         aria-label="CLI scenarios"
-        className="border-b md:border-b-0 md:border-r border-[hsl(var(--term-border))] bg-[hsl(var(--term-nav))] py-2 md:py-3 overflow-x-auto"
+        className="border-b md:border-b-0 md:border-r border-border/70 bg-background py-2 md:py-3 overflow-x-auto"
       >
         <div className="flex md:flex-col gap-1 md:gap-0 px-3 md:px-0">
           {groups.map((group) => (
             <div key={group} className="flex md:flex-col items-center md:items-stretch shrink-0">
-              <div className="font-body text-[9px] font-medium uppercase tracking-[0.14em] text-[hsl(var(--term-t3))] px-3 pt-3 pb-1 whitespace-nowrap md:pt-4">
+              <div className="font-body text-[9px] font-medium uppercase tracking-[0.14em] text-muted-foreground px-3 pt-3 pb-1 whitespace-nowrap md:pt-4">
                 {group}
               </div>
               {scenarios
@@ -92,28 +92,28 @@ export function McCliDemo() {
                       aria-current={isActive ? "true" : undefined}
                       className={`group flex items-start gap-2 text-left px-3 py-2 border-l-2 transition-colors duration-200 whitespace-nowrap md:whitespace-normal ${
                         isActive
-                          ? "border-l-[hsl(var(--term-accent))] bg-[hsl(var(--term-active))]"
-                          : "border-l-transparent hover:bg-[hsl(var(--term-hover))]"
+                          ? "border-l-foreground surface-tint"
+                          : "border-l-transparent surface-tint-hover"
                       }`}
                     >
                       <span
                         className={`mt-[6px] h-1.5 w-1.5 shrink-0 rounded-full transition-colors duration-200 ${
                           isActive
-                            ? "bg-[hsl(var(--term-accent))]"
-                            : "bg-[hsl(var(--term-t3))] group-hover:bg-[hsl(var(--term-accent))]"
+                            ? "bg-foreground"
+                            : "bg-muted-foreground/50 group-hover:bg-foreground"
                         }`}
                       />
                       <span className="flex flex-col gap-px">
                         <span
                           className={`font-body text-xs leading-tight ${
-                            isActive ? "text-[hsl(var(--term-t1))]" : "text-[hsl(var(--term-t2))]"
+                            isActive ? "text-foreground" : "text-muted-foreground"
                           }`}
                         >
                           {s.name}
                         </span>
                         <span
                           className={`font-mono text-[10px] ${
-                            isActive ? "text-[hsl(var(--term-t2))]" : "text-[hsl(var(--term-t3))]"
+                            isActive ? "text-muted-foreground" : "text-muted-foreground/70"
                           }`}
                         >
                           {s.cmdLabel}
@@ -128,7 +128,7 @@ export function McCliDemo() {
       </nav>
 
       {/* Terminal */}
-      <div className="flex flex-col bg-[hsl(var(--term-body))] min-w-0">
+      <div className="flex flex-col bg-[hsl(var(--term-body))] text-[hsl(var(--term-t1))] min-w-0">
         <div className="flex items-center gap-1.5 px-4 py-2.5 border-b border-[hsl(var(--term-border))]">
           <span className="h-2.5 w-2.5 rounded-full bg-[#ff5f57]" />
           <span className="h-2.5 w-2.5 rounded-full bg-[#ffbd2e]" />
