@@ -130,7 +130,7 @@ export function McCliDemo() {
           <span className="h-2.5 w-2.5 rounded-full bg-[#ffbd2e]" />
           <span className="h-2.5 w-2.5 rounded-full bg-[#28c840]" />
           <span className="font-mono text-[11px] text-[hsl(var(--term-t3))] ml-1.5 truncate">
-            {active ? `montecarlo — ${active.title.toLowerCase()}` : "montecarlo — bash — 120×40"}
+            {active ? `montecarlo — ${active.title.toLowerCase()}` : "montecarlo — cli"}
           </span>
         </div>
 
