@@ -68,21 +68,48 @@ export function McCliDemo() {
   const fullJson = active ? JSON.stringify(active.res, null, 2) : "";
 
   return (
-    <div className="mc-terminal border border-border/70 bg-background grid grid-cols-1 md:grid-cols-[228px_1fr] md:h-[488px]">
+    <div className="mc-terminal border border-border/70 bg-background grid grid-cols-1 grid-rows-[auto_minmax(0,1fr)] md:grid-rows-1 md:grid-cols-[228px_1fr] h-[488px]">
       {/* Scenario list */}
       <nav
         aria-label="CLI scenarios"
-        className="border-b md:border-b-0 md:border-r border-border/70 bg-[hsl(var(--surface))] flex flex-col min-w-0 min-h-0"
+        className="border-b md:border-b-0 md:border-r border-border/70 bg-[hsl(var(--surface))] flex flex-col min-w-0 min-h-0 shrink-0"
       >
-        <div className="flex items-center px-4 py-2.5 border-b border-border/70">
+        <div className="hidden md:flex items-center px-4 py-2.5 border-b border-border/70">
           <span className="font-mono text-[11px] text-muted-foreground truncate">
             CLI
           </span>
         </div>
-        <div className="flex md:flex-col gap-1 md:gap-0 px-3 md:px-0 py-2 md:py-3 overflow-x-auto md:overflow-y-auto md:flex-1 md:min-h-0">
+
+        {/* Mobile: full-width dropdown */}
+        <div className="md:hidden p-3">
+          <label className="sr-only" htmlFor="mc-cli-scenario">
+            CLI scenario
+          </label>
+          <select
+            id="mc-cli-scenario"
+            value={activeId ?? ""}
+            onChange={(e) => setActiveId(e.target.value || null)}
+            className="w-full border border-border/70 bg-background px-3 py-2 font-body text-xs text-foreground"
+          >
+            <option value="">CLI — pick a scenario</option>
+            {groups.map((group) => (
+              <optgroup key={group} label={group}>
+                {scenarios
+                  .filter((s) => s.group === group)
+                  .map((s) => (
+                    <option key={s.id} value={s.id}>
+                      {s.name}
+                    </option>
+                  ))}
+              </optgroup>
+            ))}
+          </select>
+        </div>
+
+        <div className="hidden md:flex md:flex-col py-3 md:overflow-y-auto md:flex-1 md:min-h-0">
           {groups.map((group) => (
-            <div key={group} className="flex md:flex-col items-center md:items-stretch shrink-0">
-              <div className="font-body text-[10px] font-medium uppercase tracking-[0.14em] text-muted-foreground px-3 pt-2.5 pb-1 whitespace-nowrap md:pt-3">
+            <div key={group} className="flex flex-col items-stretch shrink-0">
+              <div className="font-body text-[10px] font-medium uppercase tracking-[0.14em] text-muted-foreground px-3 pt-3 pb-1">
                 {group}
               </div>
               {scenarios
@@ -95,7 +122,7 @@ export function McCliDemo() {
                       type="button"
                       onClick={() => setActiveId(s.id)}
                       aria-current={isActive ? "true" : undefined}
-                      className={`group flex items-start gap-2 text-left px-3 py-1.5 border-l-2 transition-colors duration-200 whitespace-nowrap md:whitespace-normal ${
+                      className={`group flex items-start gap-2 text-left px-3 py-1.5 border-l-2 transition-colors duration-200 ${
                         isActive
                           ? "border-l-foreground surface-tint"
                           : "border-l-transparent surface-tint-hover"
@@ -134,7 +161,7 @@ export function McCliDemo() {
           </span>
         </div>
 
-        <div className="p-5 md:p-6 flex-1 min-h-[400px] md:min-h-0 overflow-y-auto min-w-0">
+        <div className="p-5 md:p-6 flex-1 min-h-0 overflow-y-auto min-w-0">
           {!active ? (
             <div className="flex h-full flex-col items-center justify-center gap-1 text-center font-body text-xs text-[hsl(var(--term-t3))]">
               <span className="text-lg md:hidden">↑</span>
