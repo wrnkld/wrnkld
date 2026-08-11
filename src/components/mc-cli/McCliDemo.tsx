@@ -68,7 +68,7 @@ export function McCliDemo() {
   const fullJson = active ? JSON.stringify(active.res, null, 2) : "";
 
   return (
-    <div className="mc-terminal border border-border/70 bg-background grid grid-cols-1 md:grid-cols-[236px_1fr]">
+    <div className="mc-terminal border border-border/70 bg-background grid grid-cols-1 md:grid-cols-[288px_1fr]">
       {/* Scenario list */}
       <nav
         aria-label="CLI scenarios"
@@ -77,7 +77,7 @@ export function McCliDemo() {
         <div className="flex md:flex-col gap-1 md:gap-0 px-3 md:px-0">
           {groups.map((group) => (
             <div key={group} className="flex md:flex-col items-center md:items-stretch shrink-0">
-              <div className="font-body text-[10.5px] font-medium uppercase tracking-[0.14em] text-muted-foreground px-3 pt-2.5 pb-1 whitespace-nowrap md:pt-3">
+              <div className="font-body text-xs font-medium uppercase tracking-[0.14em] text-muted-foreground px-3 pt-2.5 pb-1 whitespace-nowrap md:pt-3">
                 {group}
               </div>
               {scenarios
@@ -104,7 +104,7 @@ export function McCliDemo() {
                         }`}
                       />
                       <span
-                          className={`font-body text-[13.5px] leading-snug ${
+                          className={`font-body text-base leading-snug ${
                             isActive ? "text-foreground" : "text-muted-foreground"
                           }`}
                         >
