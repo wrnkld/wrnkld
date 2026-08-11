@@ -77,7 +77,7 @@ export function McCliDemo() {
   const fullJson = active ? JSON.stringify(active.res, null, 2) : "";
 
   return (
-    <div className="mc-terminal border border-border/70 bg-background grid grid-cols-1 grid-rows-[auto_minmax(0,1fr)] md:grid-rows-1 md:grid-cols-[228px_1fr] h-[488px]">
+    <div className="mc-terminal border border-border/70 bg-background grid grid-cols-1 grid-rows-[auto_minmax(0,1fr)] md:grid-rows-1 md:grid-cols-[228px_1fr] h-[540px]">
       {/* Scenario list */}
       <nav
         aria-label="CLI scenarios"
