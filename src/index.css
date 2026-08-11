@@ -103,6 +103,47 @@
 
     .text-recommended { color: hsl(330 75% 45%); }
 
+  /* Scoped dark palette for the Monte Carlo CLI console. Only the terminal
+     panel goes dark; the rest of the page stays on the site's slate tokens. */
+  .mc-terminal {
+    --term-bg:     0 0% 5%;
+    --term-nav:    0 0% 6%;
+    --term-body:   0 0% 5%;
+    --term-hover:  0 0% 8%;
+    --term-active: 0 0% 9.5%;
+    --term-block:  0 0% 100% / 0.03;
+    --term-border: 0 0% 12%;
+    --term-t1:     0 0% 89%;
+    --term-t2:     0 0% 41%;
+    --term-t3:     0 0% 30%;
+    --term-get:    142 71% 45%;
+    --term-accent: 211 87% 55%;
+  }
+  .mc-terminal .tk-key,
+  .mc-terminal .tk-value,
+  .mc-terminal .tk-path { color: hsl(187 92% 69%); }
+  .mc-terminal .tk-str { color: hsl(45 96% 76%); }
+  .mc-terminal .tk-num { color: hsl(270 95% 75%); }
+  .mc-terminal .tk-bool { color: hsl(141 79% 75%); }
+  .mc-terminal .tk-null { color: hsl(0 91% 71%); }
+  .mc-terminal .tk-punc,
+  .mc-terminal .tk-plain { color: hsl(var(--term-t3)); }
+  .mc-terminal .tk-prompt { color: hsl(var(--term-get)); user-select: none; }
+  .mc-terminal .tk-cmd { color: hsl(var(--term-t1)); }
+  .mc-terminal .tk-flag { color: hsl(45 96% 76%); }
+  .mc-terminal .tk-comment { color: hsl(var(--term-t3)); }
+  .mc-terminal .tk-header { color: hsl(var(--term-t2)); }
+  .mc-terminal .tk-method-get { color: hsl(142 71% 45%); font-weight: 500; }
+  .mc-terminal .tk-method-post { color: hsl(217 91% 60%); font-weight: 500; }
+  .mc-terminal .tk-method-patch { color: hsl(38 92% 50%); font-weight: 500; }
+  .mc-terminal .tk-method-delete { color: hsl(0 84% 60%); font-weight: 500; }
+  .mc-terminal .term-cursor {
+    display: inline-block; width: 6px; height: 13px;
+    background: hsl(var(--term-t1)); vertical-align: text-bottom;
+    margin-left: 1px; animation: term-blink 1s step-end infinite;
+  }
+  @keyframes term-blink { 0%, 100% { opacity: 1 } 50% { opacity: 0 } }
+
   .text-additions { color: hsl(142 55% 32%); }
   .text-deletions { color: hsl(0 65% 45%); }
 
