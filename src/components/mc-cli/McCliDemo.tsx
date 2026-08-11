@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import { Check, ChevronDown } from "lucide-react";
 import { CliLine, Json, jsonTokens } from "./highlight";
 import { groups, scenarios, type Scenario } from "./scenarios";
 
