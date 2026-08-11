@@ -1,7 +1,15 @@
 import { useEffect, useRef, useState } from "react";
-import { Check, ChevronDown } from "lucide-react";
 import { CliLine, Json, jsonTokens } from "./highlight";
 import { groups, scenarios, type Scenario } from "./scenarios";
+import {
+  Select,
+  SelectContent,
+  SelectGroup,
+  SelectItem,
+  SelectLabel,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 
 function useTypewriter(scenario: Scenario | null) {
   const [chars, setChars] = useState(0);
@@ -226,92 +234,47 @@ function MobileScenarioPicker({
   activeId: string | null;
   onChange: (id: string | null) => void;
 }) {
-  const [open, setOpen] = useState(false);
-  const containerRef = useRef<HTMLDivElement>(null);
   const active = scenarios.find((s) => s.id === activeId);
 
-  useEffect(() => {
-    if (!open) return;
-    const handle = (e: MouseEvent) => {
-      if (!containerRef.current?.contains(e.target as Node)) {
-        setOpen(false);
-      }
-    };
-    document.addEventListener("mousedown", handle);
-    return () => document.removeEventListener("mousedown", handle);
-  }, [open]);
-
-  const select = (id: string | null) => {
-    onChange(id);
-    setOpen(false);
-  };
-
   return (
-    <div ref={containerRef} className="relative">
-      <button
-        type="button"
-        onClick={() => setOpen((v) => !v)}
-        aria-haspopup="listbox"
-        aria-expanded={open}
-        className="w-full flex items-center justify-between gap-2 border border-border/70 bg-background px-3 py-2 rounded font-body text-xs text-foreground transition-colors duration-200 hover:bg-muted"
-      >
-        <span className="truncate">
+    <Select
+      value={activeId ?? ""}
+      onValueChange={(value) => onChange(value || null)}
+    >
+      <SelectTrigger className="w-full h-9 border border-border/70 bg-background rounded px-3 py-2 font-body text-xs text-foreground focus:ring-0 focus:ring-offset-0 focus:border-border/70">
+        <SelectValue placeholder="CLI — pick a scenario">
           {active ? `montecarlo — ${active.title.toLowerCase()}` : "CLI — pick a scenario"}
-        </span>
-        <ChevronDown
-          className={`h-3.5 w-3.5 shrink-0 text-muted-foreground transition-transform duration-200 ${
-            open ? "rotate-180" : ""
-          }`}
-        />
-      </button>
-
-        {open && (
-          <div
-            role="listbox"
-            className="absolute left-0 right-0 top-full z-50 mt-1.5 border border-border/70 bg-background rounded shadow-md overflow-hidden"
+        </SelectValue>
+      </SelectTrigger>
+      <SelectContent className="border border-border/70 bg-background rounded shadow-md">
+        <SelectGroup>
+          <SelectItem
+            value=""
+            className="font-body text-xs text-muted-foreground focus:bg-muted focus:text-foreground rounded-sm"
           >
-          <button
-            type="button"
-            role="option"
-            aria-selected={activeId === null}
-            onClick={() => select(null)}
-            className="w-full flex items-center justify-between px-3 py-2 text-left font-body text-xs text-muted-foreground transition-colors duration-200 hover:bg-muted"
-          >
-            <span>CLI — pick a scenario</span>
-            {activeId === null && <Check className="h-3.5 w-3.5 text-foreground" />}
-          </button>
-          {groups.map((group) => (
-            <div key={group}>
-              <div className="px-3 py-1.5 font-body text-[10px] font-medium uppercase tracking-[0.12em] text-muted-foreground bg-muted/40 border-y border-border/70">
-                {group}
-              </div>
-              {scenarios
-                .filter((s) => s.group === group)
-                .map((s) => {
-                  const isActive = s.id === activeId;
-                  return (
-                    <button
-                      key={s.id}
-                      type="button"
-                      role="option"
-                      aria-selected={isActive}
-                      onClick={() => select(s.id)}
-                      className={`w-full flex items-center justify-between px-3 py-2 text-left font-body text-xs transition-colors duration-200 ${
-                        isActive
-                          ? "bg-muted text-foreground"
-                          : "text-muted-foreground hover:bg-muted"
-                      }`}
-                    >
-                      <span className="truncate">{s.name}</span>
-                      {isActive && <Check className="h-3.5 w-3.5 text-foreground" />}
-                    </button>
-                  );
-                })}
-            </div>
-          ))}
-        </div>
-      )}
-    </div>
+            CLI — pick a scenario
+          </SelectItem>
+        </SelectGroup>
+        {groups.map((group) => (
+          <SelectGroup key={group}>
+            <SelectLabel className="font-body text-[10px] font-medium uppercase tracking-[0.12em] text-muted-foreground bg-muted/40 px-3 py-1.5">
+              {group}
+            </SelectLabel>
+            {scenarios
+              .filter((s) => s.group === group)
+              .map((s) => (
+                <SelectItem
+                  key={s.id}
+                  value={s.id}
+                  className="font-body text-xs text-foreground focus:bg-muted focus:text-foreground rounded-sm"
+                >
+                  {s.name}
+                </SelectItem>
+              ))}
+          </SelectGroup>
+        ))}
+      </SelectContent>
+    </Select>
   );
 }
 
