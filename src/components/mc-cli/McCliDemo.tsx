@@ -90,14 +90,14 @@ export function McCliDemo() {
                       type="button"
                       onClick={() => setActiveId(s.id)}
                       aria-current={isActive ? "true" : undefined}
-                      className={`group flex items-start gap-2 text-left px-3 py-2 border-l-2 transition-colors duration-200 whitespace-nowrap md:whitespace-normal ${
+                      className={`group flex items-start gap-2 text-left px-3 py-1.5 border-l-2 transition-colors duration-200 whitespace-nowrap md:whitespace-normal ${
                         isActive
                           ? "border-l-foreground surface-tint"
                           : "border-l-transparent surface-tint-hover"
                       }`}
                     >
                       <span
-                        className={`mt-[6px] h-1.5 w-1.5 shrink-0 rounded-full transition-colors duration-200 ${
+                        className={`mt-[7px] h-1.5 w-1.5 shrink-0 rounded-full transition-colors duration-200 ${
                           isActive
                             ? "bg-foreground"
                             : "bg-muted-foreground/50 group-hover:bg-foreground"
@@ -111,13 +111,11 @@ export function McCliDemo() {
                         >
                           {s.name}
                         </span>
-                        <span
-                          className={`font-mono text-[10px] ${
-                            isActive ? "text-muted-foreground" : "text-muted-foreground/70"
-                          }`}
-                        >
-                          {s.cmdLabel}
-                        </span>
+                        {isActive && (
+                          <span className="font-mono text-[10px] text-muted-foreground">
+                            {s.cmdLabel}
+                          </span>
+                        )}
                       </span>
                     </button>
                   );
