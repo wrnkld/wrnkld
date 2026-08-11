@@ -266,7 +266,7 @@ function MobileScenarioPicker({
                     <SelectItem
                       key={s.id}
                       value={s.id}
-                      className="font-body text-xs text-foreground focus:surface-tint-hover focus:text-foreground rounded-sm py-2"
+                      className="font-body text-xs text-foreground focus:surface-tint-hover focus:text-foreground rounded py-2"
                     >
                       {s.name}
                     </SelectItem>
