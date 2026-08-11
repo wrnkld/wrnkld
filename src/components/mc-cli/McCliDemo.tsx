@@ -265,11 +265,11 @@ function MobileScenarioPicker({
         />
       </button>
 
-      {open && (
-        <div
-          role="listbox"
-          className="absolute left-0 right-0 top-full z-50 mt-1.5 border border-border/70 bg-background rounded shadow-sm overflow-hidden"
-        >
+        {open && (
+          <div
+            role="listbox"
+            className="absolute left-0 right-0 top-full z-50 mt-1.5 border border-border/70 bg-background rounded shadow-md overflow-hidden"
+          >
           <button
             type="button"
             role="option"
