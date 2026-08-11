@@ -103,20 +103,13 @@ export function McCliDemo() {
                             : "bg-muted-foreground/50 group-hover:bg-foreground"
                         }`}
                       />
-                      <span className="flex flex-col gap-px">
-                        <span
+                      <span
                           className={`font-body text-xs leading-tight ${
                             isActive ? "text-foreground" : "text-muted-foreground"
                           }`}
                         >
                           {s.name}
                         </span>
-                        {isActive && (
-                          <span className="font-mono text-[10px] text-muted-foreground">
-                            {s.cmdLabel}
-                          </span>
-                        )}
-                      </span>
                     </button>
                   );
                 })}
