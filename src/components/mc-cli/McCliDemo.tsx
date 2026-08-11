@@ -72,9 +72,14 @@ export function McCliDemo() {
       {/* Scenario list */}
       <nav
         aria-label="CLI scenarios"
-        className="border-b md:border-b-0 md:border-r border-border/70 bg-background py-2 md:py-3 overflow-x-auto"
+        className="border-b md:border-b-0 md:border-r border-border/70 bg-background flex flex-col min-w-0"
       >
-        <div className="flex md:flex-col gap-1 md:gap-0 px-3 md:px-0">
+        <div className="flex items-center px-4 py-2.5 border-b border-border/70">
+          <span className="font-mono text-[11px] text-muted-foreground truncate">
+            scenarios
+          </span>
+        </div>
+        <div className="flex md:flex-col gap-1 md:gap-0 px-3 md:px-0 py-2 md:py-3 overflow-x-auto">
           {groups.map((group) => (
             <div key={group} className="flex md:flex-col items-center md:items-stretch shrink-0">
               <div className="font-body text-[10px] font-medium uppercase tracking-[0.14em] text-muted-foreground px-3 pt-2.5 pb-1 whitespace-nowrap md:pt-3">
@@ -125,7 +130,7 @@ export function McCliDemo() {
           <span className="h-2.5 w-2.5 rounded-full bg-[#ffbd2e]" />
           <span className="h-2.5 w-2.5 rounded-full bg-[#28c840]" />
           <span className="font-mono text-[11px] text-[hsl(var(--term-t3))] ml-1.5 truncate">
-            {active ? `montecarlo — ${active.title.toLowerCase()}` : "montecarlo — bash — 120×40"}
+            {active ? `montecarlo — ${active.title.toLowerCase()}` : "montecarlo — cli"}
           </span>
         </div>
 
