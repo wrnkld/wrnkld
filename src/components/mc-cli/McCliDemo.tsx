@@ -246,7 +246,7 @@ function MobileScenarioPicker({
           {active ? `montecarlo — ${active.title.toLowerCase()}` : "CLI — pick a scenario"}
         </SelectValue>
       </SelectTrigger>
-      <SelectContent className="border border-border/70 bg-background rounded shadow-md">
+      <SelectContent className="border border-border/70 bg-background rounded shadow-md p-2">
         <SelectGroup>
           <SelectItem
             value=""
@@ -260,17 +260,17 @@ function MobileScenarioPicker({
             <SelectLabel className="font-body text-[10px] font-medium uppercase tracking-[0.12em] text-muted-foreground bg-muted/40 pl-2 pr-3 py-1.5">
               {group}
             </SelectLabel>
-            {scenarios
-              .filter((s) => s.group === group)
-              .map((s) => (
-                <SelectItem
-                  key={s.id}
-                  value={s.id}
-                  className="font-body text-xs text-foreground focus:bg-muted focus:text-foreground rounded-sm"
-                >
-                  {s.name}
-                </SelectItem>
-              ))}
+                {scenarios
+                  .filter((s) => s.group === group)
+                  .map((s) => (
+                    <SelectItem
+                      key={s.id}
+                      value={s.id}
+                      className="font-body text-xs text-foreground focus:surface-tint-hover focus:text-foreground rounded-sm py-2"
+                    >
+                      {s.name}
+                    </SelectItem>
+                  ))}
           </SelectGroup>
         ))}
       </SelectContent>
