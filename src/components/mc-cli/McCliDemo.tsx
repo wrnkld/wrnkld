@@ -138,7 +138,7 @@ export function McCliDemo() {
           </span>
         </div>
 
-        <div className="p-5 md:p-6 min-h-[420px] max-h-[620px] overflow-y-auto min-w-0">
+        <div className="p-5 md:p-6 flex-1 min-h-[420px] md:max-h-[752px] overflow-y-auto min-w-0">
           {!active ? (
             <div className="flex h-full min-h-[380px] flex-col items-center justify-center gap-1 text-center font-body text-xs text-[hsl(var(--term-t3))]">
               <span className="text-lg md:hidden">↑</span>
