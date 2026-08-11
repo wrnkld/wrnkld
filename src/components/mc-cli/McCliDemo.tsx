@@ -257,7 +257,7 @@ function MobileScenarioPicker({
         </SelectGroup>
         {groups.map((group) => (
           <SelectGroup key={group}>
-            <SelectLabel className="font-body text-[10px] font-medium uppercase tracking-[0.12em] text-muted-foreground bg-muted/40 px-3 py-1.5">
+            <SelectLabel className="font-body text-[10px] font-medium uppercase tracking-[0.12em] text-muted-foreground bg-muted/40 pl-2 pr-3 py-1.5">
               {group}
             </SelectLabel>
             {scenarios
