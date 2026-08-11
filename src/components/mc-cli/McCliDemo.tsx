@@ -1,7 +1,15 @@
 import { useEffect, useRef, useState } from "react";
-import { Check, ChevronDown } from "lucide-react";
 import { CliLine, Json, jsonTokens } from "./highlight";
 import { groups, scenarios, type Scenario } from "./scenarios";
+import {
+  Select,
+  SelectContent,
+  SelectGroup,
+  SelectItem,
+  SelectLabel,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 
 function useTypewriter(scenario: Scenario | null) {
   const [chars, setChars] = useState(0);
