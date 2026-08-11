@@ -72,7 +72,7 @@ export function McCliDemo() {
       {/* Scenario list */}
       <nav
         aria-label="CLI scenarios"
-        className="border-b md:border-b-0 md:border-r border-border/70 bg-background flex flex-col min-w-0"
+        className="border-b md:border-b-0 md:border-r border-border/70 bg-[hsl(var(--surface))] flex flex-col min-w-0"
       >
         <div className="flex items-center px-4 py-2.5 border-b border-border/70">
           <span className="font-mono text-[11px] text-muted-foreground truncate">
