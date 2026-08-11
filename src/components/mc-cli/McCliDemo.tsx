@@ -77,7 +77,7 @@ export function McCliDemo() {
         <div className="flex md:flex-col gap-1 md:gap-0 px-3 md:px-0">
           {groups.map((group) => (
             <div key={group} className="flex md:flex-col items-center md:items-stretch shrink-0">
-              <div className="font-body text-[9px] font-medium uppercase tracking-[0.14em] text-muted-foreground px-3 pt-3 pb-1 whitespace-nowrap md:pt-4">
+              <div className="font-body text-[9px] font-medium uppercase tracking-[0.14em] text-muted-foreground px-3 pt-2.5 pb-1 whitespace-nowrap md:pt-3">
                 {group}
               </div>
               {scenarios
@@ -90,14 +90,14 @@ export function McCliDemo() {
                       type="button"
                       onClick={() => setActiveId(s.id)}
                       aria-current={isActive ? "true" : undefined}
-                      className={`group flex items-start gap-2 text-left px-3 py-2 border-l-2 transition-colors duration-200 whitespace-nowrap md:whitespace-normal ${
+                      className={`group flex items-start gap-2 text-left px-3 py-1.5 border-l-2 transition-colors duration-200 whitespace-nowrap md:whitespace-normal ${
                         isActive
                           ? "border-l-foreground surface-tint"
                           : "border-l-transparent surface-tint-hover"
                       }`}
                     >
                       <span
-                        className={`mt-[6px] h-1.5 w-1.5 shrink-0 rounded-full transition-colors duration-200 ${
+                        className={`mt-[7px] h-1.5 w-1.5 shrink-0 rounded-full transition-colors duration-200 ${
                           isActive
                             ? "bg-foreground"
                             : "bg-muted-foreground/50 group-hover:bg-foreground"
@@ -111,13 +111,11 @@ export function McCliDemo() {
                         >
                           {s.name}
                         </span>
-                        <span
-                          className={`font-mono text-[10px] ${
-                            isActive ? "text-muted-foreground" : "text-muted-foreground/70"
-                          }`}
-                        >
-                          {s.cmdLabel}
-                        </span>
+                        {isActive && (
+                          <span className="font-mono text-[10px] text-muted-foreground">
+                            {s.cmdLabel}
+                          </span>
+                        )}
                       </span>
                     </button>
                   );
@@ -138,7 +136,7 @@ export function McCliDemo() {
           </span>
         </div>
 
-        <div className="p-5 md:p-6 flex-1 min-h-[420px] md:max-h-[752px] overflow-y-auto min-w-0">
+        <div className="p-5 md:p-6 flex-1 min-h-[380px] max-h-[520px] overflow-y-auto min-w-0">
           {!active ? (
             <div className="flex h-full min-h-[380px] flex-col items-center justify-center gap-1 text-center font-body text-xs text-[hsl(var(--term-t3))]">
               <span className="text-lg md:hidden">↑</span>
