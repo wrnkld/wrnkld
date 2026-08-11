@@ -141,7 +141,8 @@ export function McCliDemo() {
         <div className="p-5 md:p-6 min-h-[420px] max-h-[620px] overflow-y-auto min-w-0">
           {!active ? (
             <div className="flex h-full min-h-[380px] flex-col items-center justify-center gap-1 text-center font-body text-xs text-[hsl(var(--term-t3))]">
-              <span className="text-lg">↑</span>
+              <span className="text-lg md:hidden">↑</span>
+              <span className="hidden text-lg md:inline">←</span>
               <span className="md:hidden">Pick a scenario above</span>
               <span className="hidden md:inline">Pick a scenario to the left</span>
             </div>

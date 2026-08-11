@@ -106,37 +106,40 @@
   /* Scoped dark palette for the Monte Carlo CLI console. Only the terminal
      panel goes dark; the rest of the page stays on the site's slate tokens. */
   .mc-terminal {
-    --term-bg:     0 0% 5%;
-    --term-nav:    0 0% 6%;
-    --term-body:   0 0% 5%;
-    --term-hover:  0 0% 8%;
-    --term-active: 0 0% 9.5%;
-    --term-block:  0 0% 100% / 0.03;
-    --term-border: 0 0% 12%;
-    --term-t1:     0 0% 89%;
-    --term-t2:     0 0% 41%;
-    --term-t3:     0 0% 30%;
-    --term-get:    142 71% 45%;
+    /* Derived from the site's slate tokens: same 222/47 hue+sat as
+       --foreground (slate-900), just carried down into the dark end of the
+       ramp, so the terminal reads as slate rather than a neutral black. */
+    --term-bg:     222 47% 6%;
+    --term-nav:    222 47% 7%;
+    --term-body:   222 47% 6%;
+    --term-hover:  222 40% 10%;
+    --term-active: 222 40% 12%;
+    --term-block:  210 40% 98% / 0.04;
+    --term-border: 222 32% 15%;
+    --term-t1:     210 40% 96%;   /* slate-100 */
+    --term-t2:     215 16% 47%;   /* slate-500, same as --muted-foreground */
+    --term-t3:     215 19% 35%;   /* slate-600 */
+    --term-get:    142 60% 45%;
     --term-accent: 211 87% 55%;
   }
   .mc-terminal .tk-key,
   .mc-terminal .tk-value,
-  .mc-terminal .tk-path { color: hsl(187 92% 69%); }
-  .mc-terminal .tk-str { color: hsl(45 96% 76%); }
-  .mc-terminal .tk-num { color: hsl(270 95% 75%); }
-  .mc-terminal .tk-bool { color: hsl(141 79% 75%); }
-  .mc-terminal .tk-null { color: hsl(0 91% 71%); }
+  .mc-terminal .tk-path { color: hsl(199 80% 74%); }
+  .mc-terminal .tk-str { color: hsl(45 70% 76%); }
+  .mc-terminal .tk-num { color: hsl(258 65% 78%); }
+  .mc-terminal .tk-bool { color: hsl(150 45% 70%); }
+  .mc-terminal .tk-null { color: hsl(0 60% 72%); }
   .mc-terminal .tk-punc,
   .mc-terminal .tk-plain { color: hsl(var(--term-t3)); }
   .mc-terminal .tk-prompt { color: hsl(var(--term-get)); user-select: none; }
   .mc-terminal .tk-cmd { color: hsl(var(--term-t1)); }
-  .mc-terminal .tk-flag { color: hsl(45 96% 76%); }
+  .mc-terminal .tk-flag { color: hsl(45 70% 76%); }
   .mc-terminal .tk-comment { color: hsl(var(--term-t3)); }
   .mc-terminal .tk-header { color: hsl(var(--term-t2)); }
-  .mc-terminal .tk-method-get { color: hsl(142 71% 45%); font-weight: 500; }
-  .mc-terminal .tk-method-post { color: hsl(217 91% 60%); font-weight: 500; }
-  .mc-terminal .tk-method-patch { color: hsl(38 92% 50%); font-weight: 500; }
-  .mc-terminal .tk-method-delete { color: hsl(0 84% 60%); font-weight: 500; }
+  .mc-terminal .tk-method-get { color: hsl(142 60% 48%); font-weight: 500; }
+  .mc-terminal .tk-method-post { color: hsl(211 87% 62%); font-weight: 500; }
+  .mc-terminal .tk-method-patch { color: hsl(38 80% 55%); font-weight: 500; }
+  .mc-terminal .tk-method-delete { color: hsl(0 70% 62%); font-weight: 500; }
   .mc-terminal .term-cursor {
     display: inline-block; width: 6px; height: 13px;
     background: hsl(var(--term-t1)); vertical-align: text-bottom;
