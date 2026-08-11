@@ -81,30 +81,9 @@ export function McCliDemo() {
           </span>
         </div>
 
-        {/* Mobile: full-width dropdown */}
+        {/* Mobile: full-width custom dropdown */}
         <div className="md:hidden p-3">
-          <label className="sr-only" htmlFor="mc-cli-scenario">
-            CLI scenario
-          </label>
-          <select
-            id="mc-cli-scenario"
-            value={activeId ?? ""}
-            onChange={(e) => setActiveId(e.target.value || null)}
-            className="w-full border border-border/70 bg-background px-3 py-2 font-body text-xs text-foreground"
-          >
-            <option value="">CLI — pick a scenario</option>
-            {groups.map((group) => (
-              <optgroup key={group} label={group}>
-                {scenarios
-                  .filter((s) => s.group === group)
-                  .map((s) => (
-                    <option key={s.id} value={s.id}>
-                      {s.name}
-                    </option>
-                  ))}
-              </optgroup>
-            ))}
-          </select>
+          <MobileScenarioPicker activeId={activeId} onChange={setActiveId} />
         </div>
 
         <div className="hidden md:flex md:flex-col py-3 md:overflow-y-auto md:flex-1 md:min-h-0">
