@@ -68,18 +68,18 @@ export function McCliDemo() {
   const fullJson = active ? JSON.stringify(active.res, null, 2) : "";
 
   return (
-    <div className="mc-terminal border border-border/70 bg-background grid grid-cols-1 md:grid-cols-[228px_1fr]">
+    <div className="mc-terminal border border-border/70 bg-background grid grid-cols-1 md:grid-cols-[228px_1fr] md:h-[488px]">
       {/* Scenario list */}
       <nav
         aria-label="CLI scenarios"
-        className="border-b md:border-b-0 md:border-r border-border/70 bg-[hsl(var(--surface))] flex flex-col min-w-0"
+        className="border-b md:border-b-0 md:border-r border-border/70 bg-[hsl(var(--surface))] flex flex-col min-w-0 min-h-0"
       >
         <div className="flex items-center px-4 py-2.5 border-b border-border/70">
           <span className="font-mono text-[11px] text-muted-foreground truncate">
             CLI
           </span>
         </div>
-        <div className="flex md:flex-col gap-1 md:gap-0 px-3 md:px-0 py-2 md:py-3 overflow-x-auto">
+        <div className="flex md:flex-col gap-1 md:gap-0 px-3 md:px-0 py-2 md:py-3 overflow-x-auto md:overflow-y-auto md:flex-1 md:min-h-0">
           {groups.map((group) => (
             <div key={group} className="flex md:flex-col items-center md:items-stretch shrink-0">
               <div className="font-body text-[10px] font-medium uppercase tracking-[0.14em] text-muted-foreground px-3 pt-2.5 pb-1 whitespace-nowrap md:pt-3">
@@ -124,7 +124,7 @@ export function McCliDemo() {
       </nav>
 
       {/* Terminal */}
-      <div className="flex flex-col bg-[hsl(var(--term-body))] text-[hsl(var(--term-t1))] min-w-0">
+      <div className="flex flex-col min-h-0 bg-[hsl(var(--term-body))] text-[hsl(var(--term-t1))] min-w-0">
         <div className="flex items-center gap-1.5 px-4 py-2.5 border-b border-[hsl(var(--term-border))]">
           <span className="h-2.5 w-2.5 rounded-full bg-[#ff5f57]" />
           <span className="h-2.5 w-2.5 rounded-full bg-[#ffbd2e]" />
@@ -134,7 +134,7 @@ export function McCliDemo() {
           </span>
         </div>
 
-        <div className="p-5 md:p-6 flex-1 min-h-[440px] h-0 overflow-y-auto min-w-0">
+        <div className="p-5 md:p-6 flex-1 min-h-[400px] md:min-h-0 overflow-y-auto min-w-0">
           {!active ? (
             <div className="flex h-full flex-col items-center justify-center gap-1 text-center font-body text-xs text-[hsl(var(--term-t3))]">
               <span className="text-lg md:hidden">↑</span>
