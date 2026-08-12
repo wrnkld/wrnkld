@@ -2319,6 +2319,20 @@ var books = [
     author: "Madeline Cash",
     year: 2026,
     recommended: true
+  },
+  {
+    id: 337,
+    title: "The Sarah Book",
+    author: "Scott McClanahan",
+    year: 2017,
+    recommended: false
+  },
+  {
+    id: 338,
+    title: "Cool Machine12",
+    author: "Colson Whitehead",
+    year: 2026,
+    recommended: false
   }
 ];
 
