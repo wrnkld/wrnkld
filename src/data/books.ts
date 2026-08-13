@@ -2297,7 +2297,7 @@ export const books: Book[] = [
   },
   {
     id: 338,
-    title: "Cool Machine12",
+    title: "Cool Machine",
     author: "Colson Whitehead",
     year: 2026,
     recommended: false,
