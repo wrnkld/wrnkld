@@ -2302,4 +2302,11 @@ export const books: Book[] = [
     year: 2026,
     recommended: false,
   },
+  {
+    id: 339,
+    title: "My Sister, the Serial Killer",
+    author: "Oyinkan Braithwaite",
+    year: 2018,
+    recommended: false,
+  },
 ];
