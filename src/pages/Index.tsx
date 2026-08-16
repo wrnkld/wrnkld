@@ -106,17 +106,18 @@ function Card({ item }: { item: Item }) {
 
 export default function Index() {
   const [sort, setSort] = useState<SortMode>(() => {
-    if (typeof window === "undefined") return "default";
+    if (typeof window === "undefined") return "category";
     const s = sessionStorage.getItem("index-sort");
-    return s === "category" || s === "alpha" || s === "default" ? s : "default";
+    return s === "category" || s === "alpha" || s === "default" ? s : "category";
   });
   const handleSortChange = (v: SortMode) => {
     setSort(v);
     sessionStorage.setItem("index-sort", v);
   };
   const [filter, setFilter] = useState<FilterMode>(() => {
-    if (typeof window === "undefined") return "all";
-    return sessionStorage.getItem("index-filter") === "dope" ? "dope" : "all";
+    if (typeof window === "undefined") return "dope";
+    const s = sessionStorage.getItem("index-filter");
+    return s === "all" || s === "dope" ? s : "dope";
   });
   const handleFilterChange = (v: FilterMode) => {
     setFilter(v);
