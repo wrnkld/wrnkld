@@ -1,7 +1,5 @@
 @import '@fontsource/inter/400.css';
 @import '@fontsource/inter/500.css';
-@import '@fontsource/space-grotesk/500.css';
-@import '@fontsource/space-grotesk/600.css';
 
 @tailwind base;
 @tailwind components;
@@ -34,13 +32,9 @@
     --input: 214 32% 91%;
     --ring: 215 20% 65%;            /* slate-400 */
 
-    /* Single decisive accent — the same blue the CLI console already uses. */
-    --accent: 211 87% 45%;
-    --accent-foreground: 210 40% 98%;
-
     --radius: 0.25rem;
 
-    --font-display: 'Space Grotesk', 'Inter', system-ui, sans-serif;
+    --font-display: 'Inter', system-ui, sans-serif;
     --font-body:    'Inter', system-ui, sans-serif;
     --font-mono:    ui-monospace, SFMono-Regular, Menlo, monospace;
   }
@@ -73,25 +67,13 @@
   }
 
   h1, h2, h3, h4, h5, h6 {
-    font-family: var(--font-body);
+    font-family: var(--font-display);
     font-weight: 500;
   }
 }
 
 @layer utilities {
   .font-display { font-family: var(--font-display); }
-  .text-accent { color: hsl(var(--accent)); }
-  .bg-accent-solid { background-color: hsl(var(--accent)); }
-  .hover\:text-accent:hover { color: hsl(var(--accent)); }
-  /* Small all-caps section label used on every band. */
-  .band-label {
-    font-family: var(--font-mono);
-    font-size: 10px;
-    line-height: 1;
-    text-transform: uppercase;
-    letter-spacing: 0.2em;
-    color: hsl(var(--muted-foreground));
-  }
   .font-body    { font-family: var(--font-body); }
   .font-mono    { font-family: var(--font-mono); }
 
