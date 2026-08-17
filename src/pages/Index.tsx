@@ -181,7 +181,7 @@ export default function Index() {
         </section>
 
         {/* Stats band */}
-        <section className="border-b border-border/70 grid grid-cols-2 lg:grid-cols-4 divide-x divide-border/70">
+        <section className="border-b border-border/70 grid grid-cols-2 lg:grid-cols-4 divide-x divide-y lg:divide-y-0 divide-border/70">
           <Stat figure="12 yrs" label="Designing enterprise software" />
           <Stat figure="4" label="Companies, one industry" />
           <Stat figure="2" label="Products built from zero" />
