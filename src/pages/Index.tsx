@@ -272,7 +272,7 @@ export default function Index() {
   return (
     <div className="relative z-10 min-h-screen text-foreground">
       <div className="max-w-6xl mx-auto px-6">
-        <div className="border-l border-r border-border/70">
+        <div>
           <header className="border-b border-border/70 px-6 md:px-10 py-8 flex flex-wrap items-baseline justify-between gap-x-8 gap-y-2">
             <h1 className="text-lg font-medium tracking-[-0.01em]">Matthew Stevens</h1>
             <a
