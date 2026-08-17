@@ -6,6 +6,7 @@
       "name": "template_bun_shadcn_react_vite_bun_ts",
       "dependencies": {
         "@fontsource/inter": "^5.2.8",
+        "@fontsource/space-grotesk": "^5.3.0",
         "@lovable.dev/mcp-js": "^0.22.2",
         "@radix-ui/react-select": "^2.3.7",
         "@radix-ui/react-slot": "^1.2.4",
@@ -129,6 +130,8 @@
     "@floating-ui/utils": ["@floating-ui/utils@0.2.10", "", {}, "sha512-aGTxbpbg8/b5JfU1HXSrbH3wXZuLPJcNEcZQFMxLs3oSzgtVu6nFPkbbGGUvBcUjKV2YyB9Wxxabo+HEH9tcRQ=="],
 
     "@fontsource/inter": ["@fontsource/inter@5.2.8", "", {}, "sha512-P6r5WnJoKiNVV+zvW2xM13gNdFhAEpQ9dQJHt3naLvfg+LkF2ldgSLiF4T41lf1SQCM9QmkqPTn4TH568IRagg=="],
+
+    "@fontsource/space-grotesk": ["@fontsource/space-grotesk@5.3.0", "https://europe-west4-npm.pkg.dev/lovable-core-prod/sandbox-npm-cache/@fontsource/space-grotesk/-/space-grotesk-5.3.0.tgz", {}, "sha512-ksnGizDPXIDuvqcTYTSrmZ+evx9sDlS8rp7+42BQ7wU+spt3twEoXfbJz672C+5CLg6VeUQwRy5RXshWb67LcQ=="],
 
     "@hono/node-server": ["@hono/node-server@1.19.14", "https://europe-west1-npm.pkg.dev/lovable-core-prod/sandbox-npm-cache/@hono/node-server/-/node-server-1.19.14.tgz", { "peerDependencies": { "hono": "^4" } }, "sha512-GwtvgtXxnWsucXvbQXkRgqksiH2Qed37H9xHZocE5sA3N8O8O8/8FA3uclQXxXVzc9XBZuEOMK7+r02FmSpHtw=="],
 
