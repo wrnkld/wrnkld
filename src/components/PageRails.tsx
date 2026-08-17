@@ -10,9 +10,7 @@ function railsFor(pathname: string): { sm: boolean; lg: number } {
   if (pathname.startsWith("/about/books")) return { sm: false, lg: 0 };
   if (pathname.startsWith("/about/records")) return { sm: false, lg: 0 };
   if (pathname.startsWith("/about/experience")) return { sm: false, lg: 1 };
-  // Home is now a stack of full-width bands that carry their own interior
-  // borders, so only the outer rails are drawn.
-  return { sm: false, lg: 0 };
+  return { sm: true, lg: 2 };
 }
 
 export function PageRails() {
