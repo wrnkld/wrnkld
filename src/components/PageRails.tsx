@@ -2,16 +2,11 @@ import { useLocation } from "react-router-dom";
 
 // Decide how many interior vertical rails to draw based on route.
 // 2 = default (both middle rails), 1 = single middle rail, 0 = only outer rails.
-// Rails per breakpoint. `sm` = 2-col layout, `lg` = 3-col layout.
-// Experience only becomes multi-column at lg, so its middle rail must only render at lg.
+// The homepage is now an editorial stack of full-width bands, so it gets outer rails only.
 function railsFor(pathname: string): { sm: boolean; lg: number } {
-  if (pathname.startsWith("/words")) return { sm: false, lg: 0 };
-  if (pathname.startsWith("/work")) return { sm: false, lg: 0 };
-  if (pathname.startsWith("/about/books")) return { sm: false, lg: 0 };
-  if (pathname.startsWith("/about/records")) return { sm: false, lg: 0 };
-  if (pathname.startsWith("/about/experience")) return { sm: false, lg: 1 };
-  return { sm: true, lg: 2 };
+  return { sm: false, lg: 0 };
 }
+
 
 export function PageRails() {
   const { pathname } = useLocation();
