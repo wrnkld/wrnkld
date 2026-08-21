@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom";
 import { ArrowUpRight } from "lucide-react";
 import { WorkCarousel, type CarouselSlide } from "@/components/home/WorkCarousel";
-import { experience } from "@/data/experience";
 import { essays } from "@/data/essays";
 import {
   Accordion,
@@ -118,7 +117,10 @@ export default function Index() {
           <Heading>Monte Carlo AI</Heading>
           <Lede>
             The leading agent trust platform. I joined as the founding designer
-            and built the design function while staying in the product every day.
+            and built the design function while staying hands-on every day —
+            observability, investigations, integrations, permissions, and
+            AI-assisted data operations. Hired and mentored the team, and set up
+            the design system, research practice, and operating model.
           </Lede>
           <p className="mt-6">
             <Link
@@ -140,8 +142,9 @@ export default function Index() {
           <Eyebrow>Work — 2019 to 2021</Eyebrow>
           <Heading>Tanium</Heading>
           <Lede>
-            Endpoint security across millions of devices in real time. Three
-            flagship redesigns and two products shipped from scratch.
+            Endpoint security across millions of devices in real time. I led
+            Threat Response through three flagship redesigns and launched two
+            enterprise security products from scratch.
           </Lede>
           <p className="mt-6">
             <Link
@@ -177,13 +180,13 @@ export default function Index() {
               name: "StudyDrop",
               href: "https://studydrop.app",
               blurb:
-                "UX research without the friction — surveys, card sorting, tree testing, and first-click testing in one place.",
+                "UX research without the friction — surveys, card sorting, tree testing, and first-click testing in one place. Launched 2026.",
             },
             {
               name: "Sleeves",
               href: "https://sleeves.app",
               blurb:
-                "Track albums, make lists, follow friends. A social music app for people who still think in records.",
+                "Track albums, make lists, follow friends. A social music app built with React, Supabase, and a lot of agents.",
             },
           ].map((p) => (
             <a
@@ -206,13 +209,17 @@ export default function Index() {
       {/* Earlier work — SAS and Red Hat, 50/50 */}
       <Band>
         <div className="max-w-4xl">
-          <Eyebrow>Earlier — 2011 to 2019</Eyebrow>
+          <Eyebrow>Earlier — 2004 to 2019</Eyebrow>
           <Heading>SAS and Red Hat</Heading>
           <Lede>
-            Analytics platforms at SAS, automation tooling at Red Hat. Dense,
-            technical, long-lived software.
+            At SAS I redesigned the flagship analytics platform and launched two
+            enterprise products. At Red Hat I led UX for hybrid-cloud automation
+            tooling, building with PatternFly in the open. Before that: managing
+            an eight-person UX team at HumanCentric, and designing for Microsoft,
+            HP, and Dell at Frog. Georgetown University, BA Psychology, cum laude.
           </Lede>
         </div>
+
         <div className="mt-12 grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-8">
           <div>
             <h3 className="pb-4 border-b border-border/70 text-lg font-medium tracking-[-0.01em]">
@@ -233,43 +240,8 @@ export default function Index() {
         </div>
       </Band>
 
-      {/* Experience */}
-      <Band>
-        <div className="max-w-4xl">
-          <Eyebrow>Experience</Eyebrow>
-          <Heading>Where I&apos;ve been</Heading>
-        </div>
-        <div className="mt-12 max-w-4xl">
-          {experience.map((job) => (
-            <div
-              key={job.company + job.years}
-              className="py-5 border-t border-border/70 flex flex-col gap-1 lg:grid lg:grid-cols-3 lg:gap-8"
-            >
-              <div className="lg:col-span-1">
-                <h3 className="text-base font-medium">{job.company}</h3>
-                <p className="text-base text-muted-foreground mt-1">{job.years}</p>
-              </div>
-              <div className="lg:col-span-2">
-                <p className="text-base">{job.role}</p>
-                {job.description && (
-                  <p className="text-base text-muted-foreground mt-1 leading-relaxed">
-                    {job.description}
-                  </p>
-                )}
-              </div>
-            </div>
-          ))}
-          <div className="py-5 border-t border-border/70 flex flex-col gap-1 lg:grid lg:grid-cols-3 lg:gap-8">
-            <div className="lg:col-span-1">
-              <h3 className="text-base font-medium">Education</h3>
-            </div>
-            <div className="lg:col-span-2">
-              <p className="text-base">Georgetown University</p>
-              <p className="text-base text-muted-foreground">BA Psychology, Cum Laude</p>
-            </div>
-          </div>
-        </div>
-      </Band>
+
+
 
       {/* Books */}
       <Band>
