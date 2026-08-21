@@ -233,43 +233,8 @@ export default function Index() {
         </div>
       </Band>
 
-      {/* Experience */}
-      <Band>
-        <div className="max-w-4xl">
-          <Eyebrow>Experience</Eyebrow>
-          <Heading>Where I&apos;ve been</Heading>
-        </div>
-        <div className="mt-12 max-w-4xl">
-          {experience.map((job) => (
-            <div
-              key={job.company + job.years}
-              className="py-5 border-t border-border/70 flex flex-col gap-1 lg:grid lg:grid-cols-3 lg:gap-8"
-            >
-              <div className="lg:col-span-1">
-                <h3 className="text-base font-medium">{job.company}</h3>
-                <p className="text-base text-muted-foreground mt-1">{job.years}</p>
-              </div>
-              <div className="lg:col-span-2">
-                <p className="text-base">{job.role}</p>
-                {job.description && (
-                  <p className="text-base text-muted-foreground mt-1 leading-relaxed">
-                    {job.description}
-                  </p>
-                )}
-              </div>
-            </div>
-          ))}
-          <div className="py-5 border-t border-border/70 flex flex-col gap-1 lg:grid lg:grid-cols-3 lg:gap-8">
-            <div className="lg:col-span-1">
-              <h3 className="text-base font-medium">Education</h3>
-            </div>
-            <div className="lg:col-span-2">
-              <p className="text-base">Georgetown University</p>
-              <p className="text-base text-muted-foreground">BA Psychology, Cum Laude</p>
-            </div>
-          </div>
-        </div>
-      </Band>
+
+
 
       {/* Books */}
       <Band>
