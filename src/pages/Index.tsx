@@ -286,7 +286,7 @@ export default function Index() {
             </Link>
           </p>
         </div>
-        <ul className="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8">
+        <ul className="mt-12 max-w-3xl">
           {recommendedBooks.map((b) => (
             <li key={b.id} className="py-4 border-t border-border/70 flex items-baseline justify-between gap-4">
               <span className="text-base leading-snug">
@@ -314,7 +314,7 @@ export default function Index() {
             </Link>
           </p>
         </div>
-        <ul className="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8">
+        <ul className="mt-12 max-w-3xl">
           {recentRecords.map((r) => (
             <li key={r.id} className="py-4 border-t border-border/70 flex items-baseline justify-between gap-4">
               <span className="text-base leading-snug">
