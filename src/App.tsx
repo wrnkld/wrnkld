@@ -11,10 +11,6 @@ import Tanium from "./pages/work/Tanium";
 
 import Books from "./pages/about/Books";
 import Records from "./pages/about/Records";
-import Tools from "./pages/words/Tools";
-import Vibes from "./pages/words/Vibes";
-import Sleeves from "./pages/words/Sleeves";
-import Claude from "./pages/words/Claude";
 
 const App = () => (
   <TooltipProvider>
@@ -32,15 +28,11 @@ const App = () => (
 
         <Route path="/about/books" element={<Books />} />
         <Route path="/about/records" element={<Records />} />
-        <Route path="/words/tools" element={<Tools />} />
-        <Route path="/words/vibes" element={<Vibes />} />
-        <Route path="/words/sleeves" element={<Sleeves />} />
-        <Route path="/words/claude" element={<Claude />} />
         {/* Redirects from old /designai paths */}
-        <Route path="/designai/tools" element={<Navigate to="/words/tools" replace />} />
-        <Route path="/designai/vibes" element={<Navigate to="/words/vibes" replace />} />
-        <Route path="/designai/sleeves" element={<Navigate to="/words/sleeves" replace />} />
-        <Route path="/designai/claude" element={<Navigate to="/words/claude" replace />} />
+        <Route path="/designai/tools" element={<Navigate to="/" replace />} />
+        <Route path="/designai/vibes" element={<Navigate to="/" replace />} />
+        <Route path="/designai/sleeves" element={<Navigate to="/" replace />} />
+        <Route path="/designai/claude" element={<Navigate to="/" replace />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </BrowserRouter>
