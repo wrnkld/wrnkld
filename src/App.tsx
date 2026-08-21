@@ -23,12 +23,13 @@ const App = () => (
       <PageRails />
       <Routes>
         <Route path="/" element={<Index />} />
-        <Route path="/about/experience" element={<Experience />} />
+        <Route path="/about/experience" element={<Navigate to="/" replace />} />
 
         <Route path="/work/montecarlo" element={<MonteCarlo />} />
         <Route path="/work/tanium" element={<Tanium />} />
-        <Route path="/work/sas" element={<SAS />} />
-        <Route path="/work/redhat" element={<RedHat />} />
+        <Route path="/work/sas" element={<Navigate to="/" replace />} />
+        <Route path="/work/redhat" element={<Navigate to="/" replace />} />
+
         <Route path="/about/books" element={<Books />} />
         <Route path="/about/records" element={<Records />} />
         <Route path="/words/tools" element={<Tools />} />
