@@ -7,7 +7,13 @@ export type CarouselSlide = {
   caption: string;
 };
 
-export function WorkCarousel({ slides }: { slides: CarouselSlide[] }) {
+export function WorkCarousel({
+  slides,
+  slideClassName = "w-[85%] sm:w-[62%] lg:w-[46%]",
+}: {
+  slides: CarouselSlide[];
+  slideClassName?: string;
+}) {
   const trackRef = useRef<HTMLDivElement>(null);
   const [index, setIndex] = useState(0);
 
@@ -49,7 +55,7 @@ export function WorkCarousel({ slides }: { slides: CarouselSlide[] }) {
         {slides.map((slide) => (
           <figure
             key={slide.src}
-            className="snap-start shrink-0 w-[85%] sm:w-[62%] lg:w-[46%] flex flex-col gap-2"
+            className={`snap-start shrink-0 flex flex-col gap-2 ${slideClassName}`}
           >
             <img
               src={slide.src}
