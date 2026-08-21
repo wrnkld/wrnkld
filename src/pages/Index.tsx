@@ -42,9 +42,17 @@ const redHatWork: CarouselSlide[] = [
 
 
 
-function Band({ children, className = "" }: { children: React.ReactNode; className?: string }) {
+function Band({
+  children,
+  className = "",
+  id,
+}: {
+  children: React.ReactNode;
+  className?: string;
+  id?: string;
+}) {
   return (
-    <section className={`border-t border-border/70 ${className}`}>
+    <section id={id} className={`border-t border-border/70 ${className}`}>
       <div className="max-w-6xl mx-auto px-6">
         <div className="px-5 py-16 md:py-24">{children}</div>
       </div>
@@ -321,7 +329,7 @@ export default function Index() {
 
 
       {/* Words */}
-      <Band className="border-b border-border/70">
+      <Band id="words" className="border-b border-border/70">
         <div className="max-w-4xl">
           <Eyebrow>Words — Design &amp; AI</Eyebrow>
           <Heading>Four essays about building with agents</Heading>
