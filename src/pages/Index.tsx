@@ -56,40 +56,54 @@ function Band({ children, className = "" }: { children: React.ReactNode; classNa
 
 function Eyebrow({ children }: { children: React.ReactNode }) {
   return (
-    <p className="font-mono text-[11px] uppercase tracking-[0.18em] text-muted-foreground">
+    <p className="font-mono text-[10px] md:text-[11px] uppercase tracking-[0.22em] text-muted-foreground">
+      {children}
+    </p>
+  );
+}
+
+function Heading({ children }: { children: React.ReactNode }) {
+  return (
+    <h2 className="mt-5 text-[2rem] md:text-[3.25rem] font-medium leading-[1.02] tracking-[-0.025em]">
+      {children}
+    </h2>
+  );
+}
+
+function Lede({ children }: { children: React.ReactNode }) {
+  return (
+    <p className="mt-6 max-w-[46ch] text-[1.0625rem] md:text-[1.1875rem] leading-[1.65] text-muted-foreground">
       {children}
     </p>
   );
 }
 
 export default function Index() {
-  const recommendedBooks = books.filter((b) => b.recommended).slice(-6).reverse();
-  const recentRecords = [...records].sort((a, b) => b.year - a.year).slice(0, 6);
+  const recommendedBooks = books.filter((b) => b.recommended).slice(-9).reverse();
+  const recentRecords = [...records].sort((a, b) => b.year - a.year).slice(0, 9);
 
   return (
     <div className="relative z-10 min-h-screen text-foreground">
       {/* Hero */}
       <header className="max-w-6xl mx-auto px-6">
-        <div className="px-5 pt-24 pb-16 md:pt-40 md:pb-28">
-          <h1 className="text-3xl md:text-5xl font-medium leading-[1.15] max-w-4xl">
-            Matthew Stevens is a product designer in Raleigh, North Carolina.
-            He&apos;s the Head of Design at Monte Carlo AI, where he builds the
-            interfaces people use to trust their data and their agents.
+        <div className="px-5 pt-28 pb-20 md:pt-44 md:pb-32">
+          <h1 className="text-[2.5rem] md:text-[4.5rem] lg:text-[5.25rem] font-medium leading-[0.98] tracking-[-0.04em] max-w-[22ch]">
+            Matthew Stevens designs enterprise software.
           </h1>
-          <p className="mt-8 text-base md:text-lg text-muted-foreground max-w-4xl leading-relaxed">
-            Twenty years of enterprise software — analytics, security,
-            automation, observability. Lately he ships his own products too.
+          <p className="mt-8 max-w-[42ch] text-[1.0625rem] md:text-xl leading-[1.6] text-muted-foreground">
+            Head of Design at Monte Carlo AI. Raleigh, North Carolina.
           </p>
-          <p className="mt-6">
+          <p className="mt-8">
             <a
               href="mailto:hello@wrnkld.tv"
-              className="text-foreground hover:text-muted-foreground transition-colors"
+              className="text-base md:text-lg text-foreground hover:text-muted-foreground transition-colors"
             >
               hello@wrnkld.tv
             </a>
           </p>
         </div>
       </header>
+
 
       {/* Monte Carlo AI */}
       <Band>
