@@ -22,15 +22,18 @@ import rhbaProjectMetrics from "@/assets/redhat/rhba-project-metrics.png";
 import rhboRoster from "@/assets/redhat/rhbo-roster.png";
 import rhbaAssetsList from "@/assets/redhat/rhba-assets-list.png";
 
-const earlierWork: CarouselSlide[] = [
-  { src: analyticsAnalyze, alt: "SAS Model Studio analysis pipeline", caption: "SAS — Model Studio, analysis pipeline" },
-  { src: analyticsExplore, alt: "SAS Model Studio exploration", caption: "SAS — Model Studio, exploration" },
-  { src: factoryResults, alt: "SAS Factory Miner model comparison", caption: "SAS — Factory Miner, model comparison" },
-  { src: visualStatsRoles, alt: "SAS Visual Statistics roles", caption: "SAS — Visual Statistics, variable roles" },
-  { src: rhbaWorkflowModeler, alt: "Red Hat Business Automation workflow modeler", caption: "Red Hat — Business Automation, workflow modeler" },
-  { src: rhbaAssetsList, alt: "Red Hat Business Automation assets", caption: "Red Hat — Business Automation, project assets" },
-  { src: rhbaProjectMetrics, alt: "Red Hat Business Automation metrics", caption: "Red Hat — Business Automation, project metrics" },
-  { src: rhboRoster, alt: "Red Hat Business Optimizer roster", caption: "Red Hat — Business Optimizer, roster planning" },
+const sasWork: CarouselSlide[] = [
+  { src: analyticsAnalyze, alt: "SAS Model Studio analysis pipeline", caption: "Model Studio — analysis pipeline" },
+  { src: analyticsExplore, alt: "SAS Model Studio exploration", caption: "Model Studio — exploration" },
+  { src: factoryResults, alt: "SAS Factory Miner model comparison", caption: "Factory Miner — model comparison" },
+  { src: visualStatsRoles, alt: "SAS Visual Statistics roles", caption: "Visual Statistics — variable roles" },
+];
+
+const redHatWork: CarouselSlide[] = [
+  { src: rhbaWorkflowModeler, alt: "Red Hat Business Automation workflow modeler", caption: "Business Automation — workflow modeler" },
+  { src: rhbaAssetsList, alt: "Red Hat Business Automation assets", caption: "Business Automation — project assets" },
+  { src: rhbaProjectMetrics, alt: "Red Hat Business Automation metrics", caption: "Business Automation — project metrics" },
+  { src: rhboRoster, alt: "Red Hat Business Optimizer roster", caption: "Business Optimizer — roster planning" },
 ];
 
 const words = [
@@ -40,20 +43,6 @@ const words = [
   { title: "Pt 1 → Tools", to: "/words/tools", note: "TMI" },
 ];
 
-const vibes = [
-  "https://media.giphy.com/media/j5nLG5ZTChFwGsmGnV/giphy.gif",
-  "https://media.giphy.com/media/JnAqFgTk5AcxbfhtPL/giphy.gif",
-  "https://media.giphy.com/media/VbmrliOc1UMJDYYZRF/giphy.gif",
-  "https://media.giphy.com/media/gj0CJcKVtmAoSq5v9d/giphy.gif",
-  "https://media.giphy.com/media/hX6UTr4GALucmRR38D/giphy.gif",
-  "https://media.giphy.com/media/TEEewgFfvMvvkSzw7w/giphy.gif",
-  "https://media.giphy.com/media/KHEIcdVp8oSKo4zvmZ/giphy.gif",
-  "https://media.giphy.com/media/XB3WTIY5GhgcBosgE4/giphy.gif",
-  "https://media.giphy.com/media/S9WCr3cTm6qHq6LmRi/giphy.gif",
-  "https://media.giphy.com/media/MCXp9DOVi5xKQhicLs/giphy.gif",
-  "https://media.giphy.com/media/YPQ7McRYvkGrnPPg2x/giphy.gif",
-  "https://media.giphy.com/media/KEYvmwlOfRc8VN2UZT/giphy.gif",
-];
 
 function Band({ children, className = "" }: { children: React.ReactNode; className?: string }) {
   return (
@@ -67,34 +56,47 @@ function Band({ children, className = "" }: { children: React.ReactNode; classNa
 
 function Eyebrow({ children }: { children: React.ReactNode }) {
   return (
-    <p className="font-mono text-[11px] uppercase tracking-[0.18em] text-muted-foreground">
+    <p className="font-mono text-[10px] md:text-[11px] uppercase tracking-[0.22em] text-muted-foreground">
+      {children}
+    </p>
+  );
+}
+
+function Heading({ children }: { children: React.ReactNode }) {
+  return (
+    <h2 className="mt-5 text-[2rem] md:text-[3.25rem] font-medium leading-[1.02] tracking-[-0.025em]">
+      {children}
+    </h2>
+  );
+}
+
+function Lede({ children }: { children: React.ReactNode }) {
+  return (
+    <p className="mt-6 max-w-[46ch] text-[1.0625rem] md:text-[1.1875rem] leading-[1.65] text-muted-foreground">
       {children}
     </p>
   );
 }
 
 export default function Index() {
-  const recommendedBooks = books.filter((b) => b.recommended).slice(-6).reverse();
-  const recentRecords = [...records].sort((a, b) => b.year - a.year).slice(0, 6);
+  const recommendedBooks = books.filter((b) => b.recommended).slice(-9).reverse();
+  const recentRecords = [...records].sort((a, b) => b.year - a.year).slice(0, 9);
 
   return (
     <div className="relative z-10 min-h-screen text-foreground">
       {/* Hero */}
       <header className="max-w-6xl mx-auto px-6">
-        <div className="px-5 pt-24 pb-16 md:pt-40 md:pb-28">
-          <h1 className="text-3xl md:text-5xl font-medium leading-[1.15] max-w-4xl">
-            Matthew Stevens is a product designer in Raleigh, North Carolina.
-            He&apos;s the Head of Design at Monte Carlo AI, where he builds the
-            interfaces people use to trust their data and their agents.
+        <div className="px-5 pt-28 pb-20 md:pt-44 md:pb-32">
+          <h1 className="text-[2.5rem] md:text-[4.5rem] lg:text-[5.25rem] font-medium leading-[0.98] tracking-[-0.04em] max-w-[22ch]">
+            Matthew Stevens designs enterprise software.
           </h1>
-          <p className="mt-8 text-base md:text-lg text-muted-foreground max-w-4xl leading-relaxed">
-            Twenty years of enterprise software — analytics, security,
-            automation, observability. Lately he ships his own products too.
+          <p className="mt-8 max-w-[42ch] text-[1.0625rem] md:text-xl leading-[1.6] text-muted-foreground">
+            Head of Design at Monte Carlo AI. Raleigh, North Carolina.
           </p>
-          <p className="mt-6">
+          <p className="mt-8">
             <a
               href="mailto:hello@wrnkld.tv"
-              className="text-foreground hover:text-muted-foreground transition-colors"
+              className="text-base md:text-lg text-foreground hover:text-muted-foreground transition-colors"
             >
               hello@wrnkld.tv
             </a>
@@ -102,19 +104,16 @@ export default function Index() {
         </div>
       </header>
 
+
       {/* Monte Carlo AI */}
       <Band>
         <div className="max-w-4xl">
           <Eyebrow>Work — 2022 to present</Eyebrow>
-          <h2 className="mt-4 text-2xl md:text-4xl font-medium leading-tight">
-            Monte Carlo AI
-          </h2>
-          <p className="mt-6 text-base md:text-lg text-muted-foreground leading-relaxed">
+          <Heading>Monte Carlo AI</Heading>
+          <Lede>
             The leading agent trust platform. I joined as the founding designer
-            and built the design function while staying in the product every
-            day — observability, investigations, integrations, permissions, and
-            the AI-assisted workflows underneath all of it.
-          </p>
+            and built the design function while staying in the product every day.
+          </Lede>
           <p className="mt-6">
             <Link
               to="/work/montecarlo"
@@ -141,13 +140,11 @@ export default function Index() {
       <Band>
         <div className="max-w-4xl">
           <Eyebrow>Work — 2019 to 2021</Eyebrow>
-          <h2 className="mt-4 text-2xl md:text-4xl font-medium leading-tight">Tanium</h2>
-          <p className="mt-6 text-base md:text-lg text-muted-foreground leading-relaxed">
-            Endpoint security across millions of devices in real time. I
-            redesigned three flagship products and shipped two new ones from
-            scratch: Assurance for MITRE ATT&amp;CK visibility, and Enforce for
-            policy enforcement at enterprise scale.
-          </p>
+          <Heading>Tanium</Heading>
+          <Lede>
+            Endpoint security across millions of devices in real time. Three
+            flagship redesigns and two products shipped from scratch.
+          </Lede>
           <p className="mt-6">
             <Link
               to="/work/tanium"
@@ -178,9 +175,7 @@ export default function Index() {
       <Band>
         <div className="max-w-4xl">
           <Eyebrow>Built and shipped solo</Eyebrow>
-          <h2 className="mt-4 text-2xl md:text-4xl font-medium leading-tight">
-            Two products of my own
-          </h2>
+          <Heading>Two products of my own</Heading>
         </div>
         <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-8">
           {[
@@ -214,21 +209,33 @@ export default function Index() {
         </div>
       </Band>
 
-      {/* Earlier work carousel */}
+      {/* Earlier work — SAS and Red Hat, 50/50 */}
       <Band>
         <div className="max-w-4xl">
           <Eyebrow>Earlier — 2011 to 2019</Eyebrow>
-          <h2 className="mt-4 text-2xl md:text-4xl font-medium leading-tight">
-            SAS and Red Hat
-          </h2>
-          <p className="mt-6 text-base md:text-lg text-muted-foreground leading-relaxed">
-            Analytics platforms at SAS, hybrid-cloud and automation tooling at
-            Red Hat. Dense, technical, long-lived software — some of it still
-            shipping.
-          </p>
+          <Heading>SAS and Red Hat</Heading>
+          <Lede>
+            Analytics platforms at SAS, automation tooling at Red Hat. Dense,
+            technical, long-lived software.
+          </Lede>
         </div>
-        <div className="mt-12">
-          <WorkCarousel slides={earlierWork} />
+        <div className="mt-12 grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-8">
+          <div>
+            <h3 className="pb-4 border-b border-border/70 text-lg font-medium tracking-[-0.01em]">
+              SAS
+            </h3>
+            <div className="mt-6">
+              <WorkCarousel slides={sasWork} slideClassName="w-full" />
+            </div>
+          </div>
+          <div>
+            <h3 className="pb-4 border-b border-border/70 text-lg font-medium tracking-[-0.01em]">
+              Red Hat
+            </h3>
+            <div className="mt-6">
+              <WorkCarousel slides={redHatWork} slideClassName="w-full" />
+            </div>
+          </div>
         </div>
       </Band>
 
@@ -236,9 +243,7 @@ export default function Index() {
       <Band>
         <div className="max-w-4xl">
           <Eyebrow>Experience</Eyebrow>
-          <h2 className="mt-4 text-2xl md:text-4xl font-medium leading-tight">
-            Where I&apos;ve been
-          </h2>
+          <Heading>Where I&apos;ve been</Heading>
         </div>
         <div className="mt-12 max-w-4xl">
           {experience.map((job) => (
@@ -272,72 +277,68 @@ export default function Index() {
         </div>
       </Band>
 
-      {/* Lists: books + records */}
+      {/* Books */}
       <Band>
         <div className="max-w-4xl">
-          <Eyebrow>Lists</Eyebrow>
-          <h2 className="mt-4 text-2xl md:text-4xl font-medium leading-tight">
-            Books and records
-          </h2>
-          <p className="mt-6 text-base md:text-lg text-muted-foreground leading-relaxed">
-            I keep exhaustive lists. Here&apos;s a slice of each.
+          <Eyebrow>Lists — Reading</Eyebrow>
+          <Heading>Books</Heading>
+          <Lede>Recommendations from an exhaustive list.</Lede>
+          <p className="mt-6">
+            <Link
+              to="/about/books"
+              className="inline-flex items-center gap-1.5 text-foreground hover:text-muted-foreground transition-colors"
+            >
+              Every book I&apos;ve read <ArrowUpRight className="h-4 w-4" />
+            </Link>
           </p>
         </div>
-        <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-8 max-w-4xl">
-          <div>
-            <div className="flex items-baseline justify-between border-b border-border/70 pb-3">
-              <h3 className="text-base font-medium">Recommended books</h3>
-              <Link
-                to="/about/books"
-                className="inline-flex items-center gap-1 text-sm text-muted-foreground hover:text-foreground transition-colors"
-              >
-                All books <ArrowUpRight className="h-3.5 w-3.5" />
-              </Link>
-            </div>
-            <ul>
-              {recommendedBooks.map((b) => (
-                <li key={b.id} className="py-3 border-b border-border/40 flex justify-between gap-4">
-                  <span className="text-base">
-                    {b.title}
-                    <span className="text-muted-foreground"> — {b.author}</span>
-                  </span>
-                  <span className="text-sm text-muted-foreground shrink-0">{b.year}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-          <div>
-            <div className="flex items-baseline justify-between border-b border-border/70 pb-3">
-              <h3 className="text-base font-medium">Recent records</h3>
-              <Link
-                to="/about/records"
-                className="inline-flex items-center gap-1 text-sm text-muted-foreground hover:text-foreground transition-colors"
-              >
-                All records <ArrowUpRight className="h-3.5 w-3.5" />
-              </Link>
-            </div>
-            <ul>
-              {recentRecords.map((r) => (
-                <li key={r.id} className="py-3 border-b border-border/40 flex justify-between gap-4">
-                  <span className="text-base">
-                    {r.album}
-                    <span className="text-muted-foreground"> — {r.artist}</span>
-                  </span>
-                  <span className="text-sm text-muted-foreground shrink-0">{r.year}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </div>
+        <ul className="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8">
+          {recommendedBooks.map((b) => (
+            <li key={b.id} className="py-4 border-t border-border/70 flex items-baseline justify-between gap-4">
+              <span className="text-base leading-snug">
+                {b.title}
+                <span className="block text-muted-foreground">{b.author}</span>
+              </span>
+              <span className="font-mono text-xs text-muted-foreground shrink-0">{b.year}</span>
+            </li>
+          ))}
+        </ul>
       </Band>
 
-      {/* Words */}
+      {/* Records */}
       <Band>
         <div className="max-w-4xl">
+          <Eyebrow>Lists — Listening</Eyebrow>
+          <Heading>Records</Heading>
+          <Lede>The most recent things in rotation.</Lede>
+          <p className="mt-6">
+            <Link
+              to="/about/records"
+              className="inline-flex items-center gap-1.5 text-foreground hover:text-muted-foreground transition-colors"
+            >
+              Every record I own <ArrowUpRight className="h-4 w-4" />
+            </Link>
+          </p>
+        </div>
+        <ul className="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8">
+          {recentRecords.map((r) => (
+            <li key={r.id} className="py-4 border-t border-border/70 flex items-baseline justify-between gap-4">
+              <span className="text-base leading-snug">
+                {r.album}
+                <span className="block text-muted-foreground">{r.artist}</span>
+              </span>
+              <span className="font-mono text-xs text-muted-foreground shrink-0">{r.year}</span>
+            </li>
+          ))}
+        </ul>
+      </Band>
+
+
+      {/* Words */}
+      <Band className="border-b border-border/70">
+        <div className="max-w-4xl">
           <Eyebrow>Words — Design &amp; AI</Eyebrow>
-          <h2 className="mt-4 text-2xl md:text-4xl font-medium leading-tight">
-            Four essays about building with agents
-          </h2>
+          <Heading>Four essays about building with agents</Heading>
         </div>
         <ul className="mt-12 max-w-4xl">
           {words.map((w) => (
@@ -355,35 +356,6 @@ export default function Index() {
             </li>
           ))}
         </ul>
-      </Band>
-
-      {/* Vibes */}
-      <Band className="border-b border-border/70">
-        <div className="max-w-4xl">
-          <Eyebrow>Vibes</Eyebrow>
-          <h2 className="mt-4 text-2xl md:text-4xl font-medium leading-tight">
-            Slacker, mostly
-          </h2>
-          <p className="mt-6 text-base md:text-lg text-muted-foreground leading-relaxed">
-            Every project in here used to be one of these. They earned a spot at
-            the bottom instead.
-          </p>
-        </div>
-        <div className="mt-12 grid grid-cols-3 sm:grid-cols-4 lg:grid-cols-6 gap-2">
-          {vibes.map((src) => (
-            <div
-              key={src}
-              className="aspect-square overflow-hidden border border-border/40 bg-muted/30"
-            >
-              <img
-                src={src}
-                alt=""
-                loading="lazy"
-                className="w-full h-full object-cover grayscale transition-all duration-300 hover:grayscale-0"
-              />
-            </div>
-          ))}
-        </div>
       </Band>
 
       <footer className="max-w-6xl mx-auto px-6">
