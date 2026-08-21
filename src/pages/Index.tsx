@@ -130,7 +130,7 @@ export default function Index() {
           </p>
         </div>
         <div className="mt-12">
-          <McCliDemo defaultScenarioId="search-table" />
+          <McCliDemo defaultScenarioId="search" />
         </div>
       </Band>
 
