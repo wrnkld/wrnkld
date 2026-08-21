@@ -1,5 +1,6 @@
 import { useRef, useState } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 export type CarouselSlide = {
   src: string;
@@ -69,24 +70,28 @@ export function WorkCarousel({
       </div>
 
       <div className="flex items-center gap-3">
-        <button
+        <Button
           type="button"
+          variant="outline"
+          size="icon"
           onClick={() => scrollTo(index - 1)}
           disabled={index === 0}
           aria-label="Previous"
-          className="inline-flex h-8 w-8 items-center justify-center border border-border/70 text-muted-foreground transition-colors hover:text-foreground disabled:opacity-30"
+          className="rounded"
         >
           <ChevronLeft className="h-4 w-4" />
-        </button>
-        <button
+        </Button>
+        <Button
           type="button"
+          variant="outline"
+          size="icon"
           onClick={() => scrollTo(index + 1)}
           disabled={index === slides.length - 1}
           aria-label="Next"
-          className="inline-flex h-8 w-8 items-center justify-center border border-border/70 text-muted-foreground transition-colors hover:text-foreground disabled:opacity-30"
+          className="rounded"
         >
           <ChevronRight className="h-4 w-4" />
-        </button>
+        </Button>
         <span className="font-mono text-[11px] uppercase tracking-[0.14em] text-muted-foreground">
           {index + 1} / {slides.length}
         </span>
