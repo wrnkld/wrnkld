@@ -277,64 +277,62 @@ export default function Index() {
         </div>
       </Band>
 
-      {/* Lists: books + records */}
+      {/* Books */}
       <Band>
         <div className="max-w-4xl">
-          <Eyebrow>Lists</Eyebrow>
-          <h2 className="mt-4 text-2xl md:text-4xl font-medium leading-tight">
-            Books and records
-          </h2>
-          <p className="mt-6 text-base md:text-lg text-muted-foreground leading-relaxed">
-            I keep exhaustive lists. Here&apos;s a slice of each.
+          <Eyebrow>Lists — Reading</Eyebrow>
+          <Heading>Books</Heading>
+          <Lede>Recommendations from an exhaustive list.</Lede>
+          <p className="mt-6">
+            <Link
+              to="/about/books"
+              className="inline-flex items-center gap-1.5 text-foreground hover:text-muted-foreground transition-colors"
+            >
+              Every book I&apos;ve read <ArrowUpRight className="h-4 w-4" />
+            </Link>
           </p>
         </div>
-        <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-8 max-w-4xl">
-          <div>
-            <div className="flex items-baseline justify-between border-b border-border/70 pb-3">
-              <h3 className="text-base font-medium">Recommended books</h3>
-              <Link
-                to="/about/books"
-                className="inline-flex items-center gap-1 text-sm text-muted-foreground hover:text-foreground transition-colors"
-              >
-                All books <ArrowUpRight className="h-3.5 w-3.5" />
-              </Link>
-            </div>
-            <ul>
-              {recommendedBooks.map((b) => (
-                <li key={b.id} className="py-3 border-b border-border/40 flex justify-between gap-4">
-                  <span className="text-base">
-                    {b.title}
-                    <span className="text-muted-foreground"> — {b.author}</span>
-                  </span>
-                  <span className="text-sm text-muted-foreground shrink-0">{b.year}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-          <div>
-            <div className="flex items-baseline justify-between border-b border-border/70 pb-3">
-              <h3 className="text-base font-medium">Recent records</h3>
-              <Link
-                to="/about/records"
-                className="inline-flex items-center gap-1 text-sm text-muted-foreground hover:text-foreground transition-colors"
-              >
-                All records <ArrowUpRight className="h-3.5 w-3.5" />
-              </Link>
-            </div>
-            <ul>
-              {recentRecords.map((r) => (
-                <li key={r.id} className="py-3 border-b border-border/40 flex justify-between gap-4">
-                  <span className="text-base">
-                    {r.album}
-                    <span className="text-muted-foreground"> — {r.artist}</span>
-                  </span>
-                  <span className="text-sm text-muted-foreground shrink-0">{r.year}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </div>
+        <ul className="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8">
+          {recommendedBooks.map((b) => (
+            <li key={b.id} className="py-4 border-t border-border/70 flex items-baseline justify-between gap-4">
+              <span className="text-base leading-snug">
+                {b.title}
+                <span className="block text-muted-foreground">{b.author}</span>
+              </span>
+              <span className="font-mono text-xs text-muted-foreground shrink-0">{b.year}</span>
+            </li>
+          ))}
+        </ul>
       </Band>
+
+      {/* Records */}
+      <Band>
+        <div className="max-w-4xl">
+          <Eyebrow>Lists — Listening</Eyebrow>
+          <Heading>Records</Heading>
+          <Lede>The most recent things in rotation.</Lede>
+          <p className="mt-6">
+            <Link
+              to="/about/records"
+              className="inline-flex items-center gap-1.5 text-foreground hover:text-muted-foreground transition-colors"
+            >
+              Every record I own <ArrowUpRight className="h-4 w-4" />
+            </Link>
+          </p>
+        </div>
+        <ul className="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8">
+          {recentRecords.map((r) => (
+            <li key={r.id} className="py-4 border-t border-border/70 flex items-baseline justify-between gap-4">
+              <span className="text-base leading-snug">
+                {r.album}
+                <span className="block text-muted-foreground">{r.artist}</span>
+              </span>
+              <span className="font-mono text-xs text-muted-foreground shrink-0">{r.year}</span>
+            </li>
+          ))}
+        </ul>
+      </Band>
+
 
       {/* Words */}
       <Band>
