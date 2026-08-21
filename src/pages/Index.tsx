@@ -2,16 +2,20 @@ import { Link } from "react-router-dom";
 import { ArrowUpRight } from "lucide-react";
 import { WorkCarousel, type CarouselSlide } from "@/components/home/WorkCarousel";
 import { experience } from "@/data/experience";
+import { essays } from "@/data/essays";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
+import { McCliDemo } from "@/components/mc-cli/McCliDemo";
 import { books } from "@/data/books";
 import { records } from "@/data/records";
 
-import mcdWrites from "@/assets/montecarlo/mcd-writes.png";
-import mcdPerfMon from "@/assets/montecarlo/mcd-perf-mon.png";
-import mcdRoles from "@/assets/montecarlo/mcd-roles.png";
-import taniumNavigation from "@/assets/tanium/tanium-navigation.mp4";
-import taniumNavigationViews from "@/assets/tanium/tanium-navigation-views.png";
-import taniumThreatAlerts from "@/assets/tanium/tanium-threat-alerts.png";
-import taniumAssuranceFindings from "@/assets/tanium/tanium-assurance-findings.png";
+
+import taniumEnforce from "@/assets/tanium/tanium-enforce.mp4";
+import taniumEnforceOverview from "@/assets/tanium/tanium-enforce-overview.png";
 
 import analyticsAnalyze from "@/assets/sas/analytics-analyze.png";
 import analyticsExplore from "@/assets/sas/analytics-explore.png";
@@ -36,17 +40,19 @@ const redHatWork: CarouselSlide[] = [
   { src: rhboRoster, alt: "Red Hat Business Optimizer roster", caption: "Business Optimizer — roster planning" },
 ];
 
-const words = [
-  { title: "Pt 4 → Claude", to: "/words/claude", note: "Think piece #901" },
-  { title: "Pt 3 → Sleeves", to: "/words/sleeves", note: "I built an app" },
-  { title: "Pt 2 → Vibes", to: "/words/vibes", note: "Prompts v boxes" },
-  { title: "Pt 1 → Tools", to: "/words/tools", note: "TMI" },
-];
 
 
-function Band({ children, className = "" }: { children: React.ReactNode; className?: string }) {
+function Band({
+  children,
+  className = "",
+  id,
+}: {
+  children: React.ReactNode;
+  className?: string;
+  id?: string;
+}) {
   return (
-    <section className={`border-t border-border/70 ${className}`}>
+    <section id={id} className={`border-t border-border/70 ${className}`}>
       <div className="max-w-6xl mx-auto px-6">
         <div className="px-5 py-16 md:py-24">{children}</div>
       </div>
@@ -123,16 +129,8 @@ export default function Index() {
             </Link>
           </p>
         </div>
-        <div className="mt-12 grid grid-cols-1 gap-4">
-          <img
-            src={mcdWrites}
-            alt="Monte Carlo AI writes view"
-            className="w-full h-auto border border-border/40"
-          />
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <img src={mcdPerfMon} alt="Monte Carlo AI performance monitoring" className="w-full h-auto border border-border/40" />
-            <img src={mcdRoles} alt="Monte Carlo AI roles and permissions" className="w-full h-auto border border-border/40" />
-          </div>
+        <div className="mt-12">
+          <McCliDemo defaultScenarioId="search" />
         </div>
       </Band>
 
@@ -154,20 +152,16 @@ export default function Index() {
             </Link>
           </p>
         </div>
-        <div className="mt-12 grid grid-cols-1 gap-4">
+        <div className="mt-12">
           <video
-            src={taniumNavigation}
-            poster={taniumNavigationViews}
+            src={taniumEnforce}
+            poster={taniumEnforceOverview}
             autoPlay
             loop
             muted
             playsInline
             className="w-full h-auto border border-border/40"
           />
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <img src={taniumThreatAlerts} alt="Tanium threat alerts" className="w-full h-auto border border-border/40" />
-            <img src={taniumAssuranceFindings} alt="Tanium Assurance findings" className="w-full h-auto border border-border/40" />
-          </div>
         </div>
       </Band>
 
@@ -335,27 +329,29 @@ export default function Index() {
 
 
       {/* Words */}
-      <Band className="border-b border-border/70">
+      <Band id="words" className="border-b border-border/70">
         <div className="max-w-4xl">
           <Eyebrow>Words — Design &amp; AI</Eyebrow>
           <Heading>Four essays about building with agents</Heading>
+          <Lede>Written in order, best read that way. Open one.</Lede>
         </div>
-        <ul className="mt-12 max-w-4xl">
-          {words.map((w) => (
-            <li key={w.to} className="border-t border-border/70">
-              <Link
-                to={w.to}
-                className="group flex items-baseline justify-between gap-6 py-5 transition-colors"
-              >
-                <span className="text-base md:text-lg">{w.title}</span>
-                <span className="flex items-baseline gap-3 text-sm text-muted-foreground">
-                  {w.note}
-                  <ArrowUpRight className="h-4 w-4 transition-colors group-hover:text-foreground" />
+        <Accordion type="single" collapsible className="mt-12 max-w-3xl">
+          {essays.map((essay) => (
+            <AccordionItem key={essay.id} value={essay.id}>
+              <AccordionTrigger>
+                <span className="text-lg md:text-xl font-medium tracking-[-0.01em]">
+                  {essay.title}
                 </span>
-              </Link>
-            </li>
+                <span className="ml-auto text-sm text-muted-foreground">{essay.note}</span>
+              </AccordionTrigger>
+              <AccordionContent>
+                <article className="font-body text-[1.0625rem] text-muted-foreground leading-[1.7] space-y-6 max-w-[68ch]">
+                  {essay.body}
+                </article>
+              </AccordionContent>
+            </AccordionItem>
           ))}
-        </ul>
+        </Accordion>
       </Band>
 
       <footer className="max-w-6xl mx-auto px-6">

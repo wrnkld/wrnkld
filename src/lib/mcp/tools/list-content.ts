@@ -10,10 +10,10 @@ const WORK = [
 
 
 const WORDS = [
-  { title: "Pt 1 → Tools", url: "https://wrnkld.lovable.app/words/tools", note: "TMI" },
-  { title: "Pt 2 → Vibes", url: "https://wrnkld.lovable.app/words/vibes", note: "Prompts v Boxes" },
-  { title: "Pt 3 → Sleeves", url: "https://wrnkld.lovable.app/words/sleeves", note: "I built an app" },
-  { title: "Pt 4 → Claude", url: "https://wrnkld.lovable.app/words/claude", note: "Think piece #901" },
+  { title: "Pt 1 → Tools", url: "https://wrnkld.lovable.app/#words", note: "TMI" },
+  { title: "Pt 2 → Vibes", url: "https://wrnkld.lovable.app/#words", note: "Prompts v Boxes" },
+  { title: "Pt 3 → Sleeves", url: "https://wrnkld.lovable.app/#words", note: "I built an app" },
+  { title: "Pt 4 → Claude", url: "https://wrnkld.lovable.app/#words", note: "Think piece #901" },
 ];
 
 const SIDE = [

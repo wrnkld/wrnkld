@@ -7510,10 +7510,10 @@ var WORK = [
   { title: "Red Hat", url: "https://wrnkld.lovable.app/", note: "Open source enterprise software (see the homepage carousel)" }
 ];
 var WORDS = [
-  { title: "Pt 1 \u2192 Tools", url: "https://wrnkld.lovable.app/words/tools", note: "TMI" },
-  { title: "Pt 2 \u2192 Vibes", url: "https://wrnkld.lovable.app/words/vibes", note: "Prompts v Boxes" },
-  { title: "Pt 3 \u2192 Sleeves", url: "https://wrnkld.lovable.app/words/sleeves", note: "I built an app" },
-  { title: "Pt 4 \u2192 Claude", url: "https://wrnkld.lovable.app/words/claude", note: "Think piece #901" }
+  { title: "Pt 1 \u2192 Tools", url: "https://wrnkld.lovable.app/#words", note: "TMI" },
+  { title: "Pt 2 \u2192 Vibes", url: "https://wrnkld.lovable.app/#words", note: "Prompts v Boxes" },
+  { title: "Pt 3 \u2192 Sleeves", url: "https://wrnkld.lovable.app/#words", note: "I built an app" },
+  { title: "Pt 4 \u2192 Claude", url: "https://wrnkld.lovable.app/#words", note: "Think piece #901" }
 ];
 var SIDE = [
   { title: "StudyDrop", url: "https://studydrop.app", note: "UX research, without the friction" },
