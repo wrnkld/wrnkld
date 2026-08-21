@@ -22,15 +22,18 @@ import rhbaProjectMetrics from "@/assets/redhat/rhba-project-metrics.png";
 import rhboRoster from "@/assets/redhat/rhbo-roster.png";
 import rhbaAssetsList from "@/assets/redhat/rhba-assets-list.png";
 
-const earlierWork: CarouselSlide[] = [
-  { src: analyticsAnalyze, alt: "SAS Model Studio analysis pipeline", caption: "SAS — Model Studio, analysis pipeline" },
-  { src: analyticsExplore, alt: "SAS Model Studio exploration", caption: "SAS — Model Studio, exploration" },
-  { src: factoryResults, alt: "SAS Factory Miner model comparison", caption: "SAS — Factory Miner, model comparison" },
-  { src: visualStatsRoles, alt: "SAS Visual Statistics roles", caption: "SAS — Visual Statistics, variable roles" },
-  { src: rhbaWorkflowModeler, alt: "Red Hat Business Automation workflow modeler", caption: "Red Hat — Business Automation, workflow modeler" },
-  { src: rhbaAssetsList, alt: "Red Hat Business Automation assets", caption: "Red Hat — Business Automation, project assets" },
-  { src: rhbaProjectMetrics, alt: "Red Hat Business Automation metrics", caption: "Red Hat — Business Automation, project metrics" },
-  { src: rhboRoster, alt: "Red Hat Business Optimizer roster", caption: "Red Hat — Business Optimizer, roster planning" },
+const sasWork: CarouselSlide[] = [
+  { src: analyticsAnalyze, alt: "SAS Model Studio analysis pipeline", caption: "Model Studio — analysis pipeline" },
+  { src: analyticsExplore, alt: "SAS Model Studio exploration", caption: "Model Studio — exploration" },
+  { src: factoryResults, alt: "SAS Factory Miner model comparison", caption: "Factory Miner — model comparison" },
+  { src: visualStatsRoles, alt: "SAS Visual Statistics roles", caption: "Visual Statistics — variable roles" },
+];
+
+const redHatWork: CarouselSlide[] = [
+  { src: rhbaWorkflowModeler, alt: "Red Hat Business Automation workflow modeler", caption: "Business Automation — workflow modeler" },
+  { src: rhbaAssetsList, alt: "Red Hat Business Automation assets", caption: "Business Automation — project assets" },
+  { src: rhbaProjectMetrics, alt: "Red Hat Business Automation metrics", caption: "Business Automation — project metrics" },
+  { src: rhboRoster, alt: "Red Hat Business Optimizer roster", caption: "Business Optimizer — roster planning" },
 ];
 
 const words = [
@@ -40,20 +43,6 @@ const words = [
   { title: "Pt 1 → Tools", to: "/words/tools", note: "TMI" },
 ];
 
-const vibes = [
-  "https://media.giphy.com/media/j5nLG5ZTChFwGsmGnV/giphy.gif",
-  "https://media.giphy.com/media/JnAqFgTk5AcxbfhtPL/giphy.gif",
-  "https://media.giphy.com/media/VbmrliOc1UMJDYYZRF/giphy.gif",
-  "https://media.giphy.com/media/gj0CJcKVtmAoSq5v9d/giphy.gif",
-  "https://media.giphy.com/media/hX6UTr4GALucmRR38D/giphy.gif",
-  "https://media.giphy.com/media/TEEewgFfvMvvkSzw7w/giphy.gif",
-  "https://media.giphy.com/media/KHEIcdVp8oSKo4zvmZ/giphy.gif",
-  "https://media.giphy.com/media/XB3WTIY5GhgcBosgE4/giphy.gif",
-  "https://media.giphy.com/media/S9WCr3cTm6qHq6LmRi/giphy.gif",
-  "https://media.giphy.com/media/MCXp9DOVi5xKQhicLs/giphy.gif",
-  "https://media.giphy.com/media/YPQ7McRYvkGrnPPg2x/giphy.gif",
-  "https://media.giphy.com/media/KEYvmwlOfRc8VN2UZT/giphy.gif",
-];
 
 function Band({ children, className = "" }: { children: React.ReactNode; className?: string }) {
   return (
