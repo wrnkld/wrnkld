@@ -5,12 +5,10 @@ import { PageRails } from "./components/PageRails";
 import { Analytics } from "@vercel/analytics/react";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
-import Experience from "./pages/about/Experience";
 
 import MonteCarlo from "./pages/work/MonteCarlo";
 import Tanium from "./pages/work/Tanium";
-import SAS from "./pages/work/SAS";
-import RedHat from "./pages/work/RedHat";
+
 import Books from "./pages/about/Books";
 import Records from "./pages/about/Records";
 import Tools from "./pages/words/Tools";
