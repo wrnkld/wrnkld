@@ -28,6 +28,12 @@ const App = () => (
 
         <Route path="/about/books" element={<Books />} />
         <Route path="/about/records" element={<Records />} />
+        {/* Essays now live in accordions on the homepage */}
+        <Route path="/words/tools" element={<Navigate to="/" replace />} />
+        <Route path="/words/vibes" element={<Navigate to="/" replace />} />
+        <Route path="/words/sleeves" element={<Navigate to="/" replace />} />
+        <Route path="/words/claude" element={<Navigate to="/" replace />} />
+
         {/* Redirects from old /designai paths */}
         <Route path="/designai/tools" element={<Navigate to="/" replace />} />
         <Route path="/designai/vibes" element={<Navigate to="/" replace />} />
