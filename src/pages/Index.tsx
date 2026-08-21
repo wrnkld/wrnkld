@@ -335,7 +335,7 @@ export default function Index() {
 
 
       {/* Words */}
-      <Band>
+      <Band className="border-b border-border/70">
         <div className="max-w-4xl">
           <Eyebrow>Words — Design &amp; AI</Eyebrow>
           <Heading>Four essays about building with agents</Heading>
@@ -356,35 +356,6 @@ export default function Index() {
             </li>
           ))}
         </ul>
-      </Band>
-
-      {/* Vibes */}
-      <Band className="border-b border-border/70">
-        <div className="max-w-4xl">
-          <Eyebrow>Vibes</Eyebrow>
-          <h2 className="mt-4 text-2xl md:text-4xl font-medium leading-tight">
-            Slacker, mostly
-          </h2>
-          <p className="mt-6 text-base md:text-lg text-muted-foreground leading-relaxed">
-            Every project in here used to be one of these. They earned a spot at
-            the bottom instead.
-          </p>
-        </div>
-        <div className="mt-12 grid grid-cols-3 sm:grid-cols-4 lg:grid-cols-6 gap-2">
-          {vibes.map((src) => (
-            <div
-              key={src}
-              className="aspect-square overflow-hidden border border-border/40 bg-muted/30"
-            >
-              <img
-                src={src}
-                alt=""
-                loading="lazy"
-                className="w-full h-full object-cover grayscale transition-all duration-300 hover:grayscale-0"
-              />
-            </div>
-          ))}
-        </div>
       </Band>
 
       <footer className="max-w-6xl mx-auto px-6">
