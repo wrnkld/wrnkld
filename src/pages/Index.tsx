@@ -206,13 +206,17 @@ export default function Index() {
       {/* Earlier work — SAS and Red Hat, 50/50 */}
       <Band>
         <div className="max-w-4xl">
-          <Eyebrow>Earlier — 2011 to 2019</Eyebrow>
+          <Eyebrow>Earlier — 2004 to 2019</Eyebrow>
           <Heading>SAS and Red Hat</Heading>
           <Lede>
-            Analytics platforms at SAS, automation tooling at Red Hat. Dense,
-            technical, long-lived software.
+            At SAS I redesigned the flagship analytics platform and launched two
+            enterprise products. At Red Hat I led UX for hybrid-cloud automation
+            tooling, building with PatternFly in the open. Before that: managing
+            an eight-person UX team at HumanCentric, and designing for Microsoft,
+            HP, and Dell at Frog. Georgetown University, BA Psychology, cum laude.
           </Lede>
         </div>
+
         <div className="mt-12 grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-8">
           <div>
             <h3 className="pb-4 border-b border-border/70 text-lg font-medium tracking-[-0.01em]">
