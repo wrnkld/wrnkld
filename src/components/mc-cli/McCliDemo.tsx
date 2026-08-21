@@ -70,7 +70,7 @@ function Code({ children }: { children: React.ReactNode }) {
 }
 
 export function McCliDemo() {
-  const [activeId, setActiveId] = useState<string | null>(null);
+  const [activeId, setActiveId] = useState<string | null>(defaultScenarioId ?? null);
   const active = scenarios.find((s) => s.id === activeId) ?? null;
   const { chars, done } = useTypewriter(active);
 
