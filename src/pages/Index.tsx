@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { ArrowUpRight } from "lucide-react";
+import { Button } from "@/components/ui/button";
 import { WorkCarousel, type CarouselSlide } from "@/components/home/WorkCarousel";
 import { essays } from "@/data/essays";
 import {
@@ -13,8 +14,8 @@ import { books } from "@/data/books";
 import { records } from "@/data/records";
 
 
-import taniumEnforce from "@/assets/tanium/tanium-enforce.mp4";
-import taniumEnforceOverview from "@/assets/tanium/tanium-enforce-overview.png";
+import taniumDiscover from "@/assets/tanium/tanium-discover.mp4";
+import taniumDiscoverInterfaces from "@/assets/tanium/tanium-discover-interfaces.png";
 
 import analyticsAnalyze from "@/assets/sas/analytics-analyze.png";
 import analyticsExplore from "@/assets/sas/analytics-explore.png";
@@ -96,7 +97,7 @@ export default function Index() {
             Matthew Stevens designs enterprise software.
           </h1>
           <p className="mt-8 max-w-[42ch] text-[1.0625rem] md:text-xl leading-[1.6] text-muted-foreground">
-            Head of Design at Monte Carlo AI. Raleigh, North Carolina.
+            Head of Design at Monte Carlo AI. Raleigh, NC.
           </p>
           <p className="mt-8">
             <a
@@ -116,19 +117,14 @@ export default function Index() {
           <Eyebrow>Work — 2022 to present</Eyebrow>
           <Heading>Monte Carlo AI</Heading>
           <Lede>
-            The leading agent trust platform. I joined as the founding designer
-            and built the design function while staying hands-on every day —
-            observability, investigations, integrations, permissions, and
-            AI-assisted data operations. Hired and mentored the team, and set up
-            the design system, research practice, and operating model.
+            The leading agent trust platform. Founding designer, still hands-on.
           </Lede>
-          <p className="mt-6">
-            <Link
-              to="/work/montecarlo"
-              className="inline-flex items-center gap-1.5 text-foreground hover:text-muted-foreground transition-colors"
-            >
-              Read the case study <ArrowUpRight className="h-4 w-4" />
-            </Link>
+          <p className="mt-8">
+            <Button asChild size="lg" className="rounded">
+              <Link to="/work/montecarlo">
+                Case study <ArrowUpRight className="h-4 w-4" />
+              </Link>
+            </Button>
           </p>
         </div>
         <div className="mt-12">
@@ -142,23 +138,20 @@ export default function Index() {
           <Eyebrow>Work — 2019 to 2021</Eyebrow>
           <Heading>Tanium</Heading>
           <Lede>
-            Endpoint security across millions of devices in real time. I led
-            Threat Response through three flagship redesigns and launched two
-            enterprise security products from scratch.
+            Endpoint security at real-time scale. Two products shipped from zero.
           </Lede>
-          <p className="mt-6">
-            <Link
-              to="/work/tanium"
-              className="inline-flex items-center gap-1.5 text-foreground hover:text-muted-foreground transition-colors"
-            >
-              Read the case study <ArrowUpRight className="h-4 w-4" />
-            </Link>
+          <p className="mt-8">
+            <Button asChild size="lg" className="rounded">
+              <Link to="/work/tanium">
+                Case study <ArrowUpRight className="h-4 w-4" />
+              </Link>
+            </Button>
           </p>
         </div>
         <div className="mt-12">
           <video
-            src={taniumEnforce}
-            poster={taniumEnforceOverview}
+            src={taniumDiscover}
+            poster={taniumDiscoverInterfaces}
             autoPlay
             loop
             muted
@@ -172,7 +165,7 @@ export default function Index() {
       <Band>
         <div className="max-w-4xl">
           <Eyebrow>Built and shipped solo</Eyebrow>
-          <Heading>Two products of my own</Heading>
+          <Heading>Two of my own</Heading>
         </div>
         <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-8">
           {[
@@ -180,13 +173,13 @@ export default function Index() {
               name: "StudyDrop",
               href: "https://studydrop.app",
               blurb:
-                "UX research without the friction — surveys, card sorting, tree testing, and first-click testing in one place. Launched 2026.",
+                "UX research without the friction: surveys, card sorts, tree tests.",
             },
             {
               name: "Sleeves",
               href: "https://sleeves.app",
               blurb:
-                "Track albums, make lists, follow friends. A social music app built with React, Supabase, and a lot of agents.",
+                "A social music app for people who think in records.",
             },
           ].map((p) => (
             <a
@@ -212,11 +205,8 @@ export default function Index() {
           <Eyebrow>Earlier — 2004 to 2019</Eyebrow>
           <Heading>SAS and Red Hat</Heading>
           <Lede>
-            At SAS I redesigned the flagship analytics platform and launched two
-            enterprise products. At Red Hat I led UX for hybrid-cloud automation
-            tooling, building with PatternFly in the open. Before that: managing
-            an eight-person UX team at HumanCentric, and designing for Microsoft,
-            HP, and Dell at Frog. Georgetown University, BA Psychology, cum laude.
+            Analytics platforms at SAS, hybrid-cloud automation at Red Hat.
+            Before that, Frog and HumanCentric. Georgetown, BA Psychology.
           </Lede>
         </div>
 
@@ -248,14 +238,12 @@ export default function Index() {
         <div className="max-w-4xl">
           <Eyebrow>Lists — Reading</Eyebrow>
           <Heading>Books</Heading>
-          <Lede>Recommendations from an exhaustive list.</Lede>
-          <p className="mt-6">
-            <Link
-              to="/about/books"
-              className="inline-flex items-center gap-1.5 text-foreground hover:text-muted-foreground transition-colors"
-            >
-              Every book I&apos;ve read <ArrowUpRight className="h-4 w-4" />
-            </Link>
+          <p className="mt-8">
+            <Button asChild size="lg" className="rounded">
+              <Link to="/about/books">
+                Every book <ArrowUpRight className="h-4 w-4" />
+              </Link>
+            </Button>
           </p>
         </div>
         <ul className="mt-12 max-w-3xl">
@@ -276,14 +264,12 @@ export default function Index() {
         <div className="max-w-4xl">
           <Eyebrow>Lists — Listening</Eyebrow>
           <Heading>Records</Heading>
-          <Lede>The most recent things in rotation.</Lede>
-          <p className="mt-6">
-            <Link
-              to="/about/records"
-              className="inline-flex items-center gap-1.5 text-foreground hover:text-muted-foreground transition-colors"
-            >
-              Every record I own <ArrowUpRight className="h-4 w-4" />
-            </Link>
+          <p className="mt-8">
+            <Button asChild size="lg" className="rounded">
+              <Link to="/about/records">
+                Every record <ArrowUpRight className="h-4 w-4" />
+              </Link>
+            </Button>
           </p>
         </div>
         <ul className="mt-12 max-w-3xl">
@@ -304,8 +290,7 @@ export default function Index() {
       <Band id="words" className="border-b border-border/70">
         <div className="max-w-4xl">
           <Eyebrow>Words — Design &amp; AI</Eyebrow>
-          <Heading>Four essays about building with agents</Heading>
-          <Lede>Written in order, best read that way. Open one.</Lede>
+          <Heading>Four essays on building with agents</Heading>
         </div>
         <Accordion type="single" collapsible className="mt-12 max-w-3xl">
           {essays.map((essay) => (
