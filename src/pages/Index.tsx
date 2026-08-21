@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom";
 import { ArrowUpRight } from "lucide-react";
 import { WorkCarousel, type CarouselSlide } from "@/components/home/WorkCarousel";
-import { experience } from "@/data/experience";
 import { essays } from "@/data/essays";
 import {
   Accordion,
@@ -118,7 +117,10 @@ export default function Index() {
           <Heading>Monte Carlo AI</Heading>
           <Lede>
             The leading agent trust platform. I joined as the founding designer
-            and built the design function while staying in the product every day.
+            and built the design function while staying hands-on every day —
+            observability, investigations, integrations, permissions, and
+            AI-assisted data operations. Hired and mentored the team, and set up
+            the design system, research practice, and operating model.
           </Lede>
           <p className="mt-6">
             <Link
@@ -140,8 +142,9 @@ export default function Index() {
           <Eyebrow>Work — 2019 to 2021</Eyebrow>
           <Heading>Tanium</Heading>
           <Lede>
-            Endpoint security across millions of devices in real time. Three
-            flagship redesigns and two products shipped from scratch.
+            Endpoint security across millions of devices in real time. I led
+            Threat Response through three flagship redesigns and launched two
+            enterprise security products from scratch.
           </Lede>
           <p className="mt-6">
             <Link
@@ -177,13 +180,13 @@ export default function Index() {
               name: "StudyDrop",
               href: "https://studydrop.app",
               blurb:
-                "UX research without the friction — surveys, card sorting, tree testing, and first-click testing in one place.",
+                "UX research without the friction — surveys, card sorting, tree testing, and first-click testing in one place. Launched 2026.",
             },
             {
               name: "Sleeves",
               href: "https://sleeves.app",
               blurb:
-                "Track albums, make lists, follow friends. A social music app for people who still think in records.",
+                "Track albums, make lists, follow friends. A social music app built with React, Supabase, and a lot of agents.",
             },
           ].map((p) => (
             <a
