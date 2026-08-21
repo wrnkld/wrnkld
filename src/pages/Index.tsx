@@ -109,15 +109,11 @@ export default function Index() {
       <Band>
         <div className="max-w-4xl">
           <Eyebrow>Work — 2022 to present</Eyebrow>
-          <h2 className="mt-4 text-2xl md:text-4xl font-medium leading-tight">
-            Monte Carlo AI
-          </h2>
-          <p className="mt-6 text-base md:text-lg text-muted-foreground leading-relaxed">
+          <Heading>Monte Carlo AI</Heading>
+          <Lede>
             The leading agent trust platform. I joined as the founding designer
-            and built the design function while staying in the product every
-            day — observability, investigations, integrations, permissions, and
-            the AI-assisted workflows underneath all of it.
-          </p>
+            and built the design function while staying in the product every day.
+          </Lede>
           <p className="mt-6">
             <Link
               to="/work/montecarlo"
@@ -144,13 +140,11 @@ export default function Index() {
       <Band>
         <div className="max-w-4xl">
           <Eyebrow>Work — 2019 to 2021</Eyebrow>
-          <h2 className="mt-4 text-2xl md:text-4xl font-medium leading-tight">Tanium</h2>
-          <p className="mt-6 text-base md:text-lg text-muted-foreground leading-relaxed">
-            Endpoint security across millions of devices in real time. I
-            redesigned three flagship products and shipped two new ones from
-            scratch: Assurance for MITRE ATT&amp;CK visibility, and Enforce for
-            policy enforcement at enterprise scale.
-          </p>
+          <Heading>Tanium</Heading>
+          <Lede>
+            Endpoint security across millions of devices in real time. Three
+            flagship redesigns and two products shipped from scratch.
+          </Lede>
           <p className="mt-6">
             <Link
               to="/work/tanium"
@@ -181,9 +175,7 @@ export default function Index() {
       <Band>
         <div className="max-w-4xl">
           <Eyebrow>Built and shipped solo</Eyebrow>
-          <h2 className="mt-4 text-2xl md:text-4xl font-medium leading-tight">
-            Two products of my own
-          </h2>
+          <Heading>Two products of my own</Heading>
         </div>
         <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-8">
           {[
@@ -217,21 +209,33 @@ export default function Index() {
         </div>
       </Band>
 
-      {/* Earlier work carousel */}
+      {/* Earlier work — SAS and Red Hat, 50/50 */}
       <Band>
         <div className="max-w-4xl">
           <Eyebrow>Earlier — 2011 to 2019</Eyebrow>
-          <h2 className="mt-4 text-2xl md:text-4xl font-medium leading-tight">
-            SAS and Red Hat
-          </h2>
-          <p className="mt-6 text-base md:text-lg text-muted-foreground leading-relaxed">
-            Analytics platforms at SAS, hybrid-cloud and automation tooling at
-            Red Hat. Dense, technical, long-lived software — some of it still
-            shipping.
-          </p>
+          <Heading>SAS and Red Hat</Heading>
+          <Lede>
+            Analytics platforms at SAS, automation tooling at Red Hat. Dense,
+            technical, long-lived software.
+          </Lede>
         </div>
-        <div className="mt-12">
-          <WorkCarousel slides={earlierWork} />
+        <div className="mt-12 grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-8">
+          <div>
+            <h3 className="pb-4 border-b border-border/70 text-lg font-medium tracking-[-0.01em]">
+              SAS
+            </h3>
+            <div className="mt-6">
+              <WorkCarousel slides={sasWork} slideClassName="w-full" />
+            </div>
+          </div>
+          <div>
+            <h3 className="pb-4 border-b border-border/70 text-lg font-medium tracking-[-0.01em]">
+              Red Hat
+            </h3>
+            <div className="mt-6">
+              <WorkCarousel slides={redHatWork} slideClassName="w-full" />
+            </div>
+          </div>
         </div>
       </Band>
 
@@ -239,9 +243,7 @@ export default function Index() {
       <Band>
         <div className="max-w-4xl">
           <Eyebrow>Experience</Eyebrow>
-          <h2 className="mt-4 text-2xl md:text-4xl font-medium leading-tight">
-            Where I&apos;ve been
-          </h2>
+          <Heading>Where I&apos;ve been</Heading>
         </div>
         <div className="mt-12 max-w-4xl">
           {experience.map((job) => (
@@ -338,9 +340,7 @@ export default function Index() {
       <Band>
         <div className="max-w-4xl">
           <Eyebrow>Words — Design &amp; AI</Eyebrow>
-          <h2 className="mt-4 text-2xl md:text-4xl font-medium leading-tight">
-            Four essays about building with agents
-          </h2>
+          <Heading>Four essays about building with agents</Heading>
         </div>
         <ul className="mt-12 max-w-4xl">
           {words.map((w) => (
