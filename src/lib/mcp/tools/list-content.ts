@@ -2,12 +2,11 @@ import { defineTool } from "@lovable.dev/mcp-js";
 import { z } from "zod";
 
 const WORK = [
-  { title: "Monte Carlo AI", url: "https://wrnkld.lovable.app/work/montecarlo", note: "Agent trust platform" },
+  { title: "Monte Carlo", url: "https://wrnkld.lovable.app/work/montecarlo", note: "Data and AI observability" },
   { title: "Tanium", url: "https://wrnkld.lovable.app/work/tanium", note: "Endpoint security at scale" },
-  { title: "SAS", url: "https://wrnkld.lovable.app/", note: "Enterprise analytics (see the homepage carousel)" },
-  { title: "Red Hat", url: "https://wrnkld.lovable.app/", note: "Open source enterprise software (see the homepage carousel)" },
+  { title: "SAS", url: "https://wrnkld.lovable.app/work/sas", note: "Enterprise analytics" },
+  { title: "Red Hat", url: "https://wrnkld.lovable.app/work/redhat", note: "Open source enterprise software" },
 ];
-
 
 const WORDS = [
   { title: "Pt 1 → Tools", url: "https://wrnkld.lovable.app/words/tools", note: "TMI" },
