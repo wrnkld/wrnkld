@@ -154,7 +154,7 @@ function Band({
 
 function BandHeading({ children }: { children: React.ReactNode }) {
   return (
-    <h2 className="mt-4 text-[1.625rem] md:text-[2.5rem] font-medium leading-[1.05] tracking-[-0.02em]">
+    <h2 className="mt-4 text-[1.625rem] md:text-[2rem] font-medium leading-[1.05] tracking-[-0.02em]">
       {children}
     </h2>
   );
