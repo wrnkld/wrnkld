@@ -1,258 +1,121 @@
 import { Link } from "react-router-dom";
-import { useState, useMemo } from "react";
-import { motion } from "motion/react";
-import { Clock, LayoutGrid, Circle, Cherry } from "lucide-react";
-import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
+import { essays } from "@/data/essays";
 
+type Entry = { title: string; note?: string; to?: string; href?: string };
 
-type Category = "Work" | "Words" | "Side" | "About";
-
-type Item = {
-  title: string;
-  category: Category;
-  to?: string;
-  href?: string;
-  note?: string;
-  gif?: string;
-};
-
-const ITEMS: Item[] = [
-  { title: "Monte Carlo AI", category: "Work", to: "/work/montecarlo", note: "Agent trust platform", gif: "https://media.giphy.com/media/j5nLG5ZTChFwGsmGnV/giphy.gif" },
-  { title: "Tanium", category: "Work", to: "/work/tanium", note: "Endpoint security at scale", gif: "https://media.giphy.com/media/YPQ7McRYvkGrnPPg2x/giphy.gif" },
-  { title: "StudyDrop", category: "Side", href: "https://studydrop.app", note: "UX research, without the friction", gif: "https://media.giphy.com/media/VbmrliOc1UMJDYYZRF/giphy.gif" },
-  { title: "Sleeves", category: "Side", href: "https://sleeves.app", note: "Track albums, make lists, follow friends", gif: "https://media.giphy.com/media/gj0CJcKVtmAoSq5v9d/giphy.gif" },
-  { title: "Experience", category: "About", to: "/about/experience", note: "Twenty years of design work", gif: "https://media.giphy.com/media/l0HlNaQ6gWfllcjDO/giphy.gif" },
-  { title: "Books", category: "About", to: "/about/books", note: "I like making lists", gif: "https://media.giphy.com/media/TEEewgFfvMvvkSzw7w/giphy.gif" },
-  { title: "Records", category: "About", to: "/about/records", note: "A relatively exhaustive list of records I like", gif: "https://media.giphy.com/media/KHEIcdVp8oSKo4zvmZ/giphy.gif" },
-  { title: "Pt 4 → Claude", category: "Words", note: "Think piece #901", gif: "https://media.giphy.com/media/hX6UTr4GALucmRR38D/giphy.gif" },
-  { title: "Pt 3 → Sleeves", category: "Words", note: "I built an app", gif: "https://media.giphy.com/media/XB3WTIY5GhgcBosgE4/giphy.gif" },
-  { title: "Pt 2 → Vibes", category: "Words", note: "Prompts v Boxes", gif: "https://media.giphy.com/media/S9WCr3cTm6qHq6LmRi/giphy.gif" },
-  { title: "Pt 1 → Tools", category: "Words", note: "TMI", gif: "https://media.giphy.com/media/MCXp9DOVi5xKQhicLs/giphy.gif" },
-
+const WORK: Entry[] = [
+  { title: "Monte Carlo AI", note: "Agent trust platform", to: "/work/montecarlo" },
+  { title: "Tanium", note: "Endpoint security at scale", to: "/work/tanium" },
 ];
 
-const CHIP: Record<Category, string> = {
-  Work: "chip-work",
-  About: "chip-about",
-  Side: "chip-side",
-  Words: "chip-words",
-};
-
-const CATEGORICAL_ORDER = [
-  "Monte Carlo AI",
-  "Tanium",
-  "Sleeves",
-  "StudyDrop",
-  "Experience",
-  "Records",
-  "Books",
+const SIDE: Entry[] = [
+  { title: "StudyDrop", note: "UX research, without the friction", href: "https://studydrop.app" },
+  { title: "Sleeves", note: "Track albums, make lists, follow friends", href: "https://sleeves.app" },
 ];
 
-// Most recent first.
-const CHRONOLOGICAL_ORDER = [
-  "StudyDrop",
-  "Pt 4 → Claude",
-  "Pt 3 → Sleeves",
-  "Sleeves",
-  "Pt 2 → Vibes",
-  "Pt 1 → Tools",
-  "Records",
-  "Books",
-  "Monte Carlo AI",
-  "Experience",
-  "Tanium",
+const ABOUT: Entry[] = [
+  { title: "Experience", note: "Twenty years of design work", to: "/about/experience" },
+  { title: "Books", note: "I like making lists", to: "/about/books" },
+  { title: "Records", note: "Records I like", to: "/about/records" },
 ];
 
-type SortMode = "default" | "category";
-type FilterMode = "all" | "dope";
-
-const DOPE_TITLES = new Set([
-  "Monte Carlo AI",
-  "Tanium",
-  "Books",
-  "StudyDrop",
-  "Sleeves",
-  "Records",
-  "Experience",
-]);
-
-function Card({ item }: { item: Item }) {
-  const inner = (
-    <div className="group h-full flex flex-col gap-3 p-5 transition-colors surface-tint-hover">
-      {item.gif && (
-        <div className="aspect-[4/3] overflow-hidden rounded-md border border-border/40 bg-muted/30">
-          <img src={item.gif} alt="" loading="lazy" className="w-full h-full object-cover" />
-        </div>
+function Row({ entry }: { entry: Entry }) {
+  const label = (
+    <>
+      <span className="text-foreground">{entry.title}</span>
+      {entry.note && (
+        <span className="text-muted-foreground"> — {entry.note}</span>
       )}
-      <div className="flex items-center gap-2">
-        <span
-          className={`chip ${CHIP[item.category]} font-mono text-[10px] uppercase tracking-[0.14em] px-2 py-0.5 rounded`}
-        >
-          {item.category}
-        </span>
-      </div>
-      <div className="flex flex-col gap-1">
-        <h2 className="text-base font-medium leading-snug">{item.title}</h2>
-        {item.note && (
-          <p className="text-sm text-muted-foreground leading-snug">{item.note}</p>
-        )}
-      </div>
-    </div>
+    </>
   );
 
-  if (item.to) {
+  if (entry.to) {
     return (
-      <Link to={item.to} className="block h-full">
-        {inner}
-      </Link>
+      <li>
+        <Link to={entry.to} className="hover:text-muted-foreground transition-colors">
+          {label}
+        </Link>
+      </li>
     );
   }
-  if (item.href) {
-    const external = item.href.startsWith("http");
+  if (entry.href) {
     return (
-      <a
-        href={item.href}
-        {...(external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
-        className="block h-full"
-      >
-        {inner}
-      </a>
+      <li>
+        <a
+          href={entry.href}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="hover:text-muted-foreground transition-colors"
+        >
+          {label}
+        </a>
+      </li>
     );
   }
-  return inner;
+  return <li>{label}</li>;
 }
 
+function Section({ title, entries }: { title: string; entries: Entry[] }) {
+  return (
+    <section className="mt-10">
+      <h2 className="text-sm uppercase tracking-[0.14em] text-muted-foreground">{title}</h2>
+      <ul className="mt-3 space-y-1.5">
+        {entries.map((e) => (
+          <Row key={e.title} entry={e} />
+        ))}
+      </ul>
+    </section>
+  );
+}
 
 export default function Index() {
-  const [sort, setSort] = useState<SortMode>(() => {
-    if (typeof window === "undefined") return "category";
-    const s = sessionStorage.getItem("index-sort");
-    return s === "category" || s === "default" ? (s as SortMode) : "category";
-  });
-  const handleSortChange = (v: SortMode) => {
-    setSort(v);
-    sessionStorage.setItem("index-sort", v);
-  };
-  const [filter, setFilter] = useState<FilterMode>(() => {
-    if (typeof window === "undefined") return "dope";
-    const s = sessionStorage.getItem("index-filter");
-    return s === "all" || s === "dope" ? (s as FilterMode) : "dope";
-  });
-  const handleFilterChange = (v: FilterMode) => {
-    setFilter(v);
-    sessionStorage.setItem("index-filter", v);
-  };
-
-  const items = useMemo(() => {
-    const base = filter === "dope" ? ITEMS.filter((i) => DOPE_TITLES.has(i.title)) : ITEMS;
-    const order = sort === "category" ? CATEGORICAL_ORDER : CHRONOLOGICAL_ORDER;
-    return [...base].sort((a, b) => {
-      const ai = order.indexOf(a.title);
-      const bi = order.indexOf(b.title);
-      if (ai === -1 && bi === -1) return a.title.localeCompare(b.title);
-      if (ai === -1) return 1;
-      if (bi === -1) return -1;
-      return ai - bi;
-    });
-  }, [sort, filter]);
-
   return (
-    <TooltipProvider delayDuration={200}>
-      <div className="relative z-10 min-h-screen text-foreground">
-      <div className="max-w-6xl mx-auto px-6 pt-16 md:pt-24">
-        <header className="border-t border-b border-border/70">
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
-              <div className="p-5">
-                <h1 className="text-2xl font-medium">Matthew Stevens</h1>
-                <p className="text-muted-foreground mt-2">
-                  <a
-                    href="mailto:hello@wrnkld.tv"
-                    className="text-foreground hover:text-muted-foreground transition-colors"
-                  >
-                    hello@wrnkld.tv
-                  </a>
-                </p>
-              </div>
-              <div className="p-5 sm:col-span-1 lg:col-span-2 flex sm:justify-end sm:items-end">
-                <div className="inline-flex items-center gap-2">
-                  {(
-                    [
-                      {
-                        key: "sort",
-                        value: sort,
-                        onChange: (v: string) => handleSortChange(v as SortMode),
-                        options: [
-                          { mode: "default", Icon: Clock, label: "Chronological" },
-                          { mode: "category", Icon: LayoutGrid, label: "Categorical" },
-                        ],
-                      },
-                      {
-                        key: "filter",
-                        value: filter,
-                        onChange: (v: string) => handleFilterChange(v as FilterMode),
-                        options: [
-                          { mode: "all", Icon: Circle, label: "All" },
-                          { mode: "dope", Icon: Cherry, label: "Favorites" },
-                        ],
-                      },
-                    ] as const
-                  ).map((group) => (
-                    <Tabs key={group.key} value={group.value} onValueChange={group.onChange}>
-                      <TabsList className="surface-tint p-1.5">
-                        {group.options.map(({ mode, Icon, label }) => (
-                          <Tooltip key={mode}>
-                            <TooltipTrigger asChild>
-                              <span className="inline-flex">
-                                <TabsTrigger
-                                  value={mode}
-                                  aria-label={label}
-                                  className="px-1.5 rounded data-[state=active]:shadow-[0_1px_2px_rgba(0,0,0,0.08),0_1px_3px_rgba(0,0,0,0.06)]"
-                                >
-                                  <Icon className="h-4 w-4" />
-                                </TabsTrigger>
-                              </span>
-                            </TooltipTrigger>
-                            <TooltipContent className="hidden sm:block">{label}</TooltipContent>
-                          </Tooltip>
-                        ))}
-                      </TabsList>
-                    </Tabs>
-                  ))}
-                </div>
-              </div>
-            </div>
-          </header>
+    <div className="relative z-10 min-h-screen text-foreground">
+      <div className="max-w-4xl mx-auto px-6 py-16 md:py-24">
+        <header>
+          <h1 className="text-2xl font-medium">Matthew Stevens</h1>
+          <p className="mt-2 text-muted-foreground">
+            Product designer and builder in Raleigh, North Carolina.{" "}
+            <a
+              href="mailto:hello@wrnkld.tv"
+              className="text-foreground hover:text-muted-foreground transition-colors"
+            >
+              hello@wrnkld.tv
+            </a>
+          </p>
+        </header>
 
-          <main>
-            <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 border-b border-border/70">
-              {items.map((item) => (
-                <motion.li
-                  key={item.title}
-                  layout
-                  transition={{ type: "spring", stiffness: 400, damping: 32 }}
-                  className="border-b border-border/70 last:border-b-0 sm:[&:nth-last-child(-n+2)]:border-b-0 lg:[&:nth-last-child(-n+3)]:border-b-0"
-                >
-                  <Card item={item} />
-                </motion.li>
+        <main>
+          <Section title="Work" entries={WORK} />
+          <Section title="Side" entries={SIDE} />
+          <Section title="About" entries={ABOUT} />
+
+          <section className="mt-10">
+            <h2 className="text-sm uppercase tracking-[0.14em] text-muted-foreground">Words</h2>
+            <Accordion type="single" collapsible className="mt-3">
+              {essays.map((essay) => (
+                <AccordionItem key={essay.id} value={essay.id} className="border-none">
+                  <AccordionTrigger className="py-1.5 hover:no-underline text-left">
+                    <span>
+                      <span className="text-foreground font-normal">{essay.title}</span>
+                      <span className="text-muted-foreground font-normal"> — {essay.note}</span>
+                    </span>
+                  </AccordionTrigger>
+                  <AccordionContent>
+                    <div className="prose py-4 space-y-4">{essay.body}</div>
+                  </AccordionContent>
+                </AccordionItem>
               ))}
-            </ul>
-          </main>
-        </div>
-
-
-      <footer className="max-w-6xl mx-auto px-6">
-        <div className="px-5 py-10 md:py-12 flex flex-wrap items-baseline gap-x-6 gap-y-2 text-sm text-muted-foreground">
-          <a
-            href="mailto:hello@wrnkld.tv"
-            className="text-foreground hover:text-muted-foreground transition-colors"
-          >
-            hello@wrnkld.tv
-          </a>
-          <span>Raleigh, North Carolina</span>
-        </div>
-      </footer>
+            </Accordion>
+          </section>
+        </main>
       </div>
-    </TooltipProvider>
+    </div>
   );
 }
