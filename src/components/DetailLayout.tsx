@@ -23,18 +23,14 @@ export function DetailLayout({ title, subtitle, children }: DetailLayoutProps) {
     if (isMediaElement(child)) {
       return <div className="max-w-6xl mx-auto px-6">{child}</div>;
     }
-    return (
-      <div className="max-w-6xl mx-auto px-6">
-        <div className="px-5">{child}</div>
-      </div>
-    );
+    return <div className="max-w-4xl mx-auto px-6">{child}</div>;
   });
 
   return (
     <div className="relative z-10 min-h-screen text-foreground">
-      <div className="max-w-6xl mx-auto px-6 pt-16 md:pt-24">
-        <header className="border-t border-b border-border/70 mb-8">
-          <div className="p-5">
+      <div className="max-w-4xl mx-auto px-6 pt-16 md:pt-24">
+        <header className="mb-8">
+          <div>
             {subtitle && (
               <Link
                 to="/"
