@@ -146,9 +146,17 @@ function Band({
   return (
     <section id={id} className={`border-t border-border/70 ${className}`}>
       <div className="max-w-6xl mx-auto px-6">
-        <div className="px-5 py-16 md:py-24">{children}</div>
+        <div className="px-5 py-10 md:py-12">{children}</div>
       </div>
     </section>
+  );
+}
+
+function BandHeading({ children }: { children: React.ReactNode }) {
+  return (
+    <h2 className="mt-4 text-[1.625rem] md:text-[2rem] font-medium leading-[1.05] tracking-[-0.02em]">
+      {children}
+    </h2>
   );
 }
 
@@ -206,8 +214,8 @@ export default function Index() {
   return (
     <TooltipProvider delayDuration={200}>
       <div className="relative z-10 min-h-screen text-foreground">
-        <div className="max-w-6xl mx-auto px-6 py-16 md:py-24">
-          <header className="border-t border-b border-border/70">
+      <div className="max-w-6xl mx-auto px-6 pt-16 md:pt-24">
+        <header className="border-t border-b border-border/70">
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
               <div className="p-5">
                 <h1 className="text-2xl font-medium">Matthew Stevens</h1>
@@ -286,72 +294,57 @@ export default function Index() {
           </main>
         </div>
 
-        {/* Earlier work — SAS and Red Hat */}
-        <Band>
-          <div className="max-w-4xl">
-            <Eyebrow>Earlier — 2004 to 2019</Eyebrow>
-            <Heading>SAS and Red Hat</Heading>
-            <p className="mt-6 max-w-[46ch] text-[1.0625rem] md:text-[1.1875rem] leading-[1.65] text-muted-foreground">
-              Analytics platforms at SAS, hybrid-cloud automation at Red Hat.
-              Before that, Frog and HumanCentric. Georgetown, BA Psychology.
-            </p>
-          </div>
-          <div className="mt-12 grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-8">
-            <div>
-              <h3 className="pb-4 border-b border-border/70 text-lg font-medium tracking-[-0.01em]">
-                SAS
-              </h3>
-              <div className="mt-6">
-                <WorkCarousel slides={sasWork} slideClassName="w-full" />
-              </div>
-            </div>
-            <div>
-              <h3 className="pb-4 border-b border-border/70 text-lg font-medium tracking-[-0.01em]">
-                Red Hat
-              </h3>
-              <div className="mt-6">
-                <WorkCarousel slides={redHatWork} slideClassName="w-full" />
-              </div>
-            </div>
-          </div>
-        </Band>
+      {/* Earlier work — SAS and Red Hat */}
+      <Band>
+        <div className="max-w-4xl">
+          <Eyebrow>Earlier — 2004 to 2019</Eyebrow>
+          <BandHeading>SAS and Red Hat</BandHeading>
+          <p className="mt-4 max-w-[48ch] text-[1rem] md:text-[1.0625rem] leading-[1.6] text-muted-foreground">
+            Analytics platforms at SAS, hybrid-cloud automation at Red Hat.
+            Before that, Frog and HumanCentric. Georgetown, BA Psychology.
+          </p>
+        </div>
+        <div className="mt-6 max-w-5xl">
+          <WorkCarousel slides={[...sasWork, ...redHatWork]} slideClassName="w-[78%] sm:w-[54%] lg:w-[38%]" />
+        </div>
+      </Band>
 
-        {/* Words */}
-        <Band id="words" className="border-b border-border/70">
-          <div className="max-w-4xl">
-            <Eyebrow>Words — Design &amp; AI</Eyebrow>
-            <Heading>Four essays on building with agents</Heading>
-          </div>
-          <Accordion type="single" collapsible className="mt-12 max-w-3xl">
-            {essays.map((essay) => (
-              <AccordionItem key={essay.id} value={essay.id}>
-                <AccordionTrigger>
-                  <span className="text-lg md:text-xl font-medium tracking-[-0.01em]">
-                    {essay.title}
-                  </span>
-                  <span className="ml-auto text-sm text-muted-foreground">{essay.note}</span>
-                </AccordionTrigger>
-                <AccordionContent>
-                  <article className="font-body text-[1.0625rem] text-muted-foreground leading-[1.7] space-y-6 max-w-[68ch]">
-                    {essay.body}
-                  </article>
-                </AccordionContent>
-              </AccordionItem>
-            ))}
-          </Accordion>
-        </Band>
+      {/* Words */}
+      <Band id="words" className="border-b border-border/70">
+        <div className="max-w-4xl">
+          <Eyebrow>Words — Design &amp; AI</Eyebrow>
+          <BandHeading>Four essays on building with agents</BandHeading>
+        </div>
+        <Accordion type="single" collapsible className="mt-8 max-w-3xl">
+          {essays.map((essay) => (
+            <AccordionItem key={essay.id} value={essay.id}>
+              <AccordionTrigger>
+                <span className="text-base md:text-lg font-medium tracking-[-0.01em]">
+                  {essay.title}
+                </span>
+                <span className="ml-auto text-sm text-muted-foreground">{essay.note}</span>
+              </AccordionTrigger>
+              <AccordionContent>
+                <article className="font-body text-[1.0625rem] text-muted-foreground leading-[1.7] space-y-6 max-w-[68ch]">
+                  {essay.body}
+                </article>
+              </AccordionContent>
+            </AccordionItem>
+          ))}
+        </Accordion>
+      </Band>
 
-        <footer className="max-w-6xl mx-auto px-6">
-          <div className="px-5 py-16 flex flex-wrap items-baseline gap-x-6 gap-y-2 text-sm text-muted-foreground">
-            <a
-              href="mailto:hello@wrnkld.tv"
-              className="text-foreground hover:text-muted-foreground transition-colors"
-            >
-              hello@wrnkld.tv
-            </a>
-            <span>Raleigh, North Carolina</span>
-          </div>
-        </footer>
+      <footer className="max-w-6xl mx-auto px-6">
+        <div className="px-5 py-10 md:py-12 flex flex-wrap items-baseline gap-x-6 gap-y-2 text-sm text-muted-foreground">
+          <a
+            href="mailto:hello@wrnkld.tv"
+            className="text-foreground hover:text-muted-foreground transition-colors"
+          >
+            hello@wrnkld.tv
+          </a>
+          <span>Raleigh, North Carolina</span>
+        </div>
+      </footer>
       </div>
     </TooltipProvider>
   );
