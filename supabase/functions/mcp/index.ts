@@ -9,13 +9,13 @@ import { defineMcp } from "npm:@lovable.dev/mcp-js@0.22.2";
 import { defineTool } from "npm:@lovable.dev/mcp-js@0.22.2";
 var about_default = defineTool({
   name: "about",
-  title: "About Matthew Stevens",
-  description: "Get a short bio and contact info for Matthew Stevens.",
+  title: "About Matthew Brennan Stevens",
+  description: "Get a short bio and contact info for Matthew Brennan Stevens.",
   inputSchema: {},
   annotations: { readOnlyHint: true, idempotentHint: true, openWorldHint: false },
   handler: () => {
     const info = {
-      name: "Matthew Stevens",
+      name: "Matthew Brennan Stevens",
       email: "hello@wrnkld.tv",
       site: "https://wrnkld.lovable.app",
       summary: "Designer. Founding designer at Monte Carlo (data and AI observability). Previously Tanium, Red Hat, SAS. Side projects: StudyDrop, Sleeves."

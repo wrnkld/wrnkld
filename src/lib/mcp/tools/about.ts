@@ -2,13 +2,13 @@ import { defineTool } from "@lovable.dev/mcp-js";
 
 export default defineTool({
   name: "about",
-  title: "About Matthew Stevens",
-  description: "Get a short bio and contact info for Matthew Stevens.",
+  title: "About Matthew Brennan Stevens",
+  description: "Get a short bio and contact info for Matthew Brennan Stevens.",
   inputSchema: {},
   annotations: { readOnlyHint: true, idempotentHint: true, openWorldHint: false },
   handler: () => {
     const info = {
-      name: "Matthew Stevens",
+      name: "Matthew Brennan Stevens",
       email: "hello@wrnkld.tv",
       site: "https://wrnkld.lovable.app",
       summary:
