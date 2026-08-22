@@ -4,37 +4,7 @@ import { motion } from "motion/react";
 import { Clock, LayoutGrid, Circle, Cherry } from "lucide-react";
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion";
-import { WorkCarousel, type CarouselSlide } from "@/components/home/WorkCarousel";
-import { essays } from "@/data/essays";
 
-import analyticsAnalyze from "@/assets/sas/analytics-analyze.png";
-import analyticsExplore from "@/assets/sas/analytics-explore.png";
-import factoryResults from "@/assets/sas/factory-results.png";
-import visualStatsRoles from "@/assets/sas/visual-stats-roles.png";
-import rhbaWorkflowModeler from "@/assets/redhat/rhba-workflow-modeler.png";
-import rhbaProjectMetrics from "@/assets/redhat/rhba-project-metrics.png";
-import rhboRoster from "@/assets/redhat/rhbo-roster.png";
-import rhbaAssetsList from "@/assets/redhat/rhba-assets-list.png";
-
-const sasWork: CarouselSlide[] = [
-  { src: analyticsAnalyze, alt: "SAS Model Studio analysis pipeline", caption: "Model Studio — analysis pipeline" },
-  { src: analyticsExplore, alt: "SAS Model Studio exploration", caption: "Model Studio — exploration" },
-  { src: factoryResults, alt: "SAS Factory Miner model comparison", caption: "Factory Miner — model comparison" },
-  { src: visualStatsRoles, alt: "SAS Visual Statistics roles", caption: "Visual Statistics — variable roles" },
-];
-
-const redHatWork: CarouselSlide[] = [
-  { src: rhbaWorkflowModeler, alt: "Red Hat Business Automation workflow modeler", caption: "Business Automation — workflow modeler" },
-  { src: rhbaAssetsList, alt: "Red Hat Business Automation assets", caption: "Business Automation — project assets" },
-  { src: rhbaProjectMetrics, alt: "Red Hat Business Automation metrics", caption: "Business Automation — project metrics" },
-  { src: rhboRoster, alt: "Red Hat Business Optimizer roster", caption: "Business Optimizer — roster planning" },
-];
 
 type Category = "Work" | "Words" | "Side" | "About";
 
@@ -294,45 +264,6 @@ export default function Index() {
           </main>
         </div>
 
-      {/* Earlier work — SAS and Red Hat */}
-      <Band>
-        <div className="max-w-4xl">
-          <Eyebrow>Earlier — 2004 to 2019</Eyebrow>
-          <BandHeading>SAS and Red Hat</BandHeading>
-          <p className="mt-4 max-w-[48ch] text-[1rem] md:text-[1.0625rem] leading-[1.6] text-muted-foreground">
-            Analytics platforms at SAS, hybrid-cloud automation at Red Hat.
-            Before that, Frog and HumanCentric. Georgetown, BA Psychology.
-          </p>
-        </div>
-        <div className="mt-6 max-w-5xl">
-          <WorkCarousel slides={[...sasWork, ...redHatWork]} slideClassName="w-[78%] sm:w-[54%] lg:w-[38%]" />
-        </div>
-      </Band>
-
-      {/* Words */}
-      <Band id="words" className="border-b border-border/70">
-        <div className="max-w-4xl">
-          <Eyebrow>Words — Design &amp; AI</Eyebrow>
-          <BandHeading>Four essays on building with agents</BandHeading>
-        </div>
-        <Accordion type="single" collapsible className="mt-8 max-w-3xl">
-          {essays.map((essay) => (
-            <AccordionItem key={essay.id} value={essay.id}>
-              <AccordionTrigger>
-                <span className="text-base md:text-lg font-medium tracking-[-0.01em]">
-                  {essay.title}
-                </span>
-                <span className="ml-auto text-sm text-muted-foreground">{essay.note}</span>
-              </AccordionTrigger>
-              <AccordionContent>
-                <article className="font-body text-[1.0625rem] text-muted-foreground leading-[1.7] space-y-6 max-w-[68ch]">
-                  {essay.body}
-                </article>
-              </AccordionContent>
-            </AccordionItem>
-          ))}
-        </Accordion>
-      </Band>
 
       <footer className="max-w-6xl mx-auto px-6">
         <div className="px-5 py-10 md:py-12 flex flex-wrap items-baseline gap-x-6 gap-y-2 text-sm text-muted-foreground">
