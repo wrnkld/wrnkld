@@ -9,13 +9,13 @@ import { defineMcp } from "npm:@lovable.dev/mcp-js@0.22.2";
 import { defineTool } from "npm:@lovable.dev/mcp-js@0.22.2";
 var about_default = defineTool({
   name: "about",
-  title: "About Matthew Stevens",
-  description: "Get a short bio and contact info for Matthew Stevens.",
+  title: "About Matthew Brennan Stevens",
+  description: "Get a short bio and contact info for Matthew Brennan Stevens.",
   inputSchema: {},
   annotations: { readOnlyHint: true, idempotentHint: true, openWorldHint: false },
   handler: () => {
     const info = {
-      name: "Matthew Stevens",
+      name: "Matthew Brennan Stevens",
       email: "hello@wrnkld.tv",
       site: "https://wrnkld.lovable.app",
       summary: "Designer. Founding designer at Monte Carlo (data and AI observability). Previously Tanium, Red Hat, SAS. Side projects: StudyDrop, Sleeves."
@@ -7543,7 +7543,7 @@ var list_content_default = defineTool4({
 // src/lib/mcp/index.ts
 var mcp_default = defineMcp({
   name: "wrnkld-mcp",
-  title: "Matthew Stevens \u2014 Portfolio",
+  title: "Matthew Brennan Stevens \u2014 Portfolio",
   version: "0.1.0",
   instructions: "Public tools for Matthew Stevens's portfolio site. Use `about` for bio and contact. Use `list_content` for work, words (essays), and side projects. Use `list_books` and `list_records` to browse his reading list and record collection.",
   tools: [about_default, list_books_default, list_records_default, list_content_default]

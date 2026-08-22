@@ -9,13 +9,13 @@
     "server": {
       "name": "wrnkld-mcp",
       "version": "0.1.0",
-      "title": "Matthew Stevens — Portfolio"
+      "title": "Matthew Brennan Stevens — Portfolio"
     },
     "tools": [
       {
         "name": "about",
-        "title": "About Matthew Stevens",
-        "description": "Get a short bio and contact info for Matthew Stevens.",
+        "title": "About Matthew Brennan Stevens",
+        "description": "Get a short bio and contact info for Matthew Brennan Stevens.",
         "annotations": {
           "readOnlyHint": true,
           "idempotentHint": true,
