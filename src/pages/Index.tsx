@@ -1,21 +1,17 @@
 import { Link } from "react-router-dom";
-import { ArrowUpRight } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import { WorkCarousel, type CarouselSlide } from "@/components/home/WorkCarousel";
-import { essays } from "@/data/essays";
+import { useState, useMemo } from "react";
+import { motion } from "motion/react";
+import { Clock, LayoutGrid, Circle, Cherry } from "lucide-react";
+import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import { McCliDemo } from "@/components/mc-cli/McCliDemo";
-import { books } from "@/data/books";
-import { records } from "@/data/records";
-
-
-import taniumDiscover from "@/assets/tanium/tanium-discover.mp4";
-import taniumDiscoverInterfaces from "@/assets/tanium/tanium-discover-interfaces.png";
+import { WorkCarousel, type CarouselSlide } from "@/components/home/WorkCarousel";
+import { essays } from "@/data/essays";
 
 import analyticsAnalyze from "@/assets/sas/analytics-analyze.png";
 import analyticsExplore from "@/assets/sas/analytics-explore.png";
@@ -40,7 +36,103 @@ const redHatWork: CarouselSlide[] = [
   { src: rhboRoster, alt: "Red Hat Business Optimizer roster", caption: "Business Optimizer — roster planning" },
 ];
 
+type Category = "Work" | "Words" | "Side" | "About";
 
+type Item = {
+  title: string;
+  category: Category;
+  to?: string;
+  href?: string;
+  note?: string;
+  gif?: string;
+};
+
+const ITEMS: Item[] = [
+  { title: "Monte Carlo AI", category: "Work", to: "/work/montecarlo", note: "Agent trust platform", gif: "https://media.giphy.com/media/j5nLG5ZTChFwGsmGnV/giphy.gif" },
+  { title: "Tanium", category: "Work", to: "/work/tanium", note: "Endpoint security at scale", gif: "https://media.giphy.com/media/YPQ7McRYvkGrnPPg2x/giphy.gif" },
+  { title: "StudyDrop", category: "Side", href: "https://studydrop.app", note: "UX research, without the friction", gif: "https://media.giphy.com/media/VbmrliOc1UMJDYYZRF/giphy.gif" },
+  { title: "Sleeves", category: "Side", href: "https://sleeves.app", note: "Track albums, make lists, follow friends", gif: "https://media.giphy.com/media/gj0CJcKVtmAoSq5v9d/giphy.gif" },
+  { title: "Books", category: "About", to: "/about/books", note: "I like making lists", gif: "https://media.giphy.com/media/TEEewgFfvMvvkSzw7w/giphy.gif" },
+  { title: "Records", category: "About", to: "/about/records", note: "A relatively exhaustive list of records I like", gif: "https://media.giphy.com/media/KHEIcdVp8oSKo4zvmZ/giphy.gif" },
+  { title: "Pt 4 → Claude", category: "Words", href: "#words", note: "Think piece #901", gif: "https://media.giphy.com/media/hX6UTr4GALucmRR38D/giphy.gif" },
+  { title: "Pt 3 → Sleeves", category: "Words", href: "#words", note: "I built an app", gif: "https://media.giphy.com/media/XB3WTIY5GhgcBosgE4/giphy.gif" },
+  { title: "Pt 2 → Vibes", category: "Words", href: "#words", note: "Prompts v Boxes", gif: "https://media.giphy.com/media/S9WCr3cTm6qHq6LmRi/giphy.gif" },
+  { title: "Pt 1 → Tools", category: "Words", href: "#words", note: "TMI", gif: "https://media.giphy.com/media/MCXp9DOVi5xKQhicLs/giphy.gif" },
+];
+
+const CHIP: Record<Category, string> = {
+  Work: "chip-work",
+  About: "chip-about",
+  Side: "chip-side",
+  Words: "chip-words",
+};
+
+const CATEGORICAL_ORDER = [
+  "Monte Carlo AI",
+  "Tanium",
+  "Sleeves",
+  "StudyDrop",
+  "Records",
+  "Books",
+];
+
+type SortMode = "default" | "category";
+type FilterMode = "all" | "dope";
+
+const DOPE_TITLES = new Set([
+  "Monte Carlo AI",
+  "Tanium",
+  "Books",
+  "StudyDrop",
+  "Sleeves",
+  "Records",
+]);
+
+function Card({ item }: { item: Item }) {
+  const inner = (
+    <div className="group h-full flex flex-col gap-3 p-5 transition-colors surface-tint-hover">
+      {item.gif && (
+        <div className="aspect-[4/3] overflow-hidden rounded-md border border-border/40 bg-muted/30">
+          <img src={item.gif} alt="" loading="lazy" className="w-full h-full object-cover" />
+        </div>
+      )}
+      <div className="flex items-center gap-2">
+        <span
+          className={`chip ${CHIP[item.category]} font-mono text-[10px] uppercase tracking-[0.14em] px-2 py-0.5 rounded`}
+        >
+          {item.category}
+        </span>
+      </div>
+      <div className="flex flex-col gap-1">
+        <h2 className="text-base font-medium leading-snug">{item.title}</h2>
+        {item.note && (
+          <p className="text-sm text-muted-foreground leading-snug">{item.note}</p>
+        )}
+      </div>
+    </div>
+  );
+
+  if (item.to) {
+    return (
+      <Link to={item.to} className="block h-full">
+        {inner}
+      </Link>
+    );
+  }
+  if (item.href) {
+    const external = item.href.startsWith("http");
+    return (
+      <a
+        href={item.href}
+        {...(external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+        className="block h-full"
+      >
+        {inner}
+      </a>
+    );
+  }
+  return inner;
+}
 
 function Band({
   children,
@@ -76,252 +168,191 @@ function Heading({ children }: { children: React.ReactNode }) {
   );
 }
 
-function Lede({ children }: { children: React.ReactNode }) {
-  return (
-    <p className="mt-6 max-w-[46ch] text-[1.0625rem] md:text-[1.1875rem] leading-[1.65] text-muted-foreground">
-      {children}
-    </p>
-  );
-}
-
 export default function Index() {
-  const recommendedBooks = books.filter((b) => b.recommended).slice(-9).reverse();
-  const recentRecords = [...records].sort((a, b) => b.year - a.year).slice(0, 9);
+  const [sort, setSort] = useState<SortMode>(() => {
+    if (typeof window === "undefined") return "category";
+    const s = sessionStorage.getItem("index-sort");
+    return s === "category" || s === "default" ? (s as SortMode) : "category";
+  });
+  const handleSortChange = (v: SortMode) => {
+    setSort(v);
+    sessionStorage.setItem("index-sort", v);
+  };
+  const [filter, setFilter] = useState<FilterMode>(() => {
+    if (typeof window === "undefined") return "dope";
+    const s = sessionStorage.getItem("index-filter");
+    return s === "all" || s === "dope" ? (s as FilterMode) : "dope";
+  });
+  const handleFilterChange = (v: FilterMode) => {
+    setFilter(v);
+    sessionStorage.setItem("index-filter", v);
+  };
+
+  const items = useMemo(() => {
+    const base = filter === "dope" ? ITEMS.filter((i) => DOPE_TITLES.has(i.title)) : ITEMS;
+    if (sort === "category") {
+      return [...base].sort((a, b) => {
+        const ai = CATEGORICAL_ORDER.indexOf(a.title);
+        const bi = CATEGORICAL_ORDER.indexOf(b.title);
+        if (ai === -1 && bi === -1) return a.title.localeCompare(b.title);
+        if (ai === -1) return 1;
+        if (bi === -1) return -1;
+        return ai - bi;
+      });
+    }
+    return base;
+  }, [sort, filter]);
 
   return (
-    <div className="relative z-10 min-h-screen text-foreground">
-      {/* Hero */}
-      <header className="max-w-6xl mx-auto px-6">
-        <div className="px-5 pt-28 pb-20 md:pt-44 md:pb-32">
-          <h1 className="text-[2.5rem] md:text-[4.5rem] lg:text-[5.25rem] font-medium leading-[0.98] tracking-[-0.04em] max-w-[22ch]">
-            Matthew Stevens designs enterprise software.
-          </h1>
-          <p className="mt-8 max-w-[42ch] text-[1.0625rem] md:text-xl leading-[1.6] text-muted-foreground">
-            Head of Design at Monte Carlo AI. Raleigh, NC.
-          </p>
-          <p className="mt-8">
+    <TooltipProvider delayDuration={200}>
+      <div className="relative z-10 min-h-screen text-foreground">
+        <div className="max-w-6xl mx-auto px-6 py-16 md:py-24">
+          <header className="border-t border-b border-border/70">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
+              <div className="p-5">
+                <h1 className="text-2xl font-medium">Matthew Stevens</h1>
+                <p className="text-muted-foreground mt-2">
+                  <a
+                    href="mailto:hello@wrnkld.tv"
+                    className="text-foreground hover:text-muted-foreground transition-colors"
+                  >
+                    hello@wrnkld.tv
+                  </a>
+                </p>
+              </div>
+              <div className="p-5 sm:col-span-1 lg:col-span-2 flex sm:justify-end sm:items-end">
+                <div className="inline-flex items-center gap-2">
+                  {(
+                    [
+                      {
+                        key: "sort",
+                        value: sort,
+                        onChange: (v: string) => handleSortChange(v as SortMode),
+                        options: [
+                          { mode: "default", Icon: Clock, label: "Chronological" },
+                          { mode: "category", Icon: LayoutGrid, label: "Categorical" },
+                        ],
+                      },
+                      {
+                        key: "filter",
+                        value: filter,
+                        onChange: (v: string) => handleFilterChange(v as FilterMode),
+                        options: [
+                          { mode: "all", Icon: Circle, label: "All" },
+                          { mode: "dope", Icon: Cherry, label: "Favorites" },
+                        ],
+                      },
+                    ] as const
+                  ).map((group) => (
+                    <Tabs key={group.key} value={group.value} onValueChange={group.onChange}>
+                      <TabsList className="surface-tint p-1.5">
+                        {group.options.map(({ mode, Icon, label }) => (
+                          <Tooltip key={mode}>
+                            <TooltipTrigger asChild>
+                              <span className="inline-flex">
+                                <TabsTrigger
+                                  value={mode}
+                                  aria-label={label}
+                                  className="px-1.5 rounded data-[state=active]:shadow-[0_1px_2px_rgba(0,0,0,0.08),0_1px_3px_rgba(0,0,0,0.06)]"
+                                >
+                                  <Icon className="h-4 w-4" />
+                                </TabsTrigger>
+                              </span>
+                            </TooltipTrigger>
+                            <TooltipContent className="hidden sm:block">{label}</TooltipContent>
+                          </Tooltip>
+                        ))}
+                      </TabsList>
+                    </Tabs>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </header>
+
+          <main>
+            <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 border-b border-border/70">
+              {items.map((item) => (
+                <motion.li
+                  key={item.title}
+                  layout
+                  transition={{ type: "spring", stiffness: 400, damping: 32 }}
+                  className="border-b border-border/70 last:border-b-0 sm:[&:nth-last-child(-n+2)]:border-b-0 lg:[&:nth-last-child(-n+3)]:border-b-0"
+                >
+                  <Card item={item} />
+                </motion.li>
+              ))}
+            </ul>
+          </main>
+        </div>
+
+        {/* Earlier work — SAS and Red Hat */}
+        <Band>
+          <div className="max-w-4xl">
+            <Eyebrow>Earlier — 2004 to 2019</Eyebrow>
+            <Heading>SAS and Red Hat</Heading>
+            <p className="mt-6 max-w-[46ch] text-[1.0625rem] md:text-[1.1875rem] leading-[1.65] text-muted-foreground">
+              Analytics platforms at SAS, hybrid-cloud automation at Red Hat.
+              Before that, Frog and HumanCentric. Georgetown, BA Psychology.
+            </p>
+          </div>
+          <div className="mt-12 grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-8">
+            <div>
+              <h3 className="pb-4 border-b border-border/70 text-lg font-medium tracking-[-0.01em]">
+                SAS
+              </h3>
+              <div className="mt-6">
+                <WorkCarousel slides={sasWork} slideClassName="w-full" />
+              </div>
+            </div>
+            <div>
+              <h3 className="pb-4 border-b border-border/70 text-lg font-medium tracking-[-0.01em]">
+                Red Hat
+              </h3>
+              <div className="mt-6">
+                <WorkCarousel slides={redHatWork} slideClassName="w-full" />
+              </div>
+            </div>
+          </div>
+        </Band>
+
+        {/* Words */}
+        <Band id="words" className="border-b border-border/70">
+          <div className="max-w-4xl">
+            <Eyebrow>Words — Design &amp; AI</Eyebrow>
+            <Heading>Four essays on building with agents</Heading>
+          </div>
+          <Accordion type="single" collapsible className="mt-12 max-w-3xl">
+            {essays.map((essay) => (
+              <AccordionItem key={essay.id} value={essay.id}>
+                <AccordionTrigger>
+                  <span className="text-lg md:text-xl font-medium tracking-[-0.01em]">
+                    {essay.title}
+                  </span>
+                  <span className="ml-auto text-sm text-muted-foreground">{essay.note}</span>
+                </AccordionTrigger>
+                <AccordionContent>
+                  <article className="font-body text-[1.0625rem] text-muted-foreground leading-[1.7] space-y-6 max-w-[68ch]">
+                    {essay.body}
+                  </article>
+                </AccordionContent>
+              </AccordionItem>
+            ))}
+          </Accordion>
+        </Band>
+
+        <footer className="max-w-6xl mx-auto px-6">
+          <div className="px-5 py-16 flex flex-wrap items-baseline gap-x-6 gap-y-2 text-sm text-muted-foreground">
             <a
               href="mailto:hello@wrnkld.tv"
-              className="text-base md:text-lg text-foreground hover:text-muted-foreground transition-colors"
+              className="text-foreground hover:text-muted-foreground transition-colors"
             >
               hello@wrnkld.tv
             </a>
-          </p>
-        </div>
-      </header>
-
-
-      {/* Monte Carlo AI */}
-      <Band>
-        <div className="max-w-4xl">
-          <Eyebrow>Work — 2022 to present</Eyebrow>
-          <Heading>Monte Carlo AI</Heading>
-          <Lede>
-            The leading agent trust platform. Founding designer, still hands-on.
-          </Lede>
-          <p className="mt-8">
-            <Button asChild size="lg" className="rounded">
-              <Link to="/work/montecarlo">
-                Case study <ArrowUpRight className="h-4 w-4" />
-              </Link>
-            </Button>
-          </p>
-        </div>
-        <div className="mt-12">
-          <McCliDemo defaultScenarioId="search" />
-        </div>
-      </Band>
-
-      {/* Tanium */}
-      <Band>
-        <div className="max-w-4xl">
-          <Eyebrow>Work — 2019 to 2021</Eyebrow>
-          <Heading>Tanium</Heading>
-          <Lede>
-            Endpoint security at real-time scale. Two products shipped from zero.
-          </Lede>
-          <p className="mt-8">
-            <Button asChild size="lg" className="rounded">
-              <Link to="/work/tanium">
-                Case study <ArrowUpRight className="h-4 w-4" />
-              </Link>
-            </Button>
-          </p>
-        </div>
-        <div className="mt-12">
-          <video
-            src={taniumDiscover}
-            poster={taniumDiscoverInterfaces}
-            autoPlay
-            loop
-            muted
-            playsInline
-            className="w-full h-auto border border-border/40"
-          />
-        </div>
-      </Band>
-
-      {/* Own products */}
-      <Band>
-        <div className="max-w-4xl">
-          <Eyebrow>Built and shipped solo</Eyebrow>
-          <Heading>Two of my own</Heading>
-        </div>
-        <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-8">
-          {[
-            {
-              name: "StudyDrop",
-              href: "https://studydrop.app",
-              blurb:
-                "UX research without the friction: surveys, card sorts, tree tests.",
-            },
-            {
-              name: "Sleeves",
-              href: "https://sleeves.app",
-              blurb:
-                "A social music app for people who think in records.",
-            },
-          ].map((p) => (
-            <a
-              key={p.name}
-              href={p.href}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group flex flex-col gap-3"
-            >
-              <h3 className="text-xl md:text-2xl font-medium inline-flex items-center gap-1.5">
-                {p.name}
-                <ArrowUpRight className="h-4 w-4 text-muted-foreground transition-colors group-hover:text-foreground" />
-              </h3>
-              <p className="text-base text-muted-foreground leading-relaxed">{p.blurb}</p>
-            </a>
-          ))}
-        </div>
-      </Band>
-
-      {/* Earlier work — SAS and Red Hat, 50/50 */}
-      <Band>
-        <div className="max-w-4xl">
-          <Eyebrow>Earlier — 2004 to 2019</Eyebrow>
-          <Heading>SAS and Red Hat</Heading>
-          <Lede>
-            Analytics platforms at SAS, hybrid-cloud automation at Red Hat.
-            Before that, Frog and HumanCentric. Georgetown, BA Psychology.
-          </Lede>
-        </div>
-
-        <div className="mt-12 grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-8">
-          <div>
-            <h3 className="pb-4 border-b border-border/70 text-lg font-medium tracking-[-0.01em]">
-              SAS
-            </h3>
-            <div className="mt-6">
-              <WorkCarousel slides={sasWork} slideClassName="w-full" />
-            </div>
+            <span>Raleigh, North Carolina</span>
           </div>
-          <div>
-            <h3 className="pb-4 border-b border-border/70 text-lg font-medium tracking-[-0.01em]">
-              Red Hat
-            </h3>
-            <div className="mt-6">
-              <WorkCarousel slides={redHatWork} slideClassName="w-full" />
-            </div>
-          </div>
-        </div>
-      </Band>
-
-
-
-
-      {/* Books */}
-      <Band>
-        <div className="max-w-4xl">
-          <Eyebrow>Lists — Reading</Eyebrow>
-          <Heading>Books</Heading>
-          <p className="mt-8">
-            <Button asChild size="lg" className="rounded">
-              <Link to="/about/books">
-                Every book <ArrowUpRight className="h-4 w-4" />
-              </Link>
-            </Button>
-          </p>
-        </div>
-        <ul className="mt-12 max-w-3xl">
-          {recommendedBooks.map((b) => (
-            <li key={b.id} className="py-4 border-t border-border/70 flex items-baseline justify-between gap-4">
-              <span className="text-base leading-snug">
-                {b.title}
-                <span className="block text-muted-foreground">{b.author}</span>
-              </span>
-              <span className="font-mono text-xs text-muted-foreground shrink-0">{b.year}</span>
-            </li>
-          ))}
-        </ul>
-      </Band>
-
-      {/* Records */}
-      <Band>
-        <div className="max-w-4xl">
-          <Eyebrow>Lists — Listening</Eyebrow>
-          <Heading>Records</Heading>
-          <p className="mt-8">
-            <Button asChild size="lg" className="rounded">
-              <Link to="/about/records">
-                Every record <ArrowUpRight className="h-4 w-4" />
-              </Link>
-            </Button>
-          </p>
-        </div>
-        <ul className="mt-12 max-w-3xl">
-          {recentRecords.map((r) => (
-            <li key={r.id} className="py-4 border-t border-border/70 flex items-baseline justify-between gap-4">
-              <span className="text-base leading-snug">
-                {r.album}
-                <span className="block text-muted-foreground">{r.artist}</span>
-              </span>
-              <span className="font-mono text-xs text-muted-foreground shrink-0">{r.year}</span>
-            </li>
-          ))}
-        </ul>
-      </Band>
-
-
-      {/* Words */}
-      <Band id="words" className="border-b border-border/70">
-        <div className="max-w-4xl">
-          <Eyebrow>Words — Design &amp; AI</Eyebrow>
-          <Heading>Four essays on building with agents</Heading>
-        </div>
-        <Accordion type="single" collapsible className="mt-12 max-w-3xl">
-          {essays.map((essay) => (
-            <AccordionItem key={essay.id} value={essay.id}>
-              <AccordionTrigger>
-                <span className="text-lg md:text-xl font-medium tracking-[-0.01em]">
-                  {essay.title}
-                </span>
-                <span className="ml-auto text-sm text-muted-foreground">{essay.note}</span>
-              </AccordionTrigger>
-              <AccordionContent>
-                <article className="font-body text-[1.0625rem] text-muted-foreground leading-[1.7] space-y-6 max-w-[68ch]">
-                  {essay.body}
-                </article>
-              </AccordionContent>
-            </AccordionItem>
-          ))}
-        </Accordion>
-      </Band>
-
-      <footer className="max-w-6xl mx-auto px-6">
-        <div className="px-5 py-16 flex flex-wrap items-baseline gap-x-6 gap-y-2 text-sm text-muted-foreground">
-          <a
-            href="mailto:hello@wrnkld.tv"
-            className="text-foreground hover:text-muted-foreground transition-colors"
-          >
-            hello@wrnkld.tv
-          </a>
-          <span>Raleigh, North Carolina</span>
-        </div>
-      </footer>
-    </div>
+        </footer>
+      </div>
+    </TooltipProvider>
   );
 }
