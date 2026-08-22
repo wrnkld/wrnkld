@@ -16,7 +16,6 @@ const App = () => (
   <TooltipProvider>
     <BrowserRouter>
       <ScrollToTop />
-      <PageRails />
       <Routes>
         <Route path="/" element={<Index />} />
         <Route path="/about/experience" element={<Experience />} />
