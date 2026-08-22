@@ -286,72 +286,57 @@ export default function Index() {
           </main>
         </div>
 
-        {/* Earlier work — SAS and Red Hat */}
-        <Band>
-          <div className="max-w-4xl">
-            <Eyebrow>Earlier — 2004 to 2019</Eyebrow>
-            <Heading>SAS and Red Hat</Heading>
-            <p className="mt-6 max-w-[46ch] text-[1.0625rem] md:text-[1.1875rem] leading-[1.65] text-muted-foreground">
-              Analytics platforms at SAS, hybrid-cloud automation at Red Hat.
-              Before that, Frog and HumanCentric. Georgetown, BA Psychology.
-            </p>
-          </div>
-          <div className="mt-12 grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-8">
-            <div>
-              <h3 className="pb-4 border-b border-border/70 text-lg font-medium tracking-[-0.01em]">
-                SAS
-              </h3>
-              <div className="mt-6">
-                <WorkCarousel slides={sasWork} slideClassName="w-full" />
-              </div>
-            </div>
-            <div>
-              <h3 className="pb-4 border-b border-border/70 text-lg font-medium tracking-[-0.01em]">
-                Red Hat
-              </h3>
-              <div className="mt-6">
-                <WorkCarousel slides={redHatWork} slideClassName="w-full" />
-              </div>
-            </div>
-          </div>
-        </Band>
+      {/* Earlier work — SAS and Red Hat */}
+      <Band>
+        <div className="max-w-4xl">
+          <Eyebrow>Earlier — 2004 to 2019</Eyebrow>
+          <Heading>SAS and Red Hat</Heading>
+          <p className="mt-6 max-w-[46ch] text-[1.0625rem] md:text-[1.1875rem] leading-[1.65] text-muted-foreground">
+            Analytics platforms at SAS, hybrid-cloud automation at Red Hat.
+            Before that, Frog and HumanCentric. Georgetown, BA Psychology.
+          </p>
+        </div>
+        <div className="mt-12 max-w-5xl">
+          <WorkCarousel slides={[...sasWork, ...redHatWork]} slideClassName="w-[85%] sm:w-[62%] lg:w-[46%]" />
+        </div>
+      </Band>
 
-        {/* Words */}
-        <Band id="words" className="border-b border-border/70">
-          <div className="max-w-4xl">
-            <Eyebrow>Words — Design &amp; AI</Eyebrow>
-            <Heading>Four essays on building with agents</Heading>
-          </div>
-          <Accordion type="single" collapsible className="mt-12 max-w-3xl">
-            {essays.map((essay) => (
-              <AccordionItem key={essay.id} value={essay.id}>
-                <AccordionTrigger>
-                  <span className="text-lg md:text-xl font-medium tracking-[-0.01em]">
-                    {essay.title}
-                  </span>
-                  <span className="ml-auto text-sm text-muted-foreground">{essay.note}</span>
-                </AccordionTrigger>
-                <AccordionContent>
-                  <article className="font-body text-[1.0625rem] text-muted-foreground leading-[1.7] space-y-6 max-w-[68ch]">
-                    {essay.body}
-                  </article>
-                </AccordionContent>
-              </AccordionItem>
-            ))}
-          </Accordion>
-        </Band>
+      {/* Words */}
+      <Band id="words" className="border-b border-border/70">
+        <div className="max-w-4xl">
+          <Eyebrow>Words — Design &amp; AI</Eyebrow>
+          <Heading>Four essays on building with agents</Heading>
+        </div>
+        <Accordion type="single" collapsible className="mt-12 max-w-3xl">
+          {essays.map((essay) => (
+            <AccordionItem key={essay.id} value={essay.id}>
+              <AccordionTrigger>
+                <span className="text-lg md:text-xl font-medium tracking-[-0.01em]">
+                  {essay.title}
+                </span>
+                <span className="ml-auto text-sm text-muted-foreground">{essay.note}</span>
+              </AccordionTrigger>
+              <AccordionContent>
+                <article className="font-body text-[1.0625rem] text-muted-foreground leading-[1.7] space-y-6 max-w-[68ch]">
+                  {essay.body}
+                </article>
+              </AccordionContent>
+            </AccordionItem>
+          ))}
+        </Accordion>
+      </Band>
 
-        <footer className="max-w-6xl mx-auto px-6">
-          <div className="px-5 py-16 flex flex-wrap items-baseline gap-x-6 gap-y-2 text-sm text-muted-foreground">
-            <a
-              href="mailto:hello@wrnkld.tv"
-              className="text-foreground hover:text-muted-foreground transition-colors"
-            >
-              hello@wrnkld.tv
-            </a>
-            <span>Raleigh, North Carolina</span>
-          </div>
-        </footer>
+      <footer className="max-w-6xl mx-auto px-6">
+        <div className="px-5 py-16 flex flex-wrap items-baseline gap-x-6 gap-y-2 text-sm text-muted-foreground">
+          <a
+            href="mailto:hello@wrnkld.tv"
+            className="text-foreground hover:text-muted-foreground transition-colors"
+          >
+            hello@wrnkld.tv
+          </a>
+          <span>Raleigh, North Carolina</span>
+        </div>
+      </footer>
       </div>
     </TooltipProvider>
   );
