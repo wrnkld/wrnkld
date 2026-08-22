@@ -304,7 +304,7 @@ export default function Index() {
             Before that, Frog and HumanCentric. Georgetown, BA Psychology.
           </p>
         </div>
-        <div className="mt-8 max-w-5xl">
+        <div className="mt-6 max-w-5xl">
           <WorkCarousel slides={[...sasWork, ...redHatWork]} slideClassName="w-[78%] sm:w-[54%] lg:w-[38%]" />
         </div>
       </Band>
