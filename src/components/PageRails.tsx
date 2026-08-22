@@ -4,6 +4,8 @@ import { useLocation } from "react-router-dom";
 // 2 = default (both middle rails), 1 = single middle rail, 0 = only outer rails.
 // The homepage is now an editorial stack of full-width bands, so it gets outer rails only.
 function railsFor(pathname: string): { sm: boolean; lg: number } {
+  // Experience keeps a single middle rail matching its two-column resume at lg.
+  if (pathname.startsWith("/about/experience")) return { sm: false, lg: 1 };
   return { sm: false, lg: 0 };
 }
 

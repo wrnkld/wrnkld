@@ -20,7 +20,7 @@ const App = () => (
       <PageRails />
       <Routes>
         <Route path="/" element={<Index />} />
-        <Route path="/about/experience" element={<Navigate to="/" replace />} />
+        <Route path="/about/experience" element={<Experience />} />
 
         <Route path="/work/montecarlo" element={<MonteCarlo />} />
         <Route path="/work/tanium" element={<Tanium />} />
