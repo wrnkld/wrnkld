@@ -146,9 +146,17 @@ function Band({
   return (
     <section id={id} className={`border-t border-border/70 ${className}`}>
       <div className="max-w-6xl mx-auto px-6">
-        <div className="px-5 py-16 md:py-24">{children}</div>
+        <div className="px-5 py-10 md:py-12">{children}</div>
       </div>
     </section>
+  );
+}
+
+function BandHeading({ children }: { children: React.ReactNode }) {
+  return (
+    <h2 className="mt-4 text-[1.625rem] md:text-[2.5rem] font-medium leading-[1.05] tracking-[-0.02em]">
+      {children}
+    </h2>
   );
 }
 
