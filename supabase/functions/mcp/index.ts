@@ -7543,7 +7543,7 @@ var list_content_default = defineTool4({
 // src/lib/mcp/index.ts
 var mcp_default = defineMcp({
   name: "wrnkld-mcp",
-  title: "Matthew Stevens \u2014 Portfolio",
+  title: "Matthew Brennan Stevens \u2014 Portfolio",
   version: "0.1.0",
   instructions: "Public tools for Matthew Stevens's portfolio site. Use `about` for bio and contact. Use `list_content` for work, words (essays), and side projects. Use `list_books` and `list_records` to browse his reading list and record collection.",
   tools: [about_default, list_books_default, list_records_default, list_content_default]
