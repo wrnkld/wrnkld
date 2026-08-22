@@ -11,6 +11,7 @@ import Tanium from "./pages/work/Tanium";
 
 import Books from "./pages/about/Books";
 import Records from "./pages/about/Records";
+import Experience from "./pages/about/Experience";
 
 const App = () => (
   <TooltipProvider>
@@ -19,7 +20,7 @@ const App = () => (
       <PageRails />
       <Routes>
         <Route path="/" element={<Index />} />
-        <Route path="/about/experience" element={<Navigate to="/" replace />} />
+        <Route path="/about/experience" element={<Experience />} />
 
         <Route path="/work/montecarlo" element={<MonteCarlo />} />
         <Route path="/work/tanium" element={<Tanium />} />

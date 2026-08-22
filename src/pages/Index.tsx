@@ -22,6 +22,7 @@ const ITEMS: Item[] = [
   { title: "Tanium", category: "Work", to: "/work/tanium", note: "Endpoint security at scale", gif: "https://media.giphy.com/media/YPQ7McRYvkGrnPPg2x/giphy.gif" },
   { title: "StudyDrop", category: "Side", href: "https://studydrop.app", note: "UX research, without the friction", gif: "https://media.giphy.com/media/VbmrliOc1UMJDYYZRF/giphy.gif" },
   { title: "Sleeves", category: "Side", href: "https://sleeves.app", note: "Track albums, make lists, follow friends", gif: "https://media.giphy.com/media/gj0CJcKVtmAoSq5v9d/giphy.gif" },
+  { title: "Experience", category: "About", to: "/about/experience", note: "Twenty years of design work", gif: "https://media.giphy.com/media/l0HlNaQ6gWfllcjDO/giphy.gif" },
   { title: "Books", category: "About", to: "/about/books", note: "I like making lists", gif: "https://media.giphy.com/media/TEEewgFfvMvvkSzw7w/giphy.gif" },
   { title: "Records", category: "About", to: "/about/records", note: "A relatively exhaustive list of records I like", gif: "https://media.giphy.com/media/KHEIcdVp8oSKo4zvmZ/giphy.gif" },
   { title: "Pt 4 → Claude", category: "Words", note: "Think piece #901", gif: "https://media.giphy.com/media/hX6UTr4GALucmRR38D/giphy.gif" },
@@ -43,8 +44,24 @@ const CATEGORICAL_ORDER = [
   "Tanium",
   "Sleeves",
   "StudyDrop",
+  "Experience",
   "Records",
   "Books",
+];
+
+// Most recent first.
+const CHRONOLOGICAL_ORDER = [
+  "StudyDrop",
+  "Pt 4 → Claude",
+  "Pt 3 → Sleeves",
+  "Sleeves",
+  "Pt 2 → Vibes",
+  "Pt 1 → Tools",
+  "Records",
+  "Books",
+  "Monte Carlo AI",
+  "Experience",
+  "Tanium",
 ];
 
 type SortMode = "default" | "category";
@@ -57,6 +74,7 @@ const DOPE_TITLES = new Set([
   "StudyDrop",
   "Sleeves",
   "Records",
+  "Experience",
 ]);
 
 function Card({ item }: { item: Item }) {
@@ -128,17 +146,15 @@ export default function Index() {
 
   const items = useMemo(() => {
     const base = filter === "dope" ? ITEMS.filter((i) => DOPE_TITLES.has(i.title)) : ITEMS;
-    if (sort === "category") {
-      return [...base].sort((a, b) => {
-        const ai = CATEGORICAL_ORDER.indexOf(a.title);
-        const bi = CATEGORICAL_ORDER.indexOf(b.title);
-        if (ai === -1 && bi === -1) return a.title.localeCompare(b.title);
-        if (ai === -1) return 1;
-        if (bi === -1) return -1;
-        return ai - bi;
-      });
-    }
-    return base;
+    const order = sort === "category" ? CATEGORICAL_ORDER : CHRONOLOGICAL_ORDER;
+    return [...base].sort((a, b) => {
+      const ai = order.indexOf(a.title);
+      const bi = order.indexOf(b.title);
+      if (ai === -1 && bi === -1) return a.title.localeCompare(b.title);
+      if (ai === -1) return 1;
+      if (bi === -1) return -1;
+      return ai - bi;
+    });
   }, [sort, filter]);
 
   return (
