@@ -11,6 +11,7 @@ import Tanium from "./pages/work/Tanium";
 
 import Books from "./pages/about/Books";
 import Records from "./pages/about/Records";
+import Experience from "./pages/about/Experience";
 
 const App = () => (
   <TooltipProvider>
