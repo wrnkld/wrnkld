@@ -21,8 +21,8 @@ const SIDE: Entry[] = [
 
 const ABOUT: Entry[] = [
   { title: "Experience", note: "Twenty years of design work", to: "/about/experience" },
-  { title: "Books", note: "I like making lists", to: "/about/books" },
-  { title: "Records", note: "Records I like", to: "/about/records" },
+  { title: "Books", note: "Everything I've read, recommended in pink", to: "/about/books" },
+  { title: "Records", note: "A relatively exhaustive list of records I like", to: "/about/records" },
 ];
 
 function Row({ entry }: { entry: Entry }) {
