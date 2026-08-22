@@ -24,10 +24,11 @@ const ITEMS: Item[] = [
   { title: "Sleeves", category: "Side", href: "https://sleeves.app", note: "Track albums, make lists, follow friends", gif: "https://media.giphy.com/media/gj0CJcKVtmAoSq5v9d/giphy.gif" },
   { title: "Books", category: "About", to: "/about/books", note: "I like making lists", gif: "https://media.giphy.com/media/TEEewgFfvMvvkSzw7w/giphy.gif" },
   { title: "Records", category: "About", to: "/about/records", note: "A relatively exhaustive list of records I like", gif: "https://media.giphy.com/media/KHEIcdVp8oSKo4zvmZ/giphy.gif" },
-  { title: "Pt 4 → Claude", category: "Words", href: "#words", note: "Think piece #901", gif: "https://media.giphy.com/media/hX6UTr4GALucmRR38D/giphy.gif" },
-  { title: "Pt 3 → Sleeves", category: "Words", href: "#words", note: "I built an app", gif: "https://media.giphy.com/media/XB3WTIY5GhgcBosgE4/giphy.gif" },
-  { title: "Pt 2 → Vibes", category: "Words", href: "#words", note: "Prompts v Boxes", gif: "https://media.giphy.com/media/S9WCr3cTm6qHq6LmRi/giphy.gif" },
-  { title: "Pt 1 → Tools", category: "Words", href: "#words", note: "TMI", gif: "https://media.giphy.com/media/MCXp9DOVi5xKQhicLs/giphy.gif" },
+  { title: "Pt 4 → Claude", category: "Words", note: "Think piece #901", gif: "https://media.giphy.com/media/hX6UTr4GALucmRR38D/giphy.gif" },
+  { title: "Pt 3 → Sleeves", category: "Words", note: "I built an app", gif: "https://media.giphy.com/media/XB3WTIY5GhgcBosgE4/giphy.gif" },
+  { title: "Pt 2 → Vibes", category: "Words", note: "Prompts v Boxes", gif: "https://media.giphy.com/media/S9WCr3cTm6qHq6LmRi/giphy.gif" },
+  { title: "Pt 1 → Tools", category: "Words", note: "TMI", gif: "https://media.giphy.com/media/MCXp9DOVi5xKQhicLs/giphy.gif" },
+
 ];
 
 const CHIP: Record<Category, string> = {
@@ -104,47 +105,6 @@ function Card({ item }: { item: Item }) {
   return inner;
 }
 
-function Band({
-  children,
-  className = "",
-  id,
-}: {
-  children: React.ReactNode;
-  className?: string;
-  id?: string;
-}) {
-  return (
-    <section id={id} className={`border-t border-border/70 ${className}`}>
-      <div className="max-w-6xl mx-auto px-6">
-        <div className="px-5 py-10 md:py-12">{children}</div>
-      </div>
-    </section>
-  );
-}
-
-function BandHeading({ children }: { children: React.ReactNode }) {
-  return (
-    <h2 className="mt-4 text-[1.625rem] md:text-[2rem] font-medium leading-[1.05] tracking-[-0.02em]">
-      {children}
-    </h2>
-  );
-}
-
-function Eyebrow({ children }: { children: React.ReactNode }) {
-  return (
-    <p className="font-mono text-[10px] md:text-[11px] uppercase tracking-[0.22em] text-muted-foreground">
-      {children}
-    </p>
-  );
-}
-
-function Heading({ children }: { children: React.ReactNode }) {
-  return (
-    <h2 className="mt-5 text-[2rem] md:text-[3.25rem] font-medium leading-[1.02] tracking-[-0.025em]">
-      {children}
-    </h2>
-  );
-}
 
 export default function Index() {
   const [sort, setSort] = useState<SortMode>(() => {
