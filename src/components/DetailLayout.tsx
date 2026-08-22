@@ -58,9 +58,9 @@ export function DetailLayout({ title, subtitle, children }: DetailLayoutProps) {
 
       <main className="pb-8 space-y-8 animate-fade-in">{processed}</main>
 
-      <div className="max-w-6xl mx-auto px-6 pt-8 pb-16">
-        <footer className="border-t border-b border-border/70">
-          <div className="p-5">
+      <div className="max-w-4xl mx-auto px-6 pt-8 pb-16">
+        <footer>
+          <div>
             <Link
               to="/"
               className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors"
