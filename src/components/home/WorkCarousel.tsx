@@ -1,6 +1,5 @@
 import { useRef, useState } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
-import { Button } from "@/components/ui/button";
 
 export type CarouselSlide = {
   src: string;
@@ -8,13 +7,7 @@ export type CarouselSlide = {
   caption: string;
 };
 
-export function WorkCarousel({
-  slides,
-  slideClassName = "w-[85%] sm:w-[62%] lg:w-[46%]",
-}: {
-  slides: CarouselSlide[];
-  slideClassName?: string;
-}) {
+export function WorkCarousel({ slides }: { slides: CarouselSlide[] }) {
   const trackRef = useRef<HTMLDivElement>(null);
   const [index, setIndex] = useState(0);
 
@@ -56,7 +49,7 @@ export function WorkCarousel({
         {slides.map((slide) => (
           <figure
             key={slide.src}
-            className={`snap-start shrink-0 flex flex-col gap-2 ${slideClassName}`}
+            className="snap-start shrink-0 w-[85%] sm:w-[62%] lg:w-[46%] flex flex-col gap-2"
           >
             <img
               src={slide.src}
@@ -70,28 +63,24 @@ export function WorkCarousel({
       </div>
 
       <div className="flex items-center gap-3">
-        <Button
+        <button
           type="button"
-          variant="outline"
-          size="icon"
           onClick={() => scrollTo(index - 1)}
           disabled={index === 0}
           aria-label="Previous"
-          className="rounded"
+          className="inline-flex h-8 w-8 items-center justify-center border border-border/70 text-muted-foreground transition-colors hover:text-foreground disabled:opacity-30"
         >
           <ChevronLeft className="h-4 w-4" />
-        </Button>
-        <Button
+        </button>
+        <button
           type="button"
-          variant="outline"
-          size="icon"
           onClick={() => scrollTo(index + 1)}
           disabled={index === slides.length - 1}
           aria-label="Next"
-          className="rounded"
+          className="inline-flex h-8 w-8 items-center justify-center border border-border/70 text-muted-foreground transition-colors hover:text-foreground disabled:opacity-30"
         >
           <ChevronRight className="h-4 w-4" />
-        </Button>
+        </button>
         <span className="font-mono text-[11px] uppercase tracking-[0.14em] text-muted-foreground">
           {index + 1} / {slides.length}
         </span>

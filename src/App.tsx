@@ -1,6 +1,7 @@
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { ScrollToTop } from "./components/ScrollToTop";
+import { PageRails } from "./components/PageRails";
 import { Analytics } from "@vercel/analytics/react";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
@@ -10,15 +11,19 @@ import Tanium from "./pages/work/Tanium";
 
 import Books from "./pages/about/Books";
 import Records from "./pages/about/Records";
-import Experience from "./pages/about/Experience";
+import Tools from "./pages/words/Tools";
+import Vibes from "./pages/words/Vibes";
+import Sleeves from "./pages/words/Sleeves";
+import Claude from "./pages/words/Claude";
 
 const App = () => (
   <TooltipProvider>
     <BrowserRouter>
       <ScrollToTop />
+      <PageRails />
       <Routes>
         <Route path="/" element={<Index />} />
-        <Route path="/about/experience" element={<Experience />} />
+        <Route path="/about/experience" element={<Navigate to="/" replace />} />
 
         <Route path="/work/montecarlo" element={<MonteCarlo />} />
         <Route path="/work/tanium" element={<Tanium />} />
@@ -27,17 +32,15 @@ const App = () => (
 
         <Route path="/about/books" element={<Books />} />
         <Route path="/about/records" element={<Records />} />
-        {/* Essays now live in accordions on the homepage */}
-        <Route path="/words/tools" element={<Navigate to="/" replace />} />
-        <Route path="/words/vibes" element={<Navigate to="/" replace />} />
-        <Route path="/words/sleeves" element={<Navigate to="/" replace />} />
-        <Route path="/words/claude" element={<Navigate to="/" replace />} />
-
+        <Route path="/words/tools" element={<Tools />} />
+        <Route path="/words/vibes" element={<Vibes />} />
+        <Route path="/words/sleeves" element={<Sleeves />} />
+        <Route path="/words/claude" element={<Claude />} />
         {/* Redirects from old /designai paths */}
-        <Route path="/designai/tools" element={<Navigate to="/" replace />} />
-        <Route path="/designai/vibes" element={<Navigate to="/" replace />} />
-        <Route path="/designai/sleeves" element={<Navigate to="/" replace />} />
-        <Route path="/designai/claude" element={<Navigate to="/" replace />} />
+        <Route path="/designai/tools" element={<Navigate to="/words/tools" replace />} />
+        <Route path="/designai/vibes" element={<Navigate to="/words/vibes" replace />} />
+        <Route path="/designai/sleeves" element={<Navigate to="/words/sleeves" replace />} />
+        <Route path="/designai/claude" element={<Navigate to="/words/claude" replace />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </BrowserRouter>

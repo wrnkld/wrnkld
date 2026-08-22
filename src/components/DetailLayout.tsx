@@ -23,14 +23,18 @@ export function DetailLayout({ title, subtitle, children }: DetailLayoutProps) {
     if (isMediaElement(child)) {
       return <div className="max-w-6xl mx-auto px-6">{child}</div>;
     }
-    return <div className="max-w-4xl mx-auto px-6">{child}</div>;
+    return (
+      <div className="max-w-6xl mx-auto px-6">
+        <div className="px-5">{child}</div>
+      </div>
+    );
   });
 
   return (
     <div className="relative z-10 min-h-screen text-foreground">
-      <div className="max-w-4xl mx-auto px-6 pt-16 md:pt-24">
-        <header className="mb-8">
-          <div>
+      <div className="max-w-6xl mx-auto px-6 pt-16 md:pt-24">
+        <header className="border-t border-b border-border/70 mb-8">
+          <div className="p-5">
             {subtitle && (
               <Link
                 to="/"
@@ -58,9 +62,9 @@ export function DetailLayout({ title, subtitle, children }: DetailLayoutProps) {
 
       <main className="pb-8 space-y-8 animate-fade-in">{processed}</main>
 
-      <div className="max-w-4xl mx-auto px-6 pt-8 pb-16">
-        <footer>
-          <div>
+      <div className="max-w-6xl mx-auto px-6 pt-8 pb-16">
+        <footer className="border-t border-b border-border/70">
+          <div className="p-5">
             <Link
               to="/"
               className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors"
