@@ -298,14 +298,14 @@ export default function Index() {
       <Band>
         <div className="max-w-4xl">
           <Eyebrow>Earlier — 2004 to 2019</Eyebrow>
-          <Heading>SAS and Red Hat</Heading>
-          <p className="mt-6 max-w-[46ch] text-[1.0625rem] md:text-[1.1875rem] leading-[1.65] text-muted-foreground">
+          <BandHeading>SAS and Red Hat</BandHeading>
+          <p className="mt-4 max-w-[48ch] text-[1rem] md:text-[1.0625rem] leading-[1.6] text-muted-foreground">
             Analytics platforms at SAS, hybrid-cloud automation at Red Hat.
             Before that, Frog and HumanCentric. Georgetown, BA Psychology.
           </p>
         </div>
-        <div className="mt-12 max-w-5xl">
-          <WorkCarousel slides={[...sasWork, ...redHatWork]} slideClassName="w-[85%] sm:w-[62%] lg:w-[46%]" />
+        <div className="mt-8 max-w-5xl">
+          <WorkCarousel slides={[...sasWork, ...redHatWork]} slideClassName="w-[78%] sm:w-[54%] lg:w-[38%]" />
         </div>
       </Band>
 
@@ -313,13 +313,13 @@ export default function Index() {
       <Band id="words" className="border-b border-border/70">
         <div className="max-w-4xl">
           <Eyebrow>Words — Design &amp; AI</Eyebrow>
-          <Heading>Four essays on building with agents</Heading>
+          <BandHeading>Four essays on building with agents</BandHeading>
         </div>
-        <Accordion type="single" collapsible className="mt-12 max-w-3xl">
+        <Accordion type="single" collapsible className="mt-8 max-w-3xl">
           {essays.map((essay) => (
             <AccordionItem key={essay.id} value={essay.id}>
               <AccordionTrigger>
-                <span className="text-lg md:text-xl font-medium tracking-[-0.01em]">
+                <span className="text-base md:text-lg font-medium tracking-[-0.01em]">
                   {essay.title}
                 </span>
                 <span className="ml-auto text-sm text-muted-foreground">{essay.note}</span>
