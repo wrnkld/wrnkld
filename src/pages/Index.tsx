@@ -335,7 +335,7 @@ export default function Index() {
       </Band>
 
       <footer className="max-w-6xl mx-auto px-6">
-        <div className="px-5 py-16 flex flex-wrap items-baseline gap-x-6 gap-y-2 text-sm text-muted-foreground">
+        <div className="px-5 py-10 md:py-12 flex flex-wrap items-baseline gap-x-6 gap-y-2 text-sm text-muted-foreground">
           <a
             href="mailto:hello@wrnkld.tv"
             className="text-foreground hover:text-muted-foreground transition-colors"
