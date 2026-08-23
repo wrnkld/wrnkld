@@ -2368,6 +2368,13 @@ var books = [
     author: "Stieg Larsson",
     year: 2005,
     recommended: false
+  },
+  {
+    id: 344,
+    title: "Dad Had Bad Day",
+    author: "Ashton Politanoff",
+    year: 2026,
+    recommended: false
   }
 ];
 
