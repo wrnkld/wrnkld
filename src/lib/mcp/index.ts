@@ -6,7 +6,7 @@ import listContentTool from "./tools/list-content";
 
 export default defineMcp({
   name: "wrnkld-mcp",
-  title: "Matthew Brennan Stevens — Portfolio",
+  title: "Matthew Stevens — Portfolio",
   version: "0.1.0",
   instructions:
     "Public tools for Matthew Stevens's portfolio site. Use `about` for bio and contact. Use `list_content` for work, words (essays), and side projects. Use `list_books` and `list_records` to browse his reading list and record collection.",
