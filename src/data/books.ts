@@ -2339,7 +2339,7 @@ export const books: Book[] = [
   },
   {
     id: 344,
-    title: "Dad Had Bad Day",
+    title: "Dad Had a Bad Day",
     author: "Ashton Politanoff",
     year: 2026,
     recommended: false,

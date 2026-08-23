@@ -152,7 +152,7 @@ export default function Index() {
         <header className="border-t border-b border-border/70">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
             <div className="p-5">
-              <h1 className="text-2xl font-medium">Matthew Brennan Stevens</h1>
+              <h1 className="text-2xl font-medium">Matthew Stevens</h1>
               <p className="text-muted-foreground mt-2">
                 <a
                   href="mailto:hello@wrnkld.tv"
