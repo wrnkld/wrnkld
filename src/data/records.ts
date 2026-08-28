@@ -5065,4 +5065,10 @@ export const records: Record[] = [
     artist: "Boards of Canada",
     album: "Inferno",
   },
+  {
+    id: 847,
+    year: 2026,
+    artist: "Horse Lords",
+    album: "Demand to Be Taken to Heaven Alive!",
+  },
 ];
