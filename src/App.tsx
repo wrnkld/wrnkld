@@ -17,6 +17,7 @@ import Tools from "./pages/words/Tools";
 import Vibes from "./pages/words/Vibes";
 import Sleeves from "./pages/words/Sleeves";
 import Claude from "./pages/words/Claude";
+import Preview from "./pages/Preview";
 
 const App = () => (
   <TooltipProvider>
@@ -25,6 +26,7 @@ const App = () => (
       <PageRails />
       <Routes>
         <Route path="/" element={<Index />} />
+        <Route path="/preview" element={<Preview />} />
         <Route path="/about/experience" element={<Experience />} />
 
         <Route path="/work/montecarlo" element={<MonteCarlo />} />
