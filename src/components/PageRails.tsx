@@ -5,6 +5,7 @@ import { useLocation } from "react-router-dom";
 // Rails per breakpoint. `sm` = 2-col layout, `lg` = 3-col layout.
 // Experience only becomes multi-column at lg, so its middle rail must only render at lg.
 function railsFor(pathname: string): { sm: boolean; lg: number } {
+  if (pathname.startsWith("/preview")) return { sm: false, lg: 0 };
   if (pathname.startsWith("/words")) return { sm: false, lg: 0 };
   if (pathname.startsWith("/work")) return { sm: false, lg: 0 };
   if (pathname.startsWith("/about/books")) return { sm: false, lg: 0 };
