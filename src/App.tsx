@@ -26,6 +26,7 @@ const App = () => (
       <PageRails />
       <Routes>
         <Route path="/" element={<Index />} />
+        <Route path="/preview" element={<Preview />} />
         <Route path="/about/experience" element={<Experience />} />
 
         <Route path="/work/montecarlo" element={<MonteCarlo />} />
