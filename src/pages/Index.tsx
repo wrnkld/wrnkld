@@ -301,7 +301,7 @@ function WordRow({
     <div className="border-b border-border/70">
       <button
         onClick={() => setOpen((o) => !o)}
-        className="w-full text-left px-5 py-4 text-sm grid grid-cols-[1fr_1fr_6rem] gap-4 items-baseline transition-colors surface-tint-hover"
+        className="w-full text-left px-5 py-4 text-sm grid grid-cols-3 gap-8 items-baseline transition-colors surface-tint-hover"
       >
         <span className="text-foreground">{title}</span>
         <span className="text-muted-foreground">{note}</span>
