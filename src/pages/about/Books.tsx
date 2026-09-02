@@ -37,7 +37,7 @@ export default function Books() {
   return (
     <DetailLayout title="Books">
       <p className="font-body text-base text-muted-foreground">
-        I started tracking the books I read. Recommended in pink.
+        I started tracking the books I read. Recs in pink.
       </p>
 
       <CollectionSearch
@@ -49,7 +49,7 @@ export default function Books() {
           onChange: setTab,
           options: [
             { value: "all", label: "All" },
-            { value: "recommended", label: "Recommended" },
+            { value: "recommended", label: "Recs" },
           ],
         }}
       />
