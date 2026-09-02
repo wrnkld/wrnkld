@@ -106,7 +106,7 @@ export default function Index() {
   return (
     <div className="relative z-10 min-h-screen text-foreground">
       {/* header */}
-      <div className="pt-16 md:pt-24 border-t border-border/70">
+      <div className="pt-16 md:pt-24">
         <div className="max-w-6xl mx-auto px-6">
           <div className="px-5 py-4">
             <span className="text-lg font-medium tracking-tight">Matthew Stevens</span>
