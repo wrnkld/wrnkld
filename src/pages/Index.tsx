@@ -179,7 +179,7 @@ export default function Index() {
             to="/about/experience"
             className="inline-flex items-center gap-1 text-sm text-muted-foreground hover:text-foreground transition-colors"
           >
-            Full experience <ArrowUpRight className="h-4 w-4" />
+            Full experience <ArrowRight className="h-4 w-4" />
           </Link>
         </div>
       </Band>
