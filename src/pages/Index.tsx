@@ -259,7 +259,7 @@ function ListColumn({
           to={to}
           className="inline-flex items-center gap-1 text-sm text-muted-foreground hover:text-foreground transition-colors"
         >
-          {linkLabel} <ArrowUpRight className="h-4 w-4" />
+          {linkLabel} <ArrowRight className="h-4 w-4" />
         </Link>
       </div>
     </div>
