@@ -249,13 +249,13 @@ function ListColumn({
   return (
     <div>
       <h3 className="text-lg font-medium text-foreground mb-4">{heading}</h3>
-      <div className="full-bleed border-y border-border/70 overflow-hidden table-gutter">
-        <Table>
+      <div className="-mx-5 border-y border-border/70 overflow-hidden table-gutter">
+        <Table className="table-fixed">
           <TableHeader>
             <TableRow className="surface-tint-hover border-b-border/70">
-              <TableHead>{heading === "Books" ? "Title" : "Album"}</TableHead>
-              <TableHead>{heading === "Books" ? "Author" : "Artist"}</TableHead>
-              <TableHead className="w-[90px] text-right">Year</TableHead>
+              <TableHead className="w-1/3">{heading === "Books" ? "Title" : "Album"}</TableHead>
+              <TableHead className="w-1/3">{heading === "Books" ? "Author" : "Artist"}</TableHead>
+              <TableHead className="w-1/3">Year</TableHead>
             </TableRow>
           </TableHeader>
           <TableBody>
@@ -266,12 +266,13 @@ function ListColumn({
               >
                 <TableCell className="text-foreground">{row.primary}</TableCell>
                 <TableCell className="text-muted-foreground">{row.secondary}</TableCell>
-                <TableCell className="text-right text-muted-foreground tabular-nums">{row.meta}</TableCell>
+                <TableCell className="text-muted-foreground tabular-nums">{row.meta}</TableCell>
               </TableRow>
             ))}
           </TableBody>
         </Table>
       </div>
+
       <div className="pt-4">
         <Link
           to={to}
@@ -300,7 +301,7 @@ function WordRow({
     <div className="border-b border-border/70">
       <button
         onClick={() => setOpen((o) => !o)}
-        className="w-full text-left px-5 py-4 text-sm grid grid-cols-[1fr_1fr_6rem] gap-4 items-baseline transition-colors surface-tint-hover"
+        className="w-full text-left px-5 py-4 text-sm grid grid-cols-3 gap-8 items-baseline transition-colors surface-tint-hover"
       >
         <span className="text-foreground">{title}</span>
         <span className="text-muted-foreground">{note}</span>
