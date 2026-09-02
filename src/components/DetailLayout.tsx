@@ -75,8 +75,8 @@ export function DetailLayout({ title, subtitle, children }: DetailLayoutProps) {
               <span>Back</span>
             </Link>
           </div>
-        </footer>
-      </div>
+        </div>
+      </footer>
     </div>
   );
 }
