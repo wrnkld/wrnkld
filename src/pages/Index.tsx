@@ -1,227 +1,296 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
-import { useState, useMemo } from "react";
-import { motion } from "motion/react";
-import { Clock, LayoutGrid, AArrowDown, Circle, Cherry } from "lucide-react";
-import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
+import { ArrowUpRight, Plus, Minus } from "lucide-react";
+import { books } from "@/data/books";
+import { records } from "@/data/records";
+import { ToolsBody } from "@/content/words/ToolsBody";
+import { VibesBody } from "@/content/words/VibesBody";
+import { SleevesBody } from "@/content/words/SleevesBody";
+import { ClaudeBody } from "@/content/words/ClaudeBody";
 
-type Category = "Work" | "Words" | "Side" | "About";
+import mcPerfMon from "@/assets/montecarlo/mcd-perf-mon.png";
+import taniumThreatAlerts from "@/assets/tanium/tanium-threat-alerts.png";
 
-type Item = {
+/* ---------- shared bits ---------- */
+
+function Band({
+  kicker,
+  headline,
+  children,
+}: {
+  kicker: string;
+  headline: string;
+  children?: React.ReactNode;
+}) {
+  return (
+    <section className="border-b border-border/70">
+      <div className="max-w-6xl mx-auto px-6">
+        <div className="px-5 py-14 md:py-20">
+          <p className="font-mono text-[10px] uppercase tracking-[0.18em] text-muted-foreground mb-4">
+            {kicker}
+          </p>
+          <h2 className="text-2xl md:text-4xl font-medium leading-tight tracking-tight max-w-3xl">
+            {headline}
+          </h2>
+        </div>
+        {children && <div className="px-5 pb-14 md:pb-20">{children}</div>}
+      </div>
+    </section>
+  );
+}
+
+function Callout({
+  eyebrow,
+  title,
+  blurb,
+  media,
+  to,
+  href,
+}: {
+  eyebrow: string;
   title: string;
-  category: Category;
+  blurb: string;
+  media?: string;
   to?: string;
   href?: string;
-  note?: string;
-  gif?: string;
-};
-
-const ITEMS: Item[] = [
-  { title: "Monte Carlo AI", category: "Work", to: "/work/montecarlo", note: "Agent trust platform", gif: "https://media.giphy.com/media/j5nLG5ZTChFwGsmGnV/giphy.gif" },
-  { title: "Experience", category: "About", to: "/about/experience", note: "💼", gif: "https://media.giphy.com/media/JnAqFgTk5AcxbfhtPL/giphy.gif" },
-  { title: "StudyDrop", category: "Side", href: "https://studydrop.app", note: "UX research, without the friction", gif: "https://media.giphy.com/media/VbmrliOc1UMJDYYZRF/giphy.gif" },
-  { title: "Sleeves", category: "Side", href: "https://sleeves.app", note: "Track albums, make lists, and follow friends", gif: "https://media.giphy.com/media/gj0CJcKVtmAoSq5v9d/giphy.gif" },
-  { title: "Pt 4 → Claude", category: "Words", to: "/words/claude", note: "Think piece #901", gif: "https://media.giphy.com/media/hX6UTr4GALucmRR38D/giphy.gif" },
-  { title: "Books", category: "About", to: "/about/books", note: "I like making lists", gif: "https://media.giphy.com/media/TEEewgFfvMvvkSzw7w/giphy.gif" },
-  { title: "Records", category: "About", to: "/about/records", note: "A relatively exhaustive list of records I like", gif: "https://media.giphy.com/media/KHEIcdVp8oSKo4zvmZ/giphy.gif" },
-  { title: "Pt 3 → Sleeves", category: "Words", to: "/words/sleeves", note: "I built an app", gif: "https://media.giphy.com/media/XB3WTIY5GhgcBosgE4/giphy.gif" },
-  { title: "Pt 2 → Vibes", category: "Words", to: "/words/vibes", note: "Prompts v Boxes", gif: "https://media.giphy.com/media/S9WCr3cTm6qHq6LmRi/giphy.gif" },
-  { title: "Pt 1 → Tools", category: "Words", to: "/words/tools", note: "TMI", gif: "https://media.giphy.com/media/MCXp9DOVi5xKQhicLs/giphy.gif" },
-  { title: "Tanium", category: "Work", to: "/work/tanium", note: "Endpoint security at scale", gif: "https://media.giphy.com/media/YPQ7McRYvkGrnPPg2x/giphy.gif" },
-  { title: "Red Hat", category: "Work", to: "/work/redhat", note: "Open source enterprise software", gif: "https://media.giphy.com/media/KEYvmwlOfRc8VN2UZT/giphy.gif" },
-  { title: "SAS", category: "Work", to: "/work/sas", note: "Enterprise analytics", gif: "https://media.giphy.com/media/mEt912Wqy3Ldkhn5bs/giphy.gif" },
-];
-
-const CHIP: Record<Category, string> = {
-  "Work": "chip-work",
-  "About": "chip-about",
-  "Side": "chip-side",
-  "Words": "chip-words",
-};
-
-const CATEGORY_ORDER: Category[] = ["Work", "Side", "About", "Words"];
-const CATEGORICAL_ORDER = [
-  "Monte Carlo AI",
-  "Tanium",
-  "Red Hat",
-  "SAS",
-  "Sleeves",
-  "StudyDrop",
-  "Experience",
-  "Records",
-  "Books",
-];
-type SortMode = "default" | "category" | "alpha";
-type FilterMode = "all" | "dope";
-const DOPE_TITLES = new Set([
-  "Monte Carlo AI",
-  "Experience",
-  "Books",
-  "StudyDrop",
-  "Sleeves",
-  "Records",
-]);
-
-function Card({ item }: { item: Item }) {
+}) {
   const inner = (
-    <div className="group h-full flex flex-col gap-3 p-5 transition-colors surface-tint-hover">
-      {item.gif && (
-        <div className="aspect-[4/3] overflow-hidden rounded-md border border-border/40 bg-muted/30">
-          <img
-            src={item.gif}
-            alt=""
-            loading="lazy"
-            className="w-full h-full object-cover"
-          />
+    <div className="group flex flex-col gap-4 h-full">
+      {media && (
+        <div className="aspect-[4/3] overflow-hidden border border-border/40 bg-muted/30">
+          <img src={media} alt="" loading="lazy" className="w-full h-full object-cover object-left-top" />
         </div>
       )}
-      <div className="flex items-center gap-2">
-        <span
-          className={`chip ${CHIP[item.category]} font-mono text-[10px] uppercase tracking-[0.14em] px-2 py-0.5 rounded`}
-        >
-          {item.category}
-        </span>
-      </div>
-      <div className="flex flex-col gap-1">
-        <h2 className="text-base font-medium leading-snug">{item.title}</h2>
-        {item.note && (
-          <p className="text-sm text-muted-foreground leading-snug">{item.note}</p>
-        )}
+      <div>
+        <p className="font-mono text-[10px] uppercase tracking-[0.18em] text-muted-foreground mb-2">
+          {eyebrow}
+        </p>
+        <h3 className="text-lg md:text-xl font-medium tracking-tight inline-flex items-center gap-1">
+          {title}
+          <ArrowUpRight className="h-4 w-4 opacity-0 -translate-x-1 transition-all duration-200 group-hover:opacity-100 group-hover:translate-x-0" />
+        </h3>
+        <p className="font-body text-base text-muted-foreground mt-1 max-w-md">{blurb}</p>
       </div>
     </div>
   );
-
-  if (item.to) {
-    return <Link to={item.to} className="block h-full">{inner}</Link>;
-  }
-  if (item.href) {
-    return (
-      <a href={item.href} target="_blank" rel="noopener noreferrer" className="block h-full">
-        {inner}
-      </a>
-    );
-  }
-  return inner;
+  if (to) return <Link to={to}>{inner}</Link>;
+  return (
+    <a href={href} target="_blank" rel="noopener noreferrer">
+      {inner}
+    </a>
+  );
 }
 
-export default function Index() {
-  const [sort, setSort] = useState<SortMode>(() => {
-    if (typeof window === "undefined") return "category";
-    const s = sessionStorage.getItem("index-sort");
-    return s === "category" || s === "alpha" || s === "default" ? s : "category";
-  });
-  const handleSortChange = (v: SortMode) => {
-    setSort(v);
-    sessionStorage.setItem("index-sort", v);
-  };
-  const [filter, setFilter] = useState<FilterMode>(() => {
-    if (typeof window === "undefined") return "dope";
-    const s = sessionStorage.getItem("index-filter");
-    return s === "all" || s === "dope" ? s : "dope";
-  });
-  const handleFilterChange = (v: FilterMode) => {
-    setFilter(v);
-    sessionStorage.setItem("index-filter", v);
-  };
+/* ---------- data ---------- */
 
-  const items = useMemo(() => {
-    const base = filter === "dope" ? ITEMS.filter((i) => DOPE_TITLES.has(i.title)) : ITEMS;
-    if (sort === "alpha") {
-      return [...base].sort((a, b) => a.title.localeCompare(b.title));
-    }
-    if (sort === "category") {
-      return [...base].sort((a, b) => {
-        const ai = CATEGORICAL_ORDER.indexOf(a.title);
-        const bi = CATEGORICAL_ORDER.indexOf(b.title);
-        // Words: sort by title (Pt 1 → Pt 4), always last
-        if (ai === -1 && bi === -1) {
-          return a.title.localeCompare(b.title);
-        }
-        if (ai === -1) return 1;
-        if (bi === -1) return -1;
-        return ai - bi;
-      });
-    }
-    return base;
-  }, [sort, filter]);
+const JOBS = [
+  { company: "StudyDrop", role: "Product Designer & Builder", years: "2026 - Present" },
+  { company: "Sleeves", role: "Product Designer & Builder", years: "2025 - Present" },
+  { company: "Monte Carlo AI", role: "Head of Design", years: "2022 - Present" },
+  { company: "Workato", role: "Staff Product Designer", years: "2021 - 2022" },
+  { company: "Tanium", role: "Senior Product Designer", years: "2019 - 2021" },
+  { company: "Pendo", role: "Lead Product Designer", years: "2019" },
+  { company: "Red Hat", role: "Senior Interaction Designer", years: "2016 - 2019" },
+  { company: "SAS", role: "Principal Interaction Designer", years: "2011 - 2016" },
+  { company: "HumanCentric", role: "Product Design Manager", years: "2006 - 2011" },
+  { company: "Frog", role: "Associate Interaction Designer", years: "2004 - 2006" },
+  { company: "Georgetown", role: "BA Psychology, Cum Laude", years: "" },
+];
+
+const WORDS = [
+  { title: "Pt 1 → Tools", note: "TMI", Body: ToolsBody },
+  { title: "Pt 2 → Vibes", note: "Prompts v boxes", Body: VibesBody },
+  { title: "Pt 3 → Sleeves", note: "I built an app", Body: SleevesBody },
+  { title: "Pt 4 → Claude", note: "Working with agents", Body: ClaudeBody },
+];
+
+/* ---------- page ---------- */
+
+export default function Index() {
+  const recentBooks = [...books].sort((a, b) => b.year - a.year || b.id - a.id).slice(0, 4);
+  const recentRecords = [...records].sort((a, b) => b.year - a.year || b.id - a.id).slice(0, 4);
 
   return (
-    <TooltipProvider delayDuration={200}>
     <div className="relative z-10 min-h-screen text-foreground">
-      <div className="max-w-6xl mx-auto px-6 py-16 md:py-24">
-        <header>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
-            <div className="p-5">
-              <h1 className="text-2xl font-medium">Matthew Stevens</h1>
-              <p className="text-muted-foreground mt-2">
-                <a
-                  href="mailto:hello@wrnkld.tv"
-                  className="text-foreground hover:text-muted-foreground transition-colors"
-                >
-                  hello@wrnkld.tv
-                </a>
-              </p>
-            </div>
-            <div className="p-5 sm:col-span-1 lg:col-span-2 flex sm:justify-end sm:items-end">
-              <div className="inline-flex items-center gap-2">
-                {([
-                  {
-                    key: "sort",
-                    value: sort,
-                    onChange: (v: string) => handleSortChange(v as SortMode),
-                    options: [
-                      { mode: "default", Icon: Clock, label: "Chronological" },
-                      { mode: "category", Icon: LayoutGrid, label: "Categorical" },
-                      { mode: "alpha", Icon: AArrowDown, label: "Alphabetical" },
-                    ],
-                  },
-                  {
-                    key: "filter",
-                    value: filter,
-                    onChange: (v: string) => handleFilterChange(v as FilterMode),
-                    options: [
-                      { mode: "all", Icon: Circle, label: "All" },
-                      { mode: "dope", Icon: Cherry, label: "Favorites" },
-                    ],
-                  },
-                ]).map((group) => (
-                  <Tabs key={group.key} value={group.value} onValueChange={group.onChange}>
-                    <TabsList className="surface-tint p-1.5">
-                      {group.options.map(({ mode, Icon, label }) => (
-                        <Tooltip key={mode}>
-                          <TooltipTrigger asChild>
-                            <span className="inline-flex">
-                              <TabsTrigger value={mode} aria-label={label} className="px-1.5 rounded data-[state=active]:shadow-[0_1px_2px_rgba(0,0,0,0.08),0_1px_3px_rgba(0,0,0,0.06)]">
-                                <Icon className="h-4 w-4" />
-                              </TabsTrigger>
-                            </span>
-                          </TooltipTrigger>
-                          <TooltipContent className="hidden sm:block">{label}</TooltipContent>
-                        </Tooltip>
-                      ))}
-                    </TabsList>
-                  </Tabs>
-                ))}
-              </div>
-            </div>
+      {/* header */}
+      <div className="max-w-6xl mx-auto px-6 pt-16 md:pt-24">
+        <div className="border-t border-b border-border/70">
+          <div className="px-5 py-5 flex items-baseline justify-between gap-4">
+            <span className="text-base font-medium">Matthew Stevens</span>
+            <a
+              href="mailto:hello@wrnkld.tv"
+              className="text-base text-muted-foreground hover:text-foreground transition-colors"
+            >
+              hello@wrnkld.tv
+            </a>
           </div>
-        </header>
+        </div>
+      </div>
 
-        <main>
-          <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
-            {items.map((item) => (
-              <motion.li
-                key={item.title}
-                layout
-                transition={{ type: "spring", stiffness: 400, damping: 32 }}
-              >
-                <Card item={item} />
-              </motion.li>
-            ))}
-          </ul>
-        </main>
+      <Band
+        kicker="01 — Hello"
+        headline="Hello. I am a product designer who still draws the pixels and ships the code."
+      >
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-8">
+          <Callout
+            eyebrow="Case study"
+            title="Monte Carlo AI"
+            blurb="Agent trust platform. Founding designer, now Head of Design."
+            media={mcPerfMon}
+            to="/work/montecarlo"
+          />
+          <Callout
+            eyebrow="Case study"
+            title="Tanium"
+            blurb="Endpoint security at scale. Threat Response and two launches."
+            media={taniumThreatAlerts}
+            to="/work/tanium"
+          />
+        </div>
+      </Band>
+
+      <Band
+        kicker="02 — Side projects"
+        headline="Two products I designed, built, and shipped on my own."
+      >
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-8">
+          <Callout
+            eyebrow="Live"
+            title="StudyDrop"
+            blurb="UX research without the friction. Surveys, card sorting, tree testing, and first-click testing."
+            href="https://studydrop.app"
+          />
+          <Callout
+            eyebrow="Live"
+            title="Sleeves"
+            blurb="Track albums, make lists, follow friends. Built with React, Supabase, and Vercel."
+            href="https://sleeves.app"
+          />
+        </div>
+      </Band>
+
+      <Band kicker="03 — Experience" headline="Twenty years of enterprise software.">
+        <div className="-mx-5 border-t border-border/70">
+          {JOBS.map((j) => (
+            <div
+              key={j.company}
+              className="px-5 py-3 border-b border-border/70 transition-colors surface-tint-hover flex flex-col gap-1 lg:grid lg:grid-cols-3 lg:gap-8"
+            >
+              <span className="font-body text-base text-foreground">{j.company}</span>
+              <span className="font-body text-base text-muted-foreground">{j.role}</span>
+              <span className="font-body text-base text-muted-foreground">{j.years}</span>
+            </div>
+          ))}
+        </div>
+        <div className="px-5 pt-4">
+          <Link
+            to="/about/experience"
+            className="inline-flex items-center gap-1 font-body text-base text-muted-foreground hover:text-foreground transition-colors"
+          >
+            Full experience <ArrowUpRight className="h-4 w-4" />
+          </Link>
+        </div>
+      </Band>
+
+      <Band kicker="04 — Lists" headline="I like making lists.">
+        <div className="-mx-5 border-t border-border/70">
+          <ListColumn
+            heading="Recent books"
+            to="/about/books"
+            linkLabel={`All ${books.length} books`}
+            rows={recentBooks.map((b) => ({ id: b.id, primary: b.title, secondary: b.author, meta: b.year }))}
+          />
+          <ListColumn
+            heading="Recent records"
+            to="/about/records"
+            linkLabel={`All ${records.length} records`}
+            rows={recentRecords.map((r) => ({ id: r.id, primary: r.album, secondary: r.artist, meta: r.year }))}
+          />
+        </div>
+      </Band>
+
+      <Band kicker="05 — Words" headline="I wrote a few things about AI and design.">
+        <div className="-mx-5 border-t border-border/70">
+          {WORDS.map((w) => (
+            <WordRow key={w.title} {...w} />
+          ))}
+        </div>
+      </Band>
+
+      <div className="max-w-6xl mx-auto px-6">
+        <div className="px-5 py-14 flex items-baseline justify-between gap-4">
+          <a
+            href="mailto:hello@wrnkld.tv"
+            className="text-xl md:text-2xl font-medium tracking-tight hover:text-muted-foreground transition-colors"
+          >
+            hello@wrnkld.tv
+          </a>
+        </div>
       </div>
     </div>
-    </TooltipProvider>
+  );
+}
+
+function ListColumn({
+  heading,
+  to,
+  linkLabel,
+  rows,
+}: {
+  heading: string;
+  to: string;
+  linkLabel: string;
+  rows: { id: number; primary: string; secondary: string; meta: number }[];
+}) {
+  return (
+    <div>
+      <div className="px-5 py-3 flex items-baseline justify-between gap-4">
+        <h3 className="font-body text-base font-medium">{heading}</h3>
+        <Link to={to} className="font-body text-base text-muted-foreground hover:text-foreground transition-colors">
+          {linkLabel} →
+        </Link>
+      </div>
+      {rows.map((row) => (
+        <div
+          key={row.id}
+          className="px-5 py-3 border-b border-border/70 transition-colors surface-tint-hover flex items-baseline gap-4"
+        >
+          <span className="flex-1 font-body text-base text-foreground">{row.primary}</span>
+          <span className="font-body text-base text-muted-foreground">{row.secondary}</span>
+          <span className="font-body text-base text-muted-foreground w-12">{row.meta}</span>
+        </div>
+      ))}
+    </div>
+  );
+}
+
+function WordRow({
+  title,
+  note,
+  Body,
+}: {
+  title: string;
+  note: string;
+  Body: () => React.ReactElement;
+}) {
+  const [open, setOpen] = useState(false);
+  return (
+    <div className="border-b border-border/70">
+      <button
+        onClick={() => setOpen((o) => !o)}
+        className="w-full text-left px-5 py-3 flex items-baseline gap-4 transition-colors surface-tint-hover"
+      >
+        <span className="font-body text-base text-foreground">{title}</span>
+        <span className="flex-1 font-body text-base text-muted-foreground">{note}</span>
+        <span className="text-muted-foreground shrink-0">
+          {open ? <Minus className="h-4 w-4" /> : <Plus className="h-4 w-4" />}
+        </span>
+      </button>
+      {open && (
+        <div className="px-5 pb-10 pt-2">
+          <Body />
+        </div>
+      )}
+    </div>
   );
 }
