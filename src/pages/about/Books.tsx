@@ -49,7 +49,7 @@ export default function Books() {
           onChange: setTab,
           options: [
             { value: "all", label: "All" },
-            { value: "recommended", label: "Recommended" },
+            { value: "recommended", label: "Recs" },
           ],
         }}
       />
