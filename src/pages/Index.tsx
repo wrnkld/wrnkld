@@ -159,7 +159,10 @@ export default function Index() {
 
       <Band kicker="03 — Experience" headline="Twenty years of enterprise software.">
         <div className="-mx-5 border-t border-border/70">
-          {JOBS.map((j) => (
+          {[
+            ...experience,
+            { company: education.company, role: education.degree, years: "" },
+          ].map((j) => (
             <div
               key={j.company}
               className="px-5 py-3 border-b border-border/70 transition-colors surface-tint-hover flex flex-col gap-1 lg:grid lg:grid-cols-3 lg:gap-8"
