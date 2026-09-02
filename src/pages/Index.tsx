@@ -155,7 +155,7 @@ export default function Index() {
           <Callout
             eyebrow="Live"
             title="Sleeves"
-            blurb="Track albums, make lists, follow friends. Built with React, Supabase, and Vercel."
+            blurb="Track albums, make lists, and follow friends. Built with React, Supabase, and Vercel."
             href="https://sleeves.app"
           />
         </div>
@@ -174,7 +174,7 @@ export default function Index() {
             </Row>
           ))}
         </div>
-        <div className="px-5 pt-4">
+        <div className="pt-4">
           <Link
             to="/about/experience"
             className="inline-flex items-center gap-1 text-sm text-muted-foreground hover:text-foreground transition-colors"
