@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+
 
 function FootnoteRef({ number }: { number: number }) {
   return <sup className="text-muted-foreground">{number}</sup>;
