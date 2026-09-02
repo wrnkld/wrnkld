@@ -133,17 +133,16 @@ export default function Index() {
             eyebrow="Case study"
             title="Monte Carlo AI"
             blurb="Agent trust platform. Founding designer, now Head of Design."
-            media={mcPerfMon}
             to="/work/montecarlo"
           />
           <Callout
             eyebrow="Case study"
             title="Tanium"
             blurb="Endpoint security at scale. Threat Response and two launches."
-            media={taniumThreatAlerts}
             to="/work/tanium"
           />
         </div>
+
       </Band>
 
       <Band
