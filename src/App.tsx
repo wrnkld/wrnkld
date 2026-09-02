@@ -1,5 +1,5 @@
 import { TooltipProvider } from "@/components/ui/tooltip";
-import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate, useParams } from "react-router-dom";
 import { ScrollToTop } from "./components/ScrollToTop";
 import { Analytics } from "@vercel/analytics/react";
 import Index from "./pages/Index";
@@ -13,6 +13,12 @@ import SAS from "./pages/work/SAS";
 import RedHat from "./pages/work/RedHat";
 import Books from "./pages/about/Books";
 import Records from "./pages/about/Records";
+
+// Old /designai/* essay URLs now live under /words/*.
+const DesignAiRedirect = () => {
+  const { slug } = useParams();
+  return <Navigate to={`/words/${slug}`} replace />;
+};
 
 const App = () => (
   <TooltipProvider>
