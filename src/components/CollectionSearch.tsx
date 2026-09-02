@@ -19,7 +19,7 @@ export function CollectionSearch({
   tabs,
 }: CollectionSearchProps) {
   return (
-    <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
+    <div className="flex flex-row items-center gap-3">
       {tabs && (
         <Tabs value={tabs.value} onValueChange={tabs.onChange} className="shrink-0">
           <TabsList className="h-9">
