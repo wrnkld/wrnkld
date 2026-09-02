@@ -241,7 +241,7 @@ function MobileScenarioPicker({
       value={activeId ?? ""}
       onValueChange={(value) => onChange(value || null)}
     >
-      <SelectTrigger className="w-full h-9 border border-border/70 bg-background rounded px-3 py-2 font-body text-xs text-foreground focus:ring-0 focus:ring-offset-0 focus:border-border/70">
+      <SelectTrigger className="w-full h-9 border border-border/70 bg-background rounded px-3 py-2 font-body text-sm text-foreground focus:ring-0 focus:ring-offset-0 focus:border-border/70">
         <SelectValue placeholder="CLI — pick a scenario">
           {active ? `montecarlo — ${active.title.toLowerCase()}` : "CLI — pick a scenario"}
         </SelectValue>
@@ -250,14 +250,14 @@ function MobileScenarioPicker({
         <SelectGroup>
           <SelectItem
             value=""
-            className="font-body text-xs text-muted-foreground focus:bg-muted focus:text-foreground rounded-sm"
+            className="font-body text-sm text-muted-foreground focus:bg-muted focus:text-foreground rounded-sm"
           >
             CLI — pick a scenario
           </SelectItem>
         </SelectGroup>
         {groups.map((group) => (
           <SelectGroup key={group}>
-            <SelectLabel className="font-body text-[10px] font-medium uppercase tracking-[0.12em] text-muted-foreground bg-muted/40 pl-2 pr-3 py-1.5">
+            <SelectLabel className="font-body text-[11px] font-medium uppercase tracking-[0.12em] text-muted-foreground bg-muted/40 pl-2 pr-3 py-1.5">
               {group}
             </SelectLabel>
                 {scenarios
@@ -266,7 +266,7 @@ function MobileScenarioPicker({
                     <SelectItem
                       key={s.id}
                       value={s.id}
-                      className="font-body text-xs text-foreground focus:surface-tint-hover focus:text-foreground rounded py-2"
+                      className="font-body text-sm text-foreground focus:surface-tint-hover focus:text-foreground rounded py-2"
                     >
                       {s.name}
                     </SelectItem>
