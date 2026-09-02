@@ -55,7 +55,7 @@ function useTypewriter(scenario: Scenario | null) {
 
 function BlockLabel({ children }: { children: React.ReactNode }) {
   return (
-    <div className="font-body text-[10px] font-medium uppercase tracking-[0.12em] text-[hsl(var(--term-t3))] mb-2">
+    <div className="font-body text-[11px] font-medium uppercase tracking-[0.12em] text-[hsl(var(--term-t3))] mb-2">
       {children}
     </div>
   );
@@ -63,7 +63,7 @@ function BlockLabel({ children }: { children: React.ReactNode }) {
 
 function Code({ children }: { children: React.ReactNode }) {
   return (
-    <pre className="font-mono text-[12.5px] leading-[1.8] whitespace-pre-wrap break-words border border-[hsl(var(--term-border))] bg-[hsl(var(--term-block))] px-4 py-3 overflow-x-auto">
+    <pre className="font-mono text-[14px] leading-[1.8] whitespace-pre-wrap break-words border border-[hsl(var(--term-border))] bg-[hsl(var(--term-block))] px-4 py-3 overflow-x-auto">
       {children}
     </pre>
   );
