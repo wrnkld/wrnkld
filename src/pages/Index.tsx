@@ -78,8 +78,8 @@ function Callout({
         </h3>
         <p className="text-sm text-muted-foreground mt-1 max-w-md">{blurb}</p>
         {!isExternal && (
-          <p className="text-sm text-muted-foreground hover:text-foreground transition-colors duration-200 mt-2 inline-flex items-center gap-1">
-            View case study
+          <p className="mt-4 inline-flex items-center gap-1 text-sm text-muted-foreground group-hover:text-foreground transition-colors">
+            View case study <ArrowUpRight className="h-4 w-4" />
           </p>
         )}
       </div>
