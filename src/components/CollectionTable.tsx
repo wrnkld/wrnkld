@@ -22,33 +22,6 @@ export function CollectionTable<T extends Row>({
   items,
   columns,
 }: CollectionTableProps<T>) {
-  const [sortKey, setSortKey] = useState<Extract<keyof T, string>>("year" as Extract<keyof T, string>);
-  const [direction, setDirection] = useState<"asc" | "desc">("desc");
-
-  const rows = useMemo(() => {
-    const result = [...items];
-    result.sort((a, b) => {
-      const av = a[sortKey];
-      const bv = b[sortKey];
-      const comparison =
-        typeof av === "number" && typeof bv === "number"
-          ? av - bv
-          : String(av).localeCompare(String(bv));
-      return direction === "asc" ? comparison : -comparison;
-    });
-
-    return result;
-  }, [items, sortKey, direction]);
-
-  const sortBy = (key: Extract<keyof T, string>) => {
-    if (key === sortKey) {
-      setDirection(direction === "asc" ? "desc" : "asc");
-    } else {
-      setSortKey(key);
-      setDirection("asc");
-    }
-  };
-
   return (
     <div className="full-bleed overflow-hidden table-gutter">
       <Table>
