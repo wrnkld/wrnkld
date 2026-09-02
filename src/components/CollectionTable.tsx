@@ -57,21 +57,6 @@ export function CollectionTable<T extends Row>({
   return (
     <div className="full-bleed overflow-hidden table-gutter">
       <Table>
-        <TableHeader>
-          <TableRow className="surface-tint-hover border-b-border/70">
-            {columns.map((column) => (
-              <TableHead key={column.key}>
-                <button
-                  onClick={() => sortBy(column.key)}
-                  className="inline-flex items-center gap-1 text-muted-foreground hover:text-foreground transition-colors duration-200"
-                >
-                  {column.label}
-                  <ArrowUpDown className="h-3 w-3" />
-                </button>
-              </TableHead>
-            ))}
-          </TableRow>
-        </TableHeader>
         <TableBody>
           {rows.length === 0 ? (
             <TableRow>
