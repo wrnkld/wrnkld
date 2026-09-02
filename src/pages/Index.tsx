@@ -266,10 +266,12 @@ function ListColumn({
 function WordRow({
   title,
   note,
+  date,
   Body,
 }: {
   title: string;
   note: string;
+  date: string;
   Body: () => React.ReactElement;
 }) {
   const [open, setOpen] = useState(false);
@@ -277,11 +279,12 @@ function WordRow({
     <div className="border-b border-border/70">
       <button
         onClick={() => setOpen((o) => !o)}
-        className="w-full text-left px-5 py-4 text-sm flex items-baseline gap-4 transition-colors surface-tint-hover"
+        className="w-full text-left px-5 py-4 text-sm grid grid-cols-[1fr_1fr_6rem] gap-4 items-baseline transition-colors surface-tint-hover"
       >
         <span className="text-foreground">{title}</span>
-        <span className="flex-1 text-muted-foreground">{note}</span>
-        <span className="text-muted-foreground shrink-0">
+        <span className="text-muted-foreground">{note}</span>
+        <span className="text-muted-foreground flex items-baseline justify-between gap-1">
+          {date}
           {open ? <Minus className="h-4 w-4" /> : <Plus className="h-4 w-4" />}
         </span>
       </button>
