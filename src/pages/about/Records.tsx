@@ -17,11 +17,8 @@ export default function Records() {
         A relatively exhaustive list of records I like. Updated often.
       </p>
 
-      <CollectionTable
-        items={records}
-        columns={columns}
-        searchPlaceholder={`Search ${records.length} records`}
-      />
+      <CollectionTable items={records} columns={columns} />
     </DetailLayout>
   );
 }
+

@@ -17,12 +17,8 @@ export default function Books() {
         I started tracking the books I read. Recommended in pink.
       </p>
 
-      <CollectionTable
-        items={books}
-        columns={columns}
-        searchPlaceholder={`Search ${books.length} books`}
-        recommendFilter
-      />
+      <CollectionTable items={books} columns={columns} />
     </DetailLayout>
   );
 }
+
