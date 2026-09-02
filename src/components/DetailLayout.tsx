@@ -1,4 +1,4 @@
-import { ReactNode, Children, isValidElement } from "react";
+import { ReactNode } from "react";
 import { Link } from "react-router-dom";
 import { ArrowLeft } from "lucide-react";
 
@@ -8,28 +8,7 @@ interface DetailLayoutProps {
   children: ReactNode;
 }
 
-function isMediaElement(child: React.ReactElement<{ className?: string }>): boolean {
-  const type = child.type as string | unknown;
-  if (type === "img" || type === "video") return true;
-  const cls = child.props?.className ?? "";
-  if (type === "div" && cls.includes("grid")) return true;
-  if (cls.includes("full-bleed")) return true;
-  return false;
-}
-
 export function DetailLayout({ title, subtitle, children }: DetailLayoutProps) {
-  const processed = Children.map(children, (child) => {
-    if (!isValidElement(child)) return child;
-    if (isMediaElement(child)) {
-      return <div className="max-w-6xl mx-auto px-6">{child}</div>;
-    }
-    return (
-      <div className="max-w-6xl mx-auto px-6">
-        <div className="px-5 [&>p]:max-w-3xl">{child}</div>
-      </div>
-    );
-  });
-
   return (
     <div className="relative z-10 min-h-screen text-foreground">
       <header className="border-b border-border/70 pt-16 md:pt-24">
@@ -62,7 +41,9 @@ export function DetailLayout({ title, subtitle, children }: DetailLayoutProps) {
         </div>
       </header>
 
-      <main className="py-10 space-y-8 animate-fade-in">{processed}</main>
+      <main className="max-w-6xl mx-auto px-6 py-10 animate-fade-in">
+        <div className="px-5 space-y-8 [&>p]:max-w-3xl">{children}</div>
+      </main>
 
       <footer className="border-t border-border/70">
         <div className="max-w-6xl mx-auto px-6">
