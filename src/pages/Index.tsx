@@ -190,13 +190,13 @@ export default function Index() {
             heading="Books"
             to="/about/books"
             linkLabel={`All ${books.length} books`}
-            rows={recentBooks.map((b) => ({ id: b.id, primary: b.title, secondary: b.author, meta: b.year }))}
+            rows={recentBooks.map((b) => ({ id: b.id, primary: b.author, secondary: b.title, meta: b.year }))}
           />
           <ListColumn
             heading="Records"
             to="/about/records"
             linkLabel={`All ${records.length} records`}
-            rows={recentRecords.map((r) => ({ id: r.id, primary: r.album, secondary: r.artist, meta: r.year }))}
+            rows={recentRecords.map((r) => ({ id: r.id, primary: r.artist, secondary: r.album, meta: r.year }))}
           />
         </div>
       </Band>
@@ -245,8 +245,8 @@ function ListColumn({
                 key={row.id}
                 className="border-b border-border/70 transition-colors surface-tint-hover"
               >
-                <TableCell className="text-foreground">{row.primary}</TableCell>
-                <TableCell className="text-muted-foreground">{row.secondary}</TableCell>
+                <TableCell className="text-muted-foreground">{row.primary}</TableCell>
+                <TableCell className="text-foreground">{row.secondary}</TableCell>
                 <TableCell className="text-muted-foreground tabular-nums">{row.meta}</TableCell>
               </TableRow>
             ))}
