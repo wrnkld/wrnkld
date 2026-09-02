@@ -58,7 +58,10 @@ export function CollectionTable<T extends Row>({
         <TableHeader>
           <TableRow className="border-b border-border/70 hover:bg-transparent">
             {columns.map((column) => (
-              <TableHead key={column.key} className="font-medium text-muted-foreground">
+              <TableHead
+                key={column.key}
+                className={`font-medium text-muted-foreground ${column.key === "year" ? "w-16" : ""}`}
+              >
                 <button
                   type="button"
                   onClick={() => handleSort(column.key)}
