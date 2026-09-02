@@ -248,6 +248,7 @@ function ListColumn({
 }) {
   return (
     <div>
+      <h3 className="text-lg font-medium text-foreground mb-4">{heading}</h3>
       <div className="full-bleed border-y border-border/70 overflow-hidden table-gutter">
         <Table>
           <TableHeader>
@@ -261,7 +262,7 @@ function ListColumn({
             {rows.map((row) => (
               <TableRow
                 key={row.id}
-                className="border-b border-border/70 transition-colors surface-tint-hover last:border-b-0"
+                className="border-b border-border/70 transition-colors surface-tint-hover"
               >
                 <TableCell className="text-foreground">{row.primary}</TableCell>
                 <TableCell className="text-muted-foreground">{row.secondary}</TableCell>
