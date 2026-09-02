@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { ArrowUpRight, Plus, Minus } from "lucide-react";
+import { ArrowUpRight, ArrowRight, Plus, Minus } from "lucide-react";
 import { books } from "@/data/books";
 import { records } from "@/data/records";
 import { experience, education } from "@/data/experience";
