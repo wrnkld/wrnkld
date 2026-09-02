@@ -12,7 +12,7 @@ export function DetailLayout({ title, children }: DetailLayoutProps) {
     <div className="relative z-10 min-h-screen text-foreground">
       <header className="pt-16 md:pt-24">
         <div className="max-w-6xl mx-auto px-6">
-          <div className="px-5 py-8">
+          <div className="px-5">
             <h1 className="text-2xl md:text-3xl font-medium leading-tight tracking-tight max-w-3xl">
               {title}
             </h1>
@@ -20,7 +20,7 @@ export function DetailLayout({ title, children }: DetailLayoutProps) {
         </div>
       </header>
 
-      <main className="max-w-6xl mx-auto px-6 py-10 animate-fade-in">
+      <main className="max-w-6xl mx-auto px-6 pt-4 pb-10 animate-fade-in">
         <div className="px-5 space-y-8 [&>p]:max-w-3xl">{children}</div>
       </main>
 
