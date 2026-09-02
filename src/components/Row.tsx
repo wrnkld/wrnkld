@@ -1,13 +1,21 @@
+import { cn } from "@/lib/utils";
+
 export function Row({
   className = "",
   children,
+  noHover = false,
 }: {
   className?: string;
   children: React.ReactNode;
+  noHover?: boolean;
 }) {
   return (
     <div
-      className={`px-5 py-4 text-sm border-b border-border/70 transition-colors surface-tint-hover ${className}`}
+      className={cn(
+        "px-5 py-4 text-sm border-b border-border/70 transition-colors",
+        !noHover && "surface-tint-hover",
+        className
+      )}
     >
       {children}
     </div>
