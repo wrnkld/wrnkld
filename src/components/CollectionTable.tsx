@@ -98,13 +98,13 @@ export function CollectionTable<T extends Row>({
                 {columns.map((column) => (
                   <TableCell
                     key={column.key}
-                    className={
+                    className={`break-words align-top ${
                       row.recommended
                         ? "text-recommended"
                         : column.tone === "primary"
                           ? "text-foreground"
                           : "text-muted-foreground"
-                    }
+                    }`}
                   >
                     {String(row[column.key])}
                   </TableCell>
