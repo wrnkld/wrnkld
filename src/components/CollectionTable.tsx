@@ -60,7 +60,7 @@ export function CollectionTable<T extends Row>({
             {columns.map((column) => (
               <TableHead
                 key={column.key}
-                className="font-medium text-muted-foreground"
+                  className="font-medium text-muted-foreground [overflow-wrap:anywhere]"
               >
                 <button
                   type="button"
@@ -98,7 +98,7 @@ export function CollectionTable<T extends Row>({
                 {columns.map((column) => (
                   <TableCell
                     key={column.key}
-                    className={`break-words align-top ${
+                    className={`[overflow-wrap:anywhere] align-top ${
                       row.recommended
                         ? "text-recommended"
                         : column.tone === "primary"
