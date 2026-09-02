@@ -213,7 +213,7 @@ export default function Index() {
         </div>
       </Band>
 
-      <Band kicker="05 — Words" headline="I worked through some things with AI and design.">
+      <Band kicker="05 — Words" headline="I worked through some things with AI and design earlier this year.">
         <div className="-mx-5 border-t border-border/70">
           {WORDS.map((w) => (
             <WordRow key={w.title} {...w} />
