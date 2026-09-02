@@ -247,7 +247,7 @@ function ListColumn({
 }) {
   return (
     <div>
-      <div className="px-5 py-3 border-y border-border/70 flex items-baseline justify-between gap-4">
+      <div className="px-5 py-3 flex items-baseline justify-between gap-4">
         <h3 className="font-body text-base font-medium">{heading}</h3>
         <Link to={to} className="font-body text-base text-muted-foreground hover:text-foreground transition-colors">
           {linkLabel} →
