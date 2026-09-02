@@ -47,16 +47,18 @@ export function CollectionSearch({
           role="switch"
           aria-checked={toggle.checked}
           onClick={() => toggle.onChange(!toggle.checked)}
-          className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors duration-200"
+          className="inline-flex items-center gap-2 rounded-md border border-border/70 px-3 py-1.5 text-sm text-muted-foreground hover:text-foreground hover:bg-muted/40 transition-colors duration-200"
         >
           <span
-            className={`relative h-5 w-9 rounded-full border border-border/70 transition-colors duration-200 ${
-              toggle.checked ? "bg-foreground" : "bg-muted/40"
+            className={`relative h-5 w-9 rounded-full border transition-colors duration-200 ${
+              toggle.checked
+                ? "border-foreground bg-foreground"
+                : "border-border bg-muted"
             }`}
           >
             <span
-              className={`absolute top-0.5 h-3.5 w-3.5 rounded-full bg-background transition-all duration-200 ${
-                toggle.checked ? "left-[1.15rem]" : "left-0.5"
+              className={`absolute top-0.5 h-3.5 w-3.5 rounded-full shadow-sm transition-all duration-200 ${
+                toggle.checked ? "left-[1.15rem] bg-background" : "left-0.5 bg-foreground/40"
               }`}
             />
           </span>

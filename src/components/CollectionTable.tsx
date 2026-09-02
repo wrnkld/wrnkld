@@ -1,3 +1,5 @@
+import { useMemo, useState } from "react";
+import { ArrowDown, ArrowUp, ChevronsUpDown } from "lucide-react";
 import {
   Table,
   TableBody,
@@ -24,20 +26,59 @@ export function CollectionTable<T extends Row>({
   items,
   columns,
 }: CollectionTableProps<T>) {
+  const [sortKey, setSortKey] = useState<Extract<keyof T, string> | null>(null);
+  const [direction, setDirection] = useState<"asc" | "desc">("asc");
+
+  const sorted = useMemo(() => {
+    if (!sortKey) return items;
+    const factor = direction === "asc" ? 1 : -1;
+    return [...items].sort((a, b) => {
+      const av = a[sortKey];
+      const bv = b[sortKey];
+      if (typeof av === "number" && typeof bv === "number") return (av - bv) * factor;
+      return String(av).localeCompare(String(bv), undefined, { sensitivity: "base" }) * factor;
+    });
+  }, [items, sortKey, direction]);
+
+  const handleSort = (key: Extract<keyof T, string>) => {
+    if (key === sortKey) {
+      setDirection((prev) => (prev === "asc" ? "desc" : "asc"));
+    } else {
+      setSortKey(key);
+      setDirection("asc");
+    }
+  };
+
   return (
     <div className="full-bleed overflow-hidden table-gutter">
       <Table>
         <TableHeader>
           <TableRow className="border-b border-border/70 hover:bg-transparent">
             {columns.map((column) => (
-              <TableHead key={column.key} className="font-medium text-muted-foreground">
-                {column.label}
+              <TableHead key={column.key} className="font-medium text-muted-foreground p-0">
+                <button
+                  type="button"
+                  onClick={() => handleSort(column.key)}
+                  aria-label={`Sort by ${column.label}`}
+                  className="flex h-12 w-full items-center gap-1.5 px-4 text-left hover:text-foreground transition-colors duration-200"
+                >
+                  {column.label}
+                  {sortKey === column.key ? (
+                    direction === "asc" ? (
+                      <ArrowUp className="h-3.5 w-3.5" />
+                    ) : (
+                      <ArrowDown className="h-3.5 w-3.5" />
+                    )
+                  ) : (
+                    <ChevronsUpDown className="h-3.5 w-3.5 opacity-40" />
+                  )}
+                </button>
               </TableHead>
             ))}
           </TableRow>
         </TableHeader>
         <TableBody>
-          {items.map((row) => (
+          {sorted.map((row) => (
             <TableRow
               key={row.id}
               className="border-b border-border/70 transition-colors surface-tint-hover"
