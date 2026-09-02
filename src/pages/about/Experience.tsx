@@ -1,7 +1,5 @@
 import { DetailLayout } from "@/components/DetailLayout";
-import { experience } from "@/data/experience";
-
-
+import { experience, education } from "@/data/experience";
 
 export default function About() {
   return (
@@ -33,8 +31,8 @@ export default function About() {
             <h3 className="font-display text-base font-bold text-foreground">Education</h3>
           </div>
           <div className="lg:col-span-2">
-            <p className="font-body text-base text-foreground font-normal">Georgetown University</p>
-            <p className="font-body text-base text-muted-foreground">BA Psychology, Cum Laude</p>
+            <p className="font-body text-base text-foreground font-normal">{education.school}</p>
+            <p className="font-body text-base text-muted-foreground">{education.degree}</p>
           </div>
         </div>
       </div>
