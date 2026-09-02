@@ -55,7 +55,9 @@ export function DetailLayout({ title, subtitle, children }: DetailLayoutProps) {
                 </span>
               </Link>
             )}
-            <h1 className="text-2xl md:text-3xl font-medium">{title}</h1>
+            <h1 className="text-2xl md:text-3xl font-medium leading-tight tracking-tight max-w-3xl">
+              {title}
+            </h1>
           </div>
         </header>
       </div>
