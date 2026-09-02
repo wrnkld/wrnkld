@@ -14,7 +14,8 @@ const columns: Column<Book>[] = [
 
 export default function Books() {
   const [query, setQuery] = useState("");
-  const [recommendedOnly, setRecommendedOnly] = useState(false);
+  const [tab, setTab] = useState("all");
+  const recommendedOnly = tab === "recommended";
 
   const filtered = useMemo(() => {
     const q = query.trim().toLowerCase();
@@ -29,6 +30,10 @@ export default function Books() {
     });
   }, [query, recommendedOnly]);
 
+  const scopeCount = recommendedOnly
+    ? books.filter((book) => book.recommended).length
+    : books.length;
+
   return (
     <DetailLayout title="Books">
       <p className="font-body text-base text-muted-foreground">
@@ -38,11 +43,14 @@ export default function Books() {
       <CollectionSearch
         value={query}
         onChange={setQuery}
-        placeholder="Search books"
-        toggle={{
-          label: "Show only recommended",
-          checked: recommendedOnly,
-          onChange: setRecommendedOnly,
+        placeholder={`Search ${scopeCount} ${recommendedOnly ? "recommended " : ""}books`}
+        tabs={{
+          value: tab,
+          onChange: setTab,
+          options: [
+            { value: "all", label: "All" },
+            { value: "recommended", label: "Recommended" },
+          ],
         }}
       />
 
