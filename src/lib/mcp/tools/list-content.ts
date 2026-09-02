@@ -4,16 +4,9 @@ import { z } from "zod";
 const WORK = [
   { title: "Monte Carlo", url: "https://wrnkld.lovable.app/work/montecarlo", note: "Data and AI observability" },
   { title: "Tanium", url: "https://wrnkld.lovable.app/work/tanium", note: "Endpoint security at scale" },
-  { title: "SAS", url: "https://wrnkld.lovable.app/work/sas", note: "Enterprise analytics" },
-  { title: "Red Hat", url: "https://wrnkld.lovable.app/work/redhat", note: "Open source enterprise software" },
 ];
 
-const WORDS = [
-  { title: "Pt 1 → Tools", url: "https://wrnkld.lovable.app/words/tools", note: "TMI" },
-  { title: "Pt 2 → Vibes", url: "https://wrnkld.lovable.app/words/vibes", note: "Prompts v Boxes" },
-  { title: "Pt 3 → Sleeves", url: "https://wrnkld.lovable.app/words/sleeves", note: "I built an app" },
-  { title: "Pt 4 → Claude", url: "https://wrnkld.lovable.app/words/claude", note: "Think piece #901" },
-];
+const WORDS: { title: string; url: string; note: string }[] = [];
 
 const SIDE = [
   { title: "StudyDrop", url: "https://studydrop.app", note: "UX research, without the friction" },
