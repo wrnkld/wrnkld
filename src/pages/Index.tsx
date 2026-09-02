@@ -100,8 +100,8 @@ const WORDS = [
 /* ---------- page ---------- */
 
 export default function Index() {
-  const recentBooks = [...books].sort((a, b) => b.year - a.year || b.id - a.id).slice(0, 4);
-  const recentRecords = [...records].sort((a, b) => b.year - a.year || b.id - a.id).slice(0, 4);
+  const recentBooks = [...books].sort((a, b) => b.id - a.id).slice(0, 4);
+  const recentRecords = [...records].sort((a, b) => b.id - a.id).slice(0, 4);
 
   return (
     <div className="relative z-10 min-h-screen text-foreground">
