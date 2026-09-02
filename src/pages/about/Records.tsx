@@ -32,7 +32,7 @@ export default function Records() {
         A relatively exhaustive list of records I like. Updated often.
       </p>
 
-      <CollectionSearch value={query} onChange={setQuery} placeholder="Search records" />
+      <CollectionSearch value={query} onChange={setQuery} placeholder={`Search ${records.length} records`} />
 
       <CollectionTable items={filtered} columns={columns} />
     </DetailLayout>

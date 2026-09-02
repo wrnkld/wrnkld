@@ -1,13 +1,14 @@
 import { Search, X } from "lucide-react";
+import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 interface CollectionSearchProps {
   value: string;
   onChange: (value: string) => void;
   placeholder?: string;
-  toggle?: {
-    label: string;
-    checked: boolean;
-    onChange: (checked: boolean) => void;
+  tabs?: {
+    value: string;
+    onChange: (value: string) => void;
+    options: { value: string; label: string }[];
   };
 }
 
@@ -15,11 +16,11 @@ export function CollectionSearch({
   value,
   onChange,
   placeholder = "Search",
-  toggle,
+  tabs,
 }: CollectionSearchProps) {
   return (
-    <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
-      <div className="relative w-full sm:max-w-xs">
+    <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
+      <div className="relative w-full flex-1">
         <Search className="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
         <input
           type="text"
@@ -41,29 +42,16 @@ export function CollectionSearch({
         )}
       </div>
 
-      {toggle && (
-        <button
-          type="button"
-          role="switch"
-          aria-checked={toggle.checked}
-          onClick={() => toggle.onChange(!toggle.checked)}
-          className="inline-flex items-center gap-2 rounded-md border border-border/70 px-3 py-1.5 text-sm text-muted-foreground hover:text-foreground hover:bg-muted/40 transition-colors duration-200"
-        >
-          <span
-            className={`relative h-5 w-9 rounded-full border transition-colors duration-200 ${
-              toggle.checked
-                ? "border-foreground bg-foreground"
-                : "border-border bg-muted"
-            }`}
-          >
-            <span
-              className={`absolute top-0.5 h-3.5 w-3.5 rounded-full shadow-sm transition-all duration-200 ${
-                toggle.checked ? "left-[1.15rem] bg-background" : "left-0.5 bg-foreground/40"
-              }`}
-            />
-          </span>
-          {toggle.label}
-        </button>
+      {tabs && (
+        <Tabs value={tabs.value} onValueChange={tabs.onChange} className="shrink-0">
+          <TabsList className="h-9">
+            {tabs.options.map((option) => (
+              <TabsTrigger key={option.value} value={option.value} className="text-sm">
+                {option.label}
+              </TabsTrigger>
+            ))}
+          </TabsList>
+        </Tabs>
       )}
     </div>
   );
