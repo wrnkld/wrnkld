@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { ArrowUpRight, Plus, Minus } from "lucide-react";
 import { books } from "@/data/books";
 import { records } from "@/data/records";
+import { experience, education } from "@/data/experience";
 import { ToolsBody } from "@/content/words/ToolsBody";
 import { VibesBody } from "@/content/words/VibesBody";
 import { SleevesBody } from "@/content/words/SleevesBody";
@@ -83,19 +84,6 @@ function Callout({
 
 /* ---------- data ---------- */
 
-const JOBS = [
-  { company: "StudyDrop", role: "Product Designer & Builder", years: "2026 - Present" },
-  { company: "Sleeves", role: "Product Designer & Builder", years: "2025 - Present" },
-  { company: "Monte Carlo AI", role: "Head of Design", years: "2022 - Present" },
-  { company: "Workato", role: "Staff Product Designer", years: "2021 - 2022" },
-  { company: "Tanium", role: "Senior Product Designer", years: "2019 - 2021" },
-  { company: "Pendo", role: "Lead Product Designer", years: "2019" },
-  { company: "Red Hat", role: "Senior Interaction Designer", years: "2016 - 2019" },
-  { company: "SAS", role: "Principal Interaction Designer", years: "2011 - 2016" },
-  { company: "HumanCentric", role: "Product Design Manager", years: "2006 - 2011" },
-  { company: "Frog", role: "Associate Interaction Designer", years: "2004 - 2006" },
-  { company: "Georgetown", role: "BA Psychology, Cum Laude", years: "" },
-];
 
 const WORDS = [
   { title: "Pt 1 → Tools", note: "TMI", Body: ToolsBody },
@@ -171,7 +159,10 @@ export default function Index() {
 
       <Band kicker="03 — Experience" headline="Twenty years of enterprise software.">
         <div className="-mx-5 border-t border-border/70">
-          {JOBS.map((j) => (
+          {[
+            ...experience,
+            { company: education.company, role: education.degree, years: "" },
+          ].map((j) => (
             <div
               key={j.company}
               className="px-5 py-3 border-b border-border/70 transition-colors surface-tint-hover flex flex-col gap-1 lg:grid lg:grid-cols-3 lg:gap-8"
