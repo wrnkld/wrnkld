@@ -54,11 +54,14 @@ export function CollectionTable<T extends Row>({
 
   return (
     <div className="full-bleed overflow-hidden table-gutter">
-      <Table>
+      <Table className="w-full table-fixed">
         <TableHeader>
           <TableRow className="border-b border-border/70 hover:bg-transparent">
             {columns.map((column) => (
-              <TableHead key={column.key} className="font-medium text-muted-foreground">
+              <TableHead
+                key={column.key}
+                className={`font-medium text-muted-foreground ${column.key === "year" ? "w-16" : ""}`}
+              >
                 <button
                   type="button"
                   onClick={() => handleSort(column.key)}
@@ -95,13 +98,13 @@ export function CollectionTable<T extends Row>({
                 {columns.map((column) => (
                   <TableCell
                     key={column.key}
-                    className={
+                    className={`break-words align-top ${
                       row.recommended
                         ? "text-recommended"
                         : column.tone === "primary"
                           ? "text-foreground"
                           : "text-muted-foreground"
-                    }
+                    }`}
                   >
                     {String(row[column.key])}
                   </TableCell>
