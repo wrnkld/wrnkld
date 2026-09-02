@@ -1,14 +1,9 @@
-import { useMemo, useState } from "react";
 import {
   Table,
   TableBody,
   TableCell,
-  TableHead,
-  TableHeader,
   TableRow,
 } from "@/components/ui/table";
-import { ArrowUpDown } from "lucide-react";
-import { motion } from "motion/react";
 
 type Row = { id: number; year: number; recommended?: boolean };
 
