@@ -60,6 +60,7 @@ function Callout({
   to?: string;
   href?: string;
 }) {
+  const isExternal = Boolean(href);
   const inner = (
     <div className="group flex flex-col gap-4 h-full">
       {media && (
@@ -73,9 +74,14 @@ function Callout({
         </p>
         <h3 className="text-lg font-medium tracking-tight inline-flex items-center gap-1">
           {title}
-          <ArrowUpRight className="h-4 w-4 opacity-0 -translate-x-1 transition-all duration-200 group-hover:opacity-100 group-hover:translate-x-0" />
+          {isExternal && <ArrowUpRight className="h-4 w-4" />}
         </h3>
         <p className="text-sm text-muted-foreground mt-1 max-w-md">{blurb}</p>
+        {!isExternal && (
+          <p className="text-sm text-muted-foreground hover:text-foreground transition-colors duration-200 mt-2 inline-flex items-center gap-1">
+            View case study
+          </p>
+        )}
       </div>
     </div>
   );
