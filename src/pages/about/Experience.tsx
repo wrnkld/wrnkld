@@ -13,7 +13,7 @@ export default function ExperiencePage() {
             className="grid grid-cols-1 md:grid-cols-[1fr_2fr] gap-1 md:gap-8"
           >
             <div className="flex flex-col">
-              <span className="font-semibold text-foreground">{job.company}</span>
+              <span className="font-medium text-foreground">{job.company}</span>
               <span className="text-muted-foreground">{job.years}</span>
             </div>
             <div className="flex flex-col">
@@ -30,7 +30,7 @@ export default function ExperiencePage() {
           noHover
           className="grid grid-cols-1 md:grid-cols-[1fr_2fr] gap-1 md:gap-8"
         >
-          <span className="font-semibold text-foreground">{education.school}</span>
+          <span className="font-medium text-foreground">{education.school}</span>
           <span className="text-foreground">{education.degree}</span>
         </Row>
       </div>
