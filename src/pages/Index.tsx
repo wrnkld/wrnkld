@@ -287,8 +287,6 @@ function ListColumn({
 
 function WordRow({
   title,
-  note,
-  date,
   Body,
 }: {
   title: string;
@@ -301,14 +299,10 @@ function WordRow({
     <div className="border-b border-border/70">
       <button
         onClick={() => setOpen((o) => !o)}
-        className="w-full text-left px-5 py-4 text-sm grid grid-cols-3 gap-8 items-baseline transition-colors surface-tint-hover"
+        className="w-full text-left px-5 py-4 text-sm flex items-baseline justify-between gap-4 transition-colors surface-tint-hover"
       >
         <span className="text-foreground">{title}</span>
-        <span className="text-muted-foreground">{note}</span>
-        <span className="text-muted-foreground flex items-baseline justify-between gap-1">
-          {date}
-          {open ? <Minus className="h-4 w-4" /> : <Plus className="h-4 w-4" />}
-        </span>
+        {open ? <Minus className="h-4 w-4 shrink-0" /> : <Plus className="h-4 w-4 shrink-0" />}
       </button>
       {open && (
         <div className="px-5 pb-10 pt-2">
