@@ -8,6 +8,14 @@ import { ToolsBody } from "@/content/words/ToolsBody";
 import { VibesBody } from "@/content/words/VibesBody";
 import { SleevesBody } from "@/content/words/SleevesBody";
 import { ClaudeBody } from "@/content/words/ClaudeBody";
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from "@/components/ui/table";
 
 
 /* ---------- shared bits ---------- */
@@ -189,14 +197,13 @@ export default function Index() {
       </Band>
 
       <Band kicker="04 — Lists" headline="I like making lists.">
-        <div className="-mx-5 border-t border-border/70">
+        <div className="space-y-12">
           <ListColumn
             heading="Books"
             to="/about/books"
             linkLabel={`View all ${books.length} books`}
             rows={recentBooks.map((b) => ({ id: b.id, primary: b.title, secondary: b.author, meta: b.year }))}
           />
-          <div className="border-t border-border/70" />
           <ListColumn
             heading="Records"
             to="/about/records"
@@ -241,17 +248,31 @@ function ListColumn({
 }) {
   return (
     <div>
-      <div className="px-5 py-4 text-sm">
-        <h3 className="font-medium">{heading}</h3>
+      <h3 className="text-lg font-medium text-foreground mb-4">{heading}</h3>
+      <div className="full-bleed border-y border-border/70 overflow-hidden table-gutter">
+        <Table>
+          <TableHeader>
+            <TableRow className="surface-tint-hover border-b-border/70">
+              <TableHead>{heading === "Books" ? "Title" : "Album"}</TableHead>
+              <TableHead>{heading === "Books" ? "Author" : "Artist"}</TableHead>
+              <TableHead className="w-[90px] text-right">Year</TableHead>
+            </TableRow>
+          </TableHeader>
+          <TableBody>
+            {rows.map((row) => (
+              <TableRow
+                key={row.id}
+                className="border-b border-border/70 transition-colors surface-tint-hover"
+              >
+                <TableCell className="text-foreground">{row.primary}</TableCell>
+                <TableCell className="text-muted-foreground">{row.secondary}</TableCell>
+                <TableCell className="text-right text-muted-foreground tabular-nums">{row.meta}</TableCell>
+              </TableRow>
+            ))}
+          </TableBody>
+        </Table>
       </div>
-      {rows.map((row) => (
-        <Row key={row.id} className="grid grid-cols-[1fr_1fr_4rem] gap-4 items-baseline">
-          <span className="text-foreground">{row.primary}</span>
-          <span className="text-muted-foreground">{row.secondary}</span>
-          <span className="text-muted-foreground">{row.meta}</span>
-        </Row>
-      ))}
-      <div className="px-5 pt-4">
+      <div className="pt-4">
         <Link
           to={to}
           className="inline-flex items-center gap-1 text-sm text-muted-foreground hover:text-foreground transition-colors"
