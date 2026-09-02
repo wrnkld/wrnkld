@@ -55,7 +55,7 @@ function useTypewriter(scenario: Scenario | null) {
 
 function BlockLabel({ children }: { children: React.ReactNode }) {
   return (
-    <div className="font-body text-[10px] font-medium uppercase tracking-[0.12em] text-[hsl(var(--term-t3))] mb-2">
+    <div className="font-body text-[11px] font-medium uppercase tracking-[0.12em] text-[hsl(var(--term-t3))] mb-2">
       {children}
     </div>
   );
@@ -63,7 +63,7 @@ function BlockLabel({ children }: { children: React.ReactNode }) {
 
 function Code({ children }: { children: React.ReactNode }) {
   return (
-    <pre className="font-mono text-[12.5px] leading-[1.8] whitespace-pre-wrap break-words border border-[hsl(var(--term-border))] bg-[hsl(var(--term-block))] px-4 py-3 overflow-x-auto">
+    <pre className="font-mono text-[14px] leading-[1.8] whitespace-pre-wrap break-words border border-[hsl(var(--term-border))] bg-[hsl(var(--term-block))] px-4 py-3 overflow-x-auto">
       {children}
     </pre>
   );
@@ -77,14 +77,14 @@ export function McCliDemo() {
   const fullJson = active ? JSON.stringify(active.res, null, 2) : "";
 
   return (
-    <div className="mc-terminal border border-border/70 bg-background grid grid-cols-1 grid-rows-[auto_minmax(0,1fr)] md:grid-rows-1 md:grid-cols-[228px_1fr] h-[540px]">
+    <div className="mc-terminal border border-border/70 bg-background grid grid-cols-1 grid-rows-[auto_minmax(0,1fr)] md:grid-rows-1 md:grid-cols-[260px_1fr] h-[540px]">
       {/* Scenario list */}
       <nav
         aria-label="CLI scenarios"
         className="border-b md:border-b-0 md:border-r border-border/70 bg-[hsl(var(--surface))] flex flex-col min-w-0 min-h-0 shrink-0"
       >
         <div className="hidden md:flex items-center px-4 py-2.5 border-b border-border/70">
-          <span className="font-mono text-[11px] text-muted-foreground truncate">
+          <span className="font-mono text-xs text-muted-foreground truncate">
             CLI
           </span>
         </div>
@@ -97,7 +97,7 @@ export function McCliDemo() {
         <div className="hidden md:flex md:flex-col py-3 md:overflow-y-auto md:flex-1 md:min-h-0">
           {groups.map((group) => (
             <div key={group} className="flex flex-col items-stretch shrink-0">
-              <div className="font-body text-[10px] font-medium uppercase tracking-[0.14em] text-muted-foreground px-3 pt-3 pb-1">
+              <div className="font-body text-[11px] font-medium uppercase tracking-[0.14em] text-muted-foreground px-3 pt-3 pb-1">
                 {group}
               </div>
               {scenarios
@@ -124,7 +124,7 @@ export function McCliDemo() {
                         }`}
                       />
                       <span
-                          className={`font-body text-xs leading-snug ${
+                          className={`font-body text-sm leading-snug ${
                             isActive ? "text-foreground" : "text-muted-foreground"
                           }`}
                         >
@@ -144,14 +144,14 @@ export function McCliDemo() {
           <span className="h-2.5 w-2.5 rounded-full bg-[#ff5f57]" />
           <span className="h-2.5 w-2.5 rounded-full bg-[#ffbd2e]" />
           <span className="h-2.5 w-2.5 rounded-full bg-[#28c840]" />
-          <span className="font-mono text-[11px] text-[hsl(var(--term-t3))] ml-1.5 truncate">
+          <span className="font-mono text-xs text-[hsl(var(--term-t3))] ml-1.5 truncate">
             {active ? `montecarlo — ${active.title.toLowerCase()}` : "montecarlo"}
           </span>
         </div>
 
         <div className="p-5 md:p-6 flex-1 min-h-0 overflow-y-auto min-w-0">
           {!active ? (
-            <div className="flex h-full flex-col items-center justify-center gap-1 text-center font-body text-xs text-[hsl(var(--term-t3))]">
+            <div className="flex h-full flex-col items-center justify-center gap-1 text-center font-body text-sm text-[hsl(var(--term-t3))]">
               <span className="text-lg md:hidden">↑</span>
               <span className="hidden text-lg md:inline">←</span>
               <span className="md:hidden">Pick a scenario above</span>
@@ -201,10 +201,10 @@ export function McCliDemo() {
               <div>
                 <BlockLabel>Response</BlockLabel>
                 <div className="flex items-center gap-2 mb-2">
-                  <span className="font-mono text-[10.5px] font-medium px-2 py-0.5 text-[hsl(var(--term-get))] bg-[hsl(var(--term-get)/0.12)]">
+                  <span className="font-mono text-[11px] font-medium px-2 py-0.5 text-[hsl(var(--term-get))] bg-[hsl(var(--term-get)/0.12)]">
                     200 OK
                   </span>
-                  <span className="font-mono text-[11px] text-[hsl(var(--term-t3))]">
+                  <span className="font-mono text-xs text-[hsl(var(--term-t3))]">
                     application/json
                   </span>
                 </div>
@@ -241,7 +241,7 @@ function MobileScenarioPicker({
       value={activeId ?? ""}
       onValueChange={(value) => onChange(value || null)}
     >
-      <SelectTrigger className="w-full h-9 border border-border/70 bg-background rounded px-3 py-2 font-body text-xs text-foreground focus:ring-0 focus:ring-offset-0 focus:border-border/70">
+      <SelectTrigger className="w-full h-9 border border-border/70 bg-background rounded px-3 py-2 font-body text-sm text-foreground focus:ring-0 focus:ring-offset-0 focus:border-border/70">
         <SelectValue placeholder="CLI — pick a scenario">
           {active ? `montecarlo — ${active.title.toLowerCase()}` : "CLI — pick a scenario"}
         </SelectValue>
@@ -250,14 +250,14 @@ function MobileScenarioPicker({
         <SelectGroup>
           <SelectItem
             value=""
-            className="font-body text-xs text-muted-foreground focus:bg-muted focus:text-foreground rounded-sm"
+            className="font-body text-sm text-muted-foreground focus:bg-muted focus:text-foreground rounded-sm"
           >
             CLI — pick a scenario
           </SelectItem>
         </SelectGroup>
         {groups.map((group) => (
           <SelectGroup key={group}>
-            <SelectLabel className="font-body text-[10px] font-medium uppercase tracking-[0.12em] text-muted-foreground bg-muted/40 pl-2 pr-3 py-1.5">
+            <SelectLabel className="font-body text-[11px] font-medium uppercase tracking-[0.12em] text-muted-foreground bg-muted/40 pl-2 pr-3 py-1.5">
               {group}
             </SelectLabel>
                 {scenarios
@@ -266,7 +266,7 @@ function MobileScenarioPicker({
                     <SelectItem
                       key={s.id}
                       value={s.id}
-                      className="font-body text-xs text-foreground focus:surface-tint-hover focus:text-foreground rounded py-2"
+                      className="font-body text-sm text-foreground focus:surface-tint-hover focus:text-foreground rounded py-2"
                     >
                       {s.name}
                     </SelectItem>
