@@ -60,7 +60,7 @@ export function CollectionTable<T extends Row>({
             {columns.map((column) => (
               <TableHead
                 key={column.key}
-                className={`font-medium text-muted-foreground ${column.key === "year" ? "w-16" : ""}`}
+                className="font-medium text-muted-foreground"
               >
                 <button
                   type="button"
