@@ -151,7 +151,7 @@ export function McCliDemo() {
 
         <div className="p-5 md:p-6 flex-1 min-h-0 overflow-y-auto min-w-0">
           {!active ? (
-            <div className="flex h-full flex-col items-center justify-center gap-1 text-center font-body text-xs text-[hsl(var(--term-t3))]">
+            <div className="flex h-full flex-col items-center justify-center gap-1 text-center font-body text-sm text-[hsl(var(--term-t3))]">
               <span className="text-lg md:hidden">↑</span>
               <span className="hidden text-lg md:inline">←</span>
               <span className="md:hidden">Pick a scenario above</span>
@@ -201,10 +201,10 @@ export function McCliDemo() {
               <div>
                 <BlockLabel>Response</BlockLabel>
                 <div className="flex items-center gap-2 mb-2">
-                  <span className="font-mono text-[10.5px] font-medium px-2 py-0.5 text-[hsl(var(--term-get))] bg-[hsl(var(--term-get)/0.12)]">
+                  <span className="font-mono text-[11px] font-medium px-2 py-0.5 text-[hsl(var(--term-get))] bg-[hsl(var(--term-get)/0.12)]">
                     200 OK
                   </span>
-                  <span className="font-mono text-[11px] text-[hsl(var(--term-t3))]">
+                  <span className="font-mono text-xs text-[hsl(var(--term-t3))]">
                     application/json
                   </span>
                 </div>
