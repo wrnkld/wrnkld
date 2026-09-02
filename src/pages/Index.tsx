@@ -250,12 +250,13 @@ function ListColumn({
         </Link>
       </div>
       {rows.map((row) => (
-        <Row key={row.id} className="flex items-baseline gap-4">
-          <span className="flex-1 text-foreground">{row.primary}</span>
+        <Row key={row.id} className="grid grid-cols-[1fr_1fr_4rem] gap-4 items-baseline">
+          <span className="text-foreground">{row.primary}</span>
           <span className="text-muted-foreground">{row.secondary}</span>
-          <span className="text-muted-foreground w-12">{row.meta}</span>
+          <span className="text-muted-foreground">{row.meta}</span>
         </Row>
       ))}
+
     </div>
   );
 }
