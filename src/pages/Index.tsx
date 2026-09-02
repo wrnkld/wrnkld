@@ -149,7 +149,7 @@ export default function Index() {
     <TooltipProvider delayDuration={200}>
     <div className="relative z-10 min-h-screen text-foreground">
       <div className="max-w-6xl mx-auto px-6 py-16 md:py-24">
-        <header className="border-t border-b border-border/70">
+        <header>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
             <div className="p-5">
               <h1 className="text-2xl font-medium">Matthew Stevens</h1>
@@ -208,13 +208,12 @@ export default function Index() {
         </header>
 
         <main>
-          <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 border-b border-border/70">
+          <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
             {items.map((item) => (
               <motion.li
                 key={item.title}
                 layout
                 transition={{ type: "spring", stiffness: 400, damping: 32 }}
-                className="border-b border-border/70 last:border-b-0 sm:[&:nth-last-child(-n+2)]:border-b-0 lg:[&:nth-last-child(-n+3)]:border-b-0"
               >
                 <Card item={item} />
               </motion.li>
