@@ -54,7 +54,7 @@ export function CollectionTable<T extends Row>({
 
   return (
     <div className="full-bleed overflow-hidden table-gutter">
-      <Table className="w-full table-fixed">
+      <Table className="w-full">
         <TableHeader>
           <TableRow className="border-b border-border/70 hover:bg-transparent">
             {columns.map((column) => (
