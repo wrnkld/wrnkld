@@ -8,6 +8,7 @@ import { ToolsBody } from "@/content/words/ToolsBody";
 import { VibesBody } from "@/content/words/VibesBody";
 import { SleevesBody } from "@/content/words/SleevesBody";
 import { ClaudeBody } from "@/content/words/ClaudeBody";
+import { Row } from "@/components/Row";
 import {
   Table,
   TableBody,
@@ -83,17 +84,6 @@ function Callout({
     <a href={href} target="_blank" rel="noopener noreferrer">
       {inner}
     </a>
-  );
-}
-
-/** One list row, styled to match the tables on the detail pages. */
-function Row({ className = "", children }: { className?: string; children: React.ReactNode }) {
-  return (
-    <div
-      className={`px-5 py-4 text-sm border-b border-border/70 transition-colors surface-tint-hover ${className}`}
-    >
-      {children}
-    </div>
   );
 }
 
