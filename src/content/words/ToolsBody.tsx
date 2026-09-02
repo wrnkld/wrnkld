@@ -72,7 +72,7 @@ export function ToolsBody() {
         </p>
 
         <p>
-          So, can AI help do that? I'll get into that in <Link to="/designai/vibes" className="text-foreground hover:text-muted-foreground transition-colors">Pt 2</Link>.
+          So, can AI help do that? I'll get into that in Pt 2.
         </p>
 
         <hr className="-mx-5 border-t border-border/70" />
