@@ -8,6 +8,7 @@ import { ToolsBody } from "@/content/words/ToolsBody";
 import { VibesBody } from "@/content/words/VibesBody";
 import { SleevesBody } from "@/content/words/SleevesBody";
 import { ClaudeBody } from "@/content/words/ClaudeBody";
+import { Row } from "@/components/Row";
 import {
   Table,
   TableBody,
