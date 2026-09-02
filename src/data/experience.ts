@@ -7,20 +7,6 @@ export interface Job {
 
 export const experience: Job[] = [
   {
-    company: "StudyDrop",
-    role: "Product Designer & Builder",
-    years: "2026 - Present",
-    description:
-      "Launched a UX research platform for surveys, card sorting, tree testing, and first-click testing.",
-  },
-  {
-    company: "Sleeves",
-    role: "Product Designer & Builder",
-    years: "2025 - Present",
-    description:
-      "Built and shipped a social music app using Lovable, Claude Code, ChatGPT, React, Supabase, GitHub, and Vercel.",
-  },
-  {
     company: "Monte Carlo AI",
     role: "Head of Design",
     years: "2022 - Present",
