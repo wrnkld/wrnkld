@@ -1,5 +1,6 @@
 import { ReactNode } from "react";
 import { Link } from "react-router-dom";
+import { ArrowLeft } from "lucide-react";
 
 interface DetailLayoutProps {
   title: string;
@@ -28,9 +29,11 @@ export function DetailLayout({ title, children }: DetailLayoutProps) {
           <div className="px-5 py-8">
             <Link
               to="/"
-              className="text-lg font-medium tracking-tight hover:text-muted-foreground transition-colors"
+              className="inline-flex items-center gap-2 text-lg font-medium tracking-tight hover:text-muted-foreground transition-colors"
+              aria-label="Back to home"
             >
-              Back
+              <ArrowLeft className="w-5 h-5" />
+              <span>Back</span>
             </Link>
           </div>
         </div>

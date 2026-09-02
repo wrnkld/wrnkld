@@ -135,9 +135,7 @@ export default function MonteCarlo() {
         Explored a new way for people and AI agents to interact directly with Monte Carlo's APIs—inspecting assets, investigating incidents, and taking action outside the main application.
       </p>
 
-      <div className="full-bleed">
-        <McCliDemo />
-      </div>
+      <McCliDemo />
 
       <h2 className="font-display text-lg font-medium text-foreground">Role</h2>
       <p className="font-body text-base text-muted-foreground leading-relaxed">
