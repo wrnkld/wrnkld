@@ -274,7 +274,7 @@ function WordRow({
 }: {
   title: string;
   note: string;
-  Body: () => JSX.Element;
+  Body: () => React.ReactElement;
 }) {
   const [open, setOpen] = useState(false);
   return (
