@@ -30,7 +30,7 @@ function Band({
           <p className="font-mono text-[10px] uppercase tracking-[0.18em] text-muted-foreground mb-4">
             {kicker}
           </p>
-          <h2 className="text-2xl md:text-4xl font-medium leading-tight tracking-tight max-w-3xl">
+          <h2 className="text-2xl md:text-3xl font-medium leading-tight tracking-tight max-w-3xl">
             {headline}
           </h2>
         </div>
@@ -66,11 +66,11 @@ function Callout({
         <p className="font-mono text-[10px] uppercase tracking-[0.18em] text-muted-foreground mb-2">
           {eyebrow}
         </p>
-        <h3 className="text-lg md:text-xl font-medium tracking-tight inline-flex items-center gap-1">
+        <h3 className="text-lg font-medium tracking-tight inline-flex items-center gap-1">
           {title}
           <ArrowUpRight className="h-4 w-4 opacity-0 -translate-x-1 transition-all duration-200 group-hover:opacity-100 group-hover:translate-x-0" />
         </h3>
-        <p className="font-body text-base text-muted-foreground mt-1 max-w-md">{blurb}</p>
+        <p className="text-sm text-muted-foreground mt-1 max-w-md">{blurb}</p>
       </div>
     </div>
   );
@@ -79,6 +79,17 @@ function Callout({
     <a href={href} target="_blank" rel="noopener noreferrer">
       {inner}
     </a>
+  );
+}
+
+/** One list row, styled to match the tables on the detail pages. */
+function Row({ className = "", children }: { className?: string; children: React.ReactNode }) {
+  return (
+    <div
+      className={`px-5 py-4 text-sm border-b border-border/70 transition-colors surface-tint-hover ${className}`}
+    >
+      {children}
+    </div>
   );
 }
 
@@ -103,11 +114,11 @@ export default function Index() {
       {/* header */}
       <div className="max-w-6xl mx-auto px-6 pt-16 md:pt-24">
         <div className="border-t border-b border-border/70">
-          <div className="px-5 py-5 flex items-baseline justify-between gap-4">
-            <span className="text-base font-medium">Matthew Stevens</span>
+          <div className="px-5 py-4 flex items-baseline justify-between gap-4">
+            <span className="text-sm font-medium">Matthew Stevens</span>
             <a
               href="mailto:hello@wrnkld.tv"
-              className="text-base text-muted-foreground hover:text-foreground transition-colors"
+              className="text-sm text-muted-foreground hover:text-foreground transition-colors"
             >
               hello@wrnkld.tv
             </a>
@@ -163,20 +174,17 @@ export default function Index() {
             ...experience,
             { company: education.company, role: education.degree, years: "" },
           ].map((j) => (
-            <div
-              key={j.company}
-              className="px-5 py-3 border-b border-border/70 transition-colors surface-tint-hover flex flex-col gap-1 lg:grid lg:grid-cols-3 lg:gap-8"
-            >
-              <span className="font-body text-base text-foreground">{j.company}</span>
-              <span className="font-body text-base text-muted-foreground">{j.role}</span>
-              <span className="font-body text-base text-muted-foreground">{j.years}</span>
-            </div>
+            <Row key={j.company} className="flex flex-col gap-1 lg:grid lg:grid-cols-3 lg:gap-8">
+              <span className="text-foreground">{j.company}</span>
+              <span className="text-muted-foreground">{j.role}</span>
+              <span className="text-muted-foreground">{j.years}</span>
+            </Row>
           ))}
         </div>
         <div className="px-5 pt-4">
           <Link
             to="/about/experience"
-            className="inline-flex items-center gap-1 font-body text-base text-muted-foreground hover:text-foreground transition-colors"
+            className="inline-flex items-center gap-1 text-sm text-muted-foreground hover:text-foreground transition-colors"
           >
             Full experience <ArrowUpRight className="h-4 w-4" />
           </Link>
@@ -212,7 +220,7 @@ export default function Index() {
         <div className="px-5 py-14 flex items-baseline justify-between gap-4">
           <a
             href="mailto:hello@wrnkld.tv"
-            className="text-xl md:text-2xl font-medium tracking-tight hover:text-muted-foreground transition-colors"
+            className="text-lg font-medium tracking-tight hover:text-muted-foreground transition-colors"
           >
             hello@wrnkld.tv
           </a>
@@ -235,21 +243,18 @@ function ListColumn({
 }) {
   return (
     <div>
-      <div className="px-5 py-3 flex items-baseline justify-between gap-4">
-        <h3 className="font-body text-base font-medium">{heading}</h3>
-        <Link to={to} className="font-body text-base text-muted-foreground hover:text-foreground transition-colors">
+      <div className="px-5 py-4 flex items-baseline justify-between gap-4 text-sm">
+        <h3 className="font-medium">{heading}</h3>
+        <Link to={to} className="text-muted-foreground hover:text-foreground transition-colors">
           {linkLabel} →
         </Link>
       </div>
       {rows.map((row) => (
-        <div
-          key={row.id}
-          className="px-5 py-3 border-b border-border/70 transition-colors surface-tint-hover flex items-baseline gap-4"
-        >
-          <span className="flex-1 font-body text-base text-foreground">{row.primary}</span>
-          <span className="font-body text-base text-muted-foreground">{row.secondary}</span>
-          <span className="font-body text-base text-muted-foreground w-12">{row.meta}</span>
-        </div>
+        <Row key={row.id} className="flex items-baseline gap-4">
+          <span className="flex-1 text-foreground">{row.primary}</span>
+          <span className="text-muted-foreground">{row.secondary}</span>
+          <span className="text-muted-foreground w-12">{row.meta}</span>
+        </Row>
       ))}
     </div>
   );
@@ -269,10 +274,10 @@ function WordRow({
     <div className="border-b border-border/70">
       <button
         onClick={() => setOpen((o) => !o)}
-        className="w-full text-left px-5 py-3 flex items-baseline gap-4 transition-colors surface-tint-hover"
+        className="w-full text-left px-5 py-4 text-sm flex items-baseline gap-4 transition-colors surface-tint-hover"
       >
-        <span className="font-body text-base text-foreground">{title}</span>
-        <span className="flex-1 font-body text-base text-muted-foreground">{note}</span>
+        <span className="text-foreground">{title}</span>
+        <span className="flex-1 text-muted-foreground">{note}</span>
         <span className="text-muted-foreground shrink-0">
           {open ? <Minus className="h-4 w-4" /> : <Plus className="h-4 w-4" />}
         </span>
