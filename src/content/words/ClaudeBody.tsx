@@ -1,9 +1,4 @@
 
-
-function FootnoteRef({ number }: { number: number }) {
-  return <sup className="text-muted-foreground">{number}</sup>;
-}
-
 export function ClaudeBody() {
   return (
     <article className="font-body text-base text-muted-foreground leading-relaxed space-y-6">
@@ -17,7 +12,7 @@ export function ClaudeBody() {
           what's happening for me.
         </p>
 
-        <p>I use Lovable, and I am deep in Claude Code.<FootnoteRef number={1} /></p>
+        <p>I use Lovable, and I am deep in Claude Code.</p>
 
         <p>
           At my current job, I know our front-end repo (well enough to be dangerous)
@@ -37,7 +32,7 @@ export function ClaudeBody() {
 
         <p>
           Which brings me to the part where I might be participating in my own
-          demise, and feeling very conflicted.<FootnoteRef number={2} />
+          demise, and feeling very conflicted.
         </p>
 
         <p>
@@ -53,12 +48,6 @@ export function ClaudeBody() {
         </p>
 
         <p>Sorry if this is, in fact, a think piece.</p>
-
-        <hr className="-mx-5 border-t border-border/70" />
-        <div className="text-sm text-muted-foreground space-y-2">
-          <p><sup>1</sup> I'm no longer using Cursor, by the way. Found an IDE called Zed that I really like.</p>
-          <p><sup>2</sup> I like to call AI agents "dummy."</p>
-        </div>
       </article>
   );
 }
