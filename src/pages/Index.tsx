@@ -95,10 +95,10 @@ function Row({ className = "", children }: { className?: string; children: React
 
 
 const WORDS = [
-  { title: "Pt 1 → Tools", note: "TMI", Body: ToolsBody },
-  { title: "Pt 2 → Vibes", note: "Prompts v boxes", Body: VibesBody },
-  { title: "Pt 3 → Sleeves", note: "I built an app", Body: SleevesBody },
-  { title: "Pt 4 → Claude", note: "Working with agents", Body: ClaudeBody },
+  { title: "Pt 1 → Tools", note: "TMI", date: "Jan 2026", Body: ToolsBody },
+  { title: "Pt 2 → Vibes", note: "Prompts v boxes", date: "Jan 2026", Body: VibesBody },
+  { title: "Pt 3 → Sleeves", note: "I built an app", date: "Jan 2026", Body: SleevesBody },
+  { title: "Pt 4 → Claude", note: "Working with agents", date: "Jan 2026", Body: ClaudeBody },
 ];
 
 /* ---------- page ---------- */
@@ -206,7 +206,7 @@ export default function Index() {
         </div>
       </Band>
 
-      <Band kicker="05 — Words" headline="I wrote a few things about AI and design.">
+      <Band kicker="05 — Words" headline="I worked through some things with AI and design.">
         <div className="-mx-5 border-t border-border/70">
           {WORDS.map((w) => (
             <WordRow key={w.title} {...w} />
@@ -266,10 +266,12 @@ function ListColumn({
 function WordRow({
   title,
   note,
+  date,
   Body,
 }: {
   title: string;
   note: string;
+  date: string;
   Body: () => React.ReactElement;
 }) {
   const [open, setOpen] = useState(false);
@@ -277,11 +279,12 @@ function WordRow({
     <div className="border-b border-border/70">
       <button
         onClick={() => setOpen((o) => !o)}
-        className="w-full text-left px-5 py-4 text-sm flex items-baseline gap-4 transition-colors surface-tint-hover"
+        className="w-full text-left px-5 py-4 text-sm grid grid-cols-[1fr_1fr_6rem] gap-4 items-baseline transition-colors surface-tint-hover"
       >
         <span className="text-foreground">{title}</span>
-        <span className="flex-1 text-muted-foreground">{note}</span>
-        <span className="text-muted-foreground shrink-0">
+        <span className="text-muted-foreground">{note}</span>
+        <span className="text-muted-foreground flex items-baseline justify-between gap-1">
+          {date}
           {open ? <Minus className="h-4 w-4" /> : <Plus className="h-4 w-4" />}
         </span>
       </button>
