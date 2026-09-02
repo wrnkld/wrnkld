@@ -189,13 +189,13 @@ export default function Index() {
           <ListColumn
             heading="Books"
             to="/about/books"
-            linkLabel={`View all ${books.length} books`}
+            linkLabel={`All ${books.length} books`}
             rows={recentBooks.map((b) => ({ id: b.id, primary: b.title, secondary: b.author, meta: b.year }))}
           />
           <ListColumn
             heading="Records"
             to="/about/records"
-            linkLabel={`View all ${records.length} records`}
+            linkLabel={`All ${records.length} records`}
             rows={recentRecords.map((r) => ({ id: r.id, primary: r.album, secondary: r.artist, meta: r.year }))}
           />
         </div>
