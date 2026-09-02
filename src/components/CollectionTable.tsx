@@ -26,37 +26,27 @@ export function CollectionTable<T extends Row>({
     <div className="full-bleed overflow-hidden table-gutter">
       <Table>
         <TableBody>
-          {rows.length === 0 ? (
-            <TableRow>
-              <TableCell colSpan={columns.length} className="text-center text-muted-foreground py-8">
-                No results
-              </TableCell>
+          {items.map((row) => (
+            <TableRow
+              key={row.id}
+              className="border-b border-border/70 transition-colors surface-tint-hover"
+            >
+              {columns.map((column) => (
+                <TableCell
+                  key={column.key}
+                  className={
+                    row.recommended
+                      ? "text-recommended"
+                      : column.tone === "primary"
+                        ? "text-foreground"
+                        : "text-muted-foreground"
+                  }
+                >
+                  {String(row[column.key])}
+                </TableCell>
+              ))}
             </TableRow>
-          ) : (
-            rows.map((row) => (
-              <motion.tr
-                key={row.id}
-                layout
-                transition={{ duration: 0.15 }}
-                className="border-b border-border/70 transition-colors surface-tint-hover"
-              >
-                {columns.map((column) => (
-                  <TableCell
-                    key={column.key}
-                    className={
-                      row.recommended
-                        ? "text-recommended"
-                        : column.tone === "primary"
-                          ? "text-foreground"
-                          : "text-muted-foreground"
-                    }
-                  >
-                    {String(row[column.key])}
-                  </TableCell>
-                ))}
-              </motion.tr>
-            ))
-          )}
+          ))}
         </TableBody>
       </Table>
     </div>
