@@ -55,12 +55,12 @@ export function CollectionTable<T extends Row>({
         <TableHeader>
           <TableRow className="border-b border-border/70 hover:bg-transparent">
             {columns.map((column) => (
-              <TableHead key={column.key} className="font-medium text-muted-foreground p-0">
+              <TableHead key={column.key} className="font-medium text-muted-foreground">
                 <button
                   type="button"
                   onClick={() => handleSort(column.key)}
                   aria-label={`Sort by ${column.label}`}
-                  className="flex h-12 w-full items-center gap-1.5 px-4 text-left hover:text-foreground transition-colors duration-200"
+                  className="flex w-full items-center gap-1.5 text-left hover:text-foreground transition-colors duration-200"
                 >
                   {column.label}
                   {sortKey === column.key ? (
