@@ -28,7 +28,7 @@ function Band({
           <p className="font-mono text-[10px] uppercase tracking-[0.18em] text-muted-foreground mb-4">
             {kicker}
           </p>
-          <h2 className="text-xl md:text-2xl font-medium leading-tight tracking-tight max-w-3xl">
+          <h2 className="text-2xl md:text-3xl font-medium leading-tight tracking-tight max-w-3xl">
             {headline}
           </h2>
         </div>
