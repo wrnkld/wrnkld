@@ -9,8 +9,6 @@ import { VibesBody } from "@/content/words/VibesBody";
 import { SleevesBody } from "@/content/words/SleevesBody";
 import { ClaudeBody } from "@/content/words/ClaudeBody";
 
-import mcPerfMon from "@/assets/montecarlo/mcd-perf-mon.png";
-import taniumThreatAlerts from "@/assets/tanium/tanium-threat-alerts.png";
 
 /* ---------- shared bits ---------- */
 
