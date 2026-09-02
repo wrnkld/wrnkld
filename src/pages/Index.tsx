@@ -12,8 +12,6 @@ import {
   Table,
   TableBody,
   TableCell,
-  TableHead,
-  TableHeader,
   TableRow,
 } from "@/components/ui/table";
 
@@ -251,13 +249,6 @@ function ListColumn({
       <h3 className="text-lg font-medium text-foreground mb-4">{heading}</h3>
       <div className="-mx-5 border-y border-border/70 overflow-hidden table-gutter">
         <Table className="table-fixed">
-          <TableHeader>
-            <TableRow className="surface-tint-hover border-b-border/70">
-              <TableHead className="w-1/3">{heading === "Books" ? "Title" : "Album"}</TableHead>
-              <TableHead className="w-1/3">{heading === "Books" ? "Author" : "Artist"}</TableHead>
-              <TableHead className="w-1/3">Year</TableHead>
-            </TableRow>
-          </TableHeader>
           <TableBody>
             {rows.map((row) => (
               <TableRow
