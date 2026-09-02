@@ -147,7 +147,7 @@ export default function Index() {
 
       <Band
         kicker="02 — Side projects"
-        headline="Two products I designed, built, and shipped on my own."
+        headline="Products I designed, built, and shipped."
       >
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-8">
           <Callout
