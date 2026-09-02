@@ -4,7 +4,7 @@ import { experience, education } from "@/data/experience";
 
 export default function ExperiencePage() {
   return (
-    <DetailLayout title="Experience" subtitle="About">
+    <DetailLayout title="Experience">
       <div className="-mx-5 border-t border-border/70">
         {experience.map((job) => (
           <Row
