@@ -194,15 +194,16 @@ export default function Index() {
       <Band kicker="04 — Lists" headline="I like making lists.">
         <div className="-mx-5 border-t border-border/70">
           <ListColumn
-            heading="Recent books"
+            heading="Books"
             to="/about/books"
-            linkLabel={`All ${books.length} books`}
+            linkLabel={`View all ${books.length} books`}
             rows={recentBooks.map((b) => ({ id: b.id, primary: b.title, secondary: b.author, meta: b.year }))}
           />
+          <div className="border-t border-border/70" />
           <ListColumn
-            heading="Recent records"
+            heading="Records"
             to="/about/records"
-            linkLabel={`All ${records.length} records`}
+            linkLabel={`View all ${records.length} records`}
             rows={recentRecords.map((r) => ({ id: r.id, primary: r.album, secondary: r.artist, meta: r.year }))}
           />
         </div>
@@ -243,11 +244,8 @@ function ListColumn({
 }) {
   return (
     <div>
-      <div className="px-5 py-4 flex items-baseline justify-between gap-4 text-sm">
+      <div className="px-5 py-4 text-sm">
         <h3 className="font-medium">{heading}</h3>
-        <Link to={to} className="text-muted-foreground hover:text-foreground transition-colors">
-          {linkLabel} →
-        </Link>
       </div>
       {rows.map((row) => (
         <Row key={row.id} className="grid grid-cols-[1fr_1fr_4rem] gap-4 items-baseline">
@@ -256,7 +254,14 @@ function ListColumn({
           <span className="text-muted-foreground">{row.meta}</span>
         </Row>
       ))}
-
+      <div className="px-5 pt-4">
+        <Link
+          to={to}
+          className="inline-flex items-center gap-1 text-sm text-muted-foreground hover:text-foreground transition-colors"
+        >
+          {linkLabel} <ArrowUpRight className="h-4 w-4" />
+        </Link>
+      </div>
     </div>
   );
 }
