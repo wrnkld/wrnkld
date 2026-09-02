@@ -2,6 +2,8 @@ import {
   Table,
   TableBody,
   TableCell,
+  TableHead,
+  TableHeader,
   TableRow,
 } from "@/components/ui/table";
 
@@ -25,6 +27,15 @@ export function CollectionTable<T extends Row>({
   return (
     <div className="full-bleed overflow-hidden table-gutter">
       <Table>
+        <TableHeader>
+          <TableRow className="border-b border-border/70 hover:bg-transparent">
+            {columns.map((column) => (
+              <TableHead key={column.key} className="text-muted-foreground">
+                {column.label}
+              </TableHead>
+            ))}
+          </TableRow>
+        </TableHeader>
         <TableBody>
           {items.map((row) => (
             <TableRow
