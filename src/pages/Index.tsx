@@ -30,7 +30,7 @@ function Band({
           <p className="font-mono text-[10px] uppercase tracking-[0.18em] text-muted-foreground mb-4">
             {kicker}
           </p>
-          <h2 className="text-2xl md:text-3xl font-medium leading-tight tracking-tight max-w-3xl">
+          <h2 className="text-xl md:text-2xl font-medium leading-tight tracking-tight max-w-3xl">
             {headline}
           </h2>
         </div>
@@ -168,7 +168,7 @@ export default function Index() {
         </div>
       </Band>
 
-      <Band kicker="03 — Experience" headline="Twenty years of enterprise software.">
+      <Band kicker="03 — Experience" headline="Designing complex enterprise software.">
         <div className="-mx-5 border-t border-border/70">
           {[
             ...experience,
