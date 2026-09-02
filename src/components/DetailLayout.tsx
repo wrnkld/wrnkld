@@ -32,9 +32,9 @@ export function DetailLayout({ title, subtitle, children }: DetailLayoutProps) {
 
   return (
     <div className="relative z-10 min-h-screen text-foreground">
-      <div className="max-w-6xl mx-auto px-6 pt-16 md:pt-24">
-        <header className="border-t border-b border-border/70 mb-8">
-          <div className="p-5">
+      <header className="border-b border-border/70 pt-16 md:pt-24">
+        <div className="max-w-6xl mx-auto px-6">
+          <div className="px-5 py-14 md:py-20">
             {subtitle && (
               <Link
                 to="/"
@@ -59,14 +59,14 @@ export function DetailLayout({ title, subtitle, children }: DetailLayoutProps) {
               {title}
             </h1>
           </div>
-        </header>
-      </div>
+        </div>
+      </header>
 
-      <main className="pb-8 space-y-8 animate-fade-in">{processed}</main>
+      <main className="py-14 md:py-20 space-y-8 animate-fade-in">{processed}</main>
 
-      <div className="max-w-6xl mx-auto px-6 pt-8 pb-16">
-        <footer className="border-t border-b border-border/70">
-          <div className="p-5">
+      <footer className="border-t border-border/70">
+        <div className="max-w-6xl mx-auto px-6">
+          <div className="px-5 py-14">
             <Link
               to="/"
               className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors"
