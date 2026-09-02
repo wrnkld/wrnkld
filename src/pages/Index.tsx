@@ -28,7 +28,7 @@ function Band({
           <p className="font-mono text-[10px] uppercase tracking-[0.18em] text-muted-foreground mb-4">
             {kicker}
           </p>
-          <h2 className="text-xl md:text-2xl font-medium leading-tight tracking-tight max-w-3xl">
+          <h2 className="text-2xl md:text-3xl font-medium leading-tight tracking-tight max-w-3xl">
             {headline}
           </h2>
         </div>
@@ -126,7 +126,7 @@ export default function Index() {
 
       <Band
         kicker="01 — Hello"
-        headline="Product design leader specializing in complex enterprise software. I lead teams while staying hands-on, working directly with customers and partnering with product and engineering to turn complex problems into simple, elegant solutions."
+        headline="Product design leader for complex software. I lead teams, stay hands-on, and work directly with customers to turn difficult problems into simple, elegant products."
       >
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-8">
           <Callout
@@ -138,7 +138,7 @@ export default function Index() {
           <Callout
             eyebrow="Case study"
             title="Tanium"
-            blurb="Endpoint security at scale. Threat Response and two launches."
+            blurb="Endpoint security at scale. Threat Response and new product launches."
             to="/work/tanium"
           />
         </div>
