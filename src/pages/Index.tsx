@@ -128,7 +128,7 @@ export default function Index() {
 
       <Band
         kicker="01 — Hello"
-        headline="Product design leader with 20 years in enterprise software. I talk to customers, run teams, and still ship."
+        headline="Product design leader specializing in complex enterprise software. I lead teams while staying hands-on, working directly with customers and partnering with product and engineering to turn complex problems into simple, elegant solutions."
       >
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-8">
           <Callout
