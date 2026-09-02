@@ -9,8 +9,6 @@ import { VibesBody } from "@/content/words/VibesBody";
 import { SleevesBody } from "@/content/words/SleevesBody";
 import { ClaudeBody } from "@/content/words/ClaudeBody";
 
-import mcPerfMon from "@/assets/montecarlo/mcd-perf-mon.png";
-import taniumThreatAlerts from "@/assets/tanium/tanium-threat-alerts.png";
 
 /* ---------- shared bits ---------- */
 
@@ -135,17 +133,16 @@ export default function Index() {
             eyebrow="Case study"
             title="Monte Carlo AI"
             blurb="Agent trust platform. Founding designer, now Head of Design."
-            media={mcPerfMon}
             to="/work/montecarlo"
           />
           <Callout
             eyebrow="Case study"
             title="Tanium"
             blurb="Endpoint security at scale. Threat Response and two launches."
-            media={taniumThreatAlerts}
             to="/work/tanium"
           />
         </div>
+
       </Band>
 
       <Band
