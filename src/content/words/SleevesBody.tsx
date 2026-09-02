@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+
 
 function FootnoteRef({ number }: { number: number }) {
   return <sup className="text-muted-foreground">{number}</sup>;
@@ -8,8 +8,8 @@ export function SleevesBody() {
   return (
     <article className="font-body text-base text-muted-foreground leading-relaxed space-y-6">
         <p>
-          You can't really quibble with <Link to="/designai/tools" className="text-foreground hover:text-muted-foreground transition-colors">Pt 1</Link> — it's basically my life story. You could 
-          nitpick <Link to="/designai/vibes" className="text-foreground hover:text-muted-foreground transition-colors">Pt 2</Link>, especially when I admit I haven't explored Figma Make. But Pt 3 
+          You can't really quibble with Pt 1 — it's basically my life story. You could 
+          nitpick Pt 2, especially when I admit I haven't explored Figma Make. But Pt 3 
           is different. It's where I'm deliberately pushing into new territory.
         </p>
         
@@ -25,7 +25,7 @@ export function SleevesBody() {
         
         <h2 className="font-display text-lg font-medium text-foreground">Lovable</h2>
         <p>
-          As I mentioned in <Link to="/designai/vibes" className="text-foreground hover:text-muted-foreground transition-colors">Pt 2</Link>, I tried almost every AI app builder and ended up with Lovable. 
+          As I mentioned in Pt 2, I tried almost every AI app builder and ended up with Lovable. 
           It's hard to overstate how much better it is than it was a few months ago. I burned through 
           credits and spent about $200 total, but with loose wireframes, decent prompts, and a lot of 
           help from ChatGPT, I had something working in a couple of weeks.

@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+
 
 function FootnoteRef({ number }: { number: number }) {
   return <sup className="text-muted-foreground">{number}</sup>;
@@ -8,7 +8,7 @@ export function VibesBody() {
   return (
     <article className="font-body text-base text-muted-foreground leading-relaxed space-y-6">
         <p>
-          <Link to="/designai/tools" className="text-foreground hover:text-muted-foreground transition-colors">Pt 1</Link> was probably too much information about my history with design 
+          Pt 1 was probably too much information about my history with design 
           tools. Pt 2 is simpler: it's about all the new stuff.
         </p>
 
@@ -56,7 +56,7 @@ export function VibesBody() {
 
         <p>
           Whatever happens, I still wanted to try building something real 
-          from scratch—on my own, mistakes and all (<Link to="/designai/sleeves" className="text-foreground hover:text-muted-foreground transition-colors">Pt 3</Link> soon).
+          from scratch—on my own, mistakes and all (Pt 3 soon).
         </p>
 
         <hr className="-mx-5 border-t border-border/70" />
