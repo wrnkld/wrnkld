@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { ArrowUpRight, Plus, Minus } from "lucide-react";
+import { ArrowUpRight, ArrowRight, Plus, Minus } from "lucide-react";
 import { books } from "@/data/books";
 import { records } from "@/data/records";
 import { experience, education } from "@/data/experience";
@@ -79,7 +79,7 @@ function Callout({
         <p className="text-sm text-muted-foreground mt-1 max-w-md">{blurb}</p>
         {!isExternal && (
           <p className="mt-4 inline-flex items-center gap-1 text-sm text-muted-foreground group-hover:text-foreground transition-colors">
-            View case study <ArrowUpRight className="h-4 w-4" />
+            Case study <ArrowRight className="h-4 w-4" />
           </p>
         )}
       </div>
@@ -179,7 +179,7 @@ export default function Index() {
             to="/about/experience"
             className="inline-flex items-center gap-1 text-sm text-muted-foreground hover:text-foreground transition-colors"
           >
-            Full experience <ArrowUpRight className="h-4 w-4" />
+            Full experience <ArrowRight className="h-4 w-4" />
           </Link>
         </div>
       </Band>
@@ -189,13 +189,13 @@ export default function Index() {
           <ListColumn
             heading="Books"
             to="/about/books"
-            linkLabel={`View all ${books.length} books`}
+            linkLabel={`All ${books.length} books`}
             rows={recentBooks.map((b) => ({ id: b.id, primary: b.title, secondary: b.author, meta: b.year }))}
           />
           <ListColumn
             heading="Records"
             to="/about/records"
-            linkLabel={`View all ${records.length} records`}
+            linkLabel={`All ${records.length} records`}
             rows={recentRecords.map((r) => ({ id: r.id, primary: r.album, secondary: r.artist, meta: r.year }))}
           />
         </div>
@@ -259,7 +259,7 @@ function ListColumn({
           to={to}
           className="inline-flex items-center gap-1 text-sm text-muted-foreground hover:text-foreground transition-colors"
         >
-          {linkLabel} <ArrowUpRight className="h-4 w-4" />
+          {linkLabel} <ArrowRight className="h-4 w-4" />
         </Link>
       </div>
     </div>
