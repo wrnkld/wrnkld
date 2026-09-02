@@ -7525,16 +7525,9 @@ import { defineTool as defineTool4 } from "npm:@lovable.dev/mcp-js@0.22.2";
 import { z as z3 } from "npm:zod@^4.4.3";
 var WORK = [
   { title: "Monte Carlo", url: "https://wrnkld.lovable.app/work/montecarlo", note: "Data and AI observability" },
-  { title: "Tanium", url: "https://wrnkld.lovable.app/work/tanium", note: "Endpoint security at scale" },
-  { title: "SAS", url: "https://wrnkld.lovable.app/work/sas", note: "Enterprise analytics" },
-  { title: "Red Hat", url: "https://wrnkld.lovable.app/work/redhat", note: "Open source enterprise software" }
+  { title: "Tanium", url: "https://wrnkld.lovable.app/work/tanium", note: "Endpoint security at scale" }
 ];
-var WORDS = [
-  { title: "Pt 1 \u2192 Tools", url: "https://wrnkld.lovable.app/words/tools", note: "TMI" },
-  { title: "Pt 2 \u2192 Vibes", url: "https://wrnkld.lovable.app/words/vibes", note: "Prompts v Boxes" },
-  { title: "Pt 3 \u2192 Sleeves", url: "https://wrnkld.lovable.app/words/sleeves", note: "I built an app" },
-  { title: "Pt 4 \u2192 Claude", url: "https://wrnkld.lovable.app/words/claude", note: "Think piece #901" }
-];
+var WORDS = [];
 var SIDE = [
   { title: "StudyDrop", url: "https://studydrop.app", note: "UX research, without the friction" },
   { title: "Sleeves", url: "https://sleeves.app", note: "Track albums, make lists, follow friends" }

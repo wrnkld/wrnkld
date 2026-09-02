@@ -1,9 +1,4 @@
 
-
-function FootnoteRef({ number }: { number: number }) {
-  return <sup className="text-muted-foreground">{number}</sup>;
-}
-
 export function VibesBody() {
   return (
     <article className="font-body text-base text-muted-foreground leading-relaxed space-y-6">
@@ -14,7 +9,7 @@ export function VibesBody() {
 
         <p>
           Like most designers right now, I've been working with Bolt, v0, Lovable, 
-          Cursor, and the growing class of "describe it and it builds" tools.<FootnoteRef number={1} /> You 
+          Cursor, and the growing class of "describe it and it builds" tools. You 
           write prompts and a working interface appears. Taken together, they're 
           genuinely impressive. You're no longer drawing boxes to imply behavior—you're 
           shaping behavior directly.
@@ -38,7 +33,7 @@ export function VibesBody() {
           into Lovable—or any similar environment—you're implicitly committing to 
           rebuilding your app inside that tool. When you want to explore a new flow 
           or alternate idea, you need a foundation. The easiest foundation is whatever 
-          you built last. The more you prototype, the deeper you get.<FootnoteRef number={2} />
+          you built last. The more you prototype, the deeper you get.
         </p>
 
         <p>
@@ -50,7 +45,7 @@ export function VibesBody() {
         <ol className="list-decimal pl-6 space-y-2">
           <li>AI app builders (like Lovable) keep smoothing out Git, deploys, and real component libraries (Mantine, Material UI, Radix, Chakra).</li>
           <li>AI code editors (like Cursor) keep me away from the terminal. Bash, npm, nvm—things I do not understand and would like to continue not understanding.</li>
-          <li>The code keeps getting better.<FootnoteRef number={3} /></li>
+          <li>The code keeps getting better.</li>
           <li>Design, product, and engineering roles continue to evolve.</li>
         </ol>
 
@@ -58,13 +53,6 @@ export function VibesBody() {
           Whatever happens, I still wanted to try building something real 
           from scratch—on my own, mistakes and all (Pt 3 soon).
         </p>
-
-        <hr className="-mx-5 border-t border-border/70" />
-        <div className="text-sm text-muted-foreground space-y-2">
-          <p><sup>1</sup> Disclaimer: I have not yet dug deep on Figma Make or MCP</p>
-          <p><sup>2</sup> 💸 credits</p>
-          <p><sup>3</sup> Who am I to judge?</p>
-        </div>
       </article>
   );
 }
