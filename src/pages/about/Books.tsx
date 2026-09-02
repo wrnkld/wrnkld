@@ -12,7 +12,7 @@ const columns: Column<Book>[] = [
 
 export default function Books() {
   return (
-    <DetailLayout title="Books" subtitle="About">
+    <DetailLayout title="Books">
       <p className="font-body text-base text-muted-foreground">
         I started tracking the books I read. Recommended in pink.
       </p>

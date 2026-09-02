@@ -12,7 +12,7 @@ const columns: Column<Record>[] = [
 
 export default function Records() {
   return (
-    <DetailLayout title="Records" subtitle="About">
+    <DetailLayout title="Records">
       <p className="font-body text-base text-muted-foreground">
         A relatively exhaustive list of records I like. Updated often.
       </p>
