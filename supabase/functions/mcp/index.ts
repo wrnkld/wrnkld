@@ -2375,6 +2375,13 @@ var books = [
     author: "Ashton Politanoff",
     year: 2026,
     recommended: false
+  },
+  {
+    id: 345,
+    title: "The Imagined Life",
+    author: "Andrew Porter",
+    year: 2025,
+    recommended: false
   }
 ];
 
