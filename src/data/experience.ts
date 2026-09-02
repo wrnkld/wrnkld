@@ -75,9 +75,9 @@ export const experience: Job[] = [
   },
 ];
 
-export const education: Job = {
+/** Shown as the last row of the homepage list and as the Education block on the Experience page. */
+export const education = {
   company: "Georgetown",
-  role: "BA Psychology, Cum Laude",
-  years: "",
-  description: "Georgetown University",
+  school: "Georgetown University",
+  degree: "BA Psychology, Cum Laude",
 };
