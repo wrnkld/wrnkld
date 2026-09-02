@@ -193,7 +193,7 @@ export default function Preview() {
       </Band>
 
       <Band kicker="04 — Lists" headline="I like making lists.">
-        <div className="-mx-5 grid grid-cols-1 md:grid-cols-2">
+        <div className="-mx-5 border-t border-border/70">
           <ListColumn
             heading="Recent books"
             to="/about/books"
