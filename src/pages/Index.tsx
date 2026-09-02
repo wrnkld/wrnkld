@@ -95,10 +95,10 @@ function Row({ className = "", children }: { className?: string; children: React
 
 
 const WORDS = [
-  { title: "Pt 1 → Tools", note: "TMI", Body: ToolsBody },
-  { title: "Pt 2 → Vibes", note: "Prompts v boxes", Body: VibesBody },
-  { title: "Pt 3 → Sleeves", note: "I built an app", Body: SleevesBody },
-  { title: "Pt 4 → Claude", note: "Working with agents", Body: ClaudeBody },
+  { title: "Pt 1 → Tools", note: "TMI", date: "Jan 2026", Body: ToolsBody },
+  { title: "Pt 2 → Vibes", note: "Prompts v boxes", date: "Jan 2026", Body: VibesBody },
+  { title: "Pt 3 → Sleeves", note: "I built an app", date: "Jan 2026", Body: SleevesBody },
+  { title: "Pt 4 → Claude", note: "Working with agents", date: "Jan 2026", Body: ClaudeBody },
 ];
 
 /* ---------- page ---------- */
