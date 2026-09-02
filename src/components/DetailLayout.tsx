@@ -26,7 +26,7 @@ export function DetailLayout({ title, children }: DetailLayoutProps) {
 
       <footer className="border-t border-border/70">
         <div className="max-w-6xl mx-auto px-6">
-          <div className="px-5 py-8">
+          <div className="px-5 py-14">
             <Link
               to="/"
               className="inline-flex items-center gap-2 text-lg font-medium tracking-tight hover:text-muted-foreground transition-colors"
