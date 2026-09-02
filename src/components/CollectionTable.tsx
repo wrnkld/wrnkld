@@ -30,7 +30,7 @@ export function CollectionTable<T extends Row>({
         <TableHeader>
           <TableRow className="border-b border-border/70 hover:bg-transparent">
             {columns.map((column) => (
-              <TableHead key={column.key} className="text-muted-foreground">
+              <TableHead key={column.key} className="font-semibold text-muted-foreground">
                 {column.label}
               </TableHead>
             ))}

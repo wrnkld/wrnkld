@@ -9,22 +9,29 @@ export default function ExperiencePage() {
         {experience.map((job) => (
           <Row
             key={job.company}
-            className="flex flex-col gap-1 lg:grid lg:grid-cols-3 lg:gap-8"
+            noHover
+            className="grid grid-cols-1 md:grid-cols-[1fr_2fr] gap-1 md:gap-8"
           >
-            <span className="text-foreground">{job.company}</span>
-            <span className="text-muted-foreground">{job.role}</span>
-            <span className="text-muted-foreground">{job.years}</span>
-            {job.description && (
-              <p className="text-muted-foreground/80 leading-relaxed lg:col-start-2 lg:col-span-1">
-                {job.description}
-              </p>
-            )}
+            <div className="flex flex-col">
+              <span className="font-semibold text-foreground">{job.company}</span>
+              <span className="text-muted-foreground">{job.years}</span>
+            </div>
+            <div className="flex flex-col">
+              <span className="text-foreground">{job.role}</span>
+              {job.description && (
+                <p className="text-muted-foreground/80 leading-relaxed">
+                  {job.description}
+                </p>
+              )}
+            </div>
           </Row>
         ))}
-        <Row className="flex flex-col gap-1 lg:grid lg:grid-cols-3 lg:gap-8">
-          <span className="text-foreground">{education.school}</span>
-          <span className="text-muted-foreground">{education.degree}</span>
-          <span className="text-muted-foreground" />
+        <Row
+          noHover
+          className="grid grid-cols-1 md:grid-cols-[1fr_2fr] gap-1 md:gap-8"
+        >
+          <span className="font-semibold text-foreground">{education.school}</span>
+          <span className="text-foreground">{education.degree}</span>
         </Row>
       </div>
     </DetailLayout>
