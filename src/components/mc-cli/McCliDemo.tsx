@@ -76,7 +76,17 @@ export function McCliDemo() {
   const fullJson = JSON.stringify(active.res, null, 2);
 
   return (
-    <div className="mc-terminal">
+    <div className="mc-terminal space-y-3">
+      <Tabs value={activeId} onValueChange={(value) => setActiveId(value)}>
+        <TabsList className="h-9">
+          {scenarios.map((s) => (
+            <TabsTrigger key={s.id} value={s.id} className="text-sm">
+              {tabLabel[s.id]}
+            </TabsTrigger>
+          ))}
+        </TabsList>
+      </Tabs>
+
       <div className="border border-[hsl(var(--term-border))] bg-[hsl(var(--term-bg))] h-[520px] flex flex-col min-h-0">
         <div className="flex items-center gap-1.5 px-4 py-2.5 border-b border-[hsl(var(--term-border))] shrink-0">
           <span className="h-2.5 w-2.5 rounded-full bg-[#ff5f57]" />
@@ -91,20 +101,6 @@ export function McCliDemo() {
           <ScenarioContent scenario={active} chars={chars} done={done} fullJson={fullJson} />
         </div>
       </div>
-
-      <Tabs value={activeId} onValueChange={(value) => setActiveId(value)} className="w-full">
-        <TabsList className="w-full h-11 rounded-none border-x border-b border-t-0 border-[hsl(var(--term-border))] bg-[hsl(var(--term-nav))] p-0">
-          {scenarios.map((s) => (
-            <TabsTrigger
-              key={s.id}
-              value={s.id}
-              className="flex-1 rounded-none px-2 py-2 font-mono text-[13px] text-[hsl(var(--term-t2))] data-[state=active]:bg-[hsl(var(--term-active))] data-[state=active]:text-[hsl(var(--term-t1))] data-[state=active]:shadow-none hover:text-[hsl(var(--term-t1))] transition-colors duration-200"
-            >
-              {tabLabel[s.id]}
-            </TabsTrigger>
-          ))}
-        </TabsList>
-      </Tabs>
     </div>
   );
 }
