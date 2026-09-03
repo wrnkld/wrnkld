@@ -69,38 +69,40 @@ export function McCliDemo() {
   const fullJson = JSON.stringify(active.res, null, 2);
 
   return (
-    <Tabs
-      value={activeId}
-      onValueChange={(value) => setActiveId(value)}
-      className="block"
-    >
-      <div className="mc-terminal border border-[hsl(var(--term-border))] bg-[hsl(var(--term-bg))] max-h-[520px] flex flex-col min-h-0">
-        <div className="flex items-center gap-1.5 px-4 py-2.5 border-b border-[hsl(var(--term-border))] shrink-0">
-          <span className="h-2.5 w-2.5 rounded-full bg-[#ff5f57]" />
-          <span className="h-2.5 w-2.5 rounded-full bg-[#ffbd2e]" />
-          <span className="h-2.5 w-2.5 rounded-full bg-[#28c840]" />
-          <span className="font-mono text-xs text-[hsl(var(--term-t3))] ml-1.5 truncate">
-            montecarlo — {active.title.toLowerCase()}
-          </span>
+    <div className="mc-terminal">
+      <Tabs
+        value={activeId}
+        onValueChange={(value) => setActiveId(value)}
+        className="block"
+      >
+        <div className="border border-[hsl(var(--term-border))] bg-[hsl(var(--term-bg))] max-h-[520px] flex flex-col min-h-0">
+          <div className="flex items-center gap-1.5 px-4 py-2.5 border-b border-[hsl(var(--term-border))] shrink-0">
+            <span className="h-2.5 w-2.5 rounded-full bg-[#ff5f57]" />
+            <span className="h-2.5 w-2.5 rounded-full bg-[#ffbd2e]" />
+            <span className="h-2.5 w-2.5 rounded-full bg-[#28c840]" />
+            <span className="font-mono text-xs text-[hsl(var(--term-t3))] ml-1.5 truncate">
+              montecarlo — {active.title.toLowerCase()}
+            </span>
+          </div>
+
+          <div className="p-5 md:p-6 flex-1 min-h-0 overflow-y-auto min-w-0 text-[hsl(var(--term-t1))]">
+            <ScenarioContent scenario={active} chars={chars} done={done} fullJson={fullJson} />
+          </div>
         </div>
 
-        <div className="p-5 md:p-6 flex-1 min-h-0 overflow-y-auto min-w-0 text-[hsl(var(--term-t1))]">
-          <ScenarioContent scenario={active} chars={chars} done={done} fullJson={fullJson} />
-        </div>
-      </div>
-
-      <TabsList className="mt-0 w-full justify-start rounded-none border-x border-b border-[hsl(var(--term-border))] bg-[hsl(var(--term-nav))] p-1 h-auto gap-0">
-        {scenarios.map((s) => (
-          <TabsTrigger
-            key={s.id}
-            value={s.id}
-            className="flex-1 rounded-sm px-3 py-2.5 font-body text-sm text-[hsl(var(--term-t2))] data-[state=active]:bg-[hsl(var(--term-t1))] data-[state=active]:text-[hsl(var(--term-bg))] data-[state=active]:shadow-none hover:bg-[hsl(var(--term-hover))] hover:text-[hsl(var(--term-t1))] transition-colors duration-200"
-          >
-            {s.name}
-          </TabsTrigger>
-        ))}
-      </TabsList>
-    </Tabs>
+        <TabsList className="mt-0 w-full justify-start rounded-none border-x border-b border-[hsl(var(--term-border))] bg-[hsl(var(--term-nav))] p-1 h-auto gap-0">
+          {scenarios.map((s) => (
+            <TabsTrigger
+              key={s.id}
+              value={s.id}
+              className="flex-1 rounded-sm px-3 py-2.5 font-body text-sm text-[hsl(var(--term-t2))] data-[state=active]:bg-[hsl(var(--term-t1))] data-[state=active]:text-[hsl(var(--term-bg))] data-[state=active]:shadow-none hover:bg-[hsl(var(--term-hover))] hover:text-[hsl(var(--term-t1))] transition-colors duration-200"
+            >
+              {s.name}
+            </TabsTrigger>
+          ))}
+        </TabsList>
+      </Tabs>
+    </div>
   );
 }
 
