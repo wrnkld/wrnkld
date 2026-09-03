@@ -25,7 +25,7 @@ export const experience: Job[] = [
     role: "Senior Product Designer",
     years: "2019 - 2021",
     description:
-      "Led Threat Response and launched two enterprise security products.",
+      "Led Threat Response, launched Enforce, and supported Asset, Discover, and Impact across Tanium’s security platform.",
   },
   {
     company: "Pendo",

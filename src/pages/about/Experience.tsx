@@ -5,12 +5,12 @@ import { experience, education } from "@/data/experience";
 export default function ExperiencePage() {
   return (
     <DetailLayout title="Experience">
-      <div className="-mx-5 border-t border-border/70">
+      <div className="-mx-5">
         {experience.map((job) => (
           <Row
             key={job.company}
             noHover
-            className="grid grid-cols-1 md:grid-cols-[1fr_2fr] gap-1 md:gap-8"
+            className="grid grid-cols-1 md:grid-cols-[1fr_2fr] gap-1 md:gap-8 border-b-0"
           >
             <div className="flex flex-col">
               <span className="font-medium text-foreground">{job.company}</span>
