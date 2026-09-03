@@ -80,7 +80,7 @@ export function McCliDemo() {
           </span>
         </div>
 
-        <TabsList className="w-full justify-start rounded-none border-b border-[hsl(var(--term-border))] bg-[hsl(var(--term-block))] px-2 py-0 h-auto">
+        <TabsList className="w-full justify-start rounded-none border-b border-[hsl(var(--term-border))] bg-[hsl(var(--term-block))] px-2 py-0 h-auto overflow-x-auto scrollbar-hide">
           {scenarios.map((s) => (
             <TabsTrigger
               key={s.id}
