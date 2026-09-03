@@ -90,12 +90,12 @@ export function McCliDemo() {
           </div>
         </div>
 
-        <TabsList className="mt-0 w-full justify-start rounded-none border-x border-b border-[hsl(var(--term-border))] bg-[hsl(var(--term-nav))] p-1 h-auto gap-0">
-          {scenarios.map((s) => (
+        <TabsList className="mt-0 w-full justify-start rounded-none border-x border-b border-[hsl(var(--term-border))] bg-[hsl(var(--term-nav))] p-0 h-auto gap-0">
+          {scenarios.map((s, idx) => (
             <TabsTrigger
               key={s.id}
               value={s.id}
-              className="flex-1 rounded-sm px-3 py-2.5 font-body text-sm text-[hsl(var(--term-t2))] data-[state=active]:bg-[hsl(var(--term-t1))] data-[state=active]:text-[hsl(var(--term-bg))] data-[state=active]:shadow-none hover:bg-[hsl(var(--term-hover))] hover:text-[hsl(var(--term-t1))] transition-colors duration-200"
+              className="flex-1 rounded-none px-3 py-3 font-mono text-[13px] text-[hsl(var(--term-t2))] border-r border-[hsl(var(--term-border))] last:border-r-0 data-[state=active]:bg-[hsl(var(--term-active))] data-[state=active]:text-[hsl(var(--term-t1))] data-[state=active]:border-t-2 data-[state=active]:border-t-[hsl(var(--term-accent))] data-[state=active]:shadow-none hover:bg-[hsl(var(--term-hover))] hover:text-[hsl(var(--term-t1))] transition-colors duration-200"
             >
               {s.name}
             </TabsTrigger>
