@@ -36,7 +36,7 @@ export default function Books() {
 
   return (
     <DetailLayout title="Books">
-      <p className="font-body text-base text-muted-foreground">
+      <p className="font-body text-sm text-muted-foreground">
         I started tracking the books I read. Recs in pink.
       </p>
 
