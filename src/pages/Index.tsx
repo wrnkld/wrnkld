@@ -32,7 +32,7 @@ function Band({
     <section className="border-b border-border/70">
       <div className="max-w-6xl mx-auto px-6">
         <div className="px-5 py-14 md:py-20">
-          <p className="font-mono text-[10px] uppercase tracking-[0.18em] text-muted-foreground mb-4">
+          <p className="meta-label mb-4">
             {kicker}
           </p>
           <h2 className="text-2xl md:text-3xl font-medium leading-tight tracking-tight max-w-3xl">
@@ -69,7 +69,7 @@ function Callout({
         </div>
       )}
       <div>
-        <p className="font-mono text-[10px] uppercase tracking-[0.18em] text-muted-foreground mb-2">
+        <p className="meta-label mb-2">
           {eyebrow}
         </p>
         <h3 className="text-lg font-medium tracking-tight inline-flex items-center gap-1">

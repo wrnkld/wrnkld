@@ -19,7 +19,7 @@ export default function ExperiencePage() {
             <div className="flex flex-col">
               <span className="text-foreground">{job.role}</span>
               {job.description && (
-                <p className="text-muted-foreground/80 leading-relaxed">
+                <p className="text-muted-foreground leading-relaxed">
                   {job.description}
                 </p>
               )}

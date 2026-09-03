@@ -139,4 +139,14 @@
     margin-right: -1.25rem;
   }
 
+  /* Single treatment for kickers, eyebrows and any small metadata label. */
+  .meta-label {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    line-height: 1.4;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: hsl(var(--muted-foreground));
+  }
+
 }
