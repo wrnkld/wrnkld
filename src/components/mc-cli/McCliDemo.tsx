@@ -55,7 +55,7 @@ function BlockLabel({ children }: { children: React.ReactNode }) {
 
 function Code({ children }: { children: React.ReactNode }) {
   return (
-    <pre className="font-mono text-[15px] leading-[1.8] whitespace-pre-wrap break-words border border-[hsl(var(--term-border))] bg-[hsl(var(--term-block))] px-4 py-3 overflow-x-auto">
+    <pre className="font-mono text-[13px] leading-[1.7] whitespace-pre-wrap break-words border border-[hsl(var(--term-border))] bg-[hsl(var(--term-block))] px-4 py-3 overflow-x-auto">
       {children}
     </pre>
   );
