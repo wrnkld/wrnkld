@@ -1,6 +1,4 @@
 import { ReactNode } from "react";
-import { Link } from "react-router-dom";
-import { ArrowLeft } from "lucide-react";
 
 interface DetailLayoutProps {
   title: string;
@@ -23,21 +21,6 @@ export function DetailLayout({ title, children }: DetailLayoutProps) {
       <main className="max-w-6xl mx-auto px-6 pt-3 pb-10 md:pt-4 animate-fade-in">
         <div className="px-5 space-y-6 md:space-y-8 [&>p]:max-w-3xl">{children}</div>
       </main>
-
-      <footer className="border-t border-border/70">
-        <div className="max-w-6xl mx-auto px-6">
-          <div className="px-5 py-14">
-            <Link
-              to="/"
-              className="inline-flex items-center gap-2 text-lg font-medium tracking-tight hover:text-muted-foreground transition-colors"
-              aria-label="Back to home"
-            >
-              <ArrowLeft className="w-5 h-5" />
-              <span>Back</span>
-            </Link>
-          </div>
-        </div>
-      </footer>
     </div>
   );
 }
