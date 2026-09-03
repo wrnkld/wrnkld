@@ -1,13 +1,14 @@
 import { useEffect, useRef, useState } from "react";
 import { CliLine, Json, jsonTokens } from "./highlight";
 import { scenarios, type Scenario } from "./scenarios";
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
+import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
+
+const tabLabel: Record<string, string> = {
+  "get-table": "Table",
+  lineage: "Lineage",
+  "list-alerts": "Alerts",
+  "list-monitors": "Monitors",
+};
 
 function useTypewriter(scenario: Scenario | null) {
   const [chars, setChars] = useState(0);
@@ -91,25 +92,19 @@ export function McCliDemo() {
         </div>
       </div>
 
-      <Select value={activeId} onValueChange={(value) => setActiveId(value)}>
-        <SelectTrigger className="w-full rounded-none border-x border-b border-t-0 border-[hsl(var(--term-border))] bg-[hsl(var(--term-nav))] text-[hsl(var(--term-t1))] font-mono text-[13px] h-11 px-4 hover:bg-[hsl(var(--term-hover))] focus:ring-0 focus:ring-offset-0 [&>svg]:text-[hsl(var(--term-t2))] [&>svg]:opacity-100">
-          <SelectValue placeholder="Pick a command" />
-        </SelectTrigger>
-        <SelectContent
-          position="popper"
-          className="bg-[hsl(222_47%_6%)] border-[hsl(222_32%_15%)] text-[hsl(210_40%_96%)] rounded-none font-mono"
-        >
+      <Tabs value={activeId} onValueChange={(value) => setActiveId(value)} className="w-full">
+        <TabsList className="w-full h-11 rounded-none border-x border-b border-t-0 border-[hsl(var(--term-border))] bg-[hsl(var(--term-nav))] p-0">
           {scenarios.map((s) => (
-            <SelectItem
+            <TabsTrigger
               key={s.id}
               value={s.id}
-              className="text-[13px] rounded-none focus:bg-[hsl(222_40%_10%)] focus:text-[hsl(210_40%_96%)] data-[state=checked]:text-[hsl(210_40%_96%)]"
+              className="flex-1 rounded-none px-2 py-2 font-mono text-[13px] text-[hsl(var(--term-t2))] data-[state=active]:bg-[hsl(var(--term-active))] data-[state=active]:text-[hsl(var(--term-t1))] data-[state=active]:shadow-none hover:text-[hsl(var(--term-t1))] transition-colors duration-200"
             >
-              {s.name}
-            </SelectItem>
+              {tabLabel[s.id]}
+            </TabsTrigger>
           ))}
-        </SelectContent>
-      </Select>
+        </TabsList>
+      </Tabs>
     </div>
   );
 }
