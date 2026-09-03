@@ -167,7 +167,7 @@ export default function Index() {
             ...experience,
             { company: education.company, role: education.degree, years: "" },
           ].map((j) => (
-            <Row key={j.company} className="flex flex-col gap-1 lg:grid lg:grid-cols-3 lg:gap-8">
+            <Row key={j.company} className="flex flex-col gap-1 md:grid md:grid-cols-3 md:gap-8">
               <span className="text-foreground">{j.company}</span>
               <span className="text-muted-foreground">{j.role}</span>
               <span className="text-muted-foreground">{j.years}</span>
