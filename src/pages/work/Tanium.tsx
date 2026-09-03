@@ -22,7 +22,7 @@ export default function Tanium() {
 
       <h2 className="font-display text-lg font-medium text-foreground">Challenge</h2>
       <p className="font-body text-sm text-muted-foreground leading-relaxed">
-        Support as many products as humanly possible, move fast, and keep shipping through peak COVID years—when timelines were tight, stakes were high, and work was a reliable distraction.
+        Supported multiple products through a period of rapid growth, tight timelines, and high-stakes enterprise security work.
       </p>
 
       <h2 className="font-display text-lg font-medium text-foreground">Reinvent</h2>
