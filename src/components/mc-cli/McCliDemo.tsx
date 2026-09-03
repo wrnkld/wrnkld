@@ -1,7 +1,13 @@
 import { useEffect, useRef, useState } from "react";
 import { CliLine, Json, jsonTokens } from "./highlight";
 import { scenarios, type Scenario } from "./scenarios";
-import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 
 function useTypewriter(scenario: Scenario | null) {
   const [chars, setChars] = useState(0);
