@@ -11,7 +11,7 @@ export const experience: Job[] = [
     role: "Head of Design",
     years: "2022 - Present",
     description:
-      "Joined as founding designer and built the design function while remaining hands-on across the product. Designed core workflows for observability, investigations, integrations, permissions, and AI-assisted data operations. Hired and mentored designers; established the design system, research practice, and operating model.",
+      "Joined as founding designer and built the design function while remaining hands-on. Designed core workflows across observability, investigations, integrations, permissions, and AI-assisted data operations. Hired and mentored the team and established our design system and research practice.",
   },
   {
     company: "Workato",
@@ -32,7 +32,7 @@ export const experience: Job[] = [
     role: "Lead Product Designer",
     years: "2019",
     description:
-      "Designed core product experiences and improved platform consistency.",
+      "Designed core product experiences across Pendo's analytics platform.",
   },
   {
     company: "Red Hat",
