@@ -134,7 +134,7 @@ export default function Index() {
           <Callout
             eyebrow="Case study"
             title="Tanium"
-            blurb="Endpoint security at scale. Threat Response and new product launches."
+            blurb="Endpoint security platform. Senior IC across five products."
             to="/work/tanium"
           />
         </div>
