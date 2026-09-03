@@ -94,7 +94,7 @@ export function McCliDemo() {
           <TabsTrigger
             key={s.id}
             value={s.id}
-            className="flex-1 rounded-sm px-3 py-2.5 font-body text-sm text-[hsl(var(--term-t2))] data-[state=active]:bg-[hsl(var(--term-active))] data-[state=active]:text-[hsl(var(--term-t1))] data-[state=active]:shadow-[inset_0_1px_0_hsl(var(--term-border))] hover:bg-[hsl(var(--term-hover))] hover:text-[hsl(var(--term-t1))] transition-colors duration-200"
+            className="flex-1 rounded-sm px-3 py-2.5 font-body text-sm text-[hsl(var(--term-t2))] data-[state=active]:bg-[hsl(var(--term-t1))] data-[state=active]:text-[hsl(var(--term-bg))] data-[state=active]:shadow-none hover:bg-[hsl(var(--term-hover))] hover:text-[hsl(var(--term-t1))] transition-colors duration-200"
           >
             {s.name}
           </TabsTrigger>
