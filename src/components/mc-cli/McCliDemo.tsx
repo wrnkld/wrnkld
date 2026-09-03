@@ -85,7 +85,7 @@ export function McCliDemo() {
             <TabsTrigger
               key={s.id}
               value={s.id}
-              className="rounded-none border-b-2 border-transparent px-3 py-2.5 font-body text-sm text-[hsl(var(--term-t3))] data-[state=active]:border-foreground data-[state=active]:text-foreground data-[state=active]:bg-transparent data-[state=active]:shadow-none hover:text-foreground transition-colors duration-200"
+              className="rounded-none border-b-2 border-transparent px-3 py-2.5 font-body text-sm text-[hsl(var(--term-t3))] data-[state=active]:border-[hsl(var(--term-t1))] data-[state=active]:text-[hsl(var(--term-t1))] data-[state=active]:bg-transparent data-[state=active]:shadow-none hover:text-[hsl(var(--term-t1))] transition-colors duration-200"
             >
               {s.name}
             </TabsTrigger>
