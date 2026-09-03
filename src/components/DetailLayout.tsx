@@ -20,8 +20,8 @@ export function DetailLayout({ title, children }: DetailLayoutProps) {
         </div>
       </header>
 
-      <main className="max-w-6xl mx-auto px-6 pt-4 pb-10 animate-fade-in">
-        <div className="px-5 space-y-8 [&>p]:max-w-3xl">{children}</div>
+      <main className="max-w-6xl mx-auto px-6 pt-3 pb-10 md:pt-4 animate-fade-in">
+        <div className="px-5 space-y-6 md:space-y-8 [&>p]:max-w-3xl">{children}</div>
       </main>
 
       <footer className="border-t border-border/70">
