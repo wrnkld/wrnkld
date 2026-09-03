@@ -19,9 +19,9 @@ export default function ExperiencePage() {
             <div className="flex flex-col">
               <span className="text-foreground">{job.role}</span>
               {job.description && (
-                <p className="text-muted-foreground leading-relaxed">
+                <span className="text-muted-foreground">
                   {job.description}
-                </p>
+                </span>
               )}
             </div>
           </Row>
