@@ -1,13 +1,14 @@
 import { useEffect, useRef, useState } from "react";
 import { CliLine, Json, jsonTokens } from "./highlight";
 import { scenarios, type Scenario } from "./scenarios";
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
+import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
+
+const tabLabel: Record<string, string> = {
+  "get-table": "Table",
+  lineage: "Lineage",
+  "list-alerts": "Alerts",
+  "list-monitors": "Monitors",
+};
 
 function useTypewriter(scenario: Scenario | null) {
   const [chars, setChars] = useState(0);
