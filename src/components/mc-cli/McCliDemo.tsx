@@ -76,38 +76,40 @@ export function McCliDemo() {
 
   return (
     <div className="mc-terminal">
-      <Tabs
-        value={activeId}
-        onValueChange={(value) => setActiveId(value)}
-        className="block"
-      >
-        <div className="border border-[hsl(var(--term-border))] bg-[hsl(var(--term-bg))] h-[520px] flex flex-col min-h-0">
-          <div className="flex items-center gap-1.5 px-4 py-2.5 border-b border-[hsl(var(--term-border))] shrink-0">
-            <span className="h-2.5 w-2.5 rounded-full bg-[#ff5f57]" />
-            <span className="h-2.5 w-2.5 rounded-full bg-[#ffbd2e]" />
-            <span className="h-2.5 w-2.5 rounded-full bg-[#28c840]" />
-            <span className="font-mono text-xs text-[hsl(var(--term-t3))] ml-1.5 truncate">
-              montecarlo — {active.title.toLowerCase()}
-            </span>
-          </div>
-
-          <div className="p-5 md:p-6 flex-1 min-h-0 overflow-y-auto min-w-0 text-[hsl(var(--term-t1))]">
-            <ScenarioContent scenario={active} chars={chars} done={done} fullJson={fullJson} />
-          </div>
+      <div className="border border-[hsl(var(--term-border))] bg-[hsl(var(--term-bg))] h-[520px] flex flex-col min-h-0">
+        <div className="flex items-center gap-1.5 px-4 py-2.5 border-b border-[hsl(var(--term-border))] shrink-0">
+          <span className="h-2.5 w-2.5 rounded-full bg-[#ff5f57]" />
+          <span className="h-2.5 w-2.5 rounded-full bg-[#ffbd2e]" />
+          <span className="h-2.5 w-2.5 rounded-full bg-[#28c840]" />
+          <span className="font-mono text-xs text-[hsl(var(--term-t3))] ml-1.5 truncate">
+            montecarlo — {active.title.toLowerCase()}
+          </span>
         </div>
 
-        <TabsList className="mt-0 w-full justify-start rounded-none border-x border-b border-[hsl(var(--term-border))] bg-[hsl(var(--term-nav))] p-0 h-auto gap-0">
-          {scenarios.map((s, idx) => (
-            <TabsTrigger
+        <div className="p-5 md:p-6 flex-1 min-h-0 overflow-y-auto min-w-0 text-[hsl(var(--term-t1))]">
+          <ScenarioContent scenario={active} chars={chars} done={done} fullJson={fullJson} />
+        </div>
+      </div>
+
+      <Select value={activeId} onValueChange={(value) => setActiveId(value)}>
+        <SelectTrigger className="w-full rounded-none border-x border-b border-t-0 border-[hsl(var(--term-border))] bg-[hsl(var(--term-nav))] text-[hsl(var(--term-t1))] font-mono text-[13px] h-11 px-4 hover:bg-[hsl(var(--term-hover))] focus:ring-0 focus:ring-offset-0 [&>svg]:text-[hsl(var(--term-t2))] [&>svg]:opacity-100">
+          <SelectValue placeholder="Pick a command" />
+        </SelectTrigger>
+        <SelectContent
+          position="popper"
+          className="bg-[hsl(222_47%_6%)] border-[hsl(222_32%_15%)] text-[hsl(210_40%_96%)] rounded-none font-mono"
+        >
+          {scenarios.map((s) => (
+            <SelectItem
               key={s.id}
               value={s.id}
-              className="flex-1 rounded-none px-3 py-3 font-mono text-[13px] text-[hsl(var(--term-t2))] border-r border-[hsl(var(--term-border))] last:border-r-0 data-[state=active]:bg-[hsl(var(--term-active))] data-[state=active]:text-[hsl(var(--term-t1))] data-[state=active]:border-t data-[state=active]:border-t-[hsl(var(--term-accent))] data-[state=active]:shadow-none hover:bg-[hsl(var(--term-hover))] hover:text-[hsl(var(--term-t1))] transition-colors duration-200"
+              className="text-[13px] rounded-none focus:bg-[hsl(222_40%_10%)] focus:text-[hsl(210_40%_96%)] data-[state=checked]:text-[hsl(210_40%_96%)]"
             >
               {s.name}
-            </TabsTrigger>
+            </SelectItem>
           ))}
-        </TabsList>
-      </Tabs>
+        </SelectContent>
+      </Select>
     </div>
   );
 }
