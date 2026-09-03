@@ -75,7 +75,7 @@ export function McCliDemo() {
         onValueChange={(value) => setActiveId(value)}
         className="block"
       >
-        <div className="border border-[hsl(var(--term-border))] bg-[hsl(var(--term-bg))] max-h-[520px] flex flex-col min-h-0">
+        <div className="border border-[hsl(var(--term-border))] bg-[hsl(var(--term-bg))] h-[520px] flex flex-col min-h-0">
           <div className="flex items-center gap-1.5 px-4 py-2.5 border-b border-[hsl(var(--term-border))] shrink-0">
             <span className="h-2.5 w-2.5 rounded-full bg-[#ff5f57]" />
             <span className="h-2.5 w-2.5 rounded-full bg-[#ffbd2e]" />
