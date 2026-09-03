@@ -47,7 +47,7 @@ function useTypewriter(scenario: Scenario | null) {
 
 function BlockLabel({ children }: { children: React.ReactNode }) {
   return (
-    <div className="font-body text-[13px] font-medium uppercase tracking-[0.12em] text-[hsl(var(--term-t3))] mb-2">
+    <div className="font-body text-[11px] font-medium uppercase tracking-[0.1em] text-[hsl(var(--term-t3))] mb-2">
       {children}
     </div>
   );
