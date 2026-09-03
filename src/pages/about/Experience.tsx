@@ -28,7 +28,7 @@ export default function ExperiencePage() {
         ))}
         <Row
           noHover
-          className="grid grid-cols-1 md:grid-cols-[1fr_2fr] gap-1 md:gap-8"
+          className="grid grid-cols-1 md:grid-cols-[1fr_2fr] gap-1 md:gap-8 border-b-0"
         >
           <span className="font-medium text-foreground">{education.school}</span>
           <span className="text-foreground">{education.degree}</span>
