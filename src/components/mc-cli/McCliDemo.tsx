@@ -69,9 +69,13 @@ export function McCliDemo() {
   const fullJson = JSON.stringify(active.res, null, 2);
 
   return (
-    <Tabs value={activeId} onValueChange={(value) => setActiveId(value)} className="mc-terminal border border-border/70 bg-background">
-      <div className="flex flex-col min-h-0 bg-[hsl(var(--term-body))] text-[hsl(var(--term-t1))]">
-        <div className="flex items-center gap-1.5 px-4 py-2.5 border-b border-[hsl(var(--term-border))]">
+    <Tabs
+      value={activeId}
+      onValueChange={(value) => setActiveId(value)}
+      className="block"
+    >
+      <div className="mc-terminal border border-border/70 bg-background max-h-[520px] flex flex-col min-h-0">
+        <div className="flex items-center gap-1.5 px-4 py-2.5 border-b border-[hsl(var(--term-border))] shrink-0">
           <span className="h-2.5 w-2.5 rounded-full bg-[#ff5f57]" />
           <span className="h-2.5 w-2.5 rounded-full bg-[#ffbd2e]" />
           <span className="h-2.5 w-2.5 rounded-full bg-[#28c840]" />
@@ -80,22 +84,22 @@ export function McCliDemo() {
           </span>
         </div>
 
-        <TabsList className="w-full justify-start rounded-none border-b border-[hsl(var(--term-border))] bg-[hsl(var(--term-block))] px-2 py-0 h-auto overflow-x-auto">
-          {scenarios.map((s) => (
-            <TabsTrigger
-              key={s.id}
-              value={s.id}
-              className="rounded-none border-b-2 border-transparent px-3 py-2.5 font-body text-sm text-[hsl(var(--term-t3))] data-[state=active]:border-[hsl(var(--term-t1))] data-[state=active]:text-[hsl(var(--term-t1))] data-[state=active]:bg-transparent data-[state=active]:shadow-none hover:text-[hsl(var(--term-t1))] transition-colors duration-200"
-            >
-              {s.name}
-            </TabsTrigger>
-          ))}
-        </TabsList>
-
         <div className="p-5 md:p-6 flex-1 min-h-0 overflow-y-auto min-w-0">
           <ScenarioContent scenario={active} chars={chars} done={done} fullJson={fullJson} />
         </div>
       </div>
+
+      <TabsList className="mt-3 w-full justify-start rounded-none bg-transparent p-0 h-auto gap-1">
+        {scenarios.map((s) => (
+          <TabsTrigger
+            key={s.id}
+            value={s.id}
+            className="rounded-none border-b-2 border-transparent px-0 pb-1.5 mr-5 font-body text-sm text-muted-foreground data-[state=active]:border-foreground data-[state=active]:text-foreground data-[state=active]:bg-transparent data-[state=active]:shadow-none hover:text-foreground transition-colors duration-200"
+          >
+            {s.name}
+          </TabsTrigger>
+        ))}
+      </TabsList>
     </Tabs>
   );
 }
