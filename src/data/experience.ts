@@ -32,7 +32,7 @@ export const experience: Job[] = [
     role: "Lead Product Designer",
     years: "2019",
     description:
-      "Designed core product experiences and improved platform consistency.",
+      "Designed core product experiences across Pendo's analytics platform.",
   },
   {
     company: "Red Hat",
