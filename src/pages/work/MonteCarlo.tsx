@@ -80,7 +80,7 @@ export default function MonteCarlo() {
 
   return (
     <DetailLayout title="Monte Carlo AI">
-      <p className="font-body text-sm text-muted-foreground leading-relaxed">
+      <p className="lead">
         Monte Carlo AI is the leading agent trust platform, helping data teams detect, resolve, and prevent data quality issues across the modern data stack.
       </p>
 

@@ -72,6 +72,16 @@
 
     .text-recommended { color: hsl(330 75% 45%); }
 
+  /* Lead paragraph: the intro blurb on detail pages, matched to the
+     homepage's opening voice. */
+  .lead {
+    font-family: var(--font-body);
+    font-size: 1rem;
+    line-height: 1.7;
+    color: hsl(var(--foreground));
+    max-width: 48rem;
+  }
+
   /* Scoped dark palette for the Monte Carlo CLI console. Only the terminal
      panel goes dark; the rest of the page stays on the site's slate tokens. */
   .mc-terminal {
@@ -116,8 +126,8 @@
   }
   @keyframes term-blink { 0%, 100% { opacity: 1 } 50% { opacity: 0 } }
 
-  .text-additions { color: hsl(142 55% 32%); }
-  .text-deletions { color: hsl(0 65% 45%); }
+  .text-additions { color: hsl(330 75% 45%); }
+  .text-deletions { color: hsl(215 16% 47%); }
 
   @keyframes fade-in-up {
     from { opacity: 0; transform: translateY(4px); }
