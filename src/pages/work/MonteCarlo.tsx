@@ -41,10 +41,20 @@ const pullRequests = [
   { id: 14884, title: "Add a Type column to the alerts table", files: 10, additions: 230, deletions: 33 },
 ];
 
+const customerFeedback = [
+  { id: 1, company: "Acme Data", session: "Advisory board", date: 2024, insight: "Alert noise is the top reason teams ignore incidents." },
+  { id: 2, company: "Northwind Analytics", session: "Quarterly review", date: 2024, insight: "Want lineage exposed inside Slack triage threads." },
+  { id: 3, company: "Contoso BI", session: "Interview", date: 2023, insight: "Cost attribution per dbt model is essential for FinOps." },
+];
+
 export default function MonteCarlo() {
   type SortField = "id" | "title" | "files" | "additions" | "deletions";
   const [sortField, setSortField] = useState<SortField>("id");
   const [sortDirection, setSortDirection] = useState<"asc" | "desc">("desc");
+
+  type FeedbackSortField = "date" | "company" | "session" | "insight";
+  const [feedbackSortField, setFeedbackSortField] = useState<FeedbackSortField>("date");
+  const [feedbackSortDirection, setFeedbackSortDirection] = useState<"asc" | "desc">("desc");
 
   const handleSort = (field: SortField) => {
     if (sortField === field) {
@@ -66,9 +76,39 @@ export default function MonteCarlo() {
     });
   }, [sortField, sortDirection]);
 
+  const handleFeedbackSort = (field: FeedbackSortField) => {
+    if (feedbackSortField === field) {
+      setFeedbackSortDirection(feedbackSortDirection === "asc" ? "desc" : "asc");
+    } else {
+      setFeedbackSortField(field);
+      setFeedbackSortDirection("asc");
+    }
+  };
+
+  const sortedFeedback = useMemo(() => {
+    const value = (fb: (typeof customerFeedback)[number]) => fb[feedbackSortField];
+    return [...customerFeedback].sort((a, b) => {
+      const av = value(a);
+      const bv = value(b);
+      const comparison =
+        typeof av === "string" && typeof bv === "string" ? av.localeCompare(bv) : Number(av) - Number(bv);
+      return feedbackSortDirection === "asc" ? comparison : -comparison;
+    });
+  }, [feedbackSortField, feedbackSortDirection]);
+
   const SortHeader = ({ field, children }: { field: SortField; children: React.ReactNode }) => (
     <button
       onClick={() => handleSort(field)}
+      className="inline-flex items-center gap-1 text-muted-foreground hover:text-foreground transition-colors duration-200"
+    >
+      {children}
+      <ArrowUpDown className="h-3 w-3" />
+    </button>
+  );
+
+  const FeedbackSortHeader = ({ field, children }: { field: FeedbackSortField; children: React.ReactNode }) => (
+    <button
+      onClick={() => handleFeedbackSort(field)}
       className="inline-flex items-center gap-1 text-muted-foreground hover:text-foreground transition-colors duration-200"
     >
       {children}
@@ -160,6 +200,37 @@ export default function MonteCarlo() {
       <p className="font-body text-sm text-muted-foreground leading-relaxed">
         Built a customer advisory board and a lightweight research practice to keep design decisions grounded in real usage. Ran structured interviews, feedback sessions, and quarterly reviews with data teams, then turned those insights into roadmap input, clearer prioritization, and tighter product–design–engineering alignment.
       </p>
+
+      <div className="full-bleed border-y border-border/70 overflow-hidden table-gutter">
+        <Table>
+          <TableHeader>
+            <TableRow className="surface-tint-hover border-b-border/70">
+              <TableHead className="w-[90px] hidden sm:table-cell">
+                <FeedbackSortHeader field="date">Date</FeedbackSortHeader>
+              </TableHead>
+              <TableHead className="w-[180px] hidden sm:table-cell">
+                <FeedbackSortHeader field="company">Company</FeedbackSortHeader>
+              </TableHead>
+              <TableHead className="w-[140px] hidden sm:table-cell">
+                <FeedbackSortHeader field="session">Session</FeedbackSortHeader>
+              </TableHead>
+              <TableHead>
+                <FeedbackSortHeader field="insight">Insight</FeedbackSortHeader>
+              </TableHead>
+            </TableRow>
+          </TableHeader>
+          <TableBody>
+            {sortedFeedback.map((fb) => (
+              <TableRow key={fb.id} className="border-b border-border/70 transition-colors surface-tint-hover">
+                <TableCell className="text-muted-foreground tabular-nums hidden sm:table-cell">{fb.date}</TableCell>
+                <TableCell className="text-foreground hidden sm:table-cell">{fb.company}</TableCell>
+                <TableCell className="text-muted-foreground hidden sm:table-cell">{fb.session}</TableCell>
+                <TableCell className="text-foreground">{fb.insight}</TableCell>
+              </TableRow>
+            ))}
+          </TableBody>
+        </Table>
+      </div>
 
       <h2 className="font-display text-lg font-medium text-foreground">CLI</h2>
       <p className="font-body text-sm text-muted-foreground leading-relaxed">
