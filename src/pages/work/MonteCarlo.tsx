@@ -130,12 +130,12 @@ export default function MonteCarlo() {
       </p>
 
       <h2 className="font-display text-lg font-medium text-foreground">Role</h2>
-      <p className="font-body text-sm text-muted-foreground leading-relaxed">
+      <p className="font-body text-base text-muted-foreground leading-relaxed">
         Joined as founding designer and built the design function while remaining hands-on across the product. Partnered with founders, product, and engineering to shape the platform, hired and mentored designers, and established research and design-system practices.
       </p>
 
       <h2 className="font-display text-lg font-medium text-foreground">Shipping</h2>
-      <p className="font-body text-sm text-muted-foreground leading-relaxed">
+      <p className="font-body text-base text-muted-foreground leading-relaxed">
         Contributed directly to the frontend through AI-assisted development. Shipped changes across AI workflows, navigation, monitoring, and product quality through hundreds of merged pull requests.
       </p>
 
@@ -181,7 +181,7 @@ export default function MonteCarlo() {
       </div>
 
       <h2 className="font-display text-lg font-medium text-foreground">Performance</h2>
-      <p className="font-body text-sm text-muted-foreground leading-relaxed">
+      <p className="font-body text-base text-muted-foreground leading-relaxed">
         Designed an end-to-end investigation workflow connecting cost, latency, query behavior, and operational context across Snowflake, dbt, Airflow, and Looker.
       </p>
 
@@ -192,7 +192,7 @@ export default function MonteCarlo() {
       <img src={mcdPerfMon} alt="Monte Carlo query performance monitor configuration with alert conditions" className="w-full h-auto border border-border/40" />
 
       <h2 className="font-display text-lg font-medium text-foreground">Integrations</h2>
-      <p className="font-body text-sm text-muted-foreground leading-relaxed">
+      <p className="font-body text-base text-muted-foreground leading-relaxed">
         Designed a scalable integrations framework for warehouses, orchestration tools, repositories, BI platforms, and incident-response systems.
       </p>
 
@@ -204,7 +204,7 @@ export default function MonteCarlo() {
       <img src={mcdJob} alt="Monte Carlo job performance view showing run time trends and failure tracking for dbt jobs" className="w-full h-auto border border-border/40" />
 
       <h2 className="font-display text-lg font-medium text-foreground">Customer feedback</h2>
-      <p className="font-body text-sm text-muted-foreground leading-relaxed">
+      <p className="font-body text-base text-muted-foreground leading-relaxed">
         Built a customer advisory board and a lightweight research practice to keep design decisions grounded in real usage. Ran structured interviews, feedback sessions, and quarterly reviews with data teams, then turned those insights into roadmap input, clearer prioritization, and tighter product–design–engineering alignment.
       </p>
 
@@ -248,7 +248,7 @@ export default function MonteCarlo() {
       </div>
 
       <h2 className="font-display text-lg font-medium text-foreground">CLI</h2>
-      <p className="font-body text-sm text-muted-foreground leading-relaxed">
+      <p className="font-body text-base text-muted-foreground leading-relaxed">
         Explored a new way for people and AI agents to interact directly with Monte Carlo's APIs—inspecting assets, investigating incidents, and taking action outside the main application.
       </p>
 
