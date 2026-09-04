@@ -1,7 +1,6 @@
 import { DetailLayout } from "@/components/DetailLayout";
 import { useMemo, useState } from "react";
 import { ArrowUpDown } from "lucide-react";
-import { McCliDemo } from "@/components/mc-cli/McCliDemo";
 import {
   Table,
   TableBody,
@@ -246,13 +245,6 @@ export default function MonteCarlo() {
           </TableBody>
         </Table>
       </div>
-
-      <h2 className="font-display text-lg font-medium text-foreground">CLI</h2>
-      <p className="font-body text-base text-muted-foreground leading-relaxed">
-        Explored a new way for people and AI agents to interact directly with Monte Carlo's APIs—inspecting assets, investigating incidents, and taking action outside the main application.
-      </p>
-
-      <McCliDemo />
 
     </DetailLayout>
   );
