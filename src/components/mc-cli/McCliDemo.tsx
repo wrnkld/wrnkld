@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { CliLine, Json, jsonTokens } from "./highlight";
 import { scenarios, type Scenario } from "./scenarios";
 
-const CYCLE_MS = 3500;
+const CYCLE_MS = 6000;
 
 function useTypewriter(scenario: Scenario | null) {
   const [chars, setChars] = useState(0);
