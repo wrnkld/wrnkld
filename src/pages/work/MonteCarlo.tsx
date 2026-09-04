@@ -226,27 +226,43 @@ export default function MonteCarlo() {
         <Table>
           <TableHeader>
             <TableRow className="surface-tint-hover border-b-border/70">
+              <TableHead className="w-[180px]">
+                <FeedbackSortHeader field="customer">Customer</FeedbackSortHeader>
+              </TableHead>
+              <TableHead className="w-[160px] hidden sm:table-cell">
+                <FeedbackSortHeader field="name">Name</FeedbackSortHeader>
+              </TableHead>
+              <TableHead className="w-[80px] hidden sm:table-cell">
+                <FeedbackSortHeader field="contact">Contact</FeedbackSortHeader>
+              </TableHead>
+              <TableHead className="w-[120px]">
+                <FeedbackSortHeader field="checkIn">Check in</FeedbackSortHeader>
+              </TableHead>
+              <TableHead className="w-[80px] hidden sm:table-cell">
+                <FeedbackSortHeader field="settings">Settings</FeedbackSortHeader>
+              </TableHead>
+              <TableHead className="w-[100px] hidden sm:table-cell">
+                <FeedbackSortHeader field="codeChanges">Code changes</FeedbackSortHeader>
+              </TableHead>
               <TableHead className="w-[90px] hidden sm:table-cell">
-                <FeedbackSortHeader field="date">Date</FeedbackSortHeader>
+                <FeedbackSortHeader field="terms">Terms</FeedbackSortHeader>
               </TableHead>
-              <TableHead className="w-[180px] hidden sm:table-cell">
-                <FeedbackSortHeader field="company">Company</FeedbackSortHeader>
-              </TableHead>
-              <TableHead className="w-[140px] hidden sm:table-cell">
-                <FeedbackSortHeader field="session">Session</FeedbackSortHeader>
-              </TableHead>
-              <TableHead>
-                <FeedbackSortHeader field="insight">Insight</FeedbackSortHeader>
+              <TableHead className="w-[90px] hidden sm:table-cell">
+                <FeedbackSortHeader field="cardSort">Card sort</FeedbackSortHeader>
               </TableHead>
             </TableRow>
           </TableHeader>
           <TableBody>
             {sortedFeedback.map((fb) => (
               <TableRow key={fb.id} className="border-b border-border/70 transition-colors surface-tint-hover">
-                <TableCell className="text-muted-foreground tabular-nums hidden sm:table-cell">{fb.date}</TableCell>
-                <TableCell className="text-foreground hidden sm:table-cell">{fb.company}</TableCell>
-                <TableCell className="text-muted-foreground hidden sm:table-cell">{fb.session}</TableCell>
-                <TableCell className="text-foreground">{fb.insight}</TableCell>
+                <TableCell className="text-foreground">{fb.customer}</TableCell>
+                <TableCell className="text-muted-foreground hidden sm:table-cell">{fb.name}</TableCell>
+                <TableCell className="text-muted-foreground whitespace-nowrap hidden sm:table-cell">{fb.contact}</TableCell>
+                <TableCell className="text-muted-foreground whitespace-nowrap">{fb.checkIn}</TableCell>
+                <TableCell className="text-muted-foreground whitespace-nowrap hidden sm:table-cell">{fb.settings}</TableCell>
+                <TableCell className="text-muted-foreground whitespace-nowrap hidden sm:table-cell">{fb.codeChanges}</TableCell>
+                <TableCell className="text-muted-foreground whitespace-nowrap hidden sm:table-cell">{fb.terms}</TableCell>
+                <TableCell className="text-muted-foreground whitespace-nowrap hidden sm:table-cell">{fb.cardSort}</TableCell>
               </TableRow>
             ))}
           </TableBody>
