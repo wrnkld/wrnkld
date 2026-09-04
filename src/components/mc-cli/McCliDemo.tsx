@@ -1,14 +1,8 @@
 import { useEffect, useRef, useState } from "react";
 import { CliLine, Json, jsonTokens } from "./highlight";
 import { scenarios, type Scenario } from "./scenarios";
-import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
-const tabLabel: Record<string, string> = {
-  "get-table": "Table",
-  lineage: "Lineage",
-  "list-alerts": "Alerts",
-  "list-monitors": "Monitors",
-};
+const CYCLE_MS = 3500;
 
 function useTypewriter(scenario: Scenario | null) {
   const [chars, setChars] = useState(0);
@@ -52,6 +46,19 @@ function useTypewriter(scenario: Scenario | null) {
   return { chars, done };
 }
 
+function useScenarioCycle() {
+  const [index, setIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = window.setInterval(() => {
+      setIndex((prev) => (prev + 1) % scenarios.length);
+    }, CYCLE_MS);
+    return () => window.clearInterval(interval);
+  }, []);
+
+  return scenarios[index];
+}
+
 function BlockLabel({ children }: { children: React.ReactNode }) {
   return (
     <div className="font-body text-[11px] font-medium uppercase tracking-[0.1em] text-[hsl(var(--term-t3))] mb-2">
@@ -69,24 +76,13 @@ function Code({ children }: { children: React.ReactNode }) {
 }
 
 export function McCliDemo() {
-  const [activeId, setActiveId] = useState<string>(scenarios[0].id);
-  const active = scenarios.find((s) => s.id === activeId) ?? scenarios[0];
+  const active = useScenarioCycle();
   const { chars, done } = useTypewriter(active);
 
   const fullJson = JSON.stringify(active.res, null, 2);
 
   return (
-    <div className="mc-terminal space-y-3">
-      <Tabs value={activeId} onValueChange={(value) => setActiveId(value)}>
-        <TabsList className="h-9">
-          {scenarios.map((s) => (
-            <TabsTrigger key={s.id} value={s.id} className="text-sm py-1">
-              {tabLabel[s.id]}
-            </TabsTrigger>
-          ))}
-        </TabsList>
-      </Tabs>
-
+    <div className="mc-terminal">
       <div className="border border-[hsl(var(--term-border))] bg-[hsl(var(--term-bg))] h-[520px] flex flex-col min-h-0">
         <div className="flex items-center gap-1.5 px-4 py-2.5 border-b border-[hsl(var(--term-border))] shrink-0">
           <span className="h-2.5 w-2.5 rounded-full bg-[#ff5f57]" />
