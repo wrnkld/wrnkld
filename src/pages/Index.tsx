@@ -78,7 +78,7 @@ function Callout({
         </h3>
         <p className="font-body text-base leading-relaxed text-muted-foreground mt-1 max-w-md">{blurb}</p>
         {!isExternal && (
-          <p className="mt-4 inline-flex items-center gap-1 text-sm text-muted-foreground group-hover:text-foreground transition-colors">
+          <p className="mt-4 inline-flex items-center gap-1 text-base text-muted-foreground group-hover:text-foreground transition-colors">
             Case study <ArrowRight className="h-4 w-4" />
           </p>
         )}
@@ -177,7 +177,7 @@ export default function Index() {
         <div className="pt-4">
           <Link
             to="/about/experience"
-            className="inline-flex items-center gap-1 text-sm text-muted-foreground hover:text-foreground transition-colors"
+            className="inline-flex items-center gap-1 text-base text-muted-foreground hover:text-foreground transition-colors"
           >
             Full experience <ArrowRight className="h-4 w-4" />
           </Link>
@@ -257,7 +257,7 @@ function ListColumn({
       <div className="pt-4">
         <Link
           to={to}
-          className="inline-flex items-center gap-1 text-sm text-muted-foreground hover:text-foreground transition-colors"
+          className="inline-flex items-center gap-1 text-base text-muted-foreground hover:text-foreground transition-colors"
         >
           {linkLabel} <ArrowRight className="h-4 w-4" />
         </Link>
@@ -280,7 +280,7 @@ function WordRow({
     <div className="border-b border-border/70">
       <button
         onClick={() => setOpen((o) => !o)}
-        className="w-full text-left px-5 py-4 text-sm flex items-baseline justify-between gap-4 transition-colors surface-tint-hover"
+        className="w-full text-left px-5 py-4 text-base flex items-baseline justify-between gap-4 transition-colors surface-tint-hover"
       >
         <span className="text-foreground">{title}</span>
         {open ? <Minus className="h-4 w-4 shrink-0" /> : <Plus className="h-4 w-4 shrink-0" />}
