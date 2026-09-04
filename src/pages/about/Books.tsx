@@ -9,7 +9,7 @@ type Book = (typeof books)[number];
 const columns: Column<Book>[] = [
   { key: "author", label: "Author", tone: "muted" },
   { key: "title", label: "Title", tone: "primary" },
-  { key: "year", label: "Year", tone: "muted" },
+  { key: "year", label: "Year", tone: "muted", hiddenOnMobile: true },
 ];
 
 export default function Books() {
