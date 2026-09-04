@@ -216,13 +216,7 @@ export default function MonteCarlo() {
                 <FeedbackSortHeader field="customer">Customer</FeedbackSortHeader>
               </TableHead>
               <TableHead className="w-[160px] hidden sm:table-cell">
-                <FeedbackSortHeader field="name">Name</FeedbackSortHeader>
-              </TableHead>
-              <TableHead className="w-[80px] hidden sm:table-cell">
-                <FeedbackSortHeader field="contact">Contact</FeedbackSortHeader>
-              </TableHead>
-              <TableHead className="w-[120px]">
-                <FeedbackSortHeader field="checkIn">Check in</FeedbackSortHeader>
+                <FeedbackSortHeader field="role">Role</FeedbackSortHeader>
               </TableHead>
               <TableHead className="w-[80px] hidden sm:table-cell">
                 <FeedbackSortHeader field="settings">Settings</FeedbackSortHeader>
@@ -242,9 +236,7 @@ export default function MonteCarlo() {
             {sortedFeedback.map((fb) => (
               <TableRow key={fb.id} className="border-b border-border/70 transition-colors surface-tint-hover">
                 <TableCell className="text-foreground">{fb.customer}</TableCell>
-                <TableCell className="text-muted-foreground hidden sm:table-cell">{fb.name}</TableCell>
-                <TableCell className="text-muted-foreground whitespace-nowrap hidden sm:table-cell">{fb.contact}</TableCell>
-                <TableCell className="text-muted-foreground whitespace-nowrap">{fb.checkIn}</TableCell>
+                <TableCell className="text-muted-foreground hidden sm:table-cell">{fb.role}</TableCell>
                 <TableCell className="text-muted-foreground whitespace-nowrap hidden sm:table-cell">{fb.settings}</TableCell>
                 <TableCell className="text-muted-foreground whitespace-nowrap hidden sm:table-cell">{fb.codeChanges}</TableCell>
                 <TableCell className="text-muted-foreground whitespace-nowrap hidden sm:table-cell">{fb.terms}</TableCell>
