@@ -73,9 +73,9 @@ export default function MonteCarlo() {
   const [sortField, setSortField] = useState<SortField>("id");
   const [sortDirection, setSortDirection] = useState<"asc" | "desc">("desc");
 
-  type FeedbackSortField = "date" | "company" | "session" | "insight";
-  const [feedbackSortField, setFeedbackSortField] = useState<FeedbackSortField>("date");
-  const [feedbackSortDirection, setFeedbackSortDirection] = useState<"asc" | "desc">("desc");
+  type FeedbackSortField = "customer" | "name" | "contact" | "checkIn" | "settings" | "codeChanges" | "terms" | "cardSort";
+  const [feedbackSortField, setFeedbackSortField] = useState<FeedbackSortField>("customer");
+  const [feedbackSortDirection, setFeedbackSortDirection] = useState<"asc" | "desc">("asc");
 
   const handleSort = (field: SortField) => {
     if (sortField === field) {
