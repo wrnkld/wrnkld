@@ -52,6 +52,10 @@ export default function MonteCarlo() {
   const [sortField, setSortField] = useState<SortField>("id");
   const [sortDirection, setSortDirection] = useState<"asc" | "desc">("desc");
 
+  type FeedbackSortField = "date" | "company" | "session" | "insight";
+  const [feedbackSortField, setFeedbackSortField] = useState<FeedbackSortField>("date");
+  const [feedbackSortDirection, setFeedbackSortDirection] = useState<"asc" | "desc">("desc");
+
   const handleSort = (field: SortField) => {
     if (sortField === field) {
       setSortDirection(sortDirection === "asc" ? "desc" : "asc");
@@ -72,9 +76,39 @@ export default function MonteCarlo() {
     });
   }, [sortField, sortDirection]);
 
+  const handleFeedbackSort = (field: FeedbackSortField) => {
+    if (feedbackSortField === field) {
+      setFeedbackSortDirection(feedbackSortDirection === "asc" ? "desc" : "asc");
+    } else {
+      setFeedbackSortField(field);
+      setFeedbackSortDirection("asc");
+    }
+  };
+
+  const sortedFeedback = useMemo(() => {
+    const value = (fb: (typeof customerFeedback)[number]) => fb[feedbackSortField];
+    return [...customerFeedback].sort((a, b) => {
+      const av = value(a);
+      const bv = value(b);
+      const comparison =
+        typeof av === "string" && typeof bv === "string" ? av.localeCompare(bv) : Number(av) - Number(bv);
+      return feedbackSortDirection === "asc" ? comparison : -comparison;
+    });
+  }, [feedbackSortField, feedbackSortDirection]);
+
   const SortHeader = ({ field, children }: { field: SortField; children: React.ReactNode }) => (
     <button
       onClick={() => handleSort(field)}
+      className="inline-flex items-center gap-1 text-muted-foreground hover:text-foreground transition-colors duration-200"
+    >
+      {children}
+      <ArrowUpDown className="h-3 w-3" />
+    </button>
+  );
+
+  const FeedbackSortHeader = ({ field, children }: { field: FeedbackSortField; children: React.ReactNode }) => (
+    <button
+      onClick={() => handleFeedbackSort(field)}
       className="inline-flex items-center gap-1 text-muted-foreground hover:text-foreground transition-colors duration-200"
     >
       {children}
