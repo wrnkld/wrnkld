@@ -86,7 +86,7 @@ export function SleevesBody() {
         </p>
 
         <hr className="-mx-5 border-t border-border/70" />
-        <div className="text-sm text-muted-foreground space-y-2">
+        <div className="text-base text-muted-foreground space-y-2">
           <p><sup>1</sup> <a href="https://www.youtube.com/watch?v=gPNdFHSLAeI" target="_blank" rel="noopener noreferrer" className="text-foreground hover:text-foreground/60 transition-colors">youtube.com/watch?v=gPNdFHSLAeI</a></p>
           <p><sup>2</sup> Less cursing, less ALL CAPS</p>
           <p><sup>3</sup> <a href="https://www.youtube.com/watch?v=RFZZEpNKjg0" target="_blank" rel="noopener noreferrer" className="text-foreground hover:text-foreground/60 transition-colors">youtube.com/watch?v=RFZZEpNKjg0</a></p>

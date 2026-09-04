@@ -12,7 +12,7 @@ export function Row({
   return (
     <div
       className={cn(
-        "px-5 py-4 text-sm border-b border-border/70 transition-colors",
+        "px-5 py-4 text-base border-b border-border/70 transition-colors",
         !noHover && "surface-tint-hover",
         className
       )}
