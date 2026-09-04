@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import { cn } from "@/lib/utils";
 import { CliLine, Json, jsonTokens } from "./highlight";
 import { scenarios, type Scenario } from "./scenarios";
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
@@ -78,9 +79,17 @@ export function McCliDemo() {
   return (
     <div className="mc-terminal space-y-3">
       <Tabs value={activeId} onValueChange={(value) => setActiveId(value)}>
-        <TabsList className="h-9">
-          {scenarios.map((s) => (
-            <TabsTrigger key={s.id} value={s.id} className="text-sm">
+        <TabsList className="h-9 p-0 gap-0 bg-muted rounded-md">
+          {scenarios.map((s, i) => (
+            <TabsTrigger
+              key={s.id}
+              value={s.id}
+              className={cn(
+                "text-sm rounded-none px-4 py-0 h-full data-[state=active]:shadow-none",
+                i === 0 && "rounded-l-md",
+                i === scenarios.length - 1 && "rounded-r-md",
+              )}
+            >
               {tabLabel[s.id]}
             </TabsTrigger>
           ))}
