@@ -12,11 +12,11 @@ export default function ExperiencePage() {
             noHover
             className="grid grid-cols-1 md:grid-cols-[1fr_2fr] gap-1 md:gap-8 border-b-0"
           >
-            <div className="flex flex-col">
+          <div className="flex flex-col gap-1">
               <span className="font-medium text-foreground">{job.company}</span>
               <span className="text-muted-foreground">{job.years}</span>
             </div>
-            <div className="flex flex-col">
+            <div className="flex flex-col gap-1">
               <span className="text-foreground">{job.role}</span>
               {job.description && (
                 <span className="text-muted-foreground">
