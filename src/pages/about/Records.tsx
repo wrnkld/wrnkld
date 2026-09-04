@@ -9,7 +9,7 @@ type Record = (typeof records)[number];
 const columns: Column<Record>[] = [
   { key: "artist", label: "Artist", tone: "muted" },
   { key: "album", label: "Album", tone: "primary" },
-  { key: "year", label: "Year", tone: "muted" },
+  { key: "year", label: "Year", tone: "muted", hiddenOnMobile: true },
 ];
 
 export default function Records() {

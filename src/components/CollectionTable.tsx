@@ -16,6 +16,7 @@ export interface Column<T> {
   key: Extract<keyof T, string>;
   label: string;
   tone: "primary" | "muted";
+  hiddenOnMobile?: boolean;
 }
 
 interface CollectionTableProps<T extends Row> {
