@@ -80,7 +80,7 @@ export function McCliDemo() {
       <Tabs value={activeId} onValueChange={(value) => setActiveId(value)}>
         <TabsList className="h-9">
           {scenarios.map((s) => (
-            <TabsTrigger key={s.id} value={s.id} className="text-sm">
+            <TabsTrigger key={s.id} value={s.id} className="text-sm py-1">
               {tabLabel[s.id]}
             </TabsTrigger>
           ))}
