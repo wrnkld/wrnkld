@@ -247,7 +247,7 @@ function ListColumn({
               >
                 <TableCell className="text-muted-foreground">{row.primary}</TableCell>
                 <TableCell className="text-foreground">{row.secondary}</TableCell>
-                <TableCell className="text-muted-foreground tabular-nums">{row.meta}</TableCell>
+                <TableCell className="text-muted-foreground tabular-nums hidden md:table-cell">{row.meta}</TableCell>
               </TableRow>
             ))}
           </TableBody>
