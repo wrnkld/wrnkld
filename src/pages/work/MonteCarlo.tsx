@@ -201,6 +201,37 @@ export default function MonteCarlo() {
         Built a customer advisory board and a lightweight research practice to keep design decisions grounded in real usage. Ran structured interviews, feedback sessions, and quarterly reviews with data teams, then turned those insights into roadmap input, clearer prioritization, and tighter product–design–engineering alignment.
       </p>
 
+      <div className="full-bleed border-y border-border/70 overflow-hidden table-gutter">
+        <Table>
+          <TableHeader>
+            <TableRow className="surface-tint-hover border-b-border/70">
+              <TableHead className="w-[90px] hidden sm:table-cell">
+                <FeedbackSortHeader field="date">Date</FeedbackSortHeader>
+              </TableHead>
+              <TableHead className="w-[180px] hidden sm:table-cell">
+                <FeedbackSortHeader field="company">Company</FeedbackSortHeader>
+              </TableHead>
+              <TableHead className="w-[140px] hidden sm:table-cell">
+                <FeedbackSortHeader field="session">Session</FeedbackSortHeader>
+              </TableHead>
+              <TableHead>
+                <FeedbackSortHeader field="insight">Insight</FeedbackSortHeader>
+              </TableHead>
+            </TableRow>
+          </TableHeader>
+          <TableBody>
+            {sortedFeedback.map((fb) => (
+              <TableRow key={fb.id} className="border-b border-border/70 transition-colors surface-tint-hover">
+                <TableCell className="text-muted-foreground tabular-nums hidden sm:table-cell">{fb.date}</TableCell>
+                <TableCell className="text-foreground hidden sm:table-cell">{fb.company}</TableCell>
+                <TableCell className="text-muted-foreground hidden sm:table-cell">{fb.session}</TableCell>
+                <TableCell className="text-foreground">{fb.insight}</TableCell>
+              </TableRow>
+            ))}
+          </TableBody>
+        </Table>
+      </div>
+
       <h2 className="font-display text-lg font-medium text-foreground">CLI</h2>
       <p className="font-body text-sm text-muted-foreground leading-relaxed">
         Explored a new way for people and AI agents to interact directly with Monte Carlo's APIs—inspecting assets, investigating incidents, and taking action outside the main application.
