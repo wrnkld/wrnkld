@@ -37,21 +37,35 @@ const pullRequests = [
 ];
 
 const customerFeedback = [
-  { id: 1, company: "Acme Data", session: "Advisory board", date: 2024, insight: "Alert noise is the top reason teams ignore incidents." },
-  { id: 2, company: "Northwind Analytics", session: "Quarterly review", date: 2024, insight: "Want lineage exposed inside Slack triage threads." },
-  { id: 3, company: "Contoso BI", session: "Interview", date: 2023, insight: "Cost attribution per dbt model is essential for FinOps." },
-  { id: 4, company: "Fabrikam Retail", session: "Advisory board", date: 2024, insight: "AI explanations need to read in plain language, not JSON." },
-  { id: 5, company: "Litware Health", session: "Quarterly review", date: 2024, insight: "Incident severity should account for downstream revenue impact." },
-  { id: 6, company: "Tailwind Traders", session: "Interview", date: 2023, insight: "Teams want recommended fixes, not just another alert." },
-  { id: 7, company: "Adventure Works", session: "Advisory board", date: 2024, insight: "Data contracts must be enforceable before a CI merge." },
-  { id: 8, company: "Proseware", session: "Quarterly review", date: 2023, insight: "Slack noise is the fastest path to on-call burnout." },
-  { id: 9, company: "Wingtip Toys", session: "Interview", date: 2024, insight: "Every AI agent action needs an exportable audit trail." },
-  { id: 10, company: "Alpine Ski House", session: "Advisory board", date: 2023, insight: "Schema changes should auto-route to downstream owners." },
-  { id: 11, company: "Fourth Coffee", session: "Quarterly review", date: 2024, insight: "Cost visibility needs to be by team, not just warehouse." },
-  { id: 12, company: "Coho Vineyard", session: "Interview", date: 2023, insight: "Freshness SLAs differ meaningfully by business unit." },
-  { id: 13, company: "Humongous Insurance", session: "Advisory board", date: 2024, insight: "Data quality should be tracked as a product metric." },
-  { id: 14, company: "Wide World Importers", session: "Quarterly review", date: 2023, insight: "dbt integration setup should be one-click." },
-  { id: 15, company: "Margie's Travel", session: "Interview", date: 2024, insight: "On-call runbooks should live next to the incident." },
+  { id: 1, customer: "Jaguar Land Rover", name: "Isha Shah", email: "ishah@partner.jaguarlandrover.com", contact: "Email", checkIn: "Emailed", settings: "--", codeChanges: "--", terms: "--", cardSort: "Sent" },
+  { id: 2, customer: "Verizon Connect", name: "Lorenzo Belloni", email: "lorenzo.belloni@verizonconnect.com", contact: "Slack", checkIn: "Get back mid-Sept", settings: "--", codeChanges: "--", terms: "--", cardSort: "Sent" },
+  { id: 3, customer: "Monday", name: "Adir Halfon", email: "adirh@monday.com", contact: "Slack", checkIn: "Sent", settings: "--", codeChanges: "Sent", terms: "Complete", cardSort: "--" },
+  { id: 4, customer: "Skyscanner", name: "Becky Woolley", email: "becky.woolley@skyscanner.net", contact: "Slack", checkIn: "Sent", settings: "--", codeChanges: "Sent", terms: "Complete", cardSort: "--" },
+  { id: 5, customer: "Richemont", name: "Claudio Valerio", email: "claudio.valerio@richemont.com", contact: "Email", checkIn: "Sent", settings: "--", codeChanges: "--", terms: "--", cardSort: "Sent" },
+  { id: 6, customer: "Virgin", name: "Darshana Ganguly", email: "v.darshana.ganguly@virgin.com", contact: "Slack", checkIn: "Sent", settings: "--", codeChanges: "--", terms: "--", cardSort: "Sent" },
+  { id: 7, customer: "Auto Trader", name: "David Whittingham", email: "david.whittingham@autotrader.co.uk", contact: "Slack", checkIn: "Sent", settings: "--", codeChanges: "Sent", terms: "Complete", cardSort: "--" },
+  { id: 8, customer: "Richemont", name: "Delphine Zihlmann", email: "delphine.zihlmann@richemont.com", contact: "Email", checkIn: "Sent", settings: "--", codeChanges: "--", terms: "--", cardSort: "Sent" },
+  { id: 9, customer: "Pagaya", name: "Eitan Sheffer", email: "eitan.sheffer@pagaya.com", contact: "Slack", checkIn: "Sent", settings: "Flat", codeChanges: "Sent", terms: "Complete", cardSort: "--" },
+  { id: 10, customer: "Roche", name: "Hendrik Serruys", email: "hendrik.serruys@contractors.roche.com", contact: "Email", checkIn: "Sent", settings: "--", codeChanges: "--", terms: "--", cardSort: "Sent" },
+  { id: 11, customer: "Skyscanner", name: "JM Laplante", email: "jm.laplante@skyscanner.net", contact: "Slack", checkIn: "Sent", settings: "--", codeChanges: "--", terms: "Complete", cardSort: "--" },
+  { id: 12, customer: "Old Mutual", name: "Manrich Kotze", email: "Manrich.Kotze@projectolympus.co.za", contact: "Email", checkIn: "Sent", settings: "--", codeChanges: "--", terms: "--", cardSort: "Sent" },
+  { id: 13, customer: "Kolibri Games", name: "Matheus Dantas", email: "matheus.dantas@kolibrigames.com", contact: "Slack", checkIn: "Sent", settings: "--", codeChanges: "Sent", terms: "DNP", cardSort: "--" },
+  { id: 14, customer: "Jaguar Land Rover", name: "Rishikesh Zade", email: "rzade1@partner.jaguarlandrover.com", contact: "Email", checkIn: "Sent", settings: "--", codeChanges: "--", terms: "--", cardSort: "Sent" },
+  { id: 15, customer: "Richemont", name: "Stephane Madet", email: "stephane.madet@richemont.com", contact: "Email", checkIn: "Sent", settings: "--", codeChanges: "--", terms: "--", cardSort: "Sent" },
+  { id: 16, customer: "Virgin", name: "Tamas Szenczi", email: "v.tamas.szenczi@virgin.com", contact: "Slack", checkIn: "Sent", settings: "--", codeChanges: "--", terms: "--", cardSort: "Sent" },
+  { id: 17, customer: "Roche", name: "Timothy Gaertner", email: "timothy.gaertner@roche.com", contact: "Email", checkIn: "Sent", settings: "--", codeChanges: "--", terms: "--", cardSort: "Sent" },
+  { id: 18, customer: "OLX", name: "Marcin Binkowski", email: "marcin.binkowski@olx.pl", contact: "Slack", checkIn: "Yes", settings: "--", codeChanges: "Complete", terms: "Complete", cardSort: "--" },
+  { id: 19, customer: "Aer Lingus", name: "Adina Starvar", email: "adina.stavar@aerlingus.com", contact: "Email", checkIn: "Yes", settings: "--", codeChanges: "--", terms: "--", cardSort: "Sent" },
+  { id: 20, customer: "Toast", name: "Alisa Aylward", email: "alisa.aylward@toasttab.com", contact: "Slack", checkIn: "Yes", settings: "--", codeChanges: "Sent", terms: "--", cardSort: "Sent" },
+  { id: 21, customer: "Toast", name: "Angela Potter", email: "angela.delatorre@toasttab.com", contact: "Slack", checkIn: "Yes", settings: "--", codeChanges: "--", terms: "--", cardSort: "Sent" },
+  { id: 22, customer: "Sirius XM", name: "Armen Zaybekian", email: "armen.zaybekian@siriusxm.com", contact: "Slack", checkIn: "Yes", settings: "--", codeChanges: "--", terms: "Complete", cardSort: "--" },
+  { id: 23, customer: "Skyscanner", name: "George Berdal", email: "george.berdal@skyscanner.net", contact: "Slack", checkIn: "Yes", settings: "Flat", codeChanges: "--", terms: "DNP", cardSort: "--" },
+  { id: 24, customer: "Yape", name: "Jorge Plasencia", email: "jorgeeplasencia@yape.com.pe", contact: "Slack", checkIn: "Yes", settings: "DNP", codeChanges: "--", terms: "--", cardSort: "--" },
+  { id: 25, customer: "Lyst", name: "Katie Woodruff", email: "katie.woodruff@ly.st", contact: "Slack", checkIn: "Yes", settings: "--", codeChanges: "Sent", terms: "Complete", cardSort: "--" },
+  { id: 26, customer: "Swapfiets", name: "Natalia Remizova", email: "natalia.remizova@swapfiets.com", contact: "Slack", checkIn: "Yes", settings: "--", codeChanges: "--", terms: "--", cardSort: "Sent" },
+  { id: 27, customer: "Sirius XM", name: "Rahul Gadodia", email: "rahul.gadodia@siriusxm.com", contact: "Slack", checkIn: "Yes", settings: "--", codeChanges: "--", terms: "Complete", cardSort: "--" },
+  { id: 28, customer: "Delivery Hero", name: "Sahil Mehta", email: "sahil.mehta@deliveryhero.com", contact: "Slack", checkIn: "Yes", settings: "Flat", codeChanges: "Sent", terms: "Complete", cardSort: "--" },
+  { id: 29, customer: "Checkout", name: "Serge Bouschet", email: "serge.bouschet@checkout.com", contact: "Slack", checkIn: "Yes", settings: "Flat", codeChanges: "Complete", terms: "Complete", cardSort: "--" },
 ];
 
 export default function MonteCarlo() {
@@ -59,9 +73,9 @@ export default function MonteCarlo() {
   const [sortField, setSortField] = useState<SortField>("id");
   const [sortDirection, setSortDirection] = useState<"asc" | "desc">("desc");
 
-  type FeedbackSortField = "date" | "company" | "session" | "insight";
-  const [feedbackSortField, setFeedbackSortField] = useState<FeedbackSortField>("date");
-  const [feedbackSortDirection, setFeedbackSortDirection] = useState<"asc" | "desc">("desc");
+  type FeedbackSortField = "customer" | "name" | "contact" | "checkIn" | "settings" | "codeChanges" | "terms" | "cardSort";
+  const [feedbackSortField, setFeedbackSortField] = useState<FeedbackSortField>("customer");
+  const [feedbackSortDirection, setFeedbackSortDirection] = useState<"asc" | "desc">("asc");
 
   const handleSort = (field: SortField) => {
     if (sortField === field) {
@@ -212,27 +226,43 @@ export default function MonteCarlo() {
         <Table>
           <TableHeader>
             <TableRow className="surface-tint-hover border-b-border/70">
+              <TableHead className="w-[180px]">
+                <FeedbackSortHeader field="customer">Customer</FeedbackSortHeader>
+              </TableHead>
+              <TableHead className="w-[160px] hidden sm:table-cell">
+                <FeedbackSortHeader field="name">Name</FeedbackSortHeader>
+              </TableHead>
+              <TableHead className="w-[80px] hidden sm:table-cell">
+                <FeedbackSortHeader field="contact">Contact</FeedbackSortHeader>
+              </TableHead>
+              <TableHead className="w-[120px]">
+                <FeedbackSortHeader field="checkIn">Check in</FeedbackSortHeader>
+              </TableHead>
+              <TableHead className="w-[80px] hidden sm:table-cell">
+                <FeedbackSortHeader field="settings">Settings</FeedbackSortHeader>
+              </TableHead>
+              <TableHead className="w-[100px] hidden sm:table-cell">
+                <FeedbackSortHeader field="codeChanges">Code changes</FeedbackSortHeader>
+              </TableHead>
               <TableHead className="w-[90px] hidden sm:table-cell">
-                <FeedbackSortHeader field="date">Date</FeedbackSortHeader>
+                <FeedbackSortHeader field="terms">Terms</FeedbackSortHeader>
               </TableHead>
-              <TableHead className="w-[180px] hidden sm:table-cell">
-                <FeedbackSortHeader field="company">Company</FeedbackSortHeader>
-              </TableHead>
-              <TableHead className="w-[140px] hidden sm:table-cell">
-                <FeedbackSortHeader field="session">Session</FeedbackSortHeader>
-              </TableHead>
-              <TableHead>
-                <FeedbackSortHeader field="insight">Insight</FeedbackSortHeader>
+              <TableHead className="w-[90px] hidden sm:table-cell">
+                <FeedbackSortHeader field="cardSort">Card sort</FeedbackSortHeader>
               </TableHead>
             </TableRow>
           </TableHeader>
           <TableBody>
             {sortedFeedback.map((fb) => (
               <TableRow key={fb.id} className="border-b border-border/70 transition-colors surface-tint-hover">
-                <TableCell className="text-muted-foreground tabular-nums hidden sm:table-cell">{fb.date}</TableCell>
-                <TableCell className="text-foreground hidden sm:table-cell">{fb.company}</TableCell>
-                <TableCell className="text-muted-foreground hidden sm:table-cell">{fb.session}</TableCell>
-                <TableCell className="text-foreground">{fb.insight}</TableCell>
+                <TableCell className="text-foreground">{fb.customer}</TableCell>
+                <TableCell className="text-muted-foreground hidden sm:table-cell">{fb.name}</TableCell>
+                <TableCell className="text-muted-foreground whitespace-nowrap hidden sm:table-cell">{fb.contact}</TableCell>
+                <TableCell className="text-muted-foreground whitespace-nowrap">{fb.checkIn}</TableCell>
+                <TableCell className="text-muted-foreground whitespace-nowrap hidden sm:table-cell">{fb.settings}</TableCell>
+                <TableCell className="text-muted-foreground whitespace-nowrap hidden sm:table-cell">{fb.codeChanges}</TableCell>
+                <TableCell className="text-muted-foreground whitespace-nowrap hidden sm:table-cell">{fb.terms}</TableCell>
+                <TableCell className="text-muted-foreground whitespace-nowrap hidden sm:table-cell">{fb.cardSort}</TableCell>
               </TableRow>
             ))}
           </TableBody>
