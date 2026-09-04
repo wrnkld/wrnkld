@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import { cn } from "@/lib/utils";
 import { CliLine, Json, jsonTokens } from "./highlight";
 import { scenarios, type Scenario } from "./scenarios";
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
