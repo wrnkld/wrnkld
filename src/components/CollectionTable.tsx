@@ -63,7 +63,7 @@ export function CollectionTable<T extends Row>({
                 key={column.key}
                 className={`text-muted-foreground ${
                   column.key === "year" ? "whitespace-nowrap" : "[overflow-wrap:anywhere]"
-                }`}
+                } ${column.hiddenOnMobile ? "hidden md:table-cell" : ""}`}
               >
                 <button
                   type="button"
@@ -103,7 +103,7 @@ export function CollectionTable<T extends Row>({
                     key={column.key}
                     className={`${
                       column.key === "year" ? "whitespace-nowrap" : "[overflow-wrap:anywhere]"
-                    } align-top ${
+                    } ${column.hiddenOnMobile ? "hidden md:table-cell" : ""} align-top ${
                       row.recommended
                         ? "text-recommended"
                         : column.tone === "primary"
