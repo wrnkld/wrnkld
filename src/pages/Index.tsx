@@ -76,7 +76,7 @@ function Callout({
           {title}
           {isExternal && <ArrowUpRight className="h-4 w-4" />}
         </h3>
-        <p className="text-sm text-muted-foreground mt-1 max-w-md">{blurb}</p>
+        <p className="font-body text-base leading-relaxed text-muted-foreground mt-1 max-w-md">{blurb}</p>
         {!isExternal && (
           <p className="mt-4 inline-flex items-center gap-1 text-sm text-muted-foreground group-hover:text-foreground transition-colors">
             Case study <ArrowRight className="h-4 w-4" />
