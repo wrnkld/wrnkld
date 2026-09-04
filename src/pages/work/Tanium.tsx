@@ -21,14 +21,14 @@ export default function Tanium() {
       </p>
 
       <h2 className="font-display text-lg font-medium text-foreground">Challenge</h2>
-      <p className="font-body text-sm text-muted-foreground leading-relaxed">
+      <p className="font-body text-base text-muted-foreground leading-relaxed">
         Supported multiple products through a period of rapid growth, tight timelines, and high-stakes enterprise security work.
       </p>
 
       <video src={taniumNavigation} poster={taniumNavigationViews} autoPlay loop muted playsInline className="w-full h-auto border border-border/40" />
 
       <h2 className="font-display text-lg font-medium text-foreground">Reinvent</h2>
-      <p className="font-body text-sm text-muted-foreground leading-relaxed">
+      <p className="font-body text-base text-muted-foreground leading-relaxed">
         Redesigned three flagship products—Discover, Asset, and Threat Response—simplifying dense interfaces, tightening information architecture, and speeding up core security workflows.
       </p>
 
@@ -42,7 +42,7 @@ export default function Tanium() {
       <img src={taniumAssetVendor} alt="Tanium Asset vendor view" className="w-full h-auto border border-border/40" />
 
       <h2 className="font-display text-lg font-medium text-foreground">Ship</h2>
-      <p className="font-body text-sm text-muted-foreground leading-relaxed">
+      <p className="font-body text-base text-muted-foreground leading-relaxed">
         Built and shipped two entirely new products from scratch: Assurance, focused on MITRE ATT&CK visibility, and Enforce, designed for policy enforcement at enterprise scale.
       </p>
 
