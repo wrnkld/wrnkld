@@ -34,17 +34,24 @@ const pullRequests = [
   { id: 15038, title: "Show the ETL integrations announcement banner on the Integrations settings page", files: 1, additions: 5, deletions: 1 },
   { id: 15039, title: "Move the Monitors Columns button onto the bulk-actions row", files: 2, additions: 7, deletions: 6 },
   { id: 15037, title: "Remove Alerts from default Monitors list filters", files: 4, additions: 14, deletions: 11 },
-  { id: 15008, title: "Add ETL integrations announcement banner to the Jobs page", files: 8, additions: 286, deletions: 13 },
-  { id: 14942, title: "Let the asset nav tree and Operations agent panel open independently", files: 21, additions: 368, deletions: 178 },
-  { id: 14945, title: "Add ETL & orchestration integrations sidebar callout", files: 5, additions: 203, deletions: 17 },
-  { id: 14921, title: "Fix invisible Copy button in the AI tool triage drawer in light mode", files: 2, additions: 18, deletions: 9 },
-  { id: 14884, title: "Add a Type column to the alerts table", files: 10, additions: 230, deletions: 33 },
 ];
 
 const customerFeedback = [
   { id: 1, company: "Acme Data", session: "Advisory board", date: 2024, insight: "Alert noise is the top reason teams ignore incidents." },
   { id: 2, company: "Northwind Analytics", session: "Quarterly review", date: 2024, insight: "Want lineage exposed inside Slack triage threads." },
   { id: 3, company: "Contoso BI", session: "Interview", date: 2023, insight: "Cost attribution per dbt model is essential for FinOps." },
+  { id: 4, company: "Fabrikam Retail", session: "Advisory board", date: 2024, insight: "AI explanations need to read in plain language, not JSON." },
+  { id: 5, company: "Litware Health", session: "Quarterly review", date: 2024, insight: "Incident severity should account for downstream revenue impact." },
+  { id: 6, company: "Tailwind Traders", session: "Interview", date: 2023, insight: "Teams want recommended fixes, not just another alert." },
+  { id: 7, company: "Adventure Works", session: "Advisory board", date: 2024, insight: "Data contracts must be enforceable before a CI merge." },
+  { id: 8, company: "Proseware", session: "Quarterly review", date: 2023, insight: "Slack noise is the fastest path to on-call burnout." },
+  { id: 9, company: "Wingtip Toys", session: "Interview", date: 2024, insight: "Every AI agent action needs an exportable audit trail." },
+  { id: 10, company: "Alpine Ski House", session: "Advisory board", date: 2023, insight: "Schema changes should auto-route to downstream owners." },
+  { id: 11, company: "Fourth Coffee", session: "Quarterly review", date: 2024, insight: "Cost visibility needs to be by team, not just warehouse." },
+  { id: 12, company: "Coho Vineyard", session: "Interview", date: 2023, insight: "Freshness SLAs differ meaningfully by business unit." },
+  { id: 13, company: "Humongous Insurance", session: "Advisory board", date: 2024, insight: "Data quality should be tracked as a product metric." },
+  { id: 14, company: "Wide World Importers", session: "Quarterly review", date: 2023, insight: "dbt integration setup should be one-click." },
+  { id: 15, company: "Margie's Travel", session: "Interview", date: 2024, insight: "On-call runbooks should live next to the incident." },
 ];
 
 export default function MonteCarlo() {
