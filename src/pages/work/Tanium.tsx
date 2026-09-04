@@ -25,28 +25,28 @@ export default function Tanium() {
         Supported multiple products through a period of rapid growth, tight timelines, and high-stakes enterprise security work.
       </p>
 
+      <video src={taniumNavigation} poster={taniumNavigationViews} autoPlay loop muted playsInline className="w-full h-auto border border-border/40" />
+
       <h2 className="font-display text-lg font-medium text-foreground">Reinvent</h2>
       <p className="font-body text-sm text-muted-foreground leading-relaxed">
         Redesigned three flagship products—Discover, Asset, and Threat Response—simplifying dense interfaces, tightening information architecture, and speeding up core security workflows.
       </p>
+
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <img src={taniumThreatAlerts} alt="Tanium Threat Response alerts" className="w-full h-auto border border-border/40" />
+        <img src={taniumThreatDocuments} alt="Tanium Threat Response documents" className="w-full h-auto border border-border/40" />
+      </div>
+
+      <video src={taniumDiscover} poster={taniumDiscoverInterfaces} autoPlay loop muted playsInline className="w-full h-auto border border-border/40" />
+
+      <img src={taniumAssetVendor} alt="Tanium Asset vendor view" className="w-full h-auto border border-border/40" />
 
       <h2 className="font-display text-lg font-medium text-foreground">Ship</h2>
       <p className="font-body text-sm text-muted-foreground leading-relaxed">
         Built and shipped two entirely new products from scratch: Assurance, focused on MITRE ATT&CK visibility, and Enforce, designed for policy enforcement at enterprise scale.
       </p>
 
-      <video src={taniumNavigation} poster={taniumNavigationViews} autoPlay loop muted playsInline className="w-full h-auto border border-border/40" />
-
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-        <img src={taniumThreatAlerts} alt="Tanium Threat Alerts" className="w-full h-auto border border-border/40" />
-        <img src={taniumThreatDocuments} alt="Tanium Threat Documents" className="w-full h-auto border border-border/40" />
-      </div>
-
       <video src={taniumAssurance} poster={taniumAssuranceFindings} autoPlay loop muted playsInline className="w-full h-auto border border-border/40" />
-
-      <video src={taniumDiscover} poster={taniumDiscoverInterfaces} autoPlay loop muted playsInline className="w-full h-auto border border-border/40" />
-
-      <img src={taniumAssetVendor} alt="Tanium Asset Vendor" className="w-full h-auto border border-border/40" />
 
       <video src={taniumEnforce} poster={taniumEnforceOverview} autoPlay loop muted playsInline className="w-full h-auto border border-border/40" />
     </DetailLayout>
