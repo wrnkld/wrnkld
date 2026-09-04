@@ -41,6 +41,12 @@ const pullRequests = [
   { id: 14884, title: "Add a Type column to the alerts table", files: 10, additions: 230, deletions: 33 },
 ];
 
+const customerFeedback = [
+  { id: 1, company: "Acme Data", session: "Advisory board", date: 2024, insight: "Alert noise is the top reason teams ignore incidents." },
+  { id: 2, company: "Northwind Analytics", session: "Quarterly review", date: 2024, insight: "Want lineage exposed inside Slack triage threads." },
+  { id: 3, company: "Contoso BI", session: "Interview", date: 2023, insight: "Cost attribution per dbt model is essential for FinOps." },
+];
+
 export default function MonteCarlo() {
   type SortField = "id" | "title" | "files" | "additions" | "deletions";
   const [sortField, setSortField] = useState<SortField>("id");
