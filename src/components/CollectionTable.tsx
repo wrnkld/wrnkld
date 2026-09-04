@@ -61,9 +61,9 @@ export function CollectionTable<T extends Row>({
             {columns.map((column) => (
               <TableHead
                 key={column.key}
-                className={`text-muted-foreground ${
-                  column.key === "year" ? "whitespace-nowrap" : "[overflow-wrap:anywhere]"
-                } ${column.hiddenOnMobile ? "hidden md:table-cell" : ""}`}
+                className={`text-muted-foreground whitespace-nowrap ${
+                  column.hiddenOnMobile ? "hidden md:table-cell" : ""
+                }`}
               >
                 <button
                   type="button"
