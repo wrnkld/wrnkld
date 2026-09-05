@@ -37,7 +37,7 @@ const pullRequests = [
 
 const customerFeedback = [
   { id: 1, customer: "Jaguar Land Rover", role: "Data Engineer", settings: "Complete", codeChanges: "Complete", terms: "Complete", cardSort: "Complete" },
-  { id: 2, customer: "Verizon Connect", role: "Data Engineer", settings: "Complete", codeChanges: "Complete", terms: "Complete", cardSort: "DNP" },
+  { id: 2, customer: "Verizon Connect", role: "Data Engineer", settings: "Complete", codeChanges: "Complete", terms: "Complete", cardSort: "Complete" },
   { id: 3, customer: "Monday", role: "Data Engineer", settings: "Complete", codeChanges: "Complete", terms: "Complete", cardSort: "Complete" },
   { id: 4, customer: "Skyscanner", role: "Data Engineer", settings: "Complete", codeChanges: "Complete", terms: "Complete", cardSort: "Complete" },
   { id: 5, customer: "Richemont", role: "Data Analyst", settings: "Complete", codeChanges: "Complete", terms: "Complete", cardSort: "Complete" },
