@@ -284,13 +284,33 @@ function WordRow({
         className="w-full text-left px-5 py-4 text-base flex items-baseline justify-between gap-4 transition-colors surface-tint-hover"
       >
         <span className="text-foreground">{title}</span>
-        {open ? <Minus className="h-4 w-4 shrink-0" /> : <Plus className="h-4 w-4 shrink-0" />}
+        <AnimatePresence mode="wait" initial={false}>
+          <motion.span
+            key={open ? "minus" : "plus"}
+            initial={{ opacity: 0, scale: 0.85 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0, scale: 0.85 }}
+            transition={{ duration: 0.15 }}
+          >
+            {open ? <Minus className="h-4 w-4 shrink-0" /> : <Plus className="h-4 w-4 shrink-0" />}
+          </motion.span>
+        </AnimatePresence>
       </button>
-      {open && (
-        <div className="px-5 pb-10 pt-2">
-          <Body />
-        </div>
-      )}
+      <AnimatePresence initial={false}>
+        {open && (
+          <motion.div
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: "auto", opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
+            transition={{ duration: 0.25, ease: "easeOut" }}
+            style={{ overflow: "hidden" }}
+          >
+            <div className="px-5 pb-10 pt-2">
+              <Body />
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   );
 }
