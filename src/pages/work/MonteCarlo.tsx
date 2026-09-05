@@ -10,12 +10,10 @@ import {
   TableRow,
 } from "@/components/ui/table";
 
-import mcdWrites from "@/assets/montecarlo/mcd-writes.png.asset.json";
-import mcdWrite from "@/assets/montecarlo/mcd-write.png.asset.json";
-import mcdIntegrations from "@/assets/montecarlo/mcd-addint.png.asset.json";
-import mcdJob from "@/assets/montecarlo/mcd-job.png.asset.json";
-
-const assetUrl = (path: string) => `https://wrnkld.lovable.app${path}`;
+import mcdWrites from "@/assets/montecarlo/mcd-writes.png";
+import mcdWrite from "@/assets/montecarlo/mcd-write.png";
+import mcdIntegrations from "@/assets/montecarlo/mcd-addint.png";
+import mcdJob from "@/assets/montecarlo/mcd-job.png";
 
 const pullRequests = [
   { id: 15254, title: "Remove the copy link action from asset detail pages", files: 2, additions: 2, deletions: 21 },
