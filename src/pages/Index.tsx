@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { AnimatePresence, motion } from "motion/react";
 import { ArrowUpRight, ArrowRight, Plus, Minus } from "lucide-react";
 import { books } from "@/data/books";
 import { records } from "@/data/records";
