@@ -12,9 +12,7 @@ import {
 
 import mcdWrites from "@/assets/montecarlo/mcd-writes.png";
 import mcdWrite from "@/assets/montecarlo/mcd-write.png";
-import mcdPerfMon from "@/assets/montecarlo/mcd-perf-mon.png";
 import mcdIntegrations from "@/assets/montecarlo/mcd-integrations.png";
-import mcdAudiences from "@/assets/montecarlo/mcd-audiences.png";
 import mcdJob from "@/assets/montecarlo/mcd-job.png";
 
 const pullRequests = [
@@ -188,17 +186,12 @@ export default function MonteCarlo() {
 
       <img src={mcdWrite} alt="Monte Carlo write query detail with observability agent explaining performance" className="w-full h-auto border border-border/40" />
 
-      <img src={mcdPerfMon} alt="Monte Carlo query performance monitor configuration with alert conditions" className="w-full h-auto border border-border/40" />
-
       <h2 className="font-display text-lg font-medium text-foreground">Integrations</h2>
       <p className="font-body text-base text-muted-foreground leading-relaxed">
         Designed a scalable integrations framework for warehouses, orchestration tools, repositories, BI platforms, and incident-response systems.
       </p>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-        <img src={mcdIntegrations} alt="Monte Carlo integrations catalog showing available data warehouse and tool connections" className="w-full h-auto border border-border/40" />
-        <img src={mcdAudiences} alt="Monte Carlo audience configuration with recipient channels and notification routing" className="w-full h-auto border border-border/40" />
-      </div>
+      <img src={mcdIntegrations} alt="Monte Carlo integrations catalog showing available data warehouse and tool connections" className="w-full h-auto border border-border/40" />
 
       <img src={mcdJob} alt="Monte Carlo job performance view showing run time trends and failure tracking for dbt jobs" className="w-full h-auto border border-border/40" />
 
