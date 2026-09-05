@@ -40,7 +40,7 @@ export function CollectionSearch({
           onChange={(event) => onChange(event.target.value)}
           placeholder={placeholder}
           aria-label={placeholder}
-          className="h-12 w-full rounded-md border border-border/70 bg-transparent py-0 pl-9 pr-8 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-1 focus:ring-ring transition-colors duration-200"
+          className="h-12 w-full rounded-md border border-border/70 bg-transparent py-0 pl-9 pr-8 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-1 focus:ring-ring transition-colors duration-200 rounded-md"
         />
         {value && (
           <button
