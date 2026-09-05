@@ -126,8 +126,8 @@
   }
   @keyframes term-blink { 0%, 100% { opacity: 1 } 50% { opacity: 0 } }
 
-  .text-additions { color: hsl(330 75% 45%); }
-  .text-deletions { color: hsl(215 16% 47%); }
+  .text-additions { color: hsl(142 60% 38%); }
+  .text-deletions { color: hsl(330 75% 45%); }
 
   @keyframes fade-in-up {
     from { opacity: 0; transform: translateY(4px); }
