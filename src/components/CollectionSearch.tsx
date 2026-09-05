@@ -22,9 +22,9 @@ export function CollectionSearch({
     <div className="flex flex-row items-center gap-3">
       {tabs && (
         <Tabs value={tabs.value} onValueChange={tabs.onChange} className="shrink-0">
-          <TabsList className="h-auto p-0">
+          <TabsList className="h-12 p-1">
             {tabs.options.map((option) => (
-              <TabsTrigger key={option.value} value={option.value} className="text-sm px-3 py-3">
+              <TabsTrigger key={option.value} value={option.value} className="h-full px-3 py-0 text-sm">
                 {option.label}
               </TabsTrigger>
             ))}
@@ -40,7 +40,7 @@ export function CollectionSearch({
           onChange={(event) => onChange(event.target.value)}
           placeholder={placeholder}
           aria-label={placeholder}
-          className="w-full rounded-md border border-border/70 bg-transparent py-3 pl-9 pr-8 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-1 focus:ring-ring transition-colors duration-200"
+          className="h-12 w-full rounded-md border border-border/70 bg-transparent py-0 pl-9 pr-8 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-1 focus:ring-ring transition-colors duration-200"
         />
         {value && (
           <button
