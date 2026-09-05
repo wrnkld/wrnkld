@@ -36,21 +36,21 @@ const pullRequests = [
 ];
 
 const customerFeedback = [
-  { id: 1, customer: "Jaguar Land Rover", role: "Data Engineer", settings: "--", codeChanges: "Complete", terms: "--", cardSort: "--" },
-  { id: 2, customer: "Verizon Connect", role: "Data Engineer", settings: "--", codeChanges: "--", terms: "--", cardSort: "DNP" },
-  { id: 3, customer: "Monday", role: "Data Engineer", settings: "--", codeChanges: "--", terms: "--", cardSort: "--" },
-  { id: 4, customer: "Skyscanner", role: "Data Engineer", settings: "--", codeChanges: "--", terms: "--", cardSort: "--" },
-  { id: 5, customer: "Richemont", role: "Data Analyst", settings: "--", codeChanges: "--", terms: "--", cardSort: "--" },
-  { id: 6, customer: "Virgin", role: "Data Engineer", settings: "--", codeChanges: "--", terms: "--", cardSort: "--" },
-  { id: 7, customer: "Auto Trader", role: "Data Engineer", settings: "--", codeChanges: "--", terms: "--", cardSort: "--" },
-  { id: 8, customer: "Richemont", role: "Data Scientist", settings: "--", codeChanges: "--", terms: "--", cardSort: "--" },
-  { id: 9, customer: "Pagaya", role: "Team Lead", settings: "--", codeChanges: "--", terms: "--", cardSort: "Complete" },
+  { id: 1, customer: "Jaguar Land Rover", role: "Data Engineer", settings: "Complete", codeChanges: "Complete", terms: "Complete", cardSort: "Complete" },
+  { id: 2, customer: "Verizon Connect", role: "Data Engineer", settings: "Complete", codeChanges: "Complete", terms: "Complete", cardSort: "DNP" },
+  { id: 3, customer: "Monday", role: "Data Engineer", settings: "Complete", codeChanges: "Complete", terms: "Complete", cardSort: "Complete" },
+  { id: 4, customer: "Skyscanner", role: "Data Engineer", settings: "Complete", codeChanges: "Complete", terms: "Complete", cardSort: "Complete" },
+  { id: 5, customer: "Richemont", role: "Data Analyst", settings: "Complete", codeChanges: "Complete", terms: "Complete", cardSort: "Complete" },
+  { id: 6, customer: "Virgin", role: "Data Engineer", settings: "Complete", codeChanges: "Complete", terms: "Complete", cardSort: "Complete" },
+  { id: 7, customer: "Auto Trader", role: "Data Engineer", settings: "Complete", codeChanges: "Complete", terms: "Complete", cardSort: "Complete" },
+  { id: 8, customer: "Richemont", role: "Data Scientist", settings: "Complete", codeChanges: "Complete", terms: "Complete", cardSort: "Complete" },
+  { id: 9, customer: "Pagaya", role: "Team Lead", settings: "Complete", codeChanges: "Complete", terms: "Complete", cardSort: "Complete" },
   { id: 10, customer: "Roche", role: "Software Engineer", settings: "DNP", codeChanges: "DNP", terms: "DNP", cardSort: "DNP" },
-  { id: 11, customer: "Skyscanner", role: "Data Engineer", settings: "--", codeChanges: "--", terms: "--", cardSort: "--" },
-  { id: 12, customer: "Old Mutual", role: "Software Engineer", settings: "--", codeChanges: "--", terms: "--", cardSort: "--" },
-  { id: 13, customer: "Kolibri Games", role: "Data Analyst", settings: "DNP", codeChanges: "DNP", terms: "DNP", cardSort: "--" },
-  { id: 14, customer: "Jaguar Land Rover", role: "Software Engineer", settings: "--", codeChanges: "Complete", terms: "--", cardSort: "--" },
-  { id: 15, customer: "Richemont", role: "Data Engineer", settings: "--", codeChanges: "--", terms: "--", cardSort: "--" },
+  { id: 11, customer: "Skyscanner", role: "Data Engineer", settings: "Complete", codeChanges: "Complete", terms: "Complete", cardSort: "Complete" },
+  { id: 12, customer: "Old Mutual", role: "Software Engineer", settings: "Complete", codeChanges: "Complete", terms: "Complete", cardSort: "Complete" },
+  { id: 13, customer: "Kolibri Games", role: "Data Analyst", settings: "DNP", codeChanges: "DNP", terms: "DNP", cardSort: "Complete" },
+  { id: 14, customer: "Jaguar Land Rover", role: "Software Engineer", settings: "Complete", codeChanges: "Complete", terms: "Complete", cardSort: "Complete" },
+  { id: 15, customer: "Richemont", role: "Data Engineer", settings: "Complete", codeChanges: "Complete", terms: "Complete", cardSort: "Complete" },
 ];
 
 export default function MonteCarlo() {
