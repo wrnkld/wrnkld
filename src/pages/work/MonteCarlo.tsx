@@ -142,19 +142,19 @@ export default function MonteCarlo() {
         <Table>
           <TableHeader>
             <TableRow className="surface-tint-hover border-b-border/70">
-              <TableHead className="w-[90px] hidden sm:table-cell">
+              <TableHead className="w-[90px] hidden md:table-cell">
                 <SortHeader field="id">PR</SortHeader>
               </TableHead>
               <TableHead>
                 <SortHeader field="title">Title</SortHeader>
               </TableHead>
-              <TableHead className="text-right w-[90px] hidden sm:table-cell">
+              <TableHead className="text-right w-[90px] hidden md:table-cell">
                 <SortHeader field="files">Files</SortHeader>
               </TableHead>
-              <TableHead className="text-right w-[70px] hidden sm:table-cell">
+              <TableHead className="text-right w-[70px] hidden md:table-cell">
                 <SortHeader field="additions">Added</SortHeader>
               </TableHead>
-              <TableHead className="text-right w-[70px] hidden sm:table-cell">
+              <TableHead className="text-right w-[70px] hidden md:table-cell">
                 <SortHeader field="deletions">Removed</SortHeader>
               </TableHead>
             </TableRow>
@@ -162,15 +162,15 @@ export default function MonteCarlo() {
           <TableBody>
             {sortedPullRequests.map((pr) => (
               <TableRow key={pr.id} className="border-b border-border/70 transition-colors surface-tint-hover">
-                <TableCell className="text-muted-foreground tabular-nums hidden sm:table-cell">#{pr.id}</TableCell>
+                <TableCell className="text-muted-foreground tabular-nums hidden md:table-cell">#{pr.id}</TableCell>
                 <TableCell className="text-foreground">{pr.title}</TableCell>
-                <TableCell className="text-right text-muted-foreground tabular-nums whitespace-nowrap hidden sm:table-cell">
+                <TableCell className="text-right text-muted-foreground tabular-nums whitespace-nowrap hidden md:table-cell">
                   {pr.files}
                 </TableCell>
-                <TableCell className="text-right tabular-nums whitespace-nowrap text-additions w-[70px] hidden sm:table-cell">
+                <TableCell className="text-right tabular-nums whitespace-nowrap text-additions w-[70px] hidden md:table-cell">
                   +{pr.additions}
                 </TableCell>
-                <TableCell className="text-right tabular-nums whitespace-nowrap text-deletions w-[70px] hidden sm:table-cell">
+                <TableCell className="text-right tabular-nums whitespace-nowrap text-deletions w-[70px] hidden md:table-cell">
                   −{pr.deletions}
                 </TableCell>
               </TableRow>
@@ -217,16 +217,16 @@ export default function MonteCarlo() {
               <TableHead className="w-[160px]">
                 <FeedbackSortHeader field="role">Role</FeedbackSortHeader>
               </TableHead>
-              <TableHead className="w-[80px] hidden sm:table-cell">
+              <TableHead className="w-[80px] hidden md:table-cell">
                 <FeedbackSortHeader field="settings">Settings</FeedbackSortHeader>
               </TableHead>
-              <TableHead className="w-[100px] hidden sm:table-cell">
+              <TableHead className="w-[100px] hidden md:table-cell">
                 <FeedbackSortHeader field="codeChanges">Code changes</FeedbackSortHeader>
               </TableHead>
-              <TableHead className="w-[90px] hidden sm:table-cell">
+              <TableHead className="w-[90px] hidden md:table-cell">
                 <FeedbackSortHeader field="terms">Terms</FeedbackSortHeader>
               </TableHead>
-              <TableHead className="w-[90px] hidden sm:table-cell">
+              <TableHead className="w-[90px] hidden md:table-cell">
                 <FeedbackSortHeader field="cardSort">Card sort</FeedbackSortHeader>
               </TableHead>
             </TableRow>
@@ -236,10 +236,10 @@ export default function MonteCarlo() {
               <TableRow key={fb.id} className="border-b border-border/70 transition-colors surface-tint-hover">
                 <TableCell className="text-foreground">{fb.customer}</TableCell>
                 <TableCell className="text-muted-foreground">{fb.role}</TableCell>
-                <TableCell className="text-muted-foreground whitespace-nowrap hidden sm:table-cell">{fb.settings}</TableCell>
-                <TableCell className="text-muted-foreground whitespace-nowrap hidden sm:table-cell">{fb.codeChanges}</TableCell>
-                <TableCell className="text-muted-foreground whitespace-nowrap hidden sm:table-cell">{fb.terms}</TableCell>
-                <TableCell className="text-muted-foreground whitespace-nowrap hidden sm:table-cell">{fb.cardSort}</TableCell>
+                <TableCell className="text-muted-foreground whitespace-nowrap hidden md:table-cell">{fb.settings}</TableCell>
+                <TableCell className="text-muted-foreground whitespace-nowrap hidden md:table-cell">{fb.codeChanges}</TableCell>
+                <TableCell className="text-muted-foreground whitespace-nowrap hidden md:table-cell">{fb.terms}</TableCell>
+                <TableCell className="text-muted-foreground whitespace-nowrap hidden md:table-cell">{fb.cardSort}</TableCell>
               </TableRow>
             ))}
           </TableBody>
