@@ -22,7 +22,7 @@ export function CollectionSearch({
     <div className="flex flex-row items-center gap-3">
       {tabs && (
         <Tabs value={tabs.value} onValueChange={tabs.onChange} className="shrink-0">
-          <TabsList className="h-auto">
+          <TabsList className="h-auto p-0">
             {tabs.options.map((option) => (
               <TabsTrigger key={option.value} value={option.value} className="text-sm px-3 py-3">
                 {option.label}
