@@ -182,18 +182,18 @@ export default function MonteCarlo() {
         Designed an end-to-end investigation workflow connecting cost, latency, query behavior, and operational context across Snowflake, dbt, Airflow, and Looker.
       </p>
 
-      <img src={mcdWrites} alt="Monte Carlo write queries overview showing total credits and query performance trends" className="w-full h-auto border border-border/40" />
+<img src={mcdWrites.url} alt="Monte Carlo write queries overview showing total credits and query performance trends" className="w-full h-auto border border-border/40" />
 
-      <img src={mcdWrite} alt="Monte Carlo write query detail with observability agent explaining performance" className="w-full h-auto border border-border/40" />
+<img src={mcdWrite.url} alt="Monte Carlo write query detail with observability agent explaining performance" className="w-full h-auto border border-border/40" />
 
-      <h2 className="font-display text-lg font-medium text-foreground">Integrations</h2>
-      <p className="font-body text-base text-muted-foreground leading-relaxed">
-        Designed a scalable integrations framework for warehouses, orchestration tools, repositories, BI platforms, and incident-response systems.
-      </p>
+<h2 className="font-display text-lg font-medium text-foreground">Integrations</h2>
+<p className="font-body text-base text-muted-foreground leading-relaxed">
+  Designed a scalable integrations framework for warehouses, orchestration tools, repositories, BI platforms, and incident-response systems.
+</p>
 
-      <img src={mcdIntegrations} alt="Monte Carlo add integration page showing integration categories and popular connections" className="w-full h-auto border border-border/40" />
+<img src={mcdIntegrations.url} alt="Monte Carlo add integration page showing integration categories and popular connections" className="w-full h-auto border border-border/40" />
 
-      <img src={mcdJob} alt="Monte Carlo job performance view showing run time trends and failure tracking for dbt jobs" className="w-full h-auto border border-border/40" />
+<img src={mcdJob.url} alt="Monte Carlo job performance view showing run time trends and failure tracking for dbt jobs" className="w-full h-auto border border-border/40" />
 
       <h2 className="font-display text-lg font-medium text-foreground">Customer feedback</h2>
       <p className="font-body text-base text-muted-foreground leading-relaxed">
