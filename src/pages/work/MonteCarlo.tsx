@@ -191,7 +191,7 @@ export default function MonteCarlo() {
         Designed a scalable integrations framework for warehouses, orchestration tools, repositories, BI platforms, and incident-response systems.
       </p>
 
-      <img src={mcdIntegrations} alt="Monte Carlo integrations catalog showing available data warehouse and tool connections" className="w-full h-auto border border-border/40" />
+      <img src={mcdIntegrations} alt="Monte Carlo add integration page showing integration categories and popular connections" className="w-full h-auto border border-border/40" />
 
       <img src={mcdJob} alt="Monte Carlo job performance view showing run time trends and failure tracking for dbt jobs" className="w-full h-auto border border-border/40" />
 
