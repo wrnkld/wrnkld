@@ -42,7 +42,7 @@ const customerFeedback = [
   { id: 4, customer: "Skyscanner", role: "Data Engineer", settings: "--", codeChanges: "--", terms: "--", cardSort: "--" },
   { id: 5, customer: "Richemont", role: "Data Analyst", settings: "--", codeChanges: "--", terms: "--", cardSort: "--" },
   { id: 6, customer: "Virgin", role: "Data Engineer", settings: "--", codeChanges: "--", terms: "--", cardSort: "--" },
-  { id: 7, customer: "Auto Trader", role: "Data Engineer", settings: "--", codeChanges: "--", terms: "Complete", cardSort: "--" },
+  { id: 7, customer: "Auto Trader", role: "Data Engineer", settings: "--", codeChanges: "--", terms: "--", cardSort: "--" },
   { id: 8, customer: "Richemont", role: "Data Scientist", settings: "--", codeChanges: "--", terms: "--", cardSort: "--" },
   { id: 9, customer: "Pagaya", role: "Team Lead", settings: "--", codeChanges: "--", terms: "--", cardSort: "Complete" },
   { id: 10, customer: "Roche", role: "Software Engineer", settings: "DNP", codeChanges: "DNP", terms: "DNP", cardSort: "DNP" },
