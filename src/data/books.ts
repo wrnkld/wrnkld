@@ -2360,4 +2360,11 @@ export const books: Book[] = [
     year: 2007,
     recommended: false,
   },
+  {
+    id: 338,
+    title: "Godwin",
+    author: "Joseph O'Neill",
+    year: 2024,
+    recommended: false,
+  },
 ];
