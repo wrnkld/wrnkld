@@ -55,6 +55,10 @@ export default function Books() {
       />
 
       <CollectionTable items={filtered} columns={columns} />
+
+      {filtered.length === 0 && (
+        <p className="text-muted-foreground mt-8">No books match your search.</p>
+      )}
     </DetailLayout>
   );
 }
