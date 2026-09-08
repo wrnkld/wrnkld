@@ -73,12 +73,15 @@ function Callout({
         <p className="meta-label mb-2">
           {eyebrow}
         </p>
-        <h3 className="text-lg font-medium tracking-tight inline-flex items-center gap-1">
+        <h3 className="text-lg font-medium tracking-tight">
           {title}
-          {isExternal && <ArrowUpRight className="h-4 w-4" />}
         </h3>
         <p className="font-body text-base leading-relaxed text-muted-foreground mt-1 max-w-md">{blurb}</p>
-        {!isExternal && (
+        {isExternal ? (
+          <p className="mt-4 inline-flex items-center gap-1 text-base text-muted-foreground group-hover:text-foreground transition-colors">
+            Visit <ArrowUpRight className="h-4 w-4" />
+          </p>
+        ) : (
           <p className="mt-4 inline-flex items-center gap-1 text-base text-muted-foreground group-hover:text-foreground transition-colors">
             Case study <ArrowRight className="h-4 w-4" />
           </p>
