@@ -2367,4 +2367,11 @@ export const books: Book[] = [
     year: 2024,
     recommended: false,
   },
+  {
+    id: 339,
+    title: "Helen of Nowhere",
+    author: "Makenna Goodman",
+    year: 2025,
+    recommended: false,
+  },
 ];
