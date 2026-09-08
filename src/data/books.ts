@@ -2381,4 +2381,11 @@ export const books: Book[] = [
     year: 2026,
     recommended: false,
   },
+  {
+    id: 341,
+    title: "Girl, 20",
+    author: "Kingsley Amis",
+    year: 1971,
+    recommended: false,
+  },
 ];
