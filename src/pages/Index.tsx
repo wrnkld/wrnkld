@@ -134,7 +134,7 @@ export default function Index() {
         kicker="01 — Hello"
         headline="Product design leader for complex software. I lead teams, stay hands-on, and work directly with customers to turn difficult problems into simple, elegant products."
       >
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-8">
+        <div className="-mx-5 grid grid-cols-1 md:grid-cols-2 gap-0">
           <Callout
             eyebrow="Case study"
             title="Monte Carlo AI"
