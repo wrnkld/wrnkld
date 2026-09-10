@@ -2388,4 +2388,11 @@ export const books: Book[] = [
     year: 1971,
     recommended: false,
   },
+  {
+    id: 342,
+    title: "Lightning Rods",
+    author: "Helen DeWitt",
+    year: 2011,
+    recommended: false,
+  },
 ];
