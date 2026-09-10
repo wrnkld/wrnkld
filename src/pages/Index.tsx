@@ -89,9 +89,15 @@ function Callout({
       </div>
     </div>
   );
-  if (to) return <Link to={to}>{inner}</Link>;
+  const linkClasses =
+    "block p-5 surface-tint-hover transition-colors duration-200";
+  if (to) return (
+    <Link to={to} className={linkClasses}>
+      {inner}
+    </Link>
+  );
   return (
-    <a href={href} target="_blank" rel="noopener noreferrer">
+    <a href={href} target="_blank" rel="noopener noreferrer" className={linkClasses}>
       {inner}
     </a>
   );
