@@ -1,6 +1,5 @@
 import { useMemo, useState } from "react";
 import { ArrowDown, ArrowUp, ChevronsUpDown } from "lucide-react";
-import { motion, AnimatePresence } from "motion/react";
 import {
   Table,
   TableBody,
@@ -23,8 +22,6 @@ interface CollectionTableProps<T extends Row> {
   items: T[];
   columns: Column<T>[];
 }
-
-const MotionRow = motion(TableRow);
 
 export function CollectionTable<T extends Row>({
   items,
@@ -87,36 +84,29 @@ export function CollectionTable<T extends Row>({
           </TableRow>
         </TableHeader>
         <TableBody>
-          <AnimatePresence initial={false} mode="popLayout">
-            {sorted.map((row) => (
-              <MotionRow
-                key={row.id}
-                layout="position"
-                initial={{ opacity: 0, y: 8 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -6 }}
-                transition={{ duration: 0.18, ease: "easeOut" }}
-                className="border-b border-border/70 transition-colors surface-tint-hover"
-              >
-                {columns.map((column) => (
-                  <TableCell
-                    key={column.key}
-                    className={`${
-                      column.key === "year" ? "whitespace-nowrap" : "[overflow-wrap:anywhere]"
-                    } ${column.hiddenOnMobile ? "hidden md:table-cell" : ""} align-top ${
-                      row.recommended
-                        ? "text-recommended"
-                        : column.tone === "primary"
-                          ? "text-foreground"
-                          : "text-muted-foreground"
-                    }`}
-                  >
-                    {String(row[column.key])}
-                  </TableCell>
-                ))}
-              </MotionRow>
-            ))}
-          </AnimatePresence>
+          {sorted.map((row) => (
+            <TableRow
+              key={row.id}
+              className="border-b border-border/70 transition-colors surface-tint-hover"
+            >
+              {columns.map((column) => (
+                <TableCell
+                  key={column.key}
+                  className={`${
+                    column.key === "year" ? "whitespace-nowrap" : "[overflow-wrap:anywhere]"
+                  } ${column.hiddenOnMobile ? "hidden md:table-cell" : ""} align-top ${
+                    row.recommended
+                      ? "text-recommended"
+                      : column.tone === "primary"
+                        ? "text-foreground"
+                        : "text-muted-foreground"
+                  }`}
+                >
+                  {String(row[column.key])}
+                </TableCell>
+              ))}
+            </TableRow>
+          ))}
         </TableBody>
       </Table>
     </div>
