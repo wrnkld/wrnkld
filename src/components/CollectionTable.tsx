@@ -1,6 +1,5 @@
 import { useMemo, useState } from "react";
 import { ArrowDown, ArrowUp, ChevronsUpDown } from "lucide-react";
-import { motion, AnimatePresence } from "motion/react";
 import {
   Table,
   TableBody,
