@@ -23,8 +23,6 @@ interface CollectionTableProps<T extends Row> {
   columns: Column<T>[];
 }
 
-const MotionRow = motion(TableRow);
-
 export function CollectionTable<T extends Row>({
   items,
   columns,
