@@ -2920,4 +2920,25 @@ export const books: Book[] = [
     year: 1971,
     recommended: true,
   },
+  {
+    id: 418,
+    title: "The Killer Inside Me",
+    author: "Jim Thompson",
+    year: 1952,
+    recommended: false,
+  },
+  {
+    id: 419,
+    title: "The Talented Mr. Ripley",
+    author: "Patricia Highsmith",
+    year: 1955,
+    recommended: true,
+  },
+  {
+    id: 420,
+    title: "The Real Cool Killers",
+    author: "Chester Himes",
+    year: 1959,
+    recommended: false,
+  },
 ];
