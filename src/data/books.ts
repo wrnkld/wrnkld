@@ -2955,4 +2955,32 @@ export const books: Book[] = [
     year: 1867,
     recommended: false,
   },
+  {
+    id: 423,
+    title: "Butcher's Crossing",
+    author: "John Williams",
+    year: 1960,
+    recommended: false,
+  },
+  {
+    id: 424,
+    title: "The Crying of Lot 49",
+    author: "Thomas Pynchon",
+    year: 1966,
+    recommended: false,
+  },
+  {
+    id: 425,
+    title: "In a Lonely Place",
+    author: "Dorothy Hughes",
+    year: 1947,
+    recommended: false,
+  },
+  {
+    id: 426,
+    title: "Fathers and Children",
+    author: "Ivan Turgenev",
+    year: 1862,
+    recommended: false,
+  },
 ];
