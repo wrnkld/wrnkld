@@ -2948,4 +2948,11 @@ export const books: Book[] = [
     year: 1966,
     recommended: false,
   },
+  {
+    id: 422,
+    title: "Smoke",
+    author: "Ivan Turgenev",
+    year: 1867,
+    recommended: false,
+  },
 ];
