@@ -2983,4 +2983,12 @@ export const books: Book[] = [
     year: 1862,
     recommended: false,
   },
+  {
+    id: 427,
+    title: "Erasure",
+    author: "Percival Everett",
+    year: 2001,
+    recommended: false,
+  },
 ];
+
