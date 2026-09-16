@@ -1098,7 +1098,7 @@ export const books: Book[] = [
     title: "Baby in a Box",
     author: "Sarah Braunstein",
     year: 2026,
-    recommended: false,
+    recommended: true,
   },
   {
     id: 158,
@@ -2988,7 +2988,7 @@ export const books: Book[] = [
     title: "Erasure",
     author: "Percival Everett",
     year: 2001,
-    recommended: false,
+    recommended: true,
   },
 ];
 
