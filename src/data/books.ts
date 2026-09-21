@@ -2997,5 +2997,12 @@ export const books: Book[] = [
     year: 1971,
     recommended: false,
   },
+  {
+    id: 429,
+    title: "Into the Great Wide Open",
+    author: "Kevin Canty",
+    year: 1997,
+    recommended: false,
+  },
 ];
 
