@@ -2990,5 +2990,12 @@ export const books: Book[] = [
     year: 2001,
     recommended: true,
   },
+  {
+    id: 428,
+    title: "The Bushwhacked Piano",
+    author: "Thomas McGuane",
+    year: 1971,
+    recommended: false,
+  },
 ];
 
