@@ -3004,5 +3004,12 @@ export const books: Book[] = [
     year: 1997,
     recommended: false,
   },
+  {
+    id: 430,
+    title: "Switzy",
+    author: "Emma Cline",
+    year: 2026,
+    recommended: false,
+  },
 ];
 
