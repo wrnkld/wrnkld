@@ -3011,5 +3011,19 @@ export const books: Book[] = [
     year: 2026,
     recommended: false,
   },
+  {
+    id: 431,
+    title: "Bright Lights, Big City",
+    author: "Jay McInerney",
+    year: 1984,
+    recommended: false,
+  },
+  {
+    id: 432,
+    title: "The Easter Parade",
+    author: "Richard Yates",
+    year: 1976,
+    recommended: false,
+  },
 ];
 
