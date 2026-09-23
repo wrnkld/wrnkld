@@ -3009,7 +3009,7 @@ export const books: Book[] = [
     title: "Switzy",
     author: "Emma Cline",
     year: 2026,
-    recommended: false,
+    recommended: true,
   },
   {
     id: 431,
