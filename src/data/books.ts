@@ -3046,5 +3046,11 @@ export const books: Book[] = [
     year: 1978,
     recommended: false,
   },
+  {
+    id: 436,
+    title: "Pages from a Cold Island",
+    author: "Frederick Exley",
+    year: 1975,
+    recommended: false,
+  },
 ];
-
