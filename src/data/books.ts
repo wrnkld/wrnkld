@@ -3067,4 +3067,32 @@ export const books: Book[] = [
     year: 1994,
     recommended: false,
   },
+  {
+    id: 439,
+    title: "Dancing Bear",
+    author: "James Crumley",
+    year: 1983,
+    recommended: false,
+  },
+  {
+    id: 440,
+    title: "The Last Good Kiss",
+    author: "James Crumley",
+    year: 1978,
+    recommended: false,
+  },
+  {
+    id: 441,
+    title: "The Wrong Case",
+    author: "James Crumley",
+    year: 1975,
+    recommended: false,
+  },
+  {
+    id: 442,
+    title: "Steps",
+    author: "Jerzy Kosinski",
+    year: 1968,
+    recommended: false,
+  },
 ];
