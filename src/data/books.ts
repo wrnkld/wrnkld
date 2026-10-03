@@ -2974,7 +2974,7 @@ export const books: Book[] = [
     title: "In a Lonely Place",
     author: "Dorothy Hughes",
     year: 1947,
-    recommended: false,
+    recommended: true,
   },
   {
     id: 426,
