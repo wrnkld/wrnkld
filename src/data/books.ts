@@ -3060,4 +3060,11 @@ export const books: Book[] = [
     year: 1981,
     recommended: false,
   },
+  {
+    id: 438,
+    title: "A Stranger in This World",
+    author: "Kevin Canty",
+    year: 1994,
+    recommended: false,
+  },
 ];
