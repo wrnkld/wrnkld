@@ -3075,13 +3075,6 @@ export const books: Book[] = [
     recommended: false,
   },
   {
-    id: 442,
-    title: "Steps",
-    author: "Jerzy Kosinski",
-    year: 1968,
-    recommended: false,
-  },
-  {
     id: 443,
     title: "Black Bag",
     author: "Luke Kennard",
