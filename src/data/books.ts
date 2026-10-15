@@ -3081,4 +3081,11 @@ export const books: Book[] = [
     year: 2026,
     recommended: false,
   },
+  {
+    id: 444,
+    title: "All My Friends Are Going to Be Strangers",
+    author: "Larry McMurtry",
+    year: 1970,
+    recommended: false,
+  },
 ];
