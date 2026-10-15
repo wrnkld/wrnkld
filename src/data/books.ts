@@ -1906,27 +1906,6 @@ export const books: Book[] = [
     recommended: true,
   },
   {
-    id: 273,
-    title: "Moving On",
-    author: "Larry McMurtry",
-    year: 1970,
-    recommended: false,
-  },
-  {
-    id: 274,
-    title: "Texasville",
-    author: "Larry McMurtry",
-    year: 1987,
-    recommended: false,
-  },
-  {
-    id: 275,
-    title: "Duane's Depressed",
-    author: "Larry McMurtry",
-    year: 1999,
-    recommended: false,
-  },
-  {
     id: 276,
     title: "Trouble Boys",
     author: "Bob Mehr",
