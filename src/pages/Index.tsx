@@ -180,7 +180,7 @@ export default function Index() {
             <Row key={j.company} className="flex flex-col gap-1 md:grid md:grid-cols-3 md:gap-8">
               <span className="font-medium text-foreground">{j.company}</span>
               <span className="text-muted-foreground">{j.role}</span>
-              <span className="text-muted-foreground">{j.years}</span>
+              <span className="text-muted-foreground tabular-nums md:text-right">{j.years}</span>
             </Row>
           ))}
         </div>
