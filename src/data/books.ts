@@ -3067,4 +3067,11 @@ export const books: Book[] = [
     year: 1970,
     recommended: false,
   },
+  {
+    id: 445,
+    title: "Suspicion",
+    author: "Seichō Matsumoto",
+    year: 1982,
+    recommended: false,
+  },
 ];
