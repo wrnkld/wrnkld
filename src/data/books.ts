@@ -1152,7 +1152,7 @@ export const books: Book[] = [
   {
     id: 165,
     title: "Tokyo Express",
-    author: "Seicho Matsumoto",
+    author: "Seichō Matsumoto",
     year: 1958,
     recommended: false,
   },
