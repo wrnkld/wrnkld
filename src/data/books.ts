@@ -3074,4 +3074,11 @@ export const books: Book[] = [
     year: 1982,
     recommended: false,
   },
+  {
+    id: 446,
+    title: "Roseanna",
+    author: "Maj Sjöwall and Per Wahlöö",
+    year: 1965,
+    recommended: false,
+  },
 ];
