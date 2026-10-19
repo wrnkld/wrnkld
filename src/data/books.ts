@@ -3081,4 +3081,18 @@ export const books: Book[] = [
     year: 1965,
     recommended: false,
   },
+  {
+    id: 447,
+    title: "A Hell of a Woman",
+    author: "Jim Thompson",
+    year: 1954,
+    recommended: false,
+  },
+  {
+    id: 448,
+    title: "Pop. 1280",
+    author: "Jim Thompson",
+    year: 1964,
+    recommended: false,
+  },
 ];
