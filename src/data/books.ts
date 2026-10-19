@@ -2869,7 +2869,7 @@ export const books: Book[] = [
     title: "The Zebra-Striped Hearse",
     author: "Ross Macdonald",
     year: 1962,
-    recommended: false,
+    recommended: true,
   },
   {
     id: 414,
