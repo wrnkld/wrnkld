@@ -2897,7 +2897,7 @@ export const books: Book[] = [
     title: "The Drowning Pool",
     author: "Ross Macdonald",
     year: 1950,
-    recommended: true,
+    recommended: false,
   },
   {
     id: 418,
