@@ -2894,9 +2894,9 @@ export const books: Book[] = [
   },
   {
     id: 417,
-    title: "The Underground Man",
+    title: "The Drowning Pool",
     author: "Ross Macdonald",
-    year: 1971,
+    year: 1950,
     recommended: true,
   },
   {
