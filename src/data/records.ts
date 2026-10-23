@@ -5071,4 +5071,10 @@ export const records: Record[] = [
     artist: "Horse Lords",
     album: "Demand to Be Taken to Heaven Alive!",
   },
+  {
+    id: 848,
+    year: 2026,
+    artist: "Twisted Teens",
+    album: "Florida Water Blues",
+  },
 ];
