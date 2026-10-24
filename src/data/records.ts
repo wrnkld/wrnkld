@@ -5089,4 +5089,10 @@ export const records: Record[] = [
     artist: "BCMC",
     album: "Stash",
   },
+  {
+    id: 851,
+    year: 2026,
+    artist: "Black Duck & Elena Setien",
+    album: "Black Duck with Elena Setién",
+  },
 ];
