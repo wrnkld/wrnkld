@@ -5098,7 +5098,7 @@ export const records: Record[] = [
   {
     id: 852,
     year: 2024,
-    artist: "Stress Eater with CZARFACE",
+    artist: "Stress Eater",
     album: "Everybody Eats!",
   },
   {
