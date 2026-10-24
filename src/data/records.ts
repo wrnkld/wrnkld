@@ -5095,4 +5095,10 @@ export const records: Record[] = [
     artist: "Black Duck & Elena Setién",
     album: "Black Duck with Elena Setién",
   },
+  {
+    id: 852,
+    year: 2024,
+    artist: "Stress Eater with CZARFACE",
+    album: "Everybody Eats!",
+  },
 ];
