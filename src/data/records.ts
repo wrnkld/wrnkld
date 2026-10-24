@@ -5101,4 +5101,10 @@ export const records: Record[] = [
     artist: "Stress Eater with CZARFACE",
     album: "Everybody Eats!",
   },
+  {
+    id: 853,
+    year: 2003,
+    artist: "Dead Meadow",
+    album: "Shivering King and Others",
+  },
 ];
