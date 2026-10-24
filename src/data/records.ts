@@ -5077,4 +5077,10 @@ export const records: Record[] = [
     artist: "Twisted Teens",
     album: "Florida Water Blues",
   },
+  {
+    id: 849,
+    year: 2026,
+    artist: "Bill Orcutt",
+    album: "Four Louies Live",
+  },
 ];
