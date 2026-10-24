@@ -5083,4 +5083,10 @@ export const records: Record[] = [
     artist: "Bill Orcutt",
     album: "Four Louies Live",
   },
+  {
+    id: 850,
+    year: 2026,
+    artist: "BCMC",
+    album: "Stash",
+  },
 ];
