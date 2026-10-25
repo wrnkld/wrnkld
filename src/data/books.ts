@@ -3102,4 +3102,11 @@ export const books: Book[] = [
     year: 2026,
     recommended: false,
   },
+  {
+    id: 444,
+    title: "Blood Money",
+    author: "Anna Seghers",
+    year: 2026,
+    recommended: false,
+  },
 ];
