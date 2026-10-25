@@ -5107,4 +5107,11 @@ export const records: Record[] = [
     artist: "Dead Meadow",
     album: "Shivering King and Others",
   },
+  {
+    id: 854,
+    year: 2026,
+    artist: "You-On",
+    album: "New Side",
+  },
 ];
+
