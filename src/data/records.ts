@@ -5119,5 +5119,11 @@ export const records: Record[] = [
     artist: "Object Hours",
     album: "Solved By Walking",
   },
+  {
+    id: 856,
+    year: 2026,
+    artist: "Imperial Teen",
+    album: "All Over You",
+  },
 ];
 
