@@ -5131,5 +5131,11 @@ export const records: Record[] = [
     artist: "Crying Laughing",
     album: "Talking",
   },
+  {
+    id: 858,
+    year: 2026,
+    artist: "White Fence",
+    album: "Orange",
+  },
 ];
 
