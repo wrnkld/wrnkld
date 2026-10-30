@@ -3109,4 +3109,32 @@ export const books: Book[] = [
     year: 2026,
     recommended: false,
   },
+  {
+    id: 445,
+    title: "What's for Dinner?",
+    author: "James Schuyler",
+    year: 2005,
+    recommended: false,
+  },
+  {
+    id: 446,
+    title: "Waiting for the Fear",
+    author: "Oğuz Atay",
+    year: 1975,
+    recommended: false,
+  },
+  {
+    id: 447,
+    title: "The Village of Ben Suc",
+    author: "Jonathan Schell",
+    year: 1967,
+    recommended: false,
+  },
+  {
+    id: 448,
+    title: "Godlike",
+    author: "Richard Hell",
+    year: 2005,
+    recommended: false,
+  },
 ];
