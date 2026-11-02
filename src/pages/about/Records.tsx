@@ -34,7 +34,11 @@ export default function Records() {
 
       <CollectionSearch value={query} onChange={setQuery} placeholder={`Search ${records.length} records`} />
 
-      <CollectionTable items={filtered} columns={columns} />
+      <CollectionTable
+        items={filtered}
+        columns={columns}
+        initialSort={{ key: "id", direction: "desc" }}
+      />
 
       {filtered.length === 0 && (
         <p className="text-muted-foreground mt-8">No records match your search.</p>

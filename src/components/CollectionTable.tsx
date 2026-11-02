@@ -21,14 +21,20 @@ export interface Column<T> {
 interface CollectionTableProps<T extends Row> {
   items: T[];
   columns: Column<T>[];
+  initialSort?: { key: Extract<keyof T, string>; direction: "asc" | "desc" };
 }
 
 export function CollectionTable<T extends Row>({
   items,
   columns,
+  initialSort,
 }: CollectionTableProps<T>) {
-  const [sortKey, setSortKey] = useState<Extract<keyof T, string> | null>(null);
-  const [direction, setDirection] = useState<"asc" | "desc">("asc");
+  const [sortKey, setSortKey] = useState<Extract<keyof T, string> | null>(
+    initialSort?.key ?? null,
+  );
+  const [direction, setDirection] = useState<"asc" | "desc">(
+    initialSort?.direction ?? "asc",
+  );
 
   const sorted = useMemo(() => {
     if (!sortKey) return items;

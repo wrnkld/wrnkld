@@ -54,7 +54,11 @@ export default function Books() {
         }}
       />
 
-      <CollectionTable items={filtered} columns={columns} />
+      <CollectionTable
+        items={filtered}
+        columns={columns}
+        initialSort={{ key: "id", direction: "desc" }}
+      />
 
       {filtered.length === 0 && (
         <p className="text-muted-foreground mt-8">No books match your search.</p>
