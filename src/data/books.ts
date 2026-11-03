@@ -3172,4 +3172,11 @@ export const books: Book[] = [
     year: 1967,
     recommended: false,
   },
+  {
+    id: 454,
+    title: "Big Kiss, Bye-Bye",
+    author: "Claire-Louise Bennett",
+    year: 2025,
+    recommended: false,
+  },
 ];
