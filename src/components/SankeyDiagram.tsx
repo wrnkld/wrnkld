@@ -47,7 +47,7 @@ export function SankeyDiagram({
             key={i}
             d={linkPath(link) ?? undefined}
             stroke="hsl(var(--muted-foreground))"
-            strokeOpacity={0.25}
+            strokeOpacity={0.4}
             strokeWidth={Math.max(1, link.width ?? 0)}
           />
         ))}
