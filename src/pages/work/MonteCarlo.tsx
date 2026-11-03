@@ -136,6 +136,14 @@ export default function MonteCarlo() {
         Monte Carlo AI is the leading agent trust platform, helping data teams detect, resolve, and prevent data quality issues across the modern data stack.
       </p>
 
+      <h2 className="font-display text-lg font-medium text-foreground">Sankey</h2>
+      <p className="font-body text-base text-muted-foreground leading-relaxed">
+        Hello world — placeholder diagram while the real data gets sorted.
+      </p>
+      <div className="border border-border/40 p-5">
+        <SankeyDiagram data={helloSankey} />
+      </div>
+
       <h2 className="font-display text-lg font-medium text-foreground">Role</h2>
       <p className="font-body text-base text-muted-foreground leading-relaxed">
         Joined as founding designer and built the design function while remaining hands-on across the product. Partnered with founders, product, and engineering to shape the platform, hired and mentored designers, and established research and design-system practices.
