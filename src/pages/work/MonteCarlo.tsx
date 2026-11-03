@@ -14,6 +14,16 @@ import mcdWrites from "@/assets/montecarlo/mcd-writes.png";
 import mcdWrite from "@/assets/montecarlo/mcd-write.png";
 import mcdIntegrations from "@/assets/montecarlo/mcd-addint.png";
 import mcdJob from "@/assets/montecarlo/mcd-job.png";
+import { SankeyDiagram, type SankeyData } from "@/components/SankeyDiagram";
+
+const helloSankey: SankeyData = {
+  nodes: [{ name: "Hello" }, { name: "World" }, { name: "Sankey" }],
+  links: [
+    { source: 0, target: 1, value: 2 },
+    { source: 0, target: 2, value: 1 },
+    { source: 1, target: 2, value: 2 },
+  ],
+};
 
 const pullRequests = [
   { id: 15254, title: "Remove the copy link action from asset detail pages", files: 2, additions: 2, deletions: 21 },
