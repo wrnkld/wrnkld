@@ -3179,4 +3179,11 @@ export const books: Book[] = [
     year: 2025,
     recommended: false,
   },
+  {
+    id: 455,
+    title: "Life of M",
+    author: "Rachel Cusk",
+    year: 2026,
+    recommended: false,
+  },
 ];
