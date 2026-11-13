@@ -3186,4 +3186,11 @@ export const books: Book[] = [
     year: 2026,
     recommended: false,
   },
+  {
+    id: 456,
+    title: "The Brightness",
+    author: "Chad Harbach",
+    year: 2026,
+    recommended: false,
+  },
 ];
