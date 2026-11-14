@@ -264,7 +264,7 @@ function MarkdownDoc({ source }: { source: string }) {
           li: ({ children }) => <li className="pl-1">{children}</li>,
           strong: ({ children }) => <strong className="font-medium text-foreground">{children}</strong>,
           code: ({ children }) => (
-            <code className="font-mono text-[0.8125em] text-foreground bg-muted border border-border/40 rounded px-1 py-0.5 whitespace-nowrap">
+            <code className="font-mono text-[0.8125em] text-foreground bg-muted border border-border/40 rounded px-1 py-0.5 break-all">
               {children}
             </code>
           ),
