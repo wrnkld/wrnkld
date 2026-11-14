@@ -178,7 +178,7 @@ export default function MonteCarlo() {
         Built a customer advisory board and a lightweight research practice to keep design decisions grounded in real usage. Ran structured interviews, feedback sessions, and quarterly reviews with data teams, then turned those insights into roadmap input, clearer prioritization, and tighter product–design–engineering alignment.
       </p>
 
-      <dl className="grid grid-cols-3 gap-4 not-prose font-body">
+      <dl className="grid grid-cols-[repeat(auto-fit,minmax(160px,1fr))] gap-4 not-prose font-body">
         {[
           { value: researchStats.participants, label: "Participants" },
           { value: researchStats.companies, label: "Companies" },
