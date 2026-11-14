@@ -18,10 +18,11 @@ export const customerFeedback = [
 
 export const researchStudies = ["settings", "codeChanges", "terms", "cardSort"] as const;
 
+// Full research totals confirmed by Matthew; the matrix contains only a subset.
 export const researchStats = {
-  participants: customerFeedback.length,
-  companies: new Set(customerFeedback.map((participant) => participant.customer)).size,
-  studies: researchStudies.filter((study) => customerFeedback.some((participant) => participant[study] === "Complete")).length,
+  participants: 25,
+  companies: 18,
+  studies: 8,
 };
 
 // One participant per company, spanning every recorded role and study.

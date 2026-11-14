@@ -3,8 +3,16 @@ import { test } from "node:test";
 import { strict as assert } from "node:assert";
 import { customerFeedback, representativeFeedback, researchStats, researchStudies } from "./customerResearch";
 
-test("summary counts the full research matrix, not the displayed sample", () => {
-  assert.deepEqual(researchStats, { participants: 15, companies: 11, studies: 4 });
+test("full research includes 25 participants", () => {
+  assert.equal(researchStats.participants, 25);
+});
+
+test("full research represents 18 companies", () => {
+  assert.equal(researchStats.companies, 18);
+});
+
+test("full research includes 8 studies", () => {
+  assert.equal(researchStats.studies, 8);
 });
 
 test("representative matrix retains ten original participants across all roles and studies", () => {
