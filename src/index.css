@@ -73,12 +73,6 @@
   .font-display { font-family: var(--font-display); }
   .font-body    { font-family: var(--font-body); }
   .font-mono    { font-family: var(--font-mono); }
-  .sankey-total { color: hsl(var(--foreground)); }
-  .sankey-inactive { color: hsl(var(--muted-foreground)); }
-  .sankey-active { color: hsl(var(--sankey-active)); }
-  .sankey-free { color: hsl(var(--sankey-free)); }
-  .sankey-manual { color: hsl(var(--sankey-manual)); }
-  .sankey-automatic { color: hsl(var(--sankey-automatic)); }
 
     .text-recommended { color: hsl(330 75% 45%); }
 
@@ -170,3 +164,14 @@
   }
 
 }
+
+/* Sankey tone classes. Deliberately OUTSIDE @layer utilities: the class name is
+   built at runtime (`sankey-${tone}`), so Tailwind's scanner never sees a literal
+   "sankey-active" and would tree-shake the rule out of the bundle. */
+.sankey-total { color: hsl(var(--foreground)); }
+.sankey-inactive { color: hsl(var(--muted-foreground)); }
+.sankey-active { color: hsl(var(--sankey-active)); }
+.sankey-free { color: hsl(var(--sankey-free)); }
+.sankey-manual { color: hsl(var(--sankey-manual)); }
+.sankey-automatic { color: hsl(var(--sankey-automatic)); }
+
