@@ -128,9 +128,15 @@ export default function MonteCarlo() {
         Monte Carlo AI is the leading agent trust platform, helping data teams detect, resolve, and prevent data quality issues across the modern data stack.
       </p>
 
-      <h2 className="font-display text-lg font-medium text-foreground">Troubleshooting breakdown</h2>
+      <h2 className="font-display text-lg font-medium text-foreground">Understanding adoption</h2>
+      <p className="font-body text-base text-foreground leading-relaxed">
+        Who was actually using our troubleshooting agent, and how much?
+      </p>
       <p className="font-body text-base text-muted-foreground leading-relaxed">
-        Sep 1 – Oct 31. About 49% of paying customers didn’t run TSA. Of the 242 who did, 138 stayed within the free 3 runs a month.
+        I looked at usage across 470 paying customers over two months. Nearly half never ran the agent. Of the 242 who did, 138 stayed within the three free monthly runs, while only 21 had automatic runs enabled.
+      </p>
+      <p className="font-body text-base text-muted-foreground leading-relaxed">
+        The breakdown helped distinguish initial adoption from deeper engagement and identify where the experience had room to improve.
       </p>
       <figure className="overflow-x-auto touch-auto">
         <SankeyDiagram data={troubleshootingSankey} label="TSA usage: 470 paying customers split into 228 who didn't run TSA and 242 who did; those 242 split into 86 below three monthly runs, 52 using all three free runs, 83 manual users above three runs, and 21 with automatic runs on." />
