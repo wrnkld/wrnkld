@@ -16,6 +16,7 @@ import mcdIntegrations from "@/assets/montecarlo/mcd-addint.png";
 import mcdJob from "@/assets/montecarlo/mcd-job.png";
 import { SankeyDiagram } from "@/components/SankeyDiagram";
 import { troubleshootingSankey } from "@/data/troubleshooting";
+import { customerFeedback, representativeFeedback, researchStats } from "@/data/customerResearch";
 
 const pullRequests = [
   { id: 15255, title: "Fix the data product asset selector layout", files: 4, additions: 91, deletions: 62 },
@@ -29,23 +30,7 @@ const pullRequests = [
   { id: 15071, title: "Match the Alerts toolbar to the Monitors tab layout", files: 4, additions: 131, deletions: 48 },
 ];
 
-const customerFeedback = [
-  { id: 1, customer: "Jaguar Land Rover", role: "Data Engineer", settings: "Complete", codeChanges: "Complete", terms: "Complete", cardSort: "--" },
-  { id: 2, customer: "Verizon Connect", role: "Data Engineer", settings: "--", codeChanges: "--", terms: "DNP", cardSort: "Complete" },
-  { id: 3, customer: "Monday", role: "Data Engineer", settings: "Complete", codeChanges: "Complete", terms: "Complete", cardSort: "Complete" },
-  { id: 4, customer: "Skyscanner", role: "Data Engineer", settings: "Complete", codeChanges: "Complete", terms: "--", cardSort: "Complete" },
-  { id: 5, customer: "Richemont", role: "Data Analyst", settings: "--", codeChanges: "Complete", terms: "DNP", cardSort: "DNP" },
-  { id: 6, customer: "Virgin", role: "Data Engineer", settings: "--", codeChanges: "Complete", terms: "--", cardSort: "--" },
-  { id: 7, customer: "Auto Trader", role: "Data Engineer", settings: "Complete", codeChanges: "Complete", terms: "Complete", cardSort: "Complete" },
-  { id: 8, customer: "Richemont", role: "Data Scientist", settings: "Complete", codeChanges: "DNP", terms: "--", cardSort: "--" },
-  { id: 9, customer: "Pagaya", role: "Team Lead", settings: "DNP", codeChanges: "--", terms: "Complete", cardSort: "Complete" },
-  { id: 10, customer: "Roche", role: "Software Engineer", settings: "Complete", codeChanges: "Complete", terms: "Complete", cardSort: "Complete" },
-  { id: 11, customer: "Skyscanner", role: "Data Engineer", settings: "Complete", codeChanges: "DNP", terms: "Complete", cardSort: "Complete" },
-  { id: 12, customer: "Old Mutual", role: "Software Engineer", settings: "--", codeChanges: "Complete", terms: "Complete", cardSort: "DNP" },
-  { id: 13, customer: "Kolibri Games", role: "Data Analyst", settings: "Complete", codeChanges: "Complete", terms: "--", cardSort: "--" },
-  { id: 14, customer: "Jaguar Land Rover", role: "Software Engineer", settings: "Complete", codeChanges: "--", terms: "Complete", cardSort: "Complete" },
-  { id: 15, customer: "Richemont", role: "Data Engineer", settings: "DNP", codeChanges: "Complete", terms: "DNP", cardSort: "Complete" }
-];
+
 
 export default function MonteCarlo() {
   type SortField = "id" | "title" | "files" | "additions" | "deletions";
@@ -87,7 +72,7 @@ export default function MonteCarlo() {
 
   const sortedFeedback = useMemo(() => {
     const value = (fb: (typeof customerFeedback)[number]) => fb[feedbackSortField];
-    return [...customerFeedback].sort((a, b) => {
+    return [...representativeFeedback].sort((a, b) => {
       const av = value(a);
       const bv = value(b);
       const comparison =
@@ -199,10 +184,23 @@ export default function MonteCarlo() {
         </Table>
       </div>
 
-      <h2 className="font-display text-lg font-medium text-foreground">Customer feedback</h2>
+      <h2 className="font-display text-lg font-medium text-foreground">Research matrix</h2>
       <p className="font-body text-base text-muted-foreground leading-relaxed">
         Built a customer advisory board and a lightweight research practice to keep design decisions grounded in real usage. Ran structured interviews, feedback sessions, and quarterly reviews with data teams, then turned those insights into roadmap input, clearer prioritization, and tighter product–design–engineering alignment.
       </p>
+
+      <dl className="grid grid-cols-3 gap-4 not-prose font-body">
+        {[
+          { value: researchStats.participants, label: "Participants" },
+          { value: researchStats.companies, label: "Companies represented" },
+          { value: researchStats.studies, label: "Studies conducted" },
+        ].map((stat) => (
+          <div key={stat.label} className="min-w-0">
+            <dt className="text-sm text-muted-foreground leading-relaxed">{stat.label}</dt>
+            <dd className="mt-2 text-4xl font-medium text-foreground tabular-nums">{stat.value}</dd>
+          </div>
+        ))}
+      </dl>
 
       <div className="full-bleed border-y border-border/70 overflow-hidden table-gutter">
         <Table>
