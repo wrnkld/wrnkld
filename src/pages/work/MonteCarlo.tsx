@@ -17,24 +17,13 @@ import mcdJob from "@/assets/montecarlo/mcd-job.png";
 import { SankeyDiagram } from "@/components/SankeyDiagram";
 import { troubleshootingSankey } from "@/data/troubleshooting";
 import { customerFeedback, representativeFeedback, researchStats } from "@/data/customerResearch";
-
-const pullRequests = [
-  { id: 15255, title: "Fix the data product asset selector layout", files: 4, additions: 91, deletions: 62 },
-  { id: 15253, title: "Drop the bespoke styling layer on the Resources menu", files: 7, additions: 171, deletions: 79 },
-  { id: 15252, title: "Render legacy monitor details as metadata list section cards", files: 4, additions: 281, deletions: 361 },
-  { id: 15251, title: "Withhold generated-key dismissal until the list refetch lands", files: 3, additions: 74, deletions: 7 },
-  { id: 15228, title: "Remove deleted alert comments from the Apollo cache", files: 11, additions: 385, deletions: 137 },
-  { id: 15209, title: "Rework the SCIM settings page into cards with a modal editor", files: 16, additions: 390, deletions: 279 },
-  { id: 15196, title: "Remove noise from the alert page", files: 25, additions: 256, deletions: 379 },
-  { id: 15072, title: "Agents list: header Add button, search, and persisted view", files: 2, additions: 214, deletions: 12 },
-  { id: 15071, title: "Match the Alerts toolbar to the Monitors tab layout", files: 4, additions: 131, deletions: 48 },
-];
+import { pullRequests } from "@/data/monteCarloPullRequests";
 
 
 
 export default function MonteCarlo() {
-  type SortField = "id" | "title" | "files" | "additions" | "deletions";
-  const [sortField, setSortField] = useState<SortField>("id");
+  type SortField = "order" | "title" | "files" | "additions" | "deletions";
+  const [sortField, setSortField] = useState<SortField>("order");
   const [sortDirection, setSortDirection] = useState<"asc" | "desc">("desc");
 
   type FeedbackSortField = "customer" | "role" | "settings" | "codeChanges" | "terms" | "cardSort";
@@ -114,7 +103,7 @@ export default function MonteCarlo() {
 
       <h2 className="font-display text-lg font-medium text-foreground">Understanding adoption</h2>
       <p className="font-body text-base text-muted-foreground leading-relaxed">
-        Analyzed troubleshooting agent usage across 470 paying customers over two months. Nearly half never used the agent, while only 21 enabled automatic runs.
+        Analyzed troubleshooting agent usage across 470 paying customers over two months. Nearly half never used the agent, while only 21 enabled automatic runs. The analysis highlighted opportunities to improve adoption and encourage more sustained usage.
       </p>
       <figure className="overflow-x-auto touch-auto">
         <SankeyDiagram data={troubleshootingSankey} label="TSA usage: 470 paying customers split into 228 who didn't run TSA and 242 who did; those 242 split into 86 below three monthly runs, 52 using all three free runs, 83 manual users above three runs, and 21 with automatic runs on." />
@@ -140,7 +129,11 @@ export default function MonteCarlo() {
 
       <h2 className="font-display text-lg font-medium text-foreground">Shipping</h2>
       <p className="font-body text-base text-muted-foreground leading-relaxed">
-        Shipped hundreds of production frontend changes using AI-assisted development, spanning AI workflows, navigation, monitoring, and product quality.
+        Contributed directly to the production frontend through AI-assisted development, with more than 300 closed pull requests spanning AI workflows, product features, design systems, accessibility, and UX improvements.
+      </p>
+
+      <p className="font-body text-sm text-muted-foreground leading-relaxed">
+        Change counts marked * are illustrative, not GitHub-verified. Unavailable PR numbers are shown as —.
       </p>
 
       <div className="full-bleed border-y border-border/70 overflow-hidden table-gutter">
@@ -148,7 +141,7 @@ export default function MonteCarlo() {
           <TableHeader>
             <TableRow className="surface-tint-hover border-b-border/70">
               <TableHead className="w-[90px] hidden md:table-cell">
-                <SortHeader field="id">PR</SortHeader>
+                <SortHeader field="order">PR</SortHeader>
               </TableHead>
               <TableHead>
                 <SortHeader field="title">Title</SortHeader>
@@ -166,17 +159,17 @@ export default function MonteCarlo() {
           </TableHeader>
           <TableBody>
             {sortedPullRequests.map((pr) => (
-              <TableRow key={pr.id} className="border-b border-border/70 transition-colors surface-tint-hover">
-                <TableCell className="text-muted-foreground tabular-nums hidden md:table-cell">#{pr.id}</TableCell>
+              <TableRow key={pr.order} className="border-b border-border/70 transition-colors surface-tint-hover">
+                <TableCell className="text-muted-foreground tabular-nums hidden md:table-cell">{pr.id === null ? "—" : `#${pr.id}`}</TableCell>
                 <TableCell className="text-foreground">{pr.title}</TableCell>
                 <TableCell className="text-right text-muted-foreground tabular-nums whitespace-nowrap hidden md:table-cell">
-                  {pr.files}
+                  {pr.files}{pr.illustrative ? "*" : ""}
                 </TableCell>
                 <TableCell className="text-right tabular-nums whitespace-nowrap text-additions w-[70px] hidden md:table-cell">
-                  +{pr.additions}
+                  +{pr.additions}{pr.illustrative ? "*" : ""}
                 </TableCell>
                 <TableCell className="text-right tabular-nums whitespace-nowrap text-deletions w-[70px] hidden md:table-cell">
-                  −{pr.deletions}
+                  −{pr.deletions}{pr.illustrative ? "*" : ""}
                 </TableCell>
               </TableRow>
             ))}
