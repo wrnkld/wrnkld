@@ -25,10 +25,12 @@ import changeLogDoc from "@/content/agent-docs/change-log.md?raw";
 import dualAssetSelectorDoc from "@/content/agent-docs/dual-asset-selector.md?raw";
 import tableDoc from "@/content/agent-docs/table.md?raw";
 import buttonDoc from "@/content/agent-docs/button.md?raw";
+import clickableCardDoc from "@/content/agent-docs/clickable-card.md?raw";
 
 const AGENT_DOCS = [
   { title: "change-log/README.md", body: changeLogDoc },
   { title: "dual-asset-selector/README.md", body: dualAssetSelectorDoc },
+  { title: "clickable-card/README.md", body: clickableCardDoc },
   { title: "Table/README.md", body: tableDoc },
   { title: "Button/README.md", body: buttonDoc },
 ];
