@@ -1,6 +1,7 @@
 import { DetailLayout } from "@/components/DetailLayout";
 import { useMemo, useState } from "react";
-import { ArrowUpDown } from "lucide-react";
+import { AnimatePresence, motion } from "motion/react";
+import { ArrowUpDown, Plus, Minus } from "lucide-react";
 import {
   Table,
   TableBody,
