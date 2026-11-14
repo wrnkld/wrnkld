@@ -25,5 +25,5 @@ export const researchStats = {
 };
 
 // One participant per company, spanning every recorded role and study.
-const representativeIds = new Set([1, 2, 3, 4, 5, 6, 7, 9, 10, 12]);
+const representativeIds = new Set([1, 2, 3, 4, 7, 8, 9, 10, 12, 13]);
 export const representativeFeedback = customerFeedback.filter((participant) => representativeIds.has(participant.id));
