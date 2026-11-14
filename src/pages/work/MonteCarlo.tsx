@@ -198,7 +198,7 @@ export default function MonteCarlo() {
         Documented the design system in markdown files for AI agents, so generated UI uses existing patterns instead of inventing new ones.
       </p>
 
-      <div className="border-t border-border/70 not-prose">
+      <div className="-mx-5 border-t border-border/70 not-prose">
         {AGENT_DOCS.map((doc) => (
           <AgentDocRow key={doc.title} title={doc.title} body={doc.body} />
         ))}
@@ -259,7 +259,7 @@ function AgentDocRow({ title, body }: { title: string; body: string }) {
     <div className="border-b border-border/70">
       <button
         onClick={() => setOpen((o) => !o)}
-        className="w-full text-left py-4 text-base flex items-baseline justify-between gap-4 transition-colors surface-tint-hover"
+        className="w-full text-left px-5 py-4 text-base flex items-baseline justify-between gap-4 transition-colors surface-tint-hover"
       >
         <span className="text-foreground font-mono">{title}</span>
         <AnimatePresence mode="wait" initial={false}>
@@ -283,7 +283,7 @@ function AgentDocRow({ title, body }: { title: string; body: string }) {
             transition={{ duration: 0.25, ease: "easeOut" }}
             style={{ overflow: "hidden" }}
           >
-            <div className="pb-6 pt-1">
+            <div className="px-5 pb-6 pt-1">
               <pre className="font-mono text-sm text-muted-foreground whitespace-pre-wrap leading-relaxed rounded-lg border border-border/40 p-4">{body}</pre>
             </div>
           </motion.div>
