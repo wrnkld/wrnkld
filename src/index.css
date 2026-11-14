@@ -73,12 +73,6 @@
   .font-display { font-family: var(--font-display); }
   .font-body    { font-family: var(--font-body); }
   .font-mono    { font-family: var(--font-mono); }
-  .sankey-total { color: hsl(var(--foreground)); }
-  .sankey-inactive { color: hsl(var(--muted-foreground)); }
-  .sankey-active { color: hsl(var(--sankey-active)); }
-  .sankey-free { color: hsl(var(--sankey-free)); }
-  .sankey-manual { color: hsl(var(--sankey-manual)); }
-  .sankey-automatic { color: hsl(var(--sankey-automatic)); }
 
     .text-recommended { color: hsl(330 75% 45%); }
 
