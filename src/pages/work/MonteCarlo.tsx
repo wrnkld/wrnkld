@@ -20,6 +20,25 @@ import { troubleshootingSankey } from "@/data/troubleshooting";
 import { customerFeedback, representativeFeedback, researchStats } from "@/data/customerResearch";
 import { pullRequests } from "@/data/monteCarloPullRequests";
 
+const AGENT_DOCS = [
+  {
+    title: "components.md",
+    body: `# Components\n\nPlaceholder — paste the real file here.\n\n## Rules\n\n- Use existing components before composing new ones\n- ...`,
+  },
+  {
+    title: "patterns.md",
+    body: `# Patterns\n\nPlaceholder — paste the real file here.\n\n## Rules\n\n- Reuse established page patterns\n- ...`,
+  },
+  {
+    title: "tokens.md",
+    body: `# Tokens\n\nPlaceholder — paste the real file here.\n\n## Rules\n\n- Use design tokens, never hardcoded values\n- ...`,
+  },
+  {
+    title: "agents.md",
+    body: `# Agents\n\nPlaceholder — paste the real file here.\n\n## Rules\n\n- Do not invent new patterns\n- ...`,
+  },
+];
+
 
 
 export default function MonteCarlo() {
