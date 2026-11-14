@@ -128,6 +128,11 @@ export default function MonteCarlo() {
         Monte Carlo AI is the leading agent trust platform, helping data teams detect, resolve, and prevent data quality issues across the modern data stack.
       </p>
 
+      <h2 className="font-display text-lg font-medium text-foreground">Role</h2>
+      <p className="font-body text-base text-muted-foreground leading-relaxed">
+        Joined as founding designer and built the design function while remaining hands-on across the product. Partnered with founders, product, and engineering to shape the platform, hired and mentored designers, and established research and design-system practices.
+      </p>
+
       <h2 className="font-display text-lg font-medium text-foreground">Understanding adoption</h2>
       <p className="font-body text-base text-foreground leading-relaxed">
         Who was actually using our troubleshooting agent, and how much?
@@ -142,10 +147,23 @@ export default function MonteCarlo() {
         <SankeyDiagram data={troubleshootingSankey} label="TSA usage: 470 paying customers split into 228 who didn't run TSA and 242 who did; those 242 split into 86 below three monthly runs, 52 using all three free runs, 83 manual users above three runs, and 21 with automatic runs on." />
       </figure>
 
-      <h2 className="font-display text-lg font-medium text-foreground">Role</h2>
+      <h2 className="font-display text-lg font-medium text-foreground">Performance</h2>
       <p className="font-body text-base text-muted-foreground leading-relaxed">
-        Joined as founding designer and built the design function while remaining hands-on across the product. Partnered with founders, product, and engineering to shape the platform, hired and mentored designers, and established research and design-system practices.
+        Designed an end-to-end investigation workflow connecting cost, latency, query behavior, and operational context across Snowflake, dbt, Airflow, and Looker.
       </p>
+
+<img src={mcdWrites} alt="Monte Carlo write queries overview showing total credits and query performance trends" className="w-full h-auto border border-border/40" />
+
+<img src={mcdWrite} alt="Monte Carlo write query detail with observability agent explaining performance" className="w-full h-auto border border-border/40" />
+
+<h2 className="font-display text-lg font-medium text-foreground">Integrations</h2>
+<p className="font-body text-base text-muted-foreground leading-relaxed">
+  Designed a scalable integrations framework for warehouses, orchestration tools, repositories, BI platforms, and incident-response systems.
+</p>
+
+<img src={mcdIntegrations} alt="Monte Carlo add integration page showing integration categories and popular connections" className="w-full h-auto border border-border/40" />
+
+<img src={mcdJob} alt="Monte Carlo job performance view showing run time trends and failure tracking for dbt jobs" className="w-full h-auto border border-border/40" />
 
       <h2 className="font-display text-lg font-medium text-foreground">Shipping</h2>
       <p className="font-body text-base text-muted-foreground leading-relaxed">
@@ -192,24 +210,6 @@ export default function MonteCarlo() {
           </TableBody>
         </Table>
       </div>
-
-      <h2 className="font-display text-lg font-medium text-foreground">Performance</h2>
-      <p className="font-body text-base text-muted-foreground leading-relaxed">
-        Designed an end-to-end investigation workflow connecting cost, latency, query behavior, and operational context across Snowflake, dbt, Airflow, and Looker.
-      </p>
-
-<img src={mcdWrites} alt="Monte Carlo write queries overview showing total credits and query performance trends" className="w-full h-auto border border-border/40" />
-
-<img src={mcdWrite} alt="Monte Carlo write query detail with observability agent explaining performance" className="w-full h-auto border border-border/40" />
-
-<h2 className="font-display text-lg font-medium text-foreground">Integrations</h2>
-<p className="font-body text-base text-muted-foreground leading-relaxed">
-  Designed a scalable integrations framework for warehouses, orchestration tools, repositories, BI platforms, and incident-response systems.
-</p>
-
-<img src={mcdIntegrations} alt="Monte Carlo add integration page showing integration categories and popular connections" className="w-full h-auto border border-border/40" />
-
-<img src={mcdJob} alt="Monte Carlo job performance view showing run time trends and failure tracking for dbt jobs" className="w-full h-auto border border-border/40" />
 
       <h2 className="font-display text-lg font-medium text-foreground">Customer feedback</h2>
       <p className="font-body text-base text-muted-foreground leading-relaxed">
