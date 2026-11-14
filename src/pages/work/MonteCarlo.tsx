@@ -19,24 +19,18 @@ import { SankeyDiagram } from "@/components/SankeyDiagram";
 import { troubleshootingSankey } from "@/data/troubleshooting";
 import { customerFeedback, representativeFeedback, researchStats } from "@/data/customerResearch";
 import { pullRequests } from "@/data/monteCarloPullRequests";
+import ReactMarkdown from "react-markdown";
+import remarkGfm from "remark-gfm";
+import changeLogDoc from "@/content/agent-docs/change-log.md?raw";
+import dualAssetSelectorDoc from "@/content/agent-docs/dual-asset-selector.md?raw";
+import tableDoc from "@/content/agent-docs/table.md?raw";
+import buttonDoc from "@/content/agent-docs/button.md?raw";
 
 const AGENT_DOCS = [
-  {
-    title: "components.md",
-    body: `# Components\n\nPlaceholder — paste the real file here.\n\n## Rules\n\n- Use existing components before composing new ones\n- ...`,
-  },
-  {
-    title: "patterns.md",
-    body: `# Patterns\n\nPlaceholder — paste the real file here.\n\n## Rules\n\n- Reuse established page patterns\n- ...`,
-  },
-  {
-    title: "tokens.md",
-    body: `# Tokens\n\nPlaceholder — paste the real file here.\n\n## Rules\n\n- Use design tokens, never hardcoded values\n- ...`,
-  },
-  {
-    title: "agents.md",
-    body: `# Agents\n\nPlaceholder — paste the real file here.\n\n## Rules\n\n- Do not invent new patterns\n- ...`,
-  },
+  { title: "change-log/README.md", body: changeLogDoc },
+  { title: "dual-asset-selector/README.md", body: dualAssetSelectorDoc },
+  { title: "Table/README.md", body: tableDoc },
+  { title: "Button/README.md", body: buttonDoc },
 ];
 
 
@@ -284,7 +278,7 @@ function AgentDocRow({ title, body }: { title: string; body: string }) {
             style={{ overflow: "hidden" }}
           >
             <div className="px-5 pb-6 pt-1">
-              <pre className="font-mono text-sm text-muted-foreground whitespace-pre-wrap leading-relaxed rounded-lg border border-border/40 p-4">{body}</pre>
+              <MarkdownDoc source={body} />
             </div>
           </motion.div>
         )}
