@@ -14,16 +14,8 @@ import mcdWrites from "@/assets/montecarlo/mcd-writes.png";
 import mcdWrite from "@/assets/montecarlo/mcd-write.png";
 import mcdIntegrations from "@/assets/montecarlo/mcd-addint.png";
 import mcdJob from "@/assets/montecarlo/mcd-job.png";
-import { SankeyDiagram, type SankeyData } from "@/components/SankeyDiagram";
-
-const helloSankey: SankeyData = {
-  nodes: [{ name: "Hello" }, { name: "World" }, { name: "Sankey" }],
-  links: [
-    { source: 0, target: 1, value: 2 },
-    { source: 0, target: 2, value: 1 },
-    { source: 1, target: 2, value: 2 },
-  ],
-};
+import { SankeyDiagram } from "@/components/SankeyDiagram";
+import { troubleshootingSankey } from "@/data/troubleshooting";
 
 const pullRequests = [
   { id: 15254, title: "Remove the copy link action from asset detail pages", files: 2, additions: 2, deletions: 21 },
@@ -136,13 +128,13 @@ export default function MonteCarlo() {
         Monte Carlo AI is the leading agent trust platform, helping data teams detect, resolve, and prevent data quality issues across the modern data stack.
       </p>
 
-      <h2 className="font-display text-lg font-medium text-foreground">Sankey</h2>
+      <h2 className="font-display text-lg font-medium text-foreground">Troubleshooting breakdown</h2>
       <p className="font-body text-base text-muted-foreground leading-relaxed">
-        Hello world — placeholder diagram while the real data gets sorted.
+        Sep 1 – Oct 31. About 49% of paying customers didn’t run TSA. Of the 242 who did, 138 stayed within the free 3 runs a month.
       </p>
-      <div className="border border-border/40 p-5">
-        <SankeyDiagram data={helloSankey} />
-      </div>
+      <figure className="overflow-x-auto touch-auto">
+        <SankeyDiagram data={troubleshootingSankey} label="TSA usage: 470 paying customers split into 228 who didn't run TSA and 242 who did; those 242 split into 86 below three monthly runs, 52 using all three free runs, 83 manual users above three runs, and 21 with automatic runs on." />
+      </figure>
 
       <h2 className="font-display text-lg font-medium text-foreground">Role</h2>
       <p className="font-body text-base text-muted-foreground leading-relaxed">

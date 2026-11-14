@@ -26,6 +26,10 @@
     --ring: 215 20% 65%;            /* slate-400 */
 
     --radius: 0.5rem;
+    --sankey-active: 205 65% 44%;
+    --sankey-free: 168 44% 40%;
+    --sankey-manual: 330 55% 48%;
+    --sankey-automatic: 38 70% 43%;
 
     --font-display: 'Inter', system-ui, sans-serif;
     --font-body:    'Inter', system-ui, sans-serif;
@@ -69,6 +73,12 @@
   .font-display { font-family: var(--font-display); }
   .font-body    { font-family: var(--font-body); }
   .font-mono    { font-family: var(--font-mono); }
+  .sankey-total { color: hsl(var(--foreground)); }
+  .sankey-inactive { color: hsl(var(--muted-foreground)); }
+  .sankey-active { color: hsl(var(--sankey-active)); }
+  .sankey-free { color: hsl(var(--sankey-free)); }
+  .sankey-manual { color: hsl(var(--sankey-manual)); }
+  .sankey-automatic { color: hsl(var(--sankey-automatic)); }
 
     .text-recommended { color: hsl(330 75% 45%); }
 
