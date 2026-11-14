@@ -19,24 +19,18 @@ import { SankeyDiagram } from "@/components/SankeyDiagram";
 import { troubleshootingSankey } from "@/data/troubleshooting";
 import { customerFeedback, representativeFeedback, researchStats } from "@/data/customerResearch";
 import { pullRequests } from "@/data/monteCarloPullRequests";
+import ReactMarkdown from "react-markdown";
+import remarkGfm from "remark-gfm";
+import changeLogDoc from "@/content/agent-docs/change-log.md?raw";
+import dualAssetSelectorDoc from "@/content/agent-docs/dual-asset-selector.md?raw";
+import tableDoc from "@/content/agent-docs/table.md?raw";
+import buttonDoc from "@/content/agent-docs/button.md?raw";
 
 const AGENT_DOCS = [
-  {
-    title: "components.md",
-    body: `# Components\n\nPlaceholder — paste the real file here.\n\n## Rules\n\n- Use existing components before composing new ones\n- ...`,
-  },
-  {
-    title: "patterns.md",
-    body: `# Patterns\n\nPlaceholder — paste the real file here.\n\n## Rules\n\n- Reuse established page patterns\n- ...`,
-  },
-  {
-    title: "tokens.md",
-    body: `# Tokens\n\nPlaceholder — paste the real file here.\n\n## Rules\n\n- Use design tokens, never hardcoded values\n- ...`,
-  },
-  {
-    title: "agents.md",
-    body: `# Agents\n\nPlaceholder — paste the real file here.\n\n## Rules\n\n- Do not invent new patterns\n- ...`,
-  },
+  { title: "change-log/README.md", body: changeLogDoc },
+  { title: "dual-asset-selector/README.md", body: dualAssetSelectorDoc },
+  { title: "Table/README.md", body: tableDoc },
+  { title: "Button/README.md", body: buttonDoc },
 ];
 
 
@@ -253,6 +247,46 @@ export default function MonteCarlo() {
   );
 }
 
+function MarkdownDoc({ source }: { source: string }) {
+  return (
+    <div className="font-body text-base text-muted-foreground leading-relaxed">
+      <ReactMarkdown
+        remarkPlugins={[remarkGfm]}
+        components={{
+          h1: ({ children }) => (
+            <h3 className="font-display text-lg font-medium text-foreground mt-6 first:mt-0 mb-3">{children}</h3>
+          ),
+          h2: ({ children }) => (
+            <h4 className="font-display text-base font-medium text-foreground mt-6 mb-3">{children}</h4>
+          ),
+          p: ({ children }) => <p className="my-3 first:mt-0 last:mb-0">{children}</p>,
+          ul: ({ children }) => <ul className="my-3 list-disc pl-5 space-y-2 marker:text-muted-foreground/60">{children}</ul>,
+          li: ({ children }) => <li className="pl-1">{children}</li>,
+          strong: ({ children }) => <strong className="font-medium text-foreground">{children}</strong>,
+          code: ({ children }) => (
+            <code className="font-mono text-[0.8125em] text-foreground bg-muted border border-border/40 rounded px-1 py-0.5 [overflow-wrap:anywhere]">
+              {children}
+            </code>
+          ),
+          table: ({ children }) => (
+            <div className="my-4 overflow-x-auto touch-auto border-y border-border/70">
+              <table className="w-full text-sm">{children}</table>
+            </div>
+          ),
+          thead: ({ children }) => <thead className="border-b border-border/70">{children}</thead>,
+          tr: ({ children }) => <tr className="border-b border-border/70 last:border-b-0">{children}</tr>,
+          th: ({ children }) => (
+            <th className="py-2 pr-4 text-left font-medium text-muted-foreground whitespace-nowrap">{children}</th>
+          ),
+          td: ({ children }) => <td className="py-2 pr-4 align-top text-muted-foreground">{children}</td>,
+        }}
+      >
+        {source}
+      </ReactMarkdown>
+    </div>
+  );
+}
+
 function AgentDocRow({ title, body }: { title: string; body: string }) {
   const [open, setOpen] = useState(false);
   return (
@@ -284,7 +318,7 @@ function AgentDocRow({ title, body }: { title: string; body: string }) {
             style={{ overflow: "hidden" }}
           >
             <div className="px-5 pb-6 pt-1">
-              <pre className="font-mono text-sm text-muted-foreground whitespace-pre-wrap leading-relaxed rounded-lg border border-border/40 p-4">{body}</pre>
+              <MarkdownDoc source={body} />
             </div>
           </motion.div>
         )}
