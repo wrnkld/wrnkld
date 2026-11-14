@@ -193,6 +193,17 @@ export default function MonteCarlo() {
         </Table>
       </div>
 
+      <h2 className="font-display text-lg font-medium text-foreground">Design system for agents</h2>
+      <p className="font-body text-base text-muted-foreground leading-relaxed">
+        Documented the design system in markdown files for AI agents, so generated UI uses existing patterns instead of inventing new ones.
+      </p>
+
+      <div className="border-t border-border/70 not-prose">
+        {AGENT_DOCS.map((doc) => (
+          <AgentDocRow key={doc.title} title={doc.title} body={doc.body} />
+        ))}
+      </div>
+
       <h2 className="font-display text-lg font-medium text-foreground">Customer advisory board</h2>
       <p className="font-body text-base text-muted-foreground leading-relaxed">
         Built a customer advisory board and a lightweight research practice to keep design decisions grounded in real usage. Ran structured interviews, feedback sessions, and quarterly reviews with data teams, then turned those insights into roadmap input, clearer prioritization, and tighter product–design–engineering alignment.
