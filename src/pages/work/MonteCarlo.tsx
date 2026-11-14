@@ -252,3 +252,43 @@ export default function MonteCarlo() {
     </DetailLayout>
   );
 }
+
+function AgentDocRow({ title, body }: { title: string; body: string }) {
+  const [open, setOpen] = useState(false);
+  return (
+    <div className="border-b border-border/70">
+      <button
+        onClick={() => setOpen((o) => !o)}
+        className="w-full text-left py-4 text-base flex items-baseline justify-between gap-4 transition-colors surface-tint-hover"
+      >
+        <span className="text-foreground font-mono">{title}</span>
+        <AnimatePresence mode="wait" initial={false}>
+          <motion.span
+            key={open ? "minus" : "plus"}
+            initial={{ opacity: 0, scale: 0.85 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0, scale: 0.85 }}
+            transition={{ duration: 0.15 }}
+          >
+            {open ? <Minus className="h-4 w-4 shrink-0" /> : <Plus className="h-4 w-4 shrink-0" />}
+          </motion.span>
+        </AnimatePresence>
+      </button>
+      <AnimatePresence initial={false}>
+        {open && (
+          <motion.div
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: "auto", opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
+            transition={{ duration: 0.25, ease: "easeOut" }}
+            style={{ overflow: "hidden" }}
+          >
+            <div className="pb-6 pt-1">
+              <pre className="font-mono text-sm text-muted-foreground whitespace-pre-wrap leading-relaxed rounded-lg border border-border/40 p-4">{body}</pre>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </div>
+  );
+}
