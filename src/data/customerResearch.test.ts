@@ -23,3 +23,11 @@ test("representative matrix retains ten original participants across all roles a
     assert.ok(representativeFeedback.some((row) => row[study] === "Complete"));
   }
 });
+
+test("each representative row reports a studies count within the eight confirmed studies", () => {
+  for (const row of representativeFeedback) {
+    assert.equal(typeof row.studies, "number");
+    assert.ok(row.studies >= 1, `${row.customer} studies count below 1`);
+    assert.ok(row.studies <= researchStats.studies, `${row.customer} studies count above ${researchStats.studies}`);
+  }
+});
