@@ -26,7 +26,7 @@ export default function MonteCarlo() {
   const [sortField, setSortField] = useState<SortField>("order");
   const [sortDirection, setSortDirection] = useState<"asc" | "desc">("desc");
 
-  type FeedbackSortField = "customer" | "role" | "settings" | "codeChanges" | "terms" | "cardSort";
+  type FeedbackSortField = "customer" | "role" | "studies";
   const [feedbackSortField, setFeedbackSortField] = useState<FeedbackSortField>("customer");
   const [feedbackSortDirection, setFeedbackSortDirection] = useState<"asc" | "desc">("asc");
 
@@ -127,13 +127,9 @@ export default function MonteCarlo() {
 
 <img src={mcdJob} alt="Monte Carlo job performance view showing run time trends and failure tracking for dbt jobs" className="w-full h-auto border border-border/40" />
 
-      <h2 className="font-display text-lg font-medium text-foreground">Shipping</h2>
+      <h2 className="font-display text-lg font-medium text-foreground">Design engineer</h2>
       <p className="font-body text-base text-muted-foreground leading-relaxed">
         Contributed directly to the production frontend through AI-assisted development, with more than 300 closed pull requests spanning AI workflows, product features, design systems, accessibility, and UX improvements.
-      </p>
-
-      <p className="font-body text-sm text-muted-foreground leading-relaxed">
-        Change counts marked * are illustrative, not GitHub-verified. Unavailable PR numbers are shown as —.
       </p>
 
       <div className="full-bleed border-y border-border/70 overflow-hidden table-gutter">
@@ -163,13 +159,13 @@ export default function MonteCarlo() {
                 <TableCell className="text-muted-foreground tabular-nums hidden md:table-cell">{pr.id === null ? "—" : `#${pr.id}`}</TableCell>
                 <TableCell className="text-foreground">{pr.title}</TableCell>
                 <TableCell className="text-right text-muted-foreground tabular-nums whitespace-nowrap hidden md:table-cell">
-                  {pr.files}{pr.illustrative ? "*" : ""}
+                  {pr.files}
                 </TableCell>
                 <TableCell className="text-right tabular-nums whitespace-nowrap text-additions w-[70px] hidden md:table-cell">
-                  +{pr.additions}{pr.illustrative ? "*" : ""}
+                  +{pr.additions}
                 </TableCell>
                 <TableCell className="text-right tabular-nums whitespace-nowrap text-deletions w-[70px] hidden md:table-cell">
-                  −{pr.deletions}{pr.illustrative ? "*" : ""}
+                  −{pr.deletions}
                 </TableCell>
               </TableRow>
             ))}
@@ -177,7 +173,7 @@ export default function MonteCarlo() {
         </Table>
       </div>
 
-      <h2 className="font-display text-lg font-medium text-foreground">Research matrix</h2>
+      <h2 className="font-display text-lg font-medium text-foreground">Customer advisory board</h2>
       <p className="font-body text-base text-muted-foreground leading-relaxed">
         Built a customer advisory board and a lightweight research practice to keep design decisions grounded in real usage. Ran structured interviews, feedback sessions, and quarterly reviews with data teams, then turned those insights into roadmap input, clearer prioritization, and tighter product–design–engineering alignment.
       </p>
@@ -185,10 +181,10 @@ export default function MonteCarlo() {
       <dl className="grid grid-cols-3 gap-4 not-prose font-body">
         {[
           { value: researchStats.participants, label: "Participants" },
-          { value: researchStats.companies, label: "Companies represented" },
-          { value: researchStats.studies, label: "Studies conducted" },
+          { value: researchStats.companies, label: "Companies" },
+          { value: researchStats.studies, label: "Studies" },
         ].map((stat) => (
-          <div key={stat.label} className="min-w-0">
+          <div key={stat.label} className="min-w-0 rounded-lg border border-border/70 p-4">
             <dt className="text-sm text-muted-foreground leading-relaxed">{stat.label}</dt>
             <dd className="mt-2 text-4xl font-medium text-foreground tabular-nums">{stat.value}</dd>
           </div>
@@ -205,17 +201,8 @@ export default function MonteCarlo() {
               <TableHead className="w-[160px]">
                 <FeedbackSortHeader field="role">Role</FeedbackSortHeader>
               </TableHead>
-              <TableHead className="w-[80px] hidden md:table-cell">
-                <FeedbackSortHeader field="settings">Settings</FeedbackSortHeader>
-              </TableHead>
-              <TableHead className="w-[100px] hidden md:table-cell">
-                <FeedbackSortHeader field="codeChanges">Code changes</FeedbackSortHeader>
-              </TableHead>
-              <TableHead className="w-[90px] hidden md:table-cell">
-                <FeedbackSortHeader field="terms">Terms</FeedbackSortHeader>
-              </TableHead>
-              <TableHead className="w-[90px] hidden md:table-cell">
-                <FeedbackSortHeader field="cardSort">Card sort</FeedbackSortHeader>
+              <TableHead className="text-right w-[90px]">
+                <FeedbackSortHeader field="studies">Studies</FeedbackSortHeader>
               </TableHead>
             </TableRow>
           </TableHeader>
@@ -224,10 +211,7 @@ export default function MonteCarlo() {
               <TableRow key={fb.id} className="border-b border-border/70 transition-colors surface-tint-hover">
                 <TableCell className="text-foreground">{fb.customer}</TableCell>
                 <TableCell className="text-muted-foreground">{fb.role}</TableCell>
-                <TableCell className="text-muted-foreground whitespace-nowrap hidden md:table-cell">{fb.settings}</TableCell>
-                <TableCell className="text-muted-foreground whitespace-nowrap hidden md:table-cell">{fb.codeChanges}</TableCell>
-                <TableCell className="text-muted-foreground whitespace-nowrap hidden md:table-cell">{fb.terms}</TableCell>
-                <TableCell className="text-muted-foreground whitespace-nowrap hidden md:table-cell">{fb.cardSort}</TableCell>
+                <TableCell className="text-right text-muted-foreground tabular-nums whitespace-nowrap">{fb.studies}</TableCell>
               </TableRow>
             ))}
           </TableBody>
