@@ -1,6 +1,7 @@
 import { DetailLayout } from "@/components/DetailLayout";
 import { useMemo, useState } from "react";
-import { ArrowUpDown } from "lucide-react";
+import { AnimatePresence, motion } from "motion/react";
+import { ArrowUpDown, Plus, Minus } from "lucide-react";
 import {
   Table,
   TableBody,
@@ -18,6 +19,25 @@ import { SankeyDiagram } from "@/components/SankeyDiagram";
 import { troubleshootingSankey } from "@/data/troubleshooting";
 import { customerFeedback, representativeFeedback, researchStats } from "@/data/customerResearch";
 import { pullRequests } from "@/data/monteCarloPullRequests";
+
+const AGENT_DOCS = [
+  {
+    title: "components.md",
+    body: `# Components\n\nPlaceholder — paste the real file here.\n\n## Rules\n\n- Use existing components before composing new ones\n- ...`,
+  },
+  {
+    title: "patterns.md",
+    body: `# Patterns\n\nPlaceholder — paste the real file here.\n\n## Rules\n\n- Reuse established page patterns\n- ...`,
+  },
+  {
+    title: "tokens.md",
+    body: `# Tokens\n\nPlaceholder — paste the real file here.\n\n## Rules\n\n- Use design tokens, never hardcoded values\n- ...`,
+  },
+  {
+    title: "agents.md",
+    body: `# Agents\n\nPlaceholder — paste the real file here.\n\n## Rules\n\n- Do not invent new patterns\n- ...`,
+  },
+];
 
 
 
@@ -173,6 +193,17 @@ export default function MonteCarlo() {
         </Table>
       </div>
 
+      <h2 className="font-display text-lg font-medium text-foreground">Design system for agents</h2>
+      <p className="font-body text-base text-muted-foreground leading-relaxed">
+        Documented the design system in markdown files for AI agents, so generated UI uses existing patterns instead of inventing new ones.
+      </p>
+
+      <div className="border-t border-border/70 not-prose">
+        {AGENT_DOCS.map((doc) => (
+          <AgentDocRow key={doc.title} title={doc.title} body={doc.body} />
+        ))}
+      </div>
+
       <h2 className="font-display text-lg font-medium text-foreground">Customer advisory board</h2>
       <p className="font-body text-base text-muted-foreground leading-relaxed">
         Built a customer advisory board and a lightweight research practice to keep design decisions grounded in real usage. Ran structured interviews, feedback sessions, and quarterly reviews with data teams, then turned those insights into roadmap input, clearer prioritization, and tighter product–design–engineering alignment.
@@ -219,5 +250,45 @@ export default function MonteCarlo() {
       </div>
 
     </DetailLayout>
+  );
+}
+
+function AgentDocRow({ title, body }: { title: string; body: string }) {
+  const [open, setOpen] = useState(false);
+  return (
+    <div className="border-b border-border/70">
+      <button
+        onClick={() => setOpen((o) => !o)}
+        className="w-full text-left py-4 text-base flex items-baseline justify-between gap-4 transition-colors surface-tint-hover"
+      >
+        <span className="text-foreground font-mono">{title}</span>
+        <AnimatePresence mode="wait" initial={false}>
+          <motion.span
+            key={open ? "minus" : "plus"}
+            initial={{ opacity: 0, scale: 0.85 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0, scale: 0.85 }}
+            transition={{ duration: 0.15 }}
+          >
+            {open ? <Minus className="h-4 w-4 shrink-0" /> : <Plus className="h-4 w-4 shrink-0" />}
+          </motion.span>
+        </AnimatePresence>
+      </button>
+      <AnimatePresence initial={false}>
+        {open && (
+          <motion.div
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: "auto", opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
+            transition={{ duration: 0.25, ease: "easeOut" }}
+            style={{ overflow: "hidden" }}
+          >
+            <div className="pb-6 pt-1">
+              <pre className="font-mono text-sm text-muted-foreground whitespace-pre-wrap leading-relaxed rounded-lg border border-border/40 p-4">{body}</pre>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </div>
   );
 }
