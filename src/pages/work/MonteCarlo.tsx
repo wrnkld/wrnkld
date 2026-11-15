@@ -283,7 +283,7 @@ function AgentDocRow({ title, body }: { title: string; body: string }) {
             transition={{ duration: 0.25, ease: "easeOut" }}
             style={{ overflow: "hidden" }}
           >
-            <div className="px-5 pb-6 pt-1">
+            <div className="px-5 pb-10 pt-2">
               <MarkdownDoc source={body} />
             </div>
           </motion.div>
