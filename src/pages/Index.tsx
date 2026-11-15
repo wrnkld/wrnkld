@@ -10,6 +10,8 @@ import { VibesBody } from "@/content/words/VibesBody";
 import { SleevesBody } from "@/content/words/SleevesBody";
 import { ClaudeBody } from "@/content/words/ClaudeBody";
 import { Row } from "@/components/Row";
+import monteCarloScreen from "@/assets/montecarlo/mcd-writes.png";
+import taniumScreen from "@/assets/tanium/tanium-assurance-findings.png";
 import {
   Table,
   TableBody,
@@ -105,24 +107,27 @@ function Callout({
   );
 }
 
-/* Featured case study, composed as an editorial feature rather than a nav
-   link: write-up on its own, hairline divider between projects, and the same
-   quiet tint-on-hover the rest of the site's rows use. */
-function FeatureRow({
+/* Paired, unboxed case-study features reuse the product screens from each study. */
+function FeaturedProject({
   title,
   blurb,
   to,
+  image,
+  imageAlt,
 }: {
   title: string;
   blurb: string;
   to: string;
+  image: string;
+  imageAlt: string;
 }) {
   return (
     <Link
       to={to}
-      className="group block px-5 py-8 md:py-9 border-b border-border/70 transition-colors duration-200 surface-tint-hover focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-inset focus-visible:ring-ring"
+      className="group block min-w-0 p-5 transition-colors duration-200 surface-tint-hover focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-inset focus-visible:ring-ring"
     >
-      <h3 className="text-2xl font-medium leading-tight tracking-[-0.02em] text-foreground">
+      <img src={image} alt={imageAlt} className="w-full aspect-[8/5] object-contain rounded-none border border-border/40" />
+      <h3 className="mt-5 text-2xl font-medium leading-tight text-foreground">
         {title}
       </h3>
       <p className="mt-2 font-body text-base leading-relaxed text-muted-foreground">
@@ -139,11 +144,15 @@ const FEATURED = [
   {
     company: "Monte Carlo AI",
     to: "/work/montecarlo",
+    image: monteCarloScreen,
+    imageAlt: "Monte Carlo write queries dashboard with credit usage and performance trends",
     blurb: "Agent trust platform. Founding designer, now Head of Design.",
   },
   {
     company: "Tanium",
     to: "/work/tanium",
+    image: taniumScreen,
+    imageAlt: "Tanium Assurance findings with attack coverage charts and risk details",
     blurb:
       "Unified endpoint management and cybersecurity platform. Senior IC across five products.",
   },
@@ -178,16 +187,16 @@ export default function Index() {
         headlineSize="md:text-[1.75rem]"
         headline="Product design leader for complex software. I lead teams, stay hands-on, and work directly with customers to turn difficult problems into simple, elegant products."
       >
-        <div className="-mx-5 border-t border-border/70">
+        <div className="-mx-5 grid grid-cols-1 md:grid-cols-2 gap-0">
           {FEATURED.map((f) => (
-            <FeatureRow key={f.company} title={f.company} blurb={f.blurb} to={f.to} />
+            <FeaturedProject key={f.company} title={f.company} blurb={f.blurb} to={f.to} image={f.image} imageAlt={f.imageAlt} />
           ))}
         </div>
 
       </Band>
 
       <Band
-        kicker="02 — Side projects"
+        kicker="02 — Independent projects"
         headline="Products I designed, built, and shipped."
       >
         <div className="-mx-5 grid grid-cols-1 md:grid-cols-2 gap-0">
