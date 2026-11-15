@@ -117,7 +117,7 @@ export default function MonteCarlo() {
       <p className="font-body text-base text-muted-foreground leading-relaxed">
         Analyzed troubleshooting agent usage across 470 paying customers over two months. Nearly half never used the agent, while only 21 enabled automatic runs. The analysis highlighted opportunities to improve adoption and encourage more sustained usage.
       </p>
-      <figure className="overflow-x-auto touch-auto">
+      <figure className="full-bleed overflow-x-auto touch-auto">
         <SankeyDiagram data={troubleshootingSankey} label="TSA usage: 470 paying customers split into 228 who didn't run TSA and 242 who did; those 242 split into 86 below three monthly runs, 52 using all three free runs, 83 manual users above three runs, and 21 with automatic runs on." />
       </figure>
 
@@ -126,18 +126,26 @@ export default function MonteCarlo() {
         Designed investigation workflows that connect query costs, latency, execution history, and AI-generated analysis across Snowflake, dbt, Airflow, and Looker.
       </p>
 
-<img src={mcdWrites} alt="Monte Carlo write queries overview showing total credits and query performance trends" className="w-full h-auto border border-border/40" />
+<div className="full-bleed">
+  <img src={mcdWrites} alt="Monte Carlo write queries overview showing total credits and query performance trends" className="w-full h-auto border border-border/40" />
+</div>
 
-<img src={mcdWrite} alt="Monte Carlo write query detail with observability agent explaining performance" className="w-full h-auto border border-border/40" />
+<div className="full-bleed">
+  <img src={mcdWrite} alt="Monte Carlo write query detail with observability agent explaining performance" className="w-full h-auto border border-border/40" />
+</div>
 
 <h2 className="font-display text-2xl font-medium text-foreground">Integrations</h2>
 <p className="font-body text-base text-muted-foreground leading-relaxed">
   Designed a unified framework for connecting data warehouses, orchestration tools, repositories, BI platforms, and incident-response systems.
 </p>
 
-<img src={mcdIntegrations} alt="Monte Carlo add integration page showing integration categories and popular connections" className="w-full h-auto border border-border/40" />
+<div className="full-bleed">
+  <img src={mcdIntegrations} alt="Monte Carlo add integration page showing integration categories and popular connections" className="w-full h-auto border border-border/40" />
+</div>
 
-<img src={mcdJob} alt="Monte Carlo job performance view showing run time trends and failure tracking for dbt jobs" className="w-full h-auto border border-border/40" />
+<div className="full-bleed">
+  <img src={mcdJob} alt="Monte Carlo job performance view showing run time trends and failure tracking for dbt jobs" className="w-full h-auto border border-border/40" />
+</div>
 
       <h2 className="font-display text-2xl font-medium text-foreground">Design engineer</h2>
       <p className="font-body text-base text-muted-foreground leading-relaxed">
