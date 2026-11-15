@@ -22,7 +22,7 @@
     --muted-foreground: 215 16% 47%;/* slate-500 */
 
     --border: 214 32% 91%;          /* slate-200 */
-    --surface-hover: 214 32% 91% / 0.575;
+    --surface-hover: 214 32% 91% / 0.3;
     --input: 214 32% 91%;
     --ring: 215 20% 65%;            /* slate-400 */
 
