@@ -90,7 +90,7 @@ function Callout({
     </div>
   );
   const linkClasses =
-    "link-motion block p-5 md:px-10 surface-tint-hover transition-colors duration-200";
+    "link-motion block p-5 md:p-10 surface-tint-hover transition-colors duration-200";
   if (to) return (
     <Link to={to} className={linkClasses}>
       {inner}
@@ -120,7 +120,7 @@ function FeaturedProject({
   return (
     <Link
       to={to}
-      className="link-motion group block min-w-0 p-5 md:px-10 transition-colors duration-200 surface-tint-hover focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-inset focus-visible:ring-ring"
+      className="link-motion group block min-w-0 p-5 md:p-10 transition-colors duration-200 surface-tint-hover focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-inset focus-visible:ring-ring"
     >
       <img src={image} alt={imageAlt} className="w-full aspect-[8/5] object-contain rounded-none border border-border/40" />
       <h3 className="mt-5 text-lg font-medium tracking-tight text-foreground">
