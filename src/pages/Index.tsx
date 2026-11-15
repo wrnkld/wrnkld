@@ -178,7 +178,7 @@ export default function Index() {
   return (
     <div className="relative z-10 min-h-screen text-foreground">
       {/* header */}
-      <div className="pt-10 md:pt-14">
+      <div className="pt-16 md:pt-24">
         <div className="max-w-6xl mx-auto px-6">
           <div className="px-5 py-4">
             <span className="text-lg font-medium tracking-tight">Matthew Stevens</span>
@@ -239,7 +239,7 @@ export default function Index() {
       </Band>
 
       <Band kicker="04 — Lists" headline="I like making lists.">
-        <div className="space-y-8">
+        <div className="space-y-12">
           <ListColumn
             heading="Books"
             to="/about/books"
