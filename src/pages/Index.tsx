@@ -37,16 +37,15 @@ function Band({
   return (
     <section>
       <div className="max-w-6xl mx-auto px-6">
-        <div className={`px-5 ${isIntro ? "pt-6 pb-7 md:pt-8 md:pb-8" : "pt-8 pb-4 md:pt-10 md:pb-5"}`}>
-          {!isIntro && <div aria-hidden="true" className="w-10 border-t border-muted-foreground/40 mb-5" />}
-          {!isIntro && <p className="meta-label mb-3">
+        <div className="px-5 py-14 md:py-20">
+          {!isIntro && <p className="meta-label mb-4">
             {kicker.replace(/^\d+ — /, "")}
           </p>}
           <h2 className={`${isIntro ? `text-2xl ${headlineSize ?? ""} font-medium leading-relaxed text-foreground` : "text-xl font-medium leading-snug tracking-tight text-foreground"} max-w-3xl`}>
             {headline}
           </h2>
         </div>
-        {children && <div className="px-5 pb-6 md:pb-8">{children}</div>}
+        {children && <div className="px-5 pb-14 md:pb-20">{children}</div>}
       </div>
     </section>
   );
