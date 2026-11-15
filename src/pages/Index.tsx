@@ -11,7 +11,7 @@ import { SleevesBody } from "@/content/words/SleevesBody";
 import { ClaudeBody } from "@/content/words/ClaudeBody";
 import { Row } from "@/components/Row";
 import monteCarloScreen from "@/assets/montecarlo/mcd-writes.png";
-import taniumScreen from "@/assets/tanium/tanium-assurance-findings.png";
+import taniumScreen from "@/assets/tanium/tanium-asset-vendor.png";
 import {
   Table,
   TableBody,
@@ -127,7 +127,7 @@ function FeaturedProject({
       className="group block min-w-0 p-5 transition-colors duration-200 surface-tint-hover focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-inset focus-visible:ring-ring"
     >
       <img src={image} alt={imageAlt} className="w-full aspect-[8/5] object-contain rounded-none border border-border/40" />
-      <h3 className="mt-5 text-2xl font-medium leading-tight text-foreground">
+      <h3 className="mt-5 text-lg font-medium tracking-tight text-foreground">
         {title}
       </h3>
       <p className="mt-2 font-body text-base leading-relaxed text-muted-foreground">
@@ -152,7 +152,7 @@ const FEATURED = [
     company: "Tanium",
     to: "/work/tanium",
     image: taniumScreen,
-    imageAlt: "Tanium Assurance findings with attack coverage charts and risk details",
+    imageAlt: "Tanium Asset Adobe software inventory with installation counts and usage charts",
     blurb:
       "Unified endpoint management and cybersecurity platform. Senior IC across five products.",
   },
