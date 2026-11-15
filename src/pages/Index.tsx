@@ -132,8 +132,7 @@ function FeatureRow({
 
 /* ---------- data ---------- */
 
-/* Role and years are read from the experience list so the featured rows and
-   the experience table can never disagree. */
+/* The two case studies shown as editorial features on the home page. */
 const FEATURED = [
   {
     company: "Monte Carlo AI",
