@@ -26,6 +26,9 @@
     --ring: 215 20% 65%;            /* slate-400 */
 
     --radius: 0.5rem;
+    /* The single accent hue for text links (terracotta) — never blue. */
+    --link: 14 62% 43%;
+    --link-hover: 14 62% 32%;
     --sankey-active: 205 65% 44%;
     --sankey-free: 168 44% 40%;
     --sankey-manual: 330 55% 48%;

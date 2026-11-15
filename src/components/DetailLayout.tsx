@@ -16,7 +16,7 @@ export function DetailLayout({ title, children }: DetailLayoutProps) {
             <Link
               to="/"
               aria-label="Back to home"
-              className="inline-flex items-center gap-1 text-base text-muted-foreground hover:text-foreground transition-colors duration-200 mb-4"
+              className="inline-flex items-center gap-1 text-base text-link hover:text-link-hover transition-colors duration-200 mb-4"
             >
               <ArrowLeft className="h-4 w-4" />
               Back
