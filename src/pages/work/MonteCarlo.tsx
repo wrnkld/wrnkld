@@ -25,10 +25,10 @@ import buttonDoc from "@/content/agent-docs/button.md?raw";
 import clickableCardDoc from "@/content/agent-docs/clickable-card.md?raw";
 
 const AGENT_DOCS = [
+  { title: "button.md", body: buttonDoc },
   { title: "dual-asset-selector.md", body: dualAssetSelectorDoc },
   { title: "clickable-card.md", body: clickableCardDoc },
   { title: "table-lists.md", body: tableDoc },
-  { title: "button.md", body: buttonDoc },
 ];
 
 
