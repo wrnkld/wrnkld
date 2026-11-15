@@ -38,6 +38,7 @@ function Band({
     <section>
       <div className="max-w-6xl mx-auto px-6">
         <div className={`px-5 ${isIntro ? "pt-6 pb-7 md:pt-8 md:pb-8" : "pt-8 pb-4 md:pt-10 md:pb-5"}`}>
+          {!isIntro && <div aria-hidden="true" className="w-10 border-t border-muted-foreground/40 mb-5" />}
           {!isIntro && <p className="text-sm font-medium text-foreground mb-2">
             {kicker.replace(/^\d+ — /, "")}
           </p>}
