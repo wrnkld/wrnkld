@@ -3,6 +3,7 @@
 - [x] Update adoption description and verify the page.
 
 # Homepage updates
+- [x] Simplify section headings and retain January 2026 on the writing heading; verify desktop/mobile.
 - [x] Match detail-page desktop insets and separate homepage heading sizes; verify alignment and mobile overflow.
 - [x] Pair featured case studies with full-width screenshots and rename Independent projects; verify desktop/mobile and links.
 - [x] Add the Tanium Assurance preview and verify playback and mobile layout.
