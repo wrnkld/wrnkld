@@ -9,10 +9,10 @@ interface DetailLayoutProps {
 
 export function DetailLayout({ title, children }: DetailLayoutProps) {
   return (
-    <div className="relative z-10 min-h-screen text-foreground">
+    <div className="detail-page relative z-10 min-h-screen text-foreground">
       <header className="pt-16 md:pt-24">
         <div className="max-w-6xl mx-auto px-6">
-          <div className="px-5">
+          <div className="px-5 md:px-10">
             <Link
               to="/"
               aria-label="Back to home"
@@ -29,7 +29,7 @@ export function DetailLayout({ title, children }: DetailLayoutProps) {
       </header>
 
       <main className="max-w-6xl mx-auto px-6 pt-3 pb-10 md:pt-4 animate-fade-in">
-        <div className="px-5 space-y-6 md:space-y-8 [&>p]:max-w-3xl">{children}</div>
+        <div className="px-5 md:px-10 space-y-6 md:space-y-8 [&>p]:max-w-3xl">{children}</div>
       </main>
     </div>
   );

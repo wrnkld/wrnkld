@@ -170,8 +170,9 @@
   .table-gutter :is(th, td):last-child { padding-right: 1.25rem; }
 
   @media (min-width: 768px) {
-    .homepage .table-gutter :is(th, td):first-child { padding-left: 2.5rem; }
-    .homepage .table-gutter :is(th, td):last-child { padding-right: 2.5rem; }
+    :is(.homepage, .detail-page) .table-gutter :is(th, td):first-child { padding-left: 2.5rem; }
+    :is(.homepage, .detail-page) .table-gutter :is(th, td):last-child { padding-right: 2.5rem; }
+    .detail-page .full-bleed { margin-left: -2.5rem; margin-right: -2.5rem; }
   }
 
   /* Break out of a px-5 wrapper so a full-width element touches the outer gutter. */

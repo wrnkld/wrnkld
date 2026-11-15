@@ -41,7 +41,7 @@ function Band({
           {!isIntro && <p className="meta-label mb-4">
             {kicker.replace(/^\d+ — /, "")}
           </p>}
-          <h2 className={`${isIntro ? `text-2xl ${headlineSize ?? ""} font-medium leading-relaxed text-foreground` : "text-xl font-medium leading-snug tracking-tight text-foreground"} max-w-3xl`}>
+          <h2 className={`${isIntro ? `text-[1.75rem] ${headlineSize ?? ""} font-medium leading-relaxed text-foreground` : "text-2xl font-medium leading-snug tracking-tight text-foreground"} max-w-3xl`}>
             {headline}
           </h2>
         </div>

@@ -5,12 +5,12 @@ import { experience, education } from "@/data/experience";
 export default function ExperiencePage() {
   return (
     <DetailLayout title="Experience">
-      <div className="-mx-5">
+      <div className="full-bleed">
         {experience.map((job) => (
           <Row
             key={job.company}
             noHover
-            className="grid grid-cols-1 md:grid-cols-[1fr_2fr] gap-1 md:gap-8 border-b-0 font-body text-base leading-relaxed"
+            className="md:px-10 grid grid-cols-1 md:grid-cols-[1fr_2fr] gap-1 md:gap-8 border-b-0 font-body text-base leading-relaxed"
           >
             <div className="flex flex-col gap-1">
               <span className="font-medium text-foreground">{job.company}</span>
@@ -28,7 +28,7 @@ export default function ExperiencePage() {
         ))}
         <Row
           noHover
-          className="grid grid-cols-1 md:grid-cols-[1fr_2fr] gap-1 md:gap-8 border-b-0 font-body text-base leading-relaxed"
+          className="md:px-10 grid grid-cols-1 md:grid-cols-[1fr_2fr] gap-1 md:gap-8 border-b-0 font-body text-base leading-relaxed"
         >
           <span className="font-medium text-foreground">{education.school}</span>
           <span className="text-foreground">{education.degree}</span>
