@@ -78,10 +78,10 @@ export function SankeyDiagram({
               x={node.depth === 2 ? (node.x1 ?? 0) + 12 : node.x0}
               y={node.depth === 2 ? ((node.y0 ?? 0) + (node.y1 ?? 0)) / 2 - (node.detail ? 18 : 8) : (node.y0 ?? 0) - 34}
               className="fill-foreground"
-              fontSize={16}
+              fontSize={15}
             >
               <tspan>{node.name}</tspan>
-              {node.detail && <tspan x={(node.x1 ?? 0) + 12} dy={20} className="fill-muted-foreground" fontSize={14}>{node.detail}</tspan>}
+              {node.detail && <tspan x={(node.x1 ?? 0) + 12} dy={20} className="fill-muted-foreground" fontSize={13.125}>{node.detail}</tspan>}
               <tspan x={node.depth === 2 ? (node.x1 ?? 0) + 12 : node.x0} dy={22} fontWeight={500} className="fill-muted-foreground">{node.value}</tspan>
             </text>
           </g>

@@ -59,6 +59,7 @@
   body {
     @apply antialiased;
     font-family: var(--font-body);
+    font-size: 0.9375rem;
     position: relative;
   }
 
