@@ -38,9 +38,6 @@ function Band({
     <section>
       <div className="max-w-6xl mx-auto px-6">
         <div className="px-5 md:px-10 pt-12 pb-6 md:pb-8">
-          {!isIntro && <p className="meta-label mb-4">
-            {kicker.replace(/^\d+ — /, "")}
-          </p>}
           <h2 className={`${isIntro ? `text-[1.640625rem] ${headlineSize ?? ""} font-medium leading-relaxed tracking-tight text-foreground` : "text-2xl font-medium leading-snug tracking-tight text-foreground"} max-w-3xl`}>
             {headline}
           </h2>
@@ -195,7 +192,7 @@ export default function Index() {
 
       <Band
         kicker="02 — Independent projects"
-        headline="Products I designed, built, and shipped."
+        headline="Independent projects"
       >
         <div className="-mx-5 md:-mx-10 grid grid-cols-1 md:grid-cols-2 gap-0">
           <Callout
@@ -211,7 +208,7 @@ export default function Index() {
         </div>
       </Band>
 
-      <Band kicker="03 — Experience" headline="Designing complex enterprise software.">
+      <Band kicker="03 — Experience" headline="Experience">
         <div className="-mx-5 md:-mx-10 border-t border-border/70">
           {experience.slice(0, 3).map((j) => (
             <Row key={j.company} className="md:px-10 flex flex-col gap-1 md:grid md:grid-cols-3 md:gap-8">
@@ -231,7 +228,7 @@ export default function Index() {
         </div>
       </Band>
 
-      <Band kicker="04 — Lists" headline="I like making lists.">
+      <Band kicker="04 — Lists" headline="Lists">
         <div className="space-y-12">
           <ListColumn
             heading="Books"
@@ -248,7 +245,7 @@ export default function Index() {
         </div>
       </Band>
 
-      <Band kicker="05 — Words from January 2026" headline="I worked through some thoughts on AI and design.">
+      <Band kicker="05 — Words from January 2026" headline="Design & AI — January 2026">
         <div className="-mx-5 md:-mx-10 border-t border-border/70">
           {WORDS.map((w) => (
             <WordRow key={w.title} {...w} />
