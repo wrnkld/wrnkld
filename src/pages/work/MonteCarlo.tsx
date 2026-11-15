@@ -190,7 +190,7 @@ export default function MonteCarlo() {
         Translated our design system into structured Markdown guidance for AI coding agents, defining component usage, interaction rules, and implementation constraints so AI-generated interfaces follow established product patterns.
       </p>
 
-      <div className="-mx-5 border-t border-border/70 not-prose">
+      <div className="full-bleed border-t border-border/70 not-prose">
         {AGENT_DOCS.map((doc) => (
           <AgentDocRow key={doc.title} title={doc.title} body={doc.body} />
         ))}
@@ -259,7 +259,7 @@ function AgentDocRow({ title, body }: { title: string; body: string }) {
     <div className="border-b border-border/70">
       <button
         onClick={() => setOpen((o) => !o)}
-        className="w-full text-left px-5 py-4 text-base flex items-baseline justify-between gap-4 transition-colors surface-tint-hover"
+        className="w-full text-left px-5 md:px-10 py-4 text-base flex items-baseline justify-between gap-4 transition-colors surface-tint-hover"
       >
         <span className="text-foreground font-mono">{title}</span>
         <AnimatePresence mode="wait" initial={false}>
@@ -283,7 +283,7 @@ function AgentDocRow({ title, body }: { title: string; body: string }) {
             transition={{ duration: 0.25, ease: "easeOut" }}
             style={{ overflow: "hidden" }}
           >
-            <div className="px-5 pb-10 pt-2">
+            <div className="px-5 md:px-10 pb-10 pt-2">
               <MarkdownDoc source={body} />
             </div>
           </motion.div>
