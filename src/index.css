@@ -22,14 +22,14 @@
     --muted-foreground: 215 16% 47%;/* slate-500 */
 
     --border: 214 32% 91%;          /* slate-200 */
-    --surface-hover: 214 32% 91% / 0.7;
+    --surface-hover: 214 32% 91% / 0.575;
     --input: 214 32% 91%;
     --ring: 215 20% 65%;            /* slate-400 */
 
     --radius: 0.5rem;
-    /* The single accent hue for text links (terracotta) — never blue. */
-    --link: 14 62% 43%;
-    --link-hover: 14 62% 32%;
+    /* The single accent hue for text links (dark raspberry) — never blue. */
+    --link: 338.361 59.804% 40%;
+    --link-hover: 338.361 59.804% 30%;
     --sankey-active: 205 65% 44%;
     --sankey-free: 168 44% 40%;
     --sankey-manual: 330 55% 48%;
