@@ -23,10 +23,12 @@ import {
 function Band({
   kicker,
   headline,
+  headlineSize = "md:text-3xl",
   children,
 }: {
   kicker: string;
   headline: string;
+  headlineSize?: string;
   children?: React.ReactNode;
 }) {
   return (
@@ -36,7 +38,7 @@ function Band({
           <p className="meta-label mb-4">
             {kicker}
           </p>
-          <h2 className="text-2xl md:text-3xl font-medium leading-tight tracking-tight max-w-3xl">
+          <h2 className={`text-2xl ${headlineSize} font-medium leading-tight tracking-tight max-w-3xl`}>
             {headline}
           </h2>
         </div>
@@ -120,7 +122,7 @@ function FeatureRow({
       to={to}
       className="group block px-5 py-8 md:py-9 border-b border-border/70 last:border-b-0 transition-colors duration-200 surface-tint-hover focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-inset focus-visible:ring-ring"
     >
-      <h3 className="text-2xl md:text-[1.75rem] font-medium leading-tight tracking-[-0.02em] text-foreground">
+      <h3 className="text-2xl font-medium leading-tight tracking-[-0.02em] text-foreground">
         {title}
       </h3>
       <p className="mt-2 font-body text-base leading-relaxed text-muted-foreground">
@@ -173,6 +175,7 @@ export default function Index() {
 
       <Band
         kicker="01 — Hello"
+        headlineSize="md:text-[1.75rem]"
         headline="Product design leader for complex software. I lead teams, stay hands-on, and work directly with customers to turn difficult problems into simple, elegant products."
       >
         <div className="-mx-5 border-t border-border/70">

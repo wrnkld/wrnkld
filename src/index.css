@@ -22,6 +22,7 @@
     --muted-foreground: 215 16% 47%;/* slate-500 */
 
     --border: 214 32% 91%;          /* slate-200 */
+    --surface-hover: 214 32% 91% / 0.7;
     --input: 214 32% 91%;
     --ring: 215 20% 65%;            /* slate-400 */
 
@@ -145,7 +146,7 @@
   /* Shared surface tint for card hover, table row hover and the toggle track.
      Kept translucent so the page gridlines stay visible underneath. */
   .surface-tint { background-color: hsl(var(--border) / 0.45); }
-  .surface-tint-hover:hover { background-color: hsl(var(--border) / 0.45); }
+  .surface-tint-hover:hover { background-color: hsl(var(--surface-hover)); }
   /* Full-bleed tables: outer cells align with the page's px-5 text gutter. */
   .table-gutter :is(th, td):first-child { padding-left: 1.25rem; }
   .table-gutter :is(th, td):last-child { padding-right: 1.25rem; }
