@@ -231,13 +231,13 @@ export default function Index() {
           <ListColumn
             heading="Books"
             to="/about/books"
-            linkLabel={`All ${books.length} books`}
+            linkLabel="All books"
             rows={recentBooks.map((b) => ({ id: b.id, primary: b.author, secondary: b.title, meta: b.year }))}
           />
           <ListColumn
             heading="Records"
             to="/about/records"
-            linkLabel={`All ${records.length} records`}
+            linkLabel="All records"
             rows={recentRecords.map((r) => ({ id: r.id, primary: r.artist, secondary: r.album, meta: r.year }))}
           />
         </div>
