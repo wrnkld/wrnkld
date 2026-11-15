@@ -37,7 +37,7 @@ function Band({
   return (
     <section>
       <div className="max-w-6xl mx-auto px-6">
-        <div className="px-5 py-24 md:py-40">
+        <div className="px-5 pt-28 pb-6 md:pt-56 md:pb-8">
           {!isIntro && <p className="meta-label mb-4">
             {kicker.replace(/^\d+ — /, "")}
           </p>}
@@ -45,7 +45,7 @@ function Band({
             {headline}
           </h2>
         </div>
-        {children && <div className="px-5 pb-24 md:pb-40">{children}</div>}
+        {children && <div className="px-5 pb-6 md:pb-8">{children}</div>}
       </div>
     </section>
   );
@@ -257,7 +257,7 @@ export default function Index() {
       </Band>
 
       <div className="max-w-6xl mx-auto px-6">
-        <div className="px-5 py-24 md:py-40 flex items-baseline justify-between gap-4">
+        <div className="px-5 pt-28 pb-16 md:pt-56 md:pb-24 flex items-baseline justify-between gap-4">
           <a
             href="mailto:hello@wrnkld.tv"
             className="text-lg font-medium tracking-tight text-link hover:text-link-hover transition-colors duration-200"
