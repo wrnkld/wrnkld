@@ -83,18 +83,18 @@ function Callout({
         <p className="font-body text-base leading-relaxed text-muted-foreground mt-1 max-w-md">{blurb}</p>
         {isExternal ? (
           <p className="mt-4 inline-flex items-center gap-1 text-base text-link group-hover:text-link-hover transition-colors">
-            Visit <ArrowUpRight className="h-4 w-4" />
+            Visit <ArrowUpRight className="link-arrow link-arrow-external h-4 w-4" />
           </p>
         ) : (
           <p className="mt-4 inline-flex items-center gap-1 text-base text-link group-hover:text-link-hover transition-colors">
-            Case study <ArrowRight className="h-4 w-4" />
+            Case study <ArrowRight className="link-arrow link-arrow-forward h-4 w-4" />
           </p>
         )}
       </div>
     </div>
   );
   const linkClasses =
-    "block p-5 surface-tint-hover transition-colors duration-200";
+    "link-motion block p-5 surface-tint-hover transition-colors duration-200";
   if (to) return (
     <Link to={to} className={linkClasses}>
       {inner}
@@ -124,7 +124,7 @@ function FeaturedProject({
   return (
     <Link
       to={to}
-      className="group block min-w-0 p-5 transition-colors duration-200 surface-tint-hover focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-inset focus-visible:ring-ring"
+      className="link-motion group block min-w-0 p-5 transition-colors duration-200 surface-tint-hover focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-inset focus-visible:ring-ring"
     >
       <img src={image} alt={imageAlt} className="w-full aspect-[8/5] object-contain rounded-none border border-border/40" />
       <h3 className="mt-5 text-lg font-medium tracking-tight text-foreground">
@@ -134,7 +134,7 @@ function FeaturedProject({
         {blurb}
       </p>
       <p className="mt-4 inline-flex items-center gap-1 text-base text-link group-hover:text-link-hover transition-colors duration-200">
-        View case study <ArrowRight className="h-4 w-4" />
+        View case study <ArrowRight className="link-arrow link-arrow-forward h-4 w-4" />
       </p>
     </Link>
   );
@@ -231,9 +231,9 @@ export default function Index() {
         <div className="pt-4">
           <Link
             to="/about/experience"
-            className="inline-flex items-center gap-1 text-base text-link hover:text-link-hover transition-colors duration-200"
+            className="link-motion inline-flex items-center gap-1 text-base text-link hover:text-link-hover transition-colors duration-200"
           >
-            Full experience <ArrowRight className="h-4 w-4" />
+            Full experience <ArrowRight className="link-arrow link-arrow-forward h-4 w-4" />
           </Link>
         </div>
       </Band>
@@ -311,9 +311,9 @@ function ListColumn({
       <div className="pt-4">
         <Link
           to={to}
-          className="inline-flex items-center gap-1 text-base text-link hover:text-link-hover transition-colors duration-200"
+          className="link-motion inline-flex items-center gap-1 text-base text-link hover:text-link-hover transition-colors duration-200"
         >
-          {linkLabel} <ArrowRight className="h-4 w-4" />
+          {linkLabel} <ArrowRight className="link-arrow link-arrow-forward h-4 w-4" />
         </Link>
       </div>
     </div>
