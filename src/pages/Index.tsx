@@ -10,7 +10,6 @@ import { VibesBody } from "@/content/words/VibesBody";
 import { SleevesBody } from "@/content/words/SleevesBody";
 import { ClaudeBody } from "@/content/words/ClaudeBody";
 import { Row } from "@/components/Row";
-import { cn } from "@/lib/utils";
 import {
   Table,
   TableBody,
@@ -21,13 +20,6 @@ import {
 
 /* ---------- shared bits ---------- */
 
-/* One keyboard-focus treatment for every homepage link and row: a hairline
-   cobalt ring, inset so full-bleed rows never clip it. */
-const focusRing =
-  "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-accent/50";
-
-/* Section shell for everything below the intro and featured work. Padding is
-   deliberately tighter than those two, which carry the page. */
 function Band({
   kicker,
   headline,
@@ -40,96 +32,73 @@ function Band({
   return (
     <section className="border-b border-border/70">
       <div className="max-w-6xl mx-auto px-6">
-        <div className="px-5 py-10 md:py-12">
-          <p className="meta-label mb-3">
+        <div className="px-5 py-14 md:py-20">
+          <p className="meta-label mb-4">
             {kicker}
           </p>
-          <h2 className="text-lg md:text-xl font-medium leading-tight tracking-tight max-w-3xl">
+          <h2 className="text-2xl md:text-3xl font-medium leading-tight tracking-tight max-w-3xl">
             {headline}
           </h2>
         </div>
-        {children && <div className="px-5 pb-10 md:pb-12">{children}</div>}
+        {children && <div className="px-5 pb-14 md:pb-20">{children}</div>}
       </div>
     </section>
   );
 }
 
-/* Featured case study: a full-width editorial row, not a card. The whole row
-   is the link; hover lifts the title to cobalt and nudges the arrow. */
-function ProjectRow({
+function Callout({
   eyebrow,
   title,
   blurb,
+  media,
   to,
   href,
 }: {
   eyebrow: string;
   title: string;
   blurb: string;
+  media?: string;
   to?: string;
   href?: string;
 }) {
+  const isExternal = Boolean(href);
   const inner = (
-    <div className="group flex items-start justify-between gap-6 px-5 py-8 md:py-10 transition-colors duration-200 surface-tint-hover">
-      <div className="min-w-0">
-        <p className="meta-label mb-3">{eyebrow}</p>
-        <h3 className="text-3xl md:text-4xl font-medium leading-[1.1] tracking-[-0.02em] text-foreground transition-colors duration-200 group-hover:text-accent">
+    <div className="group flex flex-col gap-4 h-full">
+      {media && (
+        <div className="aspect-[4/3] overflow-hidden border border-border/40 bg-muted/30">
+          <img src={media} alt="" loading="lazy" className="w-full h-full object-cover object-left-top" />
+        </div>
+      )}
+      <div>
+        <p className="meta-label mb-2">
+          {eyebrow}
+        </p>
+        <h3 className="text-lg font-medium tracking-tight">
           {title}
         </h3>
-        <p className="mt-3 max-w-md font-body text-base leading-relaxed text-muted-foreground">
-          {blurb}
-        </p>
+        <p className="font-body text-base leading-relaxed text-muted-foreground mt-1 max-w-md">{blurb}</p>
+        {isExternal ? (
+          <p className="mt-4 inline-flex items-center gap-1 text-base text-muted-foreground group-hover:text-foreground transition-colors">
+            Visit <ArrowUpRight className="h-4 w-4" />
+          </p>
+        ) : (
+          <p className="mt-4 inline-flex items-center gap-1 text-base text-muted-foreground group-hover:text-foreground transition-colors">
+            Case study <ArrowRight className="h-4 w-4" />
+          </p>
+        )}
       </div>
-      <ArrowUpRight className="mt-1 h-5 w-5 shrink-0 text-muted-foreground transition-[color,transform] duration-200 group-hover:text-accent group-hover:translate-x-1 group-hover:-translate-y-1" />
     </div>
   );
-  const linkClasses = cn("block border-b border-border/70 last:border-b-0", focusRing);
-  if (to)
-    return (
-      <Link to={to} className={linkClasses}>
-        {inner}
-      </Link>
-    );
+  const linkClasses =
+    "block p-5 surface-tint-hover transition-colors duration-200";
+  if (to) return (
+    <Link to={to} className={linkClasses}>
+      {inner}
+    </Link>
+  );
   return (
     <a href={href} target="_blank" rel="noopener noreferrer" className={linkClasses}>
       {inner}
-    </a>
-  );
-}
-
-/* Side projects sit a tier below the case studies: same row language, much
-   smaller type, so the hierarchy reads at a glance. */
-function SideProjectRow({
-  eyebrow,
-  title,
-  blurb,
-  href,
-}: {
-  eyebrow: string;
-  title: string;
-  blurb: string;
-  href: string;
-}) {
-  return (
-    <a
-      href={href}
-      target="_blank"
-      rel="noopener noreferrer"
-      className={cn(
-        "group flex items-start justify-between gap-4 px-5 py-4 border-b border-border/70 last:border-b-0 transition-colors duration-200 surface-tint-hover",
-        focusRing
-      )}
-    >
-      <div className="min-w-0">
-        <p className="meta-label mb-1.5">{eyebrow}</p>
-        <h3 className="text-lg font-medium tracking-tight text-foreground transition-colors duration-200 group-hover:text-accent">
-          {title}
-        </h3>
-        <p className="mt-1 max-w-md font-body text-sm leading-relaxed text-muted-foreground">
-          {blurb}
-        </p>
-      </div>
-      <ArrowUpRight className="mt-1 h-4 w-4 shrink-0 text-muted-foreground transition-[color,transform] duration-200 group-hover:text-accent group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
     </a>
   );
 }
@@ -161,46 +130,39 @@ export default function Index() {
         </div>
       </div>
 
-      {/* 01 — intro, then the two featured case studies as editorial rows */}
-      <section className="border-b border-border/70">
-        <div className="max-w-6xl mx-auto px-6">
-          <div className="px-5 pt-10 pb-12 md:pt-14 md:pb-16">
-            <p className="meta-label mb-5">
-              01 — Hello
-            </p>
-            <h2 className="text-[1.625rem] md:text-[2.5rem] font-medium leading-[1.25] tracking-[-0.02em] max-w-4xl">
-              Product design leader for complex software. I lead teams, stay hands-on, and work directly with customers to turn difficult problems into simple, elegant products.
-            </h2>
-          </div>
-          <div className="-mx-5 border-t border-border/70 pb-10 md:pb-14">
-            <ProjectRow
-              eyebrow="Case study"
-              title="Monte Carlo AI"
-              blurb="Agent trust platform. Founding designer, now Head of Design."
-              to="/work/montecarlo"
-            />
-            <ProjectRow
-              eyebrow="Case study"
-              title="Tanium"
-              blurb="Unified endpoint management and cybersecurity platform. Senior IC across five products."
-              to="/work/tanium"
-            />
-          </div>
+      <Band
+        kicker="01 — Hello"
+        headline="Product design leader for complex software. I lead teams, stay hands-on, and work directly with customers to turn difficult problems into simple, elegant products."
+      >
+        <div className="-mx-5 grid grid-cols-1 md:grid-cols-2 gap-0">
+          <Callout
+            eyebrow="Case study"
+            title="Monte Carlo AI"
+            blurb="Agent trust platform. Founding designer, now Head of Design."
+            to="/work/montecarlo"
+          />
+          <Callout
+            eyebrow="Case study"
+            title="Tanium"
+            blurb="Unified endpoint management and cybersecurity platform. Senior IC across five products."
+            to="/work/tanium"
+          />
         </div>
-      </section>
+
+      </Band>
 
       <Band
         kicker="02 — Side projects"
         headline="Products I designed, built, and shipped."
       >
-        <div className="-mx-5 border-t border-border/70">
-          <SideProjectRow
+        <div className="-mx-5 grid grid-cols-1 md:grid-cols-2 gap-0">
+          <Callout
             eyebrow="Live"
             title="StudyDrop"
             blurb="UX research without the friction. Surveys, card sorting, tree testing, and first-click testing."
             href="https://studydrop.app"
           />
-          <SideProjectRow
+          <Callout
             eyebrow="Live"
             title="Sleeves"
             blurb="Track albums, make lists, and follow friends. Built with React, Supabase, and Vercel."
@@ -225,10 +187,7 @@ export default function Index() {
         <div className="pt-4">
           <Link
             to="/about/experience"
-            className={cn(
-              "inline-flex items-center gap-1 text-base text-muted-foreground hover:text-accent transition-colors",
-              focusRing
-            )}
+            className="inline-flex items-center gap-1 text-base text-muted-foreground hover:text-foreground transition-colors"
           >
             Full experience <ArrowRight className="h-4 w-4" />
           </Link>
@@ -236,7 +195,7 @@ export default function Index() {
       </Band>
 
       <Band kicker="04 — Lists" headline="I like making lists.">
-        <div className="space-y-10">
+        <div className="space-y-12">
           <ListColumn
             heading="Books"
             to="/about/books"
@@ -261,13 +220,10 @@ export default function Index() {
       </Band>
 
       <div className="max-w-6xl mx-auto px-6">
-        <div className="px-5 py-12 flex items-baseline justify-between gap-4">
+        <div className="px-5 py-14 flex items-baseline justify-between gap-4">
           <a
             href="mailto:hello@wrnkld.tv"
-            className={cn(
-              "text-lg font-medium tracking-tight hover:text-accent transition-colors",
-              focusRing
-            )}
+            className="text-lg font-medium tracking-tight hover:text-muted-foreground transition-colors"
           >
             hello@wrnkld.tv
           </a>
@@ -311,10 +267,7 @@ function ListColumn({
       <div className="pt-4">
         <Link
           to={to}
-          className={cn(
-            "inline-flex items-center gap-1 text-base text-muted-foreground hover:text-accent transition-colors",
-            focusRing
-          )}
+          className="inline-flex items-center gap-1 text-base text-muted-foreground hover:text-foreground transition-colors"
         >
           {linkLabel} <ArrowRight className="h-4 w-4" />
         </Link>
@@ -337,10 +290,7 @@ function WordRow({
     <div className="border-b border-border/70">
       <button
         onClick={() => setOpen((o) => !o)}
-        className={cn(
-          "w-full text-left px-5 py-4 text-base flex items-baseline justify-between gap-4 transition-colors surface-tint-hover",
-          focusRing
-        )}
+        className="w-full text-left px-5 py-4 text-base flex items-baseline justify-between gap-4 transition-colors surface-tint-hover"
       >
         <span className="text-foreground">{title}</span>
         <AnimatePresence mode="wait" initial={false}>
