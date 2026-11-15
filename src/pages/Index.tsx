@@ -37,7 +37,7 @@ function Band({
   return (
     <section>
       <div className="max-w-6xl mx-auto px-6">
-        <div className="px-5 pt-28 pb-6 md:pt-56 md:pb-8">
+        <div className="px-5 md:px-10 pt-12 pb-6 md:pb-8">
           {!isIntro && <p className="meta-label mb-4">
             {kicker.replace(/^\d+ — /, "")}
           </p>}
@@ -45,7 +45,7 @@ function Band({
             {headline}
           </h2>
         </div>
-        {children && <div className="px-5 pb-6 md:pb-8">{children}</div>}
+        {children && <div className="px-5 md:px-10 pb-6 md:pb-8">{children}</div>}
       </div>
     </section>
   );
@@ -90,7 +90,7 @@ function Callout({
     </div>
   );
   const linkClasses =
-    "link-motion block p-5 surface-tint-hover transition-colors duration-200";
+    "link-motion block p-5 md:px-10 surface-tint-hover transition-colors duration-200";
   if (to) return (
     <Link to={to} className={linkClasses}>
       {inner}
@@ -120,7 +120,7 @@ function FeaturedProject({
   return (
     <Link
       to={to}
-      className="link-motion group block min-w-0 p-5 transition-colors duration-200 surface-tint-hover focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-inset focus-visible:ring-ring"
+      className="link-motion group block min-w-0 p-5 md:px-10 transition-colors duration-200 surface-tint-hover focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-inset focus-visible:ring-ring"
     >
       <img src={image} alt={imageAlt} className="w-full aspect-[8/5] object-contain rounded-none border border-border/40" />
       <h3 className="mt-5 text-lg font-medium tracking-tight text-foreground">
@@ -171,11 +171,11 @@ export default function Index() {
   const recentRecords = [...records].sort((a, b) => b.id - a.id).slice(0, 3);
 
   return (
-    <div className="relative z-10 min-h-screen text-foreground">
+    <div className="homepage relative z-10 min-h-screen text-foreground">
       {/* header */}
       <div className="pt-16 md:pt-24">
         <div className="max-w-6xl mx-auto px-6">
-          <div className="px-5 py-4">
+          <div className="px-5 md:px-10 py-4">
             <span className="text-lg font-medium tracking-tight">Matthew Stevens</span>
           </div>
         </div>
@@ -185,7 +185,7 @@ export default function Index() {
         kicker="01 — Hello"
         headline="Product design leader for complex software. I lead teams, stay hands-on, and work directly with customers to turn difficult problems into simple, elegant products."
       >
-        <div className="-mx-5 grid grid-cols-1 md:grid-cols-2 gap-0">
+        <div className="-mx-5 md:-mx-10 grid grid-cols-1 md:grid-cols-2 gap-0">
           {FEATURED.map((f) => (
             <FeaturedProject key={f.company} title={f.company} blurb={f.blurb} to={f.to} image={f.image} imageAlt={f.imageAlt} />
           ))}
@@ -197,7 +197,7 @@ export default function Index() {
         kicker="02 — Independent projects"
         headline="Products I designed, built, and shipped."
       >
-        <div className="-mx-5 grid grid-cols-1 md:grid-cols-2 gap-0">
+        <div className="-mx-5 md:-mx-10 grid grid-cols-1 md:grid-cols-2 gap-0">
           <Callout
             title="StudyDrop"
             blurb="UX research without the friction. Surveys, card sorting, tree testing, and first-click testing."
@@ -212,9 +212,9 @@ export default function Index() {
       </Band>
 
       <Band kicker="03 — Experience" headline="Designing complex enterprise software.">
-        <div className="-mx-5 border-t border-border/70">
+        <div className="-mx-5 md:-mx-10 border-t border-border/70">
           {experience.slice(0, 3).map((j) => (
-            <Row key={j.company} className="flex flex-col gap-1 md:grid md:grid-cols-3 md:gap-8">
+            <Row key={j.company} className="md:px-10 flex flex-col gap-1 md:grid md:grid-cols-3 md:gap-8">
               <span className="font-medium text-foreground">{j.company}</span>
               <span className="text-muted-foreground">{j.role}</span>
               <span className="text-muted-foreground tabular-nums md:text-right">{j.years}</span>
@@ -249,7 +249,7 @@ export default function Index() {
       </Band>
 
       <Band kicker="05 — Words from January 2026" headline="I worked through some thoughts on AI and design.">
-        <div className="-mx-5 border-t border-border/70">
+        <div className="-mx-5 md:-mx-10 border-t border-border/70">
           {WORDS.map((w) => (
             <WordRow key={w.title} {...w} />
           ))}
@@ -257,7 +257,7 @@ export default function Index() {
       </Band>
 
       <div className="max-w-6xl mx-auto px-6">
-        <div className="px-5 pt-28 pb-16 md:pt-56 md:pb-24 flex items-baseline justify-between gap-4">
+        <div className="px-5 md:px-10 pt-12 pb-16 md:pb-24 flex items-baseline justify-between gap-4">
           <a
             href="mailto:hello@wrnkld.tv"
             className="text-lg font-medium tracking-tight text-link hover:text-link-hover transition-colors duration-200"
@@ -284,7 +284,7 @@ function ListColumn({
   return (
     <div>
       <h3 className="text-lg font-medium text-foreground mb-4">{heading}</h3>
-      <div className="-mx-5 border-y border-border/70 overflow-hidden table-gutter">
+      <div className="-mx-5 md:-mx-10 border-y border-border/70 overflow-hidden table-gutter">
         <Table className="table-fixed">
           <TableBody>
             {rows.map((row) => (
@@ -327,7 +327,7 @@ function WordRow({
     <div className="border-b border-border/70">
       <button
         onClick={() => setOpen((o) => !o)}
-        className="w-full text-left px-5 py-4 text-base flex items-baseline justify-between gap-4 transition-colors surface-tint-hover"
+        className="w-full text-left px-5 md:px-10 py-4 text-base flex items-baseline justify-between gap-4 transition-colors surface-tint-hover"
       >
         <span className="text-foreground">{title}</span>
         <AnimatePresence mode="wait" initial={false}>
@@ -351,7 +351,7 @@ function WordRow({
             transition={{ duration: 0.25, ease: "easeOut" }}
             style={{ overflow: "hidden" }}
           >
-            <div className="px-5 pb-10 pt-2">
+            <div className="px-5 md:px-10 pb-10 pt-2">
               <Body />
             </div>
           </motion.div>
