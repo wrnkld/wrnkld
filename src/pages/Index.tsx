@@ -26,21 +26,24 @@ function Band({
   kicker,
   headline,
   headlineSize,
+  date,
   children,
 }: {
   kicker: string;
   headline: string;
   headlineSize?: string;
+  date?: string;
   children?: React.ReactNode;
 }) {
   const isIntro = kicker === "01 — Hello";
   return (
     <section>
       <div className="max-w-6xl mx-auto px-6">
-        <div className="px-5 md:px-10 pt-12 pb-6 md:pb-8">
+        <div className="px-5 md:px-10 pt-12 pb-6 md:pb-8 flex flex-wrap items-baseline gap-x-4 gap-y-2">
           <h2 className={`${isIntro ? `text-[1.640625rem] ${headlineSize ?? ""} font-medium leading-relaxed tracking-tight text-foreground` : "text-2xl font-medium leading-snug tracking-tight text-foreground"} max-w-3xl`}>
             {headline}
           </h2>
+          {date && <span className="text-base text-muted-foreground">{date}</span>}
         </div>
         {children && <div className="px-5 md:px-10 pb-6 md:pb-8">{children}</div>}
       </div>
@@ -245,7 +248,7 @@ export default function Index() {
         </div>
       </Band>
 
-      <Band kicker="05 — Words from January 2026" headline="Design and AI — thoughts from early 2026">
+      <Band kicker="05 — Words from January 2026" headline="Design and AI" date="January 2026">
         <div className="-mx-5 md:-mx-10 border-t border-border/70">
           {WORDS.map((w) => (
             <WordRow key={w.title} {...w} />
