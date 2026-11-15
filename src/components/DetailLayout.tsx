@@ -21,7 +21,7 @@ export function DetailLayout({ title, children }: DetailLayoutProps) {
               <ArrowLeft className="link-arrow link-arrow-back h-4 w-4" />
               Back
             </Link>
-            <h1 className="text-2xl md:text-3xl font-medium leading-tight tracking-tight max-w-3xl">
+            <h1 className="text-2xl md:text-[1.75rem] font-medium leading-tight tracking-tight max-w-3xl">
               {title}
             </h1>
           </div>
