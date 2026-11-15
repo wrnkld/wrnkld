@@ -177,19 +177,9 @@ export default function Index() {
         headline="Product design leader for complex software. I lead teams, stay hands-on, and work directly with customers to turn difficult problems into simple, elegant products."
       >
         <div className="-mx-5 border-t border-border/70">
-          {FEATURED.map((f) => {
-            const job = experience.find((j) => j.company === f.company);
-            return (
-              <FeatureRow
-                key={f.company}
-                title={f.company}
-                blurb={f.blurb}
-                role={job?.role ?? ""}
-                years={job?.years ?? ""}
-                to={f.to}
-              />
-            );
-          })}
+          {FEATURED.map((f) => (
+            <FeatureRow key={f.company} title={f.company} blurb={f.blurb} to={f.to} />
+          ))}
         </div>
 
       </Band>
