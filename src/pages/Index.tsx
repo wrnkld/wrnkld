@@ -133,6 +133,9 @@ function FeaturedProject({
       <p className="mt-2 font-body text-base leading-relaxed text-muted-foreground">
         {blurb}
       </p>
+      <p className="mt-4 inline-flex items-center gap-1 text-base text-link group-hover:text-link-hover transition-colors duration-200">
+        View case study <ArrowRight className="h-4 w-4" />
+      </p>
     </Link>
   );
 }
