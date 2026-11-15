@@ -187,7 +187,7 @@ export default function MonteCarlo() {
 
       <h2 className="font-display text-lg font-medium text-foreground">Design system for agents</h2>
       <p className="font-body text-base text-muted-foreground leading-relaxed">
-        Documented the design system in markdown files for AI agents, so generated UI uses existing patterns instead of inventing new ones.
+        Translated our design system into structured Markdown guidance for AI coding agents, defining component usage, interaction rules, and implementation constraints so AI-generated interfaces follow established product patterns.
       </p>
 
       <div className="-mx-5 border-t border-border/70 not-prose">
