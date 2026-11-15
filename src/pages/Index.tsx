@@ -52,14 +52,12 @@ function Band({
 }
 
 function Callout({
-  eyebrow,
   title,
   blurb,
   media,
   to,
   href,
 }: {
-  eyebrow: string;
   title: string;
   blurb: string;
   media?: string;
@@ -75,9 +73,6 @@ function Callout({
         </div>
       )}
       <div>
-        <p className="meta-label mb-2">
-          {eyebrow}
-        </p>
         <h3 className="text-lg font-medium tracking-tight">
           {title}
         </h3>
@@ -204,13 +199,11 @@ export default function Index() {
       >
         <div className="-mx-5 grid grid-cols-1 md:grid-cols-2 gap-0">
           <Callout
-            eyebrow="Live"
             title="StudyDrop"
             blurb="UX research without the friction. Surveys, card sorting, tree testing, and first-click testing."
             href="https://studydrop.app"
           />
           <Callout
-            eyebrow="Live"
             title="Sleeves"
             blurb="Track albums, make lists, and follow friends. Built with React, Supabase, and Vercel."
             href="https://sleeves.app"
