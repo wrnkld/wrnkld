@@ -104,47 +104,35 @@ function Callout({
 }
 
 /* Featured case study, composed as an editorial feature rather than a nav
-   link: asymmetric row — write-up on the left, understated credit line on the
-   right, hairline divider between projects, and the title picking up a
-   hairline underline on hover in place of an arrow or a card fill. */
+   link: write-up on its own, hairline divider between projects, and the same
+   quiet tint-on-hover the rest of the site's rows use. */
 function FeatureRow({
   title,
   blurb,
-  role,
-  years,
   to,
 }: {
   title: string;
   blurb: string;
-  role: string;
-  years: string;
   to: string;
 }) {
   return (
     <Link
       to={to}
-      className="group grid grid-cols-1 md:grid-cols-[minmax(0,1fr)_170px] items-baseline gap-3 md:gap-10 px-5 py-8 md:py-9 border-b border-border/70 last:border-b-0 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-inset focus-visible:ring-ring"
+      className="group block px-5 py-8 md:py-9 border-b border-border/70 last:border-b-0 transition-colors duration-200 surface-tint-hover focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-inset focus-visible:ring-ring"
     >
-      <div className="min-w-0">
-        <h3 className="text-2xl md:text-[1.75rem] font-medium leading-tight tracking-[-0.02em] text-foreground decoration-muted-foreground/40 decoration-1 underline-offset-[6px] transition-colors duration-200 group-hover:underline">
-          {title}
-        </h3>
-        <p className="mt-2 max-w-md font-body text-base leading-relaxed text-muted-foreground">
-          {blurb}
-        </p>
-      </div>
-      <div className="md:text-right">
-        <p className="text-sm text-muted-foreground">{role}</p>
-        <p className="mt-1 text-sm text-muted-foreground tabular-nums">{years}</p>
-      </div>
+      <h3 className="text-2xl md:text-[1.75rem] font-medium leading-tight tracking-[-0.02em] text-foreground">
+        {title}
+      </h3>
+      <p className="mt-2 max-w-md font-body text-base leading-relaxed text-muted-foreground">
+        {blurb}
+      </p>
     </Link>
   );
 }
 
 /* ---------- data ---------- */
 
-/* Role and years are read from the experience list so the featured rows and
-   the experience table can never disagree. */
+/* The two case studies shown as editorial features on the home page. */
 const FEATURED = [
   {
     company: "Monte Carlo AI",
@@ -188,19 +176,9 @@ export default function Index() {
         headline="Product design leader for complex software. I lead teams, stay hands-on, and work directly with customers to turn difficult problems into simple, elegant products."
       >
         <div className="-mx-5 border-t border-border/70">
-          {FEATURED.map((f) => {
-            const job = experience.find((j) => j.company === f.company);
-            return (
-              <FeatureRow
-                key={f.company}
-                title={f.company}
-                blurb={f.blurb}
-                role={job?.role ?? ""}
-                years={job?.years ?? ""}
-                to={f.to}
-              />
-            );
-          })}
+          {FEATURED.map((f) => (
+            <FeatureRow key={f.company} title={f.company} blurb={f.blurb} to={f.to} />
+          ))}
         </div>
 
       </Band>
