@@ -4,7 +4,7 @@ import { AnimatePresence, motion } from "motion/react";
 import { ArrowUpRight, ArrowRight, Plus, Minus } from "lucide-react";
 import { books } from "@/data/books";
 import { records } from "@/data/records";
-import { experience, education } from "@/data/experience";
+import { experience } from "@/data/experience";
 import { ToolsBody } from "@/content/words/ToolsBody";
 import { VibesBody } from "@/content/words/VibesBody";
 import { SleevesBody } from "@/content/words/SleevesBody";
@@ -123,7 +123,7 @@ function FeatureRow({
       <h3 className="text-2xl md:text-[1.75rem] font-medium leading-tight tracking-[-0.02em] text-foreground">
         {title}
       </h3>
-      <p className="mt-2 max-w-md font-body text-base leading-relaxed text-muted-foreground">
+      <p className="mt-2 font-body text-base leading-relaxed text-muted-foreground">
         {blurb}
       </p>
     </Link>
@@ -205,10 +205,7 @@ export default function Index() {
 
       <Band kicker="03 — Experience" headline="Designing complex enterprise software.">
         <div className="-mx-5 border-t border-border/70">
-          {[
-            ...experience,
-            { company: education.company, role: education.degree, years: "" },
-          ].map((j) => (
+          {experience.slice(0, 3).map((j) => (
             <Row key={j.company} className="flex flex-col gap-1 md:grid md:grid-cols-3 md:gap-8">
               <span className="font-medium text-foreground">{j.company}</span>
               <span className="text-muted-foreground">{j.role}</span>
