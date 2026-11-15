@@ -103,8 +103,61 @@ function Callout({
   );
 }
 
+/* Featured case study, composed as an editorial feature rather than a nav
+   link: asymmetric row — write-up on the left, understated credit line on the
+   right, hairline divider between projects, and the title picking up a
+   hairline underline on hover in place of an arrow or a card fill. */
+function FeatureRow({
+  title,
+  blurb,
+  role,
+  years,
+  to,
+}: {
+  title: string;
+  blurb: string;
+  role: string;
+  years: string;
+  to: string;
+}) {
+  return (
+    <Link
+      to={to}
+      className="group grid grid-cols-1 md:grid-cols-[minmax(0,1fr)_170px] items-baseline gap-3 md:gap-10 px-5 py-8 md:py-9 border-b border-border/70 last:border-b-0 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-inset focus-visible:ring-ring"
+    >
+      <div className="min-w-0">
+        <h3 className="text-2xl md:text-[1.75rem] font-medium leading-tight tracking-[-0.02em] text-foreground decoration-muted-foreground/40 decoration-1 underline-offset-[6px] transition-colors duration-200 group-hover:underline">
+          {title}
+        </h3>
+        <p className="mt-2 max-w-md font-body text-base leading-relaxed text-muted-foreground">
+          {blurb}
+        </p>
+      </div>
+      <div className="md:text-right">
+        <p className="text-sm text-muted-foreground">{role}</p>
+        <p className="mt-1 text-sm text-muted-foreground tabular-nums">{years}</p>
+      </div>
+    </Link>
+  );
+}
+
 /* ---------- data ---------- */
 
+/* Role and years are read from the experience list so the featured rows and
+   the experience table can never disagree. */
+const FEATURED = [
+  {
+    company: "Monte Carlo AI",
+    to: "/work/montecarlo",
+    blurb: "Agent trust platform. Founding designer, now Head of Design.",
+  },
+  {
+    company: "Tanium",
+    to: "/work/tanium",
+    blurb:
+      "Unified endpoint management and cybersecurity platform. Senior IC across five products.",
+  },
+];
 
 const WORDS = [
   { title: "Pt 1 → Tools", note: "TMI", date: "Jan 2026", Body: ToolsBody },
@@ -134,19 +187,20 @@ export default function Index() {
         kicker="01 — Hello"
         headline="Product design leader for complex software. I lead teams, stay hands-on, and work directly with customers to turn difficult problems into simple, elegant products."
       >
-        <div className="-mx-5 grid grid-cols-1 md:grid-cols-2 gap-0">
-          <Callout
-            eyebrow="Case study"
-            title="Monte Carlo AI"
-            blurb="Agent trust platform. Founding designer, now Head of Design."
-            to="/work/montecarlo"
-          />
-          <Callout
-            eyebrow="Case study"
-            title="Tanium"
-            blurb="Unified endpoint management and cybersecurity platform. Senior IC across five products."
-            to="/work/tanium"
-          />
+        <div className="-mx-5 border-t border-border/70">
+          {FEATURED.map((f) => {
+            const job = experience.find((j) => j.company === f.company);
+            return (
+              <FeatureRow
+                key={f.company}
+                title={f.company}
+                blurb={f.blurb}
+                role={job?.role ?? ""}
+                years={job?.years ?? ""}
+                to={f.to}
+              />
+            );
+          })}
         </div>
 
       </Band>
