@@ -85,7 +85,7 @@
      homepage's opening voice. */
   .lead {
     font-family: var(--font-body);
-    font-size: 0.9375rem;
+    font-size: 1.0546875rem;
     line-height: 1.7;
     color: hsl(var(--foreground));
     max-width: 48rem;
