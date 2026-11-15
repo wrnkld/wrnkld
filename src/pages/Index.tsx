@@ -255,7 +255,7 @@ export default function Index() {
         <div className="px-5 py-14 flex items-baseline justify-between gap-4">
           <a
             href="mailto:hello@wrnkld.tv"
-            className="text-lg font-medium tracking-tight hover:text-muted-foreground transition-colors"
+            className="text-lg font-medium tracking-tight text-link hover:text-link-hover transition-colors duration-200"
           >
             hello@wrnkld.tv
           </a>
