@@ -108,12 +108,12 @@ export default function MonteCarlo() {
         Monte Carlo helps data teams detect, investigate, and resolve data quality issues across their data and AI systems.
       </p>
 
-      <h2 className="font-display text-lg font-medium text-foreground">Role</h2>
+      <h2 className="font-display text-2xl font-medium text-foreground">Role</h2>
       <p className="font-body text-base text-muted-foreground leading-relaxed">
         Joined as founding designer and built the design function while remaining hands-on across the product. Partnered with founders, product, and engineering to shape the platform, hired and mentored designers, and established research and design-system practices.
       </p>
 
-      <h2 className="font-display text-lg font-medium text-foreground">Understanding adoption</h2>
+      <h2 className="font-display text-2xl font-medium text-foreground">Understanding adoption</h2>
       <p className="font-body text-base text-muted-foreground leading-relaxed">
         Analyzed troubleshooting agent usage across 470 paying customers over two months. Nearly half never used the agent, while only 21 enabled automatic runs. The analysis highlighted opportunities to improve adoption and encourage more sustained usage.
       </p>
@@ -121,7 +121,7 @@ export default function MonteCarlo() {
         <SankeyDiagram data={troubleshootingSankey} label="TSA usage: 470 paying customers split into 228 who didn't run TSA and 242 who did; those 242 split into 86 below three monthly runs, 52 using all three free runs, 83 manual users above three runs, and 21 with automatic runs on." />
       </figure>
 
-      <h2 className="font-display text-lg font-medium text-foreground">Query performance</h2>
+      <h2 className="font-display text-2xl font-medium text-foreground">Query performance</h2>
       <p className="font-body text-base text-muted-foreground leading-relaxed">
         Designed investigation workflows that connect query costs, latency, execution history, and AI-generated analysis across Snowflake, dbt, Airflow, and Looker.
       </p>
@@ -130,7 +130,7 @@ export default function MonteCarlo() {
 
 <img src={mcdWrite} alt="Monte Carlo write query detail with observability agent explaining performance" className="w-full h-auto border border-border/40" />
 
-<h2 className="font-display text-lg font-medium text-foreground">Integrations</h2>
+<h2 className="font-display text-2xl font-medium text-foreground">Integrations</h2>
 <p className="font-body text-base text-muted-foreground leading-relaxed">
   Designed a unified framework for connecting data warehouses, orchestration tools, repositories, BI platforms, and incident-response systems.
 </p>
@@ -139,7 +139,7 @@ export default function MonteCarlo() {
 
 <img src={mcdJob} alt="Monte Carlo job performance view showing run time trends and failure tracking for dbt jobs" className="w-full h-auto border border-border/40" />
 
-      <h2 className="font-display text-lg font-medium text-foreground">Design engineer</h2>
+      <h2 className="font-display text-2xl font-medium text-foreground">Design engineer</h2>
       <p className="font-body text-base text-muted-foreground leading-relaxed">
         Contributed directly to the production frontend through AI-assisted development, with more than 300 closed pull requests spanning AI workflows, product features, design systems, accessibility, and UX improvements.
       </p>
@@ -185,7 +185,7 @@ export default function MonteCarlo() {
         </Table>
       </div>
 
-      <h2 className="font-display text-lg font-medium text-foreground">Design system for agents</h2>
+      <h2 className="font-display text-2xl font-medium text-foreground">Design system for agents</h2>
       <p className="font-body text-base text-muted-foreground leading-relaxed">
         Translated our design system into structured Markdown guidance for AI coding agents, defining component usage, interaction rules, and implementation constraints so AI-generated interfaces follow established product patterns.
       </p>
@@ -196,7 +196,7 @@ export default function MonteCarlo() {
         ))}
       </div>
 
-      <h2 className="font-display text-lg font-medium text-foreground">Customer advisory board</h2>
+      <h2 className="font-display text-2xl font-medium text-foreground">Customer advisory board</h2>
       <p className="font-body text-base text-muted-foreground leading-relaxed">
         Built a customer advisory board and a lightweight research practice to keep design decisions grounded in real usage. Ran structured interviews, feedback sessions, and quarterly reviews with data teams, then turned those insights into roadmap input, clearer prioritization, and tighter product–design–engineering alignment.
       </p>
