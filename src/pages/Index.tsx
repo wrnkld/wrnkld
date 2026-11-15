@@ -32,7 +32,7 @@ function Band({
   children?: React.ReactNode;
 }) {
   return (
-    <section className="border-b border-border/70">
+    <section>
       <div className="max-w-6xl mx-auto px-6">
         <div className="px-5 py-14 md:py-20">
           <p className="meta-label mb-4">
