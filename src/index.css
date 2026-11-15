@@ -59,6 +59,7 @@
   body {
     @apply antialiased;
     font-family: var(--font-body);
+    font-size: 0.9375rem;
     position: relative;
   }
 
@@ -84,7 +85,7 @@
      homepage's opening voice. */
   .lead {
     font-family: var(--font-body);
-    font-size: 1rem;
+    font-size: 0.9375rem;
     line-height: 1.7;
     color: hsl(var(--foreground));
     max-width: 48rem;
@@ -184,7 +185,7 @@
   /* Single treatment for kickers, eyebrows and any small metadata label. */
   .meta-label {
     font-family: var(--font-mono);
-    font-size: 10px;
+    font-size: 9.375px;
     line-height: 1.4;
     text-transform: uppercase;
     letter-spacing: 0.18em;

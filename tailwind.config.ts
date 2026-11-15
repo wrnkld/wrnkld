@@ -45,6 +45,15 @@ export default {
         display: ["var(--font-display)"],
         body: ["var(--font-body)"],
       },
+      /* Site-wide type is 15/16 of Tailwind's defaults; spacing is unchanged. */
+      fontSize: {
+        xs: ["0.703125rem", { lineHeight: "0.9375rem" }],
+        sm: ["0.8203125rem", { lineHeight: "1.171875rem" }],
+        base: ["0.9375rem", { lineHeight: "1.40625rem" }],
+        lg: ["1.0546875rem", { lineHeight: "1.640625rem" }],
+        xl: ["1.171875rem", { lineHeight: "1.640625rem" }],
+        "2xl": ["1.40625rem", { lineHeight: "1.875rem" }],
+      },
       borderRadius: {
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",
