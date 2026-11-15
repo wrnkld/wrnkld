@@ -120,7 +120,7 @@ function FeatureRow({
   return (
     <Link
       to={to}
-      className="group block px-5 py-8 md:py-9 border-b border-border/70 last:border-b-0 transition-colors duration-200 surface-tint-hover focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-inset focus-visible:ring-ring"
+      className="group block px-5 py-8 md:py-9 border-b border-border/70 transition-colors duration-200 surface-tint-hover focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-inset focus-visible:ring-ring"
     >
       <h3 className="text-2xl font-medium leading-tight tracking-[-0.02em] text-foreground">
         {title}
