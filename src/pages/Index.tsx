@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import { AnimatePresence, motion } from "motion/react";
 import { ArrowUpRight, ArrowRight, Plus, Minus } from "lucide-react";
@@ -10,6 +10,8 @@ import { VibesBody } from "@/content/words/VibesBody";
 import { SleevesBody } from "@/content/words/SleevesBody";
 import { ClaudeBody } from "@/content/words/ClaudeBody";
 import { Row } from "@/components/Row";
+import taniumAssurance from "@/assets/tanium/tanium-assurance.mp4";
+import taniumAssuranceFindings from "@/assets/tanium/tanium-assurance-findings.png";
 import {
   Table,
   TableBody,
@@ -112,22 +114,49 @@ function FeatureRow({
   title,
   blurb,
   to,
+  preview,
 }: {
   title: string;
   blurb: string;
   to: string;
+  preview?: { video: string; poster: string };
 }) {
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const playPreview = () => {
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    videoRef.current?.play().catch(() => {});
+  };
+  const pausePreview = () => videoRef.current?.pause();
   return (
     <Link
       to={to}
-      className="group block px-5 py-8 md:py-9 border-b border-border/70 transition-colors duration-200 surface-tint-hover focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-inset focus-visible:ring-ring"
+      onMouseEnter={playPreview}
+      onMouseLeave={pausePreview}
+      onFocus={playPreview}
+      onBlur={pausePreview}
+      className={`group grid items-center gap-5 px-5 py-8 md:py-9 border-b border-border/70 transition-colors duration-200 surface-tint-hover focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-inset focus-visible:ring-ring ${preview ? "sm:grid-cols-[minmax(0,1fr)_200px]" : "grid-cols-1"}`}
     >
+      <div>
       <h3 className="text-2xl font-medium leading-tight tracking-[-0.02em] text-foreground">
         {title}
       </h3>
       <p className="mt-2 font-body text-base leading-relaxed text-muted-foreground">
         {blurb}
       </p>
+      </div>
+      {preview && (
+        <video
+          ref={videoRef}
+          src={preview.video}
+          poster={preview.poster}
+          muted
+          loop
+          playsInline
+          preload="none"
+          aria-hidden="true"
+          className="w-[200px] max-w-full aspect-video object-contain rounded-none border border-border/40"
+        />
+      )}
     </Link>
   );
 }
@@ -144,6 +173,7 @@ const FEATURED = [
   {
     company: "Tanium",
     to: "/work/tanium",
+    preview: { video: taniumAssurance, poster: taniumAssuranceFindings },
     blurb:
       "Unified endpoint management and cybersecurity platform. Senior IC across five products.",
   },
@@ -180,7 +210,7 @@ export default function Index() {
       >
         <div className="-mx-5 border-t border-border/70">
           {FEATURED.map((f) => (
-            <FeatureRow key={f.company} title={f.company} blurb={f.blurb} to={f.to} />
+            <FeatureRow key={f.company} title={f.company} blurb={f.blurb} to={f.to} preview={f.preview} />
           ))}
         </div>
 

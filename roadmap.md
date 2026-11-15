@@ -3,6 +3,7 @@
 - [x] Update adoption description and verify the page.
 
 # Homepage updates
+- [x] Add the Tanium Assurance preview and verify playback and mobile layout.
 - [x] Show only the three most recent jobs, without education; retain Full experience.
 - [x] Remove the featured descriptions' narrow width cap and verify desktop/mobile layout.
 - [x] Refine homepage intro/title hierarchy and strengthen shared hovers; preserve body size and background.
