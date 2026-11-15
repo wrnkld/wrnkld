@@ -28,8 +28,8 @@
 
     --radius: 0.5rem;
     /* The single accent hue for text links (dark raspberry) — never blue. */
-    --link: 338.852 59.804% 40%;
-    --link-hover: 338.852 59.804% 30%;
+    --link: 338.361 59.804% 40%;
+    --link-hover: 338.361 59.804% 30%;
     --sankey-active: 205 65% 44%;
     --sankey-free: 168 44% 40%;
     --sankey-manual: 330 55% 48%;
