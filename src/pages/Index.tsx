@@ -40,7 +40,7 @@ function Band({
     <section>
       <div className="max-w-6xl mx-auto px-6">
         <div className="px-5 md:px-10 pt-12 pb-6 md:pb-8 flex flex-wrap items-baseline gap-x-4 gap-y-2">
-          <h2 className={`${isIntro ? `text-[1.640625rem] ${headlineSize ?? ""} font-medium leading-relaxed tracking-tight text-foreground` : "text-2xl font-medium leading-snug tracking-tight text-foreground"} max-w-3xl`}>
+          <h2 className={`${isIntro ? `text-[1.640625rem] ${headlineSize ?? ""} font-medium leading-snug md:leading-relaxed tracking-tight text-foreground` : "text-2xl font-medium leading-snug tracking-tight text-foreground"} max-w-3xl`}>
             {headline}
           </h2>
           {date && <span className="ml-auto text-right font-body text-base text-muted-foreground tabular-nums">{date}</span>}
