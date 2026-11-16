@@ -122,9 +122,7 @@ function FeaturedProject({
       to={to}
       className="link-motion group block min-w-0 p-5 md:p-10 transition-colors duration-200 surface-tint-hover focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-inset focus-visible:ring-ring"
     >
-      <div className="relative aspect-[8/5] overflow-hidden rounded-none border border-border/40">
-        <img src={image} alt={imageAlt} className="featured-screen absolute -left-[20%] -top-[5%] w-[120%] max-w-none" />
-      </div>
+      <img src={image} alt={imageAlt} className="w-full aspect-[8/5] object-contain rounded-none border border-border/40" />
       <h3 className="mt-5 text-lg font-medium tracking-tight text-foreground">
         {title}
       </h3>

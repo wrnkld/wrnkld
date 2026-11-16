@@ -148,12 +148,6 @@
      Kept translucent so the page gridlines stay visible underneath. */
   .surface-tint { background-color: hsl(var(--border) / 0.45); }
   .surface-tint-hover:hover { background-color: hsl(var(--surface-hover)); }
-  .featured-screen {
-    transition: transform 200ms ease-out;
-  }
-  .link-motion:is(:hover, :focus-visible) .featured-screen {
-    transform: scale(1.025);
-  }
   .link-motion .link-arrow {
     transition: transform 200ms ease-out;
   }
@@ -167,10 +161,6 @@
     transform: translateX(-3px);
   }
   @media (prefers-reduced-motion: reduce) {
-    .featured-screen {
-      transition: none;
-      transform: none !important;
-    }
     .link-motion .link-arrow {
       transition: none;
       transform: none !important;
