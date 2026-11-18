@@ -3221,4 +3221,11 @@ export const books: Book[] = [
     year: 2025,
     recommended: false,
   },
+  {
+    id: 461,
+    title: "On the Calculation of Volume (Book V)",
+    author: "Solvej Balle",
+    year: 2026,
+    recommended: false,
+  },
 ];
