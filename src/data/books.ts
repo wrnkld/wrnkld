@@ -3200,4 +3200,11 @@ export const books: Book[] = [
     year: 2026,
     recommended: false,
   },
+  {
+    id: 458,
+    title: "Squandering the Blue",
+    author: "Kate Braverman",
+    year: 1990,
+    recommended: false,
+  },
 ];
