@@ -3214,4 +3214,11 @@ export const books: Book[] = [
     year: 2015,
     recommended: false,
   },
+  {
+    id: 460,
+    title: "Stag Dance",
+    author: "Torrey Peters",
+    year: 2025,
+    recommended: false,
+  },
 ];
