@@ -9,7 +9,7 @@ import {
   TableRow,
 } from "@/components/ui/table";
 
-type Row = { id: number; year: number; recommended?: boolean };
+type Row = { id: number; year: number; recommended?: boolean; note?: string };
 
 export interface Column<T> {
   key: Extract<keyof T, string>;
@@ -109,6 +109,11 @@ export function CollectionTable<T extends Row>({
                   }`}
                 >
                   {String(row[column.key])}
+                  {row.note && column.tone === "primary" && (
+                    <span className="text-muted-foreground mt-1.5 block text-sm leading-snug">
+                      {row.note}
+                    </span>
+                  )}
                 </TableCell>
               ))}
             </TableRow>

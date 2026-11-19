@@ -4,6 +4,7 @@ export interface Book {
   author: string;
   year: number;
   recommended: boolean;
+  note?: string;
 }
 
 export interface Record {

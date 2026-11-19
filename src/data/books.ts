@@ -3213,6 +3213,7 @@ export const books: Book[] = [
     author: "Lucia Berlin",
     year: 2015,
     recommended: false,
+    note: "A posthumous collection of 43 short stories by American writer Lucia Berlin (1936–2004), edited by Stephen Emerson with a foreword by Lydia Davis and first published in 2015.",
   },
   {
     id: 460,
